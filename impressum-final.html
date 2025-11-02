@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - ABC Spare Parts</title>
+    <style>
+        :root {
+            --color-background: #fcfcf9;
+            --color-surface: #fffffd;
+            --color-text: #133452;
+            --color-text-secondary: #626c71;
+            --color-primary: #21808d;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #1f2121;
+                --color-surface: #262828;
+                --color-text: #f5f5f5;
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-border: rgba(119, 124, 124, 0.3);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--color-surface);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        h1 { font-size: 2rem; margin-bottom: 24px; }
+        h2 { font-size: 1.5rem; margin-top: 32px; margin-bottom: 16px; }
+        h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 16px; }
+        p { margin-bottom: 16px; color: var(--color-text-secondary); }
+        strong { color: var(--color-text); }
+        a { color: var(--color-primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: none; border-top: 1px solid var(--color-border); margin: 32px 0; }
+        ul { margin-left: 1.5rem; margin-bottom: 16px; }
+        li { margin-bottom: 0.5rem; color: var(--color-text-secondary); }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .back-link:hover { opacity: 0.9; text-decoration: none; }
+
+        .lang-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: 1px solid var(--color-border);
+            padding: 6px 12px;
+            margin-left: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .lang-switcher button:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .lang-switcher button.active {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Zurück zur Startseite / Back to Home / Torna alla Home</a>
+        
+        <div class="lang-switcher">
+            <button onclick="switchLang('de')" class="active" id="btn-de">Deutsch</button>
+            <button onclick="switchLang('en')" id="btn-en">English</button>
+            <button onclick="switchLang('it')" id="btn-it">Italiano</button>
+        </div>
+
+        <!-- DEUTSCH -->
+        <div class="lang-content active" id="content-de">
+            <h1>Impressum / Anbieterkennzeichnung</h1>
+
+            <h2>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</h2>
+
+            <p><strong>Betreiber und Kontakt:</strong></p>
+
+            <p>
+                Serena Sarlo<br>
+                Äussere Uferstrasse 16<br>
+                86154 Augsburg<br>
+                Deutschland
+            </p>
+
+            <p><strong>Kontakt:</strong></p>
+            <ul>
+                <li><strong>Telefon:</strong> +49 152 22466077</li>
+                <li><strong>E-Mail:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></li>
+                <li><strong>WhatsApp:</strong> +49 152 22466077</li>
+            </ul>
+
+            <p><strong>Geschäftszeiten:</strong></p>
+            <ul>
+                <li>Montag - Freitag: 09:00 - 18:00 Uhr</li>
+                <li>Samstag: 10:00 - 14:00 Uhr</li>
+                <li>Sonntag: Geschlossen</li>
+            </ul>
+
+            <hr>
+
+            <h2>Umsatzsteuer-Identifikationsnummer</h2>
+
+            <p><strong>Umsatzsteuer-ID gemäß §27a Umsatzsteuergesetz:</strong><br>
+            In Bearbeitung (beantragt am 21.10.2025)</p>
+
+            <p><strong>Hinweis für Kleinunternehmer:</strong><br>
+            Als Kleinunternehmer im Sinne von § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet.</p>
+
+            <hr>
+
+            <h2>Handelsregister</h2>
+
+            <p>Nicht im Handelsregister eingetragen (Einzelunternehmen/Kleingewerbe).</p>
+
+            <hr>
+
+            <h2>Verantwortlich für den Inhalt</h2>
+
+            <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+            Serena Sarlo<br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            Deutschland</p>
+
+            <hr>
+
+            <h2>Haftungsausschluss</h2>
+
+            <h3>Haftung für Inhalte</h3>
+
+            <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+            <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+            <h3>Haftung für Links</h3>
+
+            <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+
+            <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+            <h3>Urheberrecht</h3>
+
+            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+
+            <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+            <hr>
+
+            <h2>Streitbeilegung</h2>
+
+            <p><strong>Hinweis zur außergerichtlichen Streitbeilegung:</strong></p>
+
+            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+            <p>Da unser Unternehmen hauptsächlich im B2B-Bereich tätig ist, besteht keine Verpflichtung zur Teilnahme an Streitbeilegungsverfahren.</p>
+
+            <hr>
+
+            <h2>Produktsicherheit und Rückverfolgbarkeit</h2>
+
+            <p>Gemäß der EU-Verordnung 2023/988 (General Product Safety Regulation - GPSR) sind wir verpflichtet, folgende Informationen bereitzustellen:</p>
+
+            <p><strong>Produktverantwortlicher in der EU:</strong><br>
+            Serena Sarlo<br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            Deutschland<br>
+            E-Mail: <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></p>
+
+            <hr>
+
+            <p><strong>Letzte Aktualisierung:</strong> 02.11.2025</p>
+        </div>
+
+        <!-- ENGLISH -->
+        <div class="lang-content" id="content-en">
+            <h1>Legal Notice / Imprint</h1>
+
+            <h2>Information pursuant to § 5 DDG (Digital Services Act)</h2>
+
+            <p><strong>Operator and Contact:</strong></p>
+
+            <p>
+                Serena Sarlo<br>
+                Äussere Uferstrasse 16<br>
+                86154 Augsburg<br>
+                Germany
+            </p>
+
+            <p><strong>Contact:</strong></p>
+            <ul>
+                <li><strong>Phone:</strong> +49 152 22466077</li>
+                <li><strong>E-Mail:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></li>
+                <li><strong>WhatsApp:</strong> +49 152 22466077</li>
+            </ul>
+
+            <p><strong>Business Hours:</strong></p>
+            <ul>
+                <li>Monday - Friday: 09:00 - 18:00</li>
+                <li>Saturday: 10:00 - 14:00</li>
+                <li>Sunday: Closed</li>
+            </ul>
+
+            <hr>
+
+            <h2>VAT Identification Number</h2>
+
+            <p><strong>VAT ID according to §27a German VAT Act:</strong><br>
+            Currently being processed (applied for on October 21, 2025)</p>
+
+            <p><strong>Note for small businesses:</strong><br>
+            As a small business owner under § 19 Abs. 1 UStG (German VAT Act), no VAT is charged.</p>
+
+            <hr>
+
+            <h2>Commercial Register</h2>
+
+            <p>Not registered in the commercial register (sole proprietorship/small business).</p>
+
+            <hr>
+
+            <h2>Responsible for Content</h2>
+
+            <p><strong>Responsible for content according to § 55 Abs. 2 RStV:</strong><br>
+            Serena Sarlo<br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            Germany</p>
+
+            <hr>
+
+            <h2>Disclaimer</h2>
+
+            <h3>Liability for Content</h3>
+
+            <p>The content of our pages has been created with the utmost care. However, we cannot guarantee the accuracy, completeness, and timeliness of the content. As a service provider, we are responsible for our own content on these pages under general laws according to § 7 Abs.1 DDG.</p>
+
+            <h3>Liability for Links</h3>
+
+            <p>Our offer contains links to external third-party websites over whose content we have no control. Therefore, we cannot assume any liability for this external content.</p>
+
+            <h3>Copyright</h3>
+
+            <p>The content and works created by the site operators on these pages are subject to German copyright law.</p>
+
+            <hr>
+
+            <h2>Dispute Resolution</h2>
+
+            <p>We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+
+            <hr>
+
+            <h2>Product Safety and Traceability</h2>
+
+            <p>According to EU Regulation 2023/988 (General Product Safety Regulation - GPSR):</p>
+
+            <p><strong>Product Responsible Person in the EU:</strong><br>
+            Serena Sarlo<br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            Germany<br>
+            E-Mail: <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></p>
+
+            <hr>
+
+            <p><strong>Last Updated:</strong> November 02, 2025</p>
+        </div>
+
+        <!-- ITALIANO -->
+        <div class="lang-content" id="content-it">
+            <h1>Informazioni Legali / Impressum</h1>
+
+            <h2>Informazioni ai sensi del § 5 DDG (Legge sui Servizi Digitali)</h2>
+
+            <p><strong>Titolare e Contatti:</strong></p>
+
+            <p>
+                Serena Sarlo<br>
+                Äussere Uferstrasse 16<br>
+                86154 Augsburg<br>
+                Germania
+            </p>
+
+            <p><strong>Contatti:</strong></p>
+            <ul>
+                <li><strong>Telefono:</strong> +49 152 22466077</li>
+                <li><strong>E-Mail:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></li>
+                <li><strong>WhatsApp:</strong> +49 152 22466077</li>
+            </ul>
+
+            <p><strong>Orari di Apertura:</strong></p>
+            <ul>
+                <li>Lunedì - Venerdì: 09:00 - 18:00</li>
+                <li>Sabato: 10:00 - 14:00</li>
+                <li>Domenica: Chiuso</li>
+            </ul>
+
+            <hr>
+
+            <h2>Partita IVA</h2>
+
+            <p><strong>Partita IVA secondo §27a UStG:</strong><br>
+            In fase di elaborazione (richiesta il 21.10.2025)</p>
+
+            <p><strong>Nota per piccole imprese:</strong><br>
+            In qualità di piccola impresa ai sensi del § 19 Abs. 1 UStG (Legge tedesca sull'IVA), non viene addebitata l'IVA.</p>
+
+            <hr>
+
+            <h2>Registro delle Imprese</h2>
+
+            <p>Non iscritto al registro delle imprese (ditta individuale/piccola impresa).</p>
+
+            <hr>
+
+            <h2>Responsabile dei Contenuti</h2>
+
+            <p><strong>Responsabile dei contenuti secondo § 55 Abs. 2 RStV:</strong><br>
+            Serena Sarlo<br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            Germania</p>
+
+            <hr>
+
+            <h2>Esclusione di Responsabilità</h2>
+
+            <h3>Responsabilità per i Contenuti</h3>
+
+            <p>I contenuti delle nostre pagine sono stati creati con la massima cura. Tuttavia, non possiamo garantire l'accuratezza, completezza e attualità dei contenuti. Come fornitore di servizi, siamo responsabili dei nostri contenuti su queste pagine secondo le leggi generali ai sensi del § 7 Abs.1 DDG.</p>
+
+            <h3>Responsabilità per i Link</h3>
+
+            <p>La nostra offerta contiene link a siti web esterni di terze parti sui cui contenuti non abbiamo alcun controllo. Pertanto, non possiamo assumere alcuna responsabilità per questi contenuti esterni.</p>
+
+            <h3>Copyright</h3>
+
+            <p>I contenuti e le opere creati dagli operatori del sito su queste pagine sono soggetti alla legge tedesca sul copyright.</p>
+
+            <hr>
+
+            <h2>Risoluzione delle Controversie</h2>
+
+            <p>Non siamo disposti né obbligati a partecipare a procedure di risoluzione delle controversie davanti a un organismo di conciliazione dei consumatori.</p>
+
+            <hr>
+
+            <h2>Sicurezza dei Prodotti e Tracciabilità</h2>
+
+            <p>Secondo il Regolamento UE 2023/988 (General Product Safety Regulation - GPSR):</p>
+
+            <p><strong>Responsabile del Prodotto nell'UE:</strong><br>
+            Serena Sarlo<br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            Germania<br>
+            E-Mail: <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></p>
+
+            <hr>
+
+            <p><strong>Ultimo Aggiornamento:</strong> 02.11.2025</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected language
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // Load saved language preference on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && ['de', 'en', 'it'].includes(savedLang)) {
+                switchLang(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
