@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page_title">Contact - ABCspareparts.eu | Express Spare Parts Inquiry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* BASE STYLES & CENTERING - Match Original Site */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Arial, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            background: #003366; /* Dark Industrial Blue from original */
+            color: #222c3a;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 920px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(0,32,64,0.22);
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* LOGO STYLES */
+        .logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .logo svg {
+            max-width: 760px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* UNDER CONSTRUCTION SECTION - Match Original */
+        h1 {
+            color: #002147;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 24px 0 16px 0;
+            text-align: center;
+            line-height: 1.05;
+        }
+
+        .subtitle {
+            color: #222c3a;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .launch {
+            color: #0066CC;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            width: 100%;
+            border-top: 1px solid #e3e8ee;
+            padding-top: 18px;
+            margin-top: 42px;
+        }
+
+        .contact-heading {
+            color: #002147;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 24px 0;
+            text-align: center;
+        }
+
+        /* CONTACT CARDS GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 1px solid #e3e8ee;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .contact-card .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222c3a;
+        }
+
+        .contact-card p {
+            font-size: 14px;
+            color: #666F7F;
+            margin: 0 0 16px 0;
+        }
+
+        .contact-card .btn {
+            background: #0066CC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-card .btn:hover {
+            background: #0052a3;
+        }
+
+        /* CONTACT INFO - Match Original Footer Style */
+        .contact-info {
+            color: #222c3a;
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-top: 24px;
+            text-align: center;
+            border-top: 1px solid #e3e8ee;
+            padding-top: 18px;
+            width: 100%;
+        }
+
+        .contact-info a {
+            color: #0066CC;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info-item {
+            margin: 8px 0;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.05rem;
+            }
+
+            .launch {
+                font-size: 1.05rem;
+            }
+
+            .contact-heading {
+                font-size: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LOGO SECTION - Original SVG -->
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200">
+                <g transform="translate(125,90)" stroke="#0066CC" stroke-width="2" fill="none">
+                    <circle r="35" stroke-width="4"/>
+                    <ellipse rx="45" ry="18" transform="rotate(25)"/>
+                    <ellipse rx="45" ry="18" transform="rotate(-25)"/>
+                    <circle cx="30" cy="-10" r="6" fill="#0066CC"/>
+                </g>
+                <g transform="translate(240,70)" font-family="Montserrat, Arial, sans-serif">
+                    <text x="0" y="0" font-size="38" font-weight="700" fill="#0066CC">ABCspareparts</text>
+                    <text x="0" y="36" font-size="16" font-weight="600" fill="#666F7F">Your Trusted Partner for High-Quality Industrial Spares</text>
+                    <text x="0" y="68" font-size="14" font-weight="300" fill="#666F7F">With years of industry experience, we specialize</text>
+                    <text x="0" y="86" font-size="14" font-weight="300" fill="#666F7F">in the distribution of components for industrial automation,</text>
+                    <text x="0" y="104" font-size="14" font-weight="300" fill="#666F7F">sensors, actuators, and control devices from leading manufacturers.</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- UNDER CONSTRUCTION SECTION - Match Original -->
+        <h1 data-translate="construction_title">Website Under Construction</h1>
+        <div class="subtitle" data-translate="construction_subtitle">We are currently preparing our product catalog for launch.</div>
+        <div class="launch" data-translate="construction_badge">Coming Soon</div>
+
+        <!-- CONTACT SECTION -->
+        <div class="contact-section">
+            <h2 class="contact-heading" data-translate="contact_heading">Contact Us</h2>
+
+            <!-- CONTACT CARDS -->
+            <div class="contact-grid">
+                <!-- EMAIL CARD -->
+                <a href="mailto:info@abcspareparts.eu" id="email-link" class="contact-card">
+                    <div class="icon">📧</div>
+                    <h3 data-translate="email_title">Email Inquiry</h3>
+                    <p data-translate="email_desc">Pre-filled inquiry</p>
+                    <span class="btn" data-translate="email_btn">Send Email</span>
+                </a>
+
+                <!-- WHATSAPP CARD -->
+                <a href="https://wa.me/4915222466077" id="whatsapp-link" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">💬</div>
+                    <h3 data-translate="whatsapp_title">WhatsApp</h3>
+                    <p data-translate="whatsapp_desc">Quick response</p>
+                    <span class="btn" data-translate="whatsapp_btn">Open WhatsApp</span>
+                </a>
+
+                <!-- PHONE CARD -->
+                <a href="tel:+4915222466077" class="contact-card">
+                    <div class="icon">📞</div>
+                    <h3 data-translate="phone_title">Call Us</h3>
+                    <p data-translate="phone_desc">Mon-Fri 8:00-18:00</p>
+                    <span class="btn" data-translate="phone_btn">Call Now</span>
+                </a>
+            </div>
+
+            <!-- CONTACT INFO -->
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <strong data-translate="info_email">Email:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a>
+                </div>
+                <div class="contact-info-item">
+                    <strong data-translate="info_phone">Phone:</strong> <a href="tel:+4915222466077">+49 152 22466077</a>
+                </div>
+                <div class="contact-info-item">
+                    <strong data-translate="info_whatsapp">WhatsApp:</strong> +49 152 22466077
+                </div>
+                <div class="contact-info-item">
+                    <strong data-translate="info_hours">Hours:</strong> <span data-translate="info_hours_value">Mon-Fri 8:00-18:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // TRANSLATIONS
+        const translations = {
+            en: {
+                page_title: "Contact - ABCspareparts.eu | Express Spare Parts Inquiry",
+                construction_title: "Website Under Construction",
+                construction_subtitle: "We are currently preparing our product catalog for launch.",
+                construction_badge: "Coming Soon",
+                contact_heading: "Contact Us",
+                email_title: "Email Inquiry",
+                email_desc: "Pre-filled inquiry",
+                email_btn: "Send Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Quick response",
+                whatsapp_btn: "Open WhatsApp",
+                phone_title: "Call Us",
+                phone_desc: "Mon-Fri 8:00-18:00",
+                phone_btn: "Call Now",
+                info_email: "Email:",
+                info_phone: "Phone:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Hours:",
+                info_hours_value: "Mon-Fri 8:00-18:00"
+            },
+            de: {
+                page_title: "Kontakt - ABCspareparts.eu | Express-Ersatzteilanfrage",
+                construction_title: "Website im Aufbau",
+                construction_subtitle: "Wir bereiten derzeit unseren Produktkatalog für die Veröffentlichung vor.",
+                construction_badge: "Demnächst verfügbar",
+                contact_heading: "Kontaktieren Sie uns",
+                email_title: "E-Mail Anfrage",
+                email_desc: "Vorausgefüllte Anfrage",
+                email_btn: "E-Mail senden",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Schnelle Antwort",
+                whatsapp_btn: "WhatsApp öffnen",
+                phone_title: "Anrufen",
+                phone_desc: "Mo-Fr 8:00-18:00",
+                phone_btn: "Jetzt anrufen",
+                info_email: "E-Mail:",
+                info_phone: "Telefon:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Öffnungszeiten:",
+                info_hours_value: "Mo-Fr 8:00-18:00 Uhr"
+            },
+            it: {
+                page_title: "Contatto - ABCspareparts.eu | Richiesta Parti di Ricambio Express",
+                construction_title: "Sito in Costruzione",
+                construction_subtitle: "Stiamo attualmente preparando il nostro catalogo prodotti per il lancio.",
+                construction_badge: "Prossimamente",
+                contact_heading: "Contattaci",
+                email_title: "Richiesta via Email",
+                email_desc: "Richiesta precompilata",
+                email_btn: "Invia Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Risposta rapida",
+                whatsapp_btn: "Apri WhatsApp",
+                phone_title: "Chiamaci",
+                phone_desc: "Lun-Ven 8:00-18:00",
+                phone_btn: "Chiama ora",
+                info_email: "Email:",
+                info_phone: "Telefono:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Orari:",
+                info_hours_value: "Lun-Ven 8:00-18:00"
+            },
+            fr: {
+                page_title: "Contact - ABCspareparts.eu | Demande de Pièces Détachées Express",
+                construction_title: "Site en Construction",
+                construction_subtitle: "Nous préparons actuellement notre catalogue de produits pour le lancement.",
+                construction_badge: "Bientôt disponible",
+                contact_heading: "Contactez-nous",
+                email_title: "Demande par Email",
+                email_desc: "Demande pré-remplie",
+                email_btn: "Envoyer Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Réponse rapide",
+                whatsapp_btn: "Ouvrir WhatsApp",
+                phone_title: "Appelez-nous",
+                phone_desc: "Lun-Ven 8:00-18:00",
+                phone_btn: "Appeler",
+                info_email: "Email:",
+                info_phone: "Téléphone:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Horaires:",
+                info_hours_value: "Lun-Ven 8:00-18:00"
+            },
+            es: {
+                page_title: "Contacto - ABCspareparts.eu | Solicitud de Repuestos Express",
+                construction_title: "Sitio en Construcción",
+                construction_subtitle: "Actualmente estamos preparando nuestro catálogo de productos para el lanzamiento.",
+                construction_badge: "Próximamente",
+                contact_heading: "Contáctenos",
+                email_title: "Solicitud por Email",
+                email_desc: "Solicitud precompletada",
+                email_btn: "Enviar Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Respuesta rápida",
+                whatsapp_btn: "Abrir WhatsApp",
+                phone_title: "Llámenos",
+                phone_desc: "Lun-Vie 8:00-18:00",
+                phone_btn: "Llamar ahora",
+                info_email: "Email:",
+                info_phone: "Teléfono:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Horario:",
+                info_hours_value: "Lun-Vie 8:00-18:00"
+            }
+        };
+
+        // EMAIL TEMPLATES
+        const emailTemplates = {
+            en: "mailto:info@abcspareparts.eu?subject=Spare%20Parts%20Inquiry%20from%20abcspareparts.eu&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20the%20following%20spare%20part:%0D%0A%0D%0APart%20Number:%20%0D%0A%0D%0AManufacturer:%20%0D%0A%0D%0ACompany:%20%0D%0A%0D%0APhone:%20%0D%0A%0D%0AUrgency:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ADescription/Additional%20Information:%0D%0A%0D%0A%0D%0ABest%20regards",
+            de: "mailto:info@abcspareparts.eu?subject=Ersatzteil-Anfrage%20von%20abcspareparts.eu&body=Guten%20Tag,%0D%0A%0D%0AIch%20interessiere%20mich%20für%20folgendes%20Ersatzteil:%0D%0A%0D%0AArtikel-/Bestellnummer:%20%0D%0A%0D%0AHersteller:%20%0D%0A%0D%0AFirma:%20%0D%0A%0D%0ATelefon:%20%0D%0A%0D%0ADringlichkeit:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ABeschreibung/Zusatzinformationen:%0D%0A%0D%0A%0D%0AMit%20freundlichen%20Grüßen",
+            it: "mailto:info@abcspareparts.eu?subject=Richiesta%20Parti%20di%20Ricambio%20da%20abcspareparts.eu&body=Buongiorno,%0D%0A%0D%0ASono%20interessato%20alla%20seguente%20parte%20di%20ricambio:%0D%0A%0D%0ANumero%20Parte:%20%0D%0A%0D%0AProduttore:%20%0D%0A%0D%0AAzienda:%20%0D%0A%0D%0ATelefono:%20%0D%0A%0D%0AUrgenza:%20☐%20Normale%20%20☐%20Express%0D%0A%0D%0ADescrizione/Informazioni%20aggiuntive:%0D%0A%0D%0A%0D%0ACordiali%20saluti",
+            fr: "mailto:info@abcspareparts.eu?subject=Demande%20de%20Pièces%20Détachées%20de%20abcspareparts.eu&body=Bonjour,%0D%0A%0D%0AJe%20suis%20intéressé%20par%20la%20pièce%20détachée%20suivante:%0D%0A%0D%0ANuméro%20de%20Pièce:%20%0D%0A%0D%0AFabricant:%20%0D%0A%0D%0AEntreprise:%20%0D%0A%0D%0ATéléphone:%20%0D%0A%0D%0AUrgence:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ADescription/Informations%20complémentaires:%0D%0A%0D%0A%0D%0ACordialement",
+            es: "mailto:info@abcspareparts.eu?subject=Solicitud%20de%20Repuestos%20de%20abcspareparts.eu&body=Hola,%0D%0A%0D%0AEstoy%20interesado%20en%20la%20siguiente%20pieza%20de%20repuesto:%0D%0A%0D%0ANúmero%20de%20Pieza:%20%0D%0A%0D%0AFabricante:%20%0D%0A%0D%0AEmpresa:%20%0D%0A%0D%0ATeléfono:%20%0D%0A%0D%0AUrgencia:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ADescripción/Información%20adicional:%0D%0A%0D%0A%0D%0ASaludos%20cordiales"
+        };
+
+        // WHATSAPP TEMPLATES
+        const whatsappTemplates = {
+            en: "Hello, I am looking for the following spare part: ",
+            de: "Hallo, ich suche folgendes Ersatzteil: ",
+            it: "Ciao, sto cercando la seguente parte di ricambio: ",
+            fr: "Bonjour, je recherche la pièce détachée suivante: ",
+            es: "Hola, busco la siguiente pieza de repuesto: "
+        };
+
+        let currentLanguage = 'en';
+
+        // DETECT BROWSER LANGUAGE
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.split('-')[0];
+            return translations[langCode] ? langCode : 'en';
+        }
+
+        // CHANGE LANGUAGE
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update page title
+            document.title = translations[lang].page_title;
+
+            // Update language attribute
+            document.getElementById('html-root').setAttribute('lang', lang);
+
+            // Update email link with language-specific template
+            const emailLink = document.getElementById('email-link');
+            if (emailLink && emailTemplates[lang]) {
+                emailLink.href = emailTemplates[lang];
+            }
+
+            // Update WhatsApp link with language-specific message
+            const whatsappLink = document.getElementById('whatsapp-link');
+            if (whatsappLink && whatsappTemplates[lang]) {
+                whatsappLink.href = `https://wa.me/4915222466077?text=${encodeURIComponent(whatsappTemplates[lang])}`;
+            }
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // INITIALIZE ON PAGE LOAD
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const detectedLang = detectLanguage();
+            const initialLang = savedLang || detectedLang;
+
+            changeLanguage(initialLang);
+        });
+    </script>
+</body>
+</html>
