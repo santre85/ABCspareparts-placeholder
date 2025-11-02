@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page_title">Contact - ABCspareparts.eu | Express Spare Parts Inquiry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* BASE STYLES & CENTERING - Match Original Site */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Arial, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            background: #003366; /* Dark Industrial Blue from original */
+            color: #222c3a;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 920px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(0,32,64,0.22);
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* LOGO STYLES */
+        .logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .logo svg {
+            max-width: 760px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* UNDER CONSTRUCTION SECTION - Match Original */
+        h1 {
+            color: #002147;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 24px 0 16px 0;
+            text-align: center;
+            line-height: 1.05;
+        }
+
+        .subtitle {
+            color: #222c3a;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .launch {
+            color: #0066CC;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            width: 100%;
+            border-top: 1px solid #e3e8ee;
+            padding-top: 18px;
+            margin-top: 42px;
+        }
+
+        .contact-heading {
+            color: #002147;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 24px 0;
+            text-align: center;
+        }
+
+        /* CONTACT CARDS GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 1px solid #e3e8ee;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .contact-card .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #222c3a;
+        }
+
+        .contact-card p {
+            font-size: 14px;
+            color: #666F7F;
+            margin: 0 0 16px 0;
+        }
+
+        .contact-card .btn {
+            background: #0066CC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-card .btn:hover {
+            background: #0052a3;
+        }
+
+        /* CONTACT INFO - Match Original Footer Style */
+        .contact-info {
+            color: #222c3a;
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-top: 24px;
+            text-align: center;
+            border-top: 1px solid #e3e8ee;
+            padding-top: 18px;
+            width: 100%;
+        }
+
+        .contact-info a {
+            color: #0066CC;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info-item {
+            margin: 8px 0;
+        }
+
+        /* LEGAL FOOTER */
+        .legal-footer {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #e3e8ee;
+            text-align: center;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        .legal-footer a {
+            color: #666F7F;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .legal-footer a:hover {
+            color: #0066CC;
+            text-decoration: underline;
+        }
+
+        .legal-footer .separator {
+            margin: 0 12px;
+            color: #e3e8ee;
+        }
+
+        /* IMPRESSUM MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 51, 102, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 18px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 8px 32px 0 rgba(0,32,64,0.22);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 28px;
+            color: #666F7F;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #0066CC;
+        }
+
+        .modal-content h2 {
+            color: #002147;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 24px 0;
+        }
+
+        .modal-content h3 {
+            color: #0066CC;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+        }
+
+        .modal-content p {
+            color: #222c3a;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .modal-content strong {
+            color: #002147;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-content h2 {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding: 30px 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.05rem;
+            }
+
+            .launch {
+                font-size: 1.05rem;
+            }
+
+            .contact-heading {
+                font-size: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LOGO SECTION - Original SVG -->
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200">
+                <g transform="translate(125,90)" stroke="#0066CC" stroke-width="2" fill="none">
+                    <circle r="35" stroke-width="4"/>
+                    <ellipse rx="45" ry="18" transform="rotate(25)"/>
+                    <ellipse rx="45" ry="18" transform="rotate(-25)"/>
+                    <circle cx="30" cy="-10" r="6" fill="#0066CC"/>
+                </g>
+                <g transform="translate(240,70)" font-family="Montserrat, Arial, sans-serif">
+                    <text x="0" y="0" font-size="38" font-weight="700" fill="#0066CC">ABCspareparts</text>
+                    <text x="0" y="36" font-size="16" font-weight="600" fill="#666F7F">Your Trusted Partner for High-Quality Industrial Spares</text>
+                    <text x="0" y="68" font-size="14" font-weight="300" fill="#666F7F">With years of industry experience, we specialize</text>
+                    <text x="0" y="86" font-size="14" font-weight="300" fill="#666F7F">in the distribution of components for industrial automation,</text>
+                    <text x="0" y="104" font-size="14" font-weight="300" fill="#666F7F">sensors, actuators, and control devices from leading manufacturers.</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- UNDER CONSTRUCTION SECTION - Match Original -->
+        <h1 data-translate="construction_title">Website Under Construction</h1>
+        <div class="subtitle" data-translate="construction_subtitle">We are currently preparing our product catalog for launch.</div>
+        <div class="launch" data-translate="construction_badge">Coming Soon</div>
+
+        <!-- CONTACT SECTION -->
+        <div class="contact-section">
+            <h2 class="contact-heading" data-translate="contact_heading">Contact Us</h2>
+
+            <!-- CONTACT CARDS -->
+            <div class="contact-grid">
+                <!-- EMAIL CARD -->
+                <a href="mailto:info@abcspareparts.eu" id="email-link" class="contact-card">
+                    <div class="icon">📧</div>
+                    <h3 data-translate="email_title">Email Inquiry</h3>
+                    <p data-translate="email_desc">Pre-filled inquiry</p>
+                    <span class="btn" data-translate="email_btn">Send Email</span>
+                </a>
+
+                <!-- WHATSAPP CARD -->
+                <a href="https://wa.me/4915222466077" id="whatsapp-link" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">💬</div>
+                    <h3 data-translate="whatsapp_title">WhatsApp</h3>
+                    <p data-translate="whatsapp_desc">Quick response</p>
+                    <span class="btn" data-translate="whatsapp_btn">Open WhatsApp</span>
+                </a>
+
+                <!-- PHONE CARD -->
+                <a href="tel:+4915222466077" class="contact-card">
+                    <div class="icon">📞</div>
+                    <h3 data-translate="phone_title">Call Us</h3>
+                    <p data-translate="phone_desc">Mon-Fri 8:00-18:00</p>
+                    <span class="btn" data-translate="phone_btn">Call Now</span>
+                </a>
+            </div>
+
+            <!-- CONTACT INFO -->
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <strong data-translate="info_email">Email:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a>
+                </div>
+                <div class="contact-info-item">
+                    <strong data-translate="info_phone">Phone:</strong> <a href="tel:+4915222466077">+49 152 22466077</a>
+                </div>
+                <div class="contact-info-item">
+                    <strong data-translate="info_whatsapp">WhatsApp:</strong> +49 152 22466077
+                </div>
+                <div class="contact-info-item">
+                    <strong data-translate="info_hours">Hours:</strong> <span data-translate="info_hours_value">Mon-Fri 8:00-18:00</span>
+                </div>
+            </div>
+
+            <!-- LEGAL FOOTER -->
+            <div class="legal-footer">
+                <a href="/impressum-final.html" data-translate="legal_impressum">Impressum</a>
+                <span class="separator">|</span>
+                <a href="/datenschutz-final.html" data-translate="legal_privacy">Datenschutz</a>
+                <span class="separator">|</span>
+                <a href="/agb-final.html" data-translate="legal_agb">AGB</a>
+                <span class="separator">|</span>
+                <a href="/versand-final.html" data-translate="legal_versand">Versand</a>
+                <span class="separator">|</span>
+                <a href="/cookie-policy-final.html" data-translate="legal_cookies">Cookies</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // TRANSLATIONS
+        const translations = {
+            en: {
+                page_title: "Contact - ABCspareparts.eu | Express Spare Parts Inquiry",
+                construction_title: "Website Under Construction",
+                construction_subtitle: "We are currently preparing our product catalog for launch.",
+                construction_badge: "Coming Soon",
+                contact_heading: "Contact Us",
+                email_title: "Email Inquiry",
+                email_desc: "Pre-filled inquiry",
+                email_btn: "Send Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Quick response",
+                whatsapp_btn: "Open WhatsApp",
+                phone_title: "Call Us",
+                phone_desc: "Mon-Fri 8:00-18:00",
+                phone_btn: "Call Now",
+                info_email: "Email:",
+                info_phone: "Phone:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Hours:",
+                info_hours_value: "Mon-Fri 8:00-18:00",
+                legal_impressum: "Impressum",
+                legal_privacy: "Privacy Policy",
+                legal_agb: "Terms & Conditions",
+                legal_versand: "Shipping",
+                legal_cookies: "Cookies",
+                impressum_title: "Impressum",
+                impressum_company_info: "Company Information according to § 5 TMG",
+                impressum_owner: "Owner:",
+                impressum_address: "Address:",
+                impressum_country: "Germany",
+                impressum_contact: "Contact",
+                impressum_phone: "Phone:",
+                impressum_legal: "Legal Information",
+                impressum_vat: "VAT ID:",
+                impressum_tax: "Tax Number:",
+                impressum_vat_status: "In process (requested on 21.10.2025)",
+                impressum_tax_status: "In process (requested on 21.10.2025)",
+                impressum_note: "VAT ID and Tax Number were requested from the tax office on 21.10.2025 and will be updated here once assigned."
+            },
+            de: {
+                page_title: "Kontakt - ABCspareparts.eu | Express-Ersatzteilanfrage",
+                construction_title: "Website im Aufbau",
+                construction_subtitle: "Wir bereiten derzeit unseren Produktkatalog für die Veröffentlichung vor.",
+                construction_badge: "Demnächst verfügbar",
+                contact_heading: "Kontaktieren Sie uns",
+                email_title: "E-Mail Anfrage",
+                email_desc: "Vorausgefüllte Anfrage",
+                email_btn: "E-Mail senden",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Schnelle Antwort",
+                whatsapp_btn: "WhatsApp öffnen",
+                phone_title: "Anrufen",
+                phone_desc: "Mo-Fr 8:00-18:00",
+                phone_btn: "Jetzt anrufen",
+                info_email: "E-Mail:",
+                info_phone: "Telefon:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Öffnungszeiten:",
+                info_hours_value: "Mo-Fr 8:00-18:00 Uhr",
+                legal_impressum: "Impressum",
+                legal_privacy: "Datenschutz"
+            },
+                legal_agb: "AGB",
+                legal_versand: "Versand",
+                legal_cookies: "Cookies",
+            it: {
+                page_title: "Contatto - ABCspareparts.eu | Richiesta Parti di Ricambio Express",
+                construction_title: "Sito in Costruzione",
+                construction_subtitle: "Stiamo attualmente preparando il nostro catalogo prodotti per il lancio.",
+                construction_badge: "Prossimamente",
+                contact_heading: "Contattaci",
+                email_title: "Richiesta via Email",
+                email_desc: "Richiesta precompilata",
+                email_btn: "Invia Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Risposta rapida",
+                whatsapp_btn: "Apri WhatsApp",
+                phone_title: "Chiamaci",
+                phone_desc: "Lun-Ven 8:00-18:00",
+                phone_btn: "Chiama ora",
+                info_email: "Email:",
+                info_phone: "Telefono:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Orari:",
+                info_hours_value: "Lun-Ven 8:00-18:00",
+                legal_impressum: "Impressum",
+                legal_privacy: "Privacy"
+            },
+                legal_agb: "Termini",
+                legal_versand: "Spedizione",
+                legal_cookies: "Cookie",
+            fr: {
+                page_title: "Contact - ABCspareparts.eu | Demande de Pièces Détachées Express",
+                construction_title: "Site en Construction",
+                construction_subtitle: "Nous préparons actuellement notre catalogue de produits pour le lancement.",
+                construction_badge: "Bientôt disponible",
+                contact_heading: "Contactez-nous",
+                email_title: "Demande par Email",
+                email_desc: "Demande pré-remplie",
+                email_btn: "Envoyer Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Réponse rapide",
+                whatsapp_btn: "Ouvrir WhatsApp",
+                phone_title: "Appelez-nous",
+                phone_desc: "Lun-Ven 8:00-18:00",
+                phone_btn: "Appeler",
+                info_email: "Email:",
+                info_phone: "Téléphone:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Horaires:",
+                info_hours_value: "Lun-Ven 8:00-18:00",
+                legal_impressum: "Mentions légales",
+                legal_privacy: "Confidentialité"
+            },
+            es: {
+                page_title: "Contacto - ABCspareparts.eu | Solicitud de Repuestos Express",
+                construction_title: "Sitio en Construcción",
+                construction_subtitle: "Actualmente estamos preparando nuestro catálogo de productos para el lanzamiento.",
+                construction_badge: "Próximamente",
+                contact_heading: "Contáctenos",
+                email_title: "Solicitud por Email",
+                email_desc: "Solicitud precompletada",
+                email_btn: "Enviar Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Respuesta rápida",
+                whatsapp_btn: "Abrir WhatsApp",
+                phone_title: "Llámenos",
+                phone_desc: "Lun-Vie 8:00-18:00",
+                phone_btn: "Llamar ahora",
+                info_email: "Email:",
+                info_phone: "Teléfono:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Horario:",
+                info_hours_value: "Lun-Vie 8:00-18:00",
+                legal_impressum: "Aviso legal",
+                legal_privacy: "Privacidad",
+                impressum_title: "Aviso Legal",
+                impressum_company_info: "Información de la Empresa",
+                impressum_owner: "Propietario:",
+                impressum_address: "Dirección:",
+                impressum_country: "Alemania",
+                impressum_contact: "Contacto",
+                impressum_phone: "Teléfono:",
+                impressum_legal: "Información Legal",
+                impressum_vat: "NIF/CIF:",
+                impressum_tax: "Número Fiscal:",
+                impressum_vat_status: "En trámite (solicitado el 21.10.2025)",
+                impressum_tax_status: "En trámite (solicitado el 21.10.2025)",
+                impressum_note: "El NIF/CIF y el número fiscal se solicitaron a la autoridad fiscal el 21.10.2025 y se actualizarán aquí una vez asignados.",
+                privacy_title: "Política de Privacidad",
+                privacy_intro: "La protección de sus datos personales es muy importante para nosotros. A continuación le informamos sobre qué datos se recopilan en nuestro sitio web y cómo se utilizan.",
+                privacy_h1: "1. Responsable",
+                privacy_h2: "2. Recopilación y Almacenamiento de Datos Personales",
+                privacy_h2_text: "Puede visitar nuestro sitio web sin proporcionar información personal. Al acceder al sitio, solo se almacenan datos técnicos de acceso (dirección IP, hora de acceso, etc.) para estadísticas del servidor, que no permiten identificarlo personalmente.\n\nLos datos personales (nombre, apellido, empresa, dirección de correo electrónico, y opcionalmente dirección y teléfono) solo se recopilan si usted nos los proporciona voluntariamente a través de consultas de contacto, pedidos o formularios de leads.",
+                privacy_h3: "3. Uso de sus Datos",
+                privacy_h3_text: "Utilizamos los datos que nos proporciona exclusivamente para procesar su solicitud, para contactarlo y para gestionar pedidos. La transmisión solo ocurre en la medida necesaria para el cumplimiento del contrato (por ejemplo, a proveedores de envío).",
+                privacy_h4: "4. Divulgación a Terceros",
+                privacy_h4_text: "No se transmitirán sus datos a terceros sin su consentimiento expreso, excepto cuando sea legalmente requerido para el cumplimiento del contrato.",
+                privacy_h5: "5. Sus Derechos",
+                privacy_h5_text: "Tiene derecho en cualquier momento a solicitar información sobre los datos almacenados, su origen y destinatarios, así como el propósito del procesamiento. Además, tiene derecho a la corrección, bloqueo o eliminación de estos datos.",
+                privacy_h6: "6. Contacto para Consultas de Protección de Datos",
+                privacy_h7: "7. Cambios",
+                privacy_h7_text: "Nos reservamos el derecho de ajustar esta política de privacidad ocasionalmente para que siempre cumpla con los requisitos legales actuales."
+            },
+            de: {
+                page_title: "Kontakt - ABCspareparts.eu | Express-Ersatzteilanfrage",
+                construction_title: "Website im Aufbau",
+                construction_subtitle: "Wir bereiten derzeit unseren Produktkatalog für die Veröffentlichung vor.",
+                construction_badge: "Demnächst verfügbar",
+                contact_heading: "Kontaktieren Sie uns",
+                email_title: "E-Mail Anfrage",
+                email_desc: "Vorausgefüllte Anfrage",
+                email_btn: "E-Mail senden",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Schnelle Antwort",
+                whatsapp_btn: "WhatsApp öffnen",
+                phone_title: "Anrufen",
+                phone_desc: "Mo-Fr 8:00-18:00",
+                phone_btn: "Jetzt anrufen",
+                info_email: "E-Mail:",
+                info_phone: "Telefon:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Öffnungszeiten:",
+                info_hours_value: "Mo-Fr 8:00-18:00 Uhr",
+                legal_impressum: "Impressum",
+                legal_privacy: "Datenschutz",
+                impressum_title: "Impressum",
+                impressum_company_info: "Angaben gemäß § 5 TMG",
+                impressum_owner: "Inhaber:",
+                impressum_address: "Anschrift:",
+                impressum_country: "Deutschland",
+                impressum_contact: "Kontakt",
+                impressum_phone: "Telefon:",
+                impressum_legal: "Rechtliche Angaben",
+                impressum_vat: "Umsatzsteuer-ID:",
+                impressum_tax: "Steuernummer:",
+                impressum_vat_status: "In Bearbeitung (beantragt am 21.10.2025)",
+                impressum_tax_status: "In Bearbeitung (beantragt am 21.10.2025)",
+                impressum_note: "Die Umsatzsteuer-ID und Steuernummer wurden am 21.10.2025 beim Finanzamt beantragt und werden nach Zuteilung hier ergänzt."
+            },
+            it: {
+                page_title: "Contatto - ABCspareparts.eu | Richiesta Parti di Ricambio Express",
+                construction_title: "Sito in Costruzione",
+                construction_subtitle: "Stiamo attualmente preparando il nostro catalogo prodotti per il lancio.",
+                construction_badge: "Prossimamente",
+                contact_heading: "Contattaci",
+                email_title: "Richiesta via Email",
+                email_desc: "Richiesta precompilata",
+                email_btn: "Invia Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Risposta rapida",
+                whatsapp_btn: "Apri WhatsApp",
+                phone_title: "Chiamaci",
+                phone_desc: "Lun-Ven 8:00-18:00",
+                phone_btn: "Chiama ora",
+                info_email: "Email:",
+                info_phone: "Telefono:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Orari:",
+                info_hours_value: "Lun-Ven 8:00-18:00",
+                legal_impressum: "Impressum",
+                legal_privacy: "Privacy",
+                impressum_title: "Impressum",
+                impressum_company_info: "Informazioni Aziendali",
+                impressum_owner: "Proprietario:",
+                impressum_address: "Indirizzo:",
+                impressum_country: "Germania",
+                impressum_contact: "Contatto",
+                impressum_phone: "Telefono:",
+                impressum_legal: "Informazioni Legali",
+                impressum_vat: "Partita IVA:",
+                impressum_tax: "Codice Fiscale:",
+                impressum_vat_status: "In elaborazione (richiesta il 21.10.2025)",
+                impressum_tax_status: "In elaborazione (richiesta il 21.10.2025)",
+                impressum_note: "La Partita IVA e il Codice Fiscale sono stati richiesti all'ufficio delle imposte il 21.10.2025 e saranno aggiornati qui una volta assegnati."
+            },
+            fr: {
+                page_title: "Contact - ABCspareparts.eu | Demande de Pièces Détachées Express",
+                construction_title: "Site en Construction",
+                construction_subtitle: "Nous préparons actuellement notre catalogue de produits pour le lancement.",
+                construction_badge: "Bientôt disponible",
+                contact_heading: "Contactez-nous",
+                email_title: "Demande par Email",
+                email_desc: "Demande pré-remplie",
+                email_btn: "Envoyer Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Réponse rapide",
+                whatsapp_btn: "Ouvrir WhatsApp",
+                phone_title: "Appelez-nous",
+                phone_desc: "Lun-Ven 8:00-18:00",
+                phone_btn: "Appeler",
+                info_email: "Email:",
+                info_phone: "Téléphone:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Horaires:",
+                info_hours_value: "Lun-Ven 8:00-18:00",
+                legal_impressum: "Mentions légales",
+                legal_privacy: "Confidentialité",
+                impressum_title: "Mentions légales",
+                impressum_company_info: "Informations sur l'Entreprise",
+                impressum_owner: "Propriétaire:",
+                impressum_address: "Adresse:",
+                impressum_country: "Allemagne",
+                impressum_contact: "Contact",
+                impressum_phone: "Téléphone:",
+                impressum_legal: "Informations Légales",
+                impressum_vat: "Numéro de TVA:",
+                impressum_tax: "Numéro Fiscal:",
+                impressum_vat_status: "En cours de traitement (demandé le 21.10.2025)",
+                impressum_tax_status: "En cours de traitement (demandé le 21.10.2025)",
+                impressum_note: "Le numéro de TVA et le numéro fiscal ont été demandés aux autorités fiscales le 21.10.2025 et seront mis à jour ici une fois attribués."
+            },
+            es: {
+                page_title: "Contacto - ABCspareparts.eu | Solicitud de Repuestos Express",
+                construction_title: "Sitio en Construcción",
+                construction_subtitle: "Actualmente estamos preparando nuestro catálogo de productos para el lanzamiento.",
+                construction_badge: "Próximamente",
+                contact_heading: "Contáctenos",
+                email_title: "Solicitud por Email",
+                email_desc: "Solicitud precompletada",
+                email_btn: "Enviar Email",
+                whatsapp_title: "WhatsApp",
+                whatsapp_desc: "Respuesta rápida",
+                whatsapp_btn: "Abrir WhatsApp",
+                phone_title: "Llámenos",
+                phone_desc: "Lun-Vie 8:00-18:00",
+                phone_btn: "Llamar ahora",
+                info_email: "Email:",
+                info_phone: "Teléfono:",
+                info_whatsapp: "WhatsApp:",
+                info_hours: "Horario:",
+                info_hours_value: "Lun-Vie 8:00-18:00",
+                legal_impressum: "Aviso legal",
+                legal_privacy: "Privacidad",
+                impressum_title: "Aviso Legal",
+                impressum_company_info: "Información de la Empresa",
+                impressum_owner: "Propietario:",
+                impressum_business_name: "Nombre Comercial:",
+                impressum_address: "Dirección:",
+                impressum_contact: "Contacto",
+                impressum_phone: "Teléfono:",
+                impressum_legal: "Información Legal",
+                impressum_vat: "NIF/CIF:",
+                impressum_tax: "Número Fiscal:",
+                impressum_note: "Nota: Reemplace la información entre paréntesis con sus datos reales."
+            }
+        };
+
+        // EMAIL TEMPLATES
+        const emailTemplates = {
+            en: "mailto:info@abcspareparts.eu?subject=Spare%20Parts%20Inquiry%20from%20abcspareparts.eu&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20the%20following%20spare%20part:%0D%0A%0D%0APart%20Number:%20%0D%0A%0D%0AManufacturer:%20%0D%0A%0D%0ACompany:%20%0D%0A%0D%0APhone:%20%0D%0A%0D%0AUrgency:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ADescription/Additional%20Information:%0D%0A%0D%0A%0D%0ABest%20regards",
+            de: "mailto:info@abcspareparts.eu?subject=Ersatzteil-Anfrage%20von%20abcspareparts.eu&body=Guten%20Tag,%0D%0A%0D%0AIch%20interessiere%20mich%20für%20folgendes%20Ersatzteil:%0D%0A%0D%0AArtikel-/Bestellnummer:%20%0D%0A%0D%0AHersteller:%20%0D%0A%0D%0AFirma:%20%0D%0A%0D%0ATelefon:%20%0D%0A%0D%0ADringlichkeit:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ABeschreibung/Zusatzinformationen:%0D%0A%0D%0A%0D%0AMit%20freundlichen%20Grüßen",
+            it: "mailto:info@abcspareparts.eu?subject=Richiesta%20Parti%20di%20Ricambio%20da%20abcspareparts.eu&body=Buongiorno,%0D%0A%0D%0ASono%20interessato%20alla%20seguente%20parte%20di%20ricambio:%0D%0A%0D%0ANumero%20Parte:%20%0D%0A%0D%0AProduttore:%20%0D%0A%0D%0AAzienda:%20%0D%0A%0D%0ATelefono:%20%0D%0A%0D%0AUrgenza:%20☐%20Normale%20%20☐%20Express%0D%0A%0D%0ADescrizione/Informazioni%20aggiuntive:%0D%0A%0D%0A%0D%0ACordiali%20saluti",
+            fr: "mailto:info@abcspareparts.eu?subject=Demande%20de%20Pièces%20Détachées%20de%20abcspareparts.eu&body=Bonjour,%0D%0A%0D%0AJe%20suis%20intéressé%20par%20la%20pièce%20détachée%20suivante:%0D%0A%0D%0ANuméro%20de%20Pièce:%20%0D%0A%0D%0AFabricant:%20%0D%0A%0D%0AEntreprise:%20%0D%0A%0D%0ATéléphone:%20%0D%0A%0D%0AUrgence:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ADescription/Informations%20complémentaires:%0D%0A%0D%0A%0D%0ACordialement",
+            es: "mailto:info@abcspareparts.eu?subject=Solicitud%20de%20Repuestos%20de%20abcspareparts.eu&body=Hola,%0D%0A%0D%0AEstoy%20interesado%20en%20la%20siguiente%20pieza%20de%20repuesto:%0D%0A%0D%0ANúmero%20de%20Pieza:%20%0D%0A%0D%0AFabricante:%20%0D%0A%0D%0AEmpresa:%20%0D%0A%0D%0ATeléfono:%20%0D%0A%0D%0AUrgencia:%20☐%20Normal%20%20☐%20Express%0D%0A%0D%0ADescripción/Información%20adicional:%0D%0A%0D%0A%0D%0ASaludos%20cordiales"
+        };
+
+        // WHATSAPP TEMPLATES
+        const whatsappTemplates = {
+            en: "Hello, I am looking for the following spare part: ",
+            de: "Hallo, ich suche folgendes Ersatzteil: ",
+            it: "Ciao, sto cercando la seguente parte di ricambio: ",
+            fr: "Bonjour, je recherche la pièce détachée suivante: ",
+            es: "Hola, busco la siguiente pieza de repuesto: "
+        };
+
+        let currentLanguage = 'en';
+
+        // DETECT BROWSER LANGUAGE
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.split('-')[0];
+            return translations[langCode] ? langCode : 'en';
+        }
+
+        // CHANGE LANGUAGE
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update page title
+            document.title = translations[lang].page_title;
+
+            // Update language attribute
+            document.getElementById('html-root').setAttribute('lang', lang);
+
+            // Update email link with language-specific template
+            const emailLink = document.getElementById('email-link');
+            if (emailLink && emailTemplates[lang]) {
+                emailLink.href = emailTemplates[lang];
+            }
+
+            // Update WhatsApp link with language-specific message
+            const whatsappLink = document.getElementById('whatsapp-link');
+            if (whatsappLink && whatsappTemplates[lang]) {
+                whatsappLink.href = `https://wa.me/4915222466077?text=${encodeURIComponent(whatsappTemplates[lang])}`;
+            }
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // INITIALIZE ON PAGE LOAD
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const detectedLang = detectLanguage();
+            const initialLang = savedLang || detectedLang;
+
+            changeLanguage(initialLang);
+        });
+
+        // MODAL FUNCTIONS
+        
+        }
+
+        function closeImpressum() {
+            const modal = document.getElementById('impressum-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        
+        }
+
+        function closePrivacy() {
+            const modal = document.getElementById('privacy-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modals on outside click
+        document.addEventListener('click', function(event) {
+            const impressumModal = document.getElementById('impressum-modal');
+            const privacyModal = document.getElementById('privacy-modal');
+            if (event.target === impressumModal) {
+                closeImpressum();
+            }
+            if (event.target === privacyModal) {
+                closePrivacy();
+            }
+        });
+
+        // Close modals on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImpressum();
+                closePrivacy();
+            }
+        });
+    </script>
+
+    <!-- IMPRESSUM MODAL -->
+    <div id="impressum-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeImpressum()">&times;</button>
+            <h2 data-translate="impressum_title">Impressum</h2>
+            
+            <h3 data-translate="impressum_company_info">Angaben gemäß § 5 TMG</h3>
+            <p><strong data-translate="impressum_owner">Inhaber:</strong> Serena Sarlo</p>
+            <p><strong data-translate="impressum_address">Anschrift:</strong><br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            <span data-translate="impressum_country">Deutschland</span></p>
+            
+            <h3 data-translate="impressum_contact">Kontakt</h3>
+            <p><strong data-translate="impressum_phone">Telefon:</strong> +49 152 22466077</p>
+            <p><strong>Email:</strong> procurement@abcspareparts.eu</p>
+            
+            <h3 data-translate="impressum_legal">Rechtliche Angaben</h3>
+            <p><strong data-translate="impressum_vat">Umsatzsteuer-ID:</strong> <span data-translate="impressum_vat_status">In Bearbeitung (beantragt am 21.10.2025)</span></p>
+            <p><strong data-translate="impressum_tax">Steuernummer:</strong> <span data-translate="impressum_tax_status">In Bearbeitung (beantragt am 21.10.2025)</span></p>
+            
+            <p style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e3e8ee; font-size: 0.9rem; color: #666F7F;" data-translate="impressum_note">
+                Die Umsatzsteuer-ID und Steuernummer wurden am 21.10.2025 beim Finanzamt beantragt und werden nach Zuteilung hier ergänzt.
+            </p>
+        </div>
+    </div>
+
+    <!-- PRIVACY/DATENSCHUTZ MODAL -->
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePrivacy()">&times;</button>
+            <h2 data-translate="privacy_title">Datenschutzerklärung</h2>
+            
+            <p data-translate="privacy_intro">Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie darüber, welche Daten auf unserer Website erhoben und wie sie verwendet werden.</p>
+            
+            <h3 data-translate="privacy_h1">1. Verantwortlicher</h3>
+            <p>Serena Sarlo<br>
+            ABC Spareparts<br>
+            Äussere Uferstrasse 16<br>
+            86154 Augsburg<br>
+            Germany<br>
+            E-Mail: procurement@abcspareparts.eu</p>
+            
+            <h3 data-translate="privacy_h2">2. Erhebung und Speicherung personenbezogener Daten</h3>
+            <p data-translate="privacy_h2_text">Sie können unsere Webseite besuchen, ohne Angaben zu Ihrer Person zu machen. Beim Aufruf der Website werden lediglich technische Zugriffsdaten (IP-Adresse, Zeitpunkt des Abrufs etc.) für die Serverstatistik gespeichert – diese lassen keine Rückschlüsse auf Ihre Person zu.<br><br>Personenbezogene Daten (Name, Vorname, Firmenname, E-Mail-Adresse, ggf. Adresse und Telefonnummer) werden nur erfasst, wenn Sie sie uns im Rahmen von Kontaktanfragen, Bestellungen oder Leads-Formularen freiwillig mitteilen.</p>
+            
+            <h3 data-translate="privacy_h3">3. Verwendung Ihrer Daten</h3>
+            <p data-translate="privacy_h3_text">Wir verwenden Ihre übermittelten Daten ausschließlich zur Bearbeitung Ihres Anliegens, für die Kontaktaufnahme und zur Abwicklung von Bestellungen. Eine Weitergabe erfolgt nur, soweit dies für die Vertragsabwicklung nötig ist (zum Beispiel an Versanddienstleister).</p>
+            
+            <h3 data-translate="privacy_h4">4. Weitergabe an Dritte</h3>
+            <p data-translate="privacy_h4_text">Eine Übermittlung Ihrer Daten an Dritte ohne Ihre ausdrückliche Einwilligung erfolgt nicht, außer es ist zur Vertragsabwicklung gesetzlich erforderlich.</p>
+            
+            <h3 data-translate="privacy_h5">5. Ihre Rechte</h3>
+            <p data-translate="privacy_h5_text">Sie haben jederzeit das Recht auf Auskunft über die bei uns gespeicherten Daten, deren Herkunft und Empfänger sowie den Zweck der Verarbeitung. Zusätzlich haben Sie das Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.</p>
+            
+            <h3 data-translate="privacy_h6">6. Kontakt für Datenschutzanfragen</h3>
+            <p>Für Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten wenden Sie sich direkt an Serena Sarlo:<br>
+            E-Mail: procurement@abcspareparts.eu</p>
+            
+            <h3 data-translate="privacy_h7">7. Änderungen</h3>
+            <p data-translate="privacy_h7_text">Wir behalten uns das Recht vor, diese Datenschutzerklärung gelegentlich anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht.</p>
+        </div>
+    </div>
+</body>
+</html>

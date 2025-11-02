@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie-Richtlinie - ABC Spare Parts</title>
+    <style>
+        :root {
+            --color-background: #fcfcf9;
+            --color-surface: #fffffd;
+            --color-text: #133452;
+            --color-text-secondary: #626c71;
+            --color-primary: #21808d;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-success: #21808d;
+            --color-error: #c0152f;
+            --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #1f2121;
+                --color-surface: #262828;
+                --color-text: #f5f5f5;
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-border: rgba(119, 124, 124, 0.3);
+                --color-success: #32b8c6;
+                --color-error: #ff5459;
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--color-surface);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        h1 { font-size: 2rem; margin-bottom: 24px; }
+        h2 { font-size: 1.5rem; margin-top: 32px; margin-bottom: 16px; }
+        h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 16px; }
+        p { margin-bottom: 16px; color: var(--color-text-secondary); }
+        strong { color: var(--color-text); }
+        a { color: var(--color-primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: none; border-top: 1px solid var(--color-border); margin: 32px 0; }
+        ul { margin-left: 1.5rem; margin-bottom: 16px; }
+        li { margin-bottom: 0.5rem; color: var(--color-text-secondary); }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .back-link:hover { opacity: 0.9; text-decoration: none; }
+
+        .lang-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: 1px solid var(--color-border);
+            padding: 6px 12px;
+            margin-left: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--color-text);
+            font-size: 0.9rem;
+        }
+
+        .lang-switcher button.active {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        .info-box {
+            background-color: rgba(33, 128, 141, 0.1);
+            border-left: 4px solid var(--color-success);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 6px;
+        }
+
+        .warning-box {
+            background-color: rgba(192, 21, 47, 0.1);
+            border-left: 4px solid var(--color-error);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 6px;
+        }
+
+        .checkmark { color: var(--color-success); font-weight: bold; font-size: 1.2rem; }
+        .crossmark { color: var(--color-error); font-weight: bold; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Zurück / Back / Indietro</a>
+        
+        <div class="lang-switcher">
+            <button onclick="switchLang('de')" class="active" id="btn-de">Deutsch</button>
+            <button onclick="switchLang('en')" id="btn-en">English</button>
+            <button onclick="switchLang('it')" id="btn-it">Italiano</button>
+        </div>
+
+        <!-- DEUTSCH -->
+        <div class="lang-content active" id="content-de">
+            <h1>Cookie-Richtlinie</h1>
+
+            <h2>Was sind Cookies?</h2>
+            <p>Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden.</p>
+
+            <hr>
+
+            <h2>Welche Cookies verwenden wir?</h2>
+            <div class="info-box">
+                <strong>Nur technisch notwendige Cookies</strong><br>
+                Wir verwenden ausschließlich Cookies, die für den Betrieb der Website erforderlich sind. Diese benötigen keine Einwilligung.
+            </div>
+
+            <p><strong>Zweck:</strong> Session-Management, Spracheinstellungen, Warenkorb</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO</p>
+
+            <hr>
+
+            <h2>Cookies, die wir NICHT verwenden</h2>
+            <div class="warning-box">
+                <p><strong>Derzeit setzen wir KEINE der folgenden Cookies ein:</strong></p>
+                <ul style="margin-top: 12px;">
+                    <li><span class="crossmark">❌</span> Analyse-Cookies (Google Analytics)</li>
+                    <li><span class="crossmark">❌</span> Marketing-Cookies (Facebook Pixel)</li>
+                    <li><span class="crossmark">❌</span> Social-Media-Cookies</li>
+                    <li><span class="crossmark">❌</span> Drittanbieter-Cookies</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <h2>Zusammenfassung</h2>
+            <div class="info-box">
+                <p style="font-size: 1.1rem;"><strong>Sie müssen nichts tun</strong> – unsere Website funktioniert ohne Ihre Zustimmung, da wir nur technisch notwendige Cookies verwenden.</p>
+            </div>
+
+            <hr>
+            <p><strong>Stand:</strong> 02.11.2025</p>
+        </div>
+
+        <!-- ENGLISH -->
+        <div class="lang-content" id="content-en">
+            <h1>Cookie Policy</h1>
+
+            <h2>What are Cookies?</h2>
+            <p>Cookies are small text files stored on your device.</p>
+
+            <hr>
+
+            <h2>Which Cookies Do We Use?</h2>
+            <div class="info-box">
+                <strong>Only technically necessary cookies</strong><br>
+                We only use cookies that are required for the website to function. These do not require consent.
+            </div>
+
+            <p><strong>Purpose:</strong> Session management, language settings, shopping cart</p>
+            <p><strong>Legal basis:</strong> Art. 6 para. 1 lit. f GDPR</p>
+
+            <hr>
+
+            <h2>Cookies We Do NOT Use</h2>
+            <div class="warning-box">
+                <p><strong>We currently do NOT use any of the following cookies:</strong></p>
+                <ul style="margin-top: 12px;">
+                    <li><span class="crossmark">❌</span> Analytics cookies (Google Analytics)</li>
+                    <li><span class="crossmark">❌</span> Marketing cookies (Facebook Pixel)</li>
+                    <li><span class="crossmark">❌</span> Social media cookies</li>
+                    <li><span class="crossmark">❌</span> Third-party cookies</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <h2>Summary</h2>
+            <div class="info-box">
+                <p style="font-size: 1.1rem;"><strong>You don't need to do anything</strong> – our website works without your consent because we only use technically necessary cookies.</p>
+            </div>
+
+            <hr>
+            <p><strong>Last updated:</strong> November 02, 2025</p>
+        </div>
+
+        <!-- ITALIANO -->
+        <div class="lang-content" id="content-it">
+            <h1>Politica sui Cookie</h1>
+
+            <h2>Cosa sono i Cookie?</h2>
+            <p>I cookie sono piccoli file di testo memorizzati sul tuo dispositivo.</p>
+
+            <hr>
+
+            <h2>Quali Cookie Utilizziamo?</h2>
+            <div class="info-box">
+                <strong>Solo cookie tecnicamente necessari</strong><br>
+                Utilizziamo esclusivamente cookie necessari per il funzionamento del sito. Non richiedono consenso.
+            </div>
+
+            <p><strong>Scopo:</strong> Gestione sessione, impostazioni lingua, carrello</p>
+            <p><strong>Base giuridica:</strong> Art. 6 comma 1 lett. f GDPR</p>
+
+            <hr>
+
+            <h2>Cookie che NON Utilizziamo</h2>
+            <div class="warning-box">
+                <p><strong>Attualmente NON utilizziamo nessuno dei seguenti cookie:</strong></p>
+                <ul style="margin-top: 12px;">
+                    <li><span class="crossmark">❌</span> Cookie di analisi (Google Analytics)</li>
+                    <li><span class="crossmark">❌</span> Cookie di marketing (Facebook Pixel)</li>
+                    <li><span class="crossmark">❌</span> Cookie dei social media</li>
+                    <li><span class="crossmark">❌</span> Cookie di terze parti</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <h2>Riepilogo</h2>
+            <div class="info-box">
+                <p style="font-size: 1.1rem;"><strong>Non devi fare nulla</strong> – il nostro sito funziona senza il tuo consenso perché utilizziamo solo cookie tecnicamente necessari.</p>
+            </div>
+
+            <hr>
+            <p><strong>Ultimo aggiornamento:</strong> 02.11.2025</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && ['de', 'en', 'it'].includes(savedLang)) {
+                switchLang(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
