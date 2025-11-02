@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versand und Lieferung - ABC Spare Parts</title>
+    <style>
+        :root {
+            --color-background: #fcfcf9;
+            --color-surface: #fffffd;
+            --color-text: #133452;
+            --color-text-secondary: #626c71;
+            --color-primary: #21808d;
+            --color-border: rgba(94, 82, 64, 0.2);
+            --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #1f2121;
+                --color-surface: #262828;
+                --color-text: #f5f5f5;
+                --color-text-secondary: rgba(167, 169, 169, 0.7);
+                --color-border: rgba(119, 124, 124, 0.3);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--color-surface);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        h1 { font-size: 2rem; margin-bottom: 24px; }
+        h2 { font-size: 1.5rem; margin-top: 32px; margin-bottom: 16px; }
+        h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 16px; }
+        p { margin-bottom: 16px; color: var(--color-text-secondary); }
+        strong { color: var(--color-text); }
+        a { color: var(--color-primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: none; border-top: 1px solid var(--color-border); margin: 32px 0; }
+        ul { margin-left: 1.5rem; margin-bottom: 16px; }
+        li { margin-bottom: 0.5rem; color: var(--color-text-secondary); }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .back-link:hover { opacity: 0.9; text-decoration: none; }
+
+        .lang-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: 1px solid var(--color-border);
+            padding: 6px 12px;
+            margin-left: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--color-text);
+            font-size: 0.9rem;
+        }
+
+        .lang-switcher button.active {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        .info-box {
+            background-color: rgba(33, 128, 141, 0.1);
+            border-left: 4px solid var(--color-primary);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+
+        .highlight {
+            background-color: rgba(33, 128, 141, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Zurück / Back / Indietro</a>
+        
+        <div class="lang-switcher">
+            <button onclick="switchLang('de')" class="active" id="btn-de">Deutsch</button>
+            <button onclick="switchLang('en')" id="btn-en">English</button>
+            <button onclick="switchLang('it')" id="btn-it">Italiano</button>
+        </div>
+
+        <!-- DEUTSCH -->
+        <div class="lang-content active" id="content-de">
+            <h1>Versand und Lieferung</h1>
+
+            <h2>Versandkosten - Wichtige Information</h2>
+            <div class="info-box">
+                <p><strong>Berechnung der Versandkosten:</strong></p>
+                <p>Die Versandkosten werden individuell berechnet und hängen ab von:</p>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Gewicht</strong> der Artikel</li>
+                    <li><strong>Volumen/Größe</strong> der Sendung</li>
+                    <li><strong>Bestellwert</strong></li>
+                    <li><strong>Lieferland</strong> (Deutschland oder EU)</li>
+                    <li><strong>Versandart</strong> (Standard/Express)</li>
+                </ul>
+                <p style="margin-top: 16px;"><strong>Die genauen Kosten werden während des Bestellvorgangs angezeigt.</strong></p>
+            </div>
+
+            <hr>
+
+            <h2>Liefergebiet</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 24px;">🇩🇪 <strong>Deutschland</strong> • 🇪🇺 <strong>EU-Länder</strong></p>
+
+            <p>Wir liefern in alle Länder der Europäischen Union, einschließlich:</p>
+            <ul>
+                <li>🇩🇪 Deutschland (alle Bundesländer)</li>
+                <li>🇦🇹 Österreich</li>
+                <li>🇧🇪 Belgien</li>
+                <li>🇫🇷 Frankreich</li>
+                <li>🇮🇹 Italien</li>
+                <li>🇳🇱 Niederlande</li>
+                <li>🇪🇸 Spanien</li>
+                <li>🇵🇱 Polen</li>
+                <li>🇨🇿 Tschechien</li>
+                <li>und weitere EU-Länder</li>
+            </ul>
+
+            <p style="margin-top: 16px;"><strong>Hinweis:</strong> Lieferungen außerhalb der EU (z.B. Schweiz, UK) sind derzeit nicht möglich.</p>
+
+            <hr>
+
+            <h2>Lieferzeiten</h2>
+            <div class="info-box">
+                <p><strong>Individuelle Lieferzeiten:</strong></p>
+                <p>Die Lieferzeit für jede Bestellung hängt von der Verfügbarkeit bei unseren Lieferanten ab. Die voraussichtliche Lieferzeit wird Ihnen vor Vertragsabschluss mitgeteilt.</p>
+                <p style="margin-top: 12px;"><strong>Typische Richtwerte:</strong></p>
+                <ul style="margin-top: 8px;">
+                    <li>Deutschland: in der Regel 2-7 Werktage</li>
+                    <li>EU-Länder: in der Regel 5-14 Werktage</li>
+                </ul>
+                <p style="margin-top: 12px;"><em>Diese Angaben sind unverbindlich und können je nach Verfügbarkeit variieren.</em></p>
+            </div>
+
+            <p><strong>Lieferfrist beginnt:</strong></p>
+            <ul>
+                <li>Bei <span class="highlight">Vorkasse</span>: am Tag nach Zahlungseingang</li>
+                <li>Bei anderen Zahlungsarten: am Tag nach Vertragsschluss</li>
+            </ul>
+
+            <p style="margin-top: 12px;">Werktage sind Montag bis Freitag (außer gesetzliche Feiertage).</p>
+
+            <hr>
+
+            <h2>Versanddienstleister</h2>
+
+            <p>Wir arbeiten mit zuverlässigen Versandpartnern zusammen:</p>
+
+            <ul>
+                <li><strong>DHL</strong> (Deutschland und EU)</li>
+                <li><strong>DPD</strong> (Deutschland und EU)</li>
+                <li><strong>UPS</strong> (EU-Versand)</li>
+            </ul>
+
+            <p>Sie erhalten nach Versand der Ware eine <strong>E-Mail mit Tracking-Nummer</strong>, um die Sendung jederzeit zu verfolgen.</p>
+
+            <hr>
+
+            <h2>Kontakt</h2>
+            <p><strong>Bei Fragen zu Versand und Lieferung:</strong></p>
+            <p>
+                <strong>E-Mail:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a><br>
+                <strong>Telefon:</strong> +49 152 22466077
+            </p>
+        </div>
+
+        <!-- ENGLISH -->
+        <div class="lang-content" id="content-en">
+            <h1>Shipping and Delivery</h1>
+
+            <h2>Shipping Costs - Important Information</h2>
+            <div class="info-box">
+                <p><strong>Calculation of shipping costs:</strong></p>
+                <p>Shipping costs are calculated individually based on:</p>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Weight</strong> of items</li>
+                    <li><strong>Volume/Size</strong> of shipment</li>
+                    <li><strong>Order value</strong></li>
+                    <li><strong>Destination country</strong> (Germany or EU)</li>
+                    <li><strong>Shipping method</strong> (Standard/Express)</li>
+                </ul>
+                <p style="margin-top: 16px;"><strong>Exact costs will be shown during checkout.</strong></p>
+            </div>
+
+            <hr>
+
+            <h2>Delivery Area</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 24px;">🇩🇪 <strong>Germany</strong> • 🇪🇺 <strong>EU Countries</strong></p>
+
+            <p>We deliver to all European Union countries, including:</p>
+            <ul>
+                <li>🇩🇪 Germany (all states)</li>
+                <li>🇦🇹 Austria</li>
+                <li>🇧🇪 Belgium</li>
+                <li>🇫🇷 France</li>
+                <li>🇮🇹 Italy</li>
+                <li>🇳🇱 Netherlands</li>
+                <li>🇪🇸 Spain</li>
+                <li>🇵🇱 Poland</li>
+                <li>🇨🇿 Czech Republic</li>
+                <li>and other EU countries</li>
+            </ul>
+
+            <p style="margin-top: 16px;"><strong>Note:</strong> Deliveries outside the EU (e.g. Switzerland, UK) are currently not available.</p>
+
+            <hr>
+
+            <h2>Delivery Times</h2>
+            <div class="info-box">
+                <p><strong>Individual delivery times:</strong></p>
+                <p>The delivery time for each order depends on availability from our suppliers. The estimated delivery time will be communicated to you before contract conclusion.</p>
+                <p style="margin-top: 12px;"><strong>Typical guidelines:</strong></p>
+                <ul style="margin-top: 8px;">
+                    <li>Germany: typically 2-7 business days</li>
+                    <li>EU countries: typically 5-14 business days</li>
+                </ul>
+                <p style="margin-top: 12px;"><em>These are non-binding estimates and may vary depending on availability.</em></p>
+            </div>
+
+            <p><strong>Delivery period starts:</strong></p>
+            <ul>
+                <li>For <span class="highlight">advance payment</span>: day after payment receipt</li>
+                <li>For other payment methods: day after contract conclusion</li>
+            </ul>
+
+            <p style="margin-top: 12px;">Business days are Monday to Friday (excluding public holidays).</p>
+
+            <hr>
+
+            <h2>Shipping Partners</h2>
+
+            <p>We work with reliable shipping partners:</p>
+
+            <ul>
+                <li><strong>DHL</strong> (Germany and EU)</li>
+                <li><strong>DPD</strong> (Germany and EU)</li>
+                <li><strong>UPS</strong> (EU shipping)</li>
+            </ul>
+
+            <p>You will receive an <strong>email with tracking number</strong> after shipment to track your delivery.</p>
+
+            <hr>
+
+            <h2>Contact</h2>
+            <p><strong>For questions about shipping and delivery:</strong></p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a><br>
+                <strong>Phone:</strong> +49 152 22466077
+            </p>
+        </div>
+
+        <!-- ITALIANO -->
+        <div class="lang-content" id="content-it">
+            <h1>Spedizione e Consegna</h1>
+
+            <h2>Costi di Spedizione - Informazione Importante</h2>
+            <div class="info-box">
+                <p><strong>Calcolo dei costi di spedizione:</strong></p>
+                <p>I costi di spedizione sono calcolati individualmente in base a:</p>
+                <ul style="margin-top: 12px;">
+                    <li><strong>Peso</strong> degli articoli</li>
+                    <li><strong>Volume/Dimensioni</strong> della spedizione</li>
+                    <li><strong>Valore dell'ordine</strong></li>
+                    <li><strong>Paese di destinazione</strong> (Germania o UE)</li>
+                    <li><strong>Metodo di spedizione</strong> (Standard/Express)</li>
+                </ul>
+                <p style="margin-top: 16px;"><strong>I costi esatti verranno mostrati durante il checkout.</strong></p>
+            </div>
+
+            <hr>
+
+            <h2>Area di Consegna</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 24px;">🇩🇪 <strong>Germania</strong> • 🇪🇺 <strong>Paesi UE</strong></p>
+
+            <p>Consegniamo in tutti i paesi dell'Unione Europea, inclusi:</p>
+            <ul>
+                <li>🇩🇪 Germania (tutti gli stati)</li>
+                <li>🇦🇹 Austria</li>
+                <li>🇧🇪 Belgio</li>
+                <li>🇫🇷 Francia</li>
+                <li>🇮🇹 Italia</li>
+                <li>🇳🇱 Paesi Bassi</li>
+                <li>🇪🇸 Spagna</li>
+                <li>🇵🇱 Polonia</li>
+                <li>🇨🇿 Repubblica Ceca</li>
+                <li>e altri paesi UE</li>
+            </ul>
+
+            <p style="margin-top: 16px;"><strong>Nota:</strong> Le consegne al di fuori dell'UE (es. Svizzera, UK) non sono attualmente disponibili.</p>
+
+            <hr>
+
+            <h2>Tempi di Consegna</h2>
+            <div class="info-box">
+                <p><strong>Tempi di consegna individuali:</strong></p>
+                <p>Il tempo di consegna per ogni ordine dipende dalla disponibilità presso i nostri fornitori. Il tempo di consegna stimato ti verrà comunicato prima della conclusione del contratto.</p>
+                <p style="margin-top: 12px;"><strong>Linee guida tipiche:</strong></p>
+                <ul style="margin-top: 8px;">
+                    <li>Germania: in genere 2-7 giorni lavorativi</li>
+                    <li>Paesi UE: in genere 5-14 giorni lavorativi</li>
+                </ul>
+                <p style="margin-top: 12px;"><em>Queste sono stime non vincolanti e possono variare a seconda della disponibilità.</em></p>
+            </div>
+
+            <p><strong>Il periodo di consegna inizia:</strong></p>
+            <ul>
+                <li>Per <span class="highlight">pagamento anticipato</span>: il giorno dopo la ricezione del pagamento</li>
+                <li>Per altri metodi di pagamento: il giorno dopo la conclusione del contratto</li>
+            </ul>
+
+            <p style="margin-top: 12px;">I giorni lavorativi sono dal lunedì al venerdì (esclusi i giorni festivi).</p>
+
+            <hr>
+
+            <h2>Partner di Spedizione</h2>
+
+            <p>Lavoriamo con partner di spedizione affidabili:</p>
+
+            <ul>
+                <li><strong>DHL</strong> (Germania e UE)</li>
+                <li><strong>DPD</strong> (Germania e UE)</li>
+                <li><strong>UPS</strong> (Spedizioni UE)</li>
+            </ul>
+
+            <p>Riceverai un'<strong>email con numero di tracking</strong> dopo la spedizione per tracciare la consegna.</p>
+
+            <hr>
+
+            <h2>Contatto</h2>
+            <p><strong>Per domande su spedizione e consegna:</strong></p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a><br>
+                <strong>Telefono:</strong> +49 152 22466077
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && ['de', 'en', 'it'].includes(savedLang)) {
+                switchLang(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
