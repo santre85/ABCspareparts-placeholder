@@ -6,7 +6,7 @@
     <title data-translate="page_title">Contact - ABCspareparts.eu | Express Spare Parts Inquiry</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* BASE STYLES & CENTERING - Match Original Site */
         html, body {
@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', Arial, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', Arial, 'Segoe UI', 'Helvetica Neue', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
@@ -34,6 +34,7 @@
         }
 
         .container {
+            position: relative;
             width: 90%;
             max-width: 920px;
             background: #fff;
@@ -43,6 +44,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        /* Language selector (top-right) */
+        .lang-selector {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            z-index: 50;
+        }
+
+        .lang-selector select {
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid #e3e8ee;
+            background: white;
+            font-weight: 600;
+            cursor: pointer;
         }
 
         /* LOGO STYLES */
@@ -344,6 +362,15 @@
 </head>
 <body>
     <div class="container">
+        <!-- Polished language selector (right-top) -->
+        <div class="lang-selector" aria-hidden="false">
+            <label for="lang-select" class="sr-only">Select language</label>
+            <select id="lang-select" onchange="changeLanguage(this.value)" aria-label="Select language">
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="it">🇮🇹 Italiano</option>
+                <option value="en">🇬🇧 English</option>
+            </select>
+        </div>
         <!-- LOGO SECTION - Original SVG -->
         <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200">
@@ -362,6 +389,119 @@
                 </g>
             </svg>
         </div>
+
+        <!-- Company Presentation - Multi-language (INSERT HERE) -->
+        <section id="company-presentation">
+            <!-- GERMAN -->
+            <div class="presentation lang-de">
+                <h2>ABCspareparts: Die Strategische Lösung für Ihre Herausforderungen in der Industrieersatzteilbeschaffung</h2>
+
+                <h3>Unser Profil</h3>
+                <p>ABCspareparts wurde mit einer klaren Mission gegründet: die Komplexität der Beschaffung in operative Effizienz für produzierende und industrielle Unternehmen zu verwandeln.</p>
+                <p>Wir wissen, dass ein einziges fehlendes oder veraltetes Ersatzteil tausende Euro durch Maschinenstillstände und Produktionsverzögerungen kosten kann.</p>
+                <p>Viele Unternehmen müssen selbst für ein einzelnes Ersatzteil einen neuen Lieferanten anlegen, was zu hohen Verwaltungskosten führt. Mit ABCspareparts kann der Kunde Ersatzteile verschiedener Marken über einen einzigen Partner beziehen – das bedeutet:</p>
+
+                <ul>
+                    <li>✅ Deutliche Reduzierung der Verwaltungskosten</li>
+                    <li>⏱️ Erhebliche Zeitersparnis bei Bestellprozessen</li>
+                    <li>🔁 Zentralisierte Beschaffung mehrerer Marken über einen Ansprechpartner</li>
+                </ul>
+
+                <p>Daher positionieren wir uns als Ihr strategischer Partner, spezialisiert auf die schnelle Recherche und Lieferung kritischer Komponenten.</p>
+
+                <h3>Unser Wertversprechen</h3>
+                <p>Wir verkaufen nicht einfach Ersatzteile – wir sichern Ihre Betriebskontinuität. Unsere Expertise im MRO-Bereich (Wartung, Reparatur, Betrieb) konzentriert sich darauf, die größten Herausforderungen der Ersatzteilversorgung zu überwinden:</p>
+
+                <ul>
+                    <li>🔧 <strong>Lösungen bei Obsoleszenz und Defekten:</strong> Wir beschaffen abgekündigte oder nicht mehr produzierte Komponenten über ein weltweites Netzwerk von Herstellern und Lieferanten. Wir bieten: neue & originale Standardteile, geprüfte Alternativen für veraltete Komponenten und schnelle Hilfe im Notfall.</li>
+                    <li>⚙️ <strong>Umfassende technische Abdeckung:</strong> Mechanische Komponenten (Motoren, Lager, Antriebe), elektrische/elektronische Komponenten (Sensoren, SPS, Umrichter), sowie pneumatische und hydraulische Komponenten.</li>
+                    <li>📊 <strong>Effizienz & Transparenz:</strong> Durch unser digitales, schlankes Betriebsmodell optimieren wir versteckte Kosten, verkürzen Bestellprozesse und sorgen für volle Transparenz bei Preisen, Lieferzeiten und Alternativen.</li>
+                </ul>
+
+                <h3>Warum ABCspareparts wählen?</h3>
+                <p>Setzen Sie auf ein Expertenteam, das Ihr Geschäft versteht. Wir sorgen dafür, dass Ihre Maschinen wieder laufen – und die Produktion nicht stillsteht. Suchen Sie nicht nur ein Ersatzteil – wählen Sie die Lösung, die funktioniert.</p>
+
+                
+            </div>
+
+            <!-- ITALIAN -->
+            <div class="presentation lang-it">
+                <h2>ABCspareparts: la soluzione strategica per le vostre sfide nella fornitura di ricambi industriali</h2>
+
+                <h3>Il nostro profilo</h3>
+                <p>ABCspareparts è nata con una missione chiara: trasformare la complessità degli acquisti in efficienza operativa per aziende manifatturiere e industriali.</p>
+                <p>Sappiamo che un solo ricambio mancante o obsoleto può costare migliaia di euro in fermi macchina e ritardi produttivi.</p>
+                <p>Molte aziende devono aggiungere un nuovo fornitore anche per un singolo ricambio, con alti costi amministrativi. Con ABCspareparts i clienti possono ottenere ricambi di diversi marchi da un unico partner — questo significa:</p>
+
+                <ul>
+                    <li>✅ Riduzione significativa dei costi amministrativi</li>
+                    <li>⏱️ Notevole risparmio di tempo nei processi d'acquisto</li>
+                    <li>🔁 Approvvigionamento centralizzato di più marchi tramite un unico referente</li>
+                </ul>
+
+                <p>Per questo ci posizioniamo come vostro partner strategico, specializzato nella rapida ricerca e consegna di componenti critici.</p>
+
+                <h3>Il nostro valore</h3>
+                <p>Non vendiamo solo ricambi — garantiamo la continuità operativa. La nostra competenza MRO si concentra sul superamento delle principali sfide nella fornitura di ricambi:</p>
+
+                <ul>
+                    <li>🔧 <strong>Soluzioni per obsolescenza e guasti:</strong> Procuriamo componenti fuori produzione tramite una rete globale di produttori e fornitori. Offriamo ricambi nuovi e originali per componenti standard, alternative verificate per parti obsolete e supporto rapido in emergenza.</li>
+                    <li>⚙️ <strong>Copertura tecnica completa:</strong> Componenti meccanici (motori, cuscinetti, azionamenti), elettrici/elettronici (sensori, PLC, inverter), nonché componenti pneumatici e idraulici.</li>
+                    <li>📊 <strong>Efficienza e trasparenza:</strong> Con il nostro modello operativo digitale e snello ottimizziamo i costi nascosti, abbreviare i tempi d'ordine e forniamo piena trasparenza su prezzi, tempi di consegna e alternative.</li>
+                </ul>
+
+                <h3>Perché scegliere ABCspareparts?</h3>
+                <p>Affidatevi a un team di esperti che comprende il vostro business. Riavviamo le vostre macchine — la produzione non si ferma. Non cercate solo un pezzo di ricambio — scegliete la soluzione che funziona.</p>
+
+                
+            </div>
+
+            <!-- ENGLISH -->
+            <div class="presentation lang-en">
+                <h2>ABCspareparts: The Strategic Solution for Your Industrial Spare Parts Challenges</h2>
+
+                <h3>Our Profile</h3>
+                <p>ABCspareparts was founded with a clear mission: to transform procurement complexity into operational efficiency for manufacturing and industrial companies.</p>
+                <p>A single missing or obsolete spare part can cost thousands in downtime and production delays.</p>
+                <p>Many companies must create a new supplier record even for one spare part, which increases administrative overhead. With ABCspareparts, customers can source parts from multiple brands through a single partner — meaning:</p>
+
+                <ul>
+                    <li>✅ Significant reduction in administrative costs</li>
+                    <li>⏱️ Major time savings in ordering processes</li>
+                    <li>🔁 Centralised sourcing of multiple brands via a single contact</li>
+                </ul>
+
+                <p>We position ourselves as your strategic partner, specialising in rapid research and delivery of critical components.</p>
+
+                <h3>Our Value Promise</h3>
+                <p>We don't just sell spare parts — we secure your operational continuity. Our MRO expertise focuses on overcoming the biggest supply challenges:</p>
+
+                <ul>
+                    <li>🔧 <strong>Obsolescence & failure solutions:</strong> We source discontinued or out-of-production components through a global network of manufacturers and suppliers. We provide new & original standard parts, verified alternatives for obsolete components, and fast emergency support.</li>
+                    <li>⚙️ <strong>Full technical coverage:</strong> Mechanical components (motors, bearings, drives), electrical/electronic (sensors, PLCs, inverters), plus pneumatic and hydraulic parts.</li>
+                    <li>📊 <strong>Efficiency & transparency:</strong> Our digital, lean operating model reduces hidden costs, shortens order cycles and delivers full transparency on price, lead time and alternatives.</li>
+                </ul>
+
+                <h3>Why choose ABCspareparts?</h3>
+                <p>Rely on an expert team that understands your business. We get your machines running — so production doesn't stop. Don't just look for a spare part — choose the solution that works.</p>
+
+                
+            </div>
+        </section>
+
+        <style>
+        .presentation { display: none; }
+        .presentation.active { display: block; }
+        #company-presentation { margin: 40px 0; padding: 30px; background: #f8f9fa; border-radius: 8px; }
+        </style>
+
+        <script>
+        const langMap = {'de':'lang-de','de-DE':'lang-de','it':'lang-it','it-IT':'lang-it','en':'lang-en'};
+        const userLang = langMap[navigator.language?.toLowerCase()] || 'lang-en';
+        document.querySelectorAll('.presentation').forEach(p=>p.classList.remove('active'));
+        document.querySelector('#company-presentation .'+userLang)?.classList.add('active') || 
+        document.querySelector('.lang-en').classList.add('active');
+        </script>
 
         <!-- UNDER CONSTRUCTION SECTION - Match Original -->
         <h1 data-translate="construction_title">Website Under Construction</h1>
@@ -788,7 +928,9 @@
             });
 
             // Update page title
-            document.title = translations[lang].page_title;
+            if (translations[lang] && translations[lang].page_title) {
+                document.title = translations[lang].page_title;
+            }
 
             // Update language attribute
             document.getElementById('html-root').setAttribute('lang', lang);
@@ -805,6 +947,16 @@
                 whatsappLink.href = `https://wa.me/4915222466077?text=${encodeURIComponent(whatsappTemplates[lang])}`;
             }
 
+            // Also switch the company presentation panel
+            try {
+                const presMap = {'de':'lang-de','it':'lang-it','en':'lang-en'};
+                document.querySelectorAll('.presentation').forEach(p=>p.classList.remove('active'));
+                const cls = presMap[lang] || 'lang-en';
+                document.querySelector('#company-presentation .' + cls)?.classList.add('active');
+            } catch (e) {
+                // ignore if DOM not ready
+            }
+
             // Save preference
             localStorage.setItem('preferredLanguage', lang);
         }
@@ -816,13 +968,16 @@
             const initialLang = savedLang || detectedLang;
 
             changeLanguage(initialLang);
+            // set language selector dropdown to current language (if present)
+            const langSelect = document.getElementById('lang-select');
+            if (langSelect) {
+                try { langSelect.value = initialLang; } catch(e) {}
+            }
         });
 
-        // MODAL FUNCTIONS
-        
-        }
+    // MODAL FUNCTIONS
 
-        function closeImpressum() {
+    function closeImpressum() {
             const modal = document.getElementById('impressum-modal');
             if (modal) {
                 modal.classList.remove('active');
@@ -830,10 +985,7 @@
             }
         }
 
-        
-        }
-
-        function closePrivacy() {
+    function closePrivacy() {
             const modal = document.getElementById('privacy-modal');
             if (modal) {
                 modal.classList.remove('active');
