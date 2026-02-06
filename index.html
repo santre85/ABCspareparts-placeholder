@@ -46,6 +46,14 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* About / Profile Section */
+    .section-about { padding: 4rem 1.5rem; background: #fff; }
+    .section-about .container { max-width: 800px; }
+    .section-about h2 { font-size: 1.75rem; color: #1e3a5f; margin-bottom: 2rem; line-height: 1.4; }
+    .section-about h3 { font-size: 1.25rem; color: #1e3a5f; margin: 2.5rem 0 1rem; }
+    .section-about p { margin-bottom: 1rem; color: #444; }
+    .section-about ul { margin: 1rem 0 1rem 1.5rem; }
+    .section-about li { margin-bottom: 0.5rem; color: #444; }
     /* Benefits Section */
     .section-benefits { padding: 4rem 1.5rem; background: #f8f9fa; }
     .section-benefits h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1e3a5f; }
@@ -132,6 +140,35 @@
 })();
 </script>
 
+<!-- About / Profile Section -->
+<section class="section-about">
+  <div class="container">
+    <h2 data-i18n="about_title">ABCspareparts: Die Strategische Lösung für Ihre Herausforderungen in der Industrieersatzteilbeschaffung</h2>
+
+    <h3 data-i18n="about_profile_title">Unser Profil</h3>
+    <p data-i18n="about_profile_p1">ABCspareparts wurde mit einer klaren Mission gegründet: die Komplexität der Beschaffung in operative Effizienz für produzierende und industrielle Unternehmen zu verwandeln.</p>
+    <p data-i18n="about_profile_p2">Wir wissen, dass ein einziges fehlendes oder veraltetes Ersatzteil tausende Euro durch Maschinenstillstände und Produktionsverzögerungen kosten kann.</p>
+    <p data-i18n="about_profile_p3">Viele Unternehmen müssen selbst für ein einzelnes Ersatzteil einen neuen Lieferanten anlegen, was zu hohen Verwaltungskosten führt. Mit ABCspareparts kann der Kunde Ersatzteile verschiedener Marken über einen einzigen Partner beziehen – das bedeutet:</p>
+    <ul>
+      <li data-i18n="about_profile_li1">✅ Deutliche Reduzierung der Verwaltungskosten</li>
+      <li data-i18n="about_profile_li2">⏱️ Erhebliche Zeitersparnis bei Bestellprozessen</li>
+      <li data-i18n="about_profile_li3">🔁 Zentralisierte Beschaffung mehrerer Marken über einen Ansprechpartner</li>
+    </ul>
+    <p data-i18n="about_profile_p4">Daher positionieren wir uns als Ihr strategischer Partner, spezialisiert auf die schnelle Recherche und Lieferung kritischer Komponenten.</p>
+
+    <h3 data-i18n="about_value_title">Unser Wertversprechen</h3>
+    <p data-i18n="about_value_p">Wir verkaufen nicht einfach Ersatzteile – wir sichern Ihre Betriebskontinuität. Unsere Expertise im MRO-Bereich (Wartung, Reparatur, Betrieb) konzentriert sich darauf, die größten Herausforderungen der Ersatzteilversorgung zu überwinden:</p>
+    <ul>
+      <li data-i18n="about_value_li1"></li>
+      <li data-i18n="about_value_li2"></li>
+      <li data-i18n="about_value_li3"></li>
+    </ul>
+
+    <h3 data-i18n="about_why_title">Warum ABCspareparts wählen?</h3>
+    <p data-i18n="about_why_p">Setzen Sie auf ein Expertenteam, das Ihr Geschäft versteht. Wir sorgen dafür, dass Ihre Maschinen wieder laufen – und die Produktion nicht stillsteht. Suchen Sie nicht nur ein Ersatzteil – wählen Sie die Lösung, die funktioniert.</p>
+  </div>
+</section>
+
 <!-- Benefits Section -->
 <section class="section-benefits">
   <div class="container">
@@ -154,6 +191,14 @@
       <div class="benefit-card">
         <h3 data-i18n="benefit4_title">Europa-weit</h3>
         <p data-i18n="benefit4_desc">Lieferung in DE, IT, FR, ES & mehr.</p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit5_title">Ein Ansprechpartner</h3>
+        <p data-i18n="benefit5_desc">Alle Marken über einen Partner – weniger Verwaltung, mehr Effizienz.</p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit6_title">Obsoleszenz-Lösungen</h3>
+        <p data-i18n="benefit6_desc">Abgekündigte Teile, geprüfte Alternativen, schnelle Notfallhilfe.</p>
       </div>
     </div>
   </div>
@@ -230,6 +275,10 @@
       benefit3_desc: "Marktanalyse inklusive – sparen Sie bis zu 30%.",
       benefit4_title: "Europa-weit",
       benefit4_desc: "Lieferung in DE, IT, FR, ES & mehr.",
+      benefit5_title: "Ein Ansprechpartner",
+      benefit5_desc: "Alle Marken über einen Partner – weniger Verwaltung, mehr Effizienz.",
+      benefit6_title: "Obsoleszenz-Lösungen",
+      benefit6_desc: "Abgekündigte Teile, geprüfte Alternativen, schnelle Notfallhilfe.",
       contact_title: "Bereit für Ihr Angebot?",
       form_company: "Firma",
       form_email: "E-Mail",
@@ -244,7 +293,23 @@
       footer_terms: "AGB",
       footer_shipping: "Versand",
       footer_cookies: "Cookies",
-      footer_rights: "Alle Rechte vorbehalten."
+      footer_rights: "Alle Rechte vorbehalten.",
+      about_title: "ABCspareparts: Die Strategische Lösung für Ihre Herausforderungen in der Industrieersatzteilbeschaffung",
+      about_profile_title: "Unser Profil",
+      about_profile_p1: "ABCspareparts wurde mit einer klaren Mission gegründet: die Komplexität der Beschaffung in operative Effizienz für produzierende und industrielle Unternehmen zu verwandeln.",
+      about_profile_p2: "Wir wissen, dass ein einziges fehlendes oder veraltetes Ersatzteil tausende Euro durch Maschinenstillstände und Produktionsverzögerungen kosten kann.",
+      about_profile_p3: "Viele Unternehmen müssen selbst für ein einzelnes Ersatzteil einen neuen Lieferanten anlegen, was zu hohen Verwaltungskosten führt. Mit ABCspareparts kann der Kunde Ersatzteile verschiedener Marken über einen einzigen Partner beziehen – das bedeutet:",
+      about_profile_li1: "✅ Deutliche Reduzierung der Verwaltungskosten",
+      about_profile_li2: "⏱️ Erhebliche Zeitersparnis bei Bestellprozessen",
+      about_profile_li3: "🔁 Zentralisierte Beschaffung mehrerer Marken über einen Ansprechpartner",
+      about_profile_p4: "Daher positionieren wir uns als Ihr strategischer Partner, spezialisiert auf die schnelle Recherche und Lieferung kritischer Komponenten.",
+      about_value_title: "Unser Wertversprechen",
+      about_value_p: "Wir verkaufen nicht einfach Ersatzteile – wir sichern Ihre Betriebskontinuität. Unsere Expertise im MRO-Bereich (Wartung, Reparatur, Betrieb) konzentriert sich darauf, die größten Herausforderungen der Ersatzteilversorgung zu überwinden:",
+      about_value_li1: "<strong>🔧 Lösungen bei Obsoleszenz und Defekten:</strong> Wir beschaffen abgekündigte oder nicht mehr produzierte Komponenten über ein weltweites Netzwerk von Herstellern und Lieferanten. Wir bieten: neue & originale Standardteile, geprüfte Alternativen für veraltete Komponenten und schnelle Hilfe im Notfall.",
+      about_value_li2: "<strong>⚙️ Umfassende technische Abdeckung:</strong> Mechanische Komponenten (Motoren, Lager, Antriebe), elektrische/elektronische Komponenten (Sensoren, SPS, Umrichter), sowie pneumatische und hydraulische Komponenten.",
+      about_value_li3: "<strong>📊 Effizienz & Transparenz:</strong> Durch unser digitales, schlankes Betriebsmodell optimieren wir versteckte Kosten, verkürzen Bestellprozesse und sorgen für volle Transparenz bei Preisen, Lieferzeiten und Alternativen.",
+      about_why_title: "Warum ABCspareparts wählen?",
+      about_why_p: "Setzen Sie auf ein Expertenteam, das Ihr Geschäft versteht. Wir sorgen dafür, dass Ihre Maschinen wieder laufen – und die Produktion nicht stillsteht. Suchen Sie nicht nur ein Ersatzteil – wählen Sie die Lösung, die funktioniert."
     },
     en: {
       tagline: "Your Trusted Partner for High-Quality Industrial Spares",
@@ -259,6 +324,10 @@
       benefit3_desc: "Market analysis included – save up to 30%.",
       benefit4_title: "Europe-wide",
       benefit4_desc: "Delivery to DE, IT, FR, ES & more.",
+      benefit5_title: "Single point of contact",
+      benefit5_desc: "All brands through one partner – less administration, more efficiency.",
+      benefit6_title: "Obsolescence solutions",
+      benefit6_desc: "Discontinued parts, verified alternatives, fast emergency support.",
       contact_title: "Ready for your quote?",
       form_company: "Company",
       form_email: "Email",
@@ -273,7 +342,23 @@
       footer_terms: "Terms",
       footer_shipping: "Shipping",
       footer_cookies: "Cookies",
-      footer_rights: "All rights reserved."
+      footer_rights: "All rights reserved.",
+      about_title: "ABCspareparts: The Strategic Solution for Your Industrial Spare Parts Procurement Challenges",
+      about_profile_title: "Our Profile",
+      about_profile_p1: "ABCspareparts was founded with a clear mission: to transform procurement complexity into operational efficiency for manufacturing and industrial companies.",
+      about_profile_p2: "We know that a single missing or obsolete spare part can cost thousands of euros in machine downtime and production delays.",
+      about_profile_p3: "Many companies have to set up a new supplier even for a single spare part, which leads to high administrative costs. With ABCspareparts, customers can source spare parts from various brands through a single partner – this means:",
+      about_profile_li1: "✅ Significant reduction in administrative costs",
+      about_profile_li2: "⏱️ Significant time savings in ordering processes",
+      about_profile_li3: "🔁 Centralised procurement of multiple brands through one point of contact",
+      about_profile_p4: "That is why we position ourselves as your strategic partner, specialising in the fast research and delivery of critical components.",
+      about_value_title: "Our Value Proposition",
+      about_value_p: "We don't just sell spare parts – we secure your business continuity. Our expertise in the MRO sector (Maintenance, Repair, Operations) focuses on overcoming the biggest challenges in spare parts supply:",
+      about_value_li1: "<strong>🔧 Solutions for obsolescence and defects:</strong> We source discontinued or no-longer-produced components through a worldwide network of manufacturers and suppliers. We offer: new & original standard parts, verified alternatives for obsolete components and fast emergency support.",
+      about_value_li2: "<strong>⚙️ Comprehensive technical coverage:</strong> Mechanical components (motors, bearings, drives), electrical/electronic components (sensors, PLCs, inverters), as well as pneumatic and hydraulic components.",
+      about_value_li3: "<strong>📊 Efficiency & Transparency:</strong> Through our digital, lean business model we optimise hidden costs, shorten ordering processes and ensure full transparency on prices, delivery times and alternatives.",
+      about_why_title: "Why choose ABCspareparts?",
+      about_why_p: "Rely on an expert team that understands your business. We ensure your machines run again – and production doesn't stop. Don't just look for a spare part – choose the solution that works."
     },
     it: {
       tagline: "Il tuo Partner di fiducia per Ricambi Industriali di Alta Qualità",
@@ -288,6 +373,10 @@
       benefit3_desc: "Analisi di mercato inclusa – risparmia fino al 30%.",
       benefit4_title: "In tutta Europa",
       benefit4_desc: "Consegna in DE, IT, FR, ES e altro.",
+      benefit5_title: "Un solo interlocutore",
+      benefit5_desc: "Tutti i marchi tramite un partner – meno amministrazione, più efficienza.",
+      benefit6_title: "Soluzioni per obsolescenza",
+      benefit6_desc: "Parti fuori produzione, alternative verificate, supporto rapido in emergenza.",
       contact_title: "Pronto per il tuo preventivo?",
       form_company: "Azienda",
       form_email: "Email",
@@ -302,7 +391,23 @@
       footer_terms: "Condizioni",
       footer_shipping: "Spedizione",
       footer_cookies: "Cookie",
-      footer_rights: "Tutti i diritti riservati."
+      footer_rights: "Tutti i diritti riservati.",
+      about_title: "ABCspareparts: La soluzione strategica per le vostre sfide nell'approvvigionamento di ricambi industriali",
+      about_profile_title: "Il nostro profilo",
+      about_profile_p1: "ABCspareparts è stata fondata con una missione chiara: trasformare la complessità degli approvvigionamenti in efficienza operativa per le aziende produttive e industriali.",
+      about_profile_p2: "Sappiamo che un singolo ricambio mancante o obsoleto può costare migliaia di euro in fermo macchina e ritardi di produzione.",
+      about_profile_p3: "Molte aziende devono attivare un nuovo fornitore anche per un singolo ricambio, con alti costi amministrativi. Con ABCspareparts il cliente può approvvigionarsi di ricambi di vari marchi tramite un unico partner – significa:",
+      about_profile_li1: "✅ Riduzione significativa dei costi amministrativi",
+      about_profile_li2: "⏱️ Risparmio di tempo nei processi d'ordine",
+      about_profile_li3: "🔁 Approvvigionamento centralizzato di più marchi tramite un unico interlocutore",
+      about_profile_p4: "Per questo ci posizioniamo come vostro partner strategico, specializzati nella rapida ricerca e consegna di componenti critici.",
+      about_value_title: "La nostra proposta di valore",
+      about_value_p: "Non vendiamo semplicemente ricambi – garantiamo la continuità operativa. La nostra competenza nel settore MRO (Manutenzione, Riparazione, Esercizio) si concentra sul superare le maggiori sfide nella supply di ricambi:",
+      about_value_li1: "<strong>🔧 Soluzioni per obsolescenza e guasti:</strong> Approvvigioniamo componenti fuori produzione tramite una rete mondiale di produttori e fornitori. Offriamo: parti standard nuove e originali, alternative verificate per componenti obsoleti e supporto rapido in emergenza.",
+      about_value_li2: "<strong>⚙️ Copertura tecnica completa:</strong> Componenti meccanici (motori, cuscinetti, azionamenti), componenti elettrici/elettronici (sensori, PLC, inverter), nonché componenti pneumatici e idraulici.",
+      about_value_li3: "<strong>📊 Efficienza e trasparenza:</strong> Grazie al nostro modello operativo digitale e snello ottimizziamo i costi nascosti, accorciamo i processi d'ordine e garantiamo piena trasparenza su prezzi, tempi di consegna e alternative.",
+      about_why_title: "Perché scegliere ABCspareparts?",
+      about_why_p: "Affidatevi a un team di esperti che conosce il vostro business. Facciamo sì che le vostre macchine tornino a funzionare – e la produzione non si fermi. Non cercate solo un ricambio – scegliete la soluzione che funziona."
     },
     es: {
       tagline: "Tu Socio de Confianza en Recambios Industriales de Alta Calidad",
@@ -317,6 +422,10 @@
       benefit3_desc: "Análisis de mercado incluido – ahorre hasta un 30%.",
       benefit4_title: "En toda Europa",
       benefit4_desc: "Entrega a DE, IT, FR, ES y más.",
+      benefit5_title: "Un único interlocutor",
+      benefit5_desc: "Todas las marcas a través de un socio – menos administración, más eficiencia.",
+      benefit6_title: "Soluciones para obsolescencia",
+      benefit6_desc: "Piezas descatalogadas, alternativas verificadas, ayuda rápida en emergencias.",
       contact_title: "¿Listo para tu oferta?",
       form_company: "Empresa",
       form_email: "Email",
@@ -331,7 +440,23 @@
       footer_terms: "Términos",
       footer_shipping: "Envío",
       footer_cookies: "Cookies",
-      footer_rights: "Todos los derechos reservados."
+      footer_rights: "Todos los derechos reservados.",
+      about_title: "ABCspareparts: La solución estratégica para sus desafíos en la adquisición de recambios industriales",
+      about_profile_title: "Nuestro perfil",
+      about_profile_p1: "ABCspareparts fue fundada con una misión clara: transformar la complejidad de la adquisición en eficiencia operativa para empresas manufactureras e industriales.",
+      about_profile_p2: "Sabemos que una sola pieza de recambio faltante u obsoleta puede costar miles de euros en paradas de máquinas y retrasos de producción.",
+      about_profile_p3: "Muchas empresas tienen que registrar un nuevo proveedor incluso para una sola pieza de recambio, lo que genera altos costes administrativos. Con ABCspareparts el cliente puede obtener recambios de varias marcas a través de un único socio – significa:",
+      about_profile_li1: "✅ Reducción significativa de los costes administrativos",
+      about_profile_li2: "⏱️ Ahorro considerable de tiempo en los procesos de pedidos",
+      about_profile_li3: "🔁 Adquisición centralizada de varias marcas a través de un único interlocutor",
+      about_profile_p4: "Por eso nos posicionamos como su socio estratégico, especializados en la búsqueda rápida y entrega de componentes críticos.",
+      about_value_title: "Nuestra propuesta de valor",
+      about_value_p: "No vendemos simplemente recambios – aseguramos su continuidad operativa. Nuestra experiencia en el sector MRO (Mantenimiento, Reparación, Operaciones) se centra en superar los mayores desafíos del suministro de recambios:",
+      about_value_li1: "<strong>🔧 Soluciones ante obsolescencia y defectos:</strong> Suministramos componentes descatalogados o fuera de producción a través de una red mundial de fabricantes y proveedores. Ofrecemos: piezas estándar nuevas y originales, alternativas verificadas para componentes obsoletos y ayuda rápida en emergencias.",
+      about_value_li2: "<strong>⚙️ Cobertura técnica integral:</strong> Componentes mecánicos (motores, rodamientos, accionamientos), componentes eléctricos/electrónicos (sensores, PLC, variadores), así como componentes neumáticos e hidráulicos.",
+      about_value_li3: "<strong>📊 Eficiencia y transparencia:</strong> Gracias a nuestro modelo de negocio digital y ágil optimizamos costes ocultos, acortamos procesos de pedido y garantizamos plena transparencia en precios, plazos de entrega y alternativas.",
+      about_why_title: "¿Por qué elegir ABCspareparts?",
+      about_why_p: "Confíe en un equipo experto que entiende su negocio. Nos aseguramos de que sus máquinas vuelvan a funcionar – y la producción no se detenga. No busque solo un recambio – elija la solución que funciona."
     },
     fr: {
       tagline: "Votre Partenaire de Confiance pour les Pièces Industrielles de Haute Qualité",
@@ -346,6 +471,10 @@
       benefit3_desc: "Analyse de marché incluse – économisez jusqu'à 30%.",
       benefit4_title: "Toute l'Europe",
       benefit4_desc: "Livraison en DE, IT, FR, ES et plus.",
+      benefit5_title: "Un seul interlocuteur",
+      benefit5_desc: "Toutes les marques via un partenaire – moins d'administration, plus d'efficacité.",
+      benefit6_title: "Solutions d'obsolescence",
+      benefit6_desc: "Pièces déréférencées, alternatives vérifiées, aide rapide en urgence.",
       contact_title: "Prêt pour votre devis?",
       form_company: "Entreprise",
       form_email: "Email",
@@ -360,7 +489,23 @@
       footer_terms: "CGV",
       footer_shipping: "Livraison",
       footer_cookies: "Cookies",
-      footer_rights: "Tous droits réservés."
+      footer_rights: "Tous droits réservés.",
+      about_title: "ABCspareparts: La solution stratégique pour vos défis en approvisionnement de pièces industrielles",
+      about_profile_title: "Notre profil",
+      about_profile_p1: "ABCspareparts a été fondée avec une mission claire: transformer la complexité des achats en efficacité opérationnelle pour les entreprises de fabrication et industrielles.",
+      about_profile_p2: "Nous savons qu'une seule pièce manquante ou obsolète peut coûter des milliers d'euros en arrêts de machines et retards de production.",
+      about_profile_p3: "Beaucoup d'entreprises doivent créer un nouveau fournisseur même pour une seule pièce de rechange, ce qui entraîne des coûts administratifs élevés. Avec ABCspareparts, le client peut s'approvisionner en pièces de différentes marques auprès d'un seul partenaire – cela signifie:",
+      about_profile_li1: "✅ Réduction significative des coûts administratifs",
+      about_profile_li2: "⏱️ Gain de temps considérable dans les processus de commande",
+      about_profile_li3: "🔁 Approvisionnement centralisé de plusieurs marques via un seul interlocuteur",
+      about_profile_p4: "C'est pourquoi nous nous positionnons comme votre partenaire stratégique, spécialisé dans la recherche rapide et la livraison de composants critiques.",
+      about_value_title: "Notre proposition de valeur",
+      about_value_p: "Nous ne vendons pas simplement des pièces de rechange – nous assurons votre continuité d'exploitation. Notre expertise dans le secteur MRO (Maintenance, Réparation, Exploitation) se concentre sur le dépassement des plus grands défis de l'approvisionnement en pièces:",
+      about_value_li1: "<strong>🔧 Solutions face à l'obsolescence et aux défauts:</strong> Nous nous approvisionnons en composants déréférencés ou hors production via un réseau mondial de fabricants et fournisseurs. Nous offrons: pièces standard neuves et d'origine, alternatives vérifiées pour composants obsolètes et aide rapide en urgence.",
+      about_value_li2: "<strong>⚙️ Couverture technique complète:</strong> Composants mécaniques (moteurs, roulements, entraînements), composants électriques/électroniques (capteurs, automates, variateurs), ainsi que composants pneumatiques et hydrauliques.",
+      about_value_li3: "<strong>📊 Efficacité et transparence:</strong> Grâce à notre modèle d'activité digital et agile, nous optimisons les coûts cachés, raccourcissons les processus de commande et assurons une transparence totale sur les prix, délais et alternatives.",
+      about_why_title: "Pourquoi choisir ABCspareparts?",
+      about_why_p: "Faites confiance à une équipe d'experts qui comprend votre activité. Nous veillons à ce que vos machines redémarrent – et que la production ne s'arrête pas. Ne cherchez pas seulement une pièce – choisissez la solution qui fonctionne."
     }
   };
 
