@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200">
+    <g transform="translate(125,90)" stroke="#0066CC" stroke-width="2" fill="none">
+        <circle r="35" stroke-width="4"/>
+        <ellipse rx="45" ry="18" transform="rotate(25)"/>
+        <ellipse rx="45" ry="18" transform="rotate(-25)"/>
+        <circle cx="30" cy="-10" r="6" fill="#0066CC"/>
+    </g>
+    <g transform="translate(240,70)" font-family="Montserrat, Arial, sans-serif">
+        <text x="0" y="0" font-size="38" font-weight="700" fill="#0066CC">ABCspareparts</text>
+        <text x="0" y="36" font-size="16" font-weight="600" fill="#666F7F">Your Trusted Partner for High-Quality Industrial Spares</text>
+        <text x="0" y="68" font-size="14" font-weight="300" fill="#666F7F">With years of industry experience, we specialize</text>
+        <text x="0" y="86" font-size="14" font-weight="300" fill="#666F7F">in the distribution of components for industrial automation,</text>
+        <text x="0" y="104" font-size="14" font-weight="300" fill="#666F7F">sensors, actuators, and control devices from leading manufacturers.</text>
+    </g>
+</svg>
