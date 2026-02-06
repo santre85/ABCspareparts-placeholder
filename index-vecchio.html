@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCspareparts | Website Under Construction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* BASE STYLES & CENTERING */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Uniformità del font su tutta la pagina */
+            font-family: 'Montserrat', Arial, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            background: #003366; /* Blu Scuro Industriale */
+            color: #222c3a;
+            display: grid;
+            place-items: center; /* Centra perfettamente orizzontale e verticale */
+        }
+        .container {
+            width: 90%;
+            max-width: 920px; 
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(0,32,64,0.22);
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* LOGO STYLES */
+        .logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .logo svg {
+            max-width: 760px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* MAIN TEXT STYLES */
+        h1 {
+            color: #002147;
+            font-size: 3rem; 
+            font-weight: 800;
+            margin: 24px 0 16px 0;
+            text-align: center;
+            line-height: 1.05;
+        }
+        .subtitle {
+            color: #222c3a;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .launch {
+            color: #0066CC;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .contact {
+            color: #222c3a;
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-top: 42px;
+            text-align: center;
+            border-top: 1px solid #e3e8ee;
+            padding-top: 18px;
+            width: 100%;
+        }
+
+        /* MEDIA QUERIES (Desktop) */
+        @media (min-width: 768px) {
+            /* Forza l'allineamento a sinistra dell'SVG quando lo spazio lo permette */
+            .logo {
+                justify-content: flex-start;
+            }
+        }
+        
+        /* MEDIA QUERIES (Mobile) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1.05rem;
+            }
+            .launch {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200">
+                <g transform="translate(125,90)" stroke="#0066CC" stroke-width="2" fill="none">
+                    <circle r="35" stroke-width="4"/>
+                    <ellipse rx="45" ry="18" transform="rotate(25)"/>
+                    <ellipse rx="45" ry="18" transform="rotate(-25)"/>
+                    <circle cx="30" cy="-10" r="6" fill="#0066CC"/>
+                </g>
+                <g transform="translate(240,70)" font-family="Montserrat, Arial, sans-serif">
+                    <text x="0" y="0" font-size="38" font-weight="700" fill="#0066CC">ABCspareparts</text>
+                    <text x="0" y="36" font-size="16" font-weight="600" fill="#666F7F">Your Trusted Partner for High-Quality Industrial Spares</text>
+                    <text x="0" y="68" font-size="14" font-weight="300" fill="#666F7F">With years of industry experience, we specialize</text>
+                    <text x="0" y="86" font-size="14" font-weight="300" fill="#666F7F">in the distribution of components for industrial automation,</text>
+                    <text x="0" y="104" font-size="14" font-weight="300" fill="#666F7F">sensors, actuators, and control devices from leading manufacturers.</text>
+                </g>
+            </svg>
+        </div>
+        <h1>Website Under Construction</h1>
+        <div class="subtitle">We are currently preparing our product catalog for launch.</div>
+        <div class="launch">Coming Soon</div>
+        <div class="contact">Email: procurement@abcspareparts.eu</div>
+    </div>
+</body>
+</html>
