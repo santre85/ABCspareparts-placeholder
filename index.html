@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABCspareparts – Your Trusted Partner for High-Quality Industrial Spares</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Language Selector */
+    .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
+    .language-selector select {
+      padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd;
+      border-radius: 6px; background: #fff; cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 60vh; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+      text-align: center; padding: 4rem 1.5rem; position: relative;
+    }
+    .hero-section .hero-content h1 { font-size: 3rem; color: #fff; margin-bottom: 1rem; }
+    .hero-section .tagline { font-size: 1.5rem; color: rgba(255,255,255,0.95); margin-bottom: 1rem; }
+    .hero-section .description { font-size: 1.1rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2rem; }
+    .cta-button {
+      display: inline-block; padding: 0.9rem 2rem; background: #e67e22; color: #fff !important;
+      text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.2s;
+    }
+    .cta-button:hover { background: #d35400; }
+
+    /* Brands Carousel */
+    .brands-carousel {
+      overflow: hidden; padding: 1.5rem 0; background: #f8f9fa; border-top: 1px solid #e9ecef;
+    }
+    .brands-carousel-track {
+      display: flex; width: max-content; animation: scrollBrands 2400s linear infinite;
+    }
+    .brands-carousel:hover .brands-carousel-track { animation-play-state: paused; }
+    .brands-carousel span { color: #a0a0a0; font-size: 0.95rem; font-weight: 500; white-space: nowrap; padding: 0 1.25rem; }
+    .brands-carousel .sep { color: #c0c0c0; font-weight: 300; }
+    @keyframes scrollBrands {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Benefits Section */
+    .section-benefits { padding: 4rem 1.5rem; background: #f8f9fa; }
+    .section-benefits h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1e3a5f; }
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+    }
+    .benefit-card {
+      background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      text-align: center; transition: transform 0.2s;
+    }
+    .benefit-card:hover { transform: translateY(-4px); }
+    .benefit-card h3 { color: #1e3a5f; margin-bottom: 0.75rem; font-size: 1.25rem; }
+    .benefit-card p { color: #555; font-size: 0.95rem; }
+
+    /* Contact Section */
+    .section-contact { padding: 4rem 1.5rem; }
+    .section-contact h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #1e3a5f; }
+    .contact-form {
+      max-width: 500px; margin: 0 auto 1.5rem; display: flex; flex-direction: column; gap: 1rem;
+    }
+    .form-group label { display: block; margin-bottom: 0.35rem; font-weight: 600; color: #333; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;
+    }
+    .submit-button {
+      padding: 0.8rem 1.5rem; background: #1e3a5f; color: #fff; border: none; border-radius: 6px;
+      font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;
+    }
+    .submit-button:hover { background: #2d5a87; }
+    .privacy-checkbox { max-width: 500px; margin: 0 auto; font-size: 0.9rem; }
+    .privacy-checkbox a { color: #1e3a5f; text-decoration: underline; }
+
+    /* Footer */
+    .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
+    .footer-content { max-width: 800px; margin: 0 auto; }
+    .footer-links { margin-bottom: 1rem; }
+    .footer-links a { color: #fff; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+    .separator { margin: 0 0.5rem; opacity: 0.7; }
+    .footer-info { font-size: 0.9rem; opacity: 0.9; }
+  </style>
+</head>
+<body>
+
+<!-- Language Selector -->
+<div class="language-selector">
+  <select id="languageSelect" onchange="changeLanguage(this.value)">
+    <option value="de">🇩🇪 Deutsch</option>
+    <option value="en">🇬🇧 English</option>
+    <option value="it">🇮🇹 Italiano</option>
+    <option value="es">🇪🇸 Español</option>
+    <option value="fr">🇫🇷 Français</option>
+  </select>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1>ABCspareparts</h1>
+      <p class="tagline" data-i18n="tagline">Your Trusted Partner for High-Quality Industrial Spares</p>
+      <p class="description" data-i18n="description">
+        Mit langjähriger Branchenerfahrung spezialisieren wir uns auf die Verteilung von Komponenten für industrielle Automation,
+        Sensoren, Aktoren und Steuergeräte führender Hersteller.
+      </p>
+      <a href="#contact" class="cta-button" data-i18n="cta_button">Jetzt anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- Brands Carousel -->
+<div class="brands-carousel">
+  <div class="brands-carousel-track" id="brandsTrack"></div>
+</div>
+<script>
+(function(){
+  const brands = ["3M","A.P.O. - ELMOS","AAEON","ABB","ABB Sace","ABB Striebel+John","ABB-Stotz-Kontakt","ABICOR BINZEL","ABL","ABM","AC MOTOREN","ACCU SORT SYSTEMS","ACD","ACE","ACI","ACKSYS","ACL ITALY","ACS MOTION CONTROL","ADAMCZEWSKI","ADDI-DATA","ADEPT KEBA","ADEPT TECHNOLOGY","ADFWEB","ADLINK","ADVANCED ENERGY","ADVANCED MOTION CONTROLS","ADVANTECH","AEG","AEM","AFAG","AGENCAVI SYSTEMS","AGIE","AGILENT","AIREDALE","AIRINDEX","AIRPOWER","AIRTAC","AIRTEC PNEUMATIC GMBH","AIS GMBH","ALBANY","ALCATEL","ALCO","Alfa Laval","ALFRED IMHOF AG","Allen Bradley","ALLIED TELESIS","ALLIED VISION","ALLKABEL","Allweiler","ALPHA","ALSTOM","Altra Industrial Motion","ALUTEC","ALVARIS","AMF","AMIT","AMK","AMKASYN","AMKAVERT","Amot","Ampac","AMPHENOL","AMT","ANDRON","ANLY ELECTRONICS","ANTEK","ANYBUS","APAR","APC","Apem","APENA","APEX","API","Apollo","APPLE","APT MICRO","Aquametro","ARADEX","ARBOR","ARBURG","ARGO HYTOS","ARI Armaturen","ARO","Aron-Brevini Hydraulics","ARTECO","ARTESYN EMBEDDED TECHNOLOGIES","ARTIS","ARTIS MARPOSS","ARUBA","ASCO","ASCOM","ASCON TECHNOLOGIC","ASEKO","ASEM","ASM","ASSA ABLOY","AST","ASTEC","ASTEEL SENSOR","ASTI","ASYS","ATAS","ATC","ATELIERS FRANCCOIS COMPRESSORS","ATEN","ATG","ATLAS COPCO","Atlas Filtri","ATOS","ATR","AUER SIGNAL","AUHORN","AUMA","AUTOKON","AUTOMATION DIRECT","AUTOMATOR","AUTONICS","Autronica","Aventics","Avista","AXIMA","AXIOMTEK / MARKEM-IMAJE","AXIS","AXOR INDUSTRIES","Azcue pumps","B&K VIBRO","B&R","B+B SMARTWORX","B+B THERMO-TECHNIK","B+M","BACHMANN","Baelz","BALDOR","Baldwin","Balluff","BALOGH","BALTEC","BAMO IER","BANNER","BAR","BARKSDALE","BARTEC","BARUFFALDI","BASETECH","BASLER","BAUER","Baumer","BAUMÜLLER","BAUTZ","BAYER","BAYSIDE","BBC","BBL ELEKTRONIK","BD SENSORS","BDT","BECK GMBH","BECKER","Beckhoff","BEI SENSOR","BEIJER","BEL POWER SOLUTION","BELDEN","BELIMO","BENDER","BENEDIKT & JÄGER","BENTLY NEVADA","BERG ELECTRONICS","Berger Lahr","BERGES","BERGHOF","BERNSTEIN","BERTHEL","Beta","BETA SENSORIK","BIDDLE","BIELOMATIK","BIHL + WIEDEMANN","BIHLER","BIN CONTROL","BINAR QUICK-LIFT","Binder","BINSACK REEDTECHNIK","BIRAL AG","BIRCHER REGLOMAT","Bitzer","BIZERBA","BKE","BLACK BOX","BLACKBIRD APS","BLEMO","BLOCK","BLUM","BLUMENBECKER","BMR","BOB","Bock","BONFIGLIOLI","BONFIGLIOLI VECTRON","BONITRON","Bopla","BORRIES","BOSCH","BOSCH / EMERSON","BOSCH REXROTH","BOSTIK-TUCKER","BOURDON HAENNI","BRABENDER","BRAD","BRANSON","BREVE TUFVASSONS","Brevini","Brevini Fluid Power","BRIDGE ROBOTICS","BRINKMANN PUMPS","Briskheat","BRONKHORST","BROWN & SHARPE","BRÜEL & KJAER VIBRO","BST","BULGIN","BÜRKERT","BURR-BROWN","BURSTER","BUSCH-JAEGER","BUSCHJOST","BUSSMANN","BWT","BYSTRONIC","CAB","CABLETRON SYSTEMS","CABUR","CAL CONTROLS","Calex","Calpeda","CAMILLE BAUER","CAMOZZI","CAMTEC","CAPLUGS","Caprari","CAPTRON","CAREL","Carlo Gavazzi","Carrier","CASTELL","CAT","Caterpillar","CCCA","CCS","CD AUTOMATION","CEDES","CEG","CEKON","CELDUC","CELERITY","CELSA","CEMBRE","CEME","CEMP","CENTRALP","Centroid","CENTROSOLAR AG","CERAMICX","CHANTO","Chiaravalli","CHIEFTEC","Chiorino","CHT Bearings","CHT Motor","CI Systems","CIMREX","CINCINNATI MILACRON","CINCOZE","CIRRIS","CISCO","CISTENI","CITEL","CKD","Clack","CLECO","CLIFF","Clifford & Snell","CLOOS ROBOTER","CN MEMORY","COAX","COCKPIT","CodeLine","Cognex","COMAP","COMAT","COMAT RELECO","COMATEL","COMAU","Comintec","COMMELL","COMPACTFLASH","COMPETENT COSMO","CONEC","CONEL","Consolidated","CONTACLIP","CONTEC","CONTRAVES","CONTRINEX","Control Techniques","CONVERTEC","COOPER POWER TOOLS","COPAL","COPLEY CONTROLS","CORCOM","COSEL","COSMOTEC","CO-TRUST","COUP-LINK","COVAL","CRE","CROUZET","Crowcon","CRYDOM","CSE-SEMAPHORE","CSM","CTI","Cummins","Cuno","CUTY AXIS SANMEI ELECTRONICS","CZECHMONT","D.KRIEGER","DAB","DAIKIN INDUSTRIES,LTD.","DALSA","DANAHER MOTION GMBH","Danfoss","DATA DISPLAY","DATACUBE","Datalogic","DATASENSOR","DAXTEN","DBK","DE1","Debem","DEBNAR","Deca","DECKEL MAHO","DEFINOX","DEHN","Dehn+Sohn","DEIF","DELEM","DELL","DELPHIN TECHNOLOGY","Delta","DELTA ELECTRONICS","DELTA ELEKTRONIKA","Deltadrive","DEMAG","DEMATIC","DENISON HYDRAULICS","DENSO","DEPRAG","DESKO A.S.","DESMA","Desmi","DESOUTTER","DESTACO","Det-tronics","Deublin","DEUTRONIC","Deutz","DEWETRON","DIAS","Dichtomatik","DIETZ","DIETZEL UNIVOLT","DIGI CONTROL","DIGIFORCE","DIGITAL POWER SYSTEM","DIGITUS","DINA","DINEL","DINVERTER","DIOTEC SEMICONDUCTOR","DIRECT LOGIC","di-soric","DISTECH CONTROLS","DITTEL","DIVERSEN","DIVUS","DIXELL","DKFL","DKM","D-LINK","DMG","DMG MORI","DMS","DNH","Dodge","DOEPKE","DOGA","DOLD","DOMAT","DOMINO MODULE","DOOSAN ROBOTICS","Dormeyer","DOTECO","Dow","Dowex","DR. STAIGER MOHILO","DR.-ING. K. BUSCH GMBH","Dräger","DRAKA","Drakos Polemis (DP Pumps)","DREHGEBER","DREHSTROM-NORMMOTOR","DRELO","DRUCK","DS SCHARMANN","D-SENSORS","DSM COMPUTER","DUAL","DÜCKER","Dugom Rulli","DUKANE","DUNAKANYAR","DUNGS","DUNKERMOTOREN","DUOMETRIC","DUPLOMATIC","Dupont","DÜRR TECHNIK","DYNISCO","E.DOLD & SÖHNE","E+E ELEKTRONIK","e2s","EA ELEKTRO-AUTOMATIK","EAE","EAO","EASYLUX","Eaton","Eaton Moeller","EATON/VICKERS","Ebara","EBELT","EBERLE","EBM","EBM-PAPST","ECKELMANN","ECLIPSE","Ecolab","ECONIX","Econosto","EDMUND OPTICS","EDWARDS","EFB-ELEKTRONIK","Effebi Valves","EFI ELECTRONIC","EFORE","EGE","EG-ELECTRONIC","EGM","Egon Harig","EHL","EISELE","EISEN MACHINERY INC","EISENMANN","EKONT","ELABO","ELAN","Elau","ELCA","ELCO","ELCON","ELECO","ELECTRO CAM","ELEKTRA","ELEKTRO BEČOV","ELEKTROPŘÍSTROJ PÍSEK","ELEKTROR","Elesa","ELESA+GANTER","ELETTA","ELFIS","ELFISTOR","ELGO ELECTRIC","ELIN","ELIWELL","ELKO","ELKO EP","ELKOP","ELMO","ELNICO","ELNOR MOTORS","ELO","ELO TOUCHSYSTEMS","ELOBAU","EL-O-MATIC","Elomek","ELREST","ELSACO","ELSPEC","ELSTEIN","ELTAKO","ELTEC","ELTEK","ELTRA","ELTROMAT","ELTROPA","ELTROTEC","EM TFT","EMA","EMAS","EMERSON","EMHART TEKNOLOGIES","E-MOTION","EMOTRON","Endress+Hauser","ENERGO NOVA","ENGEL","Eni","Enraf","ENSTICK","ENTES","EOLANE","EPA","EPC","EPCOS","EPH ELEKTRONIK","EPIC CONTACT","EPM","EPSON","ERA","ERHARDT+LEIMER","ERI","ERICO","ERICSSON","ERIFLEX","ERNI","ERO ELECTRONIC","ESA","ESCHA","ESD","ESES","ESITRON","ESR","ESSENTRA COMPONENTS","EST","EST TELECOM","ESTIC","ESTUN","E-T-A","ETEL","E-TERM","ETI","Euchner","EUGEN HENSLE","Eumax","Eupec","EURA","EUROGI","EUROSWITCH","EUROTEK","EUROTHERM","Euro-Valve","EVIG","Evoqua","EWAB","EWON","EX - DECLARATION","EXCEET ELECTRONICS AG","EXIMUS","EXLAR","EXSYS","EXTOL","EZO","F&G","F4","FABORY","FAG","FAGOR AUTOMATION","FAGUS GRECON","FAIRCHILD","FALINK","FANOX","Fanuc","FASE SALDATURA","FASTECH","FASTEMS","FATEK","FAULHABER","FAYTECH","FCPK","FCT","FEAS","Fedco","Federal Signal","FELDPAUSCH","FELLER ENGINEERING","Femsan","FENWAL","FER STRUMENTI","Ferag","FERRARI SISTEMI","FERRAZ SHAWMUT/VELKOOBCHOD","FERROCONTROL","Festo","FFM","FHF","FIAM","FIAMM","FIBRO","FIDIA","FIESSLER","Filmtec","FILTRON","Finder","Fire Sentry","FISHER-ROSEMOUNT SYSTEMS","FITOK","FLAJZAR","Flender","FLENDER HIMMEL","FLINTEC","FLIR","FLUKE","Flygt","FMS","FORCE COMPUTERS","FORTEC","FORTRESS SAFETY","Foxboro Eckardt","FRANZ KESSLER","FRED SPS HOUSE","FRENZEL+BERG","FREUDENBERG-SIMRIT","FRIETERS","FRIMO","Frizlen","FRONIUS","FSP GROUP INC","FT TECHNOLOGIES","Fuji Electric","FUJIFILM CORPORATION","FUJINON","FUJITSU","Fulleon","FULLTECH","FURNAS","FUSS-EMV","Gai-tronics","Gamak","Gardner Denver","Gassonic","Gates","Gefran","General Monitors","GMI Databox","Graviner","Green Instruments","Grundfos","Hach","Harmsco","Harting","Hatteland Display","HBM","Heidelberg","Heidenhain","Hekatron","Heyl","Hitachi","Hiwin","Hochiki","Hohner","Honeywell","Hoyer Motors","Hübner Elektromaschinen AG","Hydranautics","Hydr-App","Hydromec","IFM","IMI NORGREN","IMO","Ina","Indramat","Infineon","Inge","Intel","IonPure","IOR","IPF","Italvibras","Iwaki","Ixys","Jacobi","Johnson Pump","K&G","KAC","KEB","Keyence","Keystone","Klaxon","Klöckner Moeller","Kockum Sonics","Koenig & Bauer","Kolbus","Kollmorgen Seidel","Kolmeks","Kongsberg","Kontron","Koyo","Krohne","KSB","Kübler","KUKA","Kunpeng","Kurita","Lalizas","Lanxess","Lappkabel","Laumas","Lavastica","Lavormek","Legrand","Leistritz","LEM","Lenntech","Lenze","Leuze","LevelDatic","LewaBrane","Lewatit","LG Chem","Loctite","Lowara","LTI Motion","LTN","MAC","Magris","MAK","MAN","Manroland","Mastervolt","MBO","Mean Well","Mec Motors","Medc","Mehanizmi","MELCO TECHNOREX","Metal Work","MGM","Microdata","Microdyn Nadir","Micron","Millipore","Minebea","Mitsubishi","Mitsubishi Electric","Mondeo","Motovario","Movex","MSA","Müller Martini","Nalco","Nec","Net Safety","NHE","NINGBO HONGBO WEITE MOTOR CO.,LTD","Nippon","Nittan","Nocchi","Nok","Nord Drivesystems","Noris","Novenco","NOVEXX","NSK","Ntron","NUM","Oldham","Omron","Pacific Ozone","Paladin","Pall","Panasonic","Parker","Pbq","Pentair","Pentek","Pepperl+Fuchs","Perma","Phoenix Contact","Pilz","Pizzato","Pneumax","Power Sonic","Pro-Face","Prominent","PRONOMIC","Protec","Purolite","QL","RAE Systems","Regal Rexnord","Regina","Reis Robotics","Resinex","Revamping","REXNORD-MARBETT-MCC","Rexroth","Rickmeier Pumpen","Rittal","RITZ Instrument Transformers","RKI instruments","Rockwell","Rohm & Haas","Ropur","Rosemount Analytical","Rossi","Rosta","Rulmeca","S+M","SABROE","Saer","Saer Electric Pumps","Safari Belting","Safetec","Saia","Saia-Burgess","Salwico","Samhydraulik","Sanyo Denki","Sauer & Sohn","Schaffner","Schaller Automation","Schmersal","Schneider Electric","Scott Safety","Seaplus","Seim Screw Pumps","Semikron","SERVO-TEK","Servoteknikk","SES Sterling","SEW Eurodrive","Sharp","Siba","Sick","Siemens","Sigmatek","Signaline","SIKO","Simtronics","Siti","SKF","SKL","SKUM","SMC","SNR","Solo detector testers","Speck","Specs","Spectrex INC.","Spirax Sarco","ST MICROELECTRONICS","Stahl","Stober","Suez","Sulzer","Sunon","SYM BANG","Synectics","System Plast","Tamagawa","TDK","Technotrans","Teckind Antivibration","Teleindustria","Telemecanique","Tellure Rota","Testomat","Texas Instruments","Thermax","Timken","Toray","Toshiba","TR Electronic","Trisep","Trumpf","Tsubis","Turck","Tyco","Unitor","VAC","Valcom","Vasa","Vega","Versa-Matic","Victaulic","Viking","Vingtor","Vogt","Volvo Penta","Wago","Wamgroup","Wärtsilä","Watson Marlow","Wave Cyber","Weidmüller","Wenglor","WENLING YUHAI ELECTROMECHANICAL","Werma","WESTFALIA","WIKA","Wima","Wittenstein Alpha","World-Valve","YASKAWA","ZMC"];
+  const track = document.getElementById('brandsTrack');
+  if (track) {
+    const html = brands.map(b => '<span>' + b + '</span><span class="sep">•</span>').join('');
+    track.innerHTML = html + html;
+  }
+})();
+</script>
+
+<!-- Benefits Section -->
+<section class="section-benefits">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;" data-i18n="benefits_title">
+      Warum ABCspareparts?
+    </h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3 data-i18n="benefit1_title">9000+ Hersteller</h3>
+        <p data-i18n="benefit1_desc">Größtes Netzwerk für MRO-Ersatzteile in Europa.</p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit2_title">Schnelle Lieferung</h3>
+        <p data-i18n="benefit2_desc">24h-Angebote, Express-Versand verfügbar.</p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit3_title">Bester Preis</h3>
+        <p data-i18n="benefit3_desc">Marktanalyse inklusive – sparen Sie bis zu 30%.</p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit4_title">Europa-weit</h3>
+        <p data-i18n="benefit4_desc">Lieferung in DE, IT, FR, ES & mehr.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section-contact" id="contact">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
+    <form class="contact-form" action="mailto:info@abcspareparts.eu?subject=Anfrage%20Ersatzteil" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label data-i18n="form_company">Firma</label>
+        <input type="text" name="firma" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_email">E-Mail</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_part_number">Teilenummer(n)</label>
+        <input type="text" name="teilenummer" data-i18n-placeholder="form_part_placeholder" placeholder="z.B. ABC123, XYZ456" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_message">Nachricht</label>
+        <textarea name="nachricht" rows="4" data-i18n-placeholder="form_message_placeholder" placeholder="Zusätzliche Informationen..."></textarea>
+      </div>
+      <button type="submit" class="submit-button" data-i18n="form_submit">Anfrage absenden</button>
+    </form>
+    <div class="form-group privacy-checkbox">
+      <label>
+        <input type="checkbox" name="privacy" required>
+        <span data-i18n="form_privacy">
+          Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere diese.
+        </span>
+      </label>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="impressum.html" target="_blank" data-i18n="footer_imprint">Impressum</a>
+        <span class="separator">|</span>
+        <a href="datenschutz.html" target="_blank" data-i18n="footer_privacy">Datenschutz</a>
+        <span class="separator">|</span>
+        <a href="agb.html" target="_blank" data-i18n="footer_terms">AGB</a>
+        <span class="separator">|</span>
+        <a href="versand.html" target="_blank" data-i18n="footer_shipping">Versand</a>
+        <span class="separator">|</span>
+        <a href="cookies.html" target="_blank" data-i18n="footer_cookies">Cookies</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const translations = {
+    de: {
+      tagline: "Your Trusted Partner for High-Quality Industrial Spares",
+      description: "Mit langjähriger Branchenerfahrung spezialisieren wir uns auf die Verteilung von Komponenten für industrielle Automation, Sensoren, Aktoren und Steuergeräte führender Hersteller.",
+      cta_button: "Jetzt anfragen",
+      benefits_title: "Warum ABCspareparts?",
+      benefit1_title: "9000+ Hersteller",
+      benefit1_desc: "Größtes Netzwerk für MRO-Ersatzteile in Europa.",
+      benefit2_title: "Schnelle Lieferung",
+      benefit2_desc: "24h-Angebote, Express-Versand verfügbar.",
+      benefit3_title: "Bester Preis",
+      benefit3_desc: "Marktanalyse inklusive – sparen Sie bis zu 30%.",
+      benefit4_title: "Europa-weit",
+      benefit4_desc: "Lieferung in DE, IT, FR, ES & mehr.",
+      contact_title: "Bereit für Ihr Angebot?",
+      form_company: "Firma",
+      form_email: "E-Mail",
+      form_part_number: "Teilenummer(n)",
+      form_part_placeholder: "z.B. ABC123, XYZ456",
+      form_message: "Nachricht",
+      form_message_placeholder: "Zusätzliche Informationen...",
+      form_submit: "Anfrage absenden",
+      form_privacy: "Ich habe die <a href=\"datenschutz.html\" target=\"_blank\">Datenschutzerklärung</a> gelesen und akzeptiere diese.",
+      footer_imprint: "Impressum",
+      footer_privacy: "Datenschutz",
+      footer_terms: "AGB",
+      footer_shipping: "Versand",
+      footer_cookies: "Cookies",
+      footer_rights: "Alle Rechte vorbehalten."
+    },
+    en: {
+      tagline: "Your Trusted Partner for High-Quality Industrial Spares",
+      description: "With years of industry experience, we specialize in the distribution of components for industrial automation, sensors, actuators and control devices from leading manufacturers.",
+      cta_button: "Request quote",
+      benefits_title: "Why ABCspareparts?",
+      benefit1_title: "9000+ Manufacturers",
+      benefit1_desc: "Largest MRO spare parts network in Europe.",
+      benefit2_title: "Fast Delivery",
+      benefit2_desc: "24h quotes, express shipping available.",
+      benefit3_title: "Best Price",
+      benefit3_desc: "Market analysis included – save up to 30%.",
+      benefit4_title: "Europe-wide",
+      benefit4_desc: "Delivery to DE, IT, FR, ES & more.",
+      contact_title: "Ready for your quote?",
+      form_company: "Company",
+      form_email: "Email",
+      form_part_number: "Part number(s)",
+      form_part_placeholder: "e.g. ABC123, XYZ456",
+      form_message: "Message",
+      form_message_placeholder: "Additional information...",
+      form_submit: "Submit request",
+      form_privacy: "I have read and accept the <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
+      footer_imprint: "Imprint",
+      footer_privacy: "Privacy",
+      footer_terms: "Terms",
+      footer_shipping: "Shipping",
+      footer_cookies: "Cookies",
+      footer_rights: "All rights reserved."
+    },
+    it: {
+      tagline: "Il tuo Partner di fiducia per Ricambi Industriali di Alta Qualità",
+      description: "Con anni di esperienza nel settore, ci specializziamo nella distribuzione di componenti per automazione industriale, sensori, attuatori e dispositivi di controllo dei principali produttori.",
+      cta_button: "Richiedi preventivo",
+      benefits_title: "Perché ABCspareparts?",
+      benefit1_title: "9000+ Produttori",
+      benefit1_desc: "La più grande rete MRO per ricambi in Europa.",
+      benefit2_title: "Consegna veloce",
+      benefit2_desc: "Preventivi in 24h, spedizione express disponibile.",
+      benefit3_title: "Miglior prezzo",
+      benefit3_desc: "Analisi di mercato inclusa – risparmia fino al 30%.",
+      benefit4_title: "In tutta Europa",
+      benefit4_desc: "Consegna in DE, IT, FR, ES e altro.",
+      contact_title: "Pronto per il tuo preventivo?",
+      form_company: "Azienda",
+      form_email: "Email",
+      form_part_number: "Codice/i articolo",
+      form_part_placeholder: "es. ABC123, XYZ456",
+      form_message: "Messaggio",
+      form_message_placeholder: "Informazioni aggiuntive...",
+      form_submit: "Invia richiesta",
+      form_privacy: "Ho letto e accetto la <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
+      footer_imprint: "Impressum",
+      footer_privacy: "Privacy",
+      footer_terms: "Condizioni",
+      footer_shipping: "Spedizione",
+      footer_cookies: "Cookie",
+      footer_rights: "Tutti i diritti riservati."
+    },
+    es: {
+      tagline: "Tu Socio de Confianza en Recambios Industriales de Alta Calidad",
+      description: "Con años de experiencia en el sector, nos especializamos en la distribución de componentes para automatización industrial, sensores, actuadores y dispositivos de control de los principales fabricantes.",
+      cta_button: "Solicitar oferta",
+      benefits_title: "¿Por qué ABCspareparts?",
+      benefit1_title: "9000+ Fabricantes",
+      benefit1_desc: "La mayor red MRO de recambios en Europa.",
+      benefit2_title: "Entrega rápida",
+      benefit2_desc: "Ofertas en 24h, envío express disponible.",
+      benefit3_title: "Mejor precio",
+      benefit3_desc: "Análisis de mercado incluido – ahorre hasta un 30%.",
+      benefit4_title: "En toda Europa",
+      benefit4_desc: "Entrega a DE, IT, FR, ES y más.",
+      contact_title: "¿Listo para tu oferta?",
+      form_company: "Empresa",
+      form_email: "Email",
+      form_part_number: "Número(s) de pieza",
+      form_part_placeholder: "ej. ABC123, XYZ456",
+      form_message: "Mensaje",
+      form_message_placeholder: "Información adicional...",
+      form_submit: "Enviar solicitud",
+      form_privacy: "He leído y acepto la <a href=\"datenschutz.html\" target=\"_blank\">Política de Privacidad</a>.",
+      footer_imprint: "Aviso legal",
+      footer_privacy: "Privacidad",
+      footer_terms: "Términos",
+      footer_shipping: "Envío",
+      footer_cookies: "Cookies",
+      footer_rights: "Todos los derechos reservados."
+    },
+    fr: {
+      tagline: "Votre Partenaire de Confiance pour les Pièces Industrielles de Haute Qualité",
+      description: "Avec des années d'expérience dans le secteur, nous nous spécialisons dans la distribution de composants pour l'automatisation industrielle, les capteurs, actionneurs et dispositifs de contrôle des principaux fabricants.",
+      cta_button: "Demander un devis",
+      benefits_title: "Pourquoi ABCspareparts?",
+      benefit1_title: "9000+ Fabricants",
+      benefit1_desc: "Le plus grand réseau MRO de pièces de rechange en Europe.",
+      benefit2_title: "Livraison rapide",
+      benefit2_desc: "Devis sous 24h, expédition express disponible.",
+      benefit3_title: "Meilleur prix",
+      benefit3_desc: "Analyse de marché incluse – économisez jusqu'à 30%.",
+      benefit4_title: "Toute l'Europe",
+      benefit4_desc: "Livraison en DE, IT, FR, ES et plus.",
+      contact_title: "Prêt pour votre devis?",
+      form_company: "Entreprise",
+      form_email: "Email",
+      form_part_number: "Référence(s) pièce",
+      form_part_placeholder: "ex. ABC123, XYZ456",
+      form_message: "Message",
+      form_message_placeholder: "Informations complémentaires...",
+      form_submit: "Envoyer la demande",
+      form_privacy: "J'ai lu et j'accepte la <a href=\"datenschutz.html\" target=\"_blank\">Politique de confidentialité</a>.",
+      footer_imprint: "Mentions légales",
+      footer_privacy: "Confidentialité",
+      footer_terms: "CGV",
+      footer_shipping: "Livraison",
+      footer_cookies: "Cookies",
+      footer_rights: "Tous droits réservés."
+    }
+  };
+
+  function getLangFromUrl() {
+    const p = new URLSearchParams(window.location.search);
+    const l = p.get('lang');
+    return l && ['de','en','it','es','fr'].includes(l) ? l : null;
+  }
+  function getCurrentLang() {
+    return getLangFromUrl() || 
+      (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || 
+      navigator.language.split('-')[0];
+  }
+  function updateLinksWithLang(lang) {
+    const pages = ['index.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+    document.querySelectorAll('a[href]').forEach(a => {
+      const h = a.getAttribute('href') || '';
+      if (h.startsWith('#') || h.startsWith('mailto:')) return;
+      const [path, hash] = h.split('#');
+      const base = path.split('?')[0];
+      if (pages.includes(base) || pages.some(p => base.endsWith('/' + p))) {
+        a.href = base + '?lang=' + lang + (hash ? '#' + hash : '');
+      }
+    });
+  }
+  function changeLanguage(lang) {
+    const t = translations[lang] || translations.de;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) el.innerHTML = t[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key]) el.placeholder = t[key];
+    });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    updateLinksWithLang(lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const raw = getCurrentLang();
+    const lang = ['de','en','it','es','fr'].includes(raw) ? raw : 'de';
+    document.getElementById('languageSelect').value = lang;
+    changeLanguage(lang);
+  });
+</script>
+
+</body>
+</html>
