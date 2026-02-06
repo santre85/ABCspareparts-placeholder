@@ -22,9 +22,9 @@
       background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
       text-align: center; padding: 4rem 1.5rem; position: relative;
     }
-    .hero-section .hero-content h1 { font-size: 3rem; color: #fff; margin-bottom: 1rem; }
-    .hero-section .tagline { font-size: 1.5rem; color: rgba(255,255,255,0.95); margin-bottom: 1rem; }
-    .hero-section .description { font-size: 1.1rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 2rem; }
+    .hero-section .hero-content h1 { margin-bottom: 1rem; display: flex; justify-content: center; }
+    .hero-section .hero-content h1 img { max-width: 640px; width: 100%; height: auto; display: block; filter: brightness(0) invert(1); transform: translateX(-30px); }
+    .hero-section .description { font-size: 1.1rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 1rem auto 2rem; }
     .cta-button {
       display: inline-block; padding: 0.9rem 2rem; background: #e67e22; color: #fff !important;
       text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.2s;
@@ -114,8 +114,7 @@
 <section class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <h1>ABCspareparts</h1>
-      <p class="tagline" data-i18n="tagline">Your Trusted Partner for High-Quality Industrial Spares</p>
+      <h1><img src="ABC_logo4.svg" alt="ABCspareparts"></h1>
       <p class="description" data-i18n="description">
         Mit langjähriger Branchenerfahrung spezialisieren wir uns auf die Verteilung von Komponenten für industrielle Automation,
         Sensoren, Aktoren und Steuergeräte führender Hersteller.
@@ -208,33 +207,45 @@
 <section class="section-contact" id="contact">
   <div class="container">
     <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
-    <form class="contact-form" action="mailto:info@abcspareparts.eu?subject=Anfrage%20Ersatzteil" method="post" enctype="text/plain">
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label data-i18n="form_name">Nome</label>
+        <input type="text" name="nome" id="formNome" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_surname">Cognome</label>
+        <input type="text" name="cognome" id="formCognome" required>
+      </div>
       <div class="form-group">
         <label data-i18n="form_company">Firma</label>
-        <input type="text" name="firma" required>
+        <input type="text" name="firma" id="formFirma" required>
       </div>
       <div class="form-group">
         <label data-i18n="form_email">E-Mail</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" id="formEmail" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_manufacturer">Costruttore</label>
+        <input type="text" name="costruttore" id="formCostruttore" data-i18n-placeholder="form_manufacturer_placeholder" placeholder="z.B. Siemens, Festo, ...">
       </div>
       <div class="form-group">
         <label data-i18n="form_part_number">Teilenummer(n)</label>
-        <input type="text" name="teilenummer" data-i18n-placeholder="form_part_placeholder" placeholder="z.B. ABC123, XYZ456" required>
+        <input type="text" name="teilenummer" id="formTeilenummer" data-i18n-placeholder="form_part_placeholder" placeholder="z.B. ABC123, XYZ456" required>
       </div>
       <div class="form-group">
         <label data-i18n="form_message">Nachricht</label>
-        <textarea name="nachricht" rows="4" data-i18n-placeholder="form_message_placeholder" placeholder="Zusätzliche Informationen..."></textarea>
+        <textarea name="nachricht" id="formNachricht" rows="4" data-i18n-placeholder="form_message_placeholder" placeholder="Zusätzliche Informationen..."></textarea>
+      </div>
+      <div class="form-group privacy-checkbox">
+        <label>
+          <input type="checkbox" name="privacy" required>
+          <span data-i18n="form_privacy">
+            Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere diese.
+          </span>
+        </label>
       </div>
       <button type="submit" class="submit-button" data-i18n="form_submit">Anfrage absenden</button>
     </form>
-    <div class="form-group privacy-checkbox">
-      <label>
-        <input type="checkbox" name="privacy" required>
-        <span data-i18n="form_privacy">
-          Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere diese.
-        </span>
-      </label>
-    </div>
   </div>
 </section>
 
@@ -280,8 +291,12 @@
       benefit6_title: "Obsoleszenz-Lösungen",
       benefit6_desc: "Abgekündigte Teile, geprüfte Alternativen, schnelle Notfallhilfe.",
       contact_title: "Bereit für Ihr Angebot?",
+      form_name: "Vorname",
+      form_surname: "Nachname",
       form_company: "Firma",
       form_email: "E-Mail",
+      form_manufacturer: "Hersteller",
+      form_manufacturer_placeholder: "z.B. Siemens, Festo, ...",
       form_part_number: "Teilenummer(n)",
       form_part_placeholder: "z.B. ABC123, XYZ456",
       form_message: "Nachricht",
@@ -309,7 +324,17 @@
       about_value_li2: "<strong>⚙️ Umfassende technische Abdeckung:</strong> Mechanische Komponenten (Motoren, Lager, Antriebe), elektrische/elektronische Komponenten (Sensoren, SPS, Umrichter), sowie pneumatische und hydraulische Komponenten.",
       about_value_li3: "<strong>📊 Effizienz & Transparenz:</strong> Durch unser digitales, schlankes Betriebsmodell optimieren wir versteckte Kosten, verkürzen Bestellprozesse und sorgen für volle Transparenz bei Preisen, Lieferzeiten und Alternativen.",
       about_why_title: "Warum ABCspareparts wählen?",
-      about_why_p: "Setzen Sie auf ein Expertenteam, das Ihr Geschäft versteht. Wir sorgen dafür, dass Ihre Maschinen wieder laufen – und die Produktion nicht stillsteht. Suchen Sie nicht nur ein Ersatzteil – wählen Sie die Lösung, die funktioniert."
+      about_why_p: "Setzen Sie auf ein Expertenteam, das Ihr Geschäft versteht. Wir sorgen dafür, dass Ihre Maschinen wieder laufen – und die Produktion nicht stillsteht. Suchen Sie nicht nur ein Ersatzteil – wählen Sie die Lösung, die funktioniert.",
+      email_subject: "Anfrage Ersatzteil",
+      email_header: "ABCspareparts – Anfrage von abcspareparts.eu",
+      email_contact_section: "KONTAKTDATEN",
+      email_name: "Name",
+      email_email: "E-Mail",
+      email_company: "Firma",
+      email_request_section: "ANFRAGE",
+      email_manufacturer: "Hersteller",
+      email_part_number: "Teilenummer(n)",
+      email_message: "Nachricht"
     },
     en: {
       tagline: "Your Trusted Partner for High-Quality Industrial Spares",
@@ -329,8 +354,12 @@
       benefit6_title: "Obsolescence solutions",
       benefit6_desc: "Discontinued parts, verified alternatives, fast emergency support.",
       contact_title: "Ready for your quote?",
+      form_name: "First name",
+      form_surname: "Last name",
       form_company: "Company",
       form_email: "Email",
+      form_manufacturer: "Manufacturer",
+      form_manufacturer_placeholder: "e.g. Siemens, Festo, ...",
       form_part_number: "Part number(s)",
       form_part_placeholder: "e.g. ABC123, XYZ456",
       form_message: "Message",
@@ -358,7 +387,17 @@
       about_value_li2: "<strong>⚙️ Comprehensive technical coverage:</strong> Mechanical components (motors, bearings, drives), electrical/electronic components (sensors, PLCs, inverters), as well as pneumatic and hydraulic components.",
       about_value_li3: "<strong>📊 Efficiency & Transparency:</strong> Through our digital, lean business model we optimise hidden costs, shorten ordering processes and ensure full transparency on prices, delivery times and alternatives.",
       about_why_title: "Why choose ABCspareparts?",
-      about_why_p: "Rely on an expert team that understands your business. We ensure your machines run again – and production doesn't stop. Don't just look for a spare part – choose the solution that works."
+      about_why_p: "Rely on an expert team that understands your business. We ensure your machines run again – and production doesn't stop. Don't just look for a spare part – choose the solution that works.",
+      email_subject: "Quote request",
+      email_header: "ABCspareparts – Request from abcspareparts.eu",
+      email_contact_section: "CONTACT DETAILS",
+      email_name: "Name",
+      email_email: "Email",
+      email_company: "Company",
+      email_request_section: "REQUEST",
+      email_manufacturer: "Manufacturer",
+      email_part_number: "Part number(s)",
+      email_message: "Message"
     },
     it: {
       tagline: "Il tuo Partner di fiducia per Ricambi Industriali di Alta Qualità",
@@ -378,8 +417,12 @@
       benefit6_title: "Soluzioni per obsolescenza",
       benefit6_desc: "Parti fuori produzione, alternative verificate, supporto rapido in emergenza.",
       contact_title: "Pronto per il tuo preventivo?",
+      form_name: "Nome",
+      form_surname: "Cognome",
       form_company: "Azienda",
       form_email: "Email",
+      form_manufacturer: "Costruttore",
+      form_manufacturer_placeholder: "es. Siemens, Festo, ...",
       form_part_number: "Codice/i articolo",
       form_part_placeholder: "es. ABC123, XYZ456",
       form_message: "Messaggio",
@@ -407,7 +450,17 @@
       about_value_li2: "<strong>⚙️ Copertura tecnica completa:</strong> Componenti meccanici (motori, cuscinetti, azionamenti), componenti elettrici/elettronici (sensori, PLC, inverter), nonché componenti pneumatici e idraulici.",
       about_value_li3: "<strong>📊 Efficienza e trasparenza:</strong> Grazie al nostro modello operativo digitale e snello ottimizziamo i costi nascosti, accorciamo i processi d'ordine e garantiamo piena trasparenza su prezzi, tempi di consegna e alternative.",
       about_why_title: "Perché scegliere ABCspareparts?",
-      about_why_p: "Affidatevi a un team di esperti che conosce il vostro business. Facciamo sì che le vostre macchine tornino a funzionare – e la produzione non si fermi. Non cercate solo un ricambio – scegliete la soluzione che funziona."
+      about_why_p: "Affidatevi a un team di esperti che conosce il vostro business. Facciamo sì che le vostre macchine tornino a funzionare – e la produzione non si fermi. Non cercate solo un ricambio – scegliete la soluzione che funziona.",
+      email_subject: "Richiesta preventivo",
+      email_header: "ABCspareparts – Richiesta da abcspareparts.eu",
+      email_contact_section: "DATI DI CONTATTO",
+      email_name: "Nome",
+      email_email: "E-mail",
+      email_company: "Azienda",
+      email_request_section: "RICHIESTA",
+      email_manufacturer: "Costruttore",
+      email_part_number: "Codice/i articolo",
+      email_message: "Messaggio"
     },
     es: {
       tagline: "Tu Socio de Confianza en Recambios Industriales de Alta Calidad",
@@ -427,8 +480,12 @@
       benefit6_title: "Soluciones para obsolescencia",
       benefit6_desc: "Piezas descatalogadas, alternativas verificadas, ayuda rápida en emergencias.",
       contact_title: "¿Listo para tu oferta?",
+      form_name: "Nombre",
+      form_surname: "Apellido",
       form_company: "Empresa",
       form_email: "Email",
+      form_manufacturer: "Fabricante",
+      form_manufacturer_placeholder: "ej. Siemens, Festo, ...",
       form_part_number: "Número(s) de pieza",
       form_part_placeholder: "ej. ABC123, XYZ456",
       form_message: "Mensaje",
@@ -456,7 +513,17 @@
       about_value_li2: "<strong>⚙️ Cobertura técnica integral:</strong> Componentes mecánicos (motores, rodamientos, accionamientos), componentes eléctricos/electrónicos (sensores, PLC, variadores), así como componentes neumáticos e hidráulicos.",
       about_value_li3: "<strong>📊 Eficiencia y transparencia:</strong> Gracias a nuestro modelo de negocio digital y ágil optimizamos costes ocultos, acortamos procesos de pedido y garantizamos plena transparencia en precios, plazos de entrega y alternativas.",
       about_why_title: "¿Por qué elegir ABCspareparts?",
-      about_why_p: "Confíe en un equipo experto que entiende su negocio. Nos aseguramos de que sus máquinas vuelvan a funcionar – y la producción no se detenga. No busque solo un recambio – elija la solución que funciona."
+      about_why_p: "Confíe en un equipo experto que entiende su negocio. Nos aseguramos de que sus máquinas vuelvan a funcionar – y la producción no se detenga. No busque solo un recambio – elija la solución que funciona.",
+      email_subject: "Solicitud de oferta",
+      email_header: "ABCspareparts – Solicitud desde abcspareparts.eu",
+      email_contact_section: "DATOS DE CONTACTO",
+      email_name: "Nombre",
+      email_email: "Email",
+      email_company: "Empresa",
+      email_request_section: "SOLICITUD",
+      email_manufacturer: "Fabricante",
+      email_part_number: "Número(s) de pieza",
+      email_message: "Mensaje"
     },
     fr: {
       tagline: "Votre Partenaire de Confiance pour les Pièces Industrielles de Haute Qualité",
@@ -476,8 +543,12 @@
       benefit6_title: "Solutions d'obsolescence",
       benefit6_desc: "Pièces déréférencées, alternatives vérifiées, aide rapide en urgence.",
       contact_title: "Prêt pour votre devis?",
+      form_name: "Prénom",
+      form_surname: "Nom",
       form_company: "Entreprise",
       form_email: "Email",
+      form_manufacturer: "Fabricant",
+      form_manufacturer_placeholder: "ex. Siemens, Festo, ...",
       form_part_number: "Référence(s) pièce",
       form_part_placeholder: "ex. ABC123, XYZ456",
       form_message: "Message",
@@ -505,7 +576,17 @@
       about_value_li2: "<strong>⚙️ Couverture technique complète:</strong> Composants mécaniques (moteurs, roulements, entraînements), composants électriques/électroniques (capteurs, automates, variateurs), ainsi que composants pneumatiques et hydrauliques.",
       about_value_li3: "<strong>📊 Efficacité et transparence:</strong> Grâce à notre modèle d'activité digital et agile, nous optimisons les coûts cachés, raccourcissons les processus de commande et assurons une transparence totale sur les prix, délais et alternatives.",
       about_why_title: "Pourquoi choisir ABCspareparts?",
-      about_why_p: "Faites confiance à une équipe d'experts qui comprend votre activité. Nous veillons à ce que vos machines redémarrent – et que la production ne s'arrête pas. Ne cherchez pas seulement une pièce – choisissez la solution qui fonctionne."
+      about_why_p: "Faites confiance à une équipe d'experts qui comprend votre activité. Nous veillons à ce que vos machines redémarrent – et que la production ne s'arrête pas. Ne cherchez pas seulement une pièce – choisissez la solution qui fonctionne.",
+      email_subject: "Demande de devis",
+      email_header: "ABCspareparts – Demande depuis abcspareparts.eu",
+      email_contact_section: "COORDONNÉES",
+      email_name: "Nom",
+      email_email: "E-mail",
+      email_company: "Entreprise",
+      email_request_section: "DEMANDE",
+      email_manufacturer: "Fabricant",
+      email_part_number: "Référence(s) pièce",
+      email_message: "Message"
     }
   };
 
@@ -551,6 +632,36 @@
     const lang = ['de','en','it','es','fr'].includes(raw) ? raw : 'de';
     document.getElementById('languageSelect').value = lang;
     changeLanguage(lang);
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const currentLang = document.getElementById('languageSelect').value;
+      const t = translations[currentLang] || translations.de;
+      const nome = document.getElementById('formNome').value.trim();
+      const cognome = document.getElementById('formCognome').value.trim();
+      const firma = document.getElementById('formFirma').value.trim();
+      const email = document.getElementById('formEmail').value.trim();
+      const costruttore = document.getElementById('formCostruttore').value.trim();
+      const teilenummer = document.getElementById('formTeilenummer').value.trim();
+      const nachricht = document.getElementById('formNachricht').value.trim();
+      const subject = (t.email_subject || 'Anfrage Ersatzteil') + ' - ' + teilenummer;
+      const body = [
+        '--- ' + (t.email_header || 'ABCspareparts – Anfrage von abcspareparts.eu') + ' ---',
+        '',
+        t.email_contact_section || 'KONTAKTDATEN',
+        (t.email_name || 'Name') + ': ' + nome + ' ' + cognome,
+        (t.email_company || 'Firma') + ': ' + firma,
+        (t.email_email || 'E-Mail') + ': ' + email,
+        '',
+        t.email_request_section || 'ANFRAGE',
+        (t.email_manufacturer || 'Hersteller') + ': ' + (costruttore || '-'),
+        (t.email_part_number || 'Teilenummer(n)') + ': ' + teilenummer,
+        '',
+        (t.email_message || 'Nachricht') + ':',
+        nachricht || '-'
+      ].join('\n');
+      window.location.href = 'mailto:info@abcspareparts.eu?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
   });
 </script>
 
