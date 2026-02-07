@@ -100,7 +100,7 @@
 
 <!-- Language Selector -->
 <div class="language-selector">
-  <select id="languageSelect" onchange="changeLanguage(this.value)">
+  <select id="languageSelect">
     <option value="de">🇩🇪 Deutsch</option>
     <option value="en">🇬🇧 English</option>
     <option value="it">🇮🇹 Italiano</option>
@@ -689,8 +689,12 @@
   document.addEventListener('DOMContentLoaded', function() {
     var raw = getCurrentLang();
     var lang = ['de','en','it','es','fr'].indexOf(raw) !== -1 ? raw : 'de';
-    document.getElementById('languageSelect').value = lang;
+    var langSelect = document.getElementById('languageSelect');
+    langSelect.value = lang;
     changeLanguage(lang);
+    langSelect.addEventListener('change', function() {
+      changeLanguage(this.value);
+    });
   });
 </script>
 
