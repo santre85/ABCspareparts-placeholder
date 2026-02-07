@@ -288,7 +288,7 @@
   <div class="container">
     <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
     <div class="contact-iframe-wrap" style="height: 650px;">
-      <iframe src="https://erp.abcspareparts.eu/lead-request" title="ABCspareparts – Richiesta preventivo" style="border: none; width: 100%; height: inherit;"></iframe>
+      <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request" title="ABCspareparts – Richiesta preventivo" style="border: none; width: 100%; height: inherit;"></iframe>
     </div>
   </div>
 </section>
@@ -679,6 +679,8 @@
     document.documentElement.lang = lang;
     try { localStorage.setItem('lang', lang); } catch (e) {}
     updateLinksWithLang(lang);
+    var iframe = document.getElementById('contactFormIframe');
+    if (iframe) iframe.src = 'https://erp.abcspareparts.eu/lead-request?_lang=' + lang;
   }
 
   document.addEventListener('DOMContentLoaded', function() {
