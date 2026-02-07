@@ -84,7 +84,7 @@
     .privacy-checkbox { max-width: 500px; margin: 0 auto; font-size: 0.9rem; }
     .privacy-checkbox a { color: #1e3a5f; text-decoration: underline; }
     .contact-iframe-wrap { max-width: 700px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; }
-    .contact-iframe-wrap iframe { width: 100%; height: 650px; border: none; display: block; }
+    .contact-iframe-wrap iframe { width: 100%; height: 950px; border: none; display: block; }
 
     /* Footer */
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
@@ -287,7 +287,7 @@
 <section class="section-contact" id="contact">
   <div class="container">
     <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
-    <div class="contact-iframe-wrap" style="height: 650px;">
+    <div class="contact-iframe-wrap" style="height: 950px;">
       <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request/new" title="ABCspareparts – Richiesta preventivo" style="border: none; width: 100%; height: inherit;"></iframe>
     </div>
   </div>
@@ -686,40 +686,7 @@
     if (iframe) iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?lang=' + (langCode || 'en');
   }
 
-  var formTranslations = {
-    en: { 'First Name': 'First Name', 'Last Name': 'Last Name', 'Organization Name': 'Company Name', 'Email': 'Email', 'Phone': 'Phone', 'Manufacturer': 'Manufacturer', 'Part number(s)': 'Part Number(s)', 'Message': 'Message', 'Privacy Accepted': 'I accept the privacy policy' },
-    de: { 'First Name': 'Vorname', 'Last Name': 'Familienname', 'Organization Name': 'Firmenname', 'Email': 'E-Mail', 'Phone': 'Telefon', 'Manufacturer': 'Hersteller', 'Part number(s)': 'Teilenummer(n)', 'Message': 'Nachricht', 'Privacy Accepted': 'Ich akzeptiere die Datenschutzbestimmungen' },
-    it: { 'First Name': 'Nome', 'Last Name': 'Cognome', 'Organization Name': 'Nome dell\'azienda', 'Email': 'Email', 'Phone': 'Telefono', 'Manufacturer': 'Produttore', 'Part number(s)': 'Numero(i) di parte', 'Message': 'Messaggio', 'Privacy Accepted': 'Accetto la politica sulla privacy' },
-    fr: { 'First Name': 'Prénom', 'Last Name': 'Nom', 'Organization Name': 'Nom de l\'entreprise', 'Email': 'Email', 'Phone': 'Téléphone', 'Manufacturer': 'Fabricant', 'Part number(s)': 'Numéro(s) de pièce', 'Message': 'Message', 'Privacy Accepted': 'J\'accepte la politique de confidentialité' },
-    es: { 'First Name': 'Nombre', 'Last Name': 'Apellido', 'Organization Name': 'Nombre de la empresa', 'Email': 'Correo electrónico', 'Phone': 'Teléfono', 'Manufacturer': 'Fabricante', 'Part number(s)': 'Número(s) de pieza', 'Message': 'Mensaje', 'Privacy Accepted': 'Acepto la política de privacidad' }
-  };
-  function translateFormLabels(lang) {
-    var iframe = document.getElementById('contactFormIframe');
-    if (!iframe) return;
-    try {
-      var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-      var t = formTranslations[lang] || formTranslations.en;
-      var labels = iframeDoc.querySelectorAll('label');
-      labels.forEach(function(label) {
-        var originalText = label.textContent.trim().replace(/\s*\*\s*$/, '');
-        if (t[originalText]) {
-          var hasRequired = label.textContent.indexOf('*') !== -1;
-          label.textContent = t[originalText] + (hasRequired ? ' *' : '');
-        }
-      });
-    } catch (e) {
-      console.error('Übersetzung Formularfelder (nur same-origin):', e);
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', function() {
-    var iframe = document.getElementById('contactFormIframe');
-    if (iframe) {
-      iframe.addEventListener('load', function() {
-        var sel = document.getElementById('languageSelect');
-        translateFormLabels(sel ? sel.value : 'en');
-      });
-    }
     var raw = getCurrentLang();
     var lang = ['de','en','it','es','fr'].indexOf(raw) !== -1 ? raw : 'de';
     document.getElementById('languageSelect').value = lang;
