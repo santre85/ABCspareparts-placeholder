@@ -95,6 +95,7 @@
     .separator { margin: 0 0.5rem; opacity: 0.7; }
     .footer-info { font-size: 0.9rem; opacity: 0.9; }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@main/silktide-consent-manager.css">
 </head>
 <body>
 
@@ -686,6 +687,33 @@
     if (iframe) iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || 'en');
   }
 
+  var cookieConsentText = {
+    de: { desc: '<p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. <a href="cookies.html" target="_blank">Mehr erfahren</a></p>', acceptAll: 'Alle akzeptieren', reject: 'Nur notwendige', prefs: 'Einstellungen', prefsTitle: 'Cookie-Einstellungen', prefsDesc: '<p>Wählen Sie, welche Cookies Sie akzeptieren möchten.</p>', save: 'Speichern und schließen' },
+    en: { desc: '<p>We use cookies to enhance your experience. <a href="cookies.html" target="_blank">Learn more</a></p>', acceptAll: 'Accept all', reject: 'Reject non-essential', prefs: 'Preferences', prefsTitle: 'Cookie preferences', prefsDesc: '<p>Choose which cookies you want to accept.</p>', save: 'Save and close' },
+    it: { desc: '<p>Utilizziamo i cookie per migliorare la tua esperienza. <a href="cookies.html" target="_blank">Scopri di più</a></p>', acceptAll: 'Accetta tutti', reject: 'Rifiuta non essenziali', prefs: 'Preferenze', prefsTitle: 'Preferenze cookie', prefsDesc: '<p>Scegli quali cookie accettare.</p>', save: 'Salva e chiudi' },
+    es: { desc: '<p>Utilizamos cookies para mejorar tu experiencia. <a href="cookies.html" target="_blank">Más información</a></p>', acceptAll: 'Aceptar todo', reject: 'Rechazar no esenciales', prefs: 'Preferencias', prefsTitle: 'Preferencias de cookies', prefsDesc: '<p>Elige qué cookies aceptar.</p>', save: 'Guardar y cerrar' },
+    fr: { desc: '<p>Nous utilisons des cookies pour améliorer votre expérience. <a href="cookies.html" target="_blank">En savoir plus</a></p>', acceptAll: 'Tout accepter', reject: 'Refuser non essentiels', prefs: 'Préférences', prefsTitle: 'Préférences de cookies', prefsDesc: '<p>Choisissez les cookies à accepter.</p>', save: 'Enregistrer et fermer' }
+  };
+  function initConsentManager(lang) {
+    if (typeof window.silktideConsentManager === 'undefined') return;
+    var t = cookieConsentText[lang] || cookieConsentText.en;
+    var inst = window.silktideConsentManager.getInstance();
+    if (inst) {
+      window.silktideConsentManager.update({ text: { prompt: { description: t.desc, acceptAllButtonText: t.acceptAll, rejectNonEssentialButtonText: t.reject, preferencesButtonText: t.prefs }, preferences: { title: t.prefsTitle, description: t.prefsDesc, saveButtonText: t.save } } });
+    } else {
+      window.silktideConsentManager.init({
+          consentTypes: [
+            { id: 'essential', label: 'Essential', description: 'Necessary for the website to function.', required: true },
+            { id: 'analytics', label: 'Analytics', description: 'Help us understand how visitors use the site.', defaultValue: true },
+            { id: 'marketing', label: 'Marketing', description: 'Used for personalized advertising.', defaultValue: false }
+          ],
+          text: { prompt: { description: t.desc, acceptAllButtonText: t.acceptAll, rejectNonEssentialButtonText: t.reject, preferencesButtonText: t.prefs }, preferences: { title: t.prefsTitle, description: t.prefsDesc, saveButtonText: t.save } },
+        prompt: { position: 'bottomCenter' },
+        icon: { position: 'bottomRight' }
+      });
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var raw = getCurrentLang();
     var lang = ['de','en','it','es','fr'].indexOf(raw) !== -1 ? raw : 'de';
@@ -694,9 +722,15 @@
     changeLanguage(lang);
     langSelect.addEventListener('change', function() {
       changeLanguage(this.value);
+      initConsentManager(this.value);
     });
+    initConsentManager(lang);
   });
 </script>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@main/silktide-consent-manager.js"></script>
+<style>
+  #stcm-wrapper { --primaryColor: #1e3a5f; --iconColor: #1e3a5f; }
+</style>
 
 </body>
 </html>
