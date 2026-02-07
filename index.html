@@ -34,17 +34,14 @@
     /* Brands Carousel */
     .brands-carousel {
       overflow: hidden; padding: 1.5rem 0; background: #f8f9fa; border-top: 1px solid #e9ecef;
+      cursor: grab; user-select: none; touch-action: pan-y;
     }
+    .brands-carousel:active, .brands-carousel.dragging { cursor: grabbing; }
     .brands-carousel-track {
-      display: flex; width: max-content; animation: scrollBrands 2400s linear infinite;
+      display: flex; width: max-content; will-change: transform;
     }
-    .brands-carousel:hover .brands-carousel-track { animation-play-state: paused; }
-    .brands-carousel span { color: #a0a0a0; font-size: 0.95rem; font-weight: 500; white-space: nowrap; padding: 0 1.25rem; }
+    .brands-carousel span { color: #a0a0a0; font-size: 0.95rem; font-weight: 500; white-space: nowrap; padding: 0 1.25rem; pointer-events: none; }
     .brands-carousel .sep { color: #c0c0c0; font-weight: 300; }
-    @keyframes scrollBrands {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
 
     /* About / Profile Section */
     .section-about { padding: 4rem 1.5rem; background: #fff; }
@@ -132,10 +129,91 @@
 (function(){
   const brands = ["3M","A.P.O. - ELMOS","AAEON","ABB","ABB Sace","ABB Striebel+John","ABB-Stotz-Kontakt","ABICOR BINZEL","ABL","ABM","AC MOTOREN","ACCU SORT SYSTEMS","ACD","ACE","ACI","ACKSYS","ACL ITALY","ACS MOTION CONTROL","ADAMCZEWSKI","ADDI-DATA","ADEPT KEBA","ADEPT TECHNOLOGY","ADFWEB","ADLINK","ADVANCED ENERGY","ADVANCED MOTION CONTROLS","ADVANTECH","AEG","AEM","AFAG","AGENCAVI SYSTEMS","AGIE","AGILENT","AIREDALE","AIRINDEX","AIRPOWER","AIRTAC","AIRTEC PNEUMATIC GMBH","AIS GMBH","ALBANY","ALCATEL","ALCO","Alfa Laval","ALFRED IMHOF AG","Allen Bradley","ALLIED TELESIS","ALLIED VISION","ALLKABEL","Allweiler","ALPHA","ALSTOM","Altra Industrial Motion","ALUTEC","ALVARIS","AMF","AMIT","AMK","AMKASYN","AMKAVERT","Amot","Ampac","AMPHENOL","AMT","ANDRON","ANLY ELECTRONICS","ANTEK","ANYBUS","APAR","APC","Apem","APENA","APEX","API","Apollo","APPLE","APT MICRO","Aquametro","ARADEX","ARBOR","ARBURG","ARGO HYTOS","ARI Armaturen","ARO","Aron-Brevini Hydraulics","ARTECO","ARTESYN EMBEDDED TECHNOLOGIES","ARTIS","ARTIS MARPOSS","ARUBA","ASCO","ASCOM","ASCON TECHNOLOGIC","ASEKO","ASEM","ASM","ASSA ABLOY","AST","ASTEC","ASTEEL SENSOR","ASTI","ASYS","ATAS","ATC","ATELIERS FRANCCOIS COMPRESSORS","ATEN","ATG","ATLAS COPCO","Atlas Filtri","ATOS","ATR","AUER SIGNAL","AUHORN","AUMA","AUTOKON","AUTOMATION DIRECT","AUTOMATOR","AUTONICS","Autronica","Aventics","Avista","AXIMA","AXIOMTEK / MARKEM-IMAJE","AXIS","AXOR INDUSTRIES","Azcue pumps","B&K VIBRO","B&R","B+B SMARTWORX","B+B THERMO-TECHNIK","B+M","BACHMANN","Baelz","BALDOR","Baldwin","Balluff","BALOGH","BALTEC","BAMO IER","BANNER","BAR","BARKSDALE","BARTEC","BARUFFALDI","BASETECH","BASLER","BAUER","Baumer","BAUMÜLLER","BAUTZ","BAYER","BAYSIDE","BBC","BBL ELEKTRONIK","BD SENSORS","BDT","BECK GMBH","BECKER","Beckhoff","BEI SENSOR","BEIJER","BEL POWER SOLUTION","BELDEN","BELIMO","BENDER","BENEDIKT & JÄGER","BENTLY NEVADA","BERG ELECTRONICS","Berger Lahr","BERGES","BERGHOF","BERNSTEIN","BERTHEL","Beta","BETA SENSORIK","BIDDLE","BIELOMATIK","BIHL + WIEDEMANN","BIHLER","BIN CONTROL","BINAR QUICK-LIFT","Binder","BINSACK REEDTECHNIK","BIRAL AG","BIRCHER REGLOMAT","Bitzer","BIZERBA","BKE","BLACK BOX","BLACKBIRD APS","BLEMO","BLOCK","BLUM","BLUMENBECKER","BMR","BOB","Bock","BONFIGLIOLI","BONFIGLIOLI VECTRON","BONITRON","Bopla","BORRIES","BOSCH","BOSCH / EMERSON","BOSCH REXROTH","BOSTIK-TUCKER","BOURDON HAENNI","BRABENDER","BRAD","BRANSON","BREVE TUFVASSONS","Brevini","Brevini Fluid Power","BRIDGE ROBOTICS","BRINKMANN PUMPS","Briskheat","BRONKHORST","BROWN & SHARPE","BRÜEL & KJAER VIBRO","BST","BULGIN","BÜRKERT","BURR-BROWN","BURSTER","BUSCH-JAEGER","BUSCHJOST","BUSSMANN","BWT","BYSTRONIC","CAB","CABLETRON SYSTEMS","CABUR","CAL CONTROLS","Calex","Calpeda","CAMILLE BAUER","CAMOZZI","CAMTEC","CAPLUGS","Caprari","CAPTRON","CAREL","Carlo Gavazzi","Carrier","CASTELL","CAT","Caterpillar","CCCA","CCS","CD AUTOMATION","CEDES","CEG","CEKON","CELDUC","CELERITY","CELSA","CEMBRE","CEME","CEMP","CENTRALP","Centroid","CENTROSOLAR AG","CERAMICX","CHANTO","Chiaravalli","CHIEFTEC","Chiorino","CHT Bearings","CHT Motor","CI Systems","CIMREX","CINCINNATI MILACRON","CINCOZE","CIRRIS","CISCO","CISTENI","CITEL","CKD","Clack","CLECO","CLIFF","Clifford & Snell","CLOOS ROBOTER","CN MEMORY","COAX","COCKPIT","CodeLine","Cognex","COMAP","COMAT","COMAT RELECO","COMATEL","COMAU","Comintec","COMMELL","COMPACTFLASH","COMPETENT COSMO","CONEC","CONEL","Consolidated","CONTACLIP","CONTEC","CONTRAVES","CONTRINEX","Control Techniques","CONVERTEC","COOPER POWER TOOLS","COPAL","COPLEY CONTROLS","CORCOM","COSEL","COSMOTEC","CO-TRUST","COUP-LINK","COVAL","CRE","CROUZET","Crowcon","CRYDOM","CSE-SEMAPHORE","CSM","CTI","Cummins","Cuno","CUTY AXIS SANMEI ELECTRONICS","CZECHMONT","D.KRIEGER","DAB","DAIKIN INDUSTRIES,LTD.","DALSA","DANAHER MOTION GMBH","Danfoss","DATA DISPLAY","DATACUBE","Datalogic","DATASENSOR","DAXTEN","DBK","DE1","Debem","DEBNAR","Deca","DECKEL MAHO","DEFINOX","DEHN","Dehn+Sohn","DEIF","DELEM","DELL","DELPHIN TECHNOLOGY","Delta","DELTA ELECTRONICS","DELTA ELEKTRONIKA","Deltadrive","DEMAG","DEMATIC","DENISON HYDRAULICS","DENSO","DEPRAG","DESKO A.S.","DESMA","Desmi","DESOUTTER","DESTACO","Det-tronics","Deublin","DEUTRONIC","Deutz","DEWETRON","DIAS","Dichtomatik","DIETZ","DIETZEL UNIVOLT","DIGI CONTROL","DIGIFORCE","DIGITAL POWER SYSTEM","DIGITUS","DINA","DINEL","DINVERTER","DIOTEC SEMICONDUCTOR","DIRECT LOGIC","di-soric","DISTECH CONTROLS","DITTEL","DIVERSEN","DIVUS","DIXELL","DKFL","DKM","D-LINK","DMG","DMG MORI","DMS","DNH","Dodge","DOEPKE","DOGA","DOLD","DOMAT","DOMINO MODULE","DOOSAN ROBOTICS","Dormeyer","DOTECO","Dow","Dowex","DR. STAIGER MOHILO","DR.-ING. K. BUSCH GMBH","Dräger","DRAKA","Drakos Polemis (DP Pumps)","DREHGEBER","DREHSTROM-NORMMOTOR","DRELO","DRUCK","DS SCHARMANN","D-SENSORS","DSM COMPUTER","DUAL","DÜCKER","Dugom Rulli","DUKANE","DUNAKANYAR","DUNGS","DUNKERMOTOREN","DUOMETRIC","DUPLOMATIC","Dupont","DÜRR TECHNIK","DYNISCO","E.DOLD & SÖHNE","E+E ELEKTRONIK","e2s","EA ELEKTRO-AUTOMATIK","EAE","EAO","EASYLUX","Eaton","Eaton Moeller","EATON/VICKERS","Ebara","EBELT","EBERLE","EBM","EBM-PAPST","ECKELMANN","ECLIPSE","Ecolab","ECONIX","Econosto","EDMUND OPTICS","EDWARDS","EFB-ELEKTRONIK","Effebi Valves","EFI ELECTRONIC","EFORE","EGE","EG-ELECTRONIC","EGM","Egon Harig","EHL","EISELE","EISEN MACHINERY INC","EISENMANN","EKONT","ELABO","ELAN","Elau","ELCA","ELCO","ELCON","ELECO","ELECTRO CAM","ELEKTRA","ELEKTRO BEČOV","ELEKTROPŘÍSTROJ PÍSEK","ELEKTROR","Elesa","ELESA+GANTER","ELETTA","ELFIS","ELFISTOR","ELGO ELECTRIC","ELIN","ELIWELL","ELKO","ELKO EP","ELKOP","ELMO","ELNICO","ELNOR MOTORS","ELO","ELO TOUCHSYSTEMS","ELOBAU","EL-O-MATIC","Elomek","ELREST","ELSACO","ELSPEC","ELSTEIN","ELTAKO","ELTEC","ELTEK","ELTRA","ELTROMAT","ELTROPA","ELTROTEC","EM TFT","EMA","EMAS","EMERSON","EMHART TEKNOLOGIES","E-MOTION","EMOTRON","Endress+Hauser","ENERGO NOVA","ENGEL","Eni","Enraf","ENSTICK","ENTES","EOLANE","EPA","EPC","EPCOS","EPH ELEKTRONIK","EPIC CONTACT","EPM","EPSON","ERA","ERHARDT+LEIMER","ERI","ERICO","ERICSSON","ERIFLEX","ERNI","ERO ELECTRONIC","ESA","ESCHA","ESD","ESES","ESITRON","ESR","ESSENTRA COMPONENTS","EST","EST TELECOM","ESTIC","ESTUN","E-T-A","ETEL","E-TERM","ETI","Euchner","EUGEN HENSLE","Eumax","Eupec","EURA","EUROGI","EUROSWITCH","EUROTEK","EUROTHERM","Euro-Valve","EVIG","Evoqua","EWAB","EWON","EX - DECLARATION","EXCEET ELECTRONICS AG","EXIMUS","EXLAR","EXSYS","EXTOL","EZO","F&G","F4","FABORY","FAG","FAGOR AUTOMATION","FAGUS GRECON","FAIRCHILD","FALINK","FANOX","Fanuc","FASE SALDATURA","FASTECH","FASTEMS","FATEK","FAULHABER","FAYTECH","FCPK","FCT","FEAS","Fedco","Federal Signal","FELDPAUSCH","FELLER ENGINEERING","Femsan","FENWAL","FER STRUMENTI","Ferag","FERRARI SISTEMI","FERRAZ SHAWMUT/VELKOOBCHOD","FERROCONTROL","Festo","FFM","FHF","FIAM","FIAMM","FIBRO","FIDIA","FIESSLER","Filmtec","FILTRON","Finder","Fire Sentry","FISHER-ROSEMOUNT SYSTEMS","FITOK","FLAJZAR","Flender","FLENDER HIMMEL","FLINTEC","FLIR","FLUKE","Flygt","FMS","FORCE COMPUTERS","FORTEC","FORTRESS SAFETY","Foxboro Eckardt","FRANZ KESSLER","FRED SPS HOUSE","FRENZEL+BERG","FREUDENBERG-SIMRIT","FRIETERS","FRIMO","Frizlen","FRONIUS","FSP GROUP INC","FT TECHNOLOGIES","Fuji Electric","FUJIFILM CORPORATION","FUJINON","FUJITSU","Fulleon","FULLTECH","FURNAS","FUSS-EMV","Gai-tronics","Gamak","Gardner Denver","Gassonic","Gates","Gefran","General Monitors","GMI Databox","Graviner","Green Instruments","Grundfos","Hach","Harmsco","Harting","Hatteland Display","HBM","Heidelberg","Heidenhain","Hekatron","Heyl","Hitachi","Hiwin","Hochiki","Hohner","Honeywell","Hoyer Motors","Hübner Elektromaschinen AG","Hydranautics","Hydr-App","Hydromec","IFM","IMI NORGREN","IMO","Ina","Indramat","Infineon","Inge","Intel","IonPure","IOR","IPF","Italvibras","Iwaki","Ixys","Jacobi","Johnson Pump","K&G","KAC","KEB","Keyence","Keystone","Klaxon","Klöckner Moeller","Kockum Sonics","Koenig & Bauer","Kolbus","Kollmorgen Seidel","Kolmeks","Kongsberg","Kontron","Koyo","Krohne","KSB","Kübler","KUKA","Kunpeng","Kurita","Lalizas","Lanxess","Lappkabel","Laumas","Lavastica","Lavormek","Legrand","Leistritz","LEM","Lenntech","Lenze","Leuze","LevelDatic","LewaBrane","Lewatit","LG Chem","Loctite","Lowara","LTI Motion","LTN","MAC","Magris","MAK","MAN","Manroland","Mastervolt","MBO","Mean Well","Mec Motors","Medc","Mehanizmi","MELCO TECHNOREX","Metal Work","MGM","Microdata","Microdyn Nadir","Micron","Millipore","Minebea","Mitsubishi","Mitsubishi Electric","Mondeo","Motovario","Movex","MSA","Müller Martini","Nalco","Nec","Net Safety","NHE","NINGBO HONGBO WEITE MOTOR CO.,LTD","Nippon","Nittan","Nocchi","Nok","Nord Drivesystems","Noris","Novenco","NOVEXX","NSK","Ntron","NUM","Oldham","Omron","Pacific Ozone","Paladin","Pall","Panasonic","Parker","Pbq","Pentair","Pentek","Pepperl+Fuchs","Perma","Phoenix Contact","Pilz","Pizzato","Pneumax","Power Sonic","Pro-Face","Prominent","PRONOMIC","Protec","Purolite","QL","RAE Systems","Regal Rexnord","Regina","Reis Robotics","Resinex","Revamping","REXNORD-MARBETT-MCC","Rexroth","Rickmeier Pumpen","Rittal","RITZ Instrument Transformers","RKI instruments","Rockwell","Rohm & Haas","Ropur","Rosemount Analytical","Rossi","Rosta","Rulmeca","S+M","SABROE","Saer","Saer Electric Pumps","Safari Belting","Safetec","Saia","Saia-Burgess","Salwico","Samhydraulik","Sanyo Denki","Sauer & Sohn","Schaffner","Schaller Automation","Schmersal","Schneider Electric","Scott Safety","Seaplus","Seim Screw Pumps","Semikron","SERVO-TEK","Servoteknikk","SES Sterling","SEW Eurodrive","Sharp","Siba","Sick","Siemens","Sigmatek","Signaline","SIKO","Simtronics","Siti","SKF","SKL","SKUM","SMC","SNR","Solo detector testers","Speck","Specs","Spectrex INC.","Spirax Sarco","ST MICROELECTRONICS","Stahl","Stober","Suez","Sulzer","Sunon","SYM BANG","Synectics","System Plast","Tamagawa","TDK","Technotrans","Teckind Antivibration","Teleindustria","Telemecanique","Tellure Rota","Testomat","Texas Instruments","Thermax","Timken","Toray","Toshiba","TR Electronic","Trisep","Trumpf","Tsubis","Turck","Tyco","Unitor","VAC","Valcom","Vasa","Vega","Versa-Matic","Victaulic","Viking","Vingtor","Vogt","Volvo Penta","Wago","Wamgroup","Wärtsilä","Watson Marlow","Wave Cyber","Weidmüller","Wenglor","WENLING YUHAI ELECTROMECHANICAL","Werma","WESTFALIA","WIKA","Wima","Wittenstein Alpha","World-Valve","YASKAWA","ZMC"];
   const track = document.getElementById('brandsTrack');
-  if (track) {
-    const html = brands.map(b => '<span>' + b + '</span><span class="sep">•</span>').join('');
-    track.innerHTML = html + html;
+  const carousel = track && track.closest('.brands-carousel');
+  if (!track || !carousel) return;
+
+  const html = brands.map(b => '<span>' + b + '</span><span class="sep">•</span>').join('');
+  track.innerHTML = html + html;
+
+  var baseOffset = 0;
+  var dragOffset = 0;
+  var startX = 0;
+  var dragging = false;
+  var halfWidth = 0;
+  var animId = null;
+  var startTime = 0;
+  var pausedAt = 0;
+
+  function getClientX(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
+  function updateTransform() {
+    var x = dragging ? (pausedAt + dragOffset) : baseOffset;
+    if (halfWidth > 0 && !dragging) {
+      while (x > 0) x -= halfWidth;
+      while (x < -halfWidth) x += halfWidth;
+    }
+    track.style.transform = 'translateX(' + x + 'px)';
   }
+  function loop(now) {
+    if (!startTime) startTime = now;
+    if (!dragging && halfWidth > 0) {
+      var elapsed = (now - startTime) / 1000;
+      var pct = (elapsed / 2400) * 100;
+      baseOffset = -(pct / 100) * halfWidth;
+      if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
+      updateTransform();
+    }
+    animId = requestAnimationFrame(loop);
+  }
+  function measure() {
+    halfWidth = track.scrollWidth / 2;
+  }
+  measure();
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(measure).observe(track);
+  }
+  animId = requestAnimationFrame(loop);
+
+  function onStart(e) {
+    e.preventDefault();
+    dragging = true;
+    carousel.classList.add('dragging');
+    startX = getClientX(e);
+    pausedAt = baseOffset + dragOffset;
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    e.preventDefault();
+    var dx = getClientX(e) - startX;
+    dragOffset = dx;
+    updateTransform();
+  }
+  function onEnd() {
+    if (!dragging) return;
+    dragging = false;
+    carousel.classList.remove('dragging');
+    baseOffset = pausedAt + dragOffset;
+    halfWidth = track.scrollWidth / 2;
+    if (halfWidth > 0) {
+      while (baseOffset > 0) baseOffset -= halfWidth;
+      while (baseOffset < -halfWidth) baseOffset += halfWidth;
+    }
+    dragOffset = 0;
+    if (halfWidth > 0) {
+      var pct = -baseOffset / halfWidth;
+      startTime = performance.now() - (pct * 2400 * 1000);
+    } else {
+      startTime = performance.now();
+    }
+    updateTransform();
+  }
+
+  carousel.addEventListener('mousedown', onStart);
+  carousel.addEventListener('touchstart', onStart, { passive: false });
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('touchmove', onMove, { passive: false });
+  document.addEventListener('mouseup', onEnd);
+  document.addEventListener('touchend', onEnd);
+  document.addEventListener('touchcancel', onEnd);
 })();
 </script>
 
