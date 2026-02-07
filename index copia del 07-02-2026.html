@@ -83,8 +83,6 @@
     .submit-button:hover { background: #2d5a87; }
     .privacy-checkbox { max-width: 500px; margin: 0 auto; font-size: 0.9rem; }
     .privacy-checkbox a { color: #1e3a5f; text-decoration: underline; }
-    .contact-iframe-wrap { max-width: 700px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; }
-    .contact-iframe-wrap iframe { width: 100%; height: 650px; border: none; display: block; }
 
     /* Footer */
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
@@ -287,9 +285,45 @@
 <section class="section-contact" id="contact">
   <div class="container">
     <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
-    <div class="contact-iframe-wrap">
-      <iframe src="https://erp.abcspareparts.eu/lead-request" title="ABCspareparts – Richiesta preventivo"></iframe>
-    </div>
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgevwwe" method="POST">
+      <div class="form-group">
+        <label data-i18n="form_name">Nome</label>
+        <input type="text" name="nome" id="formNome" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_surname">Cognome</label>
+        <input type="text" name="cognome" id="formCognome" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_company">Firma</label>
+        <input type="text" name="firma" id="formFirma" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_email">E-Mail</label>
+        <input type="email" name="email" id="formEmail" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_manufacturer">Costruttore</label>
+        <input type="text" name="costruttore" id="formCostruttore" data-i18n-placeholder="form_manufacturer_placeholder" placeholder="z.B. Siemens, Festo, ...">
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_part_number">Teilenummer(n)</label>
+        <input type="text" name="teilenummer" id="formTeilenummer" data-i18n-placeholder="form_part_placeholder" placeholder="z.B. ABC123, XYZ456" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_message">Nachricht</label>
+        <textarea name="nachricht" id="formNachricht" rows="4" data-i18n-placeholder="form_message_placeholder" placeholder="Zusätzliche Informationen..."></textarea>
+      </div>
+      <div class="form-group privacy-checkbox">
+        <label>
+          <input type="checkbox" name="privacy" required>
+          <span data-i18n="form_privacy">
+            Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere diese.
+          </span>
+        </label>
+      </div>
+      <button type="submit" class="submit-button" data-i18n="form_submit">Anfrage absenden</button>
+    </form>
   </div>
 </section>
 
@@ -686,6 +720,43 @@
     const lang = ['de','en','it','es','fr'].includes(raw) ? raw : 'de';
     document.getElementById('languageSelect').value = lang;
     changeLanguage(lang);
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const btn = form.querySelector('button[type="submit"]');
+      const currentLang = document.getElementById('languageSelect').value;
+      const t = translations[currentLang] || translations.de;
+      const teilenummer = document.getElementById('formTeilenummer').value.trim();
+      const subject = (t.email_subject || 'Anfrage Ersatzteil') + ' - ' + teilenummer;
+
+      const formData = new FormData(form);
+      formData.append('_subject', subject);
+
+      btn.disabled = true;
+      btn.textContent = '...';
+
+      fetch('https://formspree.io/f/mjgevwwe', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.ok) {
+          form.reset();
+          alert(t.form_success || 'Thank you! Your request has been sent.');
+        } else {
+          alert(t.form_error || 'Error sending. Please try again later.');
+        }
+      })
+      .catch(function() {
+        alert(t.form_error || 'Error sending. Please try again later.');
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = t.form_submit;
+      });
+    });
   });
 </script>
 
