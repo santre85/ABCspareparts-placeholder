@@ -207,7 +207,7 @@
 <section class="section-contact" id="contact">
   <div class="container">
     <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgevwwe" method="POST">
       <div class="form-group">
         <label data-i18n="form_name">Nome</label>
         <input type="text" name="nome" id="formNome" required>
@@ -302,6 +302,8 @@
       form_message: "Nachricht",
       form_message_placeholder: "Zusätzliche Informationen...",
       form_submit: "Anfrage absenden",
+      form_success: "Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns in Kürze.",
+      form_error: "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
       form_privacy: "Ich habe die <a href=\"datenschutz.html\" target=\"_blank\">Datenschutzerklärung</a> gelesen und akzeptiere diese.",
       footer_imprint: "Impressum",
       footer_privacy: "Datenschutz",
@@ -365,6 +367,8 @@
       form_message: "Message",
       form_message_placeholder: "Additional information...",
       form_submit: "Submit request",
+      form_success: "Thank you! Your request has been sent. We will get back to you soon.",
+      form_error: "Error sending. Please try again later.",
       form_privacy: "I have read and accept the <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_imprint: "Imprint",
       footer_privacy: "Privacy",
@@ -428,6 +432,8 @@
       form_message: "Messaggio",
       form_message_placeholder: "Informazioni aggiuntive...",
       form_submit: "Invia richiesta",
+      form_success: "Grazie! La tua richiesta è stata inviata. Ti risponderemo al più presto.",
+      form_error: "Errore nell'invio. Riprova più tardi.",
       form_privacy: "Ho letto e accetto la <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_imprint: "Impressum",
       footer_privacy: "Privacy",
@@ -491,6 +497,8 @@
       form_message: "Mensaje",
       form_message_placeholder: "Información adicional...",
       form_submit: "Enviar solicitud",
+      form_success: "¡Gracias! Su solicitud ha sido enviada. Nos pondremos en contacto pronto.",
+      form_error: "Error al enviar. Por favor, inténtelo más tarde.",
       form_privacy: "He leído y acepto la <a href=\"datenschutz.html\" target=\"_blank\">Política de Privacidad</a>.",
       footer_imprint: "Aviso legal",
       footer_privacy: "Privacidad",
@@ -554,6 +562,8 @@
       form_message: "Message",
       form_message_placeholder: "Informations complémentaires...",
       form_submit: "Envoyer la demande",
+      form_success: "Merci ! Votre demande a été envoyée. Nous vous répondrons bientôt.",
+      form_error: "Erreur lors de l'envoi. Veuillez réessayer plus tard.",
       form_privacy: "J'ai lu et j'accepte la <a href=\"datenschutz.html\" target=\"_blank\">Politique de confidentialité</a>.",
       footer_imprint: "Mentions légales",
       footer_privacy: "Confidentialité",
@@ -635,32 +645,39 @@
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const btn = form.querySelector('button[type="submit"]');
       const currentLang = document.getElementById('languageSelect').value;
       const t = translations[currentLang] || translations.de;
-      const nome = document.getElementById('formNome').value.trim();
-      const cognome = document.getElementById('formCognome').value.trim();
-      const firma = document.getElementById('formFirma').value.trim();
-      const email = document.getElementById('formEmail').value.trim();
-      const costruttore = document.getElementById('formCostruttore').value.trim();
       const teilenummer = document.getElementById('formTeilenummer').value.trim();
-      const nachricht = document.getElementById('formNachricht').value.trim();
       const subject = (t.email_subject || 'Anfrage Ersatzteil') + ' - ' + teilenummer;
-      const body = [
-        '--- ' + (t.email_header || 'ABCspareparts – Anfrage von abcspareparts.eu') + ' ---',
-        '',
-        t.email_contact_section || 'KONTAKTDATEN',
-        (t.email_name || 'Name') + ': ' + nome + ' ' + cognome,
-        (t.email_company || 'Firma') + ': ' + firma,
-        (t.email_email || 'E-Mail') + ': ' + email,
-        '',
-        t.email_request_section || 'ANFRAGE',
-        (t.email_manufacturer || 'Hersteller') + ': ' + (costruttore || '-'),
-        (t.email_part_number || 'Teilenummer(n)') + ': ' + teilenummer,
-        '',
-        (t.email_message || 'Nachricht') + ':',
-        nachricht || '-'
-      ].join('\n');
-      window.location.href = 'mailto:info@abcspareparts.eu?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      const formData = new FormData(form);
+      formData.append('_subject', subject);
+
+      btn.disabled = true;
+      btn.textContent = '...';
+
+      fetch('https://formspree.io/f/mjgevwwe', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.ok) {
+          form.reset();
+          alert(t.form_success || 'Thank you! Your request has been sent.');
+        } else {
+          alert(t.form_error || 'Error sending. Please try again later.');
+        }
+      })
+      .catch(function() {
+        alert(t.form_error || 'Error sending. Please try again later.');
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = t.form_submit;
+      });
     });
   });
 </script>
