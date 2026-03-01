@@ -33,15 +33,17 @@
 
     /* Brands Carousel */
     .brands-carousel {
-      overflow: hidden; padding: 1.5rem 0; background: #f8f9fa; border-top: 1px solid #e9ecef;
+      overflow: hidden; padding: 0.5rem 0; background: #f8f9fa; border-top: 1px solid #e9ecef;
       cursor: grab; user-select: none; touch-action: pan-y;
     }
     .brands-carousel:active, .brands-carousel.dragging { cursor: grabbing; }
     .brands-carousel-track {
-      display: flex; width: max-content; will-change: transform;
+      display: flex; align-items: center; width: max-content; will-change: transform; line-height: 1.2;
     }
-    .brands-carousel span { color: #a0a0a0; font-size: 0.95rem; font-weight: 500; white-space: nowrap; padding: 0 1.25rem; pointer-events: none; }
-    .brands-carousel .sep { color: #c0c0c0; font-weight: 300; }
+    .brands-carousel span { color: #444; font-size: 0.85rem; font-weight: 600; white-space: nowrap; padding: 0 1rem; pointer-events: none; }
+    .brands-carousel .sep { color: #999; font-weight: 300; }
+    .brands-carousel-reverse { transform: scaleX(-1); }
+    .brands-carousel-reverse-inner { transform: scaleX(-1); display: flex; width: max-content; }
 
     /* About / Profile Section */
     .section-about { padding: 4rem 1.5rem; background: #fff; }
@@ -169,12 +171,121 @@
   }
   function measure() {
     halfWidth = track.scrollWidth / 2;
+    window.__brandsHalfWidth = halfWidth;
   }
   measure();
   if (typeof ResizeObserver !== 'undefined') {
     new ResizeObserver(measure).observe(track);
   }
   animId = requestAnimationFrame(loop);
+
+  function onStart(e) {
+    e.preventDefault();
+    dragging = true;
+    carousel.classList.add('dragging');
+    startX = getClientX(e);
+    pausedAt = baseOffset + dragOffset;
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    e.preventDefault();
+    var dx = getClientX(e) - startX;
+    dragOffset = dx;
+    updateTransform();
+  }
+  function onEnd() {
+    if (!dragging) return;
+    dragging = false;
+    carousel.classList.remove('dragging');
+    baseOffset = pausedAt + dragOffset;
+    halfWidth = track.scrollWidth / 2;
+    if (halfWidth > 0) {
+      while (baseOffset > 0) baseOffset -= halfWidth;
+      while (baseOffset < -halfWidth) baseOffset += halfWidth;
+    }
+    dragOffset = 0;
+    if (halfWidth > 0) {
+      var pct = -baseOffset / halfWidth;
+      startTime = performance.now() - (pct * 2400 * 1000);
+    } else {
+      startTime = performance.now();
+    }
+    updateTransform();
+  }
+
+  carousel.addEventListener('mousedown', onStart);
+  carousel.addEventListener('touchstart', onStart, { passive: false });
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('touchmove', onMove, { passive: false });
+  document.addEventListener('mouseup', onEnd);
+  document.addEventListener('touchend', onEnd);
+  document.addEventListener('touchcancel', onEnd);
+  window.__brandsList = brands;
+})();
+</script>
+
+<!-- Brands Carousel Reverse (Z to A) -->
+<div class="brands-carousel brands-carousel-reverse">
+  <div class="brands-carousel-track" id="brandsTrackReverse"></div>
+</div>
+<script>
+(function(){
+  var brands = (window.__brandsList || []).slice().reverse();
+  const track = document.getElementById('brandsTrackReverse');
+  const carousel = track && track.closest('.brands-carousel');
+  if (!track || !carousel || brands.length === 0) return;
+
+  var baseOffset = 0;
+  var dragOffset = 0;
+  var startX = 0;
+  var dragging = false;
+  var halfWidth = 0;
+  var animId = null;
+  var startTime = 0;
+  var pausedAt = 0;
+
+  function getClientX(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
+  function updateTransform() {
+    var x = dragging ? (pausedAt + dragOffset) : baseOffset;
+    if (halfWidth > 0 && !dragging) {
+      while (x > 0) x -= halfWidth;
+      while (x < -halfWidth) x += halfWidth;
+    }
+    track.style.transform = 'translateX(' + x + 'px)';
+  }
+  function loop(now) {
+    if (halfWidth <= 0) measure();
+    if (!startTime) startTime = now;
+    if (!dragging && halfWidth > 0) {
+      var elapsed = (now - startTime) / 1000;
+      var pct = (elapsed / 2400) * 100;
+      baseOffset = -(pct / 100) * halfWidth;
+      if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
+      updateTransform();
+    }
+    animId = requestAnimationFrame(loop);
+  }
+  function measure() {
+    var firstTrack = document.getElementById('brandsTrack');
+    var own = track.scrollWidth / 2;
+    halfWidth = (firstTrack && firstTrack.scrollWidth) ? firstTrack.scrollWidth / 2 : own;
+    if (halfWidth <= 0 && window.__brandsHalfWidth) halfWidth = window.__brandsHalfWidth;
+    if (halfWidth <= 0) halfWidth = own;
+  }
+  var html = brands.map(function(b) { return '<span>' + b + '</span><span class="sep">•</span>'; }).join('');
+  track.innerHTML = '<div class="brands-carousel-reverse-inner">' + html + html + '</div>';
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      measure();
+      baseOffset = -halfWidth / 2;
+      startTime = performance.now() - (0.5 * 2400 * 1000);
+      updateTransform();
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(measure).observe(track);
+      }
+      animId = requestAnimationFrame(loop);
+    });
+  });
 
   function onStart(e) {
     e.preventDefault();
