@@ -1,0 +1,30 @@
+# robots.txt for abcspareparts.eu
+# Allow all crawlers (search engines and AI) to index the site
+
+User-agent: *
+Allow: /
+
+# AI and search crawlers (common bots)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemap location (update the domain if different)
+Sitemap: https://www.abcspareparts.eu/sitemap.xml
