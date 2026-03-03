@@ -31,18 +31,29 @@ const marcheHtml = `<!DOCTYPE html>
     .footer{background:#1e3a5f;color:#fff;padding:1.5rem;text-align:center;margin-top:2rem}
     .footer a{color:#fff;text-decoration:none}
     .footer a:hover{text-decoration:underline}
+    .language-selector{position:fixed;top:1rem;right:1rem;z-index:1000}
+    .language-selector select{padding:0.5rem 2rem 0.5rem 0.75rem;font-size:0.9rem;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer}
   </style>
 </head>
 <body>
+  <div class="language-selector">
+    <select id="languageSelect">
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="fr">🇫🇷 Français</option>
+    </select>
+  </div>
   <header class="page-header">
     <div class="container">
-      <h1>Marche e produttori</h1>
-      <p>Oltre ${b.length} marchi per ricambi industriali. <a href="index.html">Torna alla home</a></p>
+      <h1 data-i18n="marche_h1">Marche e produttori</h1>
+      <p data-i18n="marche_subtitle">Oltre ${b.length} marchi per ricambi industriali. <a href="index.html">Torna alla home</a></p>
     </div>
   </header>
   <main class="brands-section">
     <div class="container">
-      <h2>Elenco marchi distribuiti da ABCspareparts</h2>
+      <h2 data-i18n="marche_list_title">Elenco marchi distribuiti da ABCspareparts</h2>
       <ul class="brands-list">
 ${lis}
       </ul>
@@ -50,9 +61,25 @@ ${lis}
   </main>
   <footer class="footer">
     <div class="container">
-      <a href="index.html">ABCspareparts</a> &middot; <a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a>
+      <a href="index.html" data-i18n="marche_footer_home">ABCspareparts</a> &middot; <a href="impressum.html" data-i18n="marche_footer_imprint">Impressum</a> &middot; <a href="datenschutz.html" data-i18n="marche_footer_privacy">Datenschutz</a>
     </div>
   </footer>
+  <script>
+  (function(){
+    var translations = {
+      de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über ${b.length} Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Datenschutz' },
+      en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over ${b.length} brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Imprint', marche_footer_privacy: 'Privacy' },
+      it: { marche_h1: 'Marche e produttori', marche_subtitle: 'Oltre ${b.length} marchi per ricambi industriali. <a href="index.html">Torna alla home</a>', marche_list_title: 'Elenco marchi distribuiti da ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Privacy' },
+      es: { marche_h1: 'Marcas y fabricantes', marche_subtitle: 'Más de ${b.length} marcas de recambios industriales. <a href="index.html">Volver al inicio</a>', marche_list_title: 'Listado de marcas distribuidas por ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Aviso legal', marche_footer_privacy: 'Privacidad' },
+      fr: { marche_h1: 'Marques et fabricants', marche_subtitle: 'Plus de ${b.length} marques de pièces industrielles. <a href="index.html">Retour à l\\'accueil</a>', marche_list_title: 'Liste des marques distribuées par ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Mentions légales', marche_footer_privacy: 'Confidentialité' }
+    };
+    function getLangFromUrl(){ var p = new URLSearchParams(window.location.search); var l = p.get('lang'); return l && ['de','en','it','es','fr'].indexOf(l)!==-1 ? l : null; }
+    function getCurrentLang(){ return getLangFromUrl() || (typeof localStorage!=='undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de'; }
+    function updateLinksWithLang(lang){ var pages = ['index.html','marche.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html']; document.querySelectorAll('a[href]').forEach(function(a){ var h = a.getAttribute('href')||''; if(h.indexOf('#')===0||h.indexOf('mailto:')===0) return; var parts = h.split('#'); var base = parts[0].split('?')[0]; if(pages.indexOf(base)!==-1) a.href = base + '?lang=' + lang + (parts[1] ? '#'+parts[1] : ''); }); }
+    function changeLanguage(lang){ var t = translations[lang] || translations.de; document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if(t[k]) el.innerHTML = t[k]; }); document.documentElement.lang = lang; try{ localStorage.setItem('lang', lang); }catch(e){} updateLinksWithLang(lang); }
+    document.addEventListener('DOMContentLoaded', function(){ var raw = getCurrentLang(); var lang = ['de','en','it','es','fr'].indexOf(raw)!==-1 ? raw : 'de'; var sel = document.getElementById('languageSelect'); if(sel) sel.value = lang; changeLanguage(lang); if(sel) sel.addEventListener('change', function(){ changeLanguage(this.value); }); });
+  })();
+  </script>
 </body>
 </html>`;
 fs.writeFileSync('marche.html', marcheHtml);
