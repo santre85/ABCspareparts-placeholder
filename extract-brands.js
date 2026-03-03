@@ -11,10 +11,24 @@ const marcheHtml = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marche e produttori | ABCspareparts – Oltre 900 marchi per ricambi industriali</title>
-  <meta name="description" content="Elenco completo dei marchi e produttori per cui ABCspareparts distribuisce ricambi industriali MRO: Siemens, Festo, Bosch, ABB, Schneider, Omron e oltre 900 altri.">
+  <title>Marche e produttori | ABCspareparts – Oltre ${b.length} marchi per ricambi industriali</title>
+  <meta name="description" content="Elenco completo dei marchi e produttori per cui ABCspareparts distribuisce ricambi industriali MRO: Siemens, Festo, Bosch, ABB, Schneider, Omron e oltre ${b.length} altri.">
   <meta name="keywords" content="marchi ricambi industriali, produttori MRO, ABCspareparts marche, Siemens Festo Bosch ABB ricambi">
   <link rel="canonical" href="${base}/marche.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="${base}/marche.html">
+  <meta property="og:title" content="Brands and manufacturers | ABCspareparts – ${b.length}+ industrial spare parts brands">
+  <meta property="og:description" content="Full list of brands distributed by ABCspareparts: Siemens, Festo, Bosch, ABB, Schneider, Omron and ${b.length}+ more. MRO industrial spare parts.">
+  <meta property="og:image" content="${base}/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brands and manufacturers | ABCspareparts – ${b.length}+ brands">
+  <meta name="twitter:description" content="Full list of brands distributed by ABCspareparts. MRO industrial spare parts.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","name":"Industrial spare parts brands distributed by ABCspareparts","description":"List of ${b.length}+ manufacturers and brands for MRO industrial spare parts","numberOfItems":${b.length},"url":"${base}/marche.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${base}/"},{"@type":"ListItem","position":2,"name":"Marche","item":"${base}/marche.html"}]}
+  </script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#333;background:#fff}
