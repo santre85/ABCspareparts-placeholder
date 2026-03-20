@@ -1,0 +1,15 @@
+# GitHub Pages Jekyll configuration
+title: ABCspareparts
+description: MRO industrial spare parts distributor
+url: "https://abcspareparts.eu"
+
+# Include sitemap.xml as proper XML
+include:
+  - sitemap.xml
+
+# Disable Jekyll processing on XML files
+defaults:
+  - scope:
+      path: "sitemap.xml"
+    values:
+      layout: none
