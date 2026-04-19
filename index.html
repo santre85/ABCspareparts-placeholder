@@ -92,6 +92,15 @@
     .brands-carousel-reverse { transform: scaleX(-1); }
     .brands-carousel-reverse-inner { transform: scaleX(-1); display: flex; width: max-content; }
 
+    .brand-search-strip { background: #f8f9fa; border-top: 1px solid #e9ecef; border-bottom: 1px solid #e9ecef; padding: 1.25rem 1.5rem 1.5rem; }
+    .brand-search-home-form { max-width: 640px; margin: 0 auto; }
+    .brand-search-home-form label { display: block; font-weight: 600; color: #1e3a5f; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .brand-search-home-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: stretch; }
+    .brand-search-home-row input { flex: 1; min-width: 180px; padding: 0.65rem 0.85rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+    .brand-search-home-row button { padding: 0.65rem 1.25rem; background: #1e3a5f; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
+    .brand-search-home-row button:hover { background: #2d5a87; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
     /* About / Profile Section */
     .section-about { padding: 4rem 1.5rem; background: #fff; }
     .section-about .container { max-width: 800px; }
@@ -192,6 +201,19 @@
       </p>
       <a href="#contact" class="cta-button" data-i18n="cta_button">Jetzt anfragen</a>
     </div>
+  </div>
+</section>
+
+<section class="brand-search-strip" aria-labelledby="homeBrandSearchHeading">
+  <div class="container">
+    <h2 id="homeBrandSearchHeading" class="visually-hidden" data-i18n="brand_search_heading">Marke suchen</h2>
+    <form id="homeBrandSearchForm" class="brand-search-home-form" action="marche.html" method="get" autocomplete="off">
+      <label for="homeBrandSearchInput" data-i18n="brand_search_label">Marke suchen</label>
+      <div class="brand-search-home-row">
+        <input type="search" id="homeBrandSearchInput" name="q" data-i18n-placeholder="brand_search_placeholder" maxlength="120" enterkeyhint="search" />
+        <button type="submit" data-i18n="brand_search_button">Zur Markenliste</button>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -561,6 +583,10 @@
       form_privacy: "Ich habe die <a href=\"datenschutz.html\" target=\"_blank\">Datenschutzerklärung</a> gelesen und akzeptiere diese.",
       footer_brands: "Marken",
       view_all_brands: "Vollständige Liste der 9000+ Marken anzeigen",
+      brand_search_heading: "Marke suchen",
+      brand_search_label: "Marke suchen",
+      brand_search_placeholder: "z. B. Siemens, Festo …",
+      brand_search_button: "Zur Markenliste",
       footer_imprint: "Impressum",
       footer_privacy: "Datenschutz",
       footer_terms: "AGB",
@@ -638,6 +664,10 @@
       form_privacy: "I have read and accept the <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_brands: "Brands",
       view_all_brands: "View full list of 9000+ brands",
+      brand_search_heading: "Search brand",
+      brand_search_label: "Search brand",
+      brand_search_placeholder: "e.g. Siemens, Festo …",
+      brand_search_button: "Go to brand list",
       footer_imprint: "Imprint",
       footer_privacy: "Privacy",
       footer_terms: "Terms",
@@ -715,6 +745,10 @@
       form_privacy: "Ho letto e accetto la <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_brands: "Marche",
       view_all_brands: "Vedi elenco completo di 9000+ marche",
+      brand_search_heading: "Cerca marchio",
+      brand_search_label: "Cerca marchio",
+      brand_search_placeholder: "es. Siemens, Festo …",
+      brand_search_button: "Vai all’elenco marchi",
       footer_imprint: "Impressum",
       footer_privacy: "Privacy",
       footer_terms: "Condizioni",
@@ -792,6 +826,10 @@
       form_privacy: "He leído y acepto la <a href=\"datenschutz.html\" target=\"_blank\">Política de Privacidad</a>.",
       footer_brands: "Marcas",
       view_all_brands: "Ver lista completa de 9000+ marcas",
+      brand_search_heading: "Buscar marca",
+      brand_search_label: "Buscar marca",
+      brand_search_placeholder: "ej. Siemens, Festo …",
+      brand_search_button: "Ir al listado de marcas",
       footer_imprint: "Aviso legal",
       footer_privacy: "Privacidad",
       footer_terms: "Términos",
@@ -869,6 +907,10 @@
       form_privacy: "J'ai lu et j'accepte la <a href=\"datenschutz.html\" target=\"_blank\">Politique de confidentialité</a>.",
       footer_brands: "Marques",
       view_all_brands: "Voir la liste complète des 9000+ marques",
+      brand_search_heading: "Rechercher une marque",
+      brand_search_label: "Rechercher une marque",
+      brand_search_placeholder: "ex. Siemens, Festo …",
+      brand_search_button: "Voir la liste des marques",
       footer_imprint: "Mentions légales",
       footer_privacy: "Confidentialité",
       footer_terms: "CGV",
@@ -992,6 +1034,20 @@
       initConsentManager(this.value);
     });
     initConsentManager(lang);
+
+    var homeBrandForm = document.getElementById('homeBrandSearchForm');
+    if (homeBrandForm) {
+      homeBrandForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var inp = document.getElementById('homeBrandSearchInput');
+        var q = inp && inp.value ? inp.value.trim() : '';
+        var l = langSelect.value || 'de';
+        if (['de', 'en', 'it', 'es', 'fr'].indexOf(l) === -1) l = 'de';
+        var url = 'marche.html?lang=' + encodeURIComponent(l);
+        if (q) url += '&q=' + encodeURIComponent(q);
+        window.location.href = url;
+      });
+    }
   });
 </script>
 <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@main/silktide-consent-manager.js"></script>
