@@ -28,3 +28,4 @@ Allow: /
 
 # Sitemap location (update the domain if different)
 Sitemap: https://abcspareparts.eu/sitemap.xml
+Sitemap: https://abcspareparts.eu/sitemap-brands.xml

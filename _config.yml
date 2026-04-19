@@ -6,6 +6,7 @@ url: "https://abcspareparts.eu"
 # Include sitemap.xml as proper XML
 include:
   - sitemap.xml
+  - sitemap-brands.xml
 
 # Disable Jekyll processing on XML files
 defaults:
