@@ -135,6 +135,25 @@
     .submit-button:hover { background: #2d5a87; }
     .privacy-checkbox { max-width: 500px; margin: 0 auto; font-size: 0.9rem; }
     .privacy-checkbox a { color: #1e3a5f; text-decoration: underline; }
+    .contact-lead { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; color: #555; font-size: 1.05rem; line-height: 1.55; }
+    .contact-layout {
+      display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 2.5rem; align-items: start;
+      max-width: 1100px; margin: 0 auto;
+    }
+    @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } }
+    .contact-info-card {
+      background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 1.75rem 1.5rem;
+    }
+    .contact-info-card h3 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 1rem; }
+    .contact-info-card h4 { font-size: 0.95rem; color: #1e3a5f; margin: 1.25rem 0 0.5rem; }
+    .contact-address { font-style: normal; color: #444; line-height: 1.65; margin-bottom: 1rem; font-size: 0.95rem; }
+    .contact-channels, .contact-hours { list-style: none; margin: 0; padding: 0; font-size: 0.95rem; }
+    .contact-channels li, .contact-hours li { margin-bottom: 0.45rem; color: #444; line-height: 1.5; }
+    .contact-channels a { color: #1e3a5f; font-weight: 600; text-decoration: none; border-bottom: 1px solid #2d5a87; }
+    .contact-channels a:hover { color: #e67e22; border-bottom-color: #e67e22; }
+    .contact-legal-note { margin-top: 1.25rem; font-size: 0.88rem; color: #666; line-height: 1.5; }
+    .contact-legal-note a { color: #1e3a5f; text-decoration: underline; }
+    .contact-form-wrap h3 { font-size: 1.15rem; color: #1e3a5f; margin-bottom: 1rem; text-align: center; }
     .contact-iframe-wrap { max-width: 700px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; }
     .contact-iframe-wrap iframe { width: 100%; height: 1050px; border: none; display: block; }
 
@@ -449,9 +468,23 @@
 <!-- Contact Section -->
 <section class="section-contact" id="contact">
   <div class="container">
-    <h2 style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
-    <div class="contact-iframe-wrap" style="height: 1050px;">
-      <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request/new" title="ABCspareparts – Richiesta preventivo" style="border: none; width: 100%; height: inherit;"></iframe>
+    <h2 style="text-align: center; margin-bottom: 1rem;" data-i18n="contact_title">Bereit für Ihr Angebot?</h2>
+    <p class="contact-lead" data-i18n="contact_intro">Persönlich erreichbar per Telefon, WhatsApp und E-Mail – oder senden Sie uns Ihre Anfrage direkt über das Formular.</p>
+    <div class="contact-layout">
+      <aside class="contact-info-card" aria-labelledby="contact-info-heading">
+        <h3 id="contact-info-heading" data-i18n="contact_info_title">Kontakt</h3>
+        <address class="contact-address" data-i18n="contact_address">ABC Spare Parts<br>Serena Sarlo<br>Äussere Uferstrasse 16<br>86154 Augsburg<br>Deutschland</address>
+        <ul class="contact-channels" data-i18n="contact_channels"></ul>
+        <h4 data-i18n="contact_hours_title">Erreichbarkeit</h4>
+        <ul class="contact-hours" data-i18n="contact_hours"></ul>
+        <p class="contact-legal-note" data-i18n="contact_legal_note"></p>
+      </aside>
+      <div class="contact-form-wrap">
+        <h3 data-i18n="contact_form_title">Online-Anfrage</h3>
+        <div class="contact-iframe-wrap" style="height: 1050px;">
+          <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request/new" data-i18n-title="contact_iframe_title" title="Anfrageformular für Ersatzteile" style="border: none; width: 100%; height: inherit;"></iframe>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -462,6 +495,8 @@
     <div class="footer-content">
       <div class="footer-links">
         <a href="marche.html" data-i18n="footer_brands">Marche</a>
+        <span class="separator">|</span>
+        <a href="index.html#contact" data-i18n="footer_contact">Kontakt</a>
         <span class="separator">|</span>
         <a href="impressum.html" target="_blank" data-i18n="footer_imprint">Impressum</a>
         <span class="separator">|</span>
@@ -500,6 +535,16 @@
       benefit6_title: "Obsoleszenz-Lösungen",
       benefit6_desc: "Abgekündigte Teile, geprüfte Alternativen, schnelle Notfallhilfe.",
       contact_title: "Bereit für Ihr Angebot?",
+      contact_intro: "Persönlich erreichbar per Telefon, WhatsApp und E-Mail – oder senden Sie uns Ihre Anfrage direkt über das Formular.",
+      contact_info_title: "Kontakt",
+      contact_address: "ABC Spare Parts<br>Serena Sarlo<br>Äussere Uferstrasse 16<br>86154 Augsburg<br>Deutschland",
+      contact_channels: "<li><strong>Telefon:</strong> <a href=\"tel:+4915222466077\">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href=\"https://wa.me/4915222466077\" target=\"_blank\" rel=\"noopener\">+49 152 22466077</a></li><li><strong>E-Mail:</strong> <a href=\"mailto:info@abcspareparts.eu\">info@abcspareparts.eu</a></li>",
+      contact_hours_title: "Erreichbarkeit",
+      contact_hours: "<li>Montag - Freitag: 09:00 - 18:00</li><li>Samstag: 10:00 - 14:00</li><li>Sonntag: Geschlossen</li>",
+      contact_form_title: "Online-Anfrage",
+      contact_iframe_title: "Anfrageformular für Ersatzteile",
+      contact_legal_note: "Vollständige rechtliche Angaben im <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Impressum</a>.",
+      footer_contact: "Kontakt",
       form_name: "Vorname",
       form_surname: "Nachname",
       form_company: "Firma",
@@ -567,6 +612,16 @@
       benefit6_title: "Obsolescence solutions",
       benefit6_desc: "Discontinued parts, verified alternatives, fast emergency support.",
       contact_title: "Ready for your quote?",
+      contact_intro: "Reach us by phone, WhatsApp or email, or send your request using the form below.",
+      contact_info_title: "Contact",
+      contact_address: "ABC Spare Parts<br>Serena Sarlo<br>Äussere Uferstrasse 16<br>86154 Augsburg<br>Germany",
+      contact_channels: "<li><strong>Phone:</strong> <a href=\"tel:+4915222466077\">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href=\"https://wa.me/4915222466077\" target=\"_blank\" rel=\"noopener\">+49 152 22466077</a></li><li><strong>Email:</strong> <a href=\"mailto:info@abcspareparts.eu\">info@abcspareparts.eu</a></li>",
+      contact_hours_title: "Availability",
+      contact_hours: "<li>Monday - Friday: 09:00 - 18:00</li><li>Saturday: 10:00 - 14:00</li><li>Sunday: Closed</li>",
+      contact_form_title: "Online request",
+      contact_iframe_title: "Spare parts request form",
+      contact_legal_note: "Full legal details in our <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Imprint</a>.",
+      footer_contact: "Contact",
       form_name: "First name",
       form_surname: "Last name",
       form_company: "Company",
@@ -634,6 +689,16 @@
       benefit6_title: "Soluzioni per obsolescenza",
       benefit6_desc: "Parti fuori produzione, alternative verificate, supporto rapido in emergenza.",
       contact_title: "Pronto per il tuo preventivo?",
+      contact_intro: "Siamo raggiungibili per telefono, WhatsApp ed e-mail, oppure può inviare la richiesta con il modulo qui sotto.",
+      contact_info_title: "Contatti",
+      contact_address: "ABC Spare Parts<br>Serena Sarlo<br>Äussere Uferstrasse 16<br>86154 Augsburg<br>Germania",
+      contact_channels: "<li><strong>Telefono:</strong> <a href=\"tel:+4915222466077\">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href=\"https://wa.me/4915222466077\" target=\"_blank\" rel=\"noopener\">+49 152 22466077</a></li><li><strong>E-mail:</strong> <a href=\"mailto:info@abcspareparts.eu\">info@abcspareparts.eu</a></li>",
+      contact_hours_title: "Disponibilità",
+      contact_hours: "<li>Lunedì - Venerdì: 09:00 - 18:00</li><li>Sabato: 10:00 - 14:00</li><li>Domenica: Chiuso</li>",
+      contact_form_title: "Richiesta online",
+      contact_iframe_title: "Modulo richiesta ricambi",
+      contact_legal_note: "Dati legali completi nell'<a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Impressum</a>.",
+      footer_contact: "Contatti",
       form_name: "Nome",
       form_surname: "Cognome",
       form_company: "Azienda",
@@ -701,6 +766,16 @@
       benefit6_title: "Soluciones para obsolescencia",
       benefit6_desc: "Piezas descatalogadas, alternativas verificadas, ayuda rápida en emergencias.",
       contact_title: "¿Listo para tu oferta?",
+      contact_intro: "Puede contactarnos por teléfono, WhatsApp o correo electrónico, o enviar su solicitud con el formulario siguiente.",
+      contact_info_title: "Contacto",
+      contact_address: "ABC Spare Parts<br>Serena Sarlo<br>Äussere Uferstrasse 16<br>86154 Augsburg<br>Alemania",
+      contact_channels: "<li><strong>Teléfono:</strong> <a href=\"tel:+4915222466077\">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href=\"https://wa.me/4915222466077\" target=\"_blank\" rel=\"noopener\">+49 152 22466077</a></li><li><strong>E-mail:</strong> <a href=\"mailto:info@abcspareparts.eu\">info@abcspareparts.eu</a></li>",
+      contact_hours_title: "Horario",
+      contact_hours: "<li>Lunes - Viernes: 09:00 - 18:00</li><li>Sábado: 10:00 - 14:00</li><li>Domingo: Cerrado</li>",
+      contact_form_title: "Solicitud en línea",
+      contact_iframe_title: "Formulario de solicitud de recambios",
+      contact_legal_note: "Datos legales completos en el <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Aviso legal</a>.",
+      footer_contact: "Contacto",
       form_name: "Nombre",
       form_surname: "Apellido",
       form_company: "Empresa",
@@ -768,6 +843,16 @@
       benefit6_title: "Solutions d'obsolescence",
       benefit6_desc: "Pièces déréférencées, alternatives vérifiées, aide rapide en urgence.",
       contact_title: "Prêt pour votre devis?",
+      contact_intro: "Contactez-nous par téléphone, WhatsApp ou e-mail, ou envoyez votre demande via le formulaire ci-dessous.",
+      contact_info_title: "Contact",
+      contact_address: "ABC Spare Parts<br>Serena Sarlo<br>Äussere Uferstrasse 16<br>86154 Augsburg<br>Allemagne",
+      contact_channels: "<li><strong>Téléphone:</strong> <a href=\"tel:+4915222466077\">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href=\"https://wa.me/4915222466077\" target=\"_blank\" rel=\"noopener\">+49 152 22466077</a></li><li><strong>E-mail:</strong> <a href=\"mailto:info@abcspareparts.eu\">info@abcspareparts.eu</a></li>",
+      contact_hours_title: "Disponibilité",
+      contact_hours: "<li>Lundi - Vendredi: 09:00 - 18:00</li><li>Samedi: 10:00 - 14:00</li><li>Dimanche: Fermé</li>",
+      contact_form_title: "Demande en ligne",
+      contact_iframe_title: "Formulaire de demande de pièces",
+      contact_legal_note: "Informations légales complètes dans les <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">mentions légales</a>.",
+      footer_contact: "Contact",
       form_name: "Prénom",
       form_surname: "Nom",
       form_company: "Entreprise",
@@ -850,6 +935,10 @@
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
       if (t[key]) el.placeholder = t[key];
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (t[key]) el.setAttribute('title', t[key]);
     });
     document.documentElement.lang = lang;
     try { localStorage.setItem('lang', lang); } catch (e) {}
