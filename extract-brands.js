@@ -17,8 +17,8 @@ const marcheHtml = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marken und Hersteller | ABCspareparts – über ${b.length} Marken für Industrieersatzteile</title>
-  <meta name="description" content="Vollständige Liste der Hersteller und Marken für MRO und Industrieersatzteile bei ABCspareparts: Siemens, Festo, Bosch, ABB, Schneider, Omron und über ${b.length} weitere. Anfrage per Formular oder E-Mail.">
+  <title>Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile unverbindlich anfragen</title>
+  <meta name="description" content="Marke suchen, Liste filtern: ${b.length}+ Hersteller für Industrieersatzteile und MRO. Originalteile &amp; Alternativen. Jetzt Teilenummer einreichen – Antwort meist innerhalb von 24 Stunden. Formular oder E-Mail.">
   <link rel="canonical" href="${base}/marche.html">
   <link rel="alternate" hreflang="x-default" href="${base}/marche.html">
   <link rel="alternate" hreflang="de" href="${base}/marche.html?lang=de">
@@ -29,14 +29,14 @@ const marcheHtml = `<!DOCTYPE html>
   <meta property="og:type" content="website">
   <meta property="og:url" content="${base}/marche.html">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Marken und Hersteller | ABCspareparts – über ${b.length} Marken für Industrieersatzteile">
-  <meta property="og:description" content="Vollständige Liste der Hersteller und Marken für MRO und Industrieersatzteile bei ABCspareparts: Siemens, Festo, Bosch, ABB, Schneider, Omron und über ${b.length} weitere.">
+  <meta property="og:title" content="Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile anfragen">
+  <meta property="og:description" content="Marke suchen &amp; filtern: ${b.length}+ Hersteller für MRO und Industrieersatzteile. Unverbindlich anfragen – Antwort meist in 24h. Siemens, Festo, ABB u. v. m.">
   <meta property="og:image" content="${base}/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Marken und Hersteller | ABCspareparts – über ${b.length} Marken für Industrieersatzteile">
-  <meta name="twitter:description" content="Vollständige Liste der Hersteller und Marken für MRO und Industrieersatzteile bei ABCspareparts.">
+  <meta name="twitter:title" content="Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile anfragen">
+  <meta name="twitter:description" content="${b.length}+ Hersteller für MRO und Industrieersatzteile. Marke suchen, unverbindlich anfragen – Antwort meist in 24h.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ItemList","name":"Marken und Hersteller für Industrieersatzteile | ABCspareparts","description":"Über ${b.length} Hersteller und Marken für MRO und Industrieersatzteile – Anfrage über Formular oder E-Mail.","numberOfItems":${b.length},"url":"${base}/marche.html"}
+  {"@context":"https://schema.org","@type":"ItemList","name":"Hersteller und Marken für Industrieersatzteile | ABCspareparts","description":"Über ${b.length} Hersteller für MRO und Industrieersatzteile. Marke suchen, Anfrage per Formular oder E-Mail – Antwort meist innerhalb von 24 Stunden.","numberOfItems":${b.length},"url":"${base}/marche.html"}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${base}/"},{"@type":"ListItem","position":2,"name":"Marken","item":"${base}/marche.html"}]}
