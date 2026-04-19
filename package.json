@@ -2,7 +2,8 @@
   "scripts": {
     "build:marche": "node extract-brands.js",
     "build:brand-pages": "node generate-brand-pages.js",
-    "build:brands": "node extract-brands.js && node generate-brand-pages.js"
+    "build:brands": "node extract-brands.js && node generate-brand-pages.js",
+    "verify": "node verify-build.js"
   },
   "dependencies": {}
 }

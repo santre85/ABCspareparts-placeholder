@@ -41,7 +41,7 @@ function buildTranslations(brand) {
     de: {
       meta_title: `${H} Ersatzteile & Industriekomponenten | ABCspareparts`,
       meta_description: `${H}: Industrieersatzteile und MRO über ABCspareparts – Anfrage per Formular oder E-Mail. Schnelle Angebote, Europa-weit.`,
-      brand_breadcrumb: `<a href="index.html">Home</a> · <a href="marche.html">Marken</a> · ${H}`,
+      brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marken</a> · ${H}`,
       brand_h1: `${H} – Industrieersatzteile & MRO`,
       brand_intro: `ABCspareparts beschafft Originalteile und geprüfte Alternativen für ${H} (Industrieersatzteile, Automatisierung, MRO). Nutzen Sie das Formular für Teilenummern und Mengen – wir melden uns in der Regel innerhalb von 24 Stunden.`,
       brand_form_hint: `Bitte im Formular Hersteller (${H}), Teilenummer, Menge und Kontext angeben.`,
@@ -55,7 +55,7 @@ function buildTranslations(brand) {
       contact_hours: '<li>Montag - Freitag: 09:00 - 18:00</li><li>Samstag: 10:00 - 14:00</li><li>Sonntag: Geschlossen</li>',
       contact_form_title: 'Online-Anfrage',
       contact_iframe_title: `Anfrageformular – ${H} Ersatzteile`,
-      contact_legal_note: 'Vollständige rechtliche Angaben im <a href="impressum.html" target="_blank" rel="noopener">Impressum</a>.',
+      contact_legal_note: 'Vollständige rechtliche Angaben im <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marken',
       marca_footer_imprint: 'Impressum',
@@ -64,7 +64,7 @@ function buildTranslations(brand) {
     en: {
       meta_title: `${H} spare parts & industrial components | ABCspareparts`,
       meta_description: `${H} industrial and MRO spare parts via ABCspareparts – online form or email. Fast quotes, Europe-wide delivery.`,
-      brand_breadcrumb: `<a href="index.html">Home</a> · <a href="marche.html">Brands</a> · ${H}`,
+      brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Brands</a> · ${H}`,
       brand_h1: `${H} – industrial spare parts & MRO`,
       brand_intro: `ABCspareparts supplies original ${H} parts and verified alternatives for industrial automation and MRO. Send part numbers and quantities via the form – we usually respond within 24 hours.`,
       brand_form_hint: `Please include manufacturer (${H}), part number, quantity and equipment context in the form where possible.`,
@@ -78,7 +78,7 @@ function buildTranslations(brand) {
       contact_hours: '<li>Monday - Friday: 09:00 - 18:00</li><li>Saturday: 10:00 - 14:00</li><li>Sunday: Closed</li>',
       contact_form_title: 'Online request',
       contact_iframe_title: `Request form – ${H} spare parts`,
-      contact_legal_note: 'Full legal details in our <a href="impressum.html" target="_blank" rel="noopener">Imprint</a>.',
+      contact_legal_note: 'Full legal details in our <a href="../impressum.html" target="_blank" rel="noopener">Imprint</a>.',
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Brands',
       marca_footer_imprint: 'Imprint',
@@ -87,7 +87,7 @@ function buildTranslations(brand) {
     it: {
       meta_title: `Ricambi ${H} e componenti industriali | ABCspareparts`,
       meta_description: `Ricambi industriali ${H} tramite ABCspareparts: modulo online o e-mail. Preventivi rapidi, consegna in Europa.`,
-      brand_breadcrumb: `<a href="index.html">Home</a> · <a href="marche.html">Marche</a> · ${H}`,
+      brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marche</a> · ${H}`,
       brand_h1: `${H} – ricambi industriali e MRO`,
       brand_intro: `ABCspareparts fornisce ricambi ${H} originali e alternative verificate per automazione e MRO. Indichi codici articolo e quantità nel modulo – di solito rispondiamo entro 24 ore.`,
       brand_form_hint: `Nel modulo indichi se possibile costruttore (${H}), codice articolo, quantità e contesto macchina.`,
@@ -101,7 +101,7 @@ function buildTranslations(brand) {
       contact_hours: '<li>Lunedì - Venerdì: 09:00 - 18:00</li><li>Sabato: 10:00 - 14:00</li><li>Domenica: Chiuso</li>',
       contact_form_title: 'Richiesta online',
       contact_iframe_title: `Modulo richiesta – ricambi ${H}`,
-      contact_legal_note: 'Dati legali completi nell\'<a href="impressum.html" target="_blank" rel="noopener">Impressum</a>.',
+      contact_legal_note: 'Dati legali completi nell\'<a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marche',
       marca_footer_imprint: 'Impressum',
@@ -110,7 +110,7 @@ function buildTranslations(brand) {
     es: {
       meta_title: `Recambios ${H} y componentes industriales | ABCspareparts`,
       meta_description: `Recambios industriales ${H} con ABCspareparts: formulario online o correo. Presupuestos rápidos.`,
-      brand_breadcrumb: `<a href="index.html">Inicio</a> · <a href="marche.html">Marcas</a> · ${H}`,
+      brand_breadcrumb: `<a href="../index.html">Inicio</a> · <a href="../marche.html">Marcas</a> · ${H}`,
       brand_h1: `${H} – recambios industriales y MRO`,
       brand_intro: `ABCspareparts suministra piezas ${H} originales y alternativas verificadas para automatización y MRO. Envíe referencias y cantidades en el formulario – solemos responder en 24 horas.`,
       brand_form_hint: `Indique si puede fabricante (${H}), referencia, cantidad y contexto del equipo en el formulario.`,
@@ -124,7 +124,7 @@ function buildTranslations(brand) {
       contact_hours: '<li>Lunes - Viernes: 09:00 - 18:00</li><li>Sábado: 10:00 - 14:00</li><li>Domingo: Cerrado</li>',
       contact_form_title: 'Solicitud en línea',
       contact_iframe_title: `Formulario – recambios ${H}`,
-      contact_legal_note: 'Datos legales completos en el <a href="impressum.html" target="_blank" rel="noopener">Aviso legal</a>.',
+      contact_legal_note: 'Datos legales completos en el <a href="../impressum.html" target="_blank" rel="noopener">Aviso legal</a>.',
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marcas',
       marca_footer_imprint: 'Aviso legal',
@@ -133,7 +133,7 @@ function buildTranslations(brand) {
     fr: {
       meta_title: `Pièces ${H} et composants industriels | ABCspareparts`,
       meta_description: `Pièces détachées industrielles ${H} via ABCspareparts : formulaire ou e-mail. Devis rapides.`,
-      brand_breadcrumb: `<a href="index.html">Accueil</a> · <a href="marche.html">Marques</a> · ${H}`,
+      brand_breadcrumb: `<a href="../index.html">Accueil</a> · <a href="../marche.html">Marques</a> · ${H}`,
       brand_h1: `${H} – pièces industrielles et MRO`,
       brand_intro: `ABCspareparts fournit des pièces ${H} d’origine et des alternatives vérifiées pour l’automatisation et le MRO. Indiquez références et quantités dans le formulaire – réponse en général sous 24 h.`,
       brand_form_hint: `Indiquez si possible fabricant (${H}), référence, quantité et contexte machine dans le formulaire.`,
@@ -147,7 +147,7 @@ function buildTranslations(brand) {
       contact_hours: '<li>Lundi - Vendredi: 09:00 - 18:00</li><li>Samedi: 10:00 - 14:00</li><li>Dimanche: Fermé</li>',
       contact_form_title: 'Demande en ligne',
       contact_iframe_title: `Formulaire – pièces ${H}`,
-      contact_legal_note: 'Informations légales complètes dans les <a href="impressum.html" target="_blank" rel="noopener">mentions légales</a>.',
+      contact_legal_note: 'Informations légales complètes dans les <a href="../impressum.html" target="_blank" rel="noopener">mentions légales</a>.',
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marques',
       marca_footer_imprint: 'Mentions légales',
@@ -185,6 +185,7 @@ function buildHtml(brand, slug, translations) {
   const pagePath = `marche/${slug}.html`;
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
+  const d = translations.de;
   const ld = buildLdJson(brand, slug);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
@@ -263,36 +264,36 @@ function buildHtml(brand, slug, translations) {
 
   <header class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" data-i18n="brand_breadcrumb" aria-label="Breadcrumb"></nav>
-      <h1 data-i18n="brand_h1"></h1>
-      <p class="lead" data-i18n="brand_intro"></p>
+      <nav class="breadcrumb" data-i18n="brand_breadcrumb" aria-label="Breadcrumb">${d.brand_breadcrumb}</nav>
+      <h1 data-i18n="brand_h1">${d.brand_h1}</h1>
+      <p class="lead" data-i18n="brand_intro">${d.brand_intro}</p>
     </div>
   </header>
 
   <div class="brand-body">
     <div class="container">
-      <p class="brand-form-hint" data-i18n="brand_form_hint"></p>
-      <p class="brand-email-alt" data-i18n="brand_email_alt"></p>
+      <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
+      <p class="brand-email-alt" data-i18n="brand_email_alt">${d.brand_email_alt}</p>
     </div>
   </div>
 
   <section class="section-contact" id="contact">
     <div class="container">
-      <h2 data-i18n="contact_title"></h2>
-      <p class="contact-lead" data-i18n="contact_intro"></p>
+      <h2 data-i18n="contact_title">${escapeHtml(d.contact_title)}</h2>
+      <p class="contact-lead" data-i18n="contact_intro">${escapeHtml(d.contact_intro)}</p>
       <div class="contact-layout">
         <aside class="contact-info-card" aria-labelledby="contact-info-heading">
-          <h3 id="contact-info-heading" data-i18n="contact_info_title"></h3>
-          <address class="contact-address" data-i18n="contact_address"></address>
-          <ul class="contact-channels" data-i18n="contact_channels"></ul>
-          <h4 data-i18n="contact_hours_title"></h4>
-          <ul class="contact-hours" data-i18n="contact_hours"></ul>
-          <p class="contact-legal-note" data-i18n="contact_legal_note"></p>
+          <h3 id="contact-info-heading" data-i18n="contact_info_title">${escapeHtml(d.contact_info_title)}</h3>
+          <address class="contact-address" data-i18n="contact_address">${d.contact_address}</address>
+          <ul class="contact-channels" data-i18n="contact_channels">${d.contact_channels}</ul>
+          <h4 data-i18n="contact_hours_title">${escapeHtml(d.contact_hours_title)}</h4>
+          <ul class="contact-hours" data-i18n="contact_hours">${d.contact_hours}</ul>
+          <p class="contact-legal-note" data-i18n="contact_legal_note">${d.contact_legal_note}</p>
         </aside>
         <div class="contact-form-wrap">
-          <h3 data-i18n="contact_form_title"></h3>
+          <h3 data-i18n="contact_form_title">${escapeHtml(d.contact_form_title)}</h3>
           <div class="contact-iframe-wrap">
-            <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request/new" data-i18n-title="contact_iframe_title" title=""></iframe>
+            <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request/new" data-i18n-title="contact_iframe_title" title="${escapeAttr(d.contact_iframe_title)}"></iframe>
           </div>
         </div>
       </div>
@@ -301,13 +302,13 @@ function buildHtml(brand, slug, translations) {
 
   <footer class="footer">
     <div class="container">
-      <a href="index.html" data-i18n="marca_footer_home">ABCspareparts</a>
+      <a href="../index.html" data-i18n="marca_footer_home">ABCspareparts</a>
       <span class="sep">·</span>
-      <a href="marche.html" data-i18n="marca_footer_brands">Marken</a>
+      <a href="../marche.html" data-i18n="marca_footer_brands">Marken</a>
       <span class="sep">·</span>
-      <a href="impressum.html" target="_blank" rel="noopener" data-i18n="marca_footer_imprint">Impressum</a>
+      <a href="../impressum.html" target="_blank" rel="noopener" data-i18n="marca_footer_imprint">Impressum</a>
       <span class="sep">·</span>
-      <a href="datenschutz.html" target="_blank" rel="noopener" data-i18n="marca_footer_privacy">Datenschutz</a>
+      <a href="../datenschutz.html" target="_blank" rel="noopener" data-i18n="marca_footer_privacy">Datenschutz</a>
       <p style="margin-top:1rem;font-size:0.9rem;opacity:0.9">&copy; 2026 ABCspareparts.</p>
     </div>
   </footer>
@@ -336,10 +337,19 @@ function buildHtml(brand, slug, translations) {
       document.querySelectorAll('a[href]').forEach(function (a) {
         var h = a.getAttribute('href') || '';
         if (h.indexOf('#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('https://wa.me') === 0) return;
+        if (h.indexOf('http://') === 0 || h.indexOf('https://') === 0) return;
         var parts = h.split('#');
-        var base = parts[0].split('?')[0];
+        var pathNoQuery = parts[0].split('?')[0];
+        var relPrefix = '';
+        var base = pathNoQuery;
+        if (pathNoQuery.indexOf('../') === 0) {
+          var strip = 0;
+          while (pathNoQuery.slice(strip, strip + 3) === '../') strip += 3;
+          relPrefix = pathNoQuery.slice(0, strip);
+          base = pathNoQuery.slice(strip);
+        }
         if (isLangInternalPage(base)) {
-          a.href = base + '?lang=' + lang + (parts[1] ? '#' + parts[1] : '');
+          a.href = relPrefix + base + '?lang=' + lang + (parts[1] ? '#' + parts[1] : '');
         }
       });
     }
