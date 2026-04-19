@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
     <meta property="og:url" content="https://abcspareparts.eu/">
   <meta property="og:title" content="ABCspareparts – Your Trusted Partner for High-Quality Industrial Spares">
-  <meta property="og:description" content="ABCspareparts: MRO industrial spare parts distributor. 900+ brands (Siemens, Festo, Bosch, ABB and more). 24h quotes, Europe-wide delivery.">
+  <meta property="og:description" content="ABCspareparts: MRO industrial spare parts distributor. 2600+ brands (Siemens, Festo, Bosch, ABB and more). 24h quotes, Europe-wide delivery.">
     <meta property="og:image" content="https://abcspareparts.eu/logo.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ABCspareparts – Your Trusted Partner for High-Quality Industrial Spares">
-  <meta name="twitter:description" content="ABCspareparts: MRO industrial spare parts distributor. 900+ brands. 24h quotes, Europe-wide delivery.">
+  <meta name="twitter:description" content="ABCspareparts: MRO industrial spare parts distributor. 2600+ brands. 24h quotes, Europe-wide delivery.">
     <meta name="twitter:image" content="https://abcspareparts.eu/logo.png">
   <!-- Structured data for Google -->
   <script type="application/ld+json">
@@ -37,16 +37,24 @@
               "@id": "https://abcspareparts.eu/#organization",
               "@type": "Organization",
         "name": "ABCspareparts",
-              "url": "https://abcspareparts.eu",
+              "url": "https://abcspareparts.eu/",
               "logo": { "@type": "ImageObject", "url": "https://abcspareparts.eu/logo.png" },
-        "description": "MRO industrial spare parts distributor. 900+ brands. 24h quotes, Europe-wide delivery."
+        "description": "MRO industrial spare parts distributor. 2600+ brands. 24h quotes, Europe-wide delivery."
       },
       {
         "@type": "WebSite",
               "@id": "https://abcspareparts.eu/#website",
-              "url": "https://abcspareparts.eu",
+              "url": "https://abcspareparts.eu/",
         "name": "ABCspareparts",
-              "publisher": { "@id": "https://abcspareparts.eu/#organization" }
+              "publisher": { "@id": "https://abcspareparts.eu/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://abcspareparts.eu/marche.html?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       }
     ]
   }

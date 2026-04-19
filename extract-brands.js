@@ -11,15 +11,14 @@ const lis = b.map((x) => {
   const slug = slugByBrand.get(x);
   return '<li><a href="marche/' + slug + '.html">' + name + '</a></li>';
 }).join('\n');
-const base = 'https://www.abcspareparts.eu';
+const base = 'https://abcspareparts.eu';
 const marcheHtml = `<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marche e produttori | ABCspareparts – Oltre ${b.length} marchi per ricambi industriali</title>
-  <meta name="description" content="Elenco completo dei marchi e produttori per cui ABCspareparts distribuisce ricambi industriali MRO: Siemens, Festo, Bosch, ABB, Schneider, Omron e oltre ${b.length} altri.">
-  <meta name="keywords" content="marchi ricambi industriali, produttori MRO, ABCspareparts marche, Siemens Festo Bosch ABB ricambi">
+  <title>Marken und Hersteller | ABCspareparts – über ${b.length} Marken für Industrieersatzteile</title>
+  <meta name="description" content="Vollständige Liste der Hersteller und Marken für MRO und Industrieersatzteile bei ABCspareparts: Siemens, Festo, Bosch, ABB, Schneider, Omron und über ${b.length} weitere. Anfrage per Formular oder E-Mail.">
   <link rel="canonical" href="${base}/marche.html">
   <link rel="alternate" hreflang="x-default" href="${base}/marche.html">
   <link rel="alternate" hreflang="de" href="${base}/marche.html?lang=de">
@@ -29,17 +28,18 @@ const marcheHtml = `<!DOCTYPE html>
   <link rel="alternate" hreflang="fr" href="${base}/marche.html?lang=fr">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${base}/marche.html">
-  <meta property="og:title" content="Brands and manufacturers | ABCspareparts – ${b.length}+ industrial spare parts brands">
-  <meta property="og:description" content="Full list of brands distributed by ABCspareparts: Siemens, Festo, Bosch, ABB, Schneider, Omron and ${b.length}+ more. MRO industrial spare parts.">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Marken und Hersteller | ABCspareparts – über ${b.length} Marken für Industrieersatzteile">
+  <meta property="og:description" content="Vollständige Liste der Hersteller und Marken für MRO und Industrieersatzteile bei ABCspareparts: Siemens, Festo, Bosch, ABB, Schneider, Omron und über ${b.length} weitere.">
   <meta property="og:image" content="${base}/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Brands and manufacturers | ABCspareparts – ${b.length}+ brands">
-  <meta name="twitter:description" content="Full list of brands distributed by ABCspareparts. MRO industrial spare parts.">
+  <meta name="twitter:title" content="Marken und Hersteller | ABCspareparts – über ${b.length} Marken für Industrieersatzteile">
+  <meta name="twitter:description" content="Vollständige Liste der Hersteller und Marken für MRO und Industrieersatzteile bei ABCspareparts.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ItemList","name":"Industrial spare parts brands distributed by ABCspareparts","description":"List of ${b.length}+ manufacturers and brands for MRO industrial spare parts","numberOfItems":${b.length},"url":"${base}/marche.html"}
+  {"@context":"https://schema.org","@type":"ItemList","name":"Marken und Hersteller für Industrieersatzteile | ABCspareparts","description":"Über ${b.length} Hersteller und Marken für MRO und Industrieersatzteile – Anfrage über Formular oder E-Mail.","numberOfItems":${b.length},"url":"${base}/marche.html"}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${base}/"},{"@type":"ListItem","position":2,"name":"Marche","item":"${base}/marche.html"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${base}/"},{"@type":"ListItem","position":2,"name":"Marken","item":"${base}/marche.html"}]}
   </script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
