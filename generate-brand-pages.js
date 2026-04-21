@@ -7,6 +7,7 @@ const { assignUniqueSlugs } = require('./brand-slug.js');
 const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
 const BASE = 'https://abcspareparts.eu';
+const TODAY = new Date().toISOString().slice(0, 10);
 
 function readBrandsFromIndex() {
   const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
@@ -46,6 +47,8 @@ function buildTranslations(brand) {
       brand_intro: `ABCspareparts beschafft Originalteile und geprüfte Alternativen für ${H} (Industrieersatzteile, Automatisierung, MRO). Nutzen Sie das Formular für Teilenummern und Mengen – wir melden uns in der Regel innerhalb von 24 Stunden.`,
       brand_form_hint: `Bitte im Formular Hersteller (${H}), Teilenummer, Menge und Kontext angeben.`,
       brand_email_alt: `Oder schreiben Sie an <a href="mailto:info@abcspareparts.eu?subject=${sub.de}">info@abcspareparts.eu</a> <span class="muted">(Betreff ist vorausgefüllt)</span>`,
+      related_title: 'Ähnliche Marken',
+      related_intro: 'Weitere Hersteller für industrielle Ersatzteile und MRO:',
       contact_title: 'Bereit für Ihr Angebot?',
       contact_intro: 'Persönlich erreichbar per Telefon, WhatsApp und E-Mail – oder senden Sie uns Ihre Anfrage direkt über das Formular.',
       contact_info_title: 'Kontakt',
@@ -69,6 +72,8 @@ function buildTranslations(brand) {
       brand_intro: `ABCspareparts supplies original ${H} parts and verified alternatives for industrial automation and MRO. Send part numbers and quantities via the form – we usually respond within 24 hours.`,
       brand_form_hint: `Please include manufacturer (${H}), part number, quantity and equipment context in the form where possible.`,
       brand_email_alt: `Or email <a href="mailto:info@abcspareparts.eu?subject=${sub.en}">info@abcspareparts.eu</a> <span class="muted">(subject line is pre-filled)</span>`,
+      related_title: 'Related brands',
+      related_intro: 'Other manufacturers for industrial spare parts and MRO:',
       contact_title: 'Ready for your quote?',
       contact_intro: 'Reach us by phone, WhatsApp or email, or send your request using the form below.',
       contact_info_title: 'Contact',
@@ -92,6 +97,8 @@ function buildTranslations(brand) {
       brand_intro: `ABCspareparts fornisce ricambi ${H} originali e alternative verificate per automazione e MRO. Indichi codici articolo e quantità nel modulo – di solito rispondiamo entro 24 ore.`,
       brand_form_hint: `Nel modulo indichi se possibile costruttore (${H}), codice articolo, quantità e contesto macchina.`,
       brand_email_alt: `Oppure scriva a <a href="mailto:info@abcspareparts.eu?subject=${sub.it}">info@abcspareparts.eu</a> <span class="muted">(oggetto precompilato)</span>`,
+      related_title: 'Marche correlate',
+      related_intro: 'Altri produttori per ricambi industriali e MRO:',
       contact_title: 'Pronto per il tuo preventivo?',
       contact_intro: 'Siamo raggiungibili per telefono, WhatsApp ed e-mail, oppure può inviare la richiesta con il modulo qui sotto.',
       contact_info_title: 'Contatti',
@@ -115,6 +122,8 @@ function buildTranslations(brand) {
       brand_intro: `ABCspareparts suministra piezas ${H} originales y alternativas verificadas para automatización y MRO. Envíe referencias y cantidades en el formulario – solemos responder en 24 horas.`,
       brand_form_hint: `Indique si puede fabricante (${H}), referencia, cantidad y contexto del equipo en el formulario.`,
       brand_email_alt: `O escriba a <a href="mailto:info@abcspareparts.eu?subject=${sub.es}">info@abcspareparts.eu</a> <span class="muted">(asunto pre-rellenado)</span>`,
+      related_title: 'Marcas relacionadas',
+      related_intro: 'Otros fabricantes para recambios industriales y MRO:',
       contact_title: '¿Listo para tu oferta?',
       contact_intro: 'Puede contactarnos por teléfono, WhatsApp o correo electrónico, o enviar su solicitud con el formulario siguiente.',
       contact_info_title: 'Contacto',
@@ -138,6 +147,8 @@ function buildTranslations(brand) {
       brand_intro: `ABCspareparts fournit des pièces ${H} d’origine et des alternatives vérifiées pour l’automatisation et le MRO. Indiquez références et quantités dans le formulaire – réponse en général sous 24 h.`,
       brand_form_hint: `Indiquez si possible fabricant (${H}), référence, quantité et contexte machine dans le formulaire.`,
       brand_email_alt: `Ou écrivez à <a href="mailto:info@abcspareparts.eu?subject=${sub.fr}">info@abcspareparts.eu</a> <span class="muted">(objet prérempli)</span>`,
+      related_title: 'Marques associées',
+      related_intro: 'Autres fabricants pour pièces industrielles et MRO :',
       contact_title: 'Prêt pour votre devis?',
       contact_intro: 'Contactez-nous par téléphone, WhatsApp ou e-mail, ou envoyez votre demande via le formulaire ci-dessous.',
       contact_info_title: 'Contact',
@@ -181,7 +192,7 @@ function buildLdJson(brand, slug) {
   return JSON.stringify(graph);
 }
 
-function buildHtml(brand, slug, translations) {
+function buildHtml(brand, slug, translations, relatedRows) {
   const pagePath = `marche/${slug}.html`;
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
@@ -189,6 +200,11 @@ function buildHtml(brand, slug, translations) {
   const ld = buildLdJson(brand, slug);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
+  const relatedLinks = (relatedRows || [])
+    .map(({ brand: relatedBrand, slug: relatedSlug }) =>
+      `<li><a href="../marche/${relatedSlug}.html">${escapeHtml(relatedBrand)}</a></li>`
+    )
+    .join('');
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -226,6 +242,12 @@ function buildHtml(brand, slug, translations) {
     .brand-form-hint { max-width: 720px; margin: 0 auto 1rem; color: #555; font-size: 0.98rem; text-align: center; }
     .brand-email-alt { max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.95rem; color: #444; }
     .brand-email-alt a { color: #1e3a5f; font-weight: 600; }
+    .related-brands { max-width: 820px; margin: 0 auto 2rem; padding: 1rem 1.1rem; border: 1px solid #e6eaf0; border-radius: 10px; background: #f9fbfe; }
+    .related-brands h2 { font-size: 1.15rem; color: #1e3a5f; margin-bottom: 0.35rem; }
+    .related-brands p { font-size: 0.92rem; color: #556; margin-bottom: 0.7rem; }
+    .related-brands ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.4rem 1rem; }
+    .related-brands a { color: #1e3a5f; text-decoration: none; font-weight: 600; border-bottom: 1px solid #c5d4e3; }
+    .related-brands a:hover { color: #e67e22; border-bottom-color: #e67e22; }
     .muted { color: #666; font-weight: 400; }
     .contact-lead { text-align: center; max-width: 640px; margin: 0 auto 2rem; color: #555; font-size: 1.05rem; line-height: 1.55; }
     .contact-layout { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 2.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
@@ -274,6 +296,13 @@ function buildHtml(brand, slug, translations) {
     <div class="container">
       <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
       <p class="brand-email-alt" data-i18n="brand_email_alt">${d.brand_email_alt}</p>
+      <section class="related-brands" aria-label="Related brands">
+        <h2 data-i18n="related_title">${escapeHtml(d.related_title)}</h2>
+        <p data-i18n="related_intro">${escapeHtml(d.related_intro)}</p>
+        <ul>
+          ${relatedLinks}
+        </ul>
+      </section>
     </div>
   </div>
 
@@ -406,7 +435,7 @@ function writeSitemapBrands(rows) {
       body += `    <xhtml:link rel="alternate" hreflang="${l}" href="${loc}?lang=${l}"/>\n`;
     }
     body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}"/>\n`;
-    body += '    <lastmod>2026-04-19</lastmod>\n';
+    body += `    <lastmod>${TODAY}</lastmod>\n`;
     body += '    <changefreq>monthly</changefreq>\n';
     body += '    <priority>0.65</priority>\n';
     body += '  </url>\n';
@@ -418,6 +447,26 @@ layout: none
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${body}</urlset>
+`;
+  fs.writeFileSync(outPath, xml, 'utf8');
+}
+
+function writeSitemapIndex() {
+  const outPath = path.join(ROOT, 'sitemap-index.xml');
+  const xml = `---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${BASE}/sitemap.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${BASE}/sitemap-brands.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+</sitemapindex>
 `;
   fs.writeFileSync(outPath, xml, 'utf8');
 }
@@ -436,15 +485,24 @@ function main() {
   }
 
   let n = 0;
-  for (const { brand, slug } of rows) {
+  for (let i = 0; i < rows.length; i++) {
+    const { brand, slug } = rows[i];
+    const relatedRows = [];
+    for (let step = 1; step <= 3; step++) {
+      const left = rows[i - step];
+      const right = rows[i + step];
+      if (left) relatedRows.push(left);
+      if (right) relatedRows.push(right);
+    }
     const translations = buildTranslations(brand);
-    const html = buildHtml(brand, slug, translations);
+    const html = buildHtml(brand, slug, translations, relatedRows);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
     if (n % 500 === 0) console.log('Written', n, '/', rows.length);
   }
 
   writeSitemapBrands(rows);
+  writeSitemapIndex();
   fs.writeFileSync(
     path.join(ROOT, 'brand-slugs.json'),
     JSON.stringify(rows.reduce((acc, { brand, slug }) => {
@@ -455,7 +513,7 @@ function main() {
   );
 
   console.log('Brand pages:', n, 'in', path.relative(ROOT, MARCHE_DIR));
-  console.log('sitemap-brands.xml and brand-slugs.json updated.');
+  console.log('sitemap-brands.xml, sitemap-index.xml and brand-slugs.json updated.');
 }
 
 main();

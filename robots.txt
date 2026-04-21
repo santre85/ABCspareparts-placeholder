@@ -27,5 +27,6 @@ User-agent: Bytespider
 Allow: /
 
 # Sitemap location (update the domain if different)
+Sitemap: https://abcspareparts.eu/sitemap-index.xml
 Sitemap: https://abcspareparts.eu/sitemap.xml
 Sitemap: https://abcspareparts.eu/sitemap-brands.xml

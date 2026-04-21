@@ -43,4 +43,33 @@ if (urlCount !== brands.length) {
 if (!sb.includes('<?xml version="1.0"')) throw new Error('sitemap-brands.xml missing xml header');
 if (!sb.includes('</urlset>')) throw new Error('sitemap-brands.xml missing urlset close');
 
-console.log('verify-build: OK —', brands.length, 'brands,', htmlFiles.length, 'HTML pages,', urlCount, 'sitemap URLs');
+const siPath = path.join(__dirname, 'sitemap-index.xml');
+if (!fs.existsSync(siPath)) throw new Error('sitemap-index.xml missing');
+const si = fs.readFileSync(siPath, 'utf8');
+if (!si.includes('<sitemapindex')) throw new Error('sitemap-index.xml missing sitemapindex root');
+if (!si.includes('/sitemap.xml')) throw new Error('sitemap-index.xml missing sitemap.xml reference');
+if (!si.includes('/sitemap-brands.xml')) throw new Error('sitemap-index.xml missing sitemap-brands.xml reference');
+
+const indexHead = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+if (/2600\+/.test(indexHead)) {
+  throw new Error('index.html still contains outdated 2600+ SEO text');
+}
+if (!indexHead.includes('11960+')) {
+  throw new Error('index.html missing updated 11960+ SEO marker');
+}
+
+for (const f of toCheck) {
+  if (!htmlFiles.includes(f)) continue;
+  const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
+  if (!content.includes('<link rel="canonical" href="https://abcspareparts.eu/marche/')) {
+    throw new Error(`Missing canonical in marche/${f}`);
+  }
+  if (!content.includes('hreflang="x-default"')) {
+    throw new Error(`Missing x-default hreflang in marche/${f}`);
+  }
+  if (!content.includes('data-i18n="related_title"')) {
+    throw new Error(`Missing related brands SEO block in marche/${f}`);
+  }
+}
+
+console.log('verify-build: OK —', brands.length, 'brands,', htmlFiles.length, 'HTML pages,', urlCount, 'sitemap URLs + SEO checks');

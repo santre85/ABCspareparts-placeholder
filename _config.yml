@@ -7,10 +7,19 @@ url: "https://abcspareparts.eu"
 include:
   - sitemap.xml
   - sitemap-brands.xml
+  - sitemap-index.xml
 
 # Disable Jekyll processing on XML files
 defaults:
   - scope:
       path: "sitemap.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-brands.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-index.xml"
     values:
       layout: none
