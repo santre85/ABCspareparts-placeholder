@@ -25,20 +25,18 @@ const letterNav = orderedKeys
     return '<a class="letter-link" href="#letter-' + k + '">' + k + '</a>';
   })
   .join('');
-const groupedLists = orderedKeys
-  .filter((k) => groups.has(k))
-  .map((k) => {
-    const items = groups.get(k).map((x) => {
-      const name = String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      const slug = slugByBrand.get(x);
-      return '<li><a href="marche/' + slug + '.html">' + name + '</a></li>';
-    }).join('\n');
-    return '<section class="brand-group" id="letter-' + k + '" data-letter="' + k + '">\n' +
-      '<h3 class="brand-letter-heading">' + k + '</h3>\n' +
-      '<ul class="brands-list">\n' + items + '\n</ul>\n' +
-      '</section>';
-  })
-  .join('\n');
+const groupsPayload = {};
+for (const k of orderedKeys) {
+  if (!groups.has(k)) continue;
+  groupsPayload[k] = groups.get(k).map((x) => ({
+    brand: x,
+    slug: slugByBrand.get(x)
+  }));
+}
+const groupsData = {
+  orderedKeys,
+  groups: groupsPayload
+};
 const base = 'https://abcspareparts.eu';
 const marcheHtml = `<!DOCTYPE html>
 <html lang="de">
@@ -162,9 +160,7 @@ const marcheHtml = `<!DOCTYPE html>
           ${letterNav}
         </nav>
       </div>
-      <div class="brand-groups">
-${groupedLists}
-      </div>
+      <div class="brand-groups" id="brandGroups"></div>
     </div>
   </main>
   <footer class="footer">
@@ -175,6 +171,10 @@ ${groupedLists}
   <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" data-i18n-aria-label="marche_back_top_aria" data-i18n="marche_back_top">Nach oben</button>
   <script>
   (function(){
+    var BRAND_GROUPS = null;
+    var ORDERED_KEYS = null;
+    var groupsReady = false;
+    var pendingQuery = null;
     var translations = {
       de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über ${b.length} Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Datenschutz', marche_search_label: 'Marke suchen', marche_search_placeholder: 'z. B. Siemens', marche_search_button: 'Suchen', marche_search_count: '{n} Marken passen zur Suche', marche_search_none: 'Keine Marke passt zur Suche. Schreibweise prüfen oder Feld leeren.', marche_letters_title: 'Schnellnavigation A-Z', marche_back_top: 'Nach oben', marche_back_top_aria: 'Zurück nach oben' },
       en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over ${b.length} brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Imprint', marche_footer_privacy: 'Privacy', marche_search_label: 'Search brand', marche_search_placeholder: 'e.g. Siemens', marche_search_button: 'Search', marche_search_count: '{n} brands match', marche_search_none: 'No brand matches. Check spelling or clear the field.', marche_letters_title: 'A-Z quick navigation', marche_back_top: 'Back to top', marche_back_top_aria: 'Go back to top' },
@@ -202,12 +202,94 @@ ${groupedLists}
         }
       });
     }
-    var listItems = null;
-    var brandGroups = null;
+    var currentBrandQuery = null;
     var brandSearchDebounceTimer = null;
     function norm(s){ return String(s||'').toLowerCase().replace(/\\s+/g,' ').trim(); }
-    function gatherItems(){ if(!listItems) listItems = Array.prototype.slice.call(document.querySelectorAll('.brands-list li')); return listItems; }
-    function gatherGroups(){ if(!brandGroups) brandGroups = Array.prototype.slice.call(document.querySelectorAll('.brand-group')); return brandGroups; }
+    function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function getSelectedLang(){
+      var sel = document.getElementById('languageSelect');
+      var lang = sel && sel.value ? sel.value : 'de';
+      return ['de','en','it','es','fr'].indexOf(lang)!==-1 ? lang : 'de';
+    }
+    function loadGroupsData(){
+      return fetch('brand-groups.json', { cache: 'force-cache' })
+        .then(function(res){
+          if(!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(function(data){
+          ORDERED_KEYS = (data && data.orderedKeys) || [];
+          BRAND_GROUPS = (data && data.groups) || {};
+          groupsReady = true;
+        });
+    }
+    function renderSections(filterQuery){
+      var container = document.getElementById('brandGroups');
+      if(!container) return 0;
+      if(!groupsReady || !ORDERED_KEYS || !BRAND_GROUPS){
+        pendingQuery = filterQuery;
+        return 0;
+      }
+      var q = norm(filterQuery);
+      if(!q){
+        if(currentBrandQuery === '') return countAllBrands();
+        currentBrandQuery = '';
+        container.innerHTML = '';
+        var idx = 0;
+        function renderBatch(){
+          if(currentBrandQuery !== '') return;
+          var html = '';
+          var rendered = 0;
+          while(idx < ORDERED_KEYS.length && rendered < 3){
+            var key = ORDERED_KEYS[idx++];
+            var rows = BRAND_GROUPS[key] || [];
+            if(!rows.length) continue;
+            html += '<section class="brand-group" id="letter-' + key + '" data-letter="' + key + '">' +
+              '<h3 class="brand-letter-heading">' + key + '</h3>' +
+              '<ul class="brands-list">' +
+              rows.map(function(r){ return '<li><a href="marche/' + r.slug + '.html">' + esc(r.brand) + '</a></li>'; }).join('') +
+              '</ul></section>';
+            rendered++;
+          }
+          if(html) container.insertAdjacentHTML('beforeend', html);
+          updateLinksWithLang(getSelectedLang());
+          if(idx < ORDERED_KEYS.length) requestAnimationFrame(renderBatch);
+        }
+        requestAnimationFrame(renderBatch);
+        return countAllBrands();
+      }
+      currentBrandQuery = q;
+      var total = 0;
+      var htmlOut = '';
+      for(var i=0;i<ORDERED_KEYS.length;i++){
+        var letter = ORDERED_KEYS[i];
+        var rowsL = BRAND_GROUPS[letter] || [];
+        if(!rowsL.length) continue;
+        var matches = [];
+        for(var j=0;j<rowsL.length;j++){
+          var name = rowsL[j].brand || '';
+          if(norm(name).indexOf(q)!==-1) matches.push(rowsL[j]);
+        }
+        if(!matches.length) continue;
+        total += matches.length;
+        htmlOut += '<section class="brand-group" id="letter-' + letter + '" data-letter="' + letter + '">' +
+          '<h3 class="brand-letter-heading">' + letter + '</h3>' +
+          '<ul class="brands-list">' +
+          matches.map(function(r){ return '<li><a href="marche/' + r.slug + '.html">' + esc(r.brand) + '</a></li>'; }).join('') +
+          '</ul></section>';
+      }
+      container.innerHTML = htmlOut;
+      updateLinksWithLang(getSelectedLang());
+      return total;
+    }
+    function countAllBrands(){
+      var n = 0;
+      for(var i=0;i<ORDERED_KEYS.length;i++){
+        var rows = BRAND_GROUPS[ORDERED_KEYS[i]] || [];
+        n += rows.length;
+      }
+      return n;
+    }
     function applyBrandFilterImmediate(){
       var sel = document.getElementById('languageSelect');
       var lang = sel && sel.value ? sel.value : 'de';
@@ -217,28 +299,13 @@ ${groupedLists}
       var qRaw = inp ? inp.value : '';
       var q = norm(qRaw);
       var meta = document.getElementById('brandSearchMeta');
-      var items = gatherItems();
-      var groups = gatherGroups();
-      var n = 0;
-      for(var i=0;i<items.length;i++){
-        var li = items[i];
-        var link = li.querySelector('a');
-        var text = norm(link ? link.textContent : '');
-        var show = !q || text.indexOf(q) !== -1;
-        li.style.display = show ? '' : 'none';
-        if(show) n++;
-      }
-      for(var g=0; g<groups.length; g++){
-        var group = groups[g];
-        var allLis = group.querySelectorAll('li');
-        var visibleCount = 0;
-        for(var j=0; j<allLis.length; j++){
-          if(allLis[j].style.display !== 'none') visibleCount++;
-        }
-        group.style.display = visibleCount ? '' : 'none';
+      var n = renderSections(q);
+      if(!groupsReady){
+        pendingQuery = qRaw;
       }
       if(meta){
-        if(!q){ meta.textContent = ''; meta.className = 'brand-search-meta'; }
+        if(!groupsReady){ meta.textContent = 'Loading brand list...'; meta.className = 'brand-search-meta'; }
+        else if(!q){ meta.textContent = ''; meta.className = 'brand-search-meta'; }
         else if(n===0){ meta.textContent = t.marche_search_none || ''; meta.className = 'brand-search-meta brand-search-empty'; }
         else { meta.textContent = (t.marche_search_count || '').replace('{n}', String(n)); meta.className = 'brand-search-meta'; }
       }
@@ -289,10 +356,27 @@ ${groupedLists}
       if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
       window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
       toggleBackToTopButton();
+      loadGroupsData().then(function(){
+        applyBrandFilterImmediate();
+        if(pendingQuery !== null){
+          var v = pendingQuery;
+          pendingQuery = null;
+          var inEl = document.getElementById('brandSearchInput');
+          if(inEl && String(inEl.value || '') !== String(v || '')) inEl.value = String(v || '');
+          applyBrandFilterImmediate();
+        }
+      }).catch(function(){
+        var meta = document.getElementById('brandSearchMeta');
+        if(meta){
+          meta.textContent = 'Brand list loading failed. Please reload.';
+          meta.className = 'brand-search-meta brand-search-empty';
+        }
+      });
     });
   })();
   </script>
 </body>
 </html>`;
 fs.writeFileSync('marche.html', marcheHtml);
-console.log('Count:', b.length, '- marche.html written');
+fs.writeFileSync('brand-groups.json', JSON.stringify(groupsData), 'utf8');
+console.log('Count:', b.length, '- marche.html and brand-groups.json written');

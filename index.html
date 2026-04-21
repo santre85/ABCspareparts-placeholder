@@ -267,7 +267,16 @@
       return { brand: brand, slug: slug };
     });
   }
-  var rows = assignUniqueSlugs(brands);
+  var allRows = assignUniqueSlugs(brands);
+  function pickCarouselRows(list, target) {
+    if (!list || !list.length) return [];
+    if (list.length <= target) return list.slice();
+    var step = Math.ceil(list.length / target);
+    var out = [];
+    for (var i = 0; i < list.length; i += step) out.push(list[i]);
+    return out;
+  }
+  var rows = pickCarouselRows(allRows, 360);
   const html = rows.map(function(r) {
     return '<a href="marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
   }).join('');
