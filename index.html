@@ -277,6 +277,8 @@
     return out;
   }
   var rows = pickCarouselRows(allRows, 360);
+  var CAROUSEL_SECONDS_PER_ITEM = 6;
+  var CYCLE_SECONDS = Math.max(3600, Math.min(10800, rows.length * CAROUSEL_SECONDS_PER_ITEM));
   const html = rows.map(function(r) {
     return '<a href="marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
   }).join('');
@@ -308,7 +310,7 @@
     if (!startTime) startTime = now;
     if (!dragging && halfWidth > 0) {
       var elapsed = (now - startTime) / 1000;
-      var pct = (elapsed / 14400) * 100;
+      var pct = (elapsed / CYCLE_SECONDS) * 100;
       baseOffset = -(pct / 100) * halfWidth;
       if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
       updateTransform();
@@ -366,7 +368,7 @@
     dragOffset = 0;
     if (halfWidth > 0) {
       var pct = -baseOffset / halfWidth;
-      startTime = performance.now() - (pct * 14400 * 1000);
+      startTime = performance.now() - (pct * CYCLE_SECONDS * 1000);
     } else {
       startTime = performance.now();
     }
@@ -398,6 +400,8 @@
 <script>
 (function(){
   var rows = (window.__brandsRows || []).slice().reverse();
+  var CAROUSEL_SECONDS_PER_ITEM = 6;
+  var CYCLE_SECONDS = Math.max(3600, Math.min(10800, rows.length * CAROUSEL_SECONDS_PER_ITEM));
   const track = document.getElementById('brandsTrackReverse');
   const carousel = track && track.closest('.brands-carousel');
   if (!track || !carousel || rows.length === 0) return;
@@ -429,7 +433,7 @@
     if (!startTime) startTime = now;
     if (!dragging && halfWidth > 0) {
       var elapsed = (now - startTime) / 1000;
-      var pct = (elapsed / 14400) * 100;
+      var pct = (elapsed / CYCLE_SECONDS) * 100;
       baseOffset = -(pct / 100) * halfWidth;
       if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
       updateTransform();
@@ -454,7 +458,7 @@
     requestAnimationFrame(function() {
       measure();
       baseOffset = -halfWidth / 2;
-      startTime = performance.now() - (0.5 * 14400 * 1000);
+      startTime = performance.now() - (0.5 * CYCLE_SECONDS * 1000);
       updateTransform();
       if (typeof ResizeObserver !== 'undefined') {
         new ResizeObserver(measure).observe(track);
@@ -504,7 +508,7 @@
     dragOffset = 0;
     if (halfWidth > 0) {
       var pct = -baseOffset / halfWidth;
-      startTime = performance.now() - (pct * 14400 * 1000);
+      startTime = performance.now() - (pct * CYCLE_SECONDS * 1000);
     } else {
       startTime = performance.now();
     }
