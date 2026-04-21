@@ -8,6 +8,23 @@ const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
 const BASE = 'https://abcspareparts.eu';
 const TODAY = new Date().toISOString().slice(0, 10);
+const PRICE_FOCUS_BRANDS = new Set([
+  'SIEMENS', 'SMC', 'SICK', 'KEYENCE', 'TURCK', 'WEG',
+  'GEFRAN', 'IFM', 'LEUZE', 'BAUMER', 'SCHMERSAL', 'BOSCH REXROTH'
+]);
+
+function normalizeBrandKey(name) {
+  return String(name || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^A-Za-z0-9]+/g, ' ')
+    .trim()
+    .toUpperCase();
+}
+
+function isPriceFocusBrand(brand) {
+  return PRICE_FOCUS_BRANDS.has(normalizeBrandKey(brand));
+}
 
 function readBrandsFromIndex() {
   const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
@@ -30,6 +47,7 @@ function escapeAttr(s) {
 
 function buildTranslations(brand) {
   const H = escapeHtml(brand);
+  const highlightPricing = isPriceFocusBrand(brand);
   const sub = {
     de: encodeURIComponent(`Anfrage ${brand} Ersatzteile – ABCspareparts`),
     en: encodeURIComponent(`${brand} spare parts enquiry – ABCspareparts`),
@@ -40,8 +58,12 @@ function buildTranslations(brand) {
 
   return {
     de: {
-      meta_title: `${H} Ersatzteile anfragen | ABCspareparts – Angebot oft in 24h`,
-      meta_description: `${H} Originalteile und geprüfte Alternativen für Automatisierung und MRO. Teilenummer einreichen – unverbindliches Angebot, Rückmeldung meist innerhalb von 24 Stunden. Europa-weit.`,
+      meta_title: highlightPricing
+        ? `${H} Ersatzteile zu Top-Konditionen | ABCspareparts`
+        : `${H} Ersatzteile anfragen | ABCspareparts – Angebot oft in 24h`,
+      meta_description: highlightPricing
+        ? `${H} Ersatzteile zu wettbewerbsfähigen Preisen: Originalteile und geprüfte Alternativen. Teilenummer senden und schnell ein unverbindliches Angebot erhalten.`
+        : `${H} Originalteile und geprüfte Alternativen für Automatisierung und MRO. Teilenummer einreichen – unverbindliches Angebot, Rückmeldung meist innerhalb von 24 Stunden. Europa-weit.`,
       brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marken</a> · ${H}`,
       brand_h1: `${H} – Industrieersatzteile & MRO`,
       brand_intro: `ABCspareparts beschafft Originalteile und geprüfte Alternativen für ${H} (Industrieersatzteile, Automatisierung, MRO). Nutzen Sie das Formular für Teilenummern und Mengen – wir melden uns in der Regel innerhalb von 24 Stunden.`,
@@ -65,8 +87,12 @@ function buildTranslations(brand) {
       marca_footer_privacy: 'Datenschutz'
     },
     en: {
-      meta_title: `${H} spare parts – quote in 24h | ABCspareparts`,
-      meta_description: `Original ${H} parts and verified alternatives for automation and MRO. Send part numbers – no-obligation quote, we usually reply within 24 hours. Europe-wide delivery.`,
+      meta_title: highlightPricing
+        ? `${H} spare parts at competitive prices | ABCspareparts`
+        : `${H} spare parts – quote in 24h | ABCspareparts`,
+      meta_description: highlightPricing
+        ? `Competitive pricing on ${H} spare parts, with original components and verified alternatives. Send part numbers for a fast, no-obligation quotation.`
+        : `Original ${H} parts and verified alternatives for automation and MRO. Send part numbers – no-obligation quote, we usually reply within 24 hours. Europe-wide delivery.`,
       brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Brands</a> · ${H}`,
       brand_h1: `${H} – industrial spare parts & MRO`,
       brand_intro: `ABCspareparts supplies original ${H} parts and verified alternatives for industrial automation and MRO. Send part numbers and quantities via the form – we usually respond within 24 hours.`,
@@ -90,8 +116,12 @@ function buildTranslations(brand) {
       marca_footer_privacy: 'Privacy'
     },
     it: {
-      meta_title: `Ricambi ${H} – preventivo in 24h | ABCspareparts`,
-      meta_description: `Ricambi originali ${H} e alternative verificate per automazione e MRO. Invii i codici articolo – preventivo senza impegno, di solito risposta entro 24 ore. Consegna in Europa.`,
+      meta_title: highlightPricing
+        ? `Ricambi ${H} a prezzi competitivi | ABCspareparts`
+        : `Ricambi ${H} – preventivo in 24h | ABCspareparts`,
+      meta_description: highlightPricing
+        ? `Prezzi vantaggiosi su ricambi ${H}, originali e alternative verificate per automazione e MRO. Invia i codici articolo per una quotazione rapida senza impegno.`
+        : `Ricambi originali ${H} e alternative verificate per automazione e MRO. Invii i codici articolo – preventivo senza impegno, di solito risposta entro 24 ore. Consegna in Europa.`,
       brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marche</a> · ${H}`,
       brand_h1: `${H} – ricambi industriali e MRO`,
       brand_intro: `ABCspareparts fornisce ricambi ${H} originali e alternative verificate per automazione e MRO. Indichi codici articolo e quantità nel modulo – di solito rispondiamo entro 24 ore.`,
@@ -115,8 +145,12 @@ function buildTranslations(brand) {
       marca_footer_privacy: 'Privacy'
     },
     es: {
-      meta_title: `Recambios ${H} – presupuesto en 24h | ABCspareparts`,
-      meta_description: `Recambios originales ${H} y alternativas verificadas para automatización y MRO. Envíe referencias – presupuesto sin compromiso, respuesta habitual en 24 horas. Envío en Europa.`,
+      meta_title: highlightPricing
+        ? `Recambios ${H} a precios competitivos | ABCspareparts`
+        : `Recambios ${H} – presupuesto en 24h | ABCspareparts`,
+      meta_description: highlightPricing
+        ? `Precios competitivos en recambios ${H}, originales y alternativas verificadas para automatización y MRO. Envíe referencias para una cotización rápida sin compromiso.`
+        : `Recambios originales ${H} y alternativas verificadas para automatización y MRO. Envíe referencias – presupuesto sin compromiso, respuesta habitual en 24 horas. Envío en Europa.`,
       brand_breadcrumb: `<a href="../index.html">Inicio</a> · <a href="../marche.html">Marcas</a> · ${H}`,
       brand_h1: `${H} – recambios industriales y MRO`,
       brand_intro: `ABCspareparts suministra piezas ${H} originales y alternativas verificadas para automatización y MRO. Envíe referencias y cantidades en el formulario – solemos responder en 24 horas.`,
@@ -140,8 +174,12 @@ function buildTranslations(brand) {
       marca_footer_privacy: 'Privacidad'
     },
     fr: {
-      meta_title: `Pièces ${H} – devis sous 24h | ABCspareparts`,
-      meta_description: `Pièces d’origine ${H} et alternatives vérifiées pour l’automatisation et le MRO. Indiquez les références – devis sans engagement, réponse en général sous 24 h. Livraison en Europe.`,
+      meta_title: highlightPricing
+        ? `Pièces ${H} à prix compétitifs | ABCspareparts`
+        : `Pièces ${H} – devis sous 24h | ABCspareparts`,
+      meta_description: highlightPricing
+        ? `Prix compétitifs sur les pièces ${H}, d’origine et alternatives vérifiées pour l’automatisation et le MRO. Envoyez les références pour un devis rapide sans engagement.`
+        : `Pièces d’origine ${H} et alternatives vérifiées pour l’automatisation et le MRO. Indiquez les références – devis sans engagement, réponse en général sous 24 h. Livraison en Europe.`,
       brand_breadcrumb: `<a href="../index.html">Accueil</a> · <a href="../marche.html">Marques</a> · ${H}`,
       brand_h1: `${H} – pièces industrielles et MRO`,
       brand_intro: `ABCspareparts fournit des pièces ${H} d’origine et des alternatives vérifiées pour l’automatisation et le MRO. Indiquez références et quantités dans le formulaire – réponse en général sous 24 h.`,
