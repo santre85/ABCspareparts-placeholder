@@ -285,11 +285,15 @@
   var baseOffset = 0;
   var dragOffset = 0;
   var startX = 0;
+  var startY = 0;
   var dragging = false;
+  var isPointerDown = false;
+  var hasMoved = false;
   var halfWidth = 0;
   var animId = null;
   var startTime = 0;
   var pausedAt = 0;
+  var DRAG_THRESHOLD = 6;
 
   function getClientX(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
   function updateTransform() {
@@ -322,21 +326,35 @@
   animId = requestAnimationFrame(loop);
 
   function onStart(e) {
-    e.preventDefault();
-    dragging = true;
-    carousel.classList.add('dragging');
+    isPointerDown = true;
+    dragging = false;
+    hasMoved = false;
     startX = getClientX(e);
+    startY = e.touches ? e.touches[0].clientY : e.clientY;
     pausedAt = baseOffset + dragOffset;
   }
   function onMove(e) {
-    if (!dragging) return;
-    e.preventDefault();
+    if (!isPointerDown) return;
     var dx = getClientX(e) - startX;
+    var y = e.touches ? e.touches[0].clientY : e.clientY;
+    var dy = y - startY;
+    if (!dragging) {
+      if (Math.abs(dx) < DRAG_THRESHOLD) return;
+      if (Math.abs(dy) > Math.abs(dx)) return;
+      dragging = true;
+      hasMoved = true;
+      carousel.classList.add('dragging');
+    }
+    e.preventDefault();
     dragOffset = dx;
     updateTransform();
   }
   function onEnd() {
-    if (!dragging) return;
+    isPointerDown = false;
+    if (!dragging) {
+      dragOffset = 0;
+      return;
+    }
     dragging = false;
     carousel.classList.remove('dragging');
     baseOffset = pausedAt + dragOffset;
@@ -354,6 +372,12 @@
     }
     updateTransform();
   }
+  carousel.addEventListener('click', function(e) {
+    if (hasMoved) {
+      e.preventDefault();
+      hasMoved = false;
+    }
+  }, true);
 
   carousel.addEventListener('mousedown', onStart);
   carousel.addEventListener('touchstart', onStart, { passive: false });
@@ -381,11 +405,15 @@
   var baseOffset = 0;
   var dragOffset = 0;
   var startX = 0;
+  var startY = 0;
   var dragging = false;
+  var isPointerDown = false;
+  var hasMoved = false;
   var halfWidth = 0;
   var animId = null;
   var startTime = 0;
   var pausedAt = 0;
+  var DRAG_THRESHOLD = 6;
 
   function getClientX(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
   function updateTransform() {
@@ -436,21 +464,35 @@
   });
 
   function onStart(e) {
-    e.preventDefault();
-    dragging = true;
-    carousel.classList.add('dragging');
+    isPointerDown = true;
+    dragging = false;
+    hasMoved = false;
     startX = getClientX(e);
+    startY = e.touches ? e.touches[0].clientY : e.clientY;
     pausedAt = baseOffset + dragOffset;
   }
   function onMove(e) {
-    if (!dragging) return;
-    e.preventDefault();
+    if (!isPointerDown) return;
     var dx = getClientX(e) - startX;
+    var y = e.touches ? e.touches[0].clientY : e.clientY;
+    var dy = y - startY;
+    if (!dragging) {
+      if (Math.abs(dx) < DRAG_THRESHOLD) return;
+      if (Math.abs(dy) > Math.abs(dx)) return;
+      dragging = true;
+      hasMoved = true;
+      carousel.classList.add('dragging');
+    }
+    e.preventDefault();
     dragOffset = dx;
     updateTransform();
   }
   function onEnd() {
-    if (!dragging) return;
+    isPointerDown = false;
+    if (!dragging) {
+      dragOffset = 0;
+      return;
+    }
     dragging = false;
     carousel.classList.remove('dragging');
     baseOffset = pausedAt + dragOffset;
@@ -468,6 +510,12 @@
     }
     updateTransform();
   }
+  carousel.addEventListener('click', function(e) {
+    if (hasMoved) {
+      e.preventDefault();
+      hasMoved = false;
+    }
+  }, true);
 
   carousel.addEventListener('mousedown', onStart);
   carousel.addEventListener('touchstart', onStart, { passive: false });
