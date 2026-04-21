@@ -6,11 +6,39 @@ const match = s.match(/const brands = (\[[\s\S]*?\];\s*\n)/);
 if (!match) throw new Error('brands not found');
 const b = eval(match[1].replace(/\];\s*\n?$/, ']'));
 const slugByBrand = new Map(assignUniqueSlugs(b).map((r) => [r.brand, r.slug]));
-const lis = b.map((x) => {
-  const name = String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const slug = slugByBrand.get(x);
-  return '<li><a href="marche/' + slug + '.html">' + name + '</a></li>';
-}).join('\n');
+const groups = new Map();
+for (const brand of b) {
+  const normalized = String(brand)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+  const first = normalized.charAt(0).toUpperCase();
+  const key = /^[A-Z]$/.test(first) ? first : '#';
+  if (!groups.has(key)) groups.set(key, []);
+  groups.get(key).push(brand);
+}
+const orderedKeys = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+if (groups.has('#')) orderedKeys.push('#');
+const letterNav = orderedKeys
+  .map((k) => {
+    if (!groups.has(k)) return '<span class="letter-link letter-disabled">' + k + '</span>';
+    return '<a class="letter-link" href="#letter-' + k + '">' + k + '</a>';
+  })
+  .join('');
+const groupedLists = orderedKeys
+  .filter((k) => groups.has(k))
+  .map((k) => {
+    const items = groups.get(k).map((x) => {
+      const name = String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const slug = slugByBrand.get(x);
+      return '<li><a href="marche/' + slug + '.html">' + name + '</a></li>';
+    }).join('\n');
+    return '<section class="brand-group" id="letter-' + k + '" data-letter="' + k + '">\n' +
+      '<h3 class="brand-letter-heading">' + k + '</h3>\n' +
+      '<ul class="brands-list">\n' + items + '\n</ul>\n' +
+      '</section>';
+  })
+  .join('\n');
 const base = 'https://abcspareparts.eu';
 const marcheHtml = `<!DOCTYPE html>
 <html lang="de">
@@ -52,10 +80,30 @@ const marcheHtml = `<!DOCTYPE html>
     .page-header a:hover{text-decoration:underline}
     .brands-section{padding:2rem 1.5rem}
     .brands-section h2{font-size:1.35rem;color:#1e3a5f;margin-bottom:1.25rem}
+    .letters-wrap{margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid #e9ecef}
+    .letters-title{font-size:0.9rem;color:#1e3a5f;font-weight:600;margin-bottom:0.45rem}
+    .letters-title-inline{margin:0;white-space:nowrap}
+    .letters-nav{display:flex;flex-wrap:wrap;gap:0.35rem}
+    .letter-link{display:inline-flex;align-items:center;justify-content:center;min-width:1.9rem;height:1.9rem;padding:0 0.35rem;border:1px solid #d7e1ec;border-radius:6px;background:#fff;color:#1e3a5f;text-decoration:none;font-weight:600;font-size:0.82rem}
+    .letter-link:hover{border-color:#e67e22;color:#e67e22}
+    .letter-disabled{opacity:0.35;cursor:not-allowed}
+    .letters-sticky{position:sticky;top:0;z-index:900;background:#ffffffeb;backdrop-filter:saturate(140%) blur(2px);border-bottom:1px solid #e3eaf1;padding:0.55rem 0}
+    .letters-sticky-inner{display:flex;gap:0.75rem;align-items:center}
+    .letters-sticky .letters-nav{gap:0.3rem}
+    .letters-sticky .letter-link{min-width:1.7rem;height:1.7rem;font-size:0.78rem}
+    @media(max-width:768px){
+      .letters-sticky-inner{align-items:flex-start;flex-direction:column}
+      .letters-sticky .letters-nav{max-width:100%;overflow-x:auto;white-space:nowrap;flex-wrap:nowrap;padding-bottom:0.2rem}
+    }
+    .brand-group{margin-bottom:1.5rem;scroll-margin-top:4.5rem}
+    .brand-letter-heading{font-size:1.05rem;color:#1e3a5f;margin:0 0 0.55rem 0;padding-bottom:0.25rem;border-bottom:1px solid #dfe7ef}
     .brands-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.35rem 1.5rem;column-fill:auto}
     .brands-list li{padding:0.2rem 0;font-size:0.9rem;color:#444;border-bottom:1px solid #eee}
     .brands-list a{color:#1e3a5f;text-decoration:none;font-weight:600;border-bottom:1px solid #c5d4e3}
     .brands-list a:hover{color:#e67e22;border-bottom-color:#e67e22}
+    .back-to-top{position:fixed;right:1rem;bottom:1rem;z-index:1100;display:none;align-items:center;justify-content:center;padding:0.6rem 0.85rem;border:none;border-radius:999px;background:#1e3a5f;color:#fff;font-weight:700;font-size:0.82rem;box-shadow:0 10px 22px rgba(30,58,95,0.22);cursor:pointer}
+    .back-to-top:hover{background:#2d5a87}
+    .back-to-top.visible{display:inline-flex}
     .footer{background:#1e3a5f;color:#fff;padding:1.5rem;text-align:center;margin-top:2rem}
     .footer a{color:#fff;text-decoration:none}
     .footer a:hover{text-decoration:underline}
@@ -73,6 +121,7 @@ const marcheHtml = `<!DOCTYPE html>
   </style>
 </head>
 <body>
+  <div id="top"></div>
   <div class="language-selector">
     <select id="languageSelect">
       <option value="de">🇩🇪 Deutsch</option>
@@ -91,6 +140,14 @@ const marcheHtml = `<!DOCTYPE html>
   <main class="brands-section">
     <div class="container">
       <h2 data-i18n="marche_list_title">Elenco marchi distribuiti da ABCspareparts</h2>
+      <div class="letters-sticky" role="region" aria-label="A-Z quick links">
+        <div class="container letters-sticky-inner">
+          <p class="letters-title letters-title-inline" data-i18n="marche_letters_title">Schnellnavigation A-Z</p>
+          <nav class="letters-nav" aria-label="Sticky A-Z brand navigation">
+            ${letterNav}
+          </nav>
+        </div>
+      </div>
       <div class="brand-search-wrap" id="cerca-marca">
         <form class="brand-search-form" id="brandSearchForm" action="." method="get" autocomplete="off">
           <label for="brandSearchInput" data-i18n="marche_search_label">Marke suchen</label>
@@ -99,9 +156,15 @@ const marcheHtml = `<!DOCTYPE html>
         </form>
         <p class="brand-search-meta" id="brandSearchMeta" aria-live="polite"></p>
       </div>
-      <ul class="brands-list">
-${lis}
-      </ul>
+      <div class="letters-wrap">
+        <p class="letters-title" data-i18n="marche_letters_title">Schnellnavigation A-Z</p>
+        <nav class="letters-nav" aria-label="A-Z brand navigation">
+          ${letterNav}
+        </nav>
+      </div>
+      <div class="brand-groups">
+${groupedLists}
+      </div>
     </div>
   </main>
   <footer class="footer">
@@ -109,14 +172,15 @@ ${lis}
       <a href="index.html" data-i18n="marche_footer_home">ABCspareparts</a> &middot; <a href="impressum.html" data-i18n="marche_footer_imprint">Impressum</a> &middot; <a href="datenschutz.html" data-i18n="marche_footer_privacy">Datenschutz</a>
     </div>
   </footer>
+  <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" data-i18n-aria-label="marche_back_top_aria" data-i18n="marche_back_top">Nach oben</button>
   <script>
   (function(){
     var translations = {
-      de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über ${b.length} Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Datenschutz', marche_search_label: 'Marke suchen', marche_search_placeholder: 'z. B. Siemens', marche_search_button: 'Suchen', marche_search_count: '{n} Marken passen zur Suche', marche_search_none: 'Keine Marke passt zur Suche. Schreibweise prüfen oder Feld leeren.' },
-      en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over ${b.length} brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Imprint', marche_footer_privacy: 'Privacy', marche_search_label: 'Search brand', marche_search_placeholder: 'e.g. Siemens', marche_search_button: 'Search', marche_search_count: '{n} brands match', marche_search_none: 'No brand matches. Check spelling or clear the field.' },
-      it: { marche_h1: 'Marche e produttori', marche_subtitle: 'Oltre ${b.length} marchi per ricambi industriali. <a href="index.html">Torna alla home</a>', marche_list_title: 'Elenco marchi distribuiti da ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Privacy', marche_search_label: 'Cerca marchio', marche_search_placeholder: 'es. Siemens', marche_search_button: 'Cerca', marche_search_count: '{n} marchi corrispondono', marche_search_none: 'Nessun marchio corrisponde. Controllare la scrittura o svuotare il campo.' },
-      es: { marche_h1: 'Marcas y fabricantes', marche_subtitle: 'Más de ${b.length} marcas de recambios industriales. <a href="index.html">Volver al inicio</a>', marche_list_title: 'Listado de marcas distribuidas por ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Aviso legal', marche_footer_privacy: 'Privacidad', marche_search_label: 'Buscar marca', marche_search_placeholder: 'ej. Siemens', marche_search_button: 'Buscar', marche_search_count: '{n} marcas coinciden', marche_search_none: 'Ninguna marca coincide. Revise la ortografía o vacíe el campo.' },
-      fr: { marche_h1: 'Marques et fabricants', marche_subtitle: 'Plus de ${b.length} marques de pièces industrielles. <a href="index.html">Retour à l\\'accueil</a>', marche_list_title: 'Liste des marques distribuées par ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Mentions légales', marche_footer_privacy: 'Confidentialité', marche_search_label: 'Rechercher une marque', marche_search_placeholder: 'ex. Siemens', marche_search_button: 'Rechercher', marche_search_count: '{n} marques correspondent', marche_search_none: 'Aucune marque ne correspond. Vérifiez l’orthographe ou videz le champ.' }
+      de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über ${b.length} Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Datenschutz', marche_search_label: 'Marke suchen', marche_search_placeholder: 'z. B. Siemens', marche_search_button: 'Suchen', marche_search_count: '{n} Marken passen zur Suche', marche_search_none: 'Keine Marke passt zur Suche. Schreibweise prüfen oder Feld leeren.', marche_letters_title: 'Schnellnavigation A-Z', marche_back_top: 'Nach oben', marche_back_top_aria: 'Zurück nach oben' },
+      en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over ${b.length} brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Imprint', marche_footer_privacy: 'Privacy', marche_search_label: 'Search brand', marche_search_placeholder: 'e.g. Siemens', marche_search_button: 'Search', marche_search_count: '{n} brands match', marche_search_none: 'No brand matches. Check spelling or clear the field.', marche_letters_title: 'A-Z quick navigation', marche_back_top: 'Back to top', marche_back_top_aria: 'Go back to top' },
+      it: { marche_h1: 'Marche e produttori', marche_subtitle: 'Oltre ${b.length} marchi per ricambi industriali. <a href="index.html">Torna alla home</a>', marche_list_title: 'Elenco marchi distribuiti da ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Privacy', marche_search_label: 'Cerca marchio', marche_search_placeholder: 'es. Siemens', marche_search_button: 'Cerca', marche_search_count: '{n} marchi corrispondono', marche_search_none: 'Nessun marchio corrisponde. Controllare la scrittura o svuotare il campo.', marche_letters_title: 'Navigazione rapida A-Z', marche_back_top: 'Torna su', marche_back_top_aria: 'Torna all’inizio pagina' },
+      es: { marche_h1: 'Marcas y fabricantes', marche_subtitle: 'Más de ${b.length} marcas de recambios industriales. <a href="index.html">Volver al inicio</a>', marche_list_title: 'Listado de marcas distribuidas por ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Aviso legal', marche_footer_privacy: 'Privacidad', marche_search_label: 'Buscar marca', marche_search_placeholder: 'ej. Siemens', marche_search_button: 'Buscar', marche_search_count: '{n} marcas coinciden', marche_search_none: 'Ninguna marca coincide. Revise la ortografía o vacíe el campo.', marche_letters_title: 'Navegación rápida A-Z', marche_back_top: 'Volver arriba', marche_back_top_aria: 'Volver al inicio' },
+      fr: { marche_h1: 'Marques et fabricants', marche_subtitle: 'Plus de ${b.length} marques de pièces industrielles. <a href="index.html">Retour à l\\'accueil</a>', marche_list_title: 'Liste des marques distribuées par ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Mentions légales', marche_footer_privacy: 'Confidentialité', marche_search_label: 'Rechercher une marque', marche_search_placeholder: 'ex. Siemens', marche_search_button: 'Rechercher', marche_search_count: '{n} marques correspondent', marche_search_none: 'Aucune marque ne correspond. Vérifiez l’orthographe ou videz le champ.', marche_letters_title: 'Navigation rapide A-Z', marche_back_top: 'Haut de page', marche_back_top_aria: 'Retour en haut de page' }
     };
     function getLangFromUrl(){ var p = new URLSearchParams(window.location.search); var l = p.get('lang'); return l && ['de','en','it','es','fr'].indexOf(l)!==-1 ? l : null; }
     function getQueryQ(){ try { return new URLSearchParams(window.location.search).get('q') || ''; } catch(e){ return ''; } }
@@ -139,9 +203,11 @@ ${lis}
       });
     }
     var listItems = null;
+    var brandGroups = null;
     var brandSearchDebounceTimer = null;
     function norm(s){ return String(s||'').toLowerCase().replace(/\\s+/g,' ').trim(); }
     function gatherItems(){ if(!listItems) listItems = Array.prototype.slice.call(document.querySelectorAll('.brands-list li')); return listItems; }
+    function gatherGroups(){ if(!brandGroups) brandGroups = Array.prototype.slice.call(document.querySelectorAll('.brand-group')); return brandGroups; }
     function applyBrandFilterImmediate(){
       var sel = document.getElementById('languageSelect');
       var lang = sel && sel.value ? sel.value : 'de';
@@ -152,6 +218,7 @@ ${lis}
       var q = norm(qRaw);
       var meta = document.getElementById('brandSearchMeta');
       var items = gatherItems();
+      var groups = gatherGroups();
       var n = 0;
       for(var i=0;i<items.length;i++){
         var li = items[i];
@@ -160,6 +227,15 @@ ${lis}
         var show = !q || text.indexOf(q) !== -1;
         li.style.display = show ? '' : 'none';
         if(show) n++;
+      }
+      for(var g=0; g<groups.length; g++){
+        var group = groups[g];
+        var allLis = group.querySelectorAll('li');
+        var visibleCount = 0;
+        for(var j=0; j<allLis.length; j++){
+          if(allLis[j].style.display !== 'none') visibleCount++;
+        }
+        group.style.display = visibleCount ? '' : 'none';
       }
       if(meta){
         if(!q){ meta.textContent = ''; meta.className = 'brand-search-meta'; }
@@ -181,16 +257,24 @@ ${lis}
       var t = translations[lang] || translations.de;
       document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if(t[k]) el.innerHTML = t[k]; });
       document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){ var k = el.getAttribute('data-i18n-placeholder'); if(t[k]) el.placeholder = t[k]; });
+      document.querySelectorAll('[data-i18n-aria-label]').forEach(function(el){ var k = el.getAttribute('data-i18n-aria-label'); if(t[k]) el.setAttribute('aria-label', t[k]); });
       document.documentElement.lang = lang;
       try{ localStorage.setItem('lang', lang); }catch(e){}
       updateLinksWithLang(lang);
       applyBrandFilterImmediate();
+    }
+    function toggleBackToTopButton(){
+      var btn = document.getElementById('backToTopBtn');
+      if(!btn) return;
+      if(window.scrollY > 500) btn.classList.add('visible');
+      else btn.classList.remove('visible');
     }
     document.addEventListener('DOMContentLoaded', function(){
       var raw = getCurrentLang();
       var lang = ['de','en','it','es','fr'].indexOf(raw)!==-1 ? raw : 'de';
       var sel = document.getElementById('languageSelect');
       var inp = document.getElementById('brandSearchInput');
+      var backBtn = document.getElementById('backToTopBtn');
       var qsQ = getQueryQ();
       if(inp && qsQ) inp.value = qsQ;
       if(sel) sel.value = lang;
@@ -202,6 +286,9 @@ ${lis}
       var form = document.getElementById('brandSearchForm');
       if(form) form.addEventListener('submit', function(e){ e.preventDefault(); applyBrandFilterImmediate(); });
       if(sel) sel.addEventListener('change', function(){ changeLanguage(this.value); });
+      if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
+      toggleBackToTopButton();
     });
   })();
   </script>

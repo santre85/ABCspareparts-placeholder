@@ -38,10 +38,30 @@
     .page-header a:hover{text-decoration:underline}
     .brands-section{padding:2rem 1.5rem}
     .brands-section h2{font-size:1.35rem;color:#1e3a5f;margin-bottom:1.25rem}
+    .letters-wrap{margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid #e9ecef}
+    .letters-title{font-size:0.9rem;color:#1e3a5f;font-weight:600;margin-bottom:0.45rem}
+    .letters-title-inline{margin:0;white-space:nowrap}
+    .letters-nav{display:flex;flex-wrap:wrap;gap:0.35rem}
+    .letter-link{display:inline-flex;align-items:center;justify-content:center;min-width:1.9rem;height:1.9rem;padding:0 0.35rem;border:1px solid #d7e1ec;border-radius:6px;background:#fff;color:#1e3a5f;text-decoration:none;font-weight:600;font-size:0.82rem}
+    .letter-link:hover{border-color:#e67e22;color:#e67e22}
+    .letter-disabled{opacity:0.35;cursor:not-allowed}
+    .letters-sticky{position:sticky;top:0;z-index:900;background:#ffffffeb;backdrop-filter:saturate(140%) blur(2px);border-bottom:1px solid #e3eaf1;padding:0.55rem 0}
+    .letters-sticky-inner{display:flex;gap:0.75rem;align-items:center}
+    .letters-sticky .letters-nav{gap:0.3rem}
+    .letters-sticky .letter-link{min-width:1.7rem;height:1.7rem;font-size:0.78rem}
+    @media(max-width:768px){
+      .letters-sticky-inner{align-items:flex-start;flex-direction:column}
+      .letters-sticky .letters-nav{max-width:100%;overflow-x:auto;white-space:nowrap;flex-wrap:nowrap;padding-bottom:0.2rem}
+    }
+    .brand-group{margin-bottom:1.5rem;scroll-margin-top:4.5rem}
+    .brand-letter-heading{font-size:1.05rem;color:#1e3a5f;margin:0 0 0.55rem 0;padding-bottom:0.25rem;border-bottom:1px solid #dfe7ef}
     .brands-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.35rem 1.5rem;column-fill:auto}
     .brands-list li{padding:0.2rem 0;font-size:0.9rem;color:#444;border-bottom:1px solid #eee}
     .brands-list a{color:#1e3a5f;text-decoration:none;font-weight:600;border-bottom:1px solid #c5d4e3}
     .brands-list a:hover{color:#e67e22;border-bottom-color:#e67e22}
+    .back-to-top{position:fixed;right:1rem;bottom:1rem;z-index:1100;display:none;align-items:center;justify-content:center;padding:0.6rem 0.85rem;border:none;border-radius:999px;background:#1e3a5f;color:#fff;font-weight:700;font-size:0.82rem;box-shadow:0 10px 22px rgba(30,58,95,0.22);cursor:pointer}
+    .back-to-top:hover{background:#2d5a87}
+    .back-to-top.visible{display:inline-flex}
     .footer{background:#1e3a5f;color:#fff;padding:1.5rem;text-align:center;margin-top:2rem}
     .footer a{color:#fff;text-decoration:none}
     .footer a:hover{text-decoration:underline}
@@ -59,6 +79,7 @@
   </style>
 </head>
 <body>
+  <div id="top"></div>
   <div class="language-selector">
     <select id="languageSelect">
       <option value="de">🇩🇪 Deutsch</option>
@@ -77,6 +98,14 @@
   <main class="brands-section">
     <div class="container">
       <h2 data-i18n="marche_list_title">Elenco marchi distribuiti da ABCspareparts</h2>
+      <div class="letters-sticky" role="region" aria-label="A-Z quick links">
+        <div class="container letters-sticky-inner">
+          <p class="letters-title letters-title-inline" data-i18n="marche_letters_title">Schnellnavigation A-Z</p>
+          <nav class="letters-nav" aria-label="Sticky A-Z brand navigation">
+            <a class="letter-link" href="#letter-A">A</a><a class="letter-link" href="#letter-B">B</a><a class="letter-link" href="#letter-C">C</a><a class="letter-link" href="#letter-D">D</a><a class="letter-link" href="#letter-E">E</a><a class="letter-link" href="#letter-F">F</a><a class="letter-link" href="#letter-G">G</a><a class="letter-link" href="#letter-H">H</a><a class="letter-link" href="#letter-I">I</a><a class="letter-link" href="#letter-J">J</a><a class="letter-link" href="#letter-K">K</a><a class="letter-link" href="#letter-L">L</a><a class="letter-link" href="#letter-M">M</a><a class="letter-link" href="#letter-N">N</a><a class="letter-link" href="#letter-O">O</a><a class="letter-link" href="#letter-P">P</a><a class="letter-link" href="#letter-Q">Q</a><a class="letter-link" href="#letter-R">R</a><a class="letter-link" href="#letter-S">S</a><a class="letter-link" href="#letter-T">T</a><a class="letter-link" href="#letter-U">U</a><a class="letter-link" href="#letter-V">V</a><a class="letter-link" href="#letter-W">W</a><a class="letter-link" href="#letter-X">X</a><a class="letter-link" href="#letter-Y">Y</a><a class="letter-link" href="#letter-Z">Z</a><a class="letter-link" href="#letter-#">#</a>
+          </nav>
+        </div>
+      </div>
       <div class="brand-search-wrap" id="cerca-marca">
         <form class="brand-search-form" id="brandSearchForm" action="." method="get" autocomplete="off">
           <label for="brandSearchInput" data-i18n="marche_search_label">Marke suchen</label>
@@ -85,11 +114,16 @@
         </form>
         <p class="brand-search-meta" id="brandSearchMeta" aria-live="polite"></p>
       </div>
-      <ul class="brands-list">
-<li><a href="marche/2n.html">2N</a></li>
-<li><a href="marche/3com.html">3COM</a></li>
-<li><a href="marche/3m.html">3M</a></li>
-<li><a href="marche/3m-peltor.html">3M PELTOR</a></li>
+      <div class="letters-wrap">
+        <p class="letters-title" data-i18n="marche_letters_title">Schnellnavigation A-Z</p>
+        <nav class="letters-nav" aria-label="A-Z brand navigation">
+          <a class="letter-link" href="#letter-A">A</a><a class="letter-link" href="#letter-B">B</a><a class="letter-link" href="#letter-C">C</a><a class="letter-link" href="#letter-D">D</a><a class="letter-link" href="#letter-E">E</a><a class="letter-link" href="#letter-F">F</a><a class="letter-link" href="#letter-G">G</a><a class="letter-link" href="#letter-H">H</a><a class="letter-link" href="#letter-I">I</a><a class="letter-link" href="#letter-J">J</a><a class="letter-link" href="#letter-K">K</a><a class="letter-link" href="#letter-L">L</a><a class="letter-link" href="#letter-M">M</a><a class="letter-link" href="#letter-N">N</a><a class="letter-link" href="#letter-O">O</a><a class="letter-link" href="#letter-P">P</a><a class="letter-link" href="#letter-Q">Q</a><a class="letter-link" href="#letter-R">R</a><a class="letter-link" href="#letter-S">S</a><a class="letter-link" href="#letter-T">T</a><a class="letter-link" href="#letter-U">U</a><a class="letter-link" href="#letter-V">V</a><a class="letter-link" href="#letter-W">W</a><a class="letter-link" href="#letter-X">X</a><a class="letter-link" href="#letter-Y">Y</a><a class="letter-link" href="#letter-Z">Z</a><a class="letter-link" href="#letter-#">#</a>
+        </nav>
+      </div>
+      <div class="brand-groups">
+<section class="brand-group" id="letter-A" data-letter="A">
+<h3 class="brand-letter-heading">A</h3>
+<ul class="brands-list">
 <li><a href="marche/a-data.html">A-DATA</a></li>
 <li><a href="marche/a-p-o-elmos.html">A.P.O. - ELMOS</a></li>
 <li><a href="marche/aaeon.html">AAEON</a></li>
@@ -484,6 +518,11 @@
 <li><a href="marche/axor-industries.html">AXOR INDUSTRIES</a></li>
 <li><a href="marche/az-pneumatica.html">Az Pneumatica</a></li>
 <li><a href="marche/azcue-pumps.html">Azcue pumps</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-B" data-letter="B">
+<h3 class="brand-letter-heading">B</h3>
+<ul class="brands-list">
 <li><a href="marche/b-and-c.html">B&amp;C</a></li>
 <li><a href="marche/b-and-c-electronics.html">B&amp;C ELECTRONICS</a></li>
 <li><a href="marche/b-and-d.html">B&amp;D</a></li>
@@ -917,6 +956,11 @@
 <li><a href="marche/bypass.html">BYPASS</a></li>
 <li><a href="marche/bystronic.html">BYSTRONIC</a></li>
 <li><a href="marche/bytronic.html">Bytronic</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-C" data-letter="C">
+<h3 class="brand-letter-heading">C</h3>
+<ul class="brands-list">
 <li><a href="marche/c-o-b-o.html">C.O.B.O.</a></li>
 <li><a href="marche/c-w-brabender.html">C.W. BRABENDER</a></li>
 <li><a href="marche/c-and-c.html">C&amp;C</a></li>
@@ -1441,6 +1485,11 @@
 <li><a href="marche/cyberpower.html">Cyberpower</a></li>
 <li><a href="marche/cynergy3.html">Cynergy3</a></li>
 <li><a href="marche/czechmont.html">CZECHMONT</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-D" data-letter="D">
+<h3 class="brand-letter-heading">D</h3>
+<ul class="brands-list">
 <li><a href="marche/d-link.html">D-LINK</a></li>
 <li><a href="marche/d-sensors.html">D-SENSORS</a></li>
 <li><a href="marche/d-krieger.html">D.KRIEGER</a></li>
@@ -1832,6 +1881,11 @@
 <li><a href="marche/dynex.html">Dynex</a></li>
 <li><a href="marche/dynisco.html">DYNISCO</a></li>
 <li><a href="marche/dz-trasmissioni.html">Dz Trasmissioni</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-E" data-letter="E">
+<h3 class="brand-letter-heading">E</h3>
+<ul class="brands-list">
 <li><a href="marche/e-motion.html">E-MOTION</a></li>
 <li><a href="marche/e-t-a.html">E-T-A</a></li>
 <li><a href="marche/e-term.html">E-TERM</a></li>
@@ -2260,6 +2314,11 @@
 <li><a href="marche/ezautomation.html">Ezautomation</a></li>
 <li><a href="marche/ezcoo.html">Ezcoo</a></li>
 <li><a href="marche/ezo.html">EZO</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-F" data-letter="F">
+<h3 class="brand-letter-heading">F</h3>
+<ul class="brands-list">
 <li><a href="marche/f-a-g.html">F.A.G.</a></li>
 <li><a href="marche/f-a-t.html">F.A.T.</a></li>
 <li><a href="marche/f-b-mondial.html">F.B. MONDIAL</a></li>
@@ -2850,6 +2909,11 @@
 <li><a href="marche/fux.html">FUX</a></li>
 <li><a href="marche/fuyi.html">FUYI</a></li>
 <li><a href="marche/fuzhou.html">FUZHOU</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-G" data-letter="G">
+<h3 class="brand-letter-heading">G</h3>
+<ul class="brands-list">
 <li><a href="marche/g-bargellini-and-c-s-p-a.html">G.BARGELLINI &amp; C.S.P.A</a></li>
 <li><a href="marche/g-and-b.html">G&amp;B</a></li>
 <li><a href="marche/g-and-m.html">G&amp;M</a></li>
@@ -3170,6 +3234,11 @@
 <li><a href="marche/gvs.html">Gvs</a></li>
 <li><a href="marche/gw-instek.html">Gw Instek</a></li>
 <li><a href="marche/gwinstek.html">GWINSTEK</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-H" data-letter="H">
+<h3 class="brand-letter-heading">H</h3>
+<ul class="brands-list">
 <li><a href="marche/h-t-s.html">H.T.S.</a></li>
 <li><a href="marche/h-and-b.html">H&amp;B</a></li>
 <li><a href="marche/h-and-e.html">H&amp;E</a></li>
@@ -3792,6 +3861,11 @@
 <li><a href="marche/hydromec.html">Hydromec</a></li>
 <li><a href="marche/hypertherm.html">Hypertherm</a></li>
 <li><a href="marche/hyundai.html">Hyundai</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-I" data-letter="I">
+<h3 class="brand-letter-heading">I</h3>
+<ul class="brands-list">
 <li><a href="marche/i-c-p.html">I C P</a></li>
 <li><a href="marche/i-t-e.html">I-T-E</a></li>
 <li><a href="marche/i-r-e.html">I.R.E.</a></li>
@@ -4212,6 +4286,11 @@
 <li><a href="marche/ixon.html">Ixon</a></li>
 <li><a href="marche/ixys.html">Ixys</a></li>
 <li><a href="marche/izar.html">IZAR</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-J" data-letter="J">
+<h3 class="brand-letter-heading">J</h3>
+<ul class="brands-list">
 <li><a href="marche/j-p-sauer-and-sohn.html">J.P. SAUER &amp; SOHN</a></li>
 <li><a href="marche/j-and-d.html">J&amp;D</a></li>
 <li><a href="marche/ja-solar.html">Ja Solar</a></li>
@@ -4434,6 +4513,11 @@
 <li><a href="marche/jvmo.html">JVMO</a></li>
 <li><a href="marche/jvr.html">JVR</a></li>
 <li><a href="marche/jzk.html">Jzk</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-K" data-letter="K">
+<h3 class="brand-letter-heading">K</h3>
+<ul class="brands-list">
 <li><a href="marche/k-tron.html">K-TRON</a></li>
 <li><a href="marche/k-and-g.html">K&amp;G</a></li>
 <li><a href="marche/k2.html">K2</a></li>
@@ -4869,6 +4953,11 @@
 <li><a href="marche/kyoei.html">KYOEI</a></li>
 <li><a href="marche/kyoritsu.html">KYORITSU</a></li>
 <li><a href="marche/kyowa.html">KYOWA</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-L" data-letter="L">
+<h3 class="brand-letter-heading">L</h3>
+<ul class="brands-list">
 <li><a href="marche/l-com.html">L Com</a></li>
 <li><a href="marche/l-max.html">L-MAX</a></li>
 <li><a href="marche/l-acqua.html">L'ACQUA</a></li>
@@ -5336,6 +5425,11 @@
 <li><a href="marche/lutze.html">Lutze</a></li>
 <li><a href="marche/luxco.html">Luxco</a></li>
 <li><a href="marche/lvsun.html">LVSUN</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-M" data-letter="M">
+<h3 class="brand-letter-heading">M</h3>
+<ul class="brands-list">
 <li><a href="marche/m-barnwell-services.html">M Barnwell Services</a></li>
 <li><a href="marche/m-system.html">M System</a></li>
 <li><a href="marche/m-e-c-snc.html">M.E.C. SNC</a></li>
@@ -6206,6 +6300,11 @@
 <li><a href="marche/myria.html">MYRIA</a></li>
 <li><a href="marche/myson.html">MYSON</a></li>
 <li><a href="marche/myyty.html">MYYTY</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-N" data-letter="N">
+<h3 class="brand-letter-heading">N</h3>
+<ul class="brands-list">
 <li><a href="marche/n-r-c.html">N.R.C.</a></li>
 <li><a href="marche/n-and-c.html">N&amp;C</a></li>
 <li><a href="marche/nabtesco.html">Nabtesco</a></li>
@@ -6592,6 +6691,11 @@
 <li><a href="marche/nyla.html">NYLA</a></li>
 <li><a href="marche/nylon.html">NYLON</a></li>
 <li><a href="marche/nymex.html">NYMEX</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-O" data-letter="O">
+<h3 class="brand-letter-heading">O</h3>
+<ul class="brands-list">
 <li><a href="marche/o-m-b.html">O.M.B.</a></li>
 <li><a href="marche/o-me-r.html">O.ME.R</a></li>
 <li><a href="marche/o-t-k.html">O.T.K.</a></li>
@@ -6927,6 +7031,11 @@
 <li><a href="marche/oxys.html">OXYS</a></li>
 <li><a href="marche/oy.html">OY</a></li>
 <li><a href="marche/oyama.html">OYAMA</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-P" data-letter="P">
+<h3 class="brand-letter-heading">P</h3>
+<ul class="brands-list">
 <li><a href="marche/p-g.html">P.G.</a></li>
 <li><a href="marche/p-l.html">P.L.</a></li>
 <li><a href="marche/p-and-a.html">P&amp;A</a></li>
@@ -7670,6 +7779,11 @@
 <li><a href="marche/pyramid.html">Pyramid</a></li>
 <li><a href="marche/pyrex.html">PYREX</a></li>
 <li><a href="marche/pz.html">PZ</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-Q" data-letter="Q">
+<h3 class="brand-letter-heading">Q</h3>
+<ul class="brands-list">
 <li><a href="marche/q-light.html">Q-Light</a></li>
 <li><a href="marche/q-tec.html">Q-TEC</a></li>
 <li><a href="marche/q-tech.html">Q-TECH</a></li>
@@ -7760,6 +7874,11 @@
 <li><a href="marche/quova.html">QUOVA</a></li>
 <li><a href="marche/quovant.html">QUOVANT</a></li>
 <li><a href="marche/qv.html">QV</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-R" data-letter="R">
+<h3 class="brand-letter-heading">R</h3>
+<ul class="brands-list">
 <li><a href="marche/r-tec.html">R-TEC</a></li>
 <li><a href="marche/r-b-c.html">R.B.C.</a></li>
 <li><a href="marche/r-bohrer.html">R.BOHRER</a></li>
@@ -8400,6 +8519,11 @@
 <li><a href="marche/rvr.html">Rvr</a></li>
 <li><a href="marche/rwmo.html">RWMO</a></li>
 <li><a href="marche/rzb.html">RZB</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-S" data-letter="S">
+<h3 class="brand-letter-heading">S</h3>
+<ul class="brands-list">
 <li><a href="marche/s-s-technologies.html">S-S TECHNOLOGIES</a></li>
 <li><a href="marche/s-and-a.html">S&amp;A</a></li>
 <li><a href="marche/s-and-k.html">S&amp;K</a></li>
@@ -9906,6 +10030,11 @@
 <li><a href="marche/sythem.html">SYTHEM</a></li>
 <li><a href="marche/syvax.html">SYVAX</a></li>
 <li><a href="marche/szymczuk.html">SZYMCZUK</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-T" data-letter="T">
+<h3 class="brand-letter-heading">T</h3>
+<ul class="brands-list">
 <li><a href="marche/t-verter.html">T-VERTER</a></li>
 <li><a href="marche/t-e-a.html">T.E.A.</a></li>
 <li><a href="marche/t-s.html">T.S.</a></li>
@@ -10720,6 +10849,11 @@
 <li><a href="marche/tynes.html">TYNES</a></li>
 <li><a href="marche/typar.html">TYPAR</a></li>
 <li><a href="marche/tytan.html">TYTAN</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-U" data-letter="U">
+<h3 class="brand-letter-heading">U</h3>
+<ul class="brands-list">
 <li><a href="marche/u-t.html">U.T.</a></li>
 <li><a href="marche/uab.html">UAB</a></li>
 <li><a href="marche/uar.html">UAR</a></li>
@@ -10879,6 +11013,11 @@
 <li><a href="marche/uvex.html">UVEX</a></li>
 <li><a href="marche/uwt.html">Uwt</a></li>
 <li><a href="marche/uxcell.html">Uxcell</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-V" data-letter="V">
+<h3 class="brand-letter-heading">V</h3>
+<ul class="brands-list">
 <li><a href="marche/v-tac.html">V-TAC</a></li>
 <li><a href="marche/v-vision.html">V-VISION</a></li>
 <li><a href="marche/v-and-p.html">V&amp;P</a></li>
@@ -11325,6 +11464,11 @@
 <li><a href="marche/vy.html">VY</a></li>
 <li><a href="marche/vybo.html">Vybo</a></li>
 <li><a href="marche/vz.html">VZ</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-W" data-letter="W">
+<h3 class="brand-letter-heading">W</h3>
+<ul class="brands-list">
 <li><a href="marche/w-steinegger.html">W. STEINEGGER</a></li>
 <li><a href="marche/w-e-st.html">W.E.ST</a></li>
 <li><a href="marche/w-and-a.html">W&amp;A</a></li>
@@ -11813,6 +11957,11 @@
 <li><a href="marche/wurth-elektronik.html">Wurth Elektronik</a></li>
 <li><a href="marche/wurzburger.html">WURZBURGER</a></li>
 <li><a href="marche/wyes.html">Wyes</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-X" data-letter="X">
+<h3 class="brand-letter-heading">X</h3>
+<ul class="brands-list">
 <li><a href="marche/x-rite.html">X-RITE</a></li>
 <li><a href="marche/xac.html">XAC</a></li>
 <li><a href="marche/xaerus.html">XAERUS</a></li>
@@ -11932,6 +12081,11 @@
 <li><a href="marche/xwb.html">XWB</a></li>
 <li><a href="marche/xwy.html">XWY</a></li>
 <li><a href="marche/xycom.html">XYCOM</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-Y" data-letter="Y">
+<h3 class="brand-letter-heading">Y</h3>
+<ul class="brands-list">
 <li><a href="marche/yageo.html">Yageo</a></li>
 <li><a href="marche/yamada-pump.html">Yamada Pump</a></li>
 <li><a href="marche/yamaha.html">Yamaha</a></li>
@@ -11948,6 +12102,11 @@
 <li><a href="marche/yudian.html">Yudian</a></li>
 <li><a href="marche/yuken.html">Yuken</a></li>
 <li><a href="marche/yumo.html">Yumo</a></li>
+</ul>
+</section>
+<section class="brand-group" id="letter-Z" data-letter="Z">
+<h3 class="brand-letter-heading">Z</h3>
+<ul class="brands-list">
 <li><a href="marche/z-laser.html">Z-LASER</a></li>
 <li><a href="marche/zae.html">ZAE</a></li>
 <li><a href="marche/zaes.html">Zaes</a></li>
@@ -12046,7 +12205,18 @@
 <li><a href="marche/zyx.html">ZYX</a></li>
 <li><a href="marche/zyxel.html">ZYXEL</a></li>
 <li><a href="marche/zz-drive-tech.html">ZZ-DRIVE TECH</a></li>
-      </ul>
+</ul>
+</section>
+<section class="brand-group" id="letter-#" data-letter="#">
+<h3 class="brand-letter-heading">#</h3>
+<ul class="brands-list">
+<li><a href="marche/2n.html">2N</a></li>
+<li><a href="marche/3com.html">3COM</a></li>
+<li><a href="marche/3m.html">3M</a></li>
+<li><a href="marche/3m-peltor.html">3M PELTOR</a></li>
+</ul>
+</section>
+      </div>
     </div>
   </main>
   <footer class="footer">
@@ -12054,14 +12224,15 @@
       <a href="index.html" data-i18n="marche_footer_home">ABCspareparts</a> &middot; <a href="impressum.html" data-i18n="marche_footer_imprint">Impressum</a> &middot; <a href="datenschutz.html" data-i18n="marche_footer_privacy">Datenschutz</a>
     </div>
   </footer>
+  <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" data-i18n-aria-label="marche_back_top_aria" data-i18n="marche_back_top">Nach oben</button>
   <script>
   (function(){
     var translations = {
-      de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über 11960 Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Datenschutz', marche_search_label: 'Marke suchen', marche_search_placeholder: 'z. B. Siemens', marche_search_button: 'Suchen', marche_search_count: '{n} Marken passen zur Suche', marche_search_none: 'Keine Marke passt zur Suche. Schreibweise prüfen oder Feld leeren.' },
-      en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over 11960 brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Imprint', marche_footer_privacy: 'Privacy', marche_search_label: 'Search brand', marche_search_placeholder: 'e.g. Siemens', marche_search_button: 'Search', marche_search_count: '{n} brands match', marche_search_none: 'No brand matches. Check spelling or clear the field.' },
-      it: { marche_h1: 'Marche e produttori', marche_subtitle: 'Oltre 11960 marchi per ricambi industriali. <a href="index.html">Torna alla home</a>', marche_list_title: 'Elenco marchi distribuiti da ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Privacy', marche_search_label: 'Cerca marchio', marche_search_placeholder: 'es. Siemens', marche_search_button: 'Cerca', marche_search_count: '{n} marchi corrispondono', marche_search_none: 'Nessun marchio corrisponde. Controllare la scrittura o svuotare il campo.' },
-      es: { marche_h1: 'Marcas y fabricantes', marche_subtitle: 'Más de 11960 marcas de recambios industriales. <a href="index.html">Volver al inicio</a>', marche_list_title: 'Listado de marcas distribuidas por ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Aviso legal', marche_footer_privacy: 'Privacidad', marche_search_label: 'Buscar marca', marche_search_placeholder: 'ej. Siemens', marche_search_button: 'Buscar', marche_search_count: '{n} marcas coinciden', marche_search_none: 'Ninguna marca coincide. Revise la ortografía o vacíe el campo.' },
-      fr: { marche_h1: 'Marques et fabricants', marche_subtitle: 'Plus de 11960 marques de pièces industrielles. <a href="index.html">Retour à l\'accueil</a>', marche_list_title: 'Liste des marques distribuées par ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Mentions légales', marche_footer_privacy: 'Confidentialité', marche_search_label: 'Rechercher une marque', marche_search_placeholder: 'ex. Siemens', marche_search_button: 'Rechercher', marche_search_count: '{n} marques correspondent', marche_search_none: 'Aucune marque ne correspond. Vérifiez l’orthographe ou videz le champ.' }
+      de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über 11960 Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Datenschutz', marche_search_label: 'Marke suchen', marche_search_placeholder: 'z. B. Siemens', marche_search_button: 'Suchen', marche_search_count: '{n} Marken passen zur Suche', marche_search_none: 'Keine Marke passt zur Suche. Schreibweise prüfen oder Feld leeren.', marche_letters_title: 'Schnellnavigation A-Z', marche_back_top: 'Nach oben', marche_back_top_aria: 'Zurück nach oben' },
+      en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over 11960 brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Imprint', marche_footer_privacy: 'Privacy', marche_search_label: 'Search brand', marche_search_placeholder: 'e.g. Siemens', marche_search_button: 'Search', marche_search_count: '{n} brands match', marche_search_none: 'No brand matches. Check spelling or clear the field.', marche_letters_title: 'A-Z quick navigation', marche_back_top: 'Back to top', marche_back_top_aria: 'Go back to top' },
+      it: { marche_h1: 'Marche e produttori', marche_subtitle: 'Oltre 11960 marchi per ricambi industriali. <a href="index.html">Torna alla home</a>', marche_list_title: 'Elenco marchi distribuiti da ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Privacy', marche_search_label: 'Cerca marchio', marche_search_placeholder: 'es. Siemens', marche_search_button: 'Cerca', marche_search_count: '{n} marchi corrispondono', marche_search_none: 'Nessun marchio corrisponde. Controllare la scrittura o svuotare il campo.', marche_letters_title: 'Navigazione rapida A-Z', marche_back_top: 'Torna su', marche_back_top_aria: 'Torna all’inizio pagina' },
+      es: { marche_h1: 'Marcas y fabricantes', marche_subtitle: 'Más de 11960 marcas de recambios industriales. <a href="index.html">Volver al inicio</a>', marche_list_title: 'Listado de marcas distribuidas por ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Aviso legal', marche_footer_privacy: 'Privacidad', marche_search_label: 'Buscar marca', marche_search_placeholder: 'ej. Siemens', marche_search_button: 'Buscar', marche_search_count: '{n} marcas coinciden', marche_search_none: 'Ninguna marca coincide. Revise la ortografía o vacíe el campo.', marche_letters_title: 'Navegación rápida A-Z', marche_back_top: 'Volver arriba', marche_back_top_aria: 'Volver al inicio' },
+      fr: { marche_h1: 'Marques et fabricants', marche_subtitle: 'Plus de 11960 marques de pièces industrielles. <a href="index.html">Retour à l\'accueil</a>', marche_list_title: 'Liste des marques distribuées par ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Mentions légales', marche_footer_privacy: 'Confidentialité', marche_search_label: 'Rechercher une marque', marche_search_placeholder: 'ex. Siemens', marche_search_button: 'Rechercher', marche_search_count: '{n} marques correspondent', marche_search_none: 'Aucune marque ne correspond. Vérifiez l’orthographe ou videz le champ.', marche_letters_title: 'Navigation rapide A-Z', marche_back_top: 'Haut de page', marche_back_top_aria: 'Retour en haut de page' }
     };
     function getLangFromUrl(){ var p = new URLSearchParams(window.location.search); var l = p.get('lang'); return l && ['de','en','it','es','fr'].indexOf(l)!==-1 ? l : null; }
     function getQueryQ(){ try { return new URLSearchParams(window.location.search).get('q') || ''; } catch(e){ return ''; } }
@@ -12084,9 +12255,11 @@
       });
     }
     var listItems = null;
+    var brandGroups = null;
     var brandSearchDebounceTimer = null;
     function norm(s){ return String(s||'').toLowerCase().replace(/\s+/g,' ').trim(); }
     function gatherItems(){ if(!listItems) listItems = Array.prototype.slice.call(document.querySelectorAll('.brands-list li')); return listItems; }
+    function gatherGroups(){ if(!brandGroups) brandGroups = Array.prototype.slice.call(document.querySelectorAll('.brand-group')); return brandGroups; }
     function applyBrandFilterImmediate(){
       var sel = document.getElementById('languageSelect');
       var lang = sel && sel.value ? sel.value : 'de';
@@ -12097,6 +12270,7 @@
       var q = norm(qRaw);
       var meta = document.getElementById('brandSearchMeta');
       var items = gatherItems();
+      var groups = gatherGroups();
       var n = 0;
       for(var i=0;i<items.length;i++){
         var li = items[i];
@@ -12105,6 +12279,15 @@
         var show = !q || text.indexOf(q) !== -1;
         li.style.display = show ? '' : 'none';
         if(show) n++;
+      }
+      for(var g=0; g<groups.length; g++){
+        var group = groups[g];
+        var allLis = group.querySelectorAll('li');
+        var visibleCount = 0;
+        for(var j=0; j<allLis.length; j++){
+          if(allLis[j].style.display !== 'none') visibleCount++;
+        }
+        group.style.display = visibleCount ? '' : 'none';
       }
       if(meta){
         if(!q){ meta.textContent = ''; meta.className = 'brand-search-meta'; }
@@ -12126,16 +12309,24 @@
       var t = translations[lang] || translations.de;
       document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if(t[k]) el.innerHTML = t[k]; });
       document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){ var k = el.getAttribute('data-i18n-placeholder'); if(t[k]) el.placeholder = t[k]; });
+      document.querySelectorAll('[data-i18n-aria-label]').forEach(function(el){ var k = el.getAttribute('data-i18n-aria-label'); if(t[k]) el.setAttribute('aria-label', t[k]); });
       document.documentElement.lang = lang;
       try{ localStorage.setItem('lang', lang); }catch(e){}
       updateLinksWithLang(lang);
       applyBrandFilterImmediate();
+    }
+    function toggleBackToTopButton(){
+      var btn = document.getElementById('backToTopBtn');
+      if(!btn) return;
+      if(window.scrollY > 500) btn.classList.add('visible');
+      else btn.classList.remove('visible');
     }
     document.addEventListener('DOMContentLoaded', function(){
       var raw = getCurrentLang();
       var lang = ['de','en','it','es','fr'].indexOf(raw)!==-1 ? raw : 'de';
       var sel = document.getElementById('languageSelect');
       var inp = document.getElementById('brandSearchInput');
+      var backBtn = document.getElementById('backToTopBtn');
       var qsQ = getQueryQ();
       if(inp && qsQ) inp.value = qsQ;
       if(sel) sel.value = lang;
@@ -12147,6 +12338,9 @@
       var form = document.getElementById('brandSearchForm');
       if(form) form.addEventListener('submit', function(e){ e.preventDefault(); applyBrandFilterImmediate(); });
       if(sel) sel.addEventListener('change', function(){ changeLanguage(this.value); });
+      if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
+      toggleBackToTopButton();
     });
   })();
   </script>
