@@ -78,7 +78,6 @@ const marcheHtml = `<!DOCTYPE html>
     .page-header a:hover{text-decoration:underline}
     .brands-section{padding:2rem 1.5rem}
     .brands-section h2{font-size:1.35rem;color:#1e3a5f;margin-bottom:1.25rem}
-    .letters-wrap{margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid #e9ecef}
     .letters-title{font-size:0.9rem;color:#1e3a5f;font-weight:600;margin-bottom:0.45rem}
     .letters-title-inline{margin:0;white-space:nowrap}
     .letters-nav{display:flex;flex-wrap:wrap;gap:0.35rem}
@@ -153,12 +152,6 @@ const marcheHtml = `<!DOCTYPE html>
           <button type="submit" data-i18n="marche_search_button">Suchen</button>
         </form>
         <p class="brand-search-meta" id="brandSearchMeta" aria-live="polite"></p>
-      </div>
-      <div class="letters-wrap">
-        <p class="letters-title" data-i18n="marche_letters_title">Schnellnavigation A-Z</p>
-        <nav class="letters-nav" aria-label="A-Z brand navigation">
-          ${letterNav}
-        </nav>
       </div>
       <div class="brand-groups" id="brandGroups"></div>
     </div>
