@@ -304,7 +304,7 @@
     if (!startTime) startTime = now;
     if (!dragging && halfWidth > 0) {
       var elapsed = (now - startTime) / 1000;
-      var pct = (elapsed / 21600) * 100;
+      var pct = (elapsed / 14400) * 100;
       baseOffset = -(pct / 100) * halfWidth;
       if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
       updateTransform();
@@ -348,7 +348,7 @@
     dragOffset = 0;
     if (halfWidth > 0) {
       var pct = -baseOffset / halfWidth;
-      startTime = performance.now() - (pct * 21600 * 1000);
+      startTime = performance.now() - (pct * 14400 * 1000);
     } else {
       startTime = performance.now();
     }
@@ -401,7 +401,7 @@
     if (!startTime) startTime = now;
     if (!dragging && halfWidth > 0) {
       var elapsed = (now - startTime) / 1000;
-      var pct = (elapsed / 21600) * 100;
+      var pct = (elapsed / 14400) * 100;
       baseOffset = -(pct / 100) * halfWidth;
       if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
       updateTransform();
@@ -426,7 +426,7 @@
     requestAnimationFrame(function() {
       measure();
       baseOffset = -halfWidth / 2;
-      startTime = performance.now() - (0.5 * 21600 * 1000);
+      startTime = performance.now() - (0.5 * 14400 * 1000);
       updateTransform();
       if (typeof ResizeObserver !== 'undefined') {
         new ResizeObserver(measure).observe(track);
@@ -462,7 +462,7 @@
     dragOffset = 0;
     if (halfWidth > 0) {
       var pct = -baseOffset / halfWidth;
-      startTime = performance.now() - (pct * 21600 * 1000);
+      startTime = performance.now() - (pct * 14400 * 1000);
     } else {
       startTime = performance.now();
     }
