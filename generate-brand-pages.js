@@ -263,6 +263,9 @@ function buildHtml(brand, slug, translations, relatedRows) {
   <meta property="og:title" content="${escapeAttr(d.meta_title)}">
   <meta property="og:description" content="${escapeAttr(d.meta_description)}">
   <meta property="og:image" content="${BASE}/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeAttr(d.meta_title)}">
+  <meta name="twitter:description" content="${escapeAttr(d.meta_description)}">
   <script type="application/ld+json">${ld}</script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }

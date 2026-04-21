@@ -95,7 +95,8 @@
     .brands-carousel-track {
       display: flex; align-items: center; width: max-content; will-change: transform; line-height: 1.2;
     }
-    .brands-carousel span { color: #444; font-size: 0.85rem; font-weight: 600; white-space: nowrap; padding: 0 1rem; pointer-events: none; }
+    .brands-carousel a { color: #444; font-size: 0.85rem; font-weight: 600; white-space: nowrap; padding: 0 1rem; text-decoration: none; border-bottom: 1px solid transparent; }
+    .brands-carousel a:hover { color: #1e3a5f; border-bottom-color: #1e3a5f; }
     .brands-carousel .sep { color: #999; font-weight: 300; }
     .brands-carousel-reverse { transform: scaleX(-1); }
     .brands-carousel-reverse-inner { transform: scaleX(-1); display: flex; width: max-content; }
@@ -236,7 +237,40 @@
   const carousel = track && track.closest('.brands-carousel');
   if (!track || !carousel) return;
 
-  const html = brands.map(b => '<span>' + b + '</span><span class="sep">•</span>').join('');
+  const RESERVED = new Set(['index','home','api','admin','assets','static','search','new','edit','null','undefined']);
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function slugify(name) {
+    var s = String(name || '')
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/&/g, ' and ')
+      .replace(/\+/g, ' plus ')
+      .replace(/[^a-zA-Z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .replace(/-+/g, '-')
+      .toLowerCase();
+    if (!s) s = 'brand';
+    if (s.length > 96) s = s.slice(0, 96).replace(/-+$/g, '');
+    if (RESERVED.has(s)) s = s + '-marca';
+    return s;
+  }
+  function assignUniqueSlugs(list) {
+    var used = new Set();
+    return list.map(function(brand) {
+      var base = slugify(brand);
+      var slug = base;
+      var n = 2;
+      while (used.has(slug)) { slug = base + '-' + n; n++; }
+      used.add(slug);
+      return { brand: brand, slug: slug };
+    });
+  }
+  var rows = assignUniqueSlugs(brands);
+  const html = rows.map(function(r) {
+    return '<a href="marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
+  }).join('');
   track.innerHTML = html + html;
 
   var baseOffset = 0;
@@ -261,7 +295,7 @@
     if (!startTime) startTime = now;
     if (!dragging && halfWidth > 0) {
       var elapsed = (now - startTime) / 1000;
-      var pct = (elapsed / 7200) * 100;
+      var pct = (elapsed / 21600) * 100;
       baseOffset = -(pct / 100) * halfWidth;
       if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
       updateTransform();
@@ -305,7 +339,7 @@
     dragOffset = 0;
     if (halfWidth > 0) {
       var pct = -baseOffset / halfWidth;
-      startTime = performance.now() - (pct * 7200 * 1000);
+      startTime = performance.now() - (pct * 21600 * 1000);
     } else {
       startTime = performance.now();
     }
@@ -320,6 +354,7 @@
   document.addEventListener('touchend', onEnd);
   document.addEventListener('touchcancel', onEnd);
   window.__brandsList = brands;
+  window.__brandsRows = rows;
 })();
 </script>
 
@@ -329,10 +364,10 @@
 </div>
 <script>
 (function(){
-  var brands = (window.__brandsList || []).slice().reverse();
+  var rows = (window.__brandsRows || []).slice().reverse();
   const track = document.getElementById('brandsTrackReverse');
   const carousel = track && track.closest('.brands-carousel');
-  if (!track || !carousel || brands.length === 0) return;
+  if (!track || !carousel || rows.length === 0) return;
 
   var baseOffset = 0;
   var dragOffset = 0;
@@ -357,7 +392,7 @@
     if (!startTime) startTime = now;
     if (!dragging && halfWidth > 0) {
       var elapsed = (now - startTime) / 1000;
-      var pct = (elapsed / 7200) * 100;
+      var pct = (elapsed / 21600) * 100;
       baseOffset = -(pct / 100) * halfWidth;
       if (baseOffset <= -halfWidth) { baseOffset = 0; startTime = now; }
       updateTransform();
@@ -371,13 +406,18 @@
     if (halfWidth <= 0 && window.__brandsHalfWidth) halfWidth = window.__brandsHalfWidth;
     if (halfWidth <= 0) halfWidth = own;
   }
-  var html = brands.map(function(b) { return '<span>' + b + '</span><span class="sep">•</span>'; }).join('');
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  var html = rows.map(function(r) {
+    return '<a href="marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
+  }).join('');
   track.innerHTML = '<div class="brands-carousel-reverse-inner">' + html + html + '</div>';
   requestAnimationFrame(function() {
     requestAnimationFrame(function() {
       measure();
       baseOffset = -halfWidth / 2;
-      startTime = performance.now() - (0.5 * 7200 * 1000);
+      startTime = performance.now() - (0.5 * 21600 * 1000);
       updateTransform();
       if (typeof ResizeObserver !== 'undefined') {
         new ResizeObserver(measure).observe(track);
@@ -413,7 +453,7 @@
     dragOffset = 0;
     if (halfWidth > 0) {
       var pct = -baseOffset / halfWidth;
-      startTime = performance.now() - (pct * 7200 * 1000);
+      startTime = performance.now() - (pct * 21600 * 1000);
     } else {
       startTime = performance.now();
     }
