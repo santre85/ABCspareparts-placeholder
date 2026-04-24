@@ -1,0 +1,86 @@
+{
+  "siemens": {
+    "de": "Siemens versorgt u. a. SPS/IPC (SIMATIC), Antriebe (SINAMICS), Niederspannungsschalttechnik und MRO-Teile für Prozess- und Fertigungsanlagen. Geben Sie MLFB, Typenschild oder Foto sinnvoll dazu, damit wir Ihre Ersatzteil-Referenzen schnell zuordnen.",
+    "en": "Siemens covers PLCs, drives (SINAMICS, SIMOTION), HMI, switchgear, and a wide MRO range for process and plant automation. Include MLFB, rating plate, or a clear part reference to speed up sourcing and alternatives.",
+    "it": "Siemens copre PLC/HMI, azionamenti (SINAMICS), quadri e MRO per automazione di processo. Indichi codice MLFB, dati del tipo o contesto per abbinare rapidamente ricambio o alternativa.",
+    "es": "Siemens abarca PLC, variadores (SINAMICS), cuadros y recambio MRO. Indique MLFB, placa o referencia clara para acotar el repuesto o una alternativa verificada.",
+    "fr": "Siemens couvre API, variateurs (SINAMICS), TGBT et pièces MRO. Indiquez la référence MLFB, la plaque signaletique ou le contexte pour cibler l’offre (origine ou alternative)."
+  },
+  "smc": {
+    "de": "SMC liefert Pneumatik, Zylinder, Ventile, FRL und Vakuumtechnik. Teilenummer und Anschlussmaße helfen, das passende Ersatzteil (Original oder geprüfte Variante) zu wählen.",
+    "en": "SMC is a key reference in pneumatics: cylinders, valves, FRL, vacuum, and actuators. Part codes and port sizes help us source the right spare or verified cross.",
+    "it": "SMC: pneumatica, cilindri, valvole, FRL, vuoto. Codice articolo e filettature accelerano l’abbinamento a ricambio o alternativa.",
+    "es": "SMC: neumática, cilindros, electroválvulas, FRL, vacío. Código y roscas ayudan a acotar el repuesto o un cruce aprobado.",
+    "fr": "SMC : pneumatique, vérins, vannes, FRL, vide. Les références et filetages permettent de cibler la pièce d’origine ou un croisement fiable."
+  },
+  "sick": {
+    "de": "SICK bietet Sensoren, Sicherheitstechnik, Barcode, Messtechnik und Optoelektronik. Typbezeichnung, Einstell- oder Sicherheitskontext verbessern die Ersatzteilabfrage erheblich.",
+    "en": "SICK: industrial sensors, safety, encoders, vision, and measurement. Model code and application (safety zone, comms) help match spares and verification.",
+    "it": "SICK: sensori, sicurezza, telecamere/misura. Modello, contesto di sicurezza o bus accelerano l’abbinamento del ricambio.",
+    "es": "SICK: sensores, seguridad, visión, medida. Código y contexto (seguridad, bus) definen el recambio correcto.",
+    "fr": "SICK : capteurs, sécurité, vision, mesure. Référence + contexte (sécurité, bus) ciblent la pièce adéquate."
+  },
+  "keyence": {
+    "de": "Keyence: Sensoren, Vision, Lasermarkierung, Mess- und Prüf Technik. Die genaue Modell- und Serienangabe (und ggf. Zubehör) reduziert Rückfragen und beschleunigt Ihr Angebot.",
+    "en": "Keyence: sensors, machine vision, measurement, and automation inspection. Please send exact model, cable/accessory, and part label for a precise quote.",
+    "it": "Keyence: sensori, visione, misure e ispezione. Modello, accessori e etichetta riducono tempi e ambiguità del preventivo.",
+    "es": "Keyence: sensores, visión, medición. Modelo, accesorios y referencia de etiqueta afinan la cotización.",
+    "fr": "Keyence : capteurs, vision, mesure. Le modèle exact, câble/accessoires et l’étiquette évitent les allers‑retours et accélèrent l’offre."
+  },
+  "turck": {
+    "de": "TURCK: Feldbus, I/O, Sensortechnik und Zubehör. Artikel- oder Stammnummer plus Schnittstelle (z. B. M12, Profibus/Profinet) – sichert die richtige Bestückung bzw. Ersatz.",
+    "en": "TURCK: fieldbus, I/O blocks, and smart sensors. Part number plus connector/coupling or network type avoids mismatched spares (IO‑Link, Ethernet variants).",
+    "it": "TURCK: bus di campo, I/O, sensori. Codice e interfaccia (M12, IO‑Link, Ethernet) evitano riferimenti errati.",
+    "es": "TURCK: bus de campo, I/O, sensores. Referencia e interfaz (M12, IO‑Link) evitan piezas incompatibles.",
+    "fr": "TURCK : bus de terrain, I/O, capteurs. Référence + connectique/protocole (IO‑Link, Ethernet) évitent les mauvaises pièces."
+  },
+  "weg": {
+    "de": "WEG: Motoren, Getriebe, frequenzgeregelte Antriebe und Niederspannung. Leistung, Baugroße, Spannung und Befestigung sind wichtig, um Motoren, Starters und Anbauteile zuordnen.",
+    "en": "WEG: electric motors, drives, and LV gear. kW, frame, voltage, and mounting (B3/B5, etc.) are essential to source motor spares, drives, and accessories correctly.",
+    "it": "WEG: motori, inverter, automazione. kW, carcassa, tensione, montaggio: dati per abbinare motori, ricambi e avviamenti.",
+    "es": "WEG: motores, variadores, BT. kW, tamaño, tensión, montaje: claves para un repuesto correcto.",
+    "fr": "WEG : moteurs, variateurs, BT. kW, taille, tension, fixations : clés pour la bonne pièce (moteur, variateur, accessoires)."
+  },
+  "gefran": {
+    "de": "Gefran: Temperaturregler, Messtechnik, Potentiometer, Hydraulik und Kraftsensoren. Serien, Messbereich, Einbau-oder Anschlussart unterstützen Ersatzbeschaffung und Wechsel.",
+    "en": "Gefran: process controllers, drives, and measurement (pressure, position). Please share range, output, and form factor to match the right spare.",
+    "it": "Gefran: regolazione, pressione, posizione, automazione. Campo, uscita e meccanica fissano il codice sostitutivo.",
+    "es": "Gefran: control, medición, accionamiento. Rango, salida y montaje afinan el recambio.",
+    "fr": "Gefran : contrôle, mesure, hydraulique. Plage, sortie, montage : pour repérer la pièce d’origine ou un remplacement."
+  },
+  "ifm": {
+    "de": "ifm: Sensorik, IO‑Link, Identifikation, Bedarf und Sicherheits-IO. Artikel- oder IODD-Kontext erleichtert den passenden Ersatz (Sensor, Kabel, Master).",
+    "en": "ifm: sensors, IO‑Link, condition monitoring, and safety. Article code, cable length, and fieldbus/IO‑Link help pick the right spare and accessories.",
+    "it": "ifm: sensori, IO‑Link, monito­raggio, sicurezza. Codice, cavi e bus semplificano l’abbinamento.",
+    "es": "ifm: sensores, IO‑Link, monitoreo, seguridad. Código, cables y bus acotan el recambio.",
+    "fr": "ifm : capteurs, IO‑Link, maintenance prédictive, sécurité. Référence, câblage, bus aident à cibler la pièce juste."
+  },
+  "leuze": {
+    "de": "Leuze: optoelektronische und messtechnische Sensoren, Sicherheitslichtschranken, Identifikation. Schutzart, Verkabelung und Montagehöhe sind oft entscheidend für den Ersatz.",
+    "en": "Leuze: optoelectronic sensors, safety light curtains, measurement. Range, IP class, and wiring define correct spare parts and accessories.",
+    "it": "Leuze: sensori, barriere di sicurezza, misure. Gittata, grado IP e cablaggio definiscono il ricambio giusto.",
+    "es": "Leuze: sensores, cortinas de luz, medición. Distancia, IP y cableado: claves de repuesto.",
+    "fr": "Leuze : capteurs, rideaux, mesure. Portée, IP, câblage : pour choisir la pièce d’origine."
+  },
+  "baumer": {
+    "de": "Baumer: Sensoren, Encoders, Kraftsensoren, Prozessmesstechnik. Mechanischer Einbau, Ausgang (SSI, analog, IO‑Link) und Umweltanforderungen schärfen die Referenzabfrage.",
+    "en": "Baumer: sensors, encoders, process instrumentation, force. Shaft, output type, and IP/environment drive correct spare or substitute selection.",
+    "it": "Baumer: sensori, encoder, processo, forze. Albero, uscita (SSI, analog) e grado d’in­gresso: dati per il codice sostitutivo.",
+    "es": "Baumer: sensores, encoders, proceso. Eje, salida e IP: para acotar el recambio.",
+    "fr": "Baumer : capteurs, codeurs, procédé. Alésage, sortie (SSI, analog) et conditions aident à cibler la bonne pièce."
+  },
+  "schmersal": {
+    "de": "Schmersal: Sicherheitsschalter, Sicherheitssteuerungen, Türschutz und Bedarf. Serien, Schutzklasse, Stecker und Funktionsart sind bei Ersatzteilen für Sicherheitsbauteile wichtig.",
+    "en": "Schmersal: safety interlocks, safety relays, and door/guarding solutions. For safety spares, include catalog number, actuation, and the safety circuit context.",
+    "it": "Schmersal: interblocchi, relè, protezioni. Con codice, tipo di interblocco e contesto di sicurezza (cat./PL) l’abbinamento è preciso.",
+    "es": "Schmersal: enclavamientos, relés, protecciones. Código, tipo y PL/Cat. para un repuesto de seguridad correcto.",
+    "fr": "Schmersal : interverrouillages, relais de sécurité. Référence, actuation, circuit : pièces sensibles, à citer précisément."
+  },
+  "bosch-rexroth": {
+    "de": "Bosch Rexroth: Hydraulik, lineare Führung, elektrische Antriebe und Indramat-Classic. A‑Nr., Typenschild, Revision und Achskraft/Bohrung sind wichtig für Zylinder, Ventile, Pumpen und Servo.",
+    "en": "Bosch Rexroth: hydraulics, linear motion, servos, and legacy Indramat. Part code, nameplate, axis load, and port pattern matter for pumps, valves, drives, and rails.",
+    "it": "Bosch Rexroth: idraulica, assi lineari, servi. Numero, targa, carico e forature per pompe, valvole, indramat/electric.",
+    "es": "Bosch Rexroth: hidráulica, lineales, servos. Número, chapa, carga/rozamiento para un repuesto fiable y compatible.",
+    "fr": "Bosch Rexroth : hydraulique, lineaires, servos. Référence, plaque, charge, filetage : pour pompes, vérins, variateurs, rails."
+  }
+}

@@ -8,6 +8,33 @@ const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
 const BASE = 'https://abcspareparts.eu';
 const TODAY = new Date().toISOString().slice(0, 10);
+
+function loadTopBrandBySlug() {
+  try {
+    const p = path.join(ROOT, 'top-brands-content.json');
+    if (!fs.existsSync(p)) return {};
+    return JSON.parse(fs.readFileSync(p, 'utf8'));
+  } catch (e) {
+    console.warn('top-brands-content.json:', e.message);
+    return {};
+  }
+}
+
+const TOP_BRAND_BY_SLUG = loadTopBrandBySlug();
+if (Object.keys(TOP_BRAND_BY_SLUG).length) {
+  console.log('top-brands-content.json: slugs', Object.keys(TOP_BRAND_BY_SLUG).length);
+}
+
+function mergeTopBrandContent(translations, slug) {
+  const row = TOP_BRAND_BY_SLUG[slug];
+  if (!row || typeof row !== 'object') return;
+  const langs = ['de', 'en', 'it', 'es', 'fr'];
+  for (const L of langs) {
+    const text = String(row[L] || row.de || row.en || '').trim();
+    if (text) translations[L].brand_top_extra = text;
+  }
+}
+
 const PRICE_FOCUS_BRANDS = new Set([
   'SIEMENS', 'SMC', 'SICK', 'KEYENCE', 'TURCK', 'WEG',
   'GEFRAN', 'IFM', 'LEUZE', 'BAUMER', 'SCHMERSAL', 'BOSCH REXROTH'
@@ -347,6 +374,7 @@ function buildHtml(brand, slug, translations, relatedRows) {
     .page-hero .lead.lead-extra { margin-top: 0.7rem; font-size: 0.98rem; line-height: 1.6; }
     .page-hero .lead a { color: #e67e22; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(230, 126, 34, 0.5); }
     .page-hero .lead a:hover { text-decoration: underline; border-bottom-color: #fff; }
+    .page-hero .lead.lead-top-brand { margin-top: 0.9rem; padding: 0.75rem 0.9rem; max-width: 720px; font-size: 0.95rem; line-height: 1.55; background: rgba(0,0,0,0.12); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); }
     .brand-body { padding: 2rem 1.5rem 1rem; }
     .brand-form-hint { max-width: 720px; margin: 0 auto 1rem; color: #555; font-size: 0.98rem; text-align: center; }
     .brand-email-alt { max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.95rem; color: #444; }
@@ -404,7 +432,8 @@ function buildHtml(brand, slug, translations, relatedRows) {
       <h1 data-i18n="brand_h1">${d.brand_h1}</h1>
       <p class="lead" data-i18n="brand_intro">${d.brand_intro}</p>
       <p class="lead lead-extra" data-i18n="brand_intro_p2">${d.brand_intro_p2}</p>
-    </div>
+${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top_extra">${escapeHtml(d.brand_top_extra)}</p>
+` : ''}    </div>
   </header>
 
   <main id="main-content">
@@ -627,6 +656,7 @@ function main() {
       if (right) relatedRows.push(right);
     }
     const translations = buildTranslations(brand);
+    mergeTopBrandContent(translations, slug);
     const html = buildHtml(brand, slug, translations, relatedRows);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
