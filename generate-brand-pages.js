@@ -67,7 +67,15 @@ function buildTranslations(brand) {
       brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marken</a> · ${H}`,
       brand_h1: `${H} – Industrieersatzteile & MRO`,
       brand_intro: `ABCspareparts beschafft Originalteile und geprüfte Alternativen für ${H} (Industrieersatzteile, Automatisierung, MRO). Nutzen Sie das Formular für Teilenummern und Mengen – wir melden uns in der Regel innerhalb von 24 Stunden.`,
+      brand_intro_p2: `Für ${H} prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href="#contact">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.`,
       brand_form_hint: `Bitte im Formular Hersteller (${H}), Teilenummer, Menge und Kontext angeben.`,
+      brand_faq_title: 'Häufige Fragen',
+      brand_faq_q1: `Wie bestelle ich Ersatzteile für ${H}?`,
+      brand_faq_a1: 'Senden Sie eine Anfrage mit Teilenummer, Menge und ggf. Maschine oder Anwendung über das unten stehende Formular oder an info@abcspareparts.eu. Wir prüfen Verfügbarkeit, Lieferzeit und Konditionen – unverbindlich.',
+      brand_faq_q2: 'Liefert ABCspareparts in ganz Europa?',
+      brand_faq_a2: 'Ja, die Lieferung richtet sich nach Artikel, Verfügbarkeit und Ziel. Details klären wir nach Ihrer Anfrage mit den konkreten Referenzen.',
+      brand_faq_q3: 'Gibt es neben Originalteilen auch Alternativen?',
+      brand_faq_a3: 'Wo technisch sinnvoll und geprüft, sind Alternativen möglich. Teilen Sie im Formular Ihre Präferenz (Original, Alternative oder beides) und den technischen Kontext mit.',
       brand_email_alt: `Oder schreiben Sie an <a href="mailto:info@abcspareparts.eu?subject=${sub.de}">info@abcspareparts.eu</a> <span class="muted">(Betreff ist vorausgefüllt)</span>`,
       related_title: 'Ähnliche Marken',
       related_intro: 'Weitere Hersteller für industrielle Ersatzteile und MRO:',
@@ -96,7 +104,15 @@ function buildTranslations(brand) {
       brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Brands</a> · ${H}`,
       brand_h1: `${H} – industrial spare parts & MRO`,
       brand_intro: `ABCspareparts supplies original ${H} parts and verified alternatives for industrial automation and MRO. Send part numbers and quantities via the form – we usually respond within 24 hours.`,
+      brand_intro_p2: `For ${H} we check stock options, Europe-wide supply, and – where appropriate – verified non-original alternatives. This page is not a live stock feed: use the <a href="#contact">no-obligation request</a> with part numbers and quantities so we can price and source accurately.`,
       brand_form_hint: `Please include manufacturer (${H}), part number, quantity and equipment context in the form where possible.`,
+      brand_faq_title: 'Frequently asked questions',
+      brand_faq_q1: `How do I order ${H} spare parts?`,
+      brand_faq_a1: 'Send a request with part number, quantity, and equipment context (if known) using the form below or email info@abcspareparts.eu. We check availability, lead time, and price — no obligation.',
+      brand_faq_q2: 'Do you deliver across Europe?',
+      brand_faq_a2: 'Yes. Shipping depends on the item, availability, and destination. We confirm these details after we receive your part references.',
+      brand_faq_q3: 'Do you offer alternatives to original parts?',
+      brand_faq_a3: 'Where technically suitable and verified, alternatives may be available. State your preference (original, alternative, or either) in the form.',
       brand_email_alt: `Or email <a href="mailto:info@abcspareparts.eu?subject=${sub.en}">info@abcspareparts.eu</a> <span class="muted">(subject line is pre-filled)</span>`,
       related_title: 'Related brands',
       related_intro: 'Other manufacturers for industrial spare parts and MRO:',
@@ -125,7 +141,15 @@ function buildTranslations(brand) {
       brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marche</a> · ${H}`,
       brand_h1: `${H} – ricambi industriali e MRO`,
       brand_intro: `ABCspareparts fornisce ricambi ${H} originali e alternative verificate per automazione e MRO. Indichi codici articolo e quantità nel modulo – di solito rispondiamo entro 24 ore.`,
+      brand_intro_p2: `Per ${H} verifichiamo disponibilità, consegne in Europa e, se adatto, alternative verificate. Questa scheda non sostituisce un elenco live: usi la <a href="#contact">richiesta senza impegno</a> con riferimenti e quantità per un preventivo mirato.`,
       brand_form_hint: `Nel modulo indichi se possibile costruttore (${H}), codice articolo, quantità e contesto macchina.`,
+      brand_faq_title: 'Domande frequenti',
+      brand_faq_q1: `Come ordino i ricambi ${H}?`,
+      brand_faq_a1: 'Invii una richiesta con codice articolo, quantità e, se noto, la macchina o impiego. Tramite il modulo in basso o a info@abcspareparts.eu. Verifichiamo disponibilità e condizioni, senza impegno.',
+      brand_faq_q2: 'Consegnate in tutta Europa?',
+      brand_faq_a2: 'Sì: tempi e costi dipendono da articolo, disponibilità e destinazione, da confermare dopo l’inoltro della richiesta con i codici.',
+      brand_faq_q3: 'Oltre all’originale, ci sono alternative?',
+      brand_faq_a3: 'Se tecnicamente adatte e verificate, sì. Indichi in modulo l’esigenza (originale, alternativa o indifferente).',
       brand_email_alt: `Oppure scriva a <a href="mailto:info@abcspareparts.eu?subject=${sub.it}">info@abcspareparts.eu</a> <span class="muted">(oggetto precompilato)</span>`,
       related_title: 'Marche correlate',
       related_intro: 'Altri produttori per ricambi industriali e MRO:',
@@ -154,7 +178,15 @@ function buildTranslations(brand) {
       brand_breadcrumb: `<a href="../index.html">Inicio</a> · <a href="../marche.html">Marcas</a> · ${H}`,
       brand_h1: `${H} – recambios industriales y MRO`,
       brand_intro: `ABCspareparts suministra piezas ${H} originales y alternativas verificadas para automatización y MRO. Envíe referencias y cantidades en el formulario – solemos responder en 24 horas.`,
+      brand_intro_p2: `Para ${H} comprobamos disponibilidad, envíos en Europa y, si aplica, alternativas verificadas. Esta página no es stock en vivo: use la <a href="#contact">solicitud sin compromiso</a> con referencias y cantidades para un presupuesto fiable.`,
       brand_form_hint: `Indique si puede fabricante (${H}), referencia, cantidad y contexto del equipo en el formulario.`,
+      brand_faq_title: 'Preguntas frecuentes',
+      brand_faq_q1: `¿Cómo pido recambios ${H}?`,
+      brand_faq_a1: 'Envíe la referencia, la cantidad y, si conoce el equipo, el contexto. Con el formulario o a info@abcspareparts.eu. Revisamos disponibilidad, plazo y condiciones sin compromiso.',
+      brand_faq_q2: '¿Hacen envíos a toda Europa?',
+      brand_faq_a2: 'Sí, según el artículo, disponibilidad y destino, que se concretan al recibir sus referencias.',
+      brand_faq_q3: '¿Ofrecen alternativas a originales?',
+      brand_faq_a3: 'Sí, cuando técnicamente tenga sentido y estén verificadas. Indique en el formulario su preferencia (original, alternativa o ambas).',
       brand_email_alt: `O escriba a <a href="mailto:info@abcspareparts.eu?subject=${sub.es}">info@abcspareparts.eu</a> <span class="muted">(asunto pre-rellenado)</span>`,
       related_title: 'Marcas relacionadas',
       related_intro: 'Otros fabricantes para recambios industriales y MRO:',
@@ -183,7 +215,15 @@ function buildTranslations(brand) {
       brand_breadcrumb: `<a href="../index.html">Accueil</a> · <a href="../marche.html">Marques</a> · ${H}`,
       brand_h1: `${H} – pièces industrielles et MRO`,
       brand_intro: `ABCspareparts fournit des pièces ${H} d’origine et des alternatives vérifiées pour l’automatisation et le MRO. Indiquez références et quantités dans le formulaire – réponse en général sous 24 h.`,
+      brand_intro_p2: `Pour ${H}, nous contrôlons la disponibilité, les possibilités d’expédition en Europe et, le cas échéant, des alternatives vérifiées. Cette page n’est pas un stock temps réel : utilisez la <a href="#contact">demande sans engagement</a> avec références et quantités pour un devis fiable.`,
       brand_form_hint: `Indiquez si possible fabricant (${H}), référence, quantité et contexte machine dans le formulaire.`,
+      brand_faq_title: 'Questions fréquentes',
+      brand_faq_q1: `Comment commander des pièces ${H} ?`,
+      brand_faq_a1: 'Envoyez la référence, la quantité et, si connu, le contexte machine, via le formulaire ci-dessous ou par e-mail à info@abcspareparts.eu. Nous vérifions disponibilité, délai et conditions — sans engagement.',
+      brand_faq_q2: 'Livrez-vous en Europe entière ?',
+      brand_faq_a2: 'Oui, selon l’article, la disponibilité et la destination, à confirmer après réception de vos références.',
+      brand_faq_q3: 'Y a-t-il des alternatives à l’origine ?',
+      brand_faq_a3: 'Oui, lorsque c’est techniquement cohérent et vérifié. Indiquez votre préférence (origine, alternative ou les deux) dans le formulaire.',
       brand_email_alt: `Ou écrivez à <a href="mailto:info@abcspareparts.eu?subject=${sub.fr}">info@abcspareparts.eu</a> <span class="muted">(objet prérempli)</span>`,
       related_title: 'Marques associées',
       related_intro: 'Autres fabricants pour pièces industrielles et MRO :',
@@ -205,24 +245,44 @@ function buildTranslations(brand) {
   };
 }
 
-function buildLdJson(brand, slug) {
+function buildLdJson(brand, slug, tDe) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@id': `${BASE}/#organization`,
+        '@type': 'Organization',
+        name: 'ABCspareparts',
+        url: `${BASE}/`,
+        logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
+      },
+      {
         '@type': 'WebPage',
         '@id': pageUrl + '#webpage',
         url: pageUrl,
-        name: `${brand} – industrial spare parts | ABCspareparts`,
-        isPartOf: { '@type': 'WebSite', name: 'ABCspareparts', url: BASE + '/' }
+        name: `${brand} – Industrieersatzteile & MRO | ABCspareparts`,
+        description: tDe.meta_description,
+        inLanguage: 'de',
+        isPartOf: { '@id': `${BASE}/#website` },
+        about: { '@type': 'Brand', name: brand },
+        publisher: { '@id': `${BASE}/#organization` },
+        primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: BASE + '/' },
-          { '@type': 'ListItem', position: 2, name: 'Brands', item: BASE + '/marche.html' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Marken', item: `${BASE}/marche.html` },
           { '@type': 'ListItem', position: 3, name: brand, item: pageUrl }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: tDe.brand_faq_q1, acceptedAnswer: { '@type': 'Answer', text: tDe.brand_faq_a1 } },
+          { '@type': 'Question', name: tDe.brand_faq_q2, acceptedAnswer: { '@type': 'Answer', text: tDe.brand_faq_a2 } },
+          { '@type': 'Question', name: tDe.brand_faq_q3, acceptedAnswer: { '@type': 'Answer', text: tDe.brand_faq_a3 } }
         ]
       }
     ]
@@ -235,7 +295,7 @@ function buildHtml(brand, slug, translations, relatedRows) {
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
   const d = translations.de;
-  const ld = buildLdJson(brand, slug);
+  const ld = buildLdJson(brand, slug, d);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
   const relatedLinks = (relatedRows || [])
@@ -251,6 +311,7 @@ function buildHtml(brand, slug, translations, relatedRows) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">${escapeHtml(translations.de.meta_title)}</title>
   <meta id="pageDescription" name="description" content="${escapeAttr(translations.de.meta_description)}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${pageUrl}">
   <link rel="alternate" hreflang="x-default" href="${pageUrl}">
   <link rel="alternate" hreflang="de" href="${pageUrl}?lang=de">
@@ -263,9 +324,13 @@ function buildHtml(brand, slug, translations, relatedRows) {
   <meta property="og:title" content="${escapeAttr(d.meta_title)}">
   <meta property="og:description" content="${escapeAttr(d.meta_description)}">
   <meta property="og:image" content="${BASE}/logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="ABCspareparts">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeAttr(d.meta_title)}">
   <meta name="twitter:description" content="${escapeAttr(d.meta_description)}">
+  <meta name="twitter:image" content="${BASE}/logo.png">
   <script type="application/ld+json">${ld}</script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -279,6 +344,9 @@ function buildHtml(brand, slug, translations, relatedRows) {
     .breadcrumb a:hover { text-decoration: underline; }
     .page-hero h1 { font-size: clamp(1.35rem, 4vw, 2rem); line-height: 1.3; margin-bottom: 0.75rem; word-wrap: break-word; }
     .page-hero .lead { max-width: 720px; font-size: 1.05rem; opacity: 0.95; }
+    .page-hero .lead.lead-extra { margin-top: 0.7rem; font-size: 0.98rem; line-height: 1.6; }
+    .page-hero .lead a { color: #e67e22; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(230, 126, 34, 0.5); }
+    .page-hero .lead a:hover { text-decoration: underline; border-bottom-color: #fff; }
     .brand-body { padding: 2rem 1.5rem 1rem; }
     .brand-form-hint { max-width: 720px; margin: 0 auto 1rem; color: #555; font-size: 0.98rem; text-align: center; }
     .brand-email-alt { max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.95rem; color: #444; }
@@ -289,6 +357,11 @@ function buildHtml(brand, slug, translations, relatedRows) {
     .related-brands ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.4rem 1rem; }
     .related-brands a { color: #1e3a5f; text-decoration: none; font-weight: 600; border-bottom: 1px solid #c5d4e3; }
     .related-brands a:hover { color: #e67e22; border-bottom-color: #e67e22; }
+    .brand-faq { max-width: 820px; margin: 0 auto 2.25rem; padding: 1.2rem 1.15rem; border: 1px solid #e3eaf1; border-radius: 10px; background: #f6f9fc; }
+    .brand-faq h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.9rem; }
+    .brand-faq .faq-item { margin-bottom: 0.95rem; }
+    .brand-faq h3 { font-size: 0.98rem; color: #1e3a5f; margin: 0 0 0.3rem; font-weight: 600; }
+    .brand-faq p { margin: 0; font-size: 0.92rem; color: #444; line-height: 1.55; }
     .muted { color: #666; font-weight: 400; }
     .contact-lead { text-align: center; max-width: 640px; margin: 0 auto 2rem; color: #555; font-size: 1.05rem; line-height: 1.55; }
     .contact-layout { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 2.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
@@ -330,9 +403,11 @@ function buildHtml(brand, slug, translations, relatedRows) {
       <nav class="breadcrumb" data-i18n="brand_breadcrumb" aria-label="Breadcrumb">${d.brand_breadcrumb}</nav>
       <h1 data-i18n="brand_h1">${d.brand_h1}</h1>
       <p class="lead" data-i18n="brand_intro">${d.brand_intro}</p>
+      <p class="lead lead-extra" data-i18n="brand_intro_p2">${d.brand_intro_p2}</p>
     </div>
   </header>
 
+  <main id="main-content">
   <div class="brand-body">
     <div class="container">
       <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
@@ -343,6 +418,21 @@ function buildHtml(brand, slug, translations, relatedRows) {
         <ul>
           ${relatedLinks}
         </ul>
+      </section>
+      <section class="brand-faq" id="marken-faq" aria-labelledby="brand-faq-heading">
+        <h2 id="brand-faq-heading" data-i18n="brand_faq_title">${escapeHtml(d.brand_faq_title)}</h2>
+        <div class="faq-item">
+          <h3 data-i18n="brand_faq_q1">${d.brand_faq_q1}</h3>
+          <p data-i18n="brand_faq_a1">${d.brand_faq_a1}</p>
+        </div>
+        <div class="faq-item">
+          <h3 data-i18n="brand_faq_q2">${d.brand_faq_q2}</h3>
+          <p data-i18n="brand_faq_a2">${d.brand_faq_a2}</p>
+        </div>
+        <div class="faq-item">
+          <h3 data-i18n="brand_faq_q3">${d.brand_faq_q3}</h3>
+          <p data-i18n="brand_faq_a3">${d.brand_faq_a3}</p>
+        </div>
       </section>
     </div>
   </div>
@@ -369,6 +459,7 @@ function buildHtml(brand, slug, translations, relatedRows) {
       </div>
     </div>
   </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
