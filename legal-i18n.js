@@ -442,10 +442,12 @@ function getCurrentLang() {
   return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || navigator.language.split('-')[0];
 }
 function updateLegalLinksWithLang(lang) {
-  const pages = ['index.html', 'marche.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+  const pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
   function internalLegalLink(base) {
     if (pages.includes(base)) return true;
-    return /^marche\/[^/]+\.html$/i.test(base);
+    if (/^marche\/[^/]+\.html$/i.test(base)) return true;
+    if (/^casi\/[^/]+\.html$/i.test(base)) return true;
+    return false;
   }
   document.querySelectorAll('a[href]').forEach(a => {
     const h = a.getAttribute('href') || '';
