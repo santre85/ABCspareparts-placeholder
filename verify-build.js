@@ -49,6 +49,24 @@ const si = fs.readFileSync(siPath, 'utf8');
 if (!si.includes('<sitemapindex')) throw new Error('sitemap-index.xml missing sitemapindex root');
 if (!si.includes('/sitemap.xml')) throw new Error('sitemap-index.xml missing sitemap.xml reference');
 if (!si.includes('/sitemap-brands.xml')) throw new Error('sitemap-index.xml missing sitemap-brands.xml reference');
+if (!si.includes('/sitemap-cases.xml')) throw new Error('sitemap-index.xml missing sitemap-cases.xml reference');
+
+const casesPath = path.join(__dirname, 'supply-cases.json');
+if (!fs.existsSync(casesPath)) throw new Error('supply-cases.json missing');
+const casesData = JSON.parse(fs.readFileSync(casesPath, 'utf8'));
+const publishedCases = (casesData.cases || []).filter((c) => c.published !== false);
+const scPath = path.join(__dirname, 'sitemap-cases.xml');
+if (!fs.existsSync(scPath)) throw new Error('sitemap-cases.xml missing — run npm run build:casi');
+const sc = fs.readFileSync(scPath, 'utf8');
+const caseUrlCount = (sc.match(/<loc>/g) || []).length;
+if (caseUrlCount !== publishedCases.length + 1) {
+  throw new Error(`sitemap-cases.xml <loc> count ${caseUrlCount} !== hub + ${publishedCases.length} cases`);
+}
+for (const c of publishedCases) {
+  const caseFile = path.join(__dirname, 'casi', `${c.slug}.html`);
+  if (!fs.existsSync(caseFile)) throw new Error(`Missing generated case page: casi/${c.slug}.html`);
+}
+if (!fs.existsSync(path.join(__dirname, 'casi.html'))) throw new Error('casi.html missing — run npm run build:casi');
 
 const indexHead = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
 if (/2600\+/.test(indexHead)) {

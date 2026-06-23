@@ -11,4 +11,8 @@ layout: none
     <loc>https://abcspareparts.eu/sitemap-brands.xml</loc>
     <lastmod>2026-04-24</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://abcspareparts.eu/sitemap-cases.xml</loc>
+    <lastmod>2026-06-23</lastmod>
+  </sitemap>
 </sitemapindex>

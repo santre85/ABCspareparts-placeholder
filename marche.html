@@ -246,8 +246,8 @@
     function updateLinksWithLang(lang){
       var curQ = getQueryQ();
       if(!curQ){ var inp0 = document.getElementById('brandSearchInput'); if(inp0 && inp0.value) curQ = inp0.value.trim(); }
-      var pages = ['index.html','marche.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
-      function internalPage(base){ if(pages.indexOf(base)!==-1) return true; return /^marche\/[^/]+\.html$/i.test(base); }
+      var pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+      function internalPage(base){ if(pages.indexOf(base)!==-1) return true; if(/^marche\/[^/]+\.html$/i.test(base)) return true; if(/^casi\/[^/]+\.html$/i.test(base)) return true; return false; }
       document.querySelectorAll('a[href]').forEach(function(a){
         var h = a.getAttribute('href')||'';
         if(h.indexOf('#')===0||h.indexOf('mailto:')===0||h.indexOf('tel:')===0||h.indexOf('https://wa.me')===0||h.indexOf('http://')===0||h.indexOf('https://')===0) return;

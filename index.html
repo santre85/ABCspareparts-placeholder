@@ -627,6 +627,8 @@
       <div class="footer-links">
         <a href="marche.html" data-i18n="footer_brands">Marche</a>
         <span class="separator">|</span>
+        <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
+        <span class="separator">|</span>
         <a href="index.html#contact" data-i18n="footer_contact">Kontakt</a>
         <span class="separator">|</span>
         <a href="impressum.html" target="_blank" data-i18n="footer_imprint">Impressum</a>
@@ -694,6 +696,7 @@
       form_error: "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
       form_privacy: "Ich habe die <a href=\"datenschutz.html\" target=\"_blank\">Datenschutzerklärung</a> gelesen und akzeptiere diese.",
       footer_brands: "Marken",
+      footer_cases: "Erfolgsgeschichten",
       view_all_brands: "Vollständige Liste der 9000+ Marken anzeigen",
       brand_search_heading: "Marke suchen",
       brand_search_label: "Marke suchen",
@@ -778,6 +781,7 @@
       form_error: "Error sending. Please try again later.",
       form_privacy: "I have read and accept the <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_brands: "Brands",
+      footer_cases: "Success stories",
       view_all_brands: "View full list of 9000+ brands",
       brand_search_heading: "Search brand",
       brand_search_label: "Search brand",
@@ -862,6 +866,7 @@
       form_error: "Errore nell'invio. Riprova più tardi.",
       form_privacy: "Ho letto e accetto la <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_brands: "Marche",
+      footer_cases: "Casi di successo",
       view_all_brands: "Vedi elenco completo di 9000+ marche",
       brand_search_heading: "Cerca marchio",
       brand_search_label: "Cerca marchio",
@@ -946,6 +951,7 @@
       form_error: "Error al enviar. Por favor, inténtelo más tarde.",
       form_privacy: "He leído y acepto la <a href=\"datenschutz.html\" target=\"_blank\">Política de Privacidad</a>.",
       footer_brands: "Marcas",
+      footer_cases: "Casos de éxito",
       view_all_brands: "Ver lista completa de 9000+ marcas",
       brand_search_heading: "Buscar marca",
       brand_search_label: "Buscar marca",
@@ -1030,6 +1036,7 @@
       form_error: "Erreur lors de l'envoi. Veuillez réessayer plus tard.",
       form_privacy: "J'ai lu et j'accepte la <a href=\"datenschutz.html\" target=\"_blank\">Politique de confidentialité</a>.",
       footer_brands: "Marques",
+      footer_cases: "Histoires de réussite",
       view_all_brands: "Voir la liste complète des 9000+ marques",
       brand_search_heading: "Rechercher une marque",
       brand_search_label: "Rechercher une marque",
@@ -1081,10 +1088,12 @@
       navigator.language.split('-')[0];
   }
   function updateLinksWithLang(lang) {
-    const pages = ['index.html','marche.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+    const pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
     function isLangInternalPage(base) {
       if (pages.includes(base)) return true;
-      return /^marche\/[^/]+\.html$/i.test(base);
+      if (/^marche\/[^/]+\.html$/i.test(base)) return true;
+      if (/^casi\/[^/]+\.html$/i.test(base)) return true;
+      return false;
     }
     document.querySelectorAll('a[href]').forEach(a => {
       const h = a.getAttribute('href') || '';
