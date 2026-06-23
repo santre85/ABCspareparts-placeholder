@@ -8,7 +8,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 - [Home – inquiries and company overview](https://abcspareparts.eu/): Main landing page; part requests, contact, and how quoting works.
 - [Brands A–Z (directory)](https://abcspareparts.eu/marche.html): Searchable and alphabetical list of supported manufacturers; entry point to per-brand pages.
-- [Success stories (casi di successo)](https://abcspareparts.eu/casi.html): Real spare-part success stories (brand, part number, sector, timeline) — customers not named; e.g. Baldwin flow meter 45.877.05 to screen printing in Spain.
+- [Success stories (casi di successo)](https://abcspareparts.eu/casi-di-successo.html): Real spare-part success stories (brand, part number, sector, timeline) — customers not named; e.g. Baldwin flow meter 45.877.05.
 - [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`.
 
 ## Optional
