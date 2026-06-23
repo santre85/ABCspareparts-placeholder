@@ -93,7 +93,7 @@ ${hreflang}
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Supply cases', item: `${BASE}/casi.html` },
+          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/casi.html` },
           { '@type': 'ListItem', position: 3, name: caseRow.brand, item: canonical }
         ]
       }
@@ -155,7 +155,6 @@ ${hreflang}
   <main class="case-body">
     <div class="container">
       <dl class="facts-box">
-        <dt data-i18n="fact_customer">${escapeHtml(de.fact_customer)}</dt><dd>${escapeHtml(caseRow.customer_name)}</dd>
         <dt data-i18n="fact_sector">${escapeHtml(de.fact_sector)}</dt><dd data-i18n="fact_sector_val">${de.fact_sector_val}</dd>
         <dt data-i18n="fact_brand">${escapeHtml(de.fact_brand)}</dt><dd>${escapeHtml(caseRow.brand)}</dd>
         <dt data-i18n="fact_part">${escapeHtml(de.fact_part)}</dt><dd><strong>${escapeHtml(caseRow.part_number)}</strong></dd>
@@ -184,7 +183,7 @@ ${hreflang}
   <footer class="footer">
     <div class="container">
       <a href="../index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="../casi.html" data-i18n="footer_cases">Casi</a> ·
+      <a href="../casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
       <a href="../marche.html" data-i18n="footer_brands">Marche</a>
     </div>
   </footer>
@@ -193,11 +192,11 @@ ${hreflang}
     var BRAND_SLUG = ${JSON.stringify(caseRow.brand_slug)};
     var translations = ${JSON.stringify(translationsPayload)};
     var hubLabels = {
-      de: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Lieferreferenzen</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Lieferreferenzen', footer_brands: 'Marken' },
-      en: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Supply cases</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Supply cases', footer_brands: 'Brands' },
-      it: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Casi di fornitura</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casi di fornitura', footer_brands: 'Marche' },
-      es: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Casos de suministro</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casos de suministro', footer_brands: 'Marcas' },
-      fr: { case_breadcrumb: '<a href="../index.html">Accueil</a> · <a href="../casi.html">Références livraison</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Références livraison', footer_brands: 'Marques' }
+      de: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Erfolgsgeschichten</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Erfolgsgeschichten', footer_brands: 'Marken' },
+      en: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Success stories</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Success stories', footer_brands: 'Brands' },
+      it: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Casi di successo</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casi di successo', footer_brands: 'Marche' },
+      es: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Casos de éxito</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casos de éxito', footer_brands: 'Marcas' },
+      fr: { case_breadcrumb: '<a href="../index.html">Accueil</a> · <a href="../casi.html">Histoires de réussite</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Histoires de réussite', footer_brands: 'Marques' }
     };
     var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
@@ -291,58 +290,58 @@ function buildHubPage(cases) {
 
   const hubI18n = {
     de: {
-      meta_title: 'Lieferreferenzen & Ersatzteil-Fälle in Europa | ABCspareparts',
-      meta_description: 'Echte Beschaffungsfälle: welche Ersatzteile, welche Marken, welche Lieferzeiten. Von der Anfrage bis zum Versand in Europa.',
-      hub_h1: 'Lieferreferenzen',
-      hub_subtitle: 'Echte Fälle aus der Beschaffung — Marke, Teilenummer und Ablauf ohne Marketing-Floskeln.',
-      hub_intro: 'Hier dokumentieren wir ausgewählte Lieferungen: welcher Kunde (mit Zustimmung), welches Ersatzteil, welche Marke und wie schnell von der Anfrage bis zum Versand.',
+      meta_title: 'Erfolgsgeschichten — Industrieersatzteile in Europa | ABCspareparts',
+      meta_description: 'Echte Erfolgsfälle: Marke, Teilenummer, Branche und Lieferzeit — von der Anfrage bis zum Versand in Europa. Kunden anonymisiert.',
+      hub_h1: 'Erfolgsgeschichten',
+      hub_subtitle: 'Echte Lieferungen — Marke, Teilenummer und Ablauf, ohne Kundennamen.',
+      hub_intro: 'Hier zeigen wir ausgewählte Erfolgsfälle: welches Ersatzteil, welche Marke, welche Branche und wie schnell von der Anfrage bis zum Versand. Kundennamen nennen wir aus Vertraulichkeitsgründen nicht.',
       hub_read_more: 'Weiterlesen',
       footer_home: 'ABCspareparts',
-      footer_cases: 'Lieferreferenzen',
+      footer_cases: 'Erfolgsgeschichten',
       footer_brands: 'Marken'
     },
     en: {
-      meta_title: 'Supply cases & spare part stories in Europe | ABCspareparts',
-      meta_description: 'Real sourcing cases: which spare parts, which brands, which lead times — from enquiry to dispatch across Europe.',
-      hub_h1: 'Supply cases',
-      hub_subtitle: 'Real procurement stories — brand, part number and timeline.',
-      hub_intro: 'Selected deliveries we document with the customer’s agreement: part reference, brand, and time from request to shipment.',
+      meta_title: 'Success stories — industrial spare parts in Europe | ABCspareparts',
+      meta_description: 'Real success stories: brand, part number, sector and lead time — from enquiry to dispatch across Europe. Customers kept anonymous.',
+      hub_h1: 'Success stories',
+      hub_subtitle: 'Real deliveries — brand, part number and timeline, without naming customers.',
+      hub_intro: 'Selected success stories: which spare part, which brand, which industry, and how fast from request to shipment. We do not publish customer names for confidentiality.',
       hub_read_more: 'Read more',
       footer_home: 'ABCspareparts',
-      footer_cases: 'Supply cases',
+      footer_cases: 'Success stories',
       footer_brands: 'Brands'
     },
     it: {
-      meta_title: 'Casi di fornitura ricambi industriali in Europa | ABCspareparts',
-      meta_description: 'Casi reali: quale ricambio, quale marca, quali tempi dalla richiesta alla spedizione in Europa.',
-      hub_h1: 'Casi di fornitura',
-      hub_subtitle: 'Storie reali di approvvigionamento — marca, codice e tempi.',
-      hub_intro: 'Documentiamo forniture selezionate con il consenso del cliente: referenza, marca e tempo dalla richiesta alla spedizione.',
+      meta_title: 'Casi di successo — ricambi industriali in Europa | ABCspareparts',
+      meta_description: 'Casi di successo reali: marca, codice articolo, settore e tempi dalla richiesta alla spedizione in Europa. Clienti non nominati.',
+      hub_h1: 'Casi di successo',
+      hub_subtitle: 'Forniture reali — marca, codice e tempi, senza nominare i clienti.',
+      hub_intro: 'Documentiamo casi di successo selezionati: quale ricambio, quale marca, quale settore e quanto tempo dalla richiesta alla spedizione. I nomi dei clienti non vengono pubblicati per riservatezza.',
       hub_read_more: 'Leggi tutto',
       footer_home: 'ABCspareparts',
-      footer_cases: 'Casi di fornitura',
+      footer_cases: 'Casi di successo',
       footer_brands: 'Marche'
     },
     es: {
-      meta_title: 'Casos de suministro de recambios en Europa | ABCspareparts',
-      meta_description: 'Casos reales: qué recambio, qué marca y plazos desde la consulta hasta el envío en Europa.',
-      hub_h1: 'Casos de suministro',
-      hub_subtitle: 'Historias reales de compra — marca, referencia y plazos.',
-      hub_intro: 'Documentamos entregas seleccionadas con acuerdo del cliente: referencia, marca y tiempo hasta el envío.',
+      meta_title: 'Casos de éxito — recambios industriales en Europa | ABCspareparts',
+      meta_description: 'Casos de éxito reales: marca, referencia, sector y plazos desde la consulta hasta el envío en Europa. Clientes anónimos.',
+      hub_h1: 'Casos de éxito',
+      hub_subtitle: 'Entregas reales — marca, referencia y plazos, sin nombrar clientes.',
+      hub_intro: 'Casos de éxito seleccionados: qué recambio, qué marca, qué sector y cuánto tiempo hasta el envío. No publicamos nombres de clientes por confidencialidad.',
       hub_read_more: 'Leer más',
       footer_home: 'ABCspareparts',
-      footer_cases: 'Casos de suministro',
+      footer_cases: 'Casos de éxito',
       footer_brands: 'Marcas'
     },
     fr: {
-      meta_title: 'Références de livraison pièces industrielles | ABCspareparts',
-      meta_description: 'Cas réels : quelle pièce, quelle marque, délais de la demande à l’expédition en Europe.',
-      hub_h1: 'Références livraison',
-      hub_subtitle: 'Cas réels d’approvisionnement — marque, référence et délais.',
-      hub_intro: 'Livraisons documentées avec l’accord du client : référence, marque et délai jusqu’à l’expédition.',
+      meta_title: 'Histoires de réussite — pièces industrielles en Europe | ABCspareparts',
+      meta_description: 'Vraies histoires de réussite : marque, référence, secteur et délais de la demande à l’expédition en Europe. Clients anonymisés.',
+      hub_h1: 'Histoires de réussite',
+      hub_subtitle: 'Livraisons réelles — marque, référence et délais, sans nommer les clients.',
+      hub_intro: 'Histoires de réussite sélectionnées : quelle pièce, quelle marque, quel secteur et délai jusqu’à l’expédition. Les noms des clients ne sont pas publiés pour confidentialité.',
       hub_read_more: 'Lire la suite',
       footer_home: 'ABCspareparts',
-      footer_cases: 'Références livraison',
+      footer_cases: 'Histoires de réussite',
       footer_brands: 'Marques'
     }
   };
@@ -418,7 +417,7 @@ ${cardsHtml}
   <footer class="footer">
     <div class="container">
       <a href="index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="casi.html" data-i18n="footer_cases">Lieferreferenzen</a> ·
+      <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
       <a href="marche.html" data-i18n="footer_brands">Marken</a>
     </div>
   </footer>
