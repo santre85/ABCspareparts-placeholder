@@ -161,7 +161,7 @@ ${hreflang}
       <dl class="facts-box">
         <dt data-i18n="fact_sector">${escapeHtml(de.fact_sector)}</dt><dd data-i18n="fact_sector_val">${de.fact_sector_val}</dd>
         <dt data-i18n="fact_brand">${escapeHtml(de.fact_brand)}</dt><dd>${escapeHtml(caseRow.brand)}</dd>
-        <dt data-i18n="fact_part">${escapeHtml(de.fact_part)}</dt><dd><strong>${escapeHtml(caseRow.part_number)}</strong></dd>
+        <dt data-i18n="fact_part">${escapeHtml(de.fact_part)}</dt><dd data-i18n="fact_part_val">${de.fact_part_val || '<strong>' + escapeHtml(caseRow.part_number) + '</strong>'}</dd>
         <dt data-i18n="fact_component">${escapeHtml(de.fact_component)}</dt><dd data-i18n="fact_component_val">${de.fact_component_val}</dd>
         <dt data-i18n="fact_destination">${escapeHtml(de.fact_destination)}</dt><dd data-i18n="fact_destination_val">${de.fact_destination_val}</dd>
       </dl>
