@@ -4,8 +4,10 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const CASES_SUBDIR = 'casi-di-successo';
-const HUB_FILE = 'casi-di-successo.html';
+const CASES_SUBDIR = 'casi';
+const HUB_FILE = 'casi.html';
+const LEGACY_HUB_FILE = 'casi-di-successo.html';
+const LEGACY_CASES_SUBDIR = 'casi-di-successo';
 const CASI_DIR = path.join(ROOT, CASES_SUBDIR);
 const BASE = 'https://abcspareparts.eu';
 const LANGS = ['de', 'en', 'it', 'es', 'fr'];
@@ -200,11 +202,11 @@ ${hreflang}
       es: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casos de éxito', footer_brands: 'Marcas' },
       fr: { case_breadcrumb: '<a href="../index.html">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Histoires de réussite', footer_brands: 'Marques' }
     };
-    var pages = ['index.html', 'marche.html', '${HUB_FILE}', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+    var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
       if (/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if (/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
+      if (/^casi\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
     function getLangFromUrl() {
@@ -427,11 +429,11 @@ ${cardsHtml}
   (function(){
     var translations = ${JSON.stringify(hubI18n)};
     var cardTranslations = ${JSON.stringify(cardTranslations)};
-    var pages = ['index.html','marche.html','${HUB_FILE}','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+    var pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
     function isLangInternalPage(base){
       if(pages.indexOf(base)!==-1) return true;
       if(/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if(/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
+      if(/^casi\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
     function getLangFromUrl(){ var p=new URLSearchParams(window.location.search); var l=p.get('lang'); return l&&['de','en','it','es','fr'].indexOf(l)!==-1?l:null; }
@@ -530,40 +532,37 @@ function buildRedirectPage(targetPath) {
 }
 
 function writeLegacyRedirects(cases) {
-  fs.writeFileSync(path.join(ROOT, 'casi.html'), buildRedirectPage(HUB_FILE), 'utf8');
-  console.log('Wrote casi.html redirect →', HUB_FILE);
+  fs.writeFileSync(path.join(ROOT, LEGACY_HUB_FILE), buildRedirectPage(HUB_FILE), 'utf8');
+  console.log('Wrote', LEGACY_HUB_FILE, 'redirect →', HUB_FILE);
 
-  const legacySlugs = new Set();
+  const legacyCaseSlugs = new Set();
   for (const c of cases) {
-    for (const oldSlug of c.legacy_slugs || []) legacySlugs.add(oldSlug);
+    for (const oldSlug of c.legacy_slugs || []) legacyCaseSlugs.add(oldSlug);
   }
 
-  const legacyDir = path.join(ROOT, 'casi');
-  if (legacySlugs.size) {
-    if (!fs.existsSync(legacyDir)) fs.mkdirSync(legacyDir);
-    for (const c of cases) {
-      for (const oldSlug of c.legacy_slugs || []) {
-        const target = `../${CASES_SUBDIR}/${c.slug}.html`;
-        fs.writeFileSync(path.join(legacyDir, `${oldSlug}.html`), buildRedirectPage(target), 'utf8');
-        console.log('Wrote casi/' + oldSlug + '.html redirect');
-      }
+  const legacyCasesDir = path.join(ROOT, LEGACY_CASES_SUBDIR);
+  if (!fs.existsSync(legacyCasesDir)) fs.mkdirSync(legacyCasesDir);
+  const expectedLegacyCaseFiles = new Set();
+  for (const c of cases) {
+    const target = `../casi/${c.slug}.html`;
+    const legacyFile = `${c.slug}.html`;
+    expectedLegacyCaseFiles.add(legacyFile);
+    fs.writeFileSync(path.join(legacyCasesDir, legacyFile), buildRedirectPage(target), 'utf8');
+  }
+  for (const f of fs.readdirSync(legacyCasesDir)) {
+    if (f.endsWith('.html') && !expectedLegacyCaseFiles.has(f)) {
+      fs.unlinkSync(path.join(legacyCasesDir, f));
+      console.log('Removed stale', LEGACY_CASES_SUBDIR + '/' + f);
     }
-    for (const f of fs.readdirSync(legacyDir)) {
-      if (!f.endsWith('.html')) continue;
-      const slug = f.replace(/\.html$/, '');
-      if (!legacySlugs.has(slug)) {
-        fs.unlinkSync(path.join(legacyDir, f));
-        console.log('Removed stale redirect', f);
-      }
-    }
-  } else if (fs.existsSync(legacyDir)) {
-    for (const f of fs.readdirSync(legacyDir)) {
-      if (f.endsWith('.html')) fs.unlinkSync(path.join(legacyDir, f));
-    }
-    try {
-      fs.rmdirSync(legacyDir);
-    } catch (e) {
-      console.warn('Could not remove casi/ directory:', e.message);
+  }
+  console.log('Wrote', cases.length, 'redirect(s) in', LEGACY_CASES_SUBDIR + '/');
+
+  for (const c of cases) {
+    for (const oldSlug of c.legacy_slugs || []) {
+      if (oldSlug === c.slug) continue;
+      const target = `${c.slug}.html`;
+      fs.writeFileSync(path.join(CASI_DIR, `${oldSlug}.html`), buildRedirectPage(target), 'utf8');
+      console.log('Wrote casi/' + oldSlug + '.html redirect →', target);
     }
   }
 }
@@ -572,13 +571,18 @@ function main() {
   const cases = loadCases();
   if (!cases.length) throw new Error('No published cases in supply-cases.json');
 
+  const legacyCaseSlugs = new Set();
+  for (const c of cases) {
+    for (const oldSlug of c.legacy_slugs || []) legacyCaseSlugs.add(oldSlug);
+  }
+
   if (!fs.existsSync(CASI_DIR)) fs.mkdirSync(CASI_DIR);
 
   const slugs = new Set(cases.map((c) => c.slug));
   for (const f of fs.readdirSync(CASI_DIR)) {
     if (!f.endsWith('.html')) continue;
     const slug = f.replace(/\.html$/, '');
-    if (!slugs.has(slug)) {
+    if (!slugs.has(slug) && !legacyCaseSlugs.has(slug)) {
       fs.unlinkSync(path.join(CASI_DIR, f));
       console.log('Removed stale', f);
     }

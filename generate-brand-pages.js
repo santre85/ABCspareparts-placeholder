@@ -508,12 +508,12 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
     var BRAND = ${brandJson};
     var translations = ${translationsJson};
 
-    var pages = ['index.html', 'marche.html', 'casi-di-successo.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+    var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
 
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
       if (/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if (/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
+      if (/^casi\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
 
