@@ -4,7 +4,9 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const CASI_DIR = path.join(ROOT, 'casi');
+const CASES_SUBDIR = 'casi-di-successo';
+const HUB_FILE = 'casi-di-successo.html';
+const CASI_DIR = path.join(ROOT, CASES_SUBDIR);
 const BASE = 'https://abcspareparts.eu';
 const LANGS = ['de', 'en', 'it', 'es', 'fr'];
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -33,7 +35,7 @@ function pickLang(caseRow, lang) {
 function buildCasePage(caseRow) {
   const slug = caseRow.slug;
   const de = pickLang(caseRow, 'de');
-  const canonical = `${BASE}/casi/${slug}.html`;
+  const canonical = `${BASE}/${CASES_SUBDIR}/${slug}.html`;
   const brandUrl = `../marche/${caseRow.brand_slug}.html`;
   const translationsPayload = {};
   for (const L of LANGS) {
@@ -81,8 +83,8 @@ ${hreflang}
         '@id': `${canonical}#article`,
         headline: de.title,
         description: de.meta_description,
-        datePublished: caseRow.request_date,
-        dateModified: caseRow.ship_date,
+        datePublished: caseRow.request_date || undefined,
+        dateModified: caseRow.ship_date || caseRow.request_date || undefined,
         author: { '@id': `${BASE}/#organization` },
         publisher: { '@id': `${BASE}/#organization` },
         about: { '@type': 'Brand', name: caseRow.brand },
@@ -93,7 +95,7 @@ ${hreflang}
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/casi.html` },
+          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/${HUB_FILE}` },
           { '@type': 'ListItem', position: 3, name: caseRow.brand, item: canonical }
         ]
       }
@@ -147,7 +149,7 @@ ${hreflang}
   </div>
   <header class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" data-i18n="case_breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> · <a href="../casi.html">Casi</a> · ${escapeHtml(caseRow.brand)}</nav>
+      <nav class="breadcrumb" data-i18n="case_breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi</a> · ${escapeHtml(caseRow.brand)}</nav>
       <h1 data-i18n="title">${escapeHtml(de.title)}</h1>
       <p class="subtitle" data-i18n="subtitle">${escapeHtml(de.subtitle)}</p>
     </div>
@@ -183,7 +185,7 @@ ${hreflang}
   <footer class="footer">
     <div class="container">
       <a href="../index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="../casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
+      <a href="../${HUB_FILE}" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
       <a href="../marche.html" data-i18n="footer_brands">Marche</a>
     </div>
   </footer>
@@ -192,17 +194,17 @@ ${hreflang}
     var BRAND_SLUG = ${JSON.stringify(caseRow.brand_slug)};
     var translations = ${JSON.stringify(translationsPayload)};
     var hubLabels = {
-      de: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Erfolgsgeschichten</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Erfolgsgeschichten', footer_brands: 'Marken' },
-      en: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Success stories</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Success stories', footer_brands: 'Brands' },
-      it: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Casi di successo</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casi di successo', footer_brands: 'Marche' },
-      es: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../casi.html">Casos de éxito</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casos de éxito', footer_brands: 'Marcas' },
-      fr: { case_breadcrumb: '<a href="../index.html">Accueil</a> · <a href="../casi.html">Histoires de réussite</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Histoires de réussite', footer_brands: 'Marques' }
+      de: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Erfolgsgeschichten</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Erfolgsgeschichten', footer_brands: 'Marken' },
+      en: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Success stories</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Success stories', footer_brands: 'Brands' },
+      it: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi di successo</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casi di successo', footer_brands: 'Marche' },
+      es: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casos de éxito', footer_brands: 'Marcas' },
+      fr: { case_breadcrumb: '<a href="../index.html">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Histoires de réussite', footer_brands: 'Marques' }
     };
-    var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+    var pages = ['index.html', 'marche.html', '${HUB_FILE}', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
       if (/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if (/^casi\\/[^/]+\\.html$/i.test(base)) return true;
+      if (/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
     function getLangFromUrl() {
@@ -272,9 +274,9 @@ function buildHubPage(cases) {
       const de = pickLang(c, 'de');
       return `      <article class="case-card">
         <p class="case-meta"><span class="case-brand">${escapeHtml(c.brand)}</span> · ${escapeHtml(c.part_number)} · ${escapeHtml(c.country_code)}</p>
-        <h2><a href="casi/${escapeHtml(c.slug)}.html" data-i18n-card="${escapeHtml(c.slug)}">${escapeHtml(de.title)}</a></h2>
+        <h2><a href="${CASES_SUBDIR}/${escapeHtml(c.slug)}.html" data-i18n-card="${escapeHtml(c.slug)}">${escapeHtml(de.title)}</a></h2>
         <p class="case-teaser" data-i18n-teaser="${escapeHtml(c.slug)}">${de.card_teaser}</p>
-        <a class="case-read" href="casi/${escapeHtml(c.slug)}.html" data-i18n="hub_read_more">Weiterlesen</a>
+        <a class="case-read" href="${CASES_SUBDIR}/${escapeHtml(c.slug)}.html" data-i18n="hub_read_more">Weiterlesen</a>
       </article>`;
     })
     .join('\n');
@@ -347,7 +349,7 @@ function buildHubPage(cases) {
   };
 
   const hreflang = LANGS.map(
-    (l) => `  <link rel="alternate" hreflang="${l}" href="${BASE}/casi.html?lang=${l}">`
+    (l) => `  <link rel="alternate" hreflang="${l}" href="${BASE}/${HUB_FILE}?lang=${l}">`
   ).join('\n');
 
   return `<!DOCTYPE html>
@@ -357,11 +359,11 @@ function buildHubPage(cases) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">${escapeHtml(hubI18n.de.meta_title)}</title>
   <meta id="pageDescription" name="description" content="${escapeAttr(hubI18n.de.meta_description)}">
-  <link rel="canonical" href="${BASE}/casi.html">
-  <link rel="alternate" hreflang="x-default" href="${BASE}/casi.html">
+  <link rel="canonical" href="${BASE}/${HUB_FILE}">
+  <link rel="alternate" hreflang="x-default" href="${BASE}/${HUB_FILE}">
 ${hreflang}
   <meta property="og:type" content="website">
-  <meta property="og:url" content="${BASE}/casi.html">
+  <meta property="og:url" content="${BASE}/${HUB_FILE}">
   <meta property="og:title" content="${escapeAttr(hubI18n.de.meta_title)}">
   <meta property="og:description" content="${escapeAttr(hubI18n.de.meta_description)}">
   <meta property="og:image" content="${BASE}/logo.png">
@@ -417,7 +419,7 @@ ${cardsHtml}
   <footer class="footer">
     <div class="container">
       <a href="index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
+      <a href="${HUB_FILE}" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
       <a href="marche.html" data-i18n="footer_brands">Marken</a>
     </div>
   </footer>
@@ -425,11 +427,11 @@ ${cardsHtml}
   (function(){
     var translations = ${JSON.stringify(hubI18n)};
     var cardTranslations = ${JSON.stringify(cardTranslations)};
-    var pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+    var pages = ['index.html','marche.html','${HUB_FILE}','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
     function isLangInternalPage(base){
       if(pages.indexOf(base)!==-1) return true;
       if(/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if(/^casi\\/[^/]+\\.html$/i.test(base)) return true;
+      if(/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
     function getLangFromUrl(){ var p=new URLSearchParams(window.location.search); var l=p.get('lang'); return l&&['de','en','it','es','fr'].indexOf(l)!==-1?l:null; }
@@ -472,7 +474,7 @@ ${cardsHtml}
 
 function writeSitemapCases(cases) {
   let body = '';
-  const hubLoc = `${BASE}/casi.html`;
+  const hubLoc = `${BASE}/${HUB_FILE}`;
   body += '  <url>\n';
   body += `    <loc>${hubLoc}</loc>\n`;
   for (const l of LANGS) {
@@ -485,7 +487,7 @@ function writeSitemapCases(cases) {
   body += '  </url>\n';
 
   for (const c of cases) {
-    const loc = `${BASE}/casi/${c.slug}.html`;
+    const loc = `${BASE}/${CASES_SUBDIR}/${c.slug}.html`;
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
     for (const l of LANGS) {
@@ -509,9 +511,31 @@ ${body}</urlset>
   fs.writeFileSync(path.join(ROOT, 'sitemap-cases.xml'), xml, 'utf8');
 }
 
+function removeLegacyCasePaths() {
+  const legacyHub = path.join(ROOT, 'casi.html');
+  if (fs.existsSync(legacyHub)) {
+    fs.unlinkSync(legacyHub);
+    console.log('Removed legacy casi.html');
+  }
+  const legacyDir = path.join(ROOT, 'casi');
+  if (fs.existsSync(legacyDir)) {
+    for (const f of fs.readdirSync(legacyDir)) {
+      if (f.endsWith('.html')) fs.unlinkSync(path.join(legacyDir, f));
+    }
+    try {
+      fs.rmdirSync(legacyDir);
+      console.log('Removed legacy casi/ directory');
+    } catch (e) {
+      console.warn('Could not remove legacy casi/ directory:', e.message);
+    }
+  }
+}
+
 function main() {
   const cases = loadCases();
   if (!cases.length) throw new Error('No published cases in supply-cases.json');
+
+  removeLegacyCasePaths();
 
   if (!fs.existsSync(CASI_DIR)) fs.mkdirSync(CASI_DIR);
 
@@ -531,8 +555,8 @@ function main() {
     console.log('Wrote', out);
   }
 
-  fs.writeFileSync(path.join(ROOT, 'casi.html'), buildHubPage(cases), 'utf8');
-  console.log('Wrote casi.html');
+  fs.writeFileSync(path.join(ROOT, HUB_FILE), buildHubPage(cases), 'utf8');
+  console.log('Wrote', HUB_FILE);
 
   writeSitemapCases(cases);
   console.log('Wrote sitemap-cases.xml');
