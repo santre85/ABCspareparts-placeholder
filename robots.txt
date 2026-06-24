@@ -30,3 +30,4 @@ Allow: /
 Sitemap: https://abcspareparts.eu/sitemap-index.xml
 Sitemap: https://abcspareparts.eu/sitemap.xml
 Sitemap: https://abcspareparts.eu/sitemap-brands.xml
+Sitemap: https://abcspareparts.eu/sitemap-cases.xml

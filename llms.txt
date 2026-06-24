@@ -8,8 +8,14 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 - [Home – inquiries and company overview](https://abcspareparts.eu/): Main landing page; part requests, contact, and how quoting works.
 - [Brands A–Z (directory)](https://abcspareparts.eu/marche.html): Searchable and alphabetical list of supported manufacturers; entry point to per-brand pages.
-- [Success stories (casi di successo)](https://abcspareparts.eu/casi.html): Real spare-part success stories (brand, part number, sector, timeline) — customers not named; e.g. Baldwin flow meter 45.877.05, Tamagawa encoder 68-2048C/T-L3-12V, Autronica smoke detectors V-430/BH200 & V-530/BH500.
+- [Success stories hub (casi di successo)](https://abcspareparts.eu/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (?lang=).
 - [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`.
+
+## Success story pages
+
+- [Baldwin flow meter 45.877.05](https://abcspareparts.eu/casi/baldwin-flow-meter-4587705.html): Success story: Baldwin flow meter 45.877.05. Request 19 Jun 2026, DHL dispatch 23 Jun 2026 — four days to shipment.
+- [Tamagawa incremental encoder 68-2048C/T-L3-12V](https://abcspareparts.eu/casi/tamagawa-encoder-68-2048c-t-l3-12v.html): Success story: Tamagawa incremental optical shaft encoder 68-2048C/T-L3-12V (OIS 68 series, new). Sourced for an industrial customer in Portugal.
+- [Autronica smoke detectors V-430/BH200 & V-530/BH500](https://abcspareparts.eu/casi/autronica-smoke-detectors-v430-v530.html): Success story: Cyprus enquiry for BHH-200 and BHH-500 (Autroprime addressable) — supplied as V-430/BH200 and V-530/BH500, replacements for 116-BHH-200/500.
 
 ## Optional
 

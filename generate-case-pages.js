@@ -34,6 +34,111 @@ function pickLang(caseRow, lang) {
   return caseRow[lang] || caseRow.de;
 }
 
+function buildCaseJsonLd(caseRow, de, canonical) {
+  const productName = `${caseRow.brand} ${caseRow.part_number}`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@id': `${BASE}/#organization`,
+        '@type': 'Organization',
+        name: 'ABCspareparts',
+        url: `${BASE}/`,
+        logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: de.title,
+        description: de.meta_description,
+        isPartOf: { '@id': `${BASE}/#website` },
+        inLanguage: LANGS,
+        breadcrumb: { '@id': `${canonical}#breadcrumb` }
+      },
+      {
+        '@type': 'Article',
+        '@id': `${canonical}#article`,
+        headline: de.title,
+        description: de.meta_description,
+        articleSection: 'Success stories',
+        datePublished: caseRow.request_date || undefined,
+        dateModified: caseRow.ship_date || caseRow.request_date || undefined,
+        author: { '@id': `${BASE}/#organization` },
+        publisher: { '@id': `${BASE}/#organization` },
+        isPartOf: { '@id': `${canonical}#webpage` },
+        about: [
+          { '@type': 'Brand', name: caseRow.brand },
+          { '@id': `${canonical}#product` }
+        ],
+        inLanguage: 'de',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
+      },
+      {
+        '@type': 'Product',
+        '@id': `${canonical}#product`,
+        name: productName,
+        sku: caseRow.part_number,
+        brand: { '@type': 'Brand', name: caseRow.brand },
+        description: de.meta_description,
+        category: de.fact_component_val
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/${HUB_FILE}` },
+          { '@type': 'ListItem', position: 3, name: caseRow.brand, item: canonical }
+        ]
+      }
+    ]
+  };
+}
+
+function buildHubJsonLd(cases, hubI18n) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@id': `${BASE}/#organization`,
+        '@type': 'Organization',
+        name: 'ABCspareparts',
+        url: `${BASE}/`,
+        logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE}/${HUB_FILE}#webpage`,
+        url: `${BASE}/${HUB_FILE}`,
+        name: hubI18n.de.hub_h1,
+        description: hubI18n.de.meta_description,
+        isPartOf: { '@id': `${BASE}/#website` },
+        inLanguage: LANGS,
+        breadcrumb: { '@id': `${BASE}/${HUB_FILE}#breadcrumb` },
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: cases.length,
+          itemListElement: cases.map((c, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: pickLang(c, 'de').title,
+            url: `${BASE}/${CASES_SUBDIR}/${c.slug}.html`
+          }))
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${BASE}/${HUB_FILE}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/${HUB_FILE}` }
+        ]
+      }
+    ]
+  };
+}
+
 function buildCasePage(caseRow) {
   const slug = caseRow.slug;
   const de = pickLang(caseRow, 'de');
@@ -58,6 +163,7 @@ function buildCasePage(caseRow) {
   <meta id="pageDescription" name="description" content="${escapeAttr(de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${canonical}">
+  <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
 ${hreflang}
   <meta property="og:type" content="article">
@@ -70,39 +176,7 @@ ${hreflang}
   <meta name="twitter:title" content="${escapeAttr(de.meta_title)}">
   <meta name="twitter:description" content="${escapeAttr(de.meta_description)}">
   <meta name="twitter:image" content="${BASE}/logo.png">
-  <script type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@id': `${BASE}/#organization`,
-        '@type': 'Organization',
-        name: 'ABCspareparts',
-        url: `${BASE}/`,
-        logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
-      },
-      {
-        '@type': 'Article',
-        '@id': `${canonical}#article`,
-        headline: de.title,
-        description: de.meta_description,
-        datePublished: caseRow.request_date || undefined,
-        dateModified: caseRow.ship_date || caseRow.request_date || undefined,
-        author: { '@id': `${BASE}/#organization` },
-        publisher: { '@id': `${BASE}/#organization` },
-        about: { '@type': 'Brand', name: caseRow.brand },
-        inLanguage: 'de',
-        mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/${HUB_FILE}` },
-          { '@type': 'ListItem', position: 3, name: caseRow.brand, item: canonical }
-        ]
-      }
-    ]
-  })}</script>
+  <script type="application/ld+json">${JSON.stringify(buildCaseJsonLd(caseRow, de, canonical))}</script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #fff; }
@@ -354,6 +428,8 @@ function buildHubPage(cases) {
     (l) => `  <link rel="alternate" hreflang="${l}" href="${BASE}/${HUB_FILE}?lang=${l}">`
   ).join('\n');
 
+  const hubJsonLd = buildHubJsonLd(cases, hubI18n);
+
   return `<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -361,14 +437,22 @@ function buildHubPage(cases) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">${escapeHtml(hubI18n.de.meta_title)}</title>
   <meta id="pageDescription" name="description" content="${escapeAttr(hubI18n.de.meta_description)}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" hreflang="x-default" href="${BASE}/${HUB_FILE}">
+  <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI crawlers">
 ${hreflang}
   <meta property="og:type" content="website">
   <meta property="og:url" content="${BASE}/${HUB_FILE}">
   <meta property="og:title" content="${escapeAttr(hubI18n.de.meta_title)}">
   <meta property="og:description" content="${escapeAttr(hubI18n.de.meta_description)}">
   <meta property="og:image" content="${BASE}/logo.png">
+  <meta property="og:site_name" content="ABCspareparts">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeAttr(hubI18n.de.meta_title)}">
+  <meta name="twitter:description" content="${escapeAttr(hubI18n.de.meta_description)}">
+  <meta name="twitter:image" content="${BASE}/logo.png">
+  <script type="application/ld+json">${JSON.stringify(hubJsonLd)}</script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; color: #333; }
@@ -413,9 +497,9 @@ ${hreflang}
   <main>
     <div class="container">
       <p class="hub-intro" data-i18n="hub_intro">${escapeHtml(hubI18n.de.hub_intro)}</p>
-      <div class="case-list">
+      <nav class="case-list" aria-label="Success stories">
 ${cardsHtml}
-      </div>
+      </nav>
     </div>
   </main>
   <footer class="footer">
@@ -513,6 +597,36 @@ ${body}</urlset>
   fs.writeFileSync(path.join(ROOT, 'sitemap-cases.xml'), xml, 'utf8');
 }
 
+function updateSitemapIndex() {
+  const p = path.join(ROOT, 'sitemap-index.xml');
+  let xml = fs.readFileSync(p, 'utf8');
+  xml = xml.replace(
+    /(<loc>https:\/\/abcspareparts\.eu\/sitemap-cases\.xml<\/loc>\s*<lastmod>)[^<]+(<\/lastmod>)/,
+    `$1${TODAY}$2`
+  );
+  fs.writeFileSync(p, xml, 'utf8');
+}
+
+function updateLlmsTxt(cases) {
+  const llmsPath = path.join(ROOT, 'llms.txt');
+  let content = fs.readFileSync(llmsPath, 'utf8');
+  const hubLine = `- [Success stories hub (casi di successo)](${BASE}/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (?lang=).`;
+  content = content.replace(/- \[Success stories[^\n]+\n/, hubLine + '\n');
+
+  const caseLines = cases.map((c) => {
+    const en = pickLang(c, 'en');
+    return `- [${en.title}](${BASE}/casi/${c.slug}.html): ${en.meta_description}`;
+  });
+  const caseSection = `## Success story pages\n\n${caseLines.join('\n')}\n`;
+
+  if (/## Success story pages/.test(content)) {
+    content = content.replace(/## Success story pages[\s\S]*?(?=\n## )/, caseSection.trimEnd());
+  } else {
+    content = content.replace(/\n## Optional/, `\n${caseSection}\n## Optional`);
+  }
+  fs.writeFileSync(llmsPath, content, 'utf8');
+}
+
 function buildRedirectPage(targetPath) {
   const safeTarget = targetPath.replace(/'/g, "\\'");
   return `<!DOCTYPE html>
@@ -567,6 +681,39 @@ function writeLegacyRedirects(cases) {
   }
 }
 
+function updateBrandCaseLinks(cases) {
+  const byBrand = new Map();
+  for (const c of cases) {
+    if (c.brand_slug) byBrand.set(c.brand_slug, c);
+  }
+  const marker = 'class="brand-success-story"';
+  for (const [brandSlug, caseRow] of byBrand) {
+    const brandPath = path.join(ROOT, 'marche', `${brandSlug}.html`);
+    if (!fs.existsSync(brandPath)) continue;
+    let html = fs.readFileSync(brandPath, 'utf8');
+    const caseUrl = `../casi/${caseRow.slug}.html`;
+    const en = pickLang(caseRow, 'en');
+    const block = `      <section ${marker} aria-label="Success story">
+        <h2>Success story</h2>
+        <p>Real supply case for ${escapeHtml(caseRow.brand)}: <a href="${caseUrl}">${escapeHtml(en.title)}</a> — <a href="../casi.html">all success stories</a>.</p>
+      </section>
+`;
+    if (html.includes(marker)) {
+      html = html.replace(
+        new RegExp(`\\s*<section ${marker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^]*?</section>\\n`),
+        '\n' + block
+      );
+    } else {
+      html = html.replace(
+        '      <section class="related-brands"',
+        block + '      <section class="related-brands"'
+      );
+    }
+    fs.writeFileSync(brandPath, html, 'utf8');
+    console.log('Updated brand page link:', brandSlug);
+  }
+}
+
 function main() {
   const cases = loadCases();
   if (!cases.length) throw new Error('No published cases in supply-cases.json');
@@ -601,6 +748,15 @@ function main() {
 
   writeSitemapCases(cases);
   console.log('Wrote sitemap-cases.xml');
+
+  updateSitemapIndex();
+  console.log('Updated sitemap-index.xml lastmod for cases');
+
+  updateLlmsTxt(cases);
+  console.log('Updated llms.txt success story pages');
+
+  updateBrandCaseLinks(cases);
+
   console.log('Done —', cases.length, 'case page(s)');
 }
 

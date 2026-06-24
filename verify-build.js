@@ -68,7 +68,67 @@ for (const c of publishedCases) {
 }
 if (!fs.existsSync(path.join(__dirname, 'casi.html'))) throw new Error('casi.html missing — run npm run build:casi');
 
-const indexHead = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+const casiHtml = fs.readFileSync(path.join(__dirname, 'casi.html'), 'utf8');
+if (!casiHtml.includes('rel="canonical" href="https://abcspareparts.eu/casi.html"')) {
+  throw new Error('casi.html canonical URL is missing or incorrect');
+}
+if (!casiHtml.includes('name="robots" content="index, follow')) {
+  throw new Error('casi.html is missing indexable robots meta');
+}
+if (!casiHtml.includes('application/ld+json')) {
+  throw new Error('casi.html is missing JSON-LD');
+}
+if (!casiHtml.includes('"@type":"CollectionPage"') || !casiHtml.includes('"@type":"ItemList"')) {
+  throw new Error('casi.html is missing CollectionPage/ItemList JSON-LD');
+}
+if (!casiHtml.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
+  throw new Error('casi.html is missing llms.txt discovery link');
+}
+
+for (const c of publishedCases) {
+  const html = fs.readFileSync(path.join(__dirname, 'casi', `${c.slug}.html`), 'utf8');
+  if (!html.includes('name="robots" content="index, follow')) {
+    throw new Error(`Case page ${c.slug}.html is missing indexable robots meta`);
+  }
+  if (!html.includes('application/ld+json')) {
+    throw new Error(`Case page ${c.slug}.html is missing JSON-LD`);
+  }
+  if (!html.includes('"@type":"Article"') || !html.includes('"@type":"Product"')) {
+    throw new Error(`Case page ${c.slug}.html is missing Article/Product JSON-LD`);
+  }
+  if (!html.includes('rel="canonical"')) {
+    throw new Error(`Case page ${c.slug}.html is missing canonical URL`);
+  }
+  if (!html.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
+    throw new Error(`Case page ${c.slug}.html is missing llms.txt discovery link`);
+  }
+}
+
+const llmsTxt = fs.readFileSync(path.join(__dirname, 'llms.txt'), 'utf8');
+if (!llmsTxt.includes('casi.html')) {
+  throw new Error('llms.txt does not mention casi.html');
+}
+if (!llmsTxt.includes('## Success story pages')) {
+  throw new Error('llms.txt is missing Success story pages section');
+}
+for (const c of publishedCases) {
+  if (!llmsTxt.includes(`casi/${c.slug}.html`)) {
+    throw new Error(`llms.txt does not mention case page casi/${c.slug}.html`);
+  }
+}
+
+const robotsTxt = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf8');
+if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) {
+  throw new Error('robots.txt is missing sitemap-cases.xml reference');
+}
+
+const indexHead = indexHtml;
+if (!indexHtml.includes('rel="alternate" type="text/plain" href="llms.txt"')) {
+  throw new Error('index.html is missing llms.txt discovery link');
+}
+if (!indexHtml.includes('"@type": "CollectionPage"') && !indexHtml.includes('"@type":"CollectionPage"')) {
+  throw new Error('index.html is missing CollectionPage JSON-LD for success stories');
+}
 if (/2600\+/.test(indexHead)) {
   throw new Error('index.html still contains outdated 2600+ SEO text');
 }
