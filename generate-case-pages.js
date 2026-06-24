@@ -34,6 +34,126 @@ function pickLang(caseRow, lang) {
   return caseRow[lang] || caseRow.de;
 }
 
+const FOOTER_CSS = `
+    .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
+    .footer-content { max-width: 800px; margin: 0 auto; }
+    .footer-links { margin-bottom: 1rem; }
+    .footer-links a { color: #fff; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+    .separator { margin: 0 0.5rem; opacity: 0.7; }
+    .footer-info { font-size: 0.9rem; opacity: 0.9; }`;
+
+const FOOTER_I18N = {
+  de: {
+    footer_brands: 'Marken',
+    footer_cases: 'Erfolgsgeschichten',
+    footer_contact: 'Kontakt',
+    footer_imprint: 'Impressum',
+    footer_privacy: 'Datenschutz',
+    footer_terms: 'AGB',
+    footer_shipping: 'Versand',
+    footer_cookies: 'Cookies',
+    footer_rights: 'Alle Rechte vorbehalten.'
+  },
+  en: {
+    footer_brands: 'Brands',
+    footer_cases: 'Success stories',
+    footer_contact: 'Contact',
+    footer_imprint: 'Imprint',
+    footer_privacy: 'Privacy',
+    footer_terms: 'Terms',
+    footer_shipping: 'Shipping',
+    footer_cookies: 'Cookies',
+    footer_rights: 'All rights reserved.'
+  },
+  it: {
+    footer_brands: 'Marche',
+    footer_cases: 'Casi di successo',
+    footer_contact: 'Contatti',
+    footer_imprint: 'Impressum',
+    footer_privacy: 'Privacy',
+    footer_terms: 'Condizioni',
+    footer_shipping: 'Spedizione',
+    footer_cookies: 'Cookie',
+    footer_rights: 'Tutti i diritti riservati.'
+  },
+  es: {
+    footer_brands: 'Marcas',
+    footer_cases: 'Casos de éxito',
+    footer_contact: 'Contacto',
+    footer_imprint: 'Aviso legal',
+    footer_privacy: 'Privacidad',
+    footer_terms: 'Términos',
+    footer_shipping: 'Envío',
+    footer_cookies: 'Cookies',
+    footer_rights: 'Todos los derechos reservados.'
+  },
+  fr: {
+    footer_brands: 'Marques',
+    footer_cases: 'Histoires de réussite',
+    footer_contact: 'Contact',
+    footer_imprint: 'Mentions légales',
+    footer_privacy: 'Confidentialité',
+    footer_terms: 'CGV',
+    footer_shipping: 'Livraison',
+    footer_cookies: 'Cookies',
+    footer_rights: 'Tous droits réservés.'
+  }
+};
+
+function withFooterI18n(pageI18n) {
+  const out = {};
+  for (const L of LANGS) {
+    out[L] = { ...(pageI18n[L] || {}), ...FOOTER_I18N[L] };
+  }
+  return out;
+}
+
+function buildFooterHtml(linkPrefix) {
+  const p = linkPrefix || '';
+  return `<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="${p}marche.html" data-i18n="footer_brands">Marche</a>
+        <span class="separator">|</span>
+        <a href="${p}${HUB_FILE}" data-i18n="footer_cases">Erfolgsgeschichten</a>
+        <span class="separator">|</span>
+        <a href="${p}index.html#contact" data-i18n="footer_contact">Kontakt</a>
+        <span class="separator">|</span>
+        <a href="${p}impressum.html" target="_blank" data-i18n="footer_imprint">Impressum</a>
+        <span class="separator">|</span>
+        <a href="${p}datenschutz.html" target="_blank" data-i18n="footer_privacy">Datenschutz</a>
+        <span class="separator">|</span>
+        <a href="${p}agb.html" target="_blank" data-i18n="footer_terms">AGB</a>
+        <span class="separator">|</span>
+        <a href="${p}versand.html" target="_blank" data-i18n="footer_shipping">Versand</a>
+        <span class="separator">|</span>
+        <a href="${p}cookies.html" target="_blank" data-i18n="footer_cookies">Cookies</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+      </div>
+    </div>
+  </div>
+</footer>`;
+}
+
+function buildCaseHubLabels(caseRow) {
+  const breadcrumb = {
+    de: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Erfolgsgeschichten</a> · ${caseRow.brand}`,
+    en: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Success stories</a> · ${caseRow.brand}`,
+    it: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi di successo</a> · ${caseRow.brand}`,
+    es: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${caseRow.brand}`,
+    fr: `<a href="../index.html">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${caseRow.brand}`
+  };
+  const out = {};
+  for (const L of LANGS) {
+    out[L] = { case_breadcrumb: breadcrumb[L], ...FOOTER_I18N[L] };
+  }
+  return out;
+}
+
 function buildCaseJsonLd(caseRow, de, canonical) {
   const productName = `${caseRow.brand} ${caseRow.part_number}`;
   return {
@@ -208,9 +328,7 @@ ${hreflang}
     .cta-secondary { background: #1e3a5f; color: #fff !important; }
     .cta-secondary:hover { background: #2d5a87; }
     .disclaimer { font-size: 0.85rem; color: #666; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
-    .footer { background: #1e3a5f; color: #fff; padding: 1.75rem 1.5rem; text-align: center; }
-    .footer a { color: #fff; text-decoration: none; margin: 0 0.35rem; }
-    .footer a:hover { text-decoration: underline; }
+${FOOTER_CSS}
   </style>
 </head>
 <body>
@@ -258,24 +376,12 @@ ${hreflang}
       <p class="disclaimer" data-i18n="disclaimer">${de.disclaimer}</p>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <a href="../index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="../${HUB_FILE}" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
-      <a href="../marche.html" data-i18n="footer_brands">Marche</a>
-    </div>
-  </footer>
+  ${buildFooterHtml('../')}
   <script>
   (function () {
     var BRAND_SLUG = ${JSON.stringify(caseRow.brand_slug)};
     var translations = ${JSON.stringify(translationsPayload)};
-    var hubLabels = {
-      de: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Erfolgsgeschichten</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Erfolgsgeschichten', footer_brands: 'Marken' },
-      en: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Success stories</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Success stories', footer_brands: 'Brands' },
-      it: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi di successo</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casi di successo', footer_brands: 'Marche' },
-      es: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casos de éxito', footer_brands: 'Marcas' },
-      fr: { case_breadcrumb: '<a href="../index.html">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Histoires de réussite', footer_brands: 'Marques' }
-    };
+    var hubLabels = ${JSON.stringify(buildCaseHubLabels(caseRow))};
     var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
@@ -366,17 +472,14 @@ function buildHubPage(cases) {
     }
   }
 
-  const hubI18n = {
+  const hubPageI18n = {
     de: {
       meta_title: 'Erfolgsgeschichten — Industrieersatzteile in Europa | ABCspareparts',
       meta_description: 'Echte Erfolgsfälle: Marke, Teilenummer, Branche und Lieferzeit — von der Anfrage bis zum Versand in Europa. Kunden anonymisiert.',
       hub_h1: 'Erfolgsgeschichten',
       hub_subtitle: 'Echte Lieferungen — Marke, Teilenummer und Ablauf, ohne Kundennamen.',
       hub_intro: 'Hier zeigen wir ausgewählte Erfolgsfälle: welches Ersatzteil, welche Marke, welche Branche und wie schnell von der Anfrage bis zum Versand. Kundennamen nennen wir aus Vertraulichkeitsgründen nicht.',
-      hub_read_more: 'Weiterlesen',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Erfolgsgeschichten',
-      footer_brands: 'Marken'
+      hub_read_more: 'Weiterlesen'
     },
     en: {
       meta_title: 'Success stories — industrial spare parts in Europe | ABCspareparts',
@@ -384,10 +487,7 @@ function buildHubPage(cases) {
       hub_h1: 'Success stories',
       hub_subtitle: 'Real deliveries — brand, part number and timeline, without naming customers.',
       hub_intro: 'Selected success stories: which spare part, which brand, which industry, and how fast from request to shipment. We do not publish customer names for confidentiality.',
-      hub_read_more: 'Read more',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Success stories',
-      footer_brands: 'Brands'
+      hub_read_more: 'Read more'
     },
     it: {
       meta_title: 'Casi di successo — ricambi industriali in Europa | ABCspareparts',
@@ -395,10 +495,7 @@ function buildHubPage(cases) {
       hub_h1: 'Casi di successo',
       hub_subtitle: 'Forniture reali — marca, codice e tempi, senza nominare i clienti.',
       hub_intro: 'Documentiamo casi di successo selezionati: quale ricambio, quale marca, quale settore e quanto tempo dalla richiesta alla spedizione. I nomi dei clienti non vengono pubblicati per riservatezza.',
-      hub_read_more: 'Leggi tutto',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Casi di successo',
-      footer_brands: 'Marche'
+      hub_read_more: 'Leggi tutto'
     },
     es: {
       meta_title: 'Casos de éxito — recambios industriales en Europa | ABCspareparts',
@@ -406,10 +503,7 @@ function buildHubPage(cases) {
       hub_h1: 'Casos de éxito',
       hub_subtitle: 'Entregas reales — marca, referencia y plazos, sin nombrar clientes.',
       hub_intro: 'Casos de éxito seleccionados: qué recambio, qué marca, qué sector y cuánto tiempo hasta el envío. No publicamos nombres de clientes por confidencialidad.',
-      hub_read_more: 'Leer más',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Casos de éxito',
-      footer_brands: 'Marcas'
+      hub_read_more: 'Leer más'
     },
     fr: {
       meta_title: 'Histoires de réussite — pièces industrielles en Europe | ABCspareparts',
@@ -417,12 +511,10 @@ function buildHubPage(cases) {
       hub_h1: 'Histoires de réussite',
       hub_subtitle: 'Livraisons réelles — marque, référence et délais, sans nommer les clients.',
       hub_intro: 'Histoires de réussite sélectionnées : quelle pièce, quelle marque, quel secteur et délai jusqu’à l’expédition. Les noms des clients ne sont pas publiés pour confidentialité.',
-      hub_read_more: 'Lire la suite',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Histoires de réussite',
-      footer_brands: 'Marques'
+      hub_read_more: 'Lire la suite'
     }
   };
+  const hubI18n = withFooterI18n(hubPageI18n);
 
   const hreflang = LANGS.map(
     (l) => `  <link rel="alternate" hreflang="${l}" href="${BASE}/${HUB_FILE}?lang=${l}">`
@@ -474,8 +566,7 @@ ${hreflang}
     .case-teaser { font-size: 0.94rem; color: #444; margin-bottom: 0.75rem; }
     .case-read { font-weight: 600; color: #e67e22; text-decoration: none; font-size: 0.92rem; }
     .case-read:hover { text-decoration: underline; }
-    .footer { background: #1e3a5f; color: #fff; padding: 1.75rem 1.5rem; text-align: center; }
-    .footer a { color: #fff; text-decoration: none; margin: 0 0.35rem; }
+${FOOTER_CSS}
   </style>
 </head>
 <body>
@@ -502,13 +593,7 @@ ${cardsHtml}
       </nav>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <a href="index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="${HUB_FILE}" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
-      <a href="marche.html" data-i18n="footer_brands">Marken</a>
-    </div>
-  </footer>
+  ${buildFooterHtml('')}
   <script>
   (function(){
     var translations = ${JSON.stringify(hubI18n)};
