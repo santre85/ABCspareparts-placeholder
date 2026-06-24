@@ -511,22 +511,59 @@ ${body}</urlset>
   fs.writeFileSync(path.join(ROOT, 'sitemap-cases.xml'), xml, 'utf8');
 }
 
-function removeLegacyCasePaths() {
-  const legacyHub = path.join(ROOT, 'casi.html');
-  if (fs.existsSync(legacyHub)) {
-    fs.unlinkSync(legacyHub);
-    console.log('Removed legacy casi.html');
+function buildRedirectPage(targetPath) {
+  const safeTarget = targetPath.replace(/'/g, "\\'");
+  return `<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Redirect…</title>
+  <script>location.replace('${safeTarget}' + location.search + location.hash);</script>
+</head>
+<body>
+  <p><a href="${targetPath}">Continue</a></p>
+</body>
+</html>
+`;
+}
+
+function writeLegacyRedirects(cases) {
+  fs.writeFileSync(path.join(ROOT, 'casi.html'), buildRedirectPage(HUB_FILE), 'utf8');
+  console.log('Wrote casi.html redirect →', HUB_FILE);
+
+  const legacySlugs = new Set();
+  for (const c of cases) {
+    for (const oldSlug of c.legacy_slugs || []) legacySlugs.add(oldSlug);
   }
+
   const legacyDir = path.join(ROOT, 'casi');
-  if (fs.existsSync(legacyDir)) {
+  if (legacySlugs.size) {
+    if (!fs.existsSync(legacyDir)) fs.mkdirSync(legacyDir);
+    for (const c of cases) {
+      for (const oldSlug of c.legacy_slugs || []) {
+        const target = `../${CASES_SUBDIR}/${c.slug}.html`;
+        fs.writeFileSync(path.join(legacyDir, `${oldSlug}.html`), buildRedirectPage(target), 'utf8');
+        console.log('Wrote casi/' + oldSlug + '.html redirect');
+      }
+    }
+    for (const f of fs.readdirSync(legacyDir)) {
+      if (!f.endsWith('.html')) continue;
+      const slug = f.replace(/\.html$/, '');
+      if (!legacySlugs.has(slug)) {
+        fs.unlinkSync(path.join(legacyDir, f));
+        console.log('Removed stale redirect', f);
+      }
+    }
+  } else if (fs.existsSync(legacyDir)) {
     for (const f of fs.readdirSync(legacyDir)) {
       if (f.endsWith('.html')) fs.unlinkSync(path.join(legacyDir, f));
     }
     try {
       fs.rmdirSync(legacyDir);
-      console.log('Removed legacy casi/ directory');
     } catch (e) {
-      console.warn('Could not remove legacy casi/ directory:', e.message);
+      console.warn('Could not remove casi/ directory:', e.message);
     }
   }
 }
@@ -534,8 +571,6 @@ function removeLegacyCasePaths() {
 function main() {
   const cases = loadCases();
   if (!cases.length) throw new Error('No published cases in supply-cases.json');
-
-  removeLegacyCasePaths();
 
   if (!fs.existsSync(CASI_DIR)) fs.mkdirSync(CASI_DIR);
 
@@ -557,6 +592,8 @@ function main() {
 
   fs.writeFileSync(path.join(ROOT, HUB_FILE), buildHubPage(cases), 'utf8');
   console.log('Wrote', HUB_FILE);
+
+  writeLegacyRedirects(cases);
 
   writeSitemapCases(cases);
   console.log('Wrote sitemap-cases.xml');

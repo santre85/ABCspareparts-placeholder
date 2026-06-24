@@ -2,6 +2,7 @@
   "cases": [
     {
       "slug": "baldwin-flow-meter-4587705",
+      "legacy_slugs": ["baldwin-flow-meter-4587705-spagna"],
       "brand": "Baldwin",
       "brand_slug": "baldwin",
       "part_number": "45.877.05",

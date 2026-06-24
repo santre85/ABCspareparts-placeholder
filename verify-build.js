@@ -67,6 +67,7 @@ for (const c of publishedCases) {
   if (!fs.existsSync(caseFile)) throw new Error(`Missing generated case page: casi-di-successo/${c.slug}.html`);
 }
 if (!fs.existsSync(path.join(__dirname, 'casi-di-successo.html'))) throw new Error('casi-di-successo.html missing — run npm run build:casi');
+if (!fs.existsSync(path.join(__dirname, 'casi.html'))) throw new Error('casi.html redirect missing — run npm run build:casi');
 
 const indexHead = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
 if (/2600\+/.test(indexHead)) {
