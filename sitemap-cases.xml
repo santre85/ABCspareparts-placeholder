@@ -12,7 +12,7 @@ layout: none
     <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/casi.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/casi.html?lang=fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi.html"/>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -24,7 +24,7 @@ layout: none
     <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/casi/baldwin-flow-meter-4587705.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/casi/baldwin-flow-meter-4587705.html?lang=fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi/baldwin-flow-meter-4587705.html"/>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36,7 +36,7 @@ layout: none
     <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/casi/tamagawa-encoder-68-2048c-t-l3-12v.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/casi/tamagawa-encoder-68-2048c-t-l3-12v.html?lang=fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi/tamagawa-encoder-68-2048c-t-l3-12v.html"/>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -48,7 +48,19 @@ layout: none
     <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/casi/autronica-smoke-detectors-v430-v530.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/casi/autronica-smoke-detectors-v430-v530.html?lang=fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi/autronica-smoke-detectors-v430-v530.html"/>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html"/>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

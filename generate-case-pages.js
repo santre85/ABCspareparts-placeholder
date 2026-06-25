@@ -183,7 +183,7 @@ function buildCaseJsonLd(caseRow, de, canonical) {
         description: de.meta_description,
         articleSection: 'Success stories',
         datePublished: caseRow.request_date || undefined,
-        dateModified: caseRow.ship_date || caseRow.request_date || undefined,
+        dateModified: caseRow.ship_date || caseRow.quote_date || caseRow.request_date || undefined,
         author: { '@id': `${BASE}/#organization` },
         publisher: { '@id': `${BASE}/#organization` },
         isPartOf: { '@id': `${canonical}#webpage` },
