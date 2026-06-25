@@ -21,7 +21,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Rexroth axial piston pump A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/casi/rexroth-pump-a10vso28dfr1-ppa12n.html): Success story: Rexroth A10VSO28 axial piston variable pump A10VSO28DFR1/31L-PPA12N for a power plant operator in eastern Germany — exact type code sourced.
 - [M+S Hydraulic motor MMS50C](https://abcspareparts.eu/casi/ms-hydraulic-motor-mms50c-yacht.html): Success story: M+S Hydraulic MMS50C orbital motor for a yacht repair in Spain — hydraulic drive restored to service.
 - [Hübner tachogenerator GT9.06L/420K](https://abcspareparts.eu/casi/hubner-tachogenerator-gt906l-420k.html): Success story: Hübner GT9.06L/420K analog Longlife DC tachogenerator for a repair job in Italy — 20 V at 1000 rpm, fits Siemens 1HU servomotors.
-- [Radio Energie DC tachogenerator TTN0507RE.0](https://abcspareparts.eu/casi/radio-energie-tachogenerator-ttn0507re0.html): Success story: Radio Energie RE.O110 DC tachogenerator TTN0507RE.0 — 7 V/1000 rpm, B14 flange, for web guiding equipment in Germany.
+- [Radio Energie DC tachogenerator TTN0507RE.0](https://abcspareparts.eu/casi/radio-energie-tachogenerator-ttn0507re0.html): Success story: Radio Energie RE.O110 DC tachogenerator TTN0507RE.0 — 7 V/1000 rpm, B14 flange, for food production in Bavaria.
 ## Optional
 
 - [Impressum (legal notice)](https://abcspareparts.eu/impressum.html)
