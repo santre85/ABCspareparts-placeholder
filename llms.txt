@@ -18,6 +18,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Autronica smoke detectors V-430/BH200 & V-530/BH500](https://abcspareparts.eu/casi/autronica-smoke-detectors-v430-v530.html): Success story: Cyprus enquiry for BHH-200 and BHH-500 (Autroprime addressable) — supplied as V-430/BH200 and V-530/BH500, replacements for 116-BHH-200/500.
 - [Humphrey pneumatic valve 41024VDC](https://abcspareparts.eu/casi/humphrey-valve-41024vdc.html): Success story: Humphrey 41024VDC 4-way 24 VDC solenoid valve. Request 19 May 2026, quote sent 20 May 2026 — one business day to offer.
 - [Siemens SIMATIC HMI TP1200 Comfort](https://abcspareparts.eu/casi/siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0.html): Success story: failed HMI on food-processing equipment — Siemens TP1200 Comfort 6AV2124-0MC010-AX0 supplied, machine returned to operation.
+- [Rexroth axial piston pump A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/casi/rexroth-pump-a10vso28dfr1-ppa12n.html): Success story: Rexroth A10VSO28 axial piston variable pump A10VSO28DFR1/31L-PPA12N for a power plant operator in eastern Germany — exact type code sourced.
 ## Optional
 
 - [Impressum (legal notice)](https://abcspareparts.eu/impressum.html)
