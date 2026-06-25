@@ -20,6 +20,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Siemens SIMATIC HMI TP1200 Comfort](https://abcspareparts.eu/casi/siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0.html): Success story: failed HMI on food-processing equipment — Siemens TP1200 Comfort 6AV2124-0MC010-AX0 supplied, machine returned to operation.
 - [Rexroth axial piston pump A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/casi/rexroth-pump-a10vso28dfr1-ppa12n.html): Success story: Rexroth A10VSO28 axial piston variable pump A10VSO28DFR1/31L-PPA12N for a power plant operator in eastern Germany — exact type code sourced.
 - [M+S Hydraulic motor MMS50C](https://abcspareparts.eu/casi/ms-hydraulic-motor-mms50c-yacht.html): Success story: M+S Hydraulic MMS50C orbital motor for a yacht repair in Spain — hydraulic drive restored to service.
+- [Hübner tachogenerator GT9.06L/420K](https://abcspareparts.eu/casi/hubner-tachogenerator-gt906l-420k.html): Success story: Hübner GT9.06L/420K analog Longlife DC tachogenerator for a repair job in Italy — 20 V at 1000 rpm, fits Siemens 1HU servomotors.
 ## Optional
 
 - [Impressum (legal notice)](https://abcspareparts.eu/impressum.html)
