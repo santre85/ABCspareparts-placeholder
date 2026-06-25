@@ -263,7 +263,11 @@ function buildCasePage(caseRow) {
   const slug = caseRow.slug;
   const de = pickLang(caseRow, 'de');
   const canonical = `${BASE}/${CASES_SUBDIR}/${slug}.html`;
-  const brandUrl = `../marche/${caseRow.brand_slug}.html`;
+  let brandUrl = '../index.html#contact';
+  if (caseRow.brand_slug) {
+    const brandPage = path.join(ROOT, 'marche', `${caseRow.brand_slug}.html`);
+    brandUrl = fs.existsSync(brandPage) ? `../marche/${caseRow.brand_slug}.html` : '../marche.html';
+  }
   const translationsPayload = {};
   for (const L of LANGS) {
     const t = pickLang(caseRow, L);
