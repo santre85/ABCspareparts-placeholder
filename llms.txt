@@ -22,6 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [M+S Hydraulic motor MMS50C](https://abcspareparts.eu/casi/ms-hydraulic-motor-mms50c-yacht.html): Success story: M+S Hydraulic MMS50C orbital motor for a yacht repair in Spain — hydraulic drive restored to service.
 - [Hübner tachogenerator GT9.06L/420K](https://abcspareparts.eu/casi/hubner-tachogenerator-gt906l-420k.html): Success story: Hübner GT9.06L/420K analog Longlife DC tachogenerator for a repair job in Italy — 20 V at 1000 rpm, fits Siemens 1HU servomotors.
 - [Radio Energie DC tachogenerator TTN0507RE.0](https://abcspareparts.eu/casi/radio-energie-tachogenerator-ttn0507re0.html): Success story: Radio Energie RE.O110 DC tachogenerator TTN0507RE.0 — 7 V/1000 rpm, B14 flange, for food production in Bavaria.
+- [M&S Armaturen gasket 57600-1000300](https://abcspareparts.eu/casi/ms-armaturen-gasket-57600-1000300-dn100.html): Success story: M&S Armaturen EPDM Classic gasket 57600-1000300 for DN100 butterfly valve. Order 25 Jun 2026, delivery date 13 Jul 2026 — 10 pcs for a new customer.
 ## Optional
 
 - [Impressum (legal notice)](https://abcspareparts.eu/impressum.html)
