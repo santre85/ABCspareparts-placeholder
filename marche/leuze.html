@@ -243,9 +243,9 @@
     }
     function buildIframeSrc(langCode, partNumber) {
       var lang = langCode || 'en';
-      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang) + '&manufacturer=' + encodeURIComponent(BRAND);
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang) + '&custom_manufacturer=' + encodeURIComponent(BRAND);
       var part = partNumber || SELECTED_PART || getUrlPart() || '';
-      if (part) url += '&part_number=' + encodeURIComponent(part);
+      if (part) url += '&custom_part_numbers=' + encodeURIComponent(part);
       return url;
     }
     function updateFormIframeLang(langCode, partNumber) {

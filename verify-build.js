@@ -158,8 +158,8 @@ for (const slug of partsSlugs) {
   if (!content.includes('brand-supplied-parts')) {
     throw new Error(`Missing supplied-parts section in marche/${f}`);
   }
-  if (!content.includes('part-quote-link')) {
-    throw new Error(`Missing part quote links in marche/${f}`);
+  if (!content.includes('custom_part_numbers=')) {
+    throw new Error(`Missing ERP part prefill param in marche/${f}`);
   }
 }
 
