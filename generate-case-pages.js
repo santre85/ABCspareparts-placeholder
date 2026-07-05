@@ -689,10 +689,21 @@ ${body}</urlset>
 function updateSitemapIndex() {
   const p = path.join(ROOT, 'sitemap-index.xml');
   let xml = fs.readFileSync(p, 'utf8');
-  xml = xml.replace(
-    /(<loc>https:\/\/abcspareparts\.eu\/sitemap-cases\.xml<\/loc>\s*<lastmod>)[^<]+(<\/lastmod>)/,
-    `$1${TODAY}$2`
-  );
+  if (!xml.includes('/sitemap-cases.xml')) {
+    xml = xml.replace(
+      '</sitemapindex>',
+      `  <sitemap>
+    <loc>${BASE}/sitemap-cases.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+</sitemapindex>`
+    );
+  } else {
+    xml = xml.replace(
+      /(<loc>https:\/\/abcspareparts\.eu\/sitemap-cases\.xml<\/loc>\s*<lastmod>)[^<]+(<\/lastmod>)/,
+      `$1${TODAY}$2`
+    );
+  }
   fs.writeFileSync(p, xml, 'utf8');
 }
 

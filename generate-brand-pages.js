@@ -25,6 +25,24 @@ if (Object.keys(TOP_BRAND_BY_SLUG).length) {
   console.log('top-brands-content.json: slugs', Object.keys(TOP_BRAND_BY_SLUG).length);
 }
 
+function loadPartsBySlug() {
+  try {
+    const p = path.join(ROOT, 'brand-order-parts.json');
+    if (!fs.existsSync(p)) return new Map();
+    const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const map = new Map();
+    for (const row of data.brands || []) {
+      if (!row.brand_slug || !row.parts?.length) continue;
+      map.set(row.brand_slug, row.parts);
+    }
+    console.log('brand-order-parts.json: brands with parts', map.size);
+    return map;
+  } catch (e) {
+    console.warn('brand-order-parts.json:', e.message);
+    return new Map();
+  }
+}
+
 function mergeTopBrandContent(translations, slug) {
   const row = TOP_BRAND_BY_SLUG[slug];
   if (!row || typeof row !== 'object') return;
@@ -119,7 +137,11 @@ function buildTranslations(brand) {
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marken',
       marca_footer_imprint: 'Impressum',
-      marca_footer_privacy: 'Datenschutz'
+      marca_footer_privacy: 'Datenschutz',
+      brand_parts_title: 'Bereits beschaffte Teilenummern',
+      brand_parts_intro: 'Diese Referenzen haben wir bereits für Kunden in Europa beschafft. Klicken Sie auf eine Teilenummer, um eine <strong>unverbindliche Anfrage</strong> mit vorausgefülltem Formular zu senden.',
+      brand_parts_case: 'Erfolgsgeschichte',
+      brand_parts_quote: 'Angebot anfragen'
     },
     en: {
       meta_title: highlightPricing
@@ -156,7 +178,11 @@ function buildTranslations(brand) {
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Brands',
       marca_footer_imprint: 'Imprint',
-      marca_footer_privacy: 'Privacy'
+      marca_footer_privacy: 'Privacy',
+      brand_parts_title: 'Part numbers we have supplied',
+      brand_parts_intro: 'We have already sourced these references for customers across Europe. Click a part number to open a <strong>no-obligation request</strong> with the code pre-filled.',
+      brand_parts_case: 'Success story',
+      brand_parts_quote: 'Request quote'
     },
     it: {
       meta_title: highlightPricing
@@ -193,7 +219,11 @@ function buildTranslations(brand) {
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marche',
       marca_footer_imprint: 'Impressum',
-      marca_footer_privacy: 'Privacy'
+      marca_footer_privacy: 'Privacy',
+      brand_parts_title: 'Codici articolo già forniti',
+      brand_parts_intro: 'Queste referenze le abbiamo già approvvigionate per clienti in Europa. Clicchi sul codice per aprire una <strong>richiesta senza impegno</strong> con il modulo precompilato.',
+      brand_parts_case: 'Caso di successo',
+      brand_parts_quote: 'Richiedi preventivo'
     },
     es: {
       meta_title: highlightPricing
@@ -230,7 +260,11 @@ function buildTranslations(brand) {
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marcas',
       marca_footer_imprint: 'Aviso legal',
-      marca_footer_privacy: 'Privacidad'
+      marca_footer_privacy: 'Privacidad',
+      brand_parts_title: 'Referencias ya suministradas',
+      brand_parts_intro: 'Estas referencias ya las hemos suministrado a clientes en Europa. Haga clic en el código para abrir una <strong>solicitud sin compromiso</strong> con el formulario precargado.',
+      brand_parts_case: 'Caso de éxito',
+      brand_parts_quote: 'Solicitar presupuesto'
     },
     fr: {
       meta_title: highlightPricing
@@ -267,12 +301,16 @@ function buildTranslations(brand) {
       marca_footer_home: 'ABCspareparts',
       marca_footer_brands: 'Marques',
       marca_footer_imprint: 'Mentions légales',
-      marca_footer_privacy: 'Confidentialité'
+      marca_footer_privacy: 'Confidentialité',
+      brand_parts_title: 'Références déjà fournies',
+      brand_parts_intro: 'Nous avons déjà approvisionné ces références pour des clients en Europe. Cliquez sur une référence pour ouvrir une <strong>demande sans engagement</strong> avec le formulaire prérempli.',
+      brand_parts_case: 'Histoire de réussite',
+      brand_parts_quote: 'Demander un devis'
     }
   };
 }
 
-function buildLdJson(brand, slug, tDe) {
+function buildLdJson(brand, slug, tDe, suppliedParts) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
   const graph = {
     '@context': 'https://schema.org',
@@ -314,17 +352,68 @@ function buildLdJson(brand, slug, tDe) {
       }
     ]
   };
+  if (suppliedParts && suppliedParts.length) {
+    graph['@graph'].push({
+      '@type': 'ItemList',
+      '@id': pageUrl + '#supplied-parts',
+      name: `${brand} – supplied part numbers`,
+      description: tDe.brand_parts_intro.replace(/<[^>]+>/g, ''),
+      numberOfItems: suppliedParts.length,
+      itemListElement: suppliedParts.map((part, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Product',
+          name: `${brand} ${part.part_number}`,
+          sku: part.part_number,
+          description: part.description || part.part_number,
+          brand: { '@type': 'Brand', name: brand },
+          offers: {
+            '@type': 'Offer',
+            url: `${pageUrl}?part=${encodeURIComponent(part.part_number)}#contact`,
+            availability: 'https://schema.org/InStock',
+            seller: { '@id': `${BASE}/#organization` }
+          }
+        }
+      }))
+    });
+  }
   return JSON.stringify(graph);
 }
 
-function buildHtml(brand, slug, translations, relatedRows) {
+function buildSuppliedPartsHtml(suppliedParts) {
+  if (!suppliedParts || !suppliedParts.length) return '';
+  const items = suppliedParts.map((part) => {
+    const pn = escapeHtml(part.part_number);
+    const pnAttr = escapeAttr(part.part_number);
+    const desc = part.description && part.description !== part.part_number
+      ? `<span class="part-desc">${escapeHtml(part.description)}</span>`
+      : '';
+    const caseLink = part.case_slug
+      ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
+      : '';
+    return `<li><a href="#contact" class="part-quote-link" data-part="${pnAttr}" title="${pnAttr}">${pn}</a>${desc}${caseLink}</li>`;
+  }).join('\n          ');
+  return `
+      <section class="brand-supplied-parts" id="supplied-parts" aria-labelledby="brand-parts-heading">
+        <h2 id="brand-parts-heading" data-i18n="brand_parts_title">Bereits beschaffte Teilenummern</h2>
+        <p class="parts-intro" data-i18n="brand_parts_intro">Diese Referenzen haben wir bereits für Kunden in Europa beschafft.</p>
+        <ul class="brand-parts-list">
+          ${items}
+        </ul>
+      </section>`;
+}
+
+function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
   const pagePath = `marche/${slug}.html`;
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
   const d = translations.de;
-  const ld = buildLdJson(brand, slug, d);
+  const ld = buildLdJson(brand, slug, d, suppliedParts);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
+  const suppliedPartsHtml = buildSuppliedPartsHtml(suppliedParts);
+  const partsJson = JSON.stringify((suppliedParts || []).map((p) => p.part_number));
   const relatedLinks = (relatedRows || [])
     .map(({ brand: relatedBrand, slug: relatedSlug }) =>
       `<li><a href="../marche/${relatedSlug}.html">${escapeHtml(relatedBrand)}</a></li>`
@@ -390,6 +479,16 @@ function buildHtml(brand, slug, translations, relatedRows) {
     .brand-faq .faq-item { margin-bottom: 0.95rem; }
     .brand-faq h3 { font-size: 0.98rem; color: #1e3a5f; margin: 0 0 0.3rem; font-weight: 600; }
     .brand-faq p { margin: 0; font-size: 0.92rem; color: #444; line-height: 1.55; }
+    .brand-supplied-parts { max-width: 820px; margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #f0f6fb; }
+    .brand-supplied-parts h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.5rem; }
+    .brand-supplied-parts .parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 1rem; line-height: 1.55; }
+    .brand-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+    .brand-parts-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.75rem; padding: 0.55rem 0.65rem; background: #fff; border: 1px solid #e3eaf1; border-radius: 8px; }
+    .part-quote-link { font-weight: 700; color: #1e3a5f; text-decoration: none; border-bottom: 2px solid #e67e22; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.95rem; }
+    .part-quote-link:hover, .part-quote-link:focus { color: #e67e22; }
+    .part-desc { font-size: 0.88rem; color: #556; flex: 1; min-width: 120px; }
+    .part-case-link { font-size: 0.85rem; color: #2d5a87; text-decoration: none; font-weight: 600; white-space: nowrap; }
+    .part-case-link:hover { text-decoration: underline; }
     .muted { color: #666; font-weight: 400; }
     .contact-lead { text-align: center; max-width: 640px; margin: 0 auto 2rem; color: #555; font-size: 1.05rem; line-height: 1.55; }
     .contact-layout { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 2.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
@@ -441,6 +540,7 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
     <div class="container">
       <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
       <p class="brand-email-alt" data-i18n="brand_email_alt">${d.brand_email_alt}</p>
+${suppliedPartsHtml}
       <section class="related-brands" aria-label="Related brands">
         <h2 data-i18n="related_title">${escapeHtml(d.related_title)}</h2>
         <p data-i18n="related_intro">${escapeHtml(d.related_intro)}</p>
@@ -507,6 +607,7 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
   (function () {
     var BRAND = ${brandJson};
     var translations = ${translationsJson};
+    var SELECTED_PART = '';
 
     var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
 
@@ -545,11 +646,43 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
         }
       });
     }
-    function updateFormIframeLang(langCode) {
+    function getUrlPart() {
+      var p = new URLSearchParams(window.location.search);
+      return p.get('part') || '';
+    }
+    function buildIframeSrc(langCode, partNumber) {
+      var lang = langCode || 'en';
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang) + '&manufacturer=' + encodeURIComponent(BRAND);
+      var part = partNumber || SELECTED_PART || getUrlPart() || '';
+      if (part) url += '&part_number=' + encodeURIComponent(part);
+      return url;
+    }
+    function updateFormIframeLang(langCode, partNumber) {
       var iframe = document.getElementById('contactFormIframe');
       if (!iframe) return;
-      var lang = langCode || 'en';
-      iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang) + '&manufacturer=' + encodeURIComponent(BRAND);
+      iframe.src = buildIframeSrc(langCode, partNumber);
+    }
+    function initPartQuoteLinks() {
+      document.querySelectorAll('.part-quote-link').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          SELECTED_PART = a.getAttribute('data-part') || '';
+          var langSel = document.getElementById('languageSelect');
+          var lang = langSel ? langSel.value : 'de';
+          updateFormIframeLang(lang, SELECTED_PART);
+          var contact = document.getElementById('contact');
+          if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          try {
+            if (history.replaceState) {
+              var u = new URL(window.location.href);
+              if (SELECTED_PART) u.searchParams.set('part', SELECTED_PART);
+              else u.searchParams.delete('part');
+              u.hash = 'contact';
+              history.replaceState(null, '', u.toString());
+            }
+          } catch (err) {}
+        });
+      });
     }
     function changeLanguage(lang) {
       var t = translations[lang] || translations.de;
@@ -568,7 +701,7 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
-      updateFormIframeLang(lang);
+      updateFormIframeLang(lang, SELECTED_PART || getUrlPart());
     }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -576,7 +709,14 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
       var lang = ['de', 'en', 'it', 'es', 'fr'].indexOf(raw) !== -1 ? raw : 'de';
       var sel = document.getElementById('languageSelect');
       if (sel) sel.value = lang;
+      var initialPart = getUrlPart();
+      if (initialPart) SELECTED_PART = initialPart;
       changeLanguage(lang);
+      initPartQuoteLinks();
+      if (initialPart && window.location.hash === '#contact') {
+        var contactEl = document.getElementById('contact');
+        if (contactEl) setTimeout(function () { contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200);
+      }
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();
@@ -616,6 +756,13 @@ ${body}</urlset>
 
 function writeSitemapIndex() {
   const outPath = path.join(ROOT, 'sitemap-index.xml');
+  const casesBlock = fs.existsSync(path.join(ROOT, 'sitemap-cases.xml'))
+    ? `  <sitemap>
+    <loc>${BASE}/sitemap-cases.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+`
+    : '';
   const xml = `---
 layout: none
 ---
@@ -629,7 +776,7 @@ layout: none
     <loc>${BASE}/sitemap-brands.xml</loc>
     <lastmod>${TODAY}</lastmod>
   </sitemap>
-</sitemapindex>
+${casesBlock}</sitemapindex>
 `;
   fs.writeFileSync(outPath, xml, 'utf8');
 }
@@ -637,6 +784,7 @@ layout: none
 function main() {
   const brands = readBrandsFromIndex();
   const rows = assignUniqueSlugs(brands);
+  const partsBySlug = loadPartsBySlug();
 
   fs.mkdirSync(MARCHE_DIR, { recursive: true });
   if (fs.existsSync(MARCHE_DIR)) {
@@ -659,7 +807,8 @@ function main() {
     }
     const translations = buildTranslations(brand);
     mergeTopBrandContent(translations, slug);
-    const html = buildHtml(brand, slug, translations, relatedRows);
+    const suppliedParts = partsBySlug.get(slug) || [];
+    const html = buildHtml(brand, slug, translations, relatedRows, suppliedParts);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
     if (n % 500 === 0) console.log('Written', n, '/', rows.length);

@@ -150,4 +150,17 @@ for (const f of toCheck) {
   }
 }
 
+const partsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
+const partsSlugs = (partsData.brands || []).filter((b) => b.brand_slug && b.parts?.length).map((b) => b.brand_slug);
+for (const slug of partsSlugs) {
+  const f = slug + '.html';
+  const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
+  if (!content.includes('brand-supplied-parts')) {
+    throw new Error(`Missing supplied-parts section in marche/${f}`);
+  }
+  if (!content.includes('part-quote-link')) {
+    throw new Error(`Missing part quote links in marche/${f}`);
+  }
+}
+
 console.log('verify-build: OK —', brands.length, 'brands,', htmlFiles.length, 'HTML pages,', urlCount, 'sitemap URLs + SEO checks');
