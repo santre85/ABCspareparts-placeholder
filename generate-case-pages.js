@@ -13,6 +13,118 @@ const BASE = 'https://abcspareparts.eu';
 const LANGS = ['de', 'en', 'it', 'es', 'fr'];
 const TODAY = new Date().toISOString().slice(0, 10);
 
+const QUOTE_I18N = {
+  de: {
+    quote_parts_title: 'Diese Teilenummern anfragen',
+    quote_parts_intro: 'Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.',
+    quote_modal_title: 'Unverbindliche Anfrage',
+    quote_modal_close: 'Schließen',
+    quote_modal_part_label: 'Teilenummer',
+    quote_iframe_title: 'Anfrageformular'
+  },
+  en: {
+    quote_parts_title: 'Request a quote for these part numbers',
+    quote_parts_intro: 'Click a code to open the request form with brand and part number pre-filled.',
+    quote_modal_title: 'No-obligation enquiry',
+    quote_modal_close: 'Close',
+    quote_modal_part_label: 'Part number',
+    quote_iframe_title: 'Request form'
+  },
+  it: {
+    quote_parts_title: 'Richiedi preventivo per questi codici',
+    quote_parts_intro: 'Clicchi su un codice per aprire il modulo con marca e codice articolo già compilati.',
+    quote_modal_title: 'Richiesta senza impegno',
+    quote_modal_close: 'Chiudi',
+    quote_modal_part_label: 'Codice articolo',
+    quote_iframe_title: 'Modulo richiesta'
+  },
+  es: {
+    quote_parts_title: 'Solicitar presupuesto para estas referencias',
+    quote_parts_intro: 'Haga clic en un código para abrir el formulario con marca y referencia precargadas.',
+    quote_modal_title: 'Solicitud sin compromiso',
+    quote_modal_close: 'Cerrar',
+    quote_modal_part_label: 'Referencia',
+    quote_iframe_title: 'Formulario de solicitud'
+  },
+  fr: {
+    quote_parts_title: 'Demander un devis pour ces références',
+    quote_parts_intro: 'Cliquez sur une référence pour ouvrir le formulaire avec marque et code préremplis.',
+    quote_modal_title: 'Demande sans engagement',
+    quote_modal_close: 'Fermer',
+    quote_modal_part_label: 'Référence',
+    quote_iframe_title: 'Formulaire de demande'
+  }
+};
+
+let partsByCaseSlugCache = null;
+
+function loadPartsByCaseSlug() {
+  if (partsByCaseSlugCache) return partsByCaseSlugCache;
+  partsByCaseSlugCache = new Map();
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'brand-order-parts.json'), 'utf8'));
+    for (const row of data.brands || []) {
+      for (const part of row.parts || []) {
+        if (!part.case_slug) continue;
+        if (!partsByCaseSlugCache.has(part.case_slug)) {
+          partsByCaseSlugCache.set(part.case_slug, []);
+        }
+        partsByCaseSlugCache.get(part.case_slug).push(part.part_number);
+      }
+    }
+  } catch (e) {
+    console.warn('brand-order-parts.json:', e.message);
+  }
+  return partsByCaseSlugCache;
+}
+
+function getQuotableParts(caseRow) {
+  if (Array.isArray(caseRow.quotable_parts) && caseRow.quotable_parts.length) {
+    return [...new Set(caseRow.quotable_parts.map(String))];
+  }
+  const fromCatalog = loadPartsByCaseSlug().get(caseRow.slug);
+  if (fromCatalog && fromCatalog.length) return [...new Set(fromCatalog)];
+  const pn = String(caseRow.part_number || '').trim();
+  if (!pn) return [];
+  if (pn.includes('·')) {
+    return [...new Set(pn.split('·').map((s) => s.trim()).filter(Boolean))];
+  }
+  return [pn];
+}
+
+function buildQuotablePartsHtml(parts) {
+  if (!parts.length) return '';
+  const items = parts
+    .map(
+      (part) =>
+        `<li><button type="button" class="part-quote-btn" data-part="${escapeAttr(part)}">${escapeHtml(part)}</button></li>`
+    )
+    .join('\n          ');
+  return `
+      <section class="case-quote-parts" aria-labelledby="case-quote-parts-heading">
+        <h2 id="case-quote-parts-heading" data-i18n="quote_parts_title">Diese Teilenummern anfragen</h2>
+        <p class="quote-parts-intro" data-i18n="quote_parts_intro">Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.</p>
+        <ul class="case-parts-list">
+          ${items}
+        </ul>
+      </section>`;
+}
+
+function buildQuoteModalHtml() {
+  return `
+  <div id="quoteModal" class="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-modal></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button type="button" class="quote-modal-close" data-close-modal data-i18n-aria="quote_modal_close" aria-label="Schließen">&times;</button>
+      <h2 id="quoteModalTitle" data-i18n="quote_modal_title">Unverbindliche Anfrage</h2>
+      <p class="quote-modal-part"><span data-i18n="quote_modal_part_label">Teilenummer</span>: <strong id="quoteModalPart"></strong></p>
+      <div class="quote-modal-iframe-wrap">
+        <iframe id="quoteFormIframe" data-i18n-title="quote_iframe_title" title="Anfrageformular"></iframe>
+      </div>
+    </div>
+  </div>`;
+}
+
 function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -149,7 +261,7 @@ function buildCaseHubLabels(caseRow) {
   };
   const out = {};
   for (const L of LANGS) {
-    out[L] = { case_breadcrumb: breadcrumb[L], ...FOOTER_I18N[L] };
+    out[L] = { case_breadcrumb: breadcrumb[L], ...FOOTER_I18N[L], ...QUOTE_I18N[L] };
   }
   return out;
 }
@@ -263,6 +375,9 @@ function buildCasePage(caseRow) {
   const slug = caseRow.slug;
   const de = pickLang(caseRow, 'de');
   const canonical = `${BASE}/${CASES_SUBDIR}/${slug}.html`;
+  const quotableParts = getQuotableParts(caseRow);
+  const quotablePartsHtml = buildQuotablePartsHtml(quotableParts);
+  const quoteModalHtml = buildQuoteModalHtml();
   let brandUrl = '../index.html#contact';
   if (caseRow.brand_slug) {
     const brandPage = path.join(ROOT, 'marche', `${caseRow.brand_slug}.html`);
@@ -331,6 +446,24 @@ ${hreflang}
     .cta-primary:hover { background: #d35400; }
     .cta-secondary { background: #1e3a5f; color: #fff !important; }
     .cta-secondary:hover { background: #2d5a87; }
+    .case-quote-parts { background: #f0f6fb; border: 1px solid #dce8f4; border-radius: 10px; padding: 1.15rem 1.2rem; margin-bottom: 1.75rem; }
+    .case-quote-parts h2 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 0.45rem; }
+    .quote-parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 0.9rem; }
+    .case-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.45rem 0.75rem; cursor: pointer; }
+    .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .quote-modal[hidden] { display: none !important; }
+    .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
+    .quote-modal-dialog { position: relative; z-index: 1; width: min(720px, 100%); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.25); padding: 1.25rem 1.25rem 1rem; }
+    .quote-modal-dialog h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.35rem; padding-right: 2rem; }
+    .quote-modal-part { font-size: 0.92rem; color: #444; margin-bottom: 0.85rem; }
+    .quote-modal-part strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
+    .quote-modal-close { position: absolute; top: 0.65rem; right: 0.75rem; border: none; background: transparent; font-size: 1.75rem; line-height: 1; color: #666; cursor: pointer; }
+    .quote-modal-close:hover { color: #e67e22; }
+    .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
+    body.quote-modal-open { overflow: hidden; }
     .disclaimer { font-size: 0.85rem; color: #666; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
 ${FOOTER_CSS}
   </style>
@@ -361,6 +494,7 @@ ${FOOTER_CSS}
         <dt data-i18n="fact_component">${escapeHtml(de.fact_component)}</dt><dd data-i18n="fact_component_val">${de.fact_component_val}</dd>
         <dt data-i18n="fact_destination">${escapeHtml(de.fact_destination)}</dt><dd data-i18n="fact_destination_val">${de.fact_destination_val}</dd>
       </dl>
+${quotablePartsHtml}
       <p data-i18n="intro">${de.intro}</p>
       <p data-i18n="body_p1">${de.body_p1}</p>
       <p data-i18n="body_p2">${de.body_p2}</p>
@@ -375,14 +509,17 @@ ${FOOTER_CSS}
       <p data-i18n="outro">${de.outro}</p>
       <div class="cta-row">
         <a class="cta-primary" href="${brandUrl}" data-i18n="cta_brand">${escapeHtml(de.cta_brand)}</a>
-        <a class="cta-secondary" href="../index.html#contact" data-i18n="cta_contact">${escapeHtml(de.cta_contact)}</a>
+        <button type="button" class="cta-secondary open-quote-modal" data-i18n="cta_contact">${escapeHtml(de.cta_contact)}</button>
       </div>
       <p class="disclaimer" data-i18n="disclaimer">${de.disclaimer}</p>
     </div>
   </main>
+  ${quoteModalHtml}
   ${buildFooterHtml('../')}
   <script>
   (function () {
+    var BRAND = ${JSON.stringify(caseRow.brand)};
+    var DEFAULT_PART = ${JSON.stringify(quotableParts[0] || caseRow.part_number || '')};
     var BRAND_SLUG = ${JSON.stringify(caseRow.brand_slug)};
     var translations = ${JSON.stringify(translationsPayload)};
     var hubLabels = ${JSON.stringify(buildCaseHubLabels(caseRow))};
@@ -435,9 +572,64 @@ ${FOOTER_CSS}
         var key = el.getAttribute('data-i18n');
         if (merged[key]) el.innerHTML = merged[key];
       });
+      document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-title');
+        if (merged[key]) el.setAttribute('title', merged[key]);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        if (merged[key]) el.setAttribute('aria-label', merged[key]);
+      });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
+      if (quoteModal && !quoteModal.hasAttribute('hidden') && quoteIframe) {
+        var activePart = quoteModalPart ? quoteModalPart.textContent : '';
+        quoteIframe.src = buildQuoteIframeSrc(lang, activePart);
+      }
+    }
+    var quoteModal = document.getElementById('quoteModal');
+    var quoteIframe = document.getElementById('quoteFormIframe');
+    var quoteModalPart = document.getElementById('quoteModalPart');
+    function buildQuoteIframeSrc(lang, part) {
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang || 'en');
+      url += '&custom_manufacturer=' + encodeURIComponent(BRAND);
+      if (part) url += '&custom_part_numbers=' + encodeURIComponent(part);
+      return url;
+    }
+    function openQuoteModal(part, lang) {
+      if (!quoteModal) return;
+      var code = part || DEFAULT_PART || '';
+      if (quoteModalPart) quoteModalPart.textContent = code;
+      if (quoteIframe) quoteIframe.src = buildQuoteIframeSrc(lang, code);
+      quoteModal.removeAttribute('hidden');
+      document.body.classList.add('quote-modal-open');
+    }
+    function closeQuoteModal() {
+      if (!quoteModal) return;
+      quoteModal.setAttribute('hidden', '');
+      document.body.classList.remove('quote-modal-open');
+      if (quoteIframe) quoteIframe.src = 'about:blank';
+    }
+    function initQuoteModal() {
+      document.querySelectorAll('.part-quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(btn.getAttribute('data-part') || '', lang);
+        });
+      });
+      document.querySelectorAll('.open-quote-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(DEFAULT_PART, lang);
+        });
+      });
+      document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeQuoteModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
+      });
     }
     document.addEventListener('DOMContentLoaded', function () {
       var raw = getCurrentLang();
@@ -445,6 +637,7 @@ ${FOOTER_CSS}
       var sel = document.getElementById('languageSelect');
       if (sel) sel.value = lang;
       changeLanguage(lang);
+      initQuoteModal();
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();

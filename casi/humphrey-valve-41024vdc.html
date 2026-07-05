@@ -55,6 +55,24 @@
     .cta-primary:hover { background: #d35400; }
     .cta-secondary { background: #1e3a5f; color: #fff !important; }
     .cta-secondary:hover { background: #2d5a87; }
+    .case-quote-parts { background: #f0f6fb; border: 1px solid #dce8f4; border-radius: 10px; padding: 1.15rem 1.2rem; margin-bottom: 1.75rem; }
+    .case-quote-parts h2 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 0.45rem; }
+    .quote-parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 0.9rem; }
+    .case-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.45rem 0.75rem; cursor: pointer; }
+    .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .quote-modal[hidden] { display: none !important; }
+    .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
+    .quote-modal-dialog { position: relative; z-index: 1; width: min(720px, 100%); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.25); padding: 1.25rem 1.25rem 1rem; }
+    .quote-modal-dialog h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.35rem; padding-right: 2rem; }
+    .quote-modal-part { font-size: 0.92rem; color: #444; margin-bottom: 0.85rem; }
+    .quote-modal-part strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
+    .quote-modal-close { position: absolute; top: 0.65rem; right: 0.75rem; border: none; background: transparent; font-size: 1.75rem; line-height: 1; color: #666; cursor: pointer; }
+    .quote-modal-close:hover { color: #e67e22; }
+    .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
+    body.quote-modal-open { overflow: hidden; }
     .disclaimer { font-size: 0.85rem; color: #666; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
 
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
@@ -92,6 +110,14 @@
         <dt data-i18n="fact_component">Komponente</dt><dd data-i18n="fact_component_val">4/2-Wege-Magnetventil 24 VDC (Serie 410)</dd>
         <dt data-i18n="fact_destination">Ziel</dt><dd data-i18n="fact_destination_val">Italien — Norditalien</dd>
       </dl>
+
+      <section class="case-quote-parts" aria-labelledby="case-quote-parts-heading">
+        <h2 id="case-quote-parts-heading" data-i18n="quote_parts_title">Diese Teilenummern anfragen</h2>
+        <p class="quote-parts-intro" data-i18n="quote_parts_intro">Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.</p>
+        <ul class="case-parts-list">
+          <li><button type="button" class="part-quote-btn" data-part="41024VDC">41024VDC</button></li>
+        </ul>
+      </section>
       <p data-i18n="intro">Ein <strong>Hersteller von Etiketten und flexiblen Verpackungen</strong> in <strong>Norditalien</strong> benötigte dringend ein <strong>Humphrey-Magnetventil</strong> mit der Referenz <strong>41024VDC</strong> — ein kompaktes <strong>4/2-Wege-Ventil 24 VDC</strong> für die pneumatische Steuerung von Aktuatoren an einer Konvertierungslinie.</p>
       <p data-i18n="body_p1">Die <strong>41024VDC</strong> gehört zur Humphrey-Serie 410: direktwirkend, 1/8 NPSF, geeignet für Luft und Vakuum bis 125 psi, ideal für Doppelhubzylinder bis 32 mm Hub. An Etiketten- und Verpackungsanlagen steht oft wenig Platz zur Verfügung — ein Ausfall oder eine veraltete Referenz kann Wickeln, Stanzen oder Zuführen stilllegen.</p>
       <p data-i18n="body_p2">ABCspareparts hat die Anfrage mit dem exakten Humphrey-Code <strong>41024VDC</strong> geprüft, die technische Passung bestätigt, Verfügbarkeit und Lieferoptionen abgeglichen und am <strong>nächsten Werktag</strong> ein unverbindliches Angebot mit Preis und Lieferzeit übermittelt.</p>
@@ -106,11 +132,23 @@
       <p data-i18n="outro">Benötigen Sie Humphrey-Pneumatikventile oder eine ähnliche 24-VDC-Referenz für Ihre Anlage in Europa? Stellen Sie eine unverbindliche Anfrage — in der Regel melden wir uns innerhalb von 24 Stunden.</p>
       <div class="cta-row">
         <a class="cta-primary" href="../marche/humphrey.html" data-i18n="cta_brand">Humphrey-Teile anfragen</a>
-        <a class="cta-secondary" href="../index.html#contact" data-i18n="cta_contact">Zur Anfrage</a>
+        <button type="button" class="cta-secondary open-quote-modal" data-i18n="cta_contact">Zur Anfrage</button>
       </div>
       <p class="disclaimer" data-i18n="disclaimer">Erfolgsgeschichte basierend auf einer realen Anfrage und Offerte. Der Kunde wird aus Gründen der Vertraulichkeit nicht genannt. Humphrey® ist eine Marke der jeweiligen Rechteinhaber.</p>
     </div>
   </main>
+  
+  <div id="quoteModal" class="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-modal></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button type="button" class="quote-modal-close" data-close-modal data-i18n-aria="quote_modal_close" aria-label="Schließen">&times;</button>
+      <h2 id="quoteModalTitle" data-i18n="quote_modal_title">Unverbindliche Anfrage</h2>
+      <p class="quote-modal-part"><span data-i18n="quote_modal_part_label">Teilenummer</span>: <strong id="quoteModalPart"></strong></p>
+      <div class="quote-modal-iframe-wrap">
+        <iframe id="quoteFormIframe" data-i18n-title="quote_iframe_title" title="Anfrageformular"></iframe>
+      </div>
+    </div>
+  </div>
   <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -139,9 +177,11 @@
 </footer>
   <script>
   (function () {
+    var BRAND = "Humphrey";
+    var DEFAULT_PART = "41024VDC";
     var BRAND_SLUG = "humphrey";
     var translations = {"de":{"meta_title":"Humphrey Magnetventil 41024VDC – Erfolgsgeschichte | ABCspareparts","meta_description":"Erfolgsgeschichte: Humphrey 41024VDC 4/2-Wege-Magnetventil 24 VDC. Anfrage 19.05.2026, Angebot am 20.05.2026 — ein Werktag bis zur Offerte.","title":"Humphrey Pneumatikventil 41024VDC","subtitle":"Anfrage am 19.05.2026 · Angebot am 20.05.2026","intro":"Ein <strong>Hersteller von Etiketten und flexiblen Verpackungen</strong> in <strong>Norditalien</strong> benötigte dringend ein <strong>Humphrey-Magnetventil</strong> mit der Referenz <strong>41024VDC</strong> — ein kompaktes <strong>4/2-Wege-Ventil 24 VDC</strong> für die pneumatische Steuerung von Aktuatoren an einer Konvertierungslinie.","body_p1":"Die <strong>41024VDC</strong> gehört zur Humphrey-Serie 410: direktwirkend, 1/8 NPSF, geeignet für Luft und Vakuum bis 125 psi, ideal für Doppelhubzylinder bis 32 mm Hub. An Etiketten- und Verpackungsanlagen steht oft wenig Platz zur Verfügung — ein Ausfall oder eine veraltete Referenz kann Wickeln, Stanzen oder Zuführen stilllegen.","body_p2":"ABCspareparts hat die Anfrage mit dem exakten Humphrey-Code <strong>41024VDC</strong> geprüft, die technische Passung bestätigt, Verfügbarkeit und Lieferoptionen abgeglichen und am <strong>nächsten Werktag</strong> ein unverbindliches Angebot mit Preis und Lieferzeit übermittelt.","timeline_title":"Ablauf der Anfrage","timeline_li1":"<strong>19.05.2026</strong> — Anfrage mit Referenz <strong>41024VDC</strong> (Humphrey Ventil, 24 VDC)","timeline_li2":"<strong>20.05.2026</strong> — <strong>Angebot versendet</strong> mit Verfügbarkeit, Preis und voraussichtlicher Lieferzeit","timeline_note":"Von der Anfrage bis zur Offerte: <strong>ein Werktag</strong>.","outro":"Benötigen Sie Humphrey-Pneumatikventile oder eine ähnliche 24-VDC-Referenz für Ihre Anlage in Europa? Stellen Sie eine unverbindliche Anfrage — in der Regel melden wir uns innerhalb von 24 Stunden.","cta_brand":"Humphrey-Teile anfragen","cta_contact":"Zur Anfrage","disclaimer":"Erfolgsgeschichte basierend auf einer realen Anfrage und Offerte. Der Kunde wird aus Gründen der Vertraulichkeit nicht genannt. Humphrey® ist eine Marke der jeweiligen Rechteinhaber.","fact_sector":"Branche","fact_sector_val":"Etiketten & flexible Verpackung","fact_brand":"Marke","fact_part":"Teilenummer","fact_component":"Komponente","fact_component_val":"4/2-Wege-Magnetventil 24 VDC (Serie 410)","fact_destination":"Ziel","fact_destination_val":"Italien — Norditalien","card_teaser":"Humphrey 41024VDC — Anfrage 19.05., Angebot am 20.05. (ein Werktag)."},"en":{"meta_title":"Humphrey valve 41024VDC – success story | ABCspareparts","meta_description":"Success story: Humphrey 41024VDC 4-way 24 VDC solenoid valve. Request 19 May 2026, quote sent 20 May 2026 — one business day to offer.","title":"Humphrey pneumatic valve 41024VDC","subtitle":"Request on 19/05/2026 · quote sent on 20/05/2026","intro":"A <strong>label and flexible packaging manufacturer</strong> in <strong>Northern Italy</strong> urgently needed a <strong>Humphrey solenoid valve</strong>, reference <strong>41024VDC</strong> — a compact <strong>4/2-way 24 VDC valve</strong> for pneumatic control of actuators on a converting line.","body_p1":"Reference <strong>41024VDC</strong> is part of Humphrey’s Series 410: direct-acting, 1/8 NPSF, suitable for air and vacuum up to 125 psi, widely used to drive double-acting cylinders in tight spaces. On label and packaging equipment, losing this valve can stop winding, die-cutting or feeding stations with little warning.","body_p2":"ABCspareparts validated the exact Humphrey code <strong>41024VDC</strong>, confirmed technical fit, checked supply options and sent a <strong>no-obligation quote with price and lead time</strong> on the <strong>next business day</strong>.","timeline_title":"Enquiry timeline","timeline_li1":"<strong>19/05/2026</strong> — enquiry received for <strong>41024VDC</strong> (Humphrey valve, 24 VDC)","timeline_li2":"<strong>20/05/2026</strong> — <strong>quotation sent</strong> with availability, price and expected delivery time","timeline_note":"From enquiry to quote: <strong>one business day</strong>.","outro":"Need Humphrey pneumatic valves or a similar 24 VDC reference for your plant in Europe? Send a no-obligation enquiry — we usually reply within 24 business hours.","cta_brand":"Request Humphrey parts","cta_contact":"Contact us","disclaimer":"Success story based on a real enquiry and quotation. The customer is not named for confidentiality. Humphrey® is a trademark of its respective owners.","fact_sector":"Sector","fact_sector_val":"Labels & flexible packaging","fact_brand":"Brand","fact_part":"Part number","fact_component":"Component","fact_component_val":"4/2-way solenoid valve 24 VDC (Series 410)","fact_destination":"Destination","fact_destination_val":"Italy — Northern Italy","card_teaser":"Humphrey 41024VDC — request 19 May, quote 20 May (one business day)."},"it":{"meta_title":"Valvola Humphrey 41024VDC – caso di successo | ABCspareparts","meta_description":"Caso di successo: valvola Humphrey 41024VDC 4/2 vie 24 VDC. Richiesta 19/05/2026, offerta inviata 20/05/2026 — un solo giorno lavorativo.","title":"Valvola pneumatica Humphrey 41024VDC","subtitle":"Richiesta il 19/05/2026 · offerta inviata il 20/05/2026","intro":"Un <strong>produttore di etichette e packaging flessibile</strong> nel <strong>Nord Italia</strong> aveva urgenza di una <strong>valvola elettropneumatica Humphrey</strong> con codice <strong>41024VDC</strong> — valvola <strong>4/2 vie 24 VDC</strong> per il controllo pneumatico di attuatori su una linea di converting.","body_p1":"La <strong>41024VDC</strong> appartiene alla serie Humphrey 410: azionamento diretto, attacco 1/8 NPSF, adatta ad aria e vuoto fino a 125 psi, ideale per cilindri a doppio effetto in spazi compatti. Su impianti di etichettatura e confezionamento, la sostituzione di una valvola critica non può attendere settimane di ricerca tra cataloghi generici.","body_p2":"ABCspareparts ha gestito la richiesta con il codice Humphrey esatto <strong>41024VDC</strong>, verificato la corrispondenza tecnica, controllato disponibilità e canali di approvvigionamento e inviato <strong>il giorno lavorativo successivo</strong> un preventivo con prezzo e tempi di consegna.","timeline_title":"Cronologia della richiesta","timeline_li1":"<strong>19/05/2026</strong> — richiesta ricevuta con referenza <strong>41024VDC</strong> (valvola Humphrey, 24 VDC)","timeline_li2":"<strong>20/05/2026</strong> — <strong>offerta inviata</strong> con disponibilità, prezzo e tempi di consegna previsti","timeline_note":"Dalla richiesta all'offerta: <strong>un solo giorno lavorativo</strong>.","outro":"Vi serve una valvola Humphrey o una referenza pneumatica 24 VDC per il vostro stabilimento in Europa? Inviate una richiesta senza impegno — di solito rispondiamo entro 24 ore lavorative.","cta_brand":"Richiedi ricambi Humphrey","cta_contact":"Vai al modulo contatti","disclaimer":"Caso di successo basato su richiesta e offerta reali. Il cliente non è nominato per riservatezza commerciale. Humphrey® è marchio dei rispettivi titolari.","fact_sector":"Settore","fact_sector_val":"Etichette e packaging flessibile","fact_brand":"Marca","fact_part":"Codice articolo","fact_component":"Componente","fact_component_val":"Valvola elettropneumatica 4/2 vie 24 VDC (serie 410)","fact_destination":"Destinazione","fact_destination_val":"Italia — Nord Italia","card_teaser":"Humphrey 41024VDC — richiesta 19/05, offerta il 20/05 (un giorno lavorativo)."},"es":{"meta_title":"Válvula Humphrey 41024VDC – caso de éxito | ABCspareparts","meta_description":"Caso de éxito: válvula Humphrey 41024VDC 4/2 vías 24 VDC. Consulta 19/05/2026, oferta enviada 20/05/2026 — un día laborable hasta la cotización.","title":"Válvula neumática Humphrey 41024VDC","subtitle":"Consulta el 19/05/2026 · oferta enviada el 20/05/2026","intro":"Un <strong>fabricante de etiquetas y envases flexibles</strong> en el <strong>norte de Italia</strong> necesitaba con urgencia una <strong>válvula solenoide Humphrey</strong> con referencia <strong>41024VDC</strong> — válvula <strong>4/2 vías 24 VDC</strong> para el control neumático de actuadores en una línea de converting.","body_p1":"La referencia <strong>41024VDC</strong> pertenece a la serie Humphrey 410: accionamiento directo, 1/8 NPSF, apta para aire y vacío hasta 125 psi, muy usada en cilindros de doble efecto en espacios reducidos. En líneas de etiquetado y embalaje, una válvula crítica fuera de servicio puede parar bobinado, troquelado o alimentación.","body_p2":"ABCspareparts gestionó la solicitud con el código Humphrey exacto <strong>41024VDC</strong>, confirmó la compatibilidad técnica, revisó disponibilidad y envió <strong>al día laborable siguiente</strong> una oferta con precio y plazo de entrega.","timeline_title":"Cronología de la consulta","timeline_li1":"<strong>19/05/2026</strong> — consulta recibida con referencia <strong>41024VDC</strong> (válvula Humphrey, 24 VDC)","timeline_li2":"<strong>20/05/2026</strong> — <strong>oferta enviada</strong> con disponibilidad, precio y plazo de entrega previsto","timeline_note":"De la consulta a la oferta: <strong>un día laborable</strong>.","outro":"¿Necesita válvulas neumáticas Humphrey o una referencia similar 24 VDC para su planta en Europa? Solicite presupuesto sin compromiso — solemos responder en 24 horas laborables.","cta_brand":"Solicitar piezas Humphrey","cta_contact":"Ir al formulario","disclaimer":"Caso de éxito basado en una consulta y oferta reales. El cliente no se nombra por confidencialidad. Humphrey® es marca de sus respectivos titulares.","fact_sector":"Sector","fact_sector_val":"Etiquetas y envases flexibles","fact_brand":"Marca","fact_part":"Referencia","fact_component":"Componente","fact_component_val":"Válvula solenoide 4/2 vías 24 VDC (serie 410)","fact_destination":"Destino","fact_destination_val":"Italia — norte de Italia","card_teaser":"Humphrey 41024VDC — consulta 19/05, oferta 20/05 (un día laborable)."},"fr":{"meta_title":"Valve Humphrey 41024VDC – histoire de réussite | ABCspareparts","meta_description":"Histoire de réussite : valve Humphrey 41024VDC 4/2 voies 24 VDC. Demande 19/05/2026, devis envoyé 20/05/2026 — un jour ouvré jusqu'à l'offre.","title":"Valve pneumatique Humphrey 41024VDC","subtitle":"Demande le 19/05/2026 · devis envoyé le 20/05/2026","intro":"Un <strong>fabricant d'étiquettes et d'emballages flexibles</strong> en <strong>Italie du Nord</strong> avait besoin en urgence d'une <strong>électrovanne Humphrey</strong>, référence <strong>41024VDC</strong> — vanne <strong>4/2 voies 24 VDC</strong> pour le pilotage pneumatique d'actionneurs sur une ligne de converting.","body_p1":"La référence <strong>41024VDC</strong> appartient à la série Humphrey 410 : action directe, 1/8 NPSF, adaptée à l'air et au vide jusqu'à 125 psi, idéale pour vérins double effet en encombrement réduit. Sur les lignes d'étiquetage et de conditionnement, une vanne critique en panne peut immobiliser bobinage, découpe ou alimentation.","body_p2":"ABCspareparts a traité la demande avec le code Humphrey exact <strong>41024VDC</strong>, validé la correspondance technique, vérifié les options d'approvisionnement et transmis <strong>le jour ouvré suivant</strong> un devis avec prix et délai de livraison.","timeline_title":"Chronologie de la demande","timeline_li1":"<strong>19/05/2026</strong> — demande reçue pour la référence <strong>41024VDC</strong> (vanne Humphrey, 24 VDC)","timeline_li2":"<strong>20/05/2026</strong> — <strong>devis envoyé</strong> avec disponibilité, prix et délai de livraison prévu","timeline_note":"De la demande au devis : <strong>un jour ouvré</strong>.","outro":"Besoin de vannes pneumatiques Humphrey ou d'une référence 24 VDC similaire pour votre site en Europe ? Envoyez une demande sans engagement — réponse en général sous 24 h ouvrées.","cta_brand":"Demander des pièces Humphrey","cta_contact":"Formulaire de contact","disclaimer":"Histoire de réussite basée sur une demande et un devis réels. Le client n'est pas nommé pour confidentialité. Humphrey® est une marque de ses titulaires respectifs.","fact_sector":"Secteur","fact_sector_val":"Étiquettes & emballages flexibles","fact_brand":"Marque","fact_part":"Référence","fact_component":"Composant","fact_component_val":"Électrovanne 4/2 voies 24 VDC (série 410)","fact_destination":"Destination","fact_destination_val":"Italie — Italie du Nord","card_teaser":"Humphrey 41024VDC — demande 19/05, devis 20/05 (un jour ouvré)."}};
-    var hubLabels = {"de":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Erfolgsgeschichten</a> · Humphrey","footer_brands":"Marken","footer_cases":"Erfolgsgeschichten","footer_contact":"Kontakt","footer_imprint":"Impressum","footer_privacy":"Datenschutz","footer_terms":"AGB","footer_shipping":"Versand","footer_cookies":"Cookies","footer_rights":"Alle Rechte vorbehalten."},"en":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Success stories</a> · Humphrey","footer_brands":"Brands","footer_cases":"Success stories","footer_contact":"Contact","footer_imprint":"Imprint","footer_privacy":"Privacy","footer_terms":"Terms","footer_shipping":"Shipping","footer_cookies":"Cookies","footer_rights":"All rights reserved."},"it":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casi di successo</a> · Humphrey","footer_brands":"Marche","footer_cases":"Casi di successo","footer_contact":"Contatti","footer_imprint":"Impressum","footer_privacy":"Privacy","footer_terms":"Condizioni","footer_shipping":"Spedizione","footer_cookies":"Cookie","footer_rights":"Tutti i diritti riservati."},"es":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casos de éxito</a> · Humphrey","footer_brands":"Marcas","footer_cases":"Casos de éxito","footer_contact":"Contacto","footer_imprint":"Aviso legal","footer_privacy":"Privacidad","footer_terms":"Términos","footer_shipping":"Envío","footer_cookies":"Cookies","footer_rights":"Todos los derechos reservados."},"fr":{"case_breadcrumb":"<a href=\"../index.html\">Accueil</a> · <a href=\"../casi.html\">Histoires de réussite</a> · Humphrey","footer_brands":"Marques","footer_cases":"Histoires de réussite","footer_contact":"Contact","footer_imprint":"Mentions légales","footer_privacy":"Confidentialité","footer_terms":"CGV","footer_shipping":"Livraison","footer_cookies":"Cookies","footer_rights":"Tous droits réservés."}};
+    var hubLabels = {"de":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Erfolgsgeschichten</a> · Humphrey","footer_brands":"Marken","footer_cases":"Erfolgsgeschichten","footer_contact":"Kontakt","footer_imprint":"Impressum","footer_privacy":"Datenschutz","footer_terms":"AGB","footer_shipping":"Versand","footer_cookies":"Cookies","footer_rights":"Alle Rechte vorbehalten.","quote_parts_title":"Diese Teilenummern anfragen","quote_parts_intro":"Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.","quote_modal_title":"Unverbindliche Anfrage","quote_modal_close":"Schließen","quote_modal_part_label":"Teilenummer","quote_iframe_title":"Anfrageformular"},"en":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Success stories</a> · Humphrey","footer_brands":"Brands","footer_cases":"Success stories","footer_contact":"Contact","footer_imprint":"Imprint","footer_privacy":"Privacy","footer_terms":"Terms","footer_shipping":"Shipping","footer_cookies":"Cookies","footer_rights":"All rights reserved.","quote_parts_title":"Request a quote for these part numbers","quote_parts_intro":"Click a code to open the request form with brand and part number pre-filled.","quote_modal_title":"No-obligation enquiry","quote_modal_close":"Close","quote_modal_part_label":"Part number","quote_iframe_title":"Request form"},"it":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casi di successo</a> · Humphrey","footer_brands":"Marche","footer_cases":"Casi di successo","footer_contact":"Contatti","footer_imprint":"Impressum","footer_privacy":"Privacy","footer_terms":"Condizioni","footer_shipping":"Spedizione","footer_cookies":"Cookie","footer_rights":"Tutti i diritti riservati.","quote_parts_title":"Richiedi preventivo per questi codici","quote_parts_intro":"Clicchi su un codice per aprire il modulo con marca e codice articolo già compilati.","quote_modal_title":"Richiesta senza impegno","quote_modal_close":"Chiudi","quote_modal_part_label":"Codice articolo","quote_iframe_title":"Modulo richiesta"},"es":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casos de éxito</a> · Humphrey","footer_brands":"Marcas","footer_cases":"Casos de éxito","footer_contact":"Contacto","footer_imprint":"Aviso legal","footer_privacy":"Privacidad","footer_terms":"Términos","footer_shipping":"Envío","footer_cookies":"Cookies","footer_rights":"Todos los derechos reservados.","quote_parts_title":"Solicitar presupuesto para estas referencias","quote_parts_intro":"Haga clic en un código para abrir el formulario con marca y referencia precargadas.","quote_modal_title":"Solicitud sin compromiso","quote_modal_close":"Cerrar","quote_modal_part_label":"Referencia","quote_iframe_title":"Formulario de solicitud"},"fr":{"case_breadcrumb":"<a href=\"../index.html\">Accueil</a> · <a href=\"../casi.html\">Histoires de réussite</a> · Humphrey","footer_brands":"Marques","footer_cases":"Histoires de réussite","footer_contact":"Contact","footer_imprint":"Mentions légales","footer_privacy":"Confidentialité","footer_terms":"CGV","footer_shipping":"Livraison","footer_cookies":"Cookies","footer_rights":"Tous droits réservés.","quote_parts_title":"Demander un devis pour ces références","quote_parts_intro":"Cliquez sur une référence pour ouvrir le formulaire avec marque et code préremplis.","quote_modal_title":"Demande sans engagement","quote_modal_close":"Fermer","quote_modal_part_label":"Référence","quote_iframe_title":"Formulaire de demande"}};
     var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
@@ -191,9 +231,64 @@
         var key = el.getAttribute('data-i18n');
         if (merged[key]) el.innerHTML = merged[key];
       });
+      document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-title');
+        if (merged[key]) el.setAttribute('title', merged[key]);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        if (merged[key]) el.setAttribute('aria-label', merged[key]);
+      });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
+      if (quoteModal && !quoteModal.hasAttribute('hidden') && quoteIframe) {
+        var activePart = quoteModalPart ? quoteModalPart.textContent : '';
+        quoteIframe.src = buildQuoteIframeSrc(lang, activePart);
+      }
+    }
+    var quoteModal = document.getElementById('quoteModal');
+    var quoteIframe = document.getElementById('quoteFormIframe');
+    var quoteModalPart = document.getElementById('quoteModalPart');
+    function buildQuoteIframeSrc(lang, part) {
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang || 'en');
+      url += '&custom_manufacturer=' + encodeURIComponent(BRAND);
+      if (part) url += '&custom_part_numbers=' + encodeURIComponent(part);
+      return url;
+    }
+    function openQuoteModal(part, lang) {
+      if (!quoteModal) return;
+      var code = part || DEFAULT_PART || '';
+      if (quoteModalPart) quoteModalPart.textContent = code;
+      if (quoteIframe) quoteIframe.src = buildQuoteIframeSrc(lang, code);
+      quoteModal.removeAttribute('hidden');
+      document.body.classList.add('quote-modal-open');
+    }
+    function closeQuoteModal() {
+      if (!quoteModal) return;
+      quoteModal.setAttribute('hidden', '');
+      document.body.classList.remove('quote-modal-open');
+      if (quoteIframe) quoteIframe.src = 'about:blank';
+    }
+    function initQuoteModal() {
+      document.querySelectorAll('.part-quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(btn.getAttribute('data-part') || '', lang);
+        });
+      });
+      document.querySelectorAll('.open-quote-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(DEFAULT_PART, lang);
+        });
+      });
+      document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeQuoteModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
+      });
     }
     document.addEventListener('DOMContentLoaded', function () {
       var raw = getCurrentLang();
@@ -201,6 +296,7 @@
       var sel = document.getElementById('languageSelect');
       if (sel) sel.value = lang;
       changeLanguage(lang);
+      initQuoteModal();
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();

@@ -102,6 +102,12 @@ for (const c of publishedCases) {
   if (!html.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
     throw new Error(`Case page ${c.slug}.html is missing llms.txt discovery link`);
   }
+  if (!html.includes('id="quoteModal"') || !html.includes('custom_manufacturer=')) {
+    throw new Error(`Case page ${c.slug}.html is missing quote modal / ERP prefill`);
+  }
+  if (!html.includes('class="part-quote-btn"') && !html.includes('class="open-quote-modal"')) {
+    throw new Error(`Case page ${c.slug}.html is missing quote CTA controls`);
+  }
 }
 
 const llmsTxt = fs.readFileSync(path.join(__dirname, 'llms.txt'), 'utf8');

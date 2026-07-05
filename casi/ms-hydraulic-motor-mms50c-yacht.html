@@ -55,6 +55,24 @@
     .cta-primary:hover { background: #d35400; }
     .cta-secondary { background: #1e3a5f; color: #fff !important; }
     .cta-secondary:hover { background: #2d5a87; }
+    .case-quote-parts { background: #f0f6fb; border: 1px solid #dce8f4; border-radius: 10px; padding: 1.15rem 1.2rem; margin-bottom: 1.75rem; }
+    .case-quote-parts h2 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 0.45rem; }
+    .quote-parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 0.9rem; }
+    .case-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.45rem 0.75rem; cursor: pointer; }
+    .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .quote-modal[hidden] { display: none !important; }
+    .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
+    .quote-modal-dialog { position: relative; z-index: 1; width: min(720px, 100%); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.25); padding: 1.25rem 1.25rem 1rem; }
+    .quote-modal-dialog h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.35rem; padding-right: 2rem; }
+    .quote-modal-part { font-size: 0.92rem; color: #444; margin-bottom: 0.85rem; }
+    .quote-modal-part strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
+    .quote-modal-close { position: absolute; top: 0.65rem; right: 0.75rem; border: none; background: transparent; font-size: 1.75rem; line-height: 1; color: #666; cursor: pointer; }
+    .quote-modal-close:hover { color: #e67e22; }
+    .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
+    body.quote-modal-open { overflow: hidden; }
     .disclaimer { font-size: 0.85rem; color: #666; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
 
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
@@ -92,6 +110,14 @@
         <dt data-i18n="fact_component">Komponente</dt><dd data-i18n="fact_component_val">Orbit-Hydraulikmotor (MM-Serie, 50 cm³/U)</dd>
         <dt data-i18n="fact_destination">Ziel</dt><dd data-i18n="fact_destination_val">Spanien</dd>
       </dl>
+
+      <section class="case-quote-parts" aria-labelledby="case-quote-parts-heading">
+        <h2 id="case-quote-parts-heading" data-i18n="quote_parts_title">Diese Teilenummern anfragen</h2>
+        <p class="quote-parts-intro" data-i18n="quote_parts_intro">Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.</p>
+        <ul class="case-parts-list">
+          <li><button type="button" class="part-quote-btn" data-part="MMS50C">MMS50C</button></li>
+        </ul>
+      </section>
       <p data-i18n="intro">Ein <strong>maritimer Dienstleister für Yachten</strong> in <strong>Spanien</strong> musste eine <strong>Yacht reparieren</strong>, deren hydraulisches Antriebssystem stillstand. Benötigt wurde der Orbitmotor <strong>MMS50C</strong> von <strong>M+S Hydraulic</strong> — Referenz für einen kompakten <strong>Hydraulikmotor</strong> mit 50 cm³/U Hubvolumen.</p>
       <p data-i18n="body_p1">Der <strong>MMS50C</strong> ist ein gerotor-basierter Orbitmotor der MM-Baureihe mit Schieberventil: geeignet für beengte Einbauräume, seitliche G 3/8″-Anschlüsse, Welle Ø 16 mm — typisch für Winsch-, Pumpen- und Hilfsantriebe an Bord. An einer Yacht kann ein defekter Hydraulikmotor Winden, Bugstrahlruder oder Deckmaschinen lahmlegen.</p>
       <p data-i18n="body_p2">ABCspareparts hat die Anfrage mit der exakten Referenz <strong>MMS50C</strong> bearbeitet, die Passung zum M+S Hydraulic-Typ bestätigt und den Motor beschafft — damit konnte die <strong>Yacht-Reparatur abgeschlossen</strong> und das hydraulische System wieder in Betrieb genommen werden.</p>
@@ -106,11 +132,23 @@
       <p data-i18n="outro">Benötigen Sie M+S Hydraulic-Motoren oder andere marine Hydraulikreferenzen für Yacht oder Werft? Stellen Sie eine unverbindliche Anfrage mit Teilenummer.</p>
       <div class="cta-row">
         <a class="cta-primary" href="../index.html#contact" data-i18n="cta_brand">M+S Hydraulic-Teile anfragen</a>
-        <a class="cta-secondary" href="../index.html#contact" data-i18n="cta_contact">Zur Anfrage</a>
+        <button type="button" class="cta-secondary open-quote-modal" data-i18n="cta_contact">Zur Anfrage</button>
       </div>
       <p class="disclaimer" data-i18n="disclaimer">Erfolgsgeschichte basierend auf einer realen Lieferung. Der Kunde wird aus Gründen der Vertraulichkeit nicht genannt. M+S Hydraulic® ist eine Marke der jeweiligen Rechteinhaber.</p>
     </div>
   </main>
+  
+  <div id="quoteModal" class="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-modal></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button type="button" class="quote-modal-close" data-close-modal data-i18n-aria="quote_modal_close" aria-label="Schließen">&times;</button>
+      <h2 id="quoteModalTitle" data-i18n="quote_modal_title">Unverbindliche Anfrage</h2>
+      <p class="quote-modal-part"><span data-i18n="quote_modal_part_label">Teilenummer</span>: <strong id="quoteModalPart"></strong></p>
+      <div class="quote-modal-iframe-wrap">
+        <iframe id="quoteFormIframe" data-i18n-title="quote_iframe_title" title="Anfrageformular"></iframe>
+      </div>
+    </div>
+  </div>
   <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -139,9 +177,11 @@
 </footer>
   <script>
   (function () {
+    var BRAND = "M+S Hydraulic";
+    var DEFAULT_PART = "MMS50C";
     var BRAND_SLUG = undefined;
     var translations = {"de":{"meta_title":"M+S Hydraulic Motor MMS50C – Erfolgsgeschichte Yacht | ABCspareparts","meta_description":"Erfolgsgeschichte: M+S Hydraulic MMS50C Orbitmotor für Yacht-Reparatur in Spanien — hydraulischer Antrieb wieder funktionsfähig.","title":"M+S Hydraulic Motor MMS50C","subtitle":"Yacht-Reparatur · orbitales Hydraulikmotorgerät","intro":"Ein <strong>maritimer Dienstleister für Yachten</strong> in <strong>Spanien</strong> musste eine <strong>Yacht reparieren</strong>, deren hydraulisches Antriebssystem stillstand. Benötigt wurde der Orbitmotor <strong>MMS50C</strong> von <strong>M+S Hydraulic</strong> — Referenz für einen kompakten <strong>Hydraulikmotor</strong> mit 50 cm³/U Hubvolumen.","body_p1":"Der <strong>MMS50C</strong> ist ein gerotor-basierter Orbitmotor der MM-Baureihe mit Schieberventil: geeignet für beengte Einbauräume, seitliche G 3/8″-Anschlüsse, Welle Ø 16 mm — typisch für Winsch-, Pumpen- und Hilfsantriebe an Bord. An einer Yacht kann ein defekter Hydraulikmotor Winden, Bugstrahlruder oder Deckmaschinen lahmlegen.","body_p2":"ABCspareparts hat die Anfrage mit der exakten Referenz <strong>MMS50C</strong> bearbeitet, die Passung zum M+S Hydraulic-Typ bestätigt und den Motor beschafft — damit konnte die <strong>Yacht-Reparatur abgeschlossen</strong> und das hydraulische System wieder in Betrieb genommen werden.","timeline_title":"Ablauf der Yacht-Reparatur","timeline_li1":"Anfrage für <strong>Yacht-Instandsetzung</strong> — Hydraulikmotor <strong>MMS50C</strong> (M+S Hydraulic) erforderlich","timeline_li2":"Lieferung des <strong>Orbitmotors MMS50C</strong> — <strong>hydraulischer Antrieb wieder einsatzbereit</strong>","timeline_note":"Marine Ersatzteile erfordern die <strong>exakte Motorbezeichnung</strong> — Baugröße, Ventiltyp und Wellenausführung (hier: MMS50C).","outro":"Benötigen Sie M+S Hydraulic-Motoren oder andere marine Hydraulikreferenzen für Yacht oder Werft? Stellen Sie eine unverbindliche Anfrage mit Teilenummer.","cta_brand":"M+S Hydraulic-Teile anfragen","cta_contact":"Zur Anfrage","disclaimer":"Erfolgsgeschichte basierend auf einer realen Lieferung. Der Kunde wird aus Gründen der Vertraulichkeit nicht genannt. M+S Hydraulic® ist eine Marke der jeweiligen Rechteinhaber.","fact_sector":"Branche","fact_sector_val":"Yacht-Service & Schiffsreparatur","fact_brand":"Marke","fact_part":"Teilenummer","fact_part_val":"<strong>MMS50C</strong>","fact_component":"Komponente","fact_component_val":"Orbit-Hydraulikmotor (MM-Serie, 50 cm³/U)","fact_destination":"Ziel","fact_destination_val":"Spanien","card_teaser":"M+S Hydraulic MMS50C — Orbitmotor für Yacht-Reparatur in Spanien."},"en":{"meta_title":"M+S Hydraulic motor MMS50C – yacht repair success story | ABCspareparts","meta_description":"Success story: M+S Hydraulic MMS50C orbital motor for a yacht repair in Spain — hydraulic drive restored to service.","title":"M+S Hydraulic motor MMS50C","subtitle":"Yacht repair · orbital hydraulic motor","intro":"A <strong>yacht service company</strong> in <strong>Spain</strong> needed to <strong>repair a yacht</strong> with a failed hydraulic drive. The required unit was the <strong>MMS50C</strong> orbital motor from <strong>M+S Hydraulic</strong> — a compact <strong>hydraulic motor</strong> with 50 cm³/rev displacement.","body_p1":"The <strong>MMS50C</strong> is a gerotor-type orbital motor from the MM range with spool valve: suited to tight spaces, side G 3/8″ ports, 16 mm shaft — commonly used for winches, bow thrusters and deck machinery. On a yacht, a failed hydraulic motor can immobilise critical onboard equipment.","body_p2":"ABCspareparts processed the enquiry with reference <strong>MMS50C</strong>, confirmed the M+S Hydraulic specification and supplied the motor — allowing the <strong>yacht repair to be completed</strong> and the hydraulic system returned to operation.","timeline_title":"Yacht repair timeline","timeline_li1":"Enquiry for <strong>yacht refit</strong> — hydraulic motor <strong>MMS50C</strong> (M+S Hydraulic) required","timeline_li2":"Delivery of <strong>MMS50C orbital motor</strong> — <strong>hydraulic drive operational again</strong>","timeline_note":"Marine spares need the <strong>exact motor code</strong> — size, valve type and shaft execution (here: MMS50C).","outro":"Need M+S Hydraulic motors or other marine hydraulic references for a yacht or shipyard? Send a no-obligation enquiry with the part number.","cta_brand":"Request M+S Hydraulic parts","cta_contact":"Contact us","disclaimer":"Success story based on a real delivery. The customer is not named for confidentiality. M+S Hydraulic® is a trademark of its respective owners.","fact_sector":"Sector","fact_sector_val":"Yacht service & marine repair","fact_brand":"Brand","fact_part":"Part number","fact_part_val":"<strong>MMS50C</strong>","fact_component":"Component","fact_component_val":"Orbital hydraulic motor (MM series, 50 cm³/rev)","fact_destination":"Destination","fact_destination_val":"Spain","card_teaser":"M+S Hydraulic MMS50C — orbital motor for yacht repair in Spain."},"it":{"meta_title":"Motore idraulico M+S Hydraulic MMS50C – caso di successo yacht | ABCspareparts","meta_description":"Caso di successo: motore orbitale M+S Hydraulic MMS50C per riparazione yacht in Spagna — azionamento idraulico ripristinato.","title":"Motore idraulico M+S Hydraulic MMS50C","subtitle":"Riparazione yacht · motore idraulico orbitale","intro":"Un <strong>officina di assistenza yacht</strong> in <strong>Spagna</strong> doveva <strong>riparare uno yacht</strong> con un azionamento idraulico fuori servizio. Serviva il motore orbitale <strong>MMS50C</strong> di <strong>M+S Hydraulic</strong> — <strong>motore idraulico</strong> compatto da 50 cm³/giro.","body_p1":"Il <strong>MMS50C</strong> è un motore orbitale gerotor della serie MM con distributore a cursori: adatto a spazi ridotti, attacchi laterali G 3/8″, albero Ø 16 mm — usato su verricelli, propulsori di prua e macchinari di coperta. Su uno yacht, un motore idraulico guasto blocca equipaggiamenti critici a bordo.","body_p2":"ABCspareparts ha gestito la richiesta con il codice <strong>MMS50C</strong>, verificato la corrispondenza M+S Hydraulic e fornito il motore — consentendo di <strong>completare la riparazione dello yacht</strong> e rimettere in servizio il circuito idraulico.","timeline_title":"Cronologia della riparazione","timeline_li1":"Richiesta per <strong>refit yacht</strong> — motore idraulico <strong>MMS50C</strong> (M+S Hydraulic)","timeline_li2":"Fornitura <strong>motore orbitale MMS50C</strong> — <strong>azionamento idraulico di nuovo operativo</strong>","timeline_note":"Nei ricambi nautici conta il <strong>codice motore esatto</strong> — cilindrata, tipo valvola ed esecuzione albero (qui: MMS50C).","outro":"Vi serve un motore M+S Hydraulic o altre referenze idrauliche marine per yacht o cantiere? Inviate una richiesta senza impegno con il codice articolo.","cta_brand":"Richiedi ricambi M+S Hydraulic","cta_contact":"Vai al modulo contatti","disclaimer":"Caso di successo basato su fornitura reale. Il cliente non è nominato per riservatezza commerciale. M+S Hydraulic® è marchio dei rispettivi titolari.","fact_sector":"Settore","fact_sector_val":"Assistenza yacht e riparazioni marine","fact_brand":"Marca","fact_part":"Codice articolo","fact_part_val":"<strong>MMS50C</strong>","fact_component":"Componente","fact_component_val":"Motore idraulico orbitale (serie MM, 50 cm³/giro)","fact_destination":"Destinazione","fact_destination_val":"Spagna","card_teaser":"M+S Hydraulic MMS50C — motore orbitale per riparazione yacht in Spagna."},"es":{"meta_title":"Motor hidráulico M+S Hydraulic MMS50C – caso de éxito yate | ABCspareparts","meta_description":"Caso de éxito: motor orbital M+S Hydraulic MMS50C para reparación de yate en España — accionamiento hidráulico restaurado.","title":"Motor hidráulico M+S Hydraulic MMS50C","subtitle":"Reparación de yate · motor hidráulico orbital","intro":"Una <strong>empresa de servicio náutico</strong> en <strong>España</strong> debía <strong>reparar un yate</strong> cuyo accionamiento hidráulico había fallado. Se necesitaba el motor orbital <strong>MMS50C</strong> de <strong>M+S Hydraulic</strong> — <strong>motor hidráulico</strong> compacto de 50 cm³/rev.","body_p1":"El <strong>MMS50C</strong> es un motor orbital gerotor de la serie MM con válvula de carrete: apto para espacios reducidos, conexiones laterales G 3/8″, eje Ø 16 mm — habitual en cabrestantes, propulsores de proa y maquinaria de cubierta. En un yate, un motor hidráulico averiado inmoviliza equipos críticos a bordo.","body_p2":"ABCspareparts gestionó la solicitud con la referencia <strong>MMS50C</strong>, confirmó la especificación M+S Hydraulic y suministró el motor — permitiendo <strong>completar la reparación del yate</strong> y volver a poner en servicio el circuito hidráulico.","timeline_title":"Cronología de la reparación","timeline_li1":"Consulta para <strong>reparación de yate</strong> — motor hidráulico <strong>MMS50C</strong> (M+S Hydraulic)","timeline_li2":"Suministro del <strong>motor orbital MMS50C</strong> — <strong>accionamiento hidráulico operativo de nuevo</strong>","timeline_note":"En recambios marinos importa el <strong>código exacto del motor</strong> — cilindrada, tipo de válvula y ejecución del eje (aquí: MMS50C).","outro":"¿Necesita motores M+S Hydraulic u otras referencias hidráulicas marinas para yate o astillero? Solicite presupuesto sin compromiso con la referencia.","cta_brand":"Solicitar piezas M+S Hydraulic","cta_contact":"Ir al formulario","disclaimer":"Caso de éxito basado en un suministro real. El cliente no se nombra por confidencialidad. M+S Hydraulic® es marca de sus respectivos titulares.","fact_sector":"Sector","fact_sector_val":"Servicio náutico y reparación de yates","fact_brand":"Marca","fact_part":"Referencia","fact_part_val":"<strong>MMS50C</strong>","fact_component":"Componente","fact_component_val":"Motor hidráulico orbital (serie MM, 50 cm³/rev)","fact_destination":"Destino","fact_destination_val":"España","card_teaser":"M+S Hydraulic MMS50C — motor orbital para reparación de yate en España."},"fr":{"meta_title":"Moteur hydraulique M+S Hydraulic MMS50C – histoire de réussite yacht | ABCspareparts","meta_description":"Histoire de réussite : moteur orbital M+S Hydraulic MMS50C pour réparation de yacht en Espagne — entraînement hydraulique rétabli.","title":"Moteur hydraulique M+S Hydraulic MMS50C","subtitle":"Réparation yacht · moteur hydraulique orbital","intro":"Un <strong>prestataire de service yacht</strong> en <strong>Espagne</strong> devait <strong>réparer un yacht</strong> dont l'entraînement hydraulique était en panne. Le moteur orbital <strong>MMS50C</strong> de <strong>M+S Hydraulic</strong> était requis — <strong>moteur hydraulique</strong> compact de 50 cm³/tr.","body_p1":"Le <strong>MMS50C</strong> est un moteur orbital gerotor de la gamme MM à distributeur à tiroir : adapté aux espaces restreints, raccords latéraux G 3/8″, arbre Ø 16 mm — courant sur treuils, propulseurs d'étrave et équipements de pont. Sur un yacht, un moteur hydraulique défaillant immobilise des équipements critiques.","body_p2":"ABCspareparts a traité la demande avec la référence <strong>MMS50C</strong>, confirmé la spécification M+S Hydraulic et livré le moteur — permettant de <strong>finaliser la réparation du yacht</strong> et de remettre le circuit hydraulique en service.","timeline_title":"Chronologie de la réparation","timeline_li1":"Demande pour <strong>réparation yacht</strong> — moteur hydraulique <strong>MMS50C</strong> (M+S Hydraulic)","timeline_li2":"Livraison du <strong>moteur orbital MMS50C</strong> — <strong>entraînement hydraulique de nouveau opérationnel</strong>","timeline_note":"En pièces marines, le <strong>code moteur exact</strong> est essentiel — cylindrée, type de valve et arbre (ici : MMS50C).","outro":"Besoin de moteurs M+S Hydraulic ou d'autres références hydrauliques marines pour yacht ou chantier ? Envoyez une demande sans engagement avec la référence.","cta_brand":"Demander des pièces M+S Hydraulic","cta_contact":"Formulaire de contact","disclaimer":"Histoire de réussite basée sur une livraison réelle. Le client n'est pas nommé pour confidentialité. M+S Hydraulic® est une marque de ses titulaires respectifs.","fact_sector":"Secteur","fact_sector_val":"Service yacht & réparation navale","fact_brand":"Marque","fact_part":"Référence","fact_part_val":"<strong>MMS50C</strong>","fact_component":"Composant","fact_component_val":"Moteur hydraulique orbital (série MM, 50 cm³/tr)","fact_destination":"Destination","fact_destination_val":"Espagne","card_teaser":"M+S Hydraulic MMS50C — moteur orbital pour réparation yacht en Espagne."}};
-    var hubLabels = {"de":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Erfolgsgeschichten</a> · M+S Hydraulic","footer_brands":"Marken","footer_cases":"Erfolgsgeschichten","footer_contact":"Kontakt","footer_imprint":"Impressum","footer_privacy":"Datenschutz","footer_terms":"AGB","footer_shipping":"Versand","footer_cookies":"Cookies","footer_rights":"Alle Rechte vorbehalten."},"en":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Success stories</a> · M+S Hydraulic","footer_brands":"Brands","footer_cases":"Success stories","footer_contact":"Contact","footer_imprint":"Imprint","footer_privacy":"Privacy","footer_terms":"Terms","footer_shipping":"Shipping","footer_cookies":"Cookies","footer_rights":"All rights reserved."},"it":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casi di successo</a> · M+S Hydraulic","footer_brands":"Marche","footer_cases":"Casi di successo","footer_contact":"Contatti","footer_imprint":"Impressum","footer_privacy":"Privacy","footer_terms":"Condizioni","footer_shipping":"Spedizione","footer_cookies":"Cookie","footer_rights":"Tutti i diritti riservati."},"es":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casos de éxito</a> · M+S Hydraulic","footer_brands":"Marcas","footer_cases":"Casos de éxito","footer_contact":"Contacto","footer_imprint":"Aviso legal","footer_privacy":"Privacidad","footer_terms":"Términos","footer_shipping":"Envío","footer_cookies":"Cookies","footer_rights":"Todos los derechos reservados."},"fr":{"case_breadcrumb":"<a href=\"../index.html\">Accueil</a> · <a href=\"../casi.html\">Histoires de réussite</a> · M+S Hydraulic","footer_brands":"Marques","footer_cases":"Histoires de réussite","footer_contact":"Contact","footer_imprint":"Mentions légales","footer_privacy":"Confidentialité","footer_terms":"CGV","footer_shipping":"Livraison","footer_cookies":"Cookies","footer_rights":"Tous droits réservés."}};
+    var hubLabels = {"de":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Erfolgsgeschichten</a> · M+S Hydraulic","footer_brands":"Marken","footer_cases":"Erfolgsgeschichten","footer_contact":"Kontakt","footer_imprint":"Impressum","footer_privacy":"Datenschutz","footer_terms":"AGB","footer_shipping":"Versand","footer_cookies":"Cookies","footer_rights":"Alle Rechte vorbehalten.","quote_parts_title":"Diese Teilenummern anfragen","quote_parts_intro":"Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.","quote_modal_title":"Unverbindliche Anfrage","quote_modal_close":"Schließen","quote_modal_part_label":"Teilenummer","quote_iframe_title":"Anfrageformular"},"en":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Success stories</a> · M+S Hydraulic","footer_brands":"Brands","footer_cases":"Success stories","footer_contact":"Contact","footer_imprint":"Imprint","footer_privacy":"Privacy","footer_terms":"Terms","footer_shipping":"Shipping","footer_cookies":"Cookies","footer_rights":"All rights reserved.","quote_parts_title":"Request a quote for these part numbers","quote_parts_intro":"Click a code to open the request form with brand and part number pre-filled.","quote_modal_title":"No-obligation enquiry","quote_modal_close":"Close","quote_modal_part_label":"Part number","quote_iframe_title":"Request form"},"it":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casi di successo</a> · M+S Hydraulic","footer_brands":"Marche","footer_cases":"Casi di successo","footer_contact":"Contatti","footer_imprint":"Impressum","footer_privacy":"Privacy","footer_terms":"Condizioni","footer_shipping":"Spedizione","footer_cookies":"Cookie","footer_rights":"Tutti i diritti riservati.","quote_parts_title":"Richiedi preventivo per questi codici","quote_parts_intro":"Clicchi su un codice per aprire il modulo con marca e codice articolo già compilati.","quote_modal_title":"Richiesta senza impegno","quote_modal_close":"Chiudi","quote_modal_part_label":"Codice articolo","quote_iframe_title":"Modulo richiesta"},"es":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casos de éxito</a> · M+S Hydraulic","footer_brands":"Marcas","footer_cases":"Casos de éxito","footer_contact":"Contacto","footer_imprint":"Aviso legal","footer_privacy":"Privacidad","footer_terms":"Términos","footer_shipping":"Envío","footer_cookies":"Cookies","footer_rights":"Todos los derechos reservados.","quote_parts_title":"Solicitar presupuesto para estas referencias","quote_parts_intro":"Haga clic en un código para abrir el formulario con marca y referencia precargadas.","quote_modal_title":"Solicitud sin compromiso","quote_modal_close":"Cerrar","quote_modal_part_label":"Referencia","quote_iframe_title":"Formulario de solicitud"},"fr":{"case_breadcrumb":"<a href=\"../index.html\">Accueil</a> · <a href=\"../casi.html\">Histoires de réussite</a> · M+S Hydraulic","footer_brands":"Marques","footer_cases":"Histoires de réussite","footer_contact":"Contact","footer_imprint":"Mentions légales","footer_privacy":"Confidentialité","footer_terms":"CGV","footer_shipping":"Livraison","footer_cookies":"Cookies","footer_rights":"Tous droits réservés.","quote_parts_title":"Demander un devis pour ces références","quote_parts_intro":"Cliquez sur une référence pour ouvrir le formulaire avec marque et code préremplis.","quote_modal_title":"Demande sans engagement","quote_modal_close":"Fermer","quote_modal_part_label":"Référence","quote_iframe_title":"Formulaire de demande"}};
     var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
@@ -191,9 +231,64 @@
         var key = el.getAttribute('data-i18n');
         if (merged[key]) el.innerHTML = merged[key];
       });
+      document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-title');
+        if (merged[key]) el.setAttribute('title', merged[key]);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        if (merged[key]) el.setAttribute('aria-label', merged[key]);
+      });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
+      if (quoteModal && !quoteModal.hasAttribute('hidden') && quoteIframe) {
+        var activePart = quoteModalPart ? quoteModalPart.textContent : '';
+        quoteIframe.src = buildQuoteIframeSrc(lang, activePart);
+      }
+    }
+    var quoteModal = document.getElementById('quoteModal');
+    var quoteIframe = document.getElementById('quoteFormIframe');
+    var quoteModalPart = document.getElementById('quoteModalPart');
+    function buildQuoteIframeSrc(lang, part) {
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang || 'en');
+      url += '&custom_manufacturer=' + encodeURIComponent(BRAND);
+      if (part) url += '&custom_part_numbers=' + encodeURIComponent(part);
+      return url;
+    }
+    function openQuoteModal(part, lang) {
+      if (!quoteModal) return;
+      var code = part || DEFAULT_PART || '';
+      if (quoteModalPart) quoteModalPart.textContent = code;
+      if (quoteIframe) quoteIframe.src = buildQuoteIframeSrc(lang, code);
+      quoteModal.removeAttribute('hidden');
+      document.body.classList.add('quote-modal-open');
+    }
+    function closeQuoteModal() {
+      if (!quoteModal) return;
+      quoteModal.setAttribute('hidden', '');
+      document.body.classList.remove('quote-modal-open');
+      if (quoteIframe) quoteIframe.src = 'about:blank';
+    }
+    function initQuoteModal() {
+      document.querySelectorAll('.part-quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(btn.getAttribute('data-part') || '', lang);
+        });
+      });
+      document.querySelectorAll('.open-quote-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(DEFAULT_PART, lang);
+        });
+      });
+      document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeQuoteModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
+      });
     }
     document.addEventListener('DOMContentLoaded', function () {
       var raw = getCurrentLang();
@@ -201,6 +296,7 @@
       var sel = document.getElementById('languageSelect');
       if (sel) sel.value = lang;
       changeLanguage(lang);
+      initQuoteModal();
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();
