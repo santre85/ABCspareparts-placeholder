@@ -55,6 +55,24 @@
     .cta-primary:hover { background: #d35400; }
     .cta-secondary { background: #1e3a5f; color: #fff !important; }
     .cta-secondary:hover { background: #2d5a87; }
+    .case-quote-parts { background: #f0f6fb; border: 1px solid #dce8f4; border-radius: 10px; padding: 1.15rem 1.2rem; margin-bottom: 1.75rem; }
+    .case-quote-parts h2 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 0.45rem; }
+    .quote-parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 0.9rem; }
+    .case-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.45rem 0.75rem; cursor: pointer; }
+    .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .quote-modal[hidden] { display: none !important; }
+    .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
+    .quote-modal-dialog { position: relative; z-index: 1; width: min(720px, 100%); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.25); padding: 1.25rem 1.25rem 1rem; }
+    .quote-modal-dialog h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.35rem; padding-right: 2rem; }
+    .quote-modal-part { font-size: 0.92rem; color: #444; margin-bottom: 0.85rem; }
+    .quote-modal-part strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
+    .quote-modal-close { position: absolute; top: 0.65rem; right: 0.75rem; border: none; background: transparent; font-size: 1.75rem; line-height: 1; color: #666; cursor: pointer; }
+    .quote-modal-close:hover { color: #e67e22; }
+    .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
+    body.quote-modal-open { overflow: hidden; }
     .disclaimer { font-size: 0.85rem; color: #666; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
 
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
@@ -92,6 +110,14 @@
         <dt data-i18n="fact_component">Komponente</dt><dd data-i18n="fact_component_val">Axialkolben-Verstellpumpe (A10VSO Serie 31, NG28)</dd>
         <dt data-i18n="fact_destination">Ziel</dt><dd data-i18n="fact_destination_val">Deutschland — Lausitz (Ostdeutschland)</dd>
       </dl>
+
+      <section class="case-quote-parts" aria-labelledby="case-quote-parts-heading">
+        <h2 id="case-quote-parts-heading" data-i18n="quote_parts_title">Diese Teilenummern anfragen</h2>
+        <p class="quote-parts-intro" data-i18n="quote_parts_intro">Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.</p>
+        <ul class="case-parts-list">
+          <li><button type="button" class="part-quote-btn" data-part="A10VSO28DFR1/31L-PPA12N">A10VSO28DFR1/31L-PPA12N</button></li>
+        </ul>
+      </section>
       <p data-i18n="intro">Ein <strong>Kraftwerksbetreiber in der Lausitz</strong> (Ostdeutschland) benötigte eine <strong>Rexroth-Hydraulikpumpe</strong> mit der vollständigen Typenbezeichnung <strong>A10VSO28DFR1/31L-PPA12N</strong> — eine <strong>axiale Kolben-Verstellpumpe</strong> der Serie 31 für offene Hydraulikkreise an Anlagenkomponenten.</p>
       <p data-i18n="body_p1">Die <strong>A10VSO28</strong> gehört zur bewährten Rexroth-Baureihe A10VSO: Schrägscheiben-Design, variabler Förderstrom, Nenngröße 28, mit <strong>DFR1-Druck-/Volumenstromregler</strong>. In Kraftwerken und Energieanlagen sichern solche Pumpen den Betrieb von Hilfsaggregaten, Stellantrieben und Wartungseinrichtungen — eine falsche oder unvollständige Bestellnummer verzögert Instandsetzungen erheblich.</p>
       <p data-i18n="body_p2">ABCspareparts hat die Anfrage mit der <strong>exakten Rexroth-Typenbezeichnung</strong> bearbeitet, die technische Übereinstimmung der Pumpe geprüft, Verfügbarkeit und Lieferoptionen abgestimmt und die Komponente für den Betreiber in Deutschland beschafft.</p>
@@ -106,11 +132,23 @@
       <p data-i18n="outro">Benötigen Sie Rexroth-Hydraulikpumpen der Serie A10VSO oder eine ähnliche Verstellpumpe für Ihr Kraftwerk oder Ihre Anlage? Stellen Sie eine unverbindliche Anfrage mit der vollständigen Typenbezeichnung.</p>
       <div class="cta-row">
         <a class="cta-primary" href="../marche/rexroth.html" data-i18n="cta_brand">Rexroth-Teile anfragen</a>
-        <a class="cta-secondary" href="../index.html#contact" data-i18n="cta_contact">Zur Anfrage</a>
+        <button type="button" class="cta-secondary open-quote-modal" data-i18n="cta_contact">Zur Anfrage</button>
       </div>
       <p class="disclaimer" data-i18n="disclaimer">Erfolgsgeschichte basierend auf einer realen Lieferung. Der Kunde wird aus Gründen der Vertraulichkeit nicht genannt. Rexroth® ist eine Marke der Bosch Rexroth AG bzw. der jeweiligen Rechteinhaber.</p>
     </div>
   </main>
+  
+  <div id="quoteModal" class="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-modal></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button type="button" class="quote-modal-close" data-close-modal data-i18n-aria="quote_modal_close" aria-label="Schließen">&times;</button>
+      <h2 id="quoteModalTitle" data-i18n="quote_modal_title">Unverbindliche Anfrage</h2>
+      <p class="quote-modal-part"><span data-i18n="quote_modal_part_label">Teilenummer</span>: <strong id="quoteModalPart"></strong></p>
+      <div class="quote-modal-iframe-wrap">
+        <iframe id="quoteFormIframe" data-i18n-title="quote_iframe_title" title="Anfrageformular"></iframe>
+      </div>
+    </div>
+  </div>
   <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -139,9 +177,11 @@
 </footer>
   <script>
   (function () {
+    var BRAND = "Rexroth";
+    var DEFAULT_PART = "A10VSO28DFR1/31L-PPA12N";
     var BRAND_SLUG = "rexroth";
     var translations = {"de":{"meta_title":"Rexroth Pumpe A10VSO28DFR1/31L-PPA12N – Erfolgsgeschichte | ABCspareparts","meta_description":"Erfolgsgeschichte: Rexroth Axialkolben-Verstellpumpe A10VSO28DFR1/31L-PPA12N für einen Kraftwerksbetreiber in Ostdeutschland — exakte Typenbezeichnung beschafft.","title":"Rexroth Axialkolbenpumpe A10VSO28DFR1/31L-PPA12N","subtitle":"Kraftwerk · hydraulische Verstellpumpe Serie A10VSO 31","intro":"Ein <strong>Kraftwerksbetreiber in der Lausitz</strong> (Ostdeutschland) benötigte eine <strong>Rexroth-Hydraulikpumpe</strong> mit der vollständigen Typenbezeichnung <strong>A10VSO28DFR1/31L-PPA12N</strong> — eine <strong>axiale Kolben-Verstellpumpe</strong> der Serie 31 für offene Hydraulikkreise an Anlagenkomponenten.","body_p1":"Die <strong>A10VSO28</strong> gehört zur bewährten Rexroth-Baureihe A10VSO: Schrägscheiben-Design, variabler Förderstrom, Nenngröße 28, mit <strong>DFR1-Druck-/Volumenstromregler</strong>. In Kraftwerken und Energieanlagen sichern solche Pumpen den Betrieb von Hilfsaggregaten, Stellantrieben und Wartungseinrichtungen — eine falsche oder unvollständige Bestellnummer verzögert Instandsetzungen erheblich.","body_p2":"ABCspareparts hat die Anfrage mit der <strong>exakten Rexroth-Typenbezeichnung</strong> bearbeitet, die technische Übereinstimmung der Pumpe geprüft, Verfügbarkeit und Lieferoptionen abgestimmt und die Komponente für den Betreiber in Deutschland beschafft.","timeline_title":"Ablauf der Beschaffung","timeline_li1":"Anfrage mit vollständiger Referenz <strong>A10VSO28DFR1/31L-PPA12N</strong> (Rexroth Verstellpumpe, Baureihe 31)","timeline_li2":"Beschaffung und Lieferung der <strong>Axialkolbenpumpe</strong> für den Kraftwerksstandort","timeline_note":"Entscheidend war die <strong>präzise Typencode-Übereinstimmung</strong> — Größe, Regler (DFR1), Baugruppe 31 und Anschlussvariante (PPA12N).","outro":"Benötigen Sie Rexroth-Hydraulikpumpen der Serie A10VSO oder eine ähnliche Verstellpumpe für Ihr Kraftwerk oder Ihre Anlage? Stellen Sie eine unverbindliche Anfrage mit der vollständigen Typenbezeichnung.","cta_brand":"Rexroth-Teile anfragen","cta_contact":"Zur Anfrage","disclaimer":"Erfolgsgeschichte basierend auf einer realen Lieferung. Der Kunde wird aus Gründen der Vertraulichkeit nicht genannt. Rexroth® ist eine Marke der Bosch Rexroth AG bzw. der jeweiligen Rechteinhaber.","fact_sector":"Branche","fact_sector_val":"Energieerzeugung · Kraftwerk","fact_brand":"Marke","fact_part":"Typenbezeichnung","fact_part_val":"<strong>A10VSO28DFR1/31L-PPA12N</strong>","fact_component":"Komponente","fact_component_val":"Axialkolben-Verstellpumpe (A10VSO Serie 31, NG28)","fact_destination":"Ziel","fact_destination_val":"Deutschland — Lausitz (Ostdeutschland)","card_teaser":"Rexroth A10VSO28DFR1/31L-PPA12N — Verstellpumpe für Kraftwerksbetreiber in der Lausitz."},"en":{"meta_title":"Rexroth pump A10VSO28DFR1/31L-PPA12N – success story | ABCspareparts","meta_description":"Success story: Rexroth A10VSO28 axial piston variable pump A10VSO28DFR1/31L-PPA12N for a power plant operator in eastern Germany — exact type code sourced.","title":"Rexroth axial piston pump A10VSO28DFR1/31L-PPA12N","subtitle":"Power generation · A10VSO series 31 variable pump","intro":"A <strong>power plant operator in the Lusatia region</strong> (eastern Germany) required a <strong>Rexroth hydraulic pump</strong> with the full type designation <strong>A10VSO28DFR1/31L-PPA12N</strong> — an <strong>axial piston variable pump</strong> from series 31 for open-circuit applications on plant equipment.","body_p1":"The <strong>A10VSO28</strong> is part of Rexroth’s established A10VSO range: swashplate design, variable displacement, size 28, with <strong>DFR1 pressure and flow controller</strong>. In power stations and energy plants, such pumps support auxiliary drives, actuators and maintenance systems — an incomplete order code can delay overhauls by weeks.","body_p2":"ABCspareparts handled the enquiry with the <strong>exact Rexroth type code</strong>, validated pump specification, aligned availability and delivery options, and supplied the unit to the operator in Germany.","timeline_title":"Supply timeline","timeline_li1":"Enquiry with full reference <strong>A10VSO28DFR1/31L-PPA12N</strong> (Rexroth variable pump, series 31)","timeline_li2":"Procurement and delivery of the <strong>axial piston pump</strong> to the power plant site","timeline_note":"Success depended on <strong>exact type-code matching</strong> — size, controller (DFR1), series 31 build and port variant (PPA12N).","outro":"Need a Rexroth A10VSO hydraulic pump or a similar variable pump for your power plant or industrial site? Send a no-obligation enquiry with the complete type designation.","cta_brand":"Request Rexroth parts","cta_contact":"Contact us","disclaimer":"Success story based on a real delivery. The customer is not named for confidentiality. Rexroth® is a trademark of Bosch Rexroth AG or its respective owners.","fact_sector":"Sector","fact_sector_val":"Power generation · power plant","fact_brand":"Brand","fact_part":"Type code","fact_part_val":"<strong>A10VSO28DFR1/31L-PPA12N</strong>","fact_component":"Component","fact_component_val":"Axial piston variable pump (A10VSO series 31, NG28)","fact_destination":"Destination","fact_destination_val":"Germany — Lusatia (eastern Germany)","card_teaser":"Rexroth A10VSO28DFR1/31L-PPA12N — variable pump for Lusatia power plant operator."},"it":{"meta_title":"Pompa Rexroth A10VSO28DFR1/31L-PPA12N – caso di successo | ABCspareparts","meta_description":"Caso di successo: pompa assiale a pistoni variabile Rexroth A10VSO28DFR1/31L-PPA12N per un gestore di centrale in Germania orientale — codice tipo esatto.","title":"Pompa assiale Rexroth A10VSO28DFR1/31L-PPA12N","subtitle":"Centrale elettrica · pompa variabile serie A10VSO 31","intro":"Un <strong>gestore di centrale elettrica nella regione della Lusazia</strong> (Germania orientale) necessitava di una <strong>pompa idraulica Rexroth</strong> con codifica completa <strong>A10VSO28DFR1/31L-PPA12N</strong> — <strong>pompa assiale a pistoni a portata variabile</strong> serie 31 per circuiti aperti su impianti di produzione energetica.","body_p1":"L’<strong>A10VSO28</strong> appartiene alla collaudata gamma Rexroth A10VSO: inclinazione piastra oscillante, cilindrata regolabile, taglia 28, con <strong>regolatore pressione/portata DFR1</strong>. Nelle centrali elettriche, pompe di questo tipo alimentano ausiliari, attuatori e sistemi di manutenzione — un codice incompleto blocca gli interventi.","body_p2":"ABCspareparts ha gestito la richiesta con la <strong>tipologia Rexroth esatta</strong>, verificato le specifiche, allineato disponibilità e tempi di consegna e fornito il componente all’operatore in Germania.","timeline_title":"Cronologia della fornitura","timeline_li1":"Richiesta con referenza completa <strong>A10VSO28DFR1/31L-PPA12N</strong> (pompa variabile Rexroth, serie 31)","timeline_li2":"Approvvigionamento e consegna della <strong>pompa assiale</strong> presso il sito della centrale","timeline_note":"Fondamentale la <strong>corrispondenza esatta del codice tipo</strong> — dimensione, regolatore DFR1, serie 31 e variante attacchi PPA12N.","outro":"Vi serve una pompa idraulica Rexroth A10VSO o una variabile simile per centrale o impianto industriale? Inviate una richiesta senza impegno con la codifica completa.","cta_brand":"Richiedi ricambi Rexroth","cta_contact":"Vai al modulo contatti","disclaimer":"Caso di successo basato su fornitura reale. Il cliente non è nominato per riservatezza commerciale. Rexroth® è marchio di Bosch Rexroth AG o dei rispettivi titolari.","fact_sector":"Settore","fact_sector_val":"Produzione energetica · centrale elettrica","fact_brand":"Marca","fact_part":"Codice tipo","fact_part_val":"<strong>A10VSO28DFR1/31L-PPA12N</strong>","fact_component":"Componente","fact_component_val":"Pompa assiale a portata variabile (A10VSO serie 31, NG28)","fact_destination":"Destinazione","fact_destination_val":"Germania — Lusazia (Germania orientale)","card_teaser":"Rexroth A10VSO28DFR1/31L-PPA12N — pompa variabile per gestore centrale in Lusazia."},"es":{"meta_title":"Bomba Rexroth A10VSO28DFR1/31L-PPA12N – caso de éxito | ABCspareparts","meta_description":"Caso de éxito: bomba de pistones axiales variable Rexroth A10VSO28DFR1/31L-PPA12N para operador de central en Alemania oriental — código tipo exacto.","title":"Bomba de pistones Rexroth A10VSO28DFR1/31L-PPA12N","subtitle":"Central eléctrica · bomba variable serie A10VSO 31","intro":"Un <strong>operador de central eléctrica en la región de Lusacia</strong> (Alemania oriental) necesitaba una <strong>bomba hidráulica Rexroth</strong> con designación completa <strong>A10VSO28DFR1/31L-PPA12N</strong> — <strong>bomba de pistones axiales de caudal variable</strong> serie 31 para circuitos abiertos en equipos de generación.","body_p1":"La <strong>A10VSO28</strong> forma parte de la gama Rexroth A10VSO: placa oscilante, caudal regulable, tamaño 28, con <strong>regulador de presión y caudal DFR1</strong>. En centrales eléctricas, estas bombas alimentan auxiliares, actuadores y sistemas de mantenimiento — un código incompleto retrasa las reparaciones.","body_p2":"ABCspareparts gestionó la solicitud con el <strong>código Rexroth exacto</strong>, validó especificaciones, confirmó disponibilidad y suministró el componente al operador en Alemania.","timeline_title":"Cronología del suministro","timeline_li1":"Consulta con referencia completa <strong>A10VSO28DFR1/31L-PPA12N</strong> (bomba variable Rexroth, serie 31)","timeline_li2":"Aprovisionamiento y entrega de la <strong>bomba de pistones axiales</strong> en la central","timeline_note":"Clave la <strong>coincidencia exacta del código tipo</strong> — tamaño, regulador DFR1, serie 31 y variante de conexión PPA12N.","outro":"¿Necesita una bomba hidráulica Rexroth A10VSO o similar para su central o planta? Solicite presupuesto sin compromiso con la designación completa.","cta_brand":"Solicitar piezas Rexroth","cta_contact":"Ir al formulario","disclaimer":"Caso de éxito basado en un suministro real. El cliente no se nombra por confidencialidad. Rexroth® es marca de Bosch Rexroth AG o sus respectivos titulares.","fact_sector":"Sector","fact_sector_val":"Generación eléctrica · central","fact_brand":"Marca","fact_part":"Código tipo","fact_part_val":"<strong>A10VSO28DFR1/31L-PPA12N</strong>","fact_component":"Componente","fact_component_val":"Bomba de pistones axiales variable (A10VSO serie 31, NG28)","fact_destination":"Destino","fact_destination_val":"Alemania — Lusacia (Alemania oriental)","card_teaser":"Rexroth A10VSO28DFR1/31L-PPA12N — bomba variable para operador de central en Lusacia."},"fr":{"meta_title":"Pompe Rexroth A10VSO28DFR1/31L-PPA12N – histoire de réussite | ABCspareparts","meta_description":"Histoire de réussite : pompe à pistons axiaux variable Rexroth A10VSO28DFR1/31L-PPA12N pour exploitant de centrale en Allemagne de l'Est — code type exact.","title":"Pompe à pistons Rexroth A10VSO28DFR1/31L-PPA12N","subtitle":"Centrale électrique · pompe variable série A10VSO 31","intro":"Un <strong>exploitant de centrale électrique en Lusace</strong> (Allemagne de l'Est) avait besoin d'une <strong>pompe hydraulique Rexroth</strong> avec la désignation complète <strong>A10VSO28DFR1/31L-PPA12N</strong> — <strong>pompe à pistons axiaux à débit variable</strong> série 31 pour circuits ouverts sur équipements de production d'énergie.","body_p1":"L'<strong>A10VSO28</strong> appartient à la gamme Rexroth A10VSO : plateau oscillant, débit réglable, taille 28, avec <strong>régulateur pression/débit DFR1</strong>. Dans les centrales, ces pompes alimentent auxiliaires, actionneurs et systèmes de maintenance — un code incomplet retarde les réparations.","body_p2":"ABCspareparts a traité la demande avec le <strong>code Rexroth exact</strong>, validé les spécifications, confirmé la disponibilité et livré le composant à l'exploitant en Allemagne.","timeline_title":"Chronologie de l'approvisionnement","timeline_li1":"Demande avec référence complète <strong>A10VSO28DFR1/31L-PPA12N</strong> (pompe variable Rexroth, série 31)","timeline_li2":"Approvisionnement et livraison de la <strong>pompe à pistons axiaux</strong> sur le site de la centrale","timeline_note":"La <strong>correspondance exacte du code type</strong> était essentielle — taille, régulateur DFR1, série 31 et variante de raccord PPA12N.","outro":"Besoin d'une pompe hydraulique Rexroth A10VSO ou similaire pour votre centrale ou installation ? Envoyez une demande sans engagement avec la désignation complète.","cta_brand":"Demander des pièces Rexroth","cta_contact":"Formulaire de contact","disclaimer":"Histoire de réussite basée sur une livraison réelle. Le client n'est pas nommé pour confidentialité. Rexroth® est une marque de Bosch Rexroth AG ou de ses titulaires respectifs.","fact_sector":"Secteur","fact_sector_val":"Production d'énergie · centrale électrique","fact_brand":"Marque","fact_part":"Code type","fact_part_val":"<strong>A10VSO28DFR1/31L-PPA12N</strong>","fact_component":"Composant","fact_component_val":"Pompe à pistons axiaux à débit variable (A10VSO série 31, NG28)","fact_destination":"Destination","fact_destination_val":"Allemagne — Lusace (Allemagne de l'Est)","card_teaser":"Rexroth A10VSO28DFR1/31L-PPA12N — pompe variable pour exploitant de centrale en Lusace."}};
-    var hubLabels = {"de":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Erfolgsgeschichten</a> · Rexroth","footer_brands":"Marken","footer_cases":"Erfolgsgeschichten","footer_contact":"Kontakt","footer_imprint":"Impressum","footer_privacy":"Datenschutz","footer_terms":"AGB","footer_shipping":"Versand","footer_cookies":"Cookies","footer_rights":"Alle Rechte vorbehalten."},"en":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Success stories</a> · Rexroth","footer_brands":"Brands","footer_cases":"Success stories","footer_contact":"Contact","footer_imprint":"Imprint","footer_privacy":"Privacy","footer_terms":"Terms","footer_shipping":"Shipping","footer_cookies":"Cookies","footer_rights":"All rights reserved."},"it":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casi di successo</a> · Rexroth","footer_brands":"Marche","footer_cases":"Casi di successo","footer_contact":"Contatti","footer_imprint":"Impressum","footer_privacy":"Privacy","footer_terms":"Condizioni","footer_shipping":"Spedizione","footer_cookies":"Cookie","footer_rights":"Tutti i diritti riservati."},"es":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casos de éxito</a> · Rexroth","footer_brands":"Marcas","footer_cases":"Casos de éxito","footer_contact":"Contacto","footer_imprint":"Aviso legal","footer_privacy":"Privacidad","footer_terms":"Términos","footer_shipping":"Envío","footer_cookies":"Cookies","footer_rights":"Todos los derechos reservados."},"fr":{"case_breadcrumb":"<a href=\"../index.html\">Accueil</a> · <a href=\"../casi.html\">Histoires de réussite</a> · Rexroth","footer_brands":"Marques","footer_cases":"Histoires de réussite","footer_contact":"Contact","footer_imprint":"Mentions légales","footer_privacy":"Confidentialité","footer_terms":"CGV","footer_shipping":"Livraison","footer_cookies":"Cookies","footer_rights":"Tous droits réservés."}};
+    var hubLabels = {"de":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Erfolgsgeschichten</a> · Rexroth","footer_brands":"Marken","footer_cases":"Erfolgsgeschichten","footer_contact":"Kontakt","footer_imprint":"Impressum","footer_privacy":"Datenschutz","footer_terms":"AGB","footer_shipping":"Versand","footer_cookies":"Cookies","footer_rights":"Alle Rechte vorbehalten.","quote_parts_title":"Diese Teilenummern anfragen","quote_parts_intro":"Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.","quote_modal_title":"Unverbindliche Anfrage","quote_modal_close":"Schließen","quote_modal_part_label":"Teilenummer","quote_iframe_title":"Anfrageformular"},"en":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Success stories</a> · Rexroth","footer_brands":"Brands","footer_cases":"Success stories","footer_contact":"Contact","footer_imprint":"Imprint","footer_privacy":"Privacy","footer_terms":"Terms","footer_shipping":"Shipping","footer_cookies":"Cookies","footer_rights":"All rights reserved.","quote_parts_title":"Request a quote for these part numbers","quote_parts_intro":"Click a code to open the request form with brand and part number pre-filled.","quote_modal_title":"No-obligation enquiry","quote_modal_close":"Close","quote_modal_part_label":"Part number","quote_iframe_title":"Request form"},"it":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casi di successo</a> · Rexroth","footer_brands":"Marche","footer_cases":"Casi di successo","footer_contact":"Contatti","footer_imprint":"Impressum","footer_privacy":"Privacy","footer_terms":"Condizioni","footer_shipping":"Spedizione","footer_cookies":"Cookie","footer_rights":"Tutti i diritti riservati.","quote_parts_title":"Richiedi preventivo per questi codici","quote_parts_intro":"Clicchi su un codice per aprire il modulo con marca e codice articolo già compilati.","quote_modal_title":"Richiesta senza impegno","quote_modal_close":"Chiudi","quote_modal_part_label":"Codice articolo","quote_iframe_title":"Modulo richiesta"},"es":{"case_breadcrumb":"<a href=\"../index.html\">Home</a> · <a href=\"../casi.html\">Casos de éxito</a> · Rexroth","footer_brands":"Marcas","footer_cases":"Casos de éxito","footer_contact":"Contacto","footer_imprint":"Aviso legal","footer_privacy":"Privacidad","footer_terms":"Términos","footer_shipping":"Envío","footer_cookies":"Cookies","footer_rights":"Todos los derechos reservados.","quote_parts_title":"Solicitar presupuesto para estas referencias","quote_parts_intro":"Haga clic en un código para abrir el formulario con marca y referencia precargadas.","quote_modal_title":"Solicitud sin compromiso","quote_modal_close":"Cerrar","quote_modal_part_label":"Referencia","quote_iframe_title":"Formulario de solicitud"},"fr":{"case_breadcrumb":"<a href=\"../index.html\">Accueil</a> · <a href=\"../casi.html\">Histoires de réussite</a> · Rexroth","footer_brands":"Marques","footer_cases":"Histoires de réussite","footer_contact":"Contact","footer_imprint":"Mentions légales","footer_privacy":"Confidentialité","footer_terms":"CGV","footer_shipping":"Livraison","footer_cookies":"Cookies","footer_rights":"Tous droits réservés.","quote_parts_title":"Demander un devis pour ces références","quote_parts_intro":"Cliquez sur une référence pour ouvrir le formulaire avec marque et code préremplis.","quote_modal_title":"Demande sans engagement","quote_modal_close":"Fermer","quote_modal_part_label":"Référence","quote_iframe_title":"Formulaire de demande"}};
     var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
@@ -191,9 +231,64 @@
         var key = el.getAttribute('data-i18n');
         if (merged[key]) el.innerHTML = merged[key];
       });
+      document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-title');
+        if (merged[key]) el.setAttribute('title', merged[key]);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        if (merged[key]) el.setAttribute('aria-label', merged[key]);
+      });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
+      if (quoteModal && !quoteModal.hasAttribute('hidden') && quoteIframe) {
+        var activePart = quoteModalPart ? quoteModalPart.textContent : '';
+        quoteIframe.src = buildQuoteIframeSrc(lang, activePart);
+      }
+    }
+    var quoteModal = document.getElementById('quoteModal');
+    var quoteIframe = document.getElementById('quoteFormIframe');
+    var quoteModalPart = document.getElementById('quoteModalPart');
+    function buildQuoteIframeSrc(lang, part) {
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang || 'en');
+      url += '&custom_manufacturer=' + encodeURIComponent(BRAND);
+      if (part) url += '&custom_part_numbers=' + encodeURIComponent(part);
+      return url;
+    }
+    function openQuoteModal(part, lang) {
+      if (!quoteModal) return;
+      var code = part || DEFAULT_PART || '';
+      if (quoteModalPart) quoteModalPart.textContent = code;
+      if (quoteIframe) quoteIframe.src = buildQuoteIframeSrc(lang, code);
+      quoteModal.removeAttribute('hidden');
+      document.body.classList.add('quote-modal-open');
+    }
+    function closeQuoteModal() {
+      if (!quoteModal) return;
+      quoteModal.setAttribute('hidden', '');
+      document.body.classList.remove('quote-modal-open');
+      if (quoteIframe) quoteIframe.src = 'about:blank';
+    }
+    function initQuoteModal() {
+      document.querySelectorAll('.part-quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(btn.getAttribute('data-part') || '', lang);
+        });
+      });
+      document.querySelectorAll('.open-quote-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(DEFAULT_PART, lang);
+        });
+      });
+      document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeQuoteModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
+      });
     }
     document.addEventListener('DOMContentLoaded', function () {
       var raw = getCurrentLang();
@@ -201,6 +296,7 @@
       var sel = document.getElementById('languageSelect');
       if (sel) sel.value = lang;
       changeLanguage(lang);
+      initQuoteModal();
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();
