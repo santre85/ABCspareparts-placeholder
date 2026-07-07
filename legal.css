@@ -41,10 +41,19 @@ body {
   font-size: 0.9rem; color: #555;
 }
 
-.legal-footer {
-  background: #1e3a5f; color: #fff; padding: 1.5rem 0; text-align: center; margin-top: auto;
+.legal-footer,
+.footer {
+  background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; margin-top: auto;
 }
-.legal-footer a { color: #fff; text-decoration: none; }
-.legal-footer a:hover { text-decoration: underline; }
+.footer-content { max-width: 800px; margin: 0 auto; }
+.footer-links { margin-bottom: 1rem; }
+.footer-links a,
+.legal-footer a,
+.footer a { color: #fff; text-decoration: none; }
+.footer-links a:hover,
+.legal-footer a:hover,
+.footer a:hover { text-decoration: underline; }
+.separator,
 .legal-footer .sep { margin: 0 0.5rem; opacity: 0.7; }
+.footer-info { font-size: 0.9rem; opacity: 0.9; }
 .legal-footer p { margin-top: 0.75rem; font-size: 0.9rem; opacity: 0.9; }
