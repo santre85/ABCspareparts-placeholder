@@ -50,6 +50,17 @@ if (!si.includes('<sitemapindex')) throw new Error('sitemap-index.xml missing si
 if (!si.includes('/sitemap.xml')) throw new Error('sitemap-index.xml missing sitemap.xml reference');
 if (!si.includes('/sitemap-brands.xml')) throw new Error('sitemap-index.xml missing sitemap-brands.xml reference');
 if (!si.includes('/sitemap-cases.xml')) throw new Error('sitemap-index.xml missing sitemap-cases.xml reference');
+if (!si.includes('/sitemap-brand-parts.xml')) throw new Error('sitemap-index.xml missing sitemap-brand-parts.xml reference');
+
+const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
+if (!fs.existsSync(sbpPath)) throw new Error('sitemap-brand-parts.xml missing — run npm run build:brand-parts');
+const sbp = fs.readFileSync(sbpPath, 'utf8');
+const partsDataEarly = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
+const partsBrandCount = (partsDataEarly.brands || []).filter((b) => b.brand_slug && b.parts?.length).length;
+const partsUrlCount = (sbp.match(/<loc>/g) || []).length;
+if (partsUrlCount !== partsBrandCount) {
+  throw new Error(`sitemap-brand-parts.xml <loc> count ${partsUrlCount} !== brands with parts ${partsBrandCount}`);
+}
 
 const casesPath = path.join(__dirname, 'supply-cases.json');
 if (!fs.existsSync(casesPath)) throw new Error('supply-cases.json missing');
@@ -117,6 +128,9 @@ if (!llmsTxt.includes('casi.html')) {
 if (!llmsTxt.includes('## Success story pages')) {
   throw new Error('llms.txt is missing Success story pages section');
 }
+if (!llmsTxt.includes('## Brand pages with quotable part numbers')) {
+  throw new Error('llms.txt is missing Brand pages with quotable part numbers section');
+}
 for (const c of publishedCases) {
   if (!llmsTxt.includes(`casi/${c.slug}.html`)) {
     throw new Error(`llms.txt does not mention case page casi/${c.slug}.html`);
@@ -126,6 +140,9 @@ for (const c of publishedCases) {
 const robotsTxt = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf8');
 if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) {
   throw new Error('robots.txt is missing sitemap-cases.xml reference');
+}
+if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml')) {
+  throw new Error('robots.txt is missing sitemap-brand-parts.xml reference');
 }
 
 const indexHead = indexHtml;
@@ -158,6 +175,12 @@ for (const f of toCheck) {
 
 const partsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
 const partsSlugs = (partsData.brands || []).filter((b) => b.brand_slug && b.parts?.length).map((b) => b.brand_slug);
+for (const row of partsData.brands || []) {
+  if (!row.brand_slug || !row.parts?.length) continue;
+  if (!llmsTxt.includes(`marche/${row.brand_slug}.html`)) {
+    throw new Error(`llms.txt does not mention brand page marche/${row.brand_slug}.html`);
+  }
+}
 for (const slug of partsSlugs) {
   const f = slug + '.html';
   const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
@@ -169,6 +192,12 @@ for (const slug of partsSlugs) {
   }
   if (!content.includes('custom_part_numbers=')) {
     throw new Error(`Missing ERP part prefill param in marche/${f}`);
+  }
+  if (!content.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
+    throw new Error(`Missing llms.txt discovery link in marche/${f}`);
+  }
+  if (!content.includes('#quotable-parts')) {
+    throw new Error(`Missing quotable-parts JSON-LD in marche/${f}`);
   }
 }
 
