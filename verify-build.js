@@ -164,6 +164,9 @@ for (const slug of partsSlugs) {
   if (!content.includes('brand-supplied-parts')) {
     throw new Error(`Missing supplied-parts section in marche/${f}`);
   }
+  if (!content.includes('id="quoteModal"') || !content.includes('part-quote-btn')) {
+    throw new Error(`Missing quote modal / part buttons in marche/${f}`);
+  }
   if (!content.includes('custom_part_numbers=')) {
     throw new Error(`Missing ERP part prefill param in marche/${f}`);
   }
