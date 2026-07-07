@@ -1,0 +1,159 @@
+PREVENTIVI CLIENTE — CATALOGO MARCHE E CODICI ARTICOLO
+ABC Spare Parts · ERPNext
+Generato: 2026-07-07
+
+Scopo: elenco preventivi inviati con marche e codici articolo,
+da usare per arricchire le pagine marca su www.abcspareparts.eu
+(SEO, ricerca codici, richieste dirette clienti).
+
+========================================================================
+RIEPILOGO
+========================================================================
+Preventivi cliente: 37
+Marche distinte: 31
+Codici articolo distinti: 74
+
+Marche presenti:
+ATLAS COPCO SCA, Autronica, Baldwin, Baumer, Fagor, Harmsco, Hengstler, HERBORNER PUMPEN, Hi force, HUMPHREY, Hübner Elektromaschinen AG, Konecranes, Kuhnke, Kübler, Leuze, M&S Armaturen, M+S Hydraulic, Mettler Toledo, MST, NINGBO HONGBO WEITE MOTOR CO.,LTD, PRONOMIC, Renishaw, Rexroth, Schunk, Siemens, Spectrex INC., Steute, SYM BANG, Tamagawa, TOKHEIM, ZOLLERN
+
+========================================================================
+SEZIONE A — PER MARCA (utile per pagine online singola marca)
+========================================================================
+
+--- MARCA: ATLAS COPCO SCA (1 codici, 1 righe preventivo) ---
+  80701.000507 | BALL JOINT ASSEMBLY  →  preventivi: SAL-QTN-2026-00078
+
+--- MARCA: Autronica (2 codici, 2 righe preventivo) ---
+  V-430/BH200 | Smoke Detector** Replacement for 116-BHH-200** Please check that the socket installed on board have been produced after 2004, otherwise you need to install the new BWA-100!!  →  preventivi: SAL-QTN-2026-00066
+  V-530/BH500 | Smoke Detector ** Replacement for 116-BHH-500** Please check that the socket installed on board have been produced after 2004, otherwise you need to install the new BWA-100!!  →  preventivi: SAL-QTN-2026-00066
+
+--- MARCA: Baldwin (3 codici, 3 righe preventivo) ---
+  13144.04 | RUECKSCHLAGVENTIL I.RV 0015.RGG 1/4",0.2 BAR  →  preventivi: SAL-QTN-2026-00044
+  13144.05 | RUECKSCHLAGVENTIL IRV 0013G 1/4",0,2 BAR  →  preventivi: SAL-QTN-2026-00044
+  45.877.05 | Flow meter  →  preventivi: SAL-QTN-2026-00077
+
+--- MARCA: Baumer (1 codici, 1 righe preventivo) ---
+  EN580C.ML-SC10.HH2C1.21160.H-11267453 | Absoluter Drehgeber EN580C (successor of GXMMW.0205P32)  →  preventivi: SAL-QTN-2026-00088
+
+--- MARCA: Fagor (4 codici, 4 righe preventivo) ---
+  12023211 | Door electromagnet (Previous part code/s #: P613002000, SAV W08 0024)  →  preventivi: SAL-QTN-2026-00082
+  12024980 | Damper 140n (Previous part code/s #: 12029086, P630111000)  →  preventivi: SAL-QTN-2026-00082
+  12025076 | 250n damper (Previous part code/s #: P630110000)  →  preventivi: SAL-QTN-2026-00082
+  12049230 | Hydraullic damper (Previous part code/s #: P680220000, 12023492, 12017724)  →  preventivi: SAL-QTN-2026-00082
+
+--- MARCA: Harmsco (1 codici, 1 righe preventivo) ---
+  Guarnizione coperchio 550 e11 | Guarnizione EPDM/HIF7/24-HUR-BB-HP rif. HARMSCO 550-E  →  preventivi: SAL-QTN-2026-00073
+
+--- MARCA: Hengstler (3 codici, 3 righe preventivo) ---
+  0634713 | HENGSTLER IMP.ZAE 24DC 7ST RO  →  preventivi: SAL-QTN-2026-00089
+  3 520 068 | BALGKUPPLUNG 6 - 6  →  preventivi: SAL-QTN-2026-00084
+  RI58-O/ 1000AS.41TF-F0 | Drehgeber Typ RI 58  →  preventivi: SAL-QTN-2026-00083
+
+--- MARCA: HERBORNER PUMPEN (7 codici, 7 righe preventivo) ---
+  2A.0B.A2.6B | Mechanical seal elastomer bellow D24mmItem 433  →  preventivi: SAL-QTN-2026-00069
+  3D.1L.30.01 | Bearing 6205-2Z-N-C3Item 320.1  →  preventivi: SAL-QTN-2026-00069
+  3E.3F.30.00 | Anti-friction bearing 3306-C3Item 320.2  →  preventivi: SAL-QTN-2026-00069
+  97.10.08.00 | Shaft with rotor WR07-VFor motor VEM 100L2Item 819  →  preventivi: SAL-QTN-2026-00069
+  97.18.03.00 | Shaft seal ring B30x55x7-FK, item 423(labyrinth disc)  →  preventivi: SAL-QTN-2026-00069
+  LT.0D.11.00 | Impeller LT-HK/50A-1-120, item 230Material: GG-25  →  preventivi: SAL-QTN-2026-00069
+  RM.03.2D.00 | Impeller nut H50/131S-GD-M12Item 922  →  preventivi: SAL-QTN-2026-00069
+
+--- MARCA: Hi force (2 codici, 2 righe preventivo) ---
+  HPR-2H | Hi-Force Model no.: HPR-2H, 50 tonnes pin and bush replacement tool kit incorporating Hi-Force HHA504 lightweight, aluminium, hollow piston hydraulic cylinder offering stroke length 104mm. Supplied complete with Hi-Force HP212 two speed manually operated aluminium pump, HC2 2 metre hydraulic hose, 2 base plates, 1 threaded rod, 4 pull sleeves, 1 adaptor and 1 reducer sleeve, all supplied in a metal storage case. Maximum working pressure 700 Bar (10,000 p.s.i.), weight 72.0 kg  →  preventivi: SAL-QTN-2026-00080
+  PKC50 | Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing pullers, bearing cup pullers and cross head pullers. Minimum spread 120mm, maximum spread of 920mm and supplied complete with Hi-Force HHS603 hollow piston hydraulic cylinder, HP227 single speed manually operated pump, 2 metre hydraulic hose, 100mm diameter pressure gauge and gauge block, all supplied in a storage and transport box. Maximum working pressure 700 Bar (10,000 p.s.i). Weight 268.0kg  →  preventivi: SAL-QTN-2026-00080
+
+--- MARCA: HUMPHREY (1 codici, 1 righe preventivo) ---
+  41024VDC | Valve  →  preventivi: SAL-QTN-2026-00053
+
+--- MARCA: Hübner Elektromaschinen AG (1 codici, 1 righe preventivo) ---
+  GT9.06L/420k | Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/minmax. Drehzahl: 9000 1/minPassend für Siemens Servomotoren der Baureihe 1HUWellenausführung: ø17 mm (Konuswelle 1:10)  →  preventivi: SAL-QTN-2026-00002
+
+--- MARCA: Konecranes (5 codici, 5 righe preventivo) ---
+  52294077 | Mounting Plate  →  preventivi: SAL-QTN-2026-00074
+  52302509 | Translation Wheel  →  preventivi: SAL-QTN-2026-00074
+  52302518 | set of idler wheels  →  preventivi: SAL-QTN-2026-00074
+  52589491 | set of covers  →  preventivi: SAL-QTN-2026-00074
+  53024331 | End Plate  →  preventivi: SAL-QTN-2026-00074
+
+--- MARCA: Kuhnke (1 codici, 1 righe preventivo) ---
+  76.147.92.00 | Elettrovalvola  →  preventivi: SAL-QTN-2026-00070
+
+--- MARCA: Kübler (1 codici, 1 righe preventivo) ---
+  279383 | 1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-20÷85°C | Einbauzahler Anzeigevorne | ohne Rückstellung | grau | IP65vorneZolltarif-Nr: 90291000  →  preventivi: SAL-QTN-2026-00090
+
+--- MARCA: Leuze (2 codici, 2 righe preventivo) ---
+  53800105 | RSL410-M Laserscanner  →  preventivi: SAL-QTN-2026-00020
+  53800117 | Connection unit  →  preventivi: SAL-QTN-2026-00026
+
+--- MARCA: M&S Armaturen (1 codici, 1 righe preventivo) ---
+  57600-1000300 | Dichtung, Typ Classic Werkstoff: EPDMfür ScheibenventilDN100  →  preventivi: SAL-QTN-2026-00076
+
+--- MARCA: M+S Hydraulic (1 codici, 1 righe preventivo) ---
+  MMS50C | Hydraulic Motor  →  preventivi: SAL-QTN-2026-00006
+
+--- MARCA: Mettler Toledo (4 codici, 4 righe preventivo) ---
+  119106 | Heizelement DSC  →  preventivi: SAL-QTN-2026-00072
+  119171 | PT100 Sensor DSC820/821E  →  preventivi: SAL-QTN-2026-00072
+  51119547 | PT100 Ofen DSC821E  →  preventivi: SAL-QTN-2026-00072
+  51119999 | Keramiksensor FRS 5+ (DSC 1/3)  →  preventivi: SAL-QTN-2026-00072
+
+--- MARCA: MST (14 codici, 14 righe preventivo) ---
+  135859 | O-RING  →  preventivi: SAL-QTN-2026-00068
+  149826 | BRAKE REPAIR KIT  →  preventivi: SAL-QTN-2026-00068
+  2485C041 | TERMOSTAT  →  preventivi: SAL-QTN-2026-00068
+  3175P003 | Spring  →  preventivi: SAL-QTN-2026-00068
+  40701 | FILTER, OIL  →  preventivi: SAL-QTN-2026-00068
+  46221 | SPIDER  →  preventivi: SAL-QTN-2026-00068
+  49944 | SEAL KIT  →  preventivi: SAL-QTN-2026-00068
+  54204201 | NUT  →  preventivi: SAL-QTN-2026-00068
+  54204202 | TOOTH, PLAIN  →  preventivi: SAL-QTN-2026-00068
+  5421114 | SIDECUTTER  →  preventivi: SAL-QTN-2026-00068
+  54211213 | BOLT  →  preventivi: SAL-QTN-2026-00068
+  54218106 | SPIDER  →  preventivi: SAL-QTN-2026-00068
+  5421897 | BOLT  →  preventivi: SAL-QTN-2026-00068
+  5421899 | BEARING STRAP  →  preventivi: SAL-QTN-2026-00068
+
+--- MARCA: NINGBO HONGBO WEITE MOTOR CO.,LTD (1 codici, 1 righe preventivo) ---
+  HB18065HA2B | Lüfter  →  preventivi: SAL-QTN-2025-00019
+
+--- MARCA: PRONOMIC (2 codici, 2 righe preventivo) ---
+  220390 | Charger LiftDrive  →  preventivi: SAL-QTN-2026-00004
+  Prog. 1211 Controller – Typ 20001A-70E R | Controller  →  preventivi: SAL-QTN-2026-00010
+
+--- MARCA: Renishaw (1 codici, 1 righe preventivo) ---
+  A-5191-0049 | OMI-2 - optical machine interface  →  preventivi: SAL-QTN-2026-00086
+
+--- MARCA: Rexroth (1 codici, 1 righe preventivo) ---
+  A10VSO28DFR1/31L-PPA12N | Pump  →  preventivi: SAL-QTN-2026-00007-1
+
+--- MARCA: Schunk (5 codici, 5 righe preventivo) ---
+  LM 100-H125 / 314065 | Universal Linear Axis  →  preventivi: SAL-QTN-2026-00087
+  LM 100-H175 / 314067 | Universal Linear Axis  →  preventivi: SAL-QTN-2026-00087
+  LM 50-H75 / 314058 | Universal Linear Axis  →  preventivi: SAL-QTN-2026-00087
+  PGN-plus 64-2-AS / 371093 | Universal Gripper  →  preventivi: SAL-QTN-2026-00087
+  RM 200-W90-1 / 313007 | Universal Swivel Unit  →  preventivi: SAL-QTN-2026-00087
+
+--- MARCA: Siemens (1 codici, 1 righe preventivo) ---
+  6AV2124-0MC010-AX0 | SIMATIC HMI TP1200 COMFORT  →  preventivi: SAL-QTN-2026-00022
+
+--- MARCA: Spectrex INC. (1 codici, 1 righe preventivo) ---
+  UF IR3 Flame Detector, SS316, ATEX, 3/4" | Spectrex SharpEye Ultra Fast triple IR, universal wiring; relays, analog, 0-20mA, HART, RS-485 Modbus, -60 to +85 deg C, 3/4" NPT cable entries, Stainless Steel, IP66 &amp; IP68, ATEX/IECEx Ex II2 GD, Ex db eb IIC T4 Gb, Ex tb IIIC T110 deg C Db, DNV MED, EN-54-10, SIL2/SIL3, c/w tilt mount and ABS weather cover  →  preventivi: SAL-QTN-2026-00079
+
+--- MARCA: Steute (1 codici, 1 righe preventivo) ---
+  1188542 | Ex solenoid interlockEx STM 295 1Ö1S/1Ö1S-A/90°Article no.: 1188542 (old article no.: 95353310)  →  preventivi: SAL-QTN-2026-00030
+
+--- MARCA: SYM BANG (1 codici, 1 righe preventivo) ---
+  A18065V2HBT-S | Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W  →  preventivi: SAL-QTN-2025-00019
+
+--- MARCA: Tamagawa (1 codici, 1 righe preventivo) ---
+  TS5013N61 | 68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 68 series . Outside diameter 68 mm Shaft diameter 10 mm Resolution 2,048 C/T pulses per turn Output phases A, B, Z quadrature with index Supply voltage 12 V DC Dust proof construction with oil seal Operating temperature 10 to 70 C Protection IP52 Allowable radial load 98 N Allowable axial load 49 N.  →  preventivi: SAL-QTN-2026-00048
+
+--- MARCA: TOKHEIM (2 codici, 2 righe preventivo) ---
+  941828 | LCD Anzeige Quantium / WWC mit LED Hintergrundbeleuchtung  →  preventivi: SAL-QTN-2026-00085
+  947944-004 | TQC LCD Display  →  preventivi: SAL-QTN-2026-00085
+
+--- MARCA: ZOLLERN (2 codici, 2 righe preventivo) ---
+  1199181 | Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250  →  preventivi: SAL-QTN-2026-00075
+  1199182 | Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLB 22-250  →  preventivi: SAL-QTN-2026-00075
+
+— Fine file —
