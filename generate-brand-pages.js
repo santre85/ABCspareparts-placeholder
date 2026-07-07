@@ -139,9 +139,13 @@ function buildTranslations(brand) {
       marca_footer_imprint: 'Impressum',
       marca_footer_privacy: 'Datenschutz',
       brand_parts_title: 'Bereits beschaffte Teilenummern',
-      brand_parts_intro: 'Diese Referenzen haben wir bereits für Kunden in Europa beschafft. Klicken Sie auf eine Teilenummer, um eine <strong>unverbindliche Anfrage</strong> mit vorausgefülltem Formular zu senden.',
+      brand_parts_intro: 'Diese Referenzen haben wir bereits für Kunden in Europa beschafft. Klicken Sie auf einen Code — das Anfrageformular öffnet sich in einem Fenster mit vorausgefüllter Marke und Teilenummer.',
       brand_parts_case: 'Erfolgsgeschichte',
-      brand_parts_quote: 'Angebot anfragen'
+      brand_parts_quote: 'Angebot anfragen',
+      quote_modal_title: 'Unverbindliche Anfrage',
+      quote_modal_close: 'Schließen',
+      quote_modal_part_label: 'Teilenummer',
+      quote_iframe_title: 'Anfrageformular'
     },
     en: {
       meta_title: highlightPricing
@@ -180,9 +184,13 @@ function buildTranslations(brand) {
       marca_footer_imprint: 'Imprint',
       marca_footer_privacy: 'Privacy',
       brand_parts_title: 'Part numbers we have supplied',
-      brand_parts_intro: 'We have already sourced these references for customers across Europe. Click a part number to open a <strong>no-obligation request</strong> with the code pre-filled.',
+      brand_parts_intro: 'We have already sourced these references for customers across Europe. Click a part number to open the request form in a window with brand and code pre-filled.',
       brand_parts_case: 'Success story',
-      brand_parts_quote: 'Request quote'
+      brand_parts_quote: 'Request quote',
+      quote_modal_title: 'No-obligation enquiry',
+      quote_modal_close: 'Close',
+      quote_modal_part_label: 'Part number',
+      quote_iframe_title: 'Request form'
     },
     it: {
       meta_title: highlightPricing
@@ -221,9 +229,13 @@ function buildTranslations(brand) {
       marca_footer_imprint: 'Impressum',
       marca_footer_privacy: 'Privacy',
       brand_parts_title: 'Codici articolo già forniti',
-      brand_parts_intro: 'Queste referenze le abbiamo già approvvigionate per clienti in Europa. Clicchi sul codice per aprire una <strong>richiesta senza impegno</strong> con il modulo precompilato.',
+      brand_parts_intro: 'Queste referenze le abbiamo già approvvigionate per clienti in Europa. Clicchi su un codice per aprire il modulo di richiesta in una finestra con marca e codice articolo già compilati.',
       brand_parts_case: 'Caso di successo',
-      brand_parts_quote: 'Richiedi preventivo'
+      brand_parts_quote: 'Richiedi preventivo',
+      quote_modal_title: 'Richiesta senza impegno',
+      quote_modal_close: 'Chiudi',
+      quote_modal_part_label: 'Codice articolo',
+      quote_iframe_title: 'Modulo richiesta'
     },
     es: {
       meta_title: highlightPricing
@@ -262,9 +274,13 @@ function buildTranslations(brand) {
       marca_footer_imprint: 'Aviso legal',
       marca_footer_privacy: 'Privacidad',
       brand_parts_title: 'Referencias ya suministradas',
-      brand_parts_intro: 'Estas referencias ya las hemos suministrado a clientes en Europa. Haga clic en el código para abrir una <strong>solicitud sin compromiso</strong> con el formulario precargado.',
+      brand_parts_intro: 'Estas referencias ya las hemos suministrado a clientes en Europa. Haga clic en un código para abrir el formulario de solicitud en una ventana con marca y referencia precargadas.',
       brand_parts_case: 'Caso de éxito',
-      brand_parts_quote: 'Solicitar presupuesto'
+      brand_parts_quote: 'Solicitar presupuesto',
+      quote_modal_title: 'Solicitud sin compromiso',
+      quote_modal_close: 'Cerrar',
+      quote_modal_part_label: 'Referencia',
+      quote_iframe_title: 'Formulario de solicitud'
     },
     fr: {
       meta_title: highlightPricing
@@ -303,9 +319,13 @@ function buildTranslations(brand) {
       marca_footer_imprint: 'Mentions légales',
       marca_footer_privacy: 'Confidentialité',
       brand_parts_title: 'Références déjà fournies',
-      brand_parts_intro: 'Nous avons déjà approvisionné ces références pour des clients en Europe. Cliquez sur une référence pour ouvrir une <strong>demande sans engagement</strong> avec le formulaire prérempli.',
+      brand_parts_intro: 'Nous avons déjà approvisionné ces références pour des clients en Europe. Cliquez sur une référence pour ouvrir le formulaire de demande dans une fenêtre avec marque et code préremplis.',
       brand_parts_case: 'Histoire de réussite',
-      brand_parts_quote: 'Demander un devis'
+      brand_parts_quote: 'Demander un devis',
+      quote_modal_title: 'Demande sans engagement',
+      quote_modal_close: 'Fermer',
+      quote_modal_part_label: 'Référence',
+      quote_iframe_title: 'Formulaire de demande'
     }
   };
 }
@@ -381,6 +401,21 @@ function buildLdJson(brand, slug, tDe, suppliedParts) {
   return JSON.stringify(graph);
 }
 
+function buildQuoteModalHtml() {
+  return `
+  <div id="quoteModal" class="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-modal></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button type="button" class="quote-modal-close" data-close-modal data-i18n-aria="quote_modal_close" aria-label="Schließen">&times;</button>
+      <h2 id="quoteModalTitle" data-i18n="quote_modal_title">Unverbindliche Anfrage</h2>
+      <p class="quote-modal-part"><span data-i18n="quote_modal_part_label">Teilenummer</span>: <strong id="quoteModalPart"></strong></p>
+      <div class="quote-modal-iframe-wrap">
+        <iframe id="quoteFormIframe" data-i18n-title="quote_iframe_title" title="Anfrageformular"></iframe>
+      </div>
+    </div>
+  </div>`;
+}
+
 function buildSuppliedPartsHtml(suppliedParts) {
   if (!suppliedParts || !suppliedParts.length) return '';
   const items = suppliedParts.map((part) => {
@@ -392,7 +427,7 @@ function buildSuppliedPartsHtml(suppliedParts) {
     const caseLink = part.case_slug
       ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
       : '';
-    return `<li><a href="#contact" class="part-quote-link" data-part="${pnAttr}" title="${pnAttr}">${pn}</a>${desc}${caseLink}</li>`;
+    return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
   }).join('\n          ');
   return `
       <section class="brand-supplied-parts" id="supplied-parts" aria-labelledby="brand-parts-heading">
@@ -409,10 +444,27 @@ function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
   const d = translations.de;
+  const hasSuppliedParts = !!(suppliedParts && suppliedParts.length);
   const ld = buildLdJson(brand, slug, d, suppliedParts);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
   const suppliedPartsHtml = buildSuppliedPartsHtml(suppliedParts);
+  const quoteModalHtml = hasSuppliedParts ? buildQuoteModalHtml() : '';
+  const suppliedPartsExtraCss = hasSuppliedParts ? `
+    .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.35rem 0.65rem; cursor: pointer; }
+    .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .quote-modal[hidden] { display: none !important; }
+    .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
+    .quote-modal-dialog { position: relative; z-index: 1; width: min(720px, 100%); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.25); padding: 1.25rem 1.25rem 1rem; }
+    .quote-modal-dialog h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.35rem; padding-right: 2rem; }
+    .quote-modal-part { font-size: 0.92rem; color: #444; margin-bottom: 0.85rem; }
+    .quote-modal-part strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
+    .quote-modal-close { position: absolute; top: 0.65rem; right: 0.75rem; border: none; background: transparent; font-size: 1.75rem; line-height: 1; color: #666; cursor: pointer; }
+    .quote-modal-close:hover { color: #e67e22; }
+    .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
+    body.quote-modal-open { overflow: hidden; }` : '';
   const partsJson = JSON.stringify((suppliedParts || []).map((p) => p.part_number));
   const relatedLinks = (relatedRows || [])
     .map(({ brand: relatedBrand, slug: relatedSlug }) =>
@@ -484,11 +536,10 @@ function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
     .brand-supplied-parts .parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 1rem; line-height: 1.55; }
     .brand-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
     .brand-parts-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.75rem; padding: 0.55rem 0.65rem; background: #fff; border: 1px solid #e3eaf1; border-radius: 8px; }
-    .part-quote-link { font-weight: 700; color: #1e3a5f; text-decoration: none; border-bottom: 2px solid #e67e22; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.95rem; }
-    .part-quote-link:hover, .part-quote-link:focus { color: #e67e22; }
     .part-desc { font-size: 0.88rem; color: #556; flex: 1; min-width: 120px; }
     .part-case-link { font-size: 0.85rem; color: #2d5a87; text-decoration: none; font-weight: 600; white-space: nowrap; }
     .part-case-link:hover { text-decoration: underline; }
+${suppliedPartsExtraCss}
     .muted { color: #666; font-weight: 400; }
     .contact-lead { text-align: center; max-width: 640px; margin: 0 auto 2rem; color: #555; font-size: 1.05rem; line-height: 1.55; }
     .contact-layout { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 2.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
@@ -589,6 +640,7 @@ ${suppliedPartsHtml}
     </div>
   </section>
   </main>
+${quoteModalHtml}
 
   <footer class="footer">
     <div class="container">
@@ -662,28 +714,48 @@ ${suppliedPartsHtml}
       if (!iframe) return;
       iframe.src = buildIframeSrc(langCode, partNumber);
     }
-    function initPartQuoteLinks() {
-      document.querySelectorAll('.part-quote-link').forEach(function (a) {
-        a.addEventListener('click', function (e) {
-          e.preventDefault();
-          SELECTED_PART = a.getAttribute('data-part') || '';
+${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal');
+    var quoteIframe = document.getElementById('quoteFormIframe');
+    var quoteModalPart = document.getElementById('quoteModalPart');
+    function openQuoteModal(part, lang) {
+      if (!quoteModal) return;
+      var code = part || SELECTED_PART || getUrlPart() || '';
+      SELECTED_PART = code;
+      if (quoteModalPart) quoteModalPart.textContent = code;
+      if (quoteIframe) quoteIframe.src = buildIframeSrc(lang, code);
+      quoteModal.removeAttribute('hidden');
+      document.body.classList.add('quote-modal-open');
+      try {
+        if (history.replaceState) {
+          var u = new URL(window.location.href);
+          if (code) u.searchParams.set('part', code);
+          else u.searchParams.delete('part');
+          u.hash = '';
+          history.replaceState(null, '', u.toString());
+        }
+      } catch (err) {}
+    }
+    function closeQuoteModal() {
+      if (!quoteModal) return;
+      quoteModal.setAttribute('hidden', '');
+      document.body.classList.remove('quote-modal-open');
+      if (quoteIframe) quoteIframe.src = 'about:blank';
+    }
+    function initPartQuoteButtons() {
+      document.querySelectorAll('.part-quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
           var langSel = document.getElementById('languageSelect');
           var lang = langSel ? langSel.value : 'de';
-          updateFormIframeLang(lang, SELECTED_PART);
-          var contact = document.getElementById('contact');
-          if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          try {
-            if (history.replaceState) {
-              var u = new URL(window.location.href);
-              if (SELECTED_PART) u.searchParams.set('part', SELECTED_PART);
-              else u.searchParams.delete('part');
-              u.hash = 'contact';
-              history.replaceState(null, '', u.toString());
-            }
-          } catch (err) {}
+          openQuoteModal(btn.getAttribute('data-part') || '', lang);
         });
       });
-    }
+      document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeQuoteModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
+      });
+    }` : ''}
     function changeLanguage(lang) {
       var t = translations[lang] || translations.de;
       var pt = document.getElementById('pageTitle');
@@ -698,10 +770,18 @@ ${suppliedPartsHtml}
         var k = el.getAttribute('data-i18n-title');
         if (t[k]) el.setAttribute('title', t[k]);
       });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var k = el.getAttribute('data-i18n-aria');
+        if (t[k]) el.setAttribute('aria-label', t[k]);
+      });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
       updateFormIframeLang(lang, SELECTED_PART || getUrlPart());
+${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden') && quoteIframe) {
+        var activePart = quoteModalPart ? quoteModalPart.textContent : '';
+        quoteIframe.src = buildIframeSrc(lang, activePart);
+      }` : ''}
     }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -712,11 +792,10 @@ ${suppliedPartsHtml}
       var initialPart = getUrlPart();
       if (initialPart) SELECTED_PART = initialPart;
       changeLanguage(lang);
-      initPartQuoteLinks();
-      if (initialPart && window.location.hash === '#contact') {
-        var contactEl = document.getElementById('contact');
-        if (contactEl) setTimeout(function () { contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200);
-      }
+${hasSuppliedParts ? `      initPartQuoteButtons();
+      if (initialPart) {
+        setTimeout(function () { openQuoteModal(initialPart, lang); }, 200);
+      }` : ''}
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();
