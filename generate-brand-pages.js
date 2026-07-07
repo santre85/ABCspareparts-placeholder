@@ -332,6 +332,22 @@ function buildTranslations(brand) {
 
 function buildLdJson(brand, slug, tDe, suppliedParts) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
+  const webPage = {
+    '@type': 'WebPage',
+    '@id': pageUrl + '#webpage',
+    url: pageUrl,
+    name: `${brand} – Industrieersatzteile & MRO | ABCspareparts`,
+    description: tDe.meta_description,
+    inLanguage: 'de',
+    isPartOf: { '@id': `${BASE}/#website` },
+    about: { '@type': 'Brand', name: brand },
+    publisher: { '@id': `${BASE}/#organization` },
+    primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
+  };
+  if (suppliedParts && suppliedParts.length) {
+    webPage.dateModified = TODAY;
+    webPage.mainEntity = { '@id': pageUrl + '#quotable-parts' };
+  }
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -342,18 +358,7 @@ function buildLdJson(brand, slug, tDe, suppliedParts) {
         url: `${BASE}/`,
         logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
       },
-      {
-        '@type': 'WebPage',
-        '@id': pageUrl + '#webpage',
-        url: pageUrl,
-        name: `${brand} – Industrieersatzteile & MRO | ABCspareparts`,
-        description: tDe.meta_description,
-        inLanguage: 'de',
-        isPartOf: { '@id': `${BASE}/#website` },
-        about: { '@type': 'Brand', name: brand },
-        publisher: { '@id': `${BASE}/#organization` },
-        primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
-      },
+      webPage,
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -375,8 +380,8 @@ function buildLdJson(brand, slug, tDe, suppliedParts) {
   if (suppliedParts && suppliedParts.length) {
     graph['@graph'].push({
       '@type': 'ItemList',
-      '@id': pageUrl + '#supplied-parts',
-      name: `${brand} – supplied part numbers`,
+      '@id': pageUrl + '#quotable-parts',
+      name: `${brand} – quotable part numbers`,
       description: tDe.brand_parts_intro.replace(/<[^>]+>/g, ''),
       numberOfItems: suppliedParts.length,
       itemListElement: suppliedParts.map((part, i) => ({
@@ -386,6 +391,7 @@ function buildLdJson(brand, slug, tDe, suppliedParts) {
           '@type': 'Product',
           name: `${brand} ${part.part_number}`,
           sku: part.part_number,
+          mpn: part.part_number,
           description: part.description || part.part_number,
           brand: { '@type': 'Brand', name: brand },
           offers: {
@@ -481,6 +487,7 @@ function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
   <meta id="pageDescription" name="description" content="${escapeAttr(translations.de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${pageUrl}">
+  <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${pageUrl}">
   <link rel="alternate" hreflang="de" href="${pageUrl}?lang=de">
   <link rel="alternate" hreflang="en" href="${pageUrl}?lang=en">
@@ -805,12 +812,13 @@ ${hasSuppliedParts ? `      initPartQuoteButtons();
 `;
 }
 
-function writeSitemapBrands(rows) {
+function writeSitemapBrands(rows, partsBySlug) {
   const outPath = path.join(ROOT, 'sitemap-brands.xml');
   const langs = ['it', 'de', 'en', 'es', 'fr'];
   let body = '';
   for (const { slug } of rows) {
     const loc = `${BASE}/marche/${slug}.html`;
+    const hasParts = partsBySlug && partsBySlug.has(slug);
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
     for (const l of langs) {
@@ -818,8 +826,8 @@ function writeSitemapBrands(rows) {
     }
     body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}"/>\n`;
     body += `    <lastmod>${TODAY}</lastmod>\n`;
-    body += '    <changefreq>monthly</changefreq>\n';
-    body += '    <priority>0.65</priority>\n';
+    body += `    <changefreq>${hasParts ? 'weekly' : 'monthly'}</changefreq>\n`;
+    body += `    <priority>${hasParts ? '0.8' : '0.65'}</priority>\n`;
     body += '  </url>\n';
   }
   const xml = `---
@@ -842,6 +850,13 @@ function writeSitemapIndex() {
   </sitemap>
 `
     : '';
+  const partsBlock = fs.existsSync(path.join(ROOT, 'sitemap-brand-parts.xml'))
+    ? `  <sitemap>
+    <loc>${BASE}/sitemap-brand-parts.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+`
+    : '';
   const xml = `---
 layout: none
 ---
@@ -855,7 +870,7 @@ layout: none
     <loc>${BASE}/sitemap-brands.xml</loc>
     <lastmod>${TODAY}</lastmod>
   </sitemap>
-${casesBlock}</sitemapindex>
+${partsBlock}${casesBlock}</sitemapindex>
 `;
   fs.writeFileSync(outPath, xml, 'utf8');
 }
@@ -893,7 +908,7 @@ function main() {
     if (n % 500 === 0) console.log('Written', n, '/', rows.length);
   }
 
-  writeSitemapBrands(rows);
+  writeSitemapBrands(rows, partsBySlug);
   writeSitemapIndex();
   fs.writeFileSync(
     path.join(ROOT, 'brand-slugs.json'),
