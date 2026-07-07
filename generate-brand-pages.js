@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
+const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
 
 const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
@@ -101,7 +102,7 @@ function buildTranslations(brand) {
     fr: encodeURIComponent(`Demande pièces ${brand} – ABCspareparts`)
   };
 
-  return {
+  return withFooterI18n({
     de: {
       meta_title: highlightPricing
         ? `${H} Ersatzteile zu Top-Konditionen | ABCspareparts`
@@ -134,10 +135,6 @@ function buildTranslations(brand) {
       contact_form_title: 'Online-Anfrage',
       contact_iframe_title: `Anfrageformular – ${H} Ersatzteile`,
       contact_legal_note: 'Vollständige rechtliche Angaben im <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marken',
-      marca_footer_imprint: 'Impressum',
-      marca_footer_privacy: 'Datenschutz',
       brand_parts_title: 'Diese Teilenummern anfragen',
       brand_parts_intro: 'Diese Referenzen haben wir bereits für Kunden angeboten oder beschafft. Klicken Sie auf einen Code — das Anfrageformular öffnet sich in einem Fenster mit vorausgefüllter Marke und Teilenummer.',
       brand_parts_case: 'Erfolgsgeschichte',
@@ -179,10 +176,6 @@ function buildTranslations(brand) {
       contact_form_title: 'Online request',
       contact_iframe_title: `Request form – ${H} spare parts`,
       contact_legal_note: 'Full legal details in our <a href="../impressum.html" target="_blank" rel="noopener">Imprint</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Brands',
-      marca_footer_imprint: 'Imprint',
-      marca_footer_privacy: 'Privacy',
       brand_parts_title: 'Request these part numbers',
       brand_parts_intro: 'We have already quoted or supplied these references for customers across Europe. Click a part number to open the request form in a window with brand and code pre-filled.',
       brand_parts_case: 'Success story',
@@ -224,10 +217,6 @@ function buildTranslations(brand) {
       contact_form_title: 'Richiesta online',
       contact_iframe_title: `Modulo richiesta – ricambi ${H}`,
       contact_legal_note: 'Dati legali completi nell\'<a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marche',
-      marca_footer_imprint: 'Impressum',
-      marca_footer_privacy: 'Privacy',
       brand_parts_title: 'Richiedi questi codici articolo',
       brand_parts_intro: 'Queste referenze le abbiamo già quotate o fornite per clienti in Europa. Clicchi su un codice per aprire il modulo di richiesta in una finestra con marca e codice articolo già compilati.',
       brand_parts_case: 'Caso di successo',
@@ -269,10 +258,6 @@ function buildTranslations(brand) {
       contact_form_title: 'Solicitud en línea',
       contact_iframe_title: `Formulario – recambios ${H}`,
       contact_legal_note: 'Datos legales completos en el <a href="../impressum.html" target="_blank" rel="noopener">Aviso legal</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marcas',
-      marca_footer_imprint: 'Aviso legal',
-      marca_footer_privacy: 'Privacidad',
       brand_parts_title: 'Solicitar estas referencias',
       brand_parts_intro: 'Estas referencias ya las hemos presupuestado o suministrado a clientes en Europa. Haga clic en un código para abrir el formulario de solicitud en una ventana con marca y referencia precargadas.',
       brand_parts_case: 'Caso de éxito',
@@ -314,10 +299,6 @@ function buildTranslations(brand) {
       contact_form_title: 'Demande en ligne',
       contact_iframe_title: `Formulaire – pièces ${H}`,
       contact_legal_note: 'Informations légales complètes dans les <a href="../impressum.html" target="_blank" rel="noopener">mentions légales</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marques',
-      marca_footer_imprint: 'Mentions légales',
-      marca_footer_privacy: 'Confidentialité',
       brand_parts_title: 'Demander ces références',
       brand_parts_intro: 'Nous avons déjà chiffré ou fourni ces références pour des clients en Europe. Cliquez sur une référence pour ouvrir le formulaire de demande dans une fenêtre avec marque et code préremplis.',
       brand_parts_case: 'Histoire de réussite',
@@ -327,7 +308,7 @@ function buildTranslations(brand) {
       quote_modal_part_label: 'Référence',
       quote_iframe_title: 'Formulaire de demande'
     }
-  };
+  });
 }
 
 function buildLdJson(brand, slug, tDe, suppliedParts) {
@@ -566,10 +547,7 @@ ${suppliedPartsExtraCss}
     .contact-form-wrap h3 { font-size: 1.15rem; color: #1e3a5f; margin-bottom: 1rem; text-align: center; }
     .contact-iframe-wrap { max-width: 700px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; }
     .contact-iframe-wrap iframe { width: 100%; height: 1050px; border: none; display: block; }
-    .footer { background: #1e3a5f; color: #fff; padding: 1.75rem 1.5rem; text-align: center; margin-top: 1rem; }
-    .footer a { color: #fff; text-decoration: none; margin: 0 0.35rem; }
-    .footer a:hover { text-decoration: underline; }
-    .footer .sep { opacity: 0.7; margin: 0 0.15rem; }
+${FOOTER_CSS}
   </style>
 </head>
 <body>
@@ -649,18 +627,7 @@ ${suppliedPartsHtml}
   </main>
 ${quoteModalHtml}
 
-  <footer class="footer">
-    <div class="container">
-      <a href="../index.html" data-i18n="marca_footer_home">ABCspareparts</a>
-      <span class="sep">·</span>
-      <a href="../marche.html" data-i18n="marca_footer_brands">Marken</a>
-      <span class="sep">·</span>
-      <a href="../impressum.html" target="_blank" rel="noopener" data-i18n="marca_footer_imprint">Impressum</a>
-      <span class="sep">·</span>
-      <a href="../datenschutz.html" target="_blank" rel="noopener" data-i18n="marca_footer_privacy">Datenschutz</a>
-      <p style="margin-top:1rem;font-size:0.9rem;opacity:0.9">&copy; 2026 ABCspareparts.</p>
-    </div>
-  </footer>
+${buildFooterHtml('../')}
 
   <script>
   (function () {

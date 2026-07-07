@@ -149,6 +149,16 @@ const indexHead = indexHtml;
 if (!indexHtml.includes('rel="alternate" type="text/plain" href="llms.txt"')) {
   throw new Error('index.html is missing llms.txt discovery link');
 }
+
+const impressumHtml = fs.readFileSync(path.join(__dirname, 'impressum.html'), 'utf8');
+if (!impressumHtml.includes('data-i18n="footer_cases"')) {
+  throw new Error('impressum.html is missing unified footer');
+}
+
+const marcheHubHtml = fs.readFileSync(path.join(__dirname, 'marche.html'), 'utf8');
+if (!marcheHubHtml.includes('data-i18n="footer_cases"')) {
+  throw new Error('marche.html is missing unified footer');
+}
 if (!indexHtml.includes('"@type": "CollectionPage"') && !indexHtml.includes('"@type":"CollectionPage"')) {
   throw new Error('index.html is missing CollectionPage JSON-LD for success stories');
 }
@@ -170,6 +180,9 @@ for (const f of toCheck) {
   }
   if (!content.includes('data-i18n="related_title"')) {
     throw new Error(`Missing related brands SEO block in marche/${f}`);
+  }
+  if (!content.includes('data-i18n="footer_cases"')) {
+    throw new Error(`Missing unified footer in marche/${f}`);
   }
 }
 

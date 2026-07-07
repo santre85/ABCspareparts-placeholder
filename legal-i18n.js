@@ -1,11 +1,11 @@
 /* Legal pages i18n - shared across impressum, datenschutz, agb, versand, cookies */
 
 const LEGAL_COMMON = {
-  de: { nav_home: "Home", nav_impressum: "Impressum", nav_datenschutz: "Datenschutz", nav_agb: "AGB", nav_versand: "Versand", nav_cookies: "Cookies", footer_rights: "Alle Rechte vorbehalten." },
-  en: { nav_home: "Home", nav_impressum: "Imprint", nav_datenschutz: "Privacy", nav_agb: "Terms", nav_versand: "Shipping", nav_cookies: "Cookies", footer_rights: "All rights reserved." },
-  it: { nav_home: "Home", nav_impressum: "Impressum", nav_datenschutz: "Privacy", nav_agb: "Condizioni", nav_versand: "Spedizione", nav_cookies: "Cookie", footer_rights: "Tutti i diritti riservati." },
-  es: { nav_home: "Home", nav_impressum: "Aviso legal", nav_datenschutz: "Privacidad", nav_agb: "Términos", nav_versand: "Envío", nav_cookies: "Cookies", footer_rights: "Todos los derechos reservados." },
-  fr: { nav_home: "Accueil", nav_impressum: "Mentions légales", nav_datenschutz: "Confidentialité", nav_agb: "CGV", nav_versand: "Livraison", nav_cookies: "Cookies", footer_rights: "Tous droits réservés." }
+  de: { nav_home: "Home", nav_impressum: "Impressum", nav_datenschutz: "Datenschutz", nav_agb: "AGB", nav_versand: "Versand", nav_cookies: "Cookies", footer_brands: "Marken", footer_cases: "Erfolgsgeschichten", footer_contact: "Kontakt", footer_imprint: "Impressum", footer_privacy: "Datenschutz", footer_terms: "AGB", footer_shipping: "Versand", footer_cookies: "Cookies", footer_rights: "Alle Rechte vorbehalten." },
+  en: { nav_home: "Home", nav_impressum: "Imprint", nav_datenschutz: "Privacy", nav_agb: "Terms", nav_versand: "Shipping", nav_cookies: "Cookies", footer_brands: "Brands", footer_cases: "Success stories", footer_contact: "Contact", footer_imprint: "Imprint", footer_privacy: "Privacy", footer_terms: "Terms", footer_shipping: "Shipping", footer_cookies: "Cookies", footer_rights: "All rights reserved." },
+  it: { nav_home: "Home", nav_impressum: "Impressum", nav_datenschutz: "Privacy", nav_agb: "Condizioni", nav_versand: "Spedizione", nav_cookies: "Cookie", footer_brands: "Marche", footer_cases: "Casi di successo", footer_contact: "Contatti", footer_imprint: "Impressum", footer_privacy: "Privacy", footer_terms: "Condizioni", footer_shipping: "Spedizione", footer_cookies: "Cookie", footer_rights: "Tutti i diritti riservati." },
+  es: { nav_home: "Home", nav_impressum: "Aviso legal", nav_datenschutz: "Privacidad", nav_agb: "Términos", nav_versand: "Envío", nav_cookies: "Cookies", footer_brands: "Marcas", footer_cases: "Casos de éxito", footer_contact: "Contacto", footer_imprint: "Aviso legal", footer_privacy: "Privacidad", footer_terms: "Términos", footer_shipping: "Envío", footer_cookies: "Cookies", footer_rights: "Todos los derechos reservados." },
+  fr: { nav_home: "Accueil", nav_impressum: "Mentions légales", nav_datenschutz: "Confidentialité", nav_agb: "CGV", nav_versand: "Livraison", nav_cookies: "Cookies", footer_brands: "Marques", footer_cases: "Histoires de réussite", footer_contact: "Contact", footer_imprint: "Mentions légales", footer_privacy: "Confidentialité", footer_terms: "CGV", footer_shipping: "Livraison", footer_cookies: "Cookies", footer_rights: "Tous droits réservés." }
 };
 
 const LEGAL_PAGES = {
