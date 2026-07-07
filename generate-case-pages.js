@@ -146,7 +146,7 @@ function pickLang(caseRow, lang) {
   return caseRow[lang] || caseRow.de;
 }
 
-const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
+const { FOOTER_CSS, FOOTER_I18N, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
 
 function buildCaseHubLabels(caseRow) {
   const breadcrumb = {
@@ -163,8 +163,14 @@ function buildCaseHubLabels(caseRow) {
   return out;
 }
 
+function primaryPartNumber(partField) {
+  const first = String(partField || '').split(/\s*(?:·|&|,)\s*/)[0].trim();
+  return first || String(partField || '').trim();
+}
+
 function buildCaseJsonLd(caseRow, de, canonical) {
   const productName = `${caseRow.brand} ${caseRow.part_number}`;
+  const mpn = primaryPartNumber(caseRow.part_number);
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -208,6 +214,7 @@ function buildCaseJsonLd(caseRow, de, canonical) {
         '@id': `${canonical}#product`,
         name: productName,
         sku: caseRow.part_number,
+        mpn,
         brand: { '@type': 'Brand', name: caseRow.brand },
         description: de.meta_description,
         category: de.fact_component_val

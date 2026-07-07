@@ -9,6 +9,7 @@ const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
 const BASE = 'https://abcspareparts.eu';
 const TODAY = new Date().toISOString().slice(0, 10);
+const MAX_META_LEN = 158;
 
 function loadTopBrandBySlug() {
   try {
@@ -311,6 +312,49 @@ function buildTranslations(brand) {
   });
 }
 
+const PARTS_META_PREFIX = {
+  de: ' Beispielcodes:',
+  en: ' Example parts:',
+  it: ' Codici es.:',
+  es: ' Códigos ej.:',
+  fr: ' Ex. références:'
+};
+
+const PARTS_META_MORE = {
+  de: (n) => ` (+${n} weitere)`,
+  en: (n) => ` (+${n} more)`,
+  it: (n) => ` (+${n} altri)`,
+  es: (n) => ` (+${n} más)`,
+  fr: (n) => ` (+${n} de plus)`
+};
+
+function enrichMetaWithParts(translations, parts) {
+  if (!parts || !parts.length) return translations;
+  const codes = parts.map((p) => p.part_number);
+  for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+    const base = translations[lang].meta_description;
+    const prefix = PARTS_META_PREFIX[lang];
+    let budget = MAX_META_LEN - base.length - prefix.length;
+    const shown = [];
+    for (const code of codes) {
+      const sep = shown.length ? ', ' : '';
+      if (sep.length + code.length > budget - 8) break;
+      shown.push(code);
+      budget -= sep.length + code.length;
+    }
+    let extra = '';
+    if (shown.length < codes.length) {
+      extra = PARTS_META_MORE[lang](codes.length - shown.length);
+    }
+    let meta = `${base}${prefix} ${shown.join(', ')}${extra}`;
+    if (meta.length > MAX_META_LEN) {
+      meta = `${meta.slice(0, MAX_META_LEN - 1).trim()}…`;
+    }
+    translations[lang].meta_description = meta;
+  }
+  return translations;
+}
+
 function buildLdJson(brand, slug, tDe, suppliedParts) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
   const webPage = {
@@ -417,7 +461,7 @@ function buildSuppliedPartsHtml(suppliedParts) {
     return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
   }).join('\n          ');
   return `
-      <section class="brand-supplied-parts" id="supplied-parts" aria-labelledby="brand-parts-heading">
+      <section class="brand-supplied-parts" id="quotable-parts" aria-labelledby="brand-parts-heading">
         <h2 id="brand-parts-heading" data-i18n="brand_parts_title">Diese Teilenummern anfragen</h2>
         <p class="parts-intro" data-i18n="brand_parts_intro">Diese Referenzen haben wir bereits für Kunden angeboten oder beschafft.</p>
         <ul class="brand-parts-list">
@@ -824,6 +868,13 @@ function writeSitemapIndex() {
   </sitemap>
 `
     : '';
+  const partCodesBlock = fs.existsSync(path.join(ROOT, 'sitemap-part-codes.xml'))
+    ? `  <sitemap>
+    <loc>${BASE}/sitemap-part-codes.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+`
+    : '';
   const xml = `---
 layout: none
 ---
@@ -837,7 +888,7 @@ layout: none
     <loc>${BASE}/sitemap-brands.xml</loc>
     <lastmod>${TODAY}</lastmod>
   </sitemap>
-${partsBlock}${casesBlock}</sitemapindex>
+${partsBlock}${partCodesBlock}${casesBlock}</sitemapindex>
 `;
   fs.writeFileSync(outPath, xml, 'utf8');
 }
@@ -869,6 +920,7 @@ function main() {
     const translations = buildTranslations(brand);
     mergeTopBrandContent(translations, slug);
     const suppliedParts = partsBySlug.get(slug) || [];
+    if (suppliedParts.length) enrichMetaWithParts(translations, suppliedParts);
     const html = buildHtml(brand, slug, translations, relatedRows, suppliedParts);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
