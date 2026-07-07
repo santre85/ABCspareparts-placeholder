@@ -5,7 +5,9 @@ const path = require('path');
 const { slugify } = require('./brand-slug.js');
 
 const ROOT = __dirname;
+const BASE = 'https://abcspareparts.eu';
 const MAX_DESC_LEN = 120;
+const TODAY = new Date().toISOString().slice(0, 10);
 
 /** ERP brand label → canonical brand name in brand-slugs.json */
 const BRAND_ALIASES = {
@@ -241,13 +243,71 @@ function buildBrandRows() {
   };
 }
 
+function formatPartPreview(parts, limit = 4) {
+  const shown = parts.slice(0, limit).map((p) => p.part_number);
+  const extra = parts.length > limit ? ` (+${parts.length - limit} more)` : '';
+  return `${shown.join(', ')}${extra}`;
+}
+
+function writeSitemapBrandParts(brands) {
+  const langs = ['it', 'de', 'en', 'es', 'fr'];
+  let body = '';
+  for (const row of brands) {
+    if (!row.brand_slug || !row.parts?.length) continue;
+    const loc = `${BASE}/marche/${row.brand_slug}.html`;
+    body += '  <url>\n';
+    body += `    <loc>${loc}</loc>\n`;
+    for (const lang of langs) {
+      body += `    <xhtml:link rel="alternate" hreflang="${lang}" href="${loc}?lang=${lang}"/>\n`;
+    }
+    body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}"/>\n`;
+    body += `    <lastmod>${TODAY}</lastmod>\n`;
+    body += '    <changefreq>weekly</changefreq>\n';
+    body += '    <priority>0.85</priority>\n';
+    body += '  </url>\n';
+  }
+  const xml = `---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${body}</urlset>
+`;
+  fs.writeFileSync(path.join(ROOT, 'sitemap-brand-parts.xml'), xml, 'utf8');
+}
+
+function updateLlmsTxt(brands) {
+  const llmsPath = path.join(ROOT, 'llms.txt');
+  let content = fs.readFileSync(llmsPath, 'utf8');
+  const partCount = brands.reduce((sum, row) => sum + row.parts.length, 0);
+  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers that ABCspareparts has quoted or supplied — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via \`?lang=\`). Total: ${partCount} part references.\n`;
+  const lines = brands.map((row) => {
+    const url = `${BASE}/marche/${row.brand_slug}.html`;
+    const preview = formatPartPreview(row.parts);
+    return `- [${row.brand}](${url}): ${preview}`;
+  });
+  const section = `${intro}\n${lines.join('\n')}\n`;
+
+  if (/## Brand pages with quotable part numbers/.test(content)) {
+    content = content.replace(/## Brand pages with quotable part numbers[\s\S]*?(?=\n## )/, section.trimEnd());
+  } else {
+    content = content.replace(/\n## Success story pages/, `\n${section}\n## Success story pages`);
+  }
+  fs.writeFileSync(llmsPath, content, 'utf8');
+}
+
 function main() {
   const output = buildBrandRows();
   const outPath = path.join(ROOT, 'brand-order-parts.json');
   fs.writeFileSync(outPath, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
+  writeSitemapBrandParts(output.brands);
+  updateLlmsTxt(output.brands);
 
   const partCount = output.brands.reduce((sum, row) => sum + row.parts.length, 0);
   console.log('brand-order-parts.json:', output.brands.length, 'brands,', partCount, 'parts');
+  console.log('sitemap-brand-parts.xml:', output.brands.length, 'URLs');
+  console.log('llms.txt: brand parts section updated');
   for (const row of output.brands) {
     console.log(`  ${row.brand} (${row.brand_slug}): ${row.parts.length}`);
   }
@@ -257,4 +317,10 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { buildBrandRows, parseCatalogSectionA, cleanDescription };
+module.exports = {
+  buildBrandRows,
+  parseCatalogSectionA,
+  cleanDescription,
+  writeSitemapBrandParts,
+  updateLlmsTxt
+};

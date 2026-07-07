@@ -12,6 +12,10 @@ layout: none
     <lastmod>2026-07-07</lastmod>
   </sitemap>
   <sitemap>
+    <loc>https://abcspareparts.eu/sitemap-brand-parts.xml</loc>
+    <lastmod>2026-07-07</lastmod>
+  </sitemap>
+  <sitemap>
     <loc>https://abcspareparts.eu/sitemap-cases.xml</loc>
     <lastmod>2026-07-07</lastmod>
   </sitemap>

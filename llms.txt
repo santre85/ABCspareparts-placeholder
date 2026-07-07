@@ -11,6 +11,43 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Success stories hub (casi di successo)](https://abcspareparts.eu/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (?lang=).
 - [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`.
 
+## Brand pages with quotable part numbers
+
+32 manufacturer pages list specific part numbers that ABCspareparts has quoted or supplied — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). Total: 77 part references.
+
+- [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
+- [Autronica](https://abcspareparts.eu/marche/autronica.html): V-430/BH200, V-530/BH500
+- [Baldwin](https://abcspareparts.eu/marche/baldwin.html): 13144.04, 13144.05, 45.877.05
+- [Baumer](https://abcspareparts.eu/marche/baumer.html): EN580C.ML-SC10.HH2C1.21160.H-11267453
+- [Fagor](https://abcspareparts.eu/marche/fagor.html): 12023211, 12024980, 12025076, 12049230
+- [Harmsco](https://abcspareparts.eu/marche/harmsco.html): Guarnizione coperchio 550 e11
+- [Hengstler](https://abcspareparts.eu/marche/hengstler.html): 0634713, 3 520 068, RI58-O/ 1000AS.41TF-F0
+- [HERBORNER](https://abcspareparts.eu/marche/herborner.html): 2A.0B.A2.6B, 3D.1L.30.01, 3E.3F.30.00, 97.10.08.00 (+3 more)
+- [Hi-Force Hydraulics](https://abcspareparts.eu/marche/hi-force-hydraulics.html): HPR-2H, PKC50
+- [Hübner Elektromaschinen AG](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html): GT9.06L/420k
+- [HUMPHREY](https://abcspareparts.eu/marche/humphrey.html): 41024VDC
+- [Konecranes](https://abcspareparts.eu/marche/konecranes.html): 52294077, 52302509, 52302518, 52589491 (+1 more)
+- [Kübler](https://abcspareparts.eu/marche/kubler.html): 279383
+- [Kuhnke](https://abcspareparts.eu/marche/kuhnke.html): 76.147.92.00
+- [Leuze](https://abcspareparts.eu/marche/leuze.html): 53800105, 53800117, RSL410-M
+- [M&S Armaturen](https://abcspareparts.eu/marche/m-and-s-armaturen.html): 57600-1000300
+- [M+S Hydraulic](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html): MMS50C
+- [Mettler Toledo](https://abcspareparts.eu/marche/mettler-toledo.html): 119106, 119171, 51119547, 51119999
+- [MST](https://abcspareparts.eu/marche/mst.html): 135859, 149826, 2485C041, 3175P003 (+10 more)
+- [NINGBO HONGBO WEITE MOTOR CO.,LTD](https://abcspareparts.eu/marche/ningbo-hongbo-weite-motor-co-ltd.html): HB18065HA2B
+- [PRONOMIC](https://abcspareparts.eu/marche/pronomic.html): 220390, Prog. 1211 Controller – Typ 20001A-70E R
+- [Radio Energie](https://abcspareparts.eu/marche/radio-energie.html): TTN0507RE.0
+- [Renishaw](https://abcspareparts.eu/marche/renishaw.html): A-5191-0049
+- [Rexroth](https://abcspareparts.eu/marche/rexroth.html): A10VSO28DFR1/31L-PPA12N
+- [Schunk](https://abcspareparts.eu/marche/schunk.html): LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058, PGN-plus 64-2-AS / 371093 (+1 more)
+- [Siemens](https://abcspareparts.eu/marche/siemens.html): 6AV2124-0MC010-AX0
+- [Spectrex INC.](https://abcspareparts.eu/marche/spectrex-inc.html): UF IR3 Flame Detector, SS316, ATEX, 3/4"
+- [Steute](https://abcspareparts.eu/marche/steute.html): 1188542
+- [SYM BANG](https://abcspareparts.eu/marche/sym-bang.html): A18065V2HBT-S
+- [Tamagawa](https://abcspareparts.eu/marche/tamagawa.html): 68-2048C/T-L3-12V, TS5013N61
+- [TOKHEIM](https://abcspareparts.eu/marche/tokheim.html): 941828, 947944-004
+- [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
+
 ## Success story pages
 
 - [Baldwin flow meter 45.877.05](https://abcspareparts.eu/casi/baldwin-flow-meter-4587705.html): Success story: Baldwin flow meter 45.877.05. Request 19 Jun 2026, DHL dispatch 23 Jun 2026 — four days to shipment.
