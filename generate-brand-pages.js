@@ -138,8 +138,12 @@ function buildTranslations(brand) {
       marca_footer_brands: 'Marken',
       marca_footer_imprint: 'Impressum',
       marca_footer_privacy: 'Datenschutz',
-      brand_parts_title: 'Bereits beschaffte Teilenummern',
-      brand_parts_intro: 'Diese Referenzen haben wir bereits für Kunden in Europa beschafft. Klicken Sie auf einen Code — das Anfrageformular öffnet sich in einem Fenster mit vorausgefüllter Marke und Teilenummer.',
+      brand_parts_title: 'Bereits verwaltete Artikel',
+      brand_parts_intro: 'Diese Codes haben wir Kunden bereits angeboten oder geliefert. Klicken Sie auf einen Code — das Anfrageformular öffnet sich vorausgefüllt.',
+      brand_parts_ordered_title: 'Bereits bestellte Teilenummern',
+      brand_parts_ordered_intro: 'Diese Referenzen haben wir bereits für Kunden in Europa beschafft.',
+      brand_parts_quoted_title: 'Bereits angebotene Teilenummern',
+      brand_parts_quoted_intro: 'Diese Codes standen bereits in Angeboten an Kunden. Bereits bestellte Codes erscheinen nur oben.',
       brand_parts_case: 'Erfolgsgeschichte',
       brand_parts_quote: 'Angebot anfragen',
       quote_modal_title: 'Unverbindliche Anfrage',
@@ -183,8 +187,12 @@ function buildTranslations(brand) {
       marca_footer_brands: 'Brands',
       marca_footer_imprint: 'Imprint',
       marca_footer_privacy: 'Privacy',
-      brand_parts_title: 'Part numbers we have supplied',
-      brand_parts_intro: 'We have already sourced these references for customers across Europe. Click a part number to open the request form in a window with brand and code pre-filled.',
+      brand_parts_title: 'Parts we manage for customers',
+      brand_parts_intro: 'These codes were already quoted or supplied to customers. Click a code to open the pre-filled request form.',
+      brand_parts_ordered_title: 'Part numbers already ordered',
+      brand_parts_ordered_intro: 'We have already sourced these references for customers across Europe.',
+      brand_parts_quoted_title: 'Part numbers already quoted',
+      brand_parts_quoted_intro: 'These codes were included in quotations sent to customers. Codes later ordered appear only above.',
       brand_parts_case: 'Success story',
       brand_parts_quote: 'Request quote',
       quote_modal_title: 'No-obligation enquiry',
@@ -228,8 +236,12 @@ function buildTranslations(brand) {
       marca_footer_brands: 'Marche',
       marca_footer_imprint: 'Impressum',
       marca_footer_privacy: 'Privacy',
-      brand_parts_title: 'Codici articolo già forniti',
-      brand_parts_intro: 'Queste referenze le abbiamo già approvvigionate per clienti in Europa. Clicchi su un codice per aprire il modulo di richiesta in una finestra con marca e codice articolo già compilati.',
+      brand_parts_title: 'Articoli gestiti per i clienti',
+      brand_parts_intro: 'Codici già offerti o già forniti ai clienti. Clicchi su un codice per aprire il modulo di richiesta precompilato.',
+      brand_parts_ordered_title: 'Codici articolo già forniti (ordinati)',
+      brand_parts_ordered_intro: 'Queste referenze le abbiamo già approvvigionate per clienti in Europa.',
+      brand_parts_quoted_title: 'Codici articolo già offerti',
+      brand_parts_quoted_intro: 'Questi codici sono già stati inseriti in preventivi inviati ai clienti. Se poi sono stati ordinati, compaiono solo nella sezione sopra.',
       brand_parts_case: 'Caso di successo',
       brand_parts_quote: 'Richiedi preventivo',
       quote_modal_title: 'Richiesta senza impegno',
@@ -273,8 +285,12 @@ function buildTranslations(brand) {
       marca_footer_brands: 'Marcas',
       marca_footer_imprint: 'Aviso legal',
       marca_footer_privacy: 'Privacidad',
-      brand_parts_title: 'Referencias ya suministradas',
-      brand_parts_intro: 'Estas referencias ya las hemos suministrado a clientes en Europa. Haga clic en un código para abrir el formulario de solicitud en una ventana con marca y referencia precargadas.',
+      brand_parts_title: 'Artículos gestionados para clientes',
+      brand_parts_intro: 'Códigos ya ofrecidos o suministrados a clientes. Haga clic en un código para abrir el formulario precargado.',
+      brand_parts_ordered_title: 'Referencias ya suministradas (pedidas)',
+      brand_parts_ordered_intro: 'Estas referencias ya las hemos suministrado a clientes en Europa.',
+      brand_parts_quoted_title: 'Referencias ya presupuestadas',
+      brand_parts_quoted_intro: 'Estos códigos ya figuraron en presupuestos enviados a clientes. Los pedidos posteriores aparecen solo arriba.',
       brand_parts_case: 'Caso de éxito',
       brand_parts_quote: 'Solicitar presupuesto',
       quote_modal_title: 'Solicitud sin compromiso',
@@ -318,8 +334,12 @@ function buildTranslations(brand) {
       marca_footer_brands: 'Marques',
       marca_footer_imprint: 'Mentions légales',
       marca_footer_privacy: 'Confidentialité',
-      brand_parts_title: 'Références déjà fournies',
-      brand_parts_intro: 'Nous avons déjà approvisionné ces références pour des clients en Europe. Cliquez sur une référence pour ouvrir le formulaire de demande dans une fenêtre avec marque et code préremplis.',
+      brand_parts_title: 'Articles gérés pour les clients',
+      brand_parts_intro: 'Codes déjà proposés ou fournis aux clients. Cliquez sur un code pour ouvrir le formulaire prérempli.',
+      brand_parts_ordered_title: 'Références déjà fournies (commandées)',
+      brand_parts_ordered_intro: 'Nous avons déjà approvisionné ces références pour des clients en Europe.',
+      brand_parts_quoted_title: 'Références déjà proposées en devis',
+      brand_parts_quoted_intro: 'Ces codes figurent déjà dans des devis envoyés aux clients. Les codes ensuite commandés n’apparaissent qu’au-dessus.',
       brand_parts_case: 'Histoire de réussite',
       brand_parts_quote: 'Demander un devis',
       quote_modal_title: 'Demande sans engagement',
@@ -416,26 +436,51 @@ function buildQuoteModalHtml() {
   </div>`;
 }
 
+function buildPartListItems(parts) {
+  return parts
+    .map((part) => {
+      const pn = escapeHtml(part.part_number);
+      const pnAttr = escapeAttr(part.part_number);
+      const desc =
+        part.description && part.description !== part.part_number
+          ? `<span class="part-desc">${escapeHtml(part.description)}</span>`
+          : '';
+      const caseLink = part.case_slug
+        ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
+        : '';
+      return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
+    })
+    .join('\n          ');
+}
+
+function buildPartsGroupHtml(parts, titleKey, introKey) {
+  if (!parts.length) return '';
+  return `
+        <div class="parts-group">
+          <h3 data-i18n="${titleKey}">Teilenummern</h3>
+          <p class="parts-intro" data-i18n="${introKey}"></p>
+          <ul class="brand-parts-list">
+            ${buildPartListItems(parts)}
+          </ul>
+        </div>`;
+}
+
 function buildSuppliedPartsHtml(suppliedParts) {
   if (!suppliedParts || !suppliedParts.length) return '';
-  const items = suppliedParts.map((part) => {
-    const pn = escapeHtml(part.part_number);
-    const pnAttr = escapeAttr(part.part_number);
-    const desc = part.description && part.description !== part.part_number
-      ? `<span class="part-desc">${escapeHtml(part.description)}</span>`
-      : '';
-    const caseLink = part.case_slug
-      ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
-      : '';
-    return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
-  }).join('\n          ');
+  const ordered = suppliedParts.filter((p) => (p.supply_type || 'ordered') === 'ordered');
+  const quoted = suppliedParts.filter((p) => p.supply_type === 'quoted');
+  const hasBoth = ordered.length > 0 && quoted.length > 0;
+  const headingKey = hasBoth ? 'brand_parts_title' : ordered.length ? 'brand_parts_ordered_title' : 'brand_parts_quoted_title';
+  const introKey = hasBoth ? 'brand_parts_intro' : ordered.length ? 'brand_parts_ordered_intro' : 'brand_parts_quoted_intro';
+  const body = hasBoth
+    ? buildPartsGroupHtml(ordered, 'brand_parts_ordered_title', 'brand_parts_ordered_intro') +
+      buildPartsGroupHtml(quoted, 'brand_parts_quoted_title', 'brand_parts_quoted_intro')
+    : `<ul class="brand-parts-list">${buildPartListItems(ordered.length ? ordered : quoted)}</ul>`;
   return `
       <section class="brand-supplied-parts" id="supplied-parts" aria-labelledby="brand-parts-heading">
-        <h2 id="brand-parts-heading" data-i18n="brand_parts_title">Bereits beschaffte Teilenummern</h2>
-        <p class="parts-intro" data-i18n="brand_parts_intro">Diese Referenzen haben wir bereits für Kunden in Europa beschafft.</p>
-        <ul class="brand-parts-list">
-          ${items}
-        </ul>
+        <h2 id="brand-parts-heading" data-i18n="${headingKey}">Bereits verwaltete Artikel</h2>
+        <p class="parts-intro" data-i18n="${introKey}"></p>
+        ${body}
       </section>`;
 }
 
@@ -533,6 +578,9 @@ function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
     .brand-faq p { margin: 0; font-size: 0.92rem; color: #444; line-height: 1.55; }
     .brand-supplied-parts { max-width: 820px; margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #f0f6fb; }
     .brand-supplied-parts h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.5rem; }
+    .brand-supplied-parts .parts-group { margin-top: 1rem; }
+    .brand-supplied-parts .parts-group:first-of-type { margin-top: 0; }
+    .brand-supplied-parts .parts-group h3 { font-size: 1.02rem; color: #1e3a5f; margin-bottom: 0.35rem; }
     .brand-supplied-parts .parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 1rem; line-height: 1.55; }
     .brand-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
     .brand-parts-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.75rem; padding: 0.55rem 0.65rem; background: #fff; border: 1px solid #e3eaf1; border-radius: 8px; }

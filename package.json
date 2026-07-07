@@ -3,6 +3,9 @@
     "build:marche": "node extract-brands.js",
     "build:brand-pages": "node generate-brand-pages.js",
     "build:brands": "node extract-brands.js && node generate-brand-pages.js",
+    "export:erp-parts": "node export-erp-parts-catalog.js",
+    "build:parts-catalog": "node build-brand-parts-catalog.js",
+    "build:parts": "node export-erp-parts-catalog.js && node build-brand-parts-catalog.js && node generate-brand-pages.js",
     "build:casi": "node generate-case-pages.js",
     "verify": "node verify-build.js"
   },

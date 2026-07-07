@@ -1,117 +1,224 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt",
-  "generated": "2026-07-05",
+  "sources": [
+    "ORDINI_ARTICOLI_MARCHE.txt"
+  ],
+  "generated": "2026-07-07",
   "brands": [
     {
       "brand": "Autronica",
       "brand_slug": "autronica",
       "parts": [
-        { "part_number": "V-430/BH200", "description": "V-430/BH200", "case_slug": "autronica-smoke-detectors-v430-v530" },
-        { "part_number": "V-530/BH500", "description": "V-530/BH500", "case_slug": "autronica-smoke-detectors-v430-v530" }
+        {
+          "part_number": "V-430/BH200",
+          "description": "V-430/BH200",
+          "supply_type": "ordered",
+          "case_slug": "autronica-smoke-detectors-v430-v530"
+        },
+        {
+          "part_number": "V-530/BH500",
+          "description": "V-530/BH500",
+          "supply_type": "ordered",
+          "case_slug": "autronica-smoke-detectors-v430-v530"
+        }
       ]
     },
     {
       "brand": "Baldwin",
       "brand_slug": "baldwin",
       "parts": [
-        { "part_number": "13144.04", "description": "13144.04" },
-        { "part_number": "13144.05", "description": "13144.05" },
-        { "part_number": "45.877.05", "description": "Flow meter 45.877.05", "case_slug": "baldwin-flow-meter-4587705" }
-      ]
-    },
-    {
-      "brand": "HUMPHREY",
-      "brand_slug": "humphrey",
-      "parts": [
-        { "part_number": "41024VDC", "description": "4/2-way solenoid valve 24 VDC", "case_slug": "humphrey-valve-41024vdc" }
+        {
+          "part_number": "13144.04",
+          "description": "13144.04",
+          "supply_type": "ordered"
+        },
+        {
+          "part_number": "13144.05",
+          "description": "13144.05",
+          "supply_type": "ordered"
+        },
+        {
+          "part_number": "45.877.05",
+          "description": "45.877.05",
+          "supply_type": "ordered",
+          "case_slug": "baldwin-flow-meter-4587705"
+        }
       ]
     },
     {
       "brand": "Hübner Elektromaschinen AG",
       "brand_slug": "hubner-elektromaschinen-ag",
       "parts": [
-        { "part_number": "GT9.06L/420K", "description": "Tachogenerator GT9.06L/420K", "case_slug": "hubner-tachogenerator-gt906l-420k" }
+        {
+          "part_number": "GT9.06L/420k",
+          "description": "Tachogenerator",
+          "supply_type": "ordered",
+          "case_slug": "hubner-tachogenerator-gt906l-420k"
+        }
+      ]
+    },
+    {
+      "brand": "HUMPHREY",
+      "brand_slug": "humphrey",
+      "parts": [
+        {
+          "part_number": "41024VDC",
+          "description": "41024VDC",
+          "supply_type": "ordered",
+          "case_slug": "humphrey-valve-41024vdc"
+        }
       ]
     },
     {
       "brand": "Leuze",
       "brand_slug": "leuze",
       "parts": [
-        { "part_number": "53800105", "description": "53800105" },
-        { "part_number": "53800117", "description": "53800117 CU408-M12" },
-        { "part_number": "RSL410-M", "description": "Laserscanner RSL410-M", "case_slug": "leuze-laser-scanner-rsl410-m" }
+        {
+          "part_number": "53800105",
+          "description": "53800105",
+          "supply_type": "ordered"
+        },
+        {
+          "part_number": "53800117",
+          "description": "53800117 CU408-M12",
+          "supply_type": "ordered"
+        },
+        {
+          "part_number": "RSL410-M",
+          "description": "Laserscanner RSL410-M",
+          "supply_type": "ordered",
+          "case_slug": "leuze-laser-scanner-rsl410-m"
+        }
       ]
     },
     {
       "brand": "M&S Armaturen",
       "brand_slug": "m-and-s-armaturen",
       "parts": [
-        { "part_number": "57600-1000300", "description": "EPDM gasket Classic DN100", "case_slug": "ms-armaturen-gasket-57600-1000300-dn100" }
+        {
+          "part_number": "57600-1000300",
+          "description": "57600-1000300",
+          "supply_type": "ordered",
+          "case_slug": "ms-armaturen-gasket-57600-1000300-dn100"
+        }
       ]
     },
     {
       "brand": "M+S Hydraulic",
       "brand_slug": "m-plus-s-hydraulic",
       "parts": [
-        { "part_number": "MMS50C", "description": "Orbital hydraulic motor MMS50C", "case_slug": "ms-hydraulic-motor-mms50c-yacht" }
+        {
+          "part_number": "MMS50C",
+          "description": "MMS50C",
+          "supply_type": "ordered",
+          "case_slug": "ms-hydraulic-motor-mms50c-yacht"
+        }
       ]
     },
     {
       "brand": "PRONOMIC",
       "brand_slug": "pronomic",
       "parts": [
-        { "part_number": "220390", "description": "220390" },
-        { "part_number": "20001A-70E R", "description": "Prog. 1211 Controller Typ 20001A-70E R" }
+        {
+          "part_number": "20001A-70E R",
+          "description": "Prog. 1211 Controller Typ 20001A-70E R",
+          "supply_type": "ordered"
+        },
+        {
+          "part_number": "220390",
+          "description": "220390",
+          "supply_type": "ordered"
+        },
+        {
+          "part_number": "Prog. 1211 Controller – Typ 20001A-70E R",
+          "description": "Prog. 1211 Controller – Typ 20001A-70E R",
+          "supply_type": "ordered"
+        }
       ]
     },
     {
       "brand": "Radio Energie",
       "brand_slug": "radio-energie",
       "parts": [
-        { "part_number": "TTN0507RE.0", "description": "RE.O110 1CB 0.007 CA", "case_slug": "radio-energie-tachogenerator-ttn0507re0" }
+        {
+          "part_number": "TTN0507RE.0",
+          "description": "RE.O110 1CB 0.007 CA",
+          "supply_type": "ordered",
+          "case_slug": "radio-energie-tachogenerator-ttn0507re0"
+        }
       ]
     },
     {
       "brand": "Rexroth",
       "brand_slug": "rexroth",
       "parts": [
-        { "part_number": "A10VSO28DFR1/31L-PPA12N", "description": "Axial piston pump A10VSO28", "case_slug": "rexroth-pump-a10vso28dfr1-ppa12n" }
+        {
+          "part_number": "A10VSO28DFR1/31L-PPA12N",
+          "description": "A10VSO28DFR1/31L-PPA12N",
+          "supply_type": "ordered",
+          "case_slug": "rexroth-pump-a10vso28dfr1-ppa12n"
+        }
       ]
     },
     {
       "brand": "Siemens",
       "brand_slug": "siemens",
       "parts": [
-        { "part_number": "6AV2124-0MC010-AX0", "description": "SIMATIC HMI TP1200 Comfort", "case_slug": "siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0" }
+        {
+          "part_number": "6AV2124-0MC010-AX0",
+          "description": "6AV2124-0MC010-AX0",
+          "supply_type": "ordered",
+          "case_slug": "siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0"
+        }
       ]
     },
     {
       "brand": "Steute",
       "brand_slug": "steute",
       "parts": [
-        { "part_number": "1188542", "description": "1188542" }
+        {
+          "part_number": "1188542",
+          "description": "1188542",
+          "supply_type": "ordered"
+        }
       ]
     },
     {
       "brand": "SYM BANG",
       "brand_slug": "sym-bang",
       "parts": [
-        { "part_number": "A18065V2HBT-S", "description": "A18065V2HBT-S" }
+        {
+          "part_number": "A18065V2HBT-S",
+          "description": "A18065V2HBT-S",
+          "supply_type": "ordered"
+        }
       ]
     },
     {
       "brand": "Tamagawa",
       "brand_slug": "tamagawa",
       "parts": [
-        { "part_number": "TS5013N61", "description": "TS5013N61" },
-        { "part_number": "68-2048C/T-L3-12V", "description": "Incremental encoder OIS 68", "case_slug": "tamagawa-encoder-68-2048c-t-l3-12v" }
+        {
+          "part_number": "68-2048C/T-L3-12V",
+          "description": "Incremental encoder OIS 68",
+          "supply_type": "ordered",
+          "case_slug": "tamagawa-encoder-68-2048c-t-l3-12v"
+        },
+        {
+          "part_number": "TS5013N61",
+          "description": "TS5013N61",
+          "supply_type": "ordered"
+        }
       ]
     },
     {
       "brand": "TOKHEIM",
       "brand_slug": "tokheim",
       "parts": [
-        { "part_number": "947944-004", "description": "947944-004" }
+        {
+          "part_number": "947944-004",
+          "description": "947944-004",
+          "supply_type": "ordered"
+        }
       ]
     }
   ]
