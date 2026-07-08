@@ -47,6 +47,87 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Tamagawa](https://abcspareparts.eu/marche/tamagawa.html): 68-2048C/T-L3-12V, TS5013N61
 - [TOKHEIM](https://abcspareparts.eu/marche/tokheim.html): 941828, 947944-004
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
+## Full part number catalog
+
+77 quotable part references with direct enquiry links (`?part=` on brand pages):
+
+- [ATLAS COPCO 80701.000507](https://abcspareparts.eu/marche/atlas-copco.html?part=80701.000507) — BALL JOINT ASSEMBLY
+- [Autronica V-430/BH200](https://abcspareparts.eu/marche/autronica.html?part=V-430%2FBH200) — Smoke Detector** Replacement for 116-BHH-200** Please check that the socket installed on board have been produced after…
+- [Autronica V-530/BH500](https://abcspareparts.eu/marche/autronica.html?part=V-530%2FBH500) — Smoke Detector ** Replacement for 116-BHH-500** Please check that the socket installed on board have been produced afte…
+- [Baldwin 13144.04](https://abcspareparts.eu/marche/baldwin.html?part=13144.04) — RUECKSCHLAGVENTIL I.RV 0015.RGG 1/4",0.2 BAR
+- [Baldwin 13144.05](https://abcspareparts.eu/marche/baldwin.html?part=13144.05) — RUECKSCHLAGVENTIL IRV 0013G 1/4",0,2 BAR
+- [Baldwin 45.877.05](https://abcspareparts.eu/marche/baldwin.html?part=45.877.05) — Flow meter
+- [Baumer EN580C.ML-SC10.HH2C1.21160.H-11267453](https://abcspareparts.eu/marche/baumer.html?part=EN580C.ML-SC10.HH2C1.21160.H-11267453) — Absoluter Drehgeber EN580C (successor of GXMMW.0205P32)
+- [Fagor 12023211](https://abcspareparts.eu/marche/fagor.html?part=12023211) — Door electromagnet (Previous part code/s #: P613002000, SAV W08 0024)
+- [Fagor 12024980](https://abcspareparts.eu/marche/fagor.html?part=12024980) — Damper 140n (Previous part code/s #: 12029086, P630111000)
+- [Fagor 12025076](https://abcspareparts.eu/marche/fagor.html?part=12025076) — 250n damper (Previous part code/s #: P630110000)
+- [Fagor 12049230](https://abcspareparts.eu/marche/fagor.html?part=12049230) — Hydraullic damper (Previous part code/s #: P680220000, 12023492, 12017724)
+- [Harmsco Guarnizione coperchio 550 e11](https://abcspareparts.eu/marche/harmsco.html?part=Guarnizione%20coperchio%20550%20e11) — Guarnizione EPDM/HIF7/24-HUR-BB-HP rif. HARMSCO 550-E
+- [Hengstler 0634713](https://abcspareparts.eu/marche/hengstler.html?part=0634713) — HENGSTLER IMP.ZAE 24DC 7ST RO
+- [Hengstler 3 520 068](https://abcspareparts.eu/marche/hengstler.html?part=3%20520%20068) — BALGKUPPLUNG 6 - 6
+- [Hengstler RI58-O/ 1000AS.41TF-F0](https://abcspareparts.eu/marche/hengstler.html?part=RI58-O%2F%201000AS.41TF-F0) — Drehgeber Typ RI 58
+- [HERBORNER 2A.0B.A2.6B](https://abcspareparts.eu/marche/herborner.html?part=2A.0B.A2.6B) — Mechanical seal elastomer bellow D24mmItem 433
+- [HERBORNER 3D.1L.30.01](https://abcspareparts.eu/marche/herborner.html?part=3D.1L.30.01) — Bearing 6205-2Z-N-C3Item 320.1
+- [HERBORNER 3E.3F.30.00](https://abcspareparts.eu/marche/herborner.html?part=3E.3F.30.00) — Anti-friction bearing 3306-C3Item 320.2
+- [HERBORNER 97.10.08.00](https://abcspareparts.eu/marche/herborner.html?part=97.10.08.00) — Shaft with rotor WR07-VFor motor VEM 100L2Item 819
+- [HERBORNER 97.18.03.00](https://abcspareparts.eu/marche/herborner.html?part=97.18.03.00) — Shaft seal ring B30x55x7-FK, item 423(labyrinth disc)
+- [HERBORNER LT.0D.11.00](https://abcspareparts.eu/marche/herborner.html?part=LT.0D.11.00) — Impeller LT-HK/50A-1-120, item 230Material: GG-25
+- [HERBORNER RM.03.2D.00](https://abcspareparts.eu/marche/herborner.html?part=RM.03.2D.00) — Impeller nut H50/131S-GD-M12Item 922
+- [Hi-Force Hydraulics HPR-2H](https://abcspareparts.eu/marche/hi-force-hydraulics.html?part=HPR-2H) — Hi-Force Model no.: HPR-2H, 50 tonnes pin and bush replacement tool kit incorporating Hi-Force HHA504 lightweight, alum…
+- [Hi-Force Hydraulics PKC50](https://abcspareparts.eu/marche/hi-force-hydraulics.html?part=PKC50) — Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing puller…
+- [Hübner Elektromaschinen AG GT9.06L/420k](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html?part=GT9.06L%2F420k) — Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…
+- [HUMPHREY 41024VDC](https://abcspareparts.eu/marche/humphrey.html?part=41024VDC)
+- [Konecranes 52294077](https://abcspareparts.eu/marche/konecranes.html?part=52294077) — Mounting Plate
+- [Konecranes 52302509](https://abcspareparts.eu/marche/konecranes.html?part=52302509) — Translation Wheel
+- [Konecranes 52302518](https://abcspareparts.eu/marche/konecranes.html?part=52302518) — set of idler wheels
+- [Konecranes 52589491](https://abcspareparts.eu/marche/konecranes.html?part=52589491) — set of covers
+- [Konecranes 53024331](https://abcspareparts.eu/marche/konecranes.html?part=53024331) — End Plate
+- [Kübler 279383](https://abcspareparts.eu/marche/kubler.html?part=279383) — 1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…
+- [Kuhnke 76.147.92.00](https://abcspareparts.eu/marche/kuhnke.html?part=76.147.92.00) — Elettrovalvola
+- [Leuze 53800105](https://abcspareparts.eu/marche/leuze.html?part=53800105) — RSL410-M Laserscanner
+- [Leuze 53800117](https://abcspareparts.eu/marche/leuze.html?part=53800117) — Connection unit
+- [Leuze RSL410-M](https://abcspareparts.eu/marche/leuze.html?part=RSL410-M)
+- [M&S Armaturen 57600-1000300](https://abcspareparts.eu/marche/m-and-s-armaturen.html?part=57600-1000300) — Dichtung, Typ Classic Werkstoff: EPDMfür ScheibenventilDN100
+- [M+S Hydraulic MMS50C](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html?part=MMS50C) — Hydraulic Motor
+- [Mettler Toledo 119106](https://abcspareparts.eu/marche/mettler-toledo.html?part=119106) — Heizelement DSC
+- [Mettler Toledo 119171](https://abcspareparts.eu/marche/mettler-toledo.html?part=119171) — PT100 Sensor DSC820/821E
+- [Mettler Toledo 51119547](https://abcspareparts.eu/marche/mettler-toledo.html?part=51119547) — PT100 Ofen DSC821E
+- [Mettler Toledo 51119999](https://abcspareparts.eu/marche/mettler-toledo.html?part=51119999) — Keramiksensor FRS 5+ (DSC 1/3)
+- [MST 135859](https://abcspareparts.eu/marche/mst.html?part=135859) — O-RING
+- [MST 149826](https://abcspareparts.eu/marche/mst.html?part=149826) — BRAKE REPAIR KIT
+- [MST 2485C041](https://abcspareparts.eu/marche/mst.html?part=2485C041) — TERMOSTAT
+- [MST 3175P003](https://abcspareparts.eu/marche/mst.html?part=3175P003) — Spring
+- [MST 40701](https://abcspareparts.eu/marche/mst.html?part=40701) — FILTER, OIL
+- [MST 46221](https://abcspareparts.eu/marche/mst.html?part=46221) — SPIDER
+- [MST 49944](https://abcspareparts.eu/marche/mst.html?part=49944) — SEAL KIT
+- [MST 54204201](https://abcspareparts.eu/marche/mst.html?part=54204201) — NUT
+- [MST 54204202](https://abcspareparts.eu/marche/mst.html?part=54204202) — TOOTH, PLAIN
+- [MST 5421114](https://abcspareparts.eu/marche/mst.html?part=5421114) — SIDECUTTER
+- [MST 54211213](https://abcspareparts.eu/marche/mst.html?part=54211213) — BOLT
+- [MST 54218106](https://abcspareparts.eu/marche/mst.html?part=54218106) — SPIDER
+- [MST 5421897](https://abcspareparts.eu/marche/mst.html?part=5421897) — BOLT
+- [MST 5421899](https://abcspareparts.eu/marche/mst.html?part=5421899) — BEARING STRAP
+- [NINGBO HONGBO WEITE MOTOR CO.,LTD HB18065HA2B](https://abcspareparts.eu/marche/ningbo-hongbo-weite-motor-co-ltd.html?part=HB18065HA2B) — Lüfter
+- [PRONOMIC 220390](https://abcspareparts.eu/marche/pronomic.html?part=220390) — Charger LiftDrive
+- [PRONOMIC Prog. 1211 Controller – Typ 20001A-70E R](https://abcspareparts.eu/marche/pronomic.html?part=Prog.%201211%20Controller%20%E2%80%93%20Typ%2020001A-70E%20R)
+- [Radio Energie TTN0507RE.0](https://abcspareparts.eu/marche/radio-energie.html?part=TTN0507RE.0) — RE.O110 1CB 0.007 CA
+- [Renishaw A-5191-0049](https://abcspareparts.eu/marche/renishaw.html?part=A-5191-0049) — OMI-2 - optical machine interface
+- [Rexroth A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/marche/rexroth.html?part=A10VSO28DFR1%2F31L-PPA12N)
+- [Schunk LM 100-H125 / 314065](https://abcspareparts.eu/marche/schunk.html?part=LM%20100-H125%20%2F%20314065) — Universal Linear Axis
+- [Schunk LM 100-H175 / 314067](https://abcspareparts.eu/marche/schunk.html?part=LM%20100-H175%20%2F%20314067) — Universal Linear Axis
+- [Schunk LM 50-H75 / 314058](https://abcspareparts.eu/marche/schunk.html?part=LM%2050-H75%20%2F%20314058) — Universal Linear Axis
+- [Schunk PGN-plus 64-2-AS / 371093](https://abcspareparts.eu/marche/schunk.html?part=PGN-plus%2064-2-AS%20%2F%20371093) — Universal Gripper
+- [Schunk RM 200-W90-1 / 313007](https://abcspareparts.eu/marche/schunk.html?part=RM%20200-W90-1%20%2F%20313007) — Universal Swivel Unit
+- [Siemens 6AV2124-0MC010-AX0](https://abcspareparts.eu/marche/siemens.html?part=6AV2124-0MC010-AX0) — SIMATIC HMI TP1200 COMFORT
+- [Spectrex INC. UF IR3 Flame Detector, SS316, ATEX, 3/4"](https://abcspareparts.eu/marche/spectrex-inc.html?part=UF%20IR3%20Flame%20Detector%2C%20SS316%2C%20ATEX%2C%203%2F4%22) — Spectrex SharpEye Ultra Fast triple IR, universal wiring; relays, analog, 0-20mA, HART, RS-485 Modbus, -60 to +85 deg C…
+- [Steute 1188542](https://abcspareparts.eu/marche/steute.html?part=1188542) — Ex solenoid interlockEx STM 295 1Ö1S/1Ö1S-A/90°Article no.: 1188542 (old article no.: 95353310)
+- [SYM BANG A18065V2HBT-S](https://abcspareparts.eu/marche/sym-bang.html?part=A18065V2HBT-S) — Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W
+- [Tamagawa 68-2048C/T-L3-12V](https://abcspareparts.eu/marche/tamagawa.html?part=68-2048C%2FT-L3-12V)
+- [Tamagawa TS5013N61](https://abcspareparts.eu/marche/tamagawa.html?part=TS5013N61) — 68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 68 series . Outside diameter 68 mm Shaft diameter 10 mm Re…
+- [TOKHEIM 941828](https://abcspareparts.eu/marche/tokheim.html?part=941828) — LCD Anzeige Quantium / WWC mit LED Hintergrundbeleuchtung
+- [TOKHEIM 947944-004](https://abcspareparts.eu/marche/tokheim.html?part=947944-004) — TQC LCD Display
+- [ZOLLERN 1199181](https://abcspareparts.eu/marche/zollern.html?part=1199181) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250
+- [ZOLLERN 1199182](https://abcspareparts.eu/marche/zollern.html?part=1199182) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLB 22-250
 
 ## Success story pages
 
@@ -61,6 +142,14 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Radio Energie DC tachogenerator TTN0507RE.0](https://abcspareparts.eu/casi/radio-energie-tachogenerator-ttn0507re0.html): Success story: Radio Energie RE.O110 DC tachogenerator TTN0507RE.0 — 7 V/1000 rpm, B14 flange, for food production in Bavaria.
 - [M&S Armaturen gasket 57600-1000300](https://abcspareparts.eu/casi/ms-armaturen-gasket-57600-1000300-dn100.html): Success story: M&S Armaturen EPDM Classic gasket 57600-1000300 for DN100 butterfly valve. Order 25 Jun 2026, delivery date 13 Jul 2026 — 10 pcs for a new customer.
 - [Leuze laser scanner RSL410-M](https://abcspareparts.eu/casi/leuze-laser-scanner-rsl410-m.html): Success story: Leuze RSL410-M laser scanner for an Italian label producer — much more competitive than existing suppliers, installed at once, line back online.
+## XML sitemaps (search engines)
+
+- [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 32 high-priority brand URLs
+- [Individual part codes](https://abcspareparts.eu/sitemap-part-codes.xml) — 77 part-specific URLs
+- [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
+- [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
+
 ## Optional
 
 - [Impressum (legal notice)](https://abcspareparts.eu/impressum.html)

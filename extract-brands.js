@@ -52,7 +52,9 @@ const marcheHtml = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile unverbindlich anfragen</title>
   <meta name="description" content="Marke suchen, Liste filtern: ${b.length}+ Hersteller für Industrieersatzteile und MRO. Originalteile &amp; Alternativen. Jetzt Teilenummer einreichen – Antwort meist innerhalb von 24 Stunden. Formular oder E-Mail.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${base}/marche.html">
+  <link rel="alternate" type="text/plain" href="${base}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${base}/marche.html">
   <link rel="alternate" hreflang="de" href="${base}/marche.html?lang=de">
   <link rel="alternate" hreflang="en" href="${base}/marche.html?lang=en">

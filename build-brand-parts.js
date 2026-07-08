@@ -249,6 +249,18 @@ function formatPartPreview(parts, limit = 4) {
   return `${shown.join(', ')}${extra}`;
 }
 
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function partPageUrl(brandSlug, partNumber) {
+  return `${BASE}/marche/${brandSlug}.html?part=${encodeURIComponent(partNumber)}`;
+}
+
 function writeSitemapBrandParts(brands) {
   const langs = ['it', 'de', 'en', 'es', 'fr'];
   let body = '';
@@ -277,6 +289,40 @@ ${body}</urlset>
   fs.writeFileSync(path.join(ROOT, 'sitemap-brand-parts.xml'), xml, 'utf8');
 }
 
+function writeSitemapPartCodes(brands) {
+  const langs = ['it', 'de', 'en', 'es', 'fr'];
+  let body = '';
+  let urlCount = 0;
+  for (const row of brands) {
+    if (!row.brand_slug || !row.parts?.length) continue;
+    const pageLoc = `${BASE}/marche/${row.brand_slug}.html`;
+    for (const part of row.parts) {
+      const loc = partPageUrl(row.brand_slug, part.part_number);
+      body += '  <url>\n';
+      body += `    <loc>${escapeXml(loc)}</loc>\n`;
+      for (const lang of langs) {
+        body += `    <xhtml:link rel="alternate" hreflang="${lang}" href="${escapeXml(`${loc}&lang=${lang}`)}"/>\n`;
+      }
+      body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(loc)}"/>\n`;
+      body += `    <lastmod>${TODAY}</lastmod>\n`;
+      body += '    <changefreq>weekly</changefreq>\n';
+      body += '    <priority>0.75</priority>\n';
+      body += '  </url>\n';
+      urlCount++;
+    }
+  }
+  const xml = `---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${body}</urlset>
+`;
+  fs.writeFileSync(path.join(ROOT, 'sitemap-part-codes.xml'), xml, 'utf8');
+  return urlCount;
+}
+
 function updateLlmsTxt(brands) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
@@ -294,6 +340,34 @@ function updateLlmsTxt(brands) {
   } else {
     content = content.replace(/\n## Success story pages/, `\n${section}\n## Success story pages`);
   }
+
+  const catalogLines = [];
+  for (const row of brands) {
+    if (!row.brand_slug || !row.parts?.length) continue;
+    for (const part of row.parts) {
+      const url = partPageUrl(row.brand_slug, part.part_number);
+      const desc = part.description && part.description !== part.part_number
+        ? ` — ${part.description}`
+        : '';
+      catalogLines.push(`- [${row.brand} ${part.part_number}](${url})${desc}`);
+    }
+  }
+  const catalogSection = `## Full part number catalog\n\n${partCount} quotable part references with direct enquiry links (\`?part=\` on brand pages):\n\n${catalogLines.join('\n')}\n`;
+
+  if (/## Full part number catalog/.test(content)) {
+    content = content.replace(/## Full part number catalog[\s\S]*?(?=\n## )/, catalogSection.trimEnd());
+  } else {
+    content = content.replace(/\n## Success story pages/, `\n${catalogSection}\n## Success story pages`);
+  }
+
+  const sitemapSection = `## XML sitemaps (search engines)\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brands.length} high-priority brand URLs\n- [Individual part codes](${BASE}/sitemap-part-codes.xml) — ${partCount} part-specific URLs\n- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n`;
+
+  if (/## XML sitemaps \(search engines\)/.test(content)) {
+    content = content.replace(/## XML sitemaps \(search engines\)[\s\S]*?(?=\n## |$)/, sitemapSection.trimEnd());
+  } else {
+    content = content.replace(/\n## Optional/, `\n${sitemapSection}\n## Optional`);
+  }
+
   fs.writeFileSync(llmsPath, content, 'utf8');
 }
 
@@ -302,12 +376,14 @@ function main() {
   const outPath = path.join(ROOT, 'brand-order-parts.json');
   fs.writeFileSync(outPath, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
   writeSitemapBrandParts(output.brands);
+  const partUrlCount = writeSitemapPartCodes(output.brands);
   updateLlmsTxt(output.brands);
 
   const partCount = output.brands.reduce((sum, row) => sum + row.parts.length, 0);
   console.log('brand-order-parts.json:', output.brands.length, 'brands,', partCount, 'parts');
   console.log('sitemap-brand-parts.xml:', output.brands.length, 'URLs');
-  console.log('llms.txt: brand parts section updated');
+  console.log('sitemap-part-codes.xml:', partUrlCount, 'URLs');
+  console.log('llms.txt: brand parts + full catalog + sitemaps updated');
   for (const row of output.brands) {
     console.log(`  ${row.brand} (${row.brand_slug}): ${row.parts.length}`);
   }
@@ -322,5 +398,7 @@ module.exports = {
   parseCatalogSectionA,
   cleanDescription,
   writeSitemapBrandParts,
-  updateLlmsTxt
+  writeSitemapPartCodes,
+  updateLlmsTxt,
+  partPageUrl
 };

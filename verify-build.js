@@ -51,6 +51,7 @@ if (!si.includes('/sitemap.xml')) throw new Error('sitemap-index.xml missing sit
 if (!si.includes('/sitemap-brands.xml')) throw new Error('sitemap-index.xml missing sitemap-brands.xml reference');
 if (!si.includes('/sitemap-cases.xml')) throw new Error('sitemap-index.xml missing sitemap-cases.xml reference');
 if (!si.includes('/sitemap-brand-parts.xml')) throw new Error('sitemap-index.xml missing sitemap-brand-parts.xml reference');
+if (!si.includes('/sitemap-part-codes.xml')) throw new Error('sitemap-index.xml missing sitemap-part-codes.xml reference');
 
 const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
 if (!fs.existsSync(sbpPath)) throw new Error('sitemap-brand-parts.xml missing — run npm run build:brand-parts');
@@ -60,6 +61,15 @@ const partsBrandCount = (partsDataEarly.brands || []).filter((b) => b.brand_slug
 const partsUrlCount = (sbp.match(/<loc>/g) || []).length;
 if (partsUrlCount !== partsBrandCount) {
   throw new Error(`sitemap-brand-parts.xml <loc> count ${partsUrlCount} !== brands with parts ${partsBrandCount}`);
+}
+
+const spcPath = path.join(__dirname, 'sitemap-part-codes.xml');
+if (!fs.existsSync(spcPath)) throw new Error('sitemap-part-codes.xml missing — run npm run build:brand-parts');
+const spc = fs.readFileSync(spcPath, 'utf8');
+const totalPartRefs = (partsDataEarly.brands || []).reduce((sum, row) => sum + (row.parts?.length || 0), 0);
+const partCodeUrlCount = (spc.match(/<loc>/g) || []).length;
+if (partCodeUrlCount !== totalPartRefs) {
+  throw new Error(`sitemap-part-codes.xml <loc> count ${partCodeUrlCount} !== total parts ${totalPartRefs}`);
 }
 
 const casesPath = path.join(__dirname, 'supply-cases.json');
@@ -107,6 +117,9 @@ for (const c of publishedCases) {
   if (!html.includes('"@type":"Article"') || !html.includes('"@type":"Product"')) {
     throw new Error(`Case page ${c.slug}.html is missing Article/Product JSON-LD`);
   }
+  if (!html.includes('"mpn"')) {
+    throw new Error(`Case page ${c.slug}.html is missing mpn in Product JSON-LD`);
+  }
   if (!html.includes('rel="canonical"')) {
     throw new Error(`Case page ${c.slug}.html is missing canonical URL`);
   }
@@ -144,6 +157,9 @@ if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) 
 if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml')) {
   throw new Error('robots.txt is missing sitemap-brand-parts.xml reference');
 }
+if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-part-codes.xml')) {
+  throw new Error('robots.txt is missing sitemap-part-codes.xml reference');
+}
 
 const indexHead = indexHtml;
 if (!indexHtml.includes('rel="alternate" type="text/plain" href="llms.txt"')) {
@@ -158,6 +174,15 @@ if (!impressumHtml.includes('data-i18n="footer_cases"')) {
 const marcheHubHtml = fs.readFileSync(path.join(__dirname, 'marche.html'), 'utf8');
 if (!marcheHubHtml.includes('data-i18n="footer_cases"')) {
   throw new Error('marche.html is missing unified footer');
+}
+if (!marcheHubHtml.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
+  throw new Error('marche.html is missing llms.txt discovery link');
+}
+if (!llmsTxt.includes('## Full part number catalog')) {
+  throw new Error('llms.txt is missing Full part number catalog section');
+}
+if (!llmsTxt.includes('## XML sitemaps (search engines)')) {
+  throw new Error('llms.txt is missing XML sitemaps section');
 }
 if (!indexHtml.includes('"@type": "CollectionPage"') && !indexHtml.includes('"@type":"CollectionPage"')) {
   throw new Error('index.html is missing CollectionPage JSON-LD for success stories');
@@ -199,6 +224,9 @@ for (const slug of partsSlugs) {
   const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
   if (!content.includes('brand-supplied-parts')) {
     throw new Error(`Missing supplied-parts section in marche/${f}`);
+  }
+  if (!content.includes('id="quotable-parts"')) {
+    throw new Error(`Missing quotable-parts section id in marche/${f}`);
   }
   if (!content.includes('id="quoteModal"') || !content.includes('part-quote-btn')) {
     throw new Error(`Missing quote modal / part buttons in marche/${f}`);
