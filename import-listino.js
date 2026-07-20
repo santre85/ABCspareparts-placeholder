@@ -3,6 +3,10 @@
 /**
  * Import manufacturer price lists from listini/ into a map of brand_slug → parts.
  *
+ * IMPORTANT: only part codes (and optional descriptions) are published on the site.
+ * Prices / list prices / discounts from the XLSX are NEVER imported or displayed.
+ * Customers click a code to open a no-obligation enquiry form — not a priced catalog.
+ *
  * Supported files (filename stem = brand slug, e.g. abb.xlsx → marche/abb.html):
  *   listini/abb.txt   — one part number per line
  *   listini/abb.csv   — column part_number (or first column); optional description
@@ -27,6 +31,19 @@ const DESC_HEADERS = new Set([
   'description', 'desc', 'descrizione', 'beschreibung', 'name', 'item_name',
   'designation', 'bezeichnung', 'title'
 ]);
+
+/** Headers that must never be treated as description (or published). */
+const PRICE_HEADERS = new Set([
+  'price', 'preis', 'prezzo', 'list_price', 'listino', 'netto', 'net', 'brutto',
+  'eur', 'usd', 'chf', 'gbp', 'amount', 'betrag', 'costo', 'cost', 'vk', 'ek',
+  'rabatt', 'discount', 'mwst', 'vat', 'iva'
+]);
+
+function isPriceHeader(header) {
+  const h = normalizeHeader(header);
+  if (PRICE_HEADERS.has(h)) return true;
+  return /(price|preis|prezzo|euro|eur|usd|netto|brutto|rabatt|discount)/.test(h);
+}
 
 function normalizeHeader(value) {
   return String(value || '')
@@ -96,16 +113,25 @@ function rowsToParts(rows) {
   if (!rows.length) return [];
   const first = rows[0].map(normalizeHeader);
   let codeIdx = first.findIndex((h) => CODE_HEADERS.has(h));
-  let descIdx = first.findIndex((h) => DESC_HEADERS.has(h));
+  let descIdx = first.findIndex((h) => DESC_HEADERS.has(h) && !isPriceHeader(h));
   let start = 0;
 
   if (codeIdx >= 0) {
     start = 1;
   } else {
-    // No header — treat first column as code, second as optional description
+    // No header — treat first non-price-looking column as code.
+    // Never take a second column as description if the header row looks like prices.
     codeIdx = 0;
-    descIdx = rows[0].length > 1 ? 1 : -1;
+    descIdx = -1;
     start = 0;
+    if (rows[0].length > 1 && !isLikelyPartCode(rows[0][0]) && isLikelyPartCode(rows[0][1])) {
+      codeIdx = 1;
+    }
+  }
+
+  // Safety: never use a price column as description
+  if (descIdx >= 0 && first[descIdx] && isPriceHeader(first[descIdx])) {
+    descIdx = -1;
   }
 
   const byKey = new Map();
@@ -114,8 +140,11 @@ function rowsToParts(rows) {
     if (!row || !row.length) continue;
     const code = String(row[codeIdx] || '').trim();
     if (!isLikelyPartCode(code)) continue;
+    // Only keep code (+ optional text description). Ignore all other columns (prices, qty, …).
     const descRaw = descIdx >= 0 ? String(row[descIdx] || '').trim() : '';
-    const description = descRaw || code;
+    const description = descRaw && !/^\d+([.,]\d+)?\s*(€|eur|usd|chf)?$/i.test(descRaw)
+      ? descRaw
+      : code;
     const key = normalizePartKey(code);
     if (!byKey.has(key)) {
       byKey.set(key, { part_number: code, description });
