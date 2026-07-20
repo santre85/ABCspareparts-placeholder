@@ -1,8 +1,27 @@
 {
   "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
   "generated": "2026-07-20",
-  "listini_files": 0,
+  "listini_files": 127792,
   "brands": [
+    {
+      "brand": "ABB",
+      "brand_slug": "abb",
+      "parts": [],
+      "listino": {
+        "file": "listini-data/abb.json",
+        "count": 127792,
+        "preview": [
+          "00-0031",
+          "00-0114",
+          "00-0140",
+          "00-0160",
+          "00-0161",
+          "00-0230",
+          "00-0231",
+          "00-0232"
+        ]
+      }
+    },
     {
       "brand": "ATLAS COPCO",
       "brand_slug": "atlas-copco",
