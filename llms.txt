@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-32 manufacturer pages list specific part numbers that ABCspareparts has quoted or supplied — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). Total: 77 part references.
+32 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). Total: 77 part references.
 
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
 - [Autronica](https://abcspareparts.eu/marche/autronica.html): V-430/BH200, V-530/BH500
@@ -128,7 +128,6 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [TOKHEIM 947944-004](https://abcspareparts.eu/marche/tokheim.html?part=947944-004) — TQC LCD Display
 - [ZOLLERN 1199181](https://abcspareparts.eu/marche/zollern.html?part=1199181) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250
 - [ZOLLERN 1199182](https://abcspareparts.eu/marche/zollern.html?part=1199182) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLB 22-250
-
 ## Success story pages
 
 - [Baldwin flow meter 45.877.05](https://abcspareparts.eu/casi/baldwin-flow-meter-4587705.html): Success story: Baldwin flow meter 45.877.05. Request 19 Jun 2026, DHL dispatch 23 Jun 2026 — four days to shipment.
@@ -149,7 +148,6 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Individual part codes](https://abcspareparts.eu/sitemap-part-codes.xml) — 77 part-specific URLs
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
-
 ## Optional
 
 - [Impressum (legal notice)](https://abcspareparts.eu/impressum.html)
