@@ -43,10 +43,26 @@ Senza intestazione: **prima colonna = codice**. Colonne prezzo ignorate.
 
 Prima foglio del workbook. Basta la colonna codice; descrizione e prezzi possono esserci o no.
 
-## Build
+## Listini grandi (es. ABB 100k+ codici)
+
+Se il file ha più di 200 codici:
+- i codici vanno in `listini-data/{slug}.json` (solo codici, **senza prezzi**)
+- sulla pagina marca compare una **ricerca** (min. 3 caratteri)
+- click sul risultato → form di richiesta precompilato
+- il `.xlsx` resta locale (gitignore), in git va solo il JSON
+
+## Build (step-by-step)
 
 ```bash
-npm run build:brand-parts-pages
+# 1) Metti il file listino (es. listini/abb.xlsx) — i prezzi non vengono pubblicati
+# 2) Rigenera catalogo JSON
+npm run build:brand-parts
+
+# 3) Rigenera SOLO la pagina marca interessata (consigliato per listini grandi)
+node generate-brand-pages.js --only=abb
+
+# Oppure tutte le pagine (lento, ~12k file):
+npm run build:brand-pages
 ```
 
 I codici già presenti in ordini/preventivi **non vengono duplicati**.
