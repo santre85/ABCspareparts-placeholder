@@ -7,9 +7,19 @@ Metti qui i file listino. Il **nome file** deve essere lo **slug** della pagina 
 | `abb.xlsx` / `abb.csv` / `abb.txt` | https://abcspareparts.eu/marche/abb.html |
 | `siemens.csv` | https://abcspareparts.eu/marche/siemens.html |
 
+## Cosa viene pubblicato sul sito
+
+**Solo i codici articolo** (e, se c’è, una descrizione testuale).
+
+- **Nessun prezzo** viene importato o mostrato (colonne Preis / Price / EUR / Netto / … ignorate)
+- Non è un catalogo con listino: ogni codice è un pulsante per **richiedere** quell’articolo
+- Click sul codice → finestra con form ERP precompilato (marca + codice)
+
+Anche se l’Excel contiene prezzi, sul sito restano solo i codici richiedibili.
+
 ## Formati accettati
 
-### 1. Solo codici (`.txt`) — consigliato se non c’è descrizione
+### 1. Solo codici (`.txt`)
 
 ```text
 1SDA068187R1
@@ -21,28 +31,22 @@ Una riga = un codice. Righe vuote e `# commenti` ignorati.
 
 ### 2. CSV (`.csv`)
 
-Con intestazione (riconosciuta automaticamente):
-
 ```csv
 part_number,description
 1SDA068187R1,Interruttore
 1SFA619100R1011,
 ```
 
-Senza intestazione: **prima colonna = codice**, seconda (opzionale) = descrizione.
-
-Intestazioni riconosciute per il codice: `part_number`, `codice`, `articolo`, `Artikelnummer`, `sku`, `item_code`, …
+Senza intestazione: **prima colonna = codice**. Colonne prezzo ignorate.
 
 ### 3. Excel (`.xlsx` / `.xls`)
 
-Prima foglio del workbook. Stessa logica colonne del CSV.
-La descrizione può mancare: in pagina compare solo il codice cliccabile.
+Prima foglio del workbook. Basta la colonna codice; descrizione e prezzi possono esserci o no.
 
 ## Build
 
 ```bash
-npm run build:brand-parts    # merge ORDINI + OFFERTE + listini/ → brand-order-parts.json
-npm run build:brand-pages    # rigenera marche/*.html
+npm run build:brand-parts-pages
 ```
 
 I codici già presenti in ordini/preventivi **non vengono duplicati**.
