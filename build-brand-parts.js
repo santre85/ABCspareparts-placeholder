@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { slugify } = require('./brand-slug.js');
-const { loadListiniParts } = require('./import-listino.js');
+const { loadListiniParts, writeListinoDataFile, INLINE_LISTINO_MAX } = require('./import-listino.js');
 
 const ROOT = __dirname;
 const BASE = 'https://abcspareparts.eu';
@@ -193,7 +193,19 @@ function supplementFromListini(rowsBySlug, brandSlugs, caseMap, listiniBySlug) {
     }
     const row = rowsBySlug.get(brand_slug);
     row.brand = brand;
-    row.parts = mergePartLists([...row.parts, ...parts]);
+
+    if (parts.length > INLINE_LISTINO_MAX) {
+      const meta = writeListinoDataFile(brand_slug, brand, parts);
+      row.listino = {
+        file: meta.file,
+        count: meta.count,
+        preview: meta.preview
+      };
+      // Keep existing ERP/case parts inline; do not dump 100k+ codes into HTML.
+      console.log(`listino ${brand_slug}: ${meta.count} codes → ${meta.file} (search UI, no prices)`);
+    } else {
+      row.parts = mergePartLists([...row.parts, ...parts]);
+    }
   }
 }
 
@@ -272,7 +284,12 @@ function buildBrandRows() {
   };
 }
 
-function formatPartPreview(parts, limit = 4) {
+function formatPartPreview(row, limit = 4) {
+  if (row.listino?.count) {
+    const preview = (row.listino.preview || []).slice(0, limit).join(', ');
+    return `${preview} (+${row.listino.count} listino codes, search on page)`;
+  }
+  const parts = row.parts || [];
   const shown = parts.slice(0, limit).map((p) => p.part_number);
   const extra = parts.length > limit ? ` (+${parts.length - limit} more)` : '';
   return `${shown.join(', ')}${extra}`;
@@ -294,7 +311,8 @@ function writeSitemapBrandParts(brands) {
   const langs = ['it', 'de', 'en', 'es', 'fr'];
   let body = '';
   for (const row of brands) {
-    if (!row.brand_slug || !row.parts?.length) continue;
+    if (!row.brand_slug) continue;
+    if (!row.parts?.length && !row.listino?.count) continue;
     const loc = `${BASE}/marche/${row.brand_slug}.html`;
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
@@ -324,7 +342,7 @@ function writeSitemapPartCodes(brands) {
   let urlCount = 0;
   for (const row of brands) {
     if (!row.brand_slug || !row.parts?.length) continue;
-    const pageLoc = `${BASE}/marche/${row.brand_slug}.html`;
+    // Large listino catalogs use search UI — do not explode sitemap with 100k+ URLs.
     for (const part of row.parts) {
       const loc = partPageUrl(row.brand_slug, part.part_number);
       body += '  <url>\n';
@@ -355,11 +373,11 @@ ${body}</urlset>
 function updateLlmsTxt(brands) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
-  const partCount = brands.reduce((sum, row) => sum + row.parts.length, 0);
-  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via \`?lang=\`). Total: ${partCount} part references.\n`;
+  const partCount = brands.reduce((sum, row) => sum + (row.parts?.length || 0) + (row.listino?.count || 0), 0);
+  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via \`?lang=\`). No list prices are published. Total: ${partCount} part references.\n`;
   const lines = brands.map((row) => {
     const url = `${BASE}/marche/${row.brand_slug}.html`;
-    const preview = formatPartPreview(row.parts);
+    const preview = formatPartPreview(row);
     return `- [${row.brand}](${url}): ${preview}`;
   });
   const section = `${intro}\n${lines.join('\n')}\n`;
@@ -372,8 +390,13 @@ function updateLlmsTxt(brands) {
 
   const catalogLines = [];
   for (const row of brands) {
-    if (!row.brand_slug || !row.parts?.length) continue;
-    for (const part of row.parts) {
+    if (!row.brand_slug) continue;
+    if (row.listino?.count) {
+      catalogLines.push(
+        `- [${row.brand} listino](${BASE}/marche/${row.brand_slug}.html) — ${row.listino.count} codes searchable on page (no prices); data: ${BASE}/${row.listino.file}`
+      );
+    }
+    for (const part of row.parts || []) {
       const url = partPageUrl(row.brand_slug, part.part_number);
       const desc = part.description && part.description !== part.part_number
         ? ` — ${part.description}`
@@ -381,7 +404,7 @@ function updateLlmsTxt(brands) {
       catalogLines.push(`- [${row.brand} ${part.part_number}](${url})${desc}`);
     }
   }
-  const catalogSection = `## Full part number catalog\n\n${partCount} quotable part references with direct enquiry links (\`?part=\` on brand pages):\n\n${catalogLines.join('\n')}\n`;
+  const catalogSection = `## Full part number catalog\n\nQuotable part references with direct enquiry links (\`?part=\` on brand pages). Large manufacturer listini use on-page search (codes only, no prices):\n\n${catalogLines.join('\n')}\n`;
 
   if (/## Full part number catalog/.test(content)) {
     content = content.replace(/## Full part number catalog[\s\S]*?(?=\n## )/, catalogSection.trimEnd());
@@ -389,7 +412,8 @@ function updateLlmsTxt(brands) {
     content = content.replace(/\n## Success story pages/, `\n${catalogSection}\n## Success story pages`);
   }
 
-  const sitemapSection = `## XML sitemaps (search engines)\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brands.length} high-priority brand URLs\n- [Individual part codes](${BASE}/sitemap-part-codes.xml) — ${partCount} part-specific URLs\n- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n`;
+  const brandPartsCount = brands.filter((r) => (r.parts?.length || 0) + (r.listino?.count || 0) > 0).length;
+  const sitemapSection = `## XML sitemaps (search engines)\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [Individual part codes](${BASE}/sitemap-part-codes.xml) — inline ERP/case part URLs (large listini use brand-page search)\n- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n`;
 
   if (/## XML sitemaps \(search engines\)/.test(content)) {
     content = content.replace(/## XML sitemaps \(search engines\)[\s\S]*?(?=\n## |$)/, sitemapSection.trimEnd());
@@ -402,19 +426,22 @@ function updateLlmsTxt(brands) {
 
 function main() {
   const output = buildBrandRows();
+  // Drop empty brands (no inline parts and no listino)
+  output.brands = output.brands.filter((r) => (r.parts && r.parts.length) || r.listino?.count);
   const outPath = path.join(ROOT, 'brand-order-parts.json');
   fs.writeFileSync(outPath, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
   writeSitemapBrandParts(output.brands);
   const partUrlCount = writeSitemapPartCodes(output.brands);
   updateLlmsTxt(output.brands);
 
-  const partCount = output.brands.reduce((sum, row) => sum + row.parts.length, 0);
+  const partCount = output.brands.reduce((sum, row) => sum + (row.parts?.length || 0) + (row.listino?.count || 0), 0);
   console.log('brand-order-parts.json:', output.brands.length, 'brands,', partCount, 'parts');
   console.log('sitemap-brand-parts.xml:', output.brands.length, 'URLs');
   console.log('sitemap-part-codes.xml:', partUrlCount, 'URLs');
   console.log('llms.txt: brand parts + full catalog + sitemaps updated');
   for (const row of output.brands) {
-    console.log(`  ${row.brand} (${row.brand_slug}): ${row.parts.length}`);
+    const extra = row.listino?.count ? ` + listino ${row.listino.count}` : '';
+    console.log(`  ${row.brand} (${row.brand_slug}): ${(row.parts || []).length}${extra}`);
   }
 }
 

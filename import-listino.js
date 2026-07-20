@@ -20,6 +20,9 @@ const path = require('path');
 
 const ROOT = __dirname;
 const LISTINI_DIR = path.join(ROOT, 'listini');
+const LISTINI_DATA_DIR = path.join(ROOT, 'listini-data');
+/** Above this count, codes go to listini-data/{slug}.json instead of inline HTML. */
+const INLINE_LISTINO_MAX = 200;
 
 const CODE_HEADERS = new Set([
   'part_number', 'partnumber', 'part', 'code', 'codice', 'codicearticolo',
@@ -36,7 +39,7 @@ const DESC_HEADERS = new Set([
 const PRICE_HEADERS = new Set([
   'price', 'preis', 'prezzo', 'list_price', 'listino', 'netto', 'net', 'brutto',
   'eur', 'usd', 'chf', 'gbp', 'amount', 'betrag', 'costo', 'cost', 'vk', 'ek',
-  'rabatt', 'discount', 'mwst', 'vat', 'iva'
+  'rabatt', 'discount', 'mwst', 'vat', 'iva', 'sales_price', 'verkaufspreis'
 ]);
 
 function isPriceHeader(header) {
@@ -210,7 +213,8 @@ function loadListiniParts() {
       continue;
     }
     if (!bySlug.has(slug)) bySlug.set(slug, []);
-    bySlug.get(slug).push(...parts);
+    const bucket = bySlug.get(slug);
+    for (let i = 0; i < parts.length; i++) bucket.push(parts[i]);
     console.log(`listini/${file}: ${parts.length} code(s) → ${slug}`);
   }
 
@@ -227,17 +231,47 @@ function loadListiniParts() {
         }
       }
     }
-    bySlug.set(slug, [...map.values()]);
+    bySlug.set(slug, Array.from(map.values()));
   }
 
   return bySlug;
 }
 
+/**
+ * Write compact JSON catalog for large listini (codes only, no prices).
+ * @returns {{ file: string, count: number, preview: string[] }}
+ */
+function writeListinoDataFile(brandSlug, brandName, parts) {
+  if (!fs.existsSync(LISTINI_DATA_DIR)) fs.mkdirSync(LISTINI_DATA_DIR, { recursive: true });
+  const codes = parts
+    .map((p) => String(p.part_number || '').trim())
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+  const rel = `listini-data/${brandSlug}.json`;
+  const payload = {
+    brand: brandName,
+    brand_slug: brandSlug,
+    count: codes.length,
+    generated: new Date().toISOString().slice(0, 10),
+    note: 'Part codes only — no prices. Click a code on the brand page to request a quote.',
+    codes
+  };
+  fs.writeFileSync(path.join(ROOT, rel), `${JSON.stringify(payload)}\n`, 'utf8');
+  return {
+    file: rel,
+    count: codes.length,
+    preview: codes.slice(0, 8)
+  };
+}
+
 module.exports = {
   loadListiniParts,
+  writeListinoDataFile,
   parseTxt,
   parseCsv,
   parseXlsx,
   isLikelyPartCode,
-  LISTINI_DIR
+  LISTINI_DIR,
+  LISTINI_DATA_DIR,
+  INLINE_LISTINO_MAX
 };
