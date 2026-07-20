@@ -34,8 +34,12 @@ function loadPartsBySlug() {
     const data = JSON.parse(fs.readFileSync(p, 'utf8'));
     const map = new Map();
     for (const row of data.brands || []) {
-      if (!row.brand_slug || !row.parts?.length) continue;
-      map.set(row.brand_slug, row.parts);
+      if (!row.brand_slug) continue;
+      if (!row.parts?.length && !row.listino?.count) continue;
+      map.set(row.brand_slug, {
+        parts: row.parts || [],
+        listino: row.listino || null
+      });
     }
     console.log('brand-order-parts.json: brands with parts', map.size);
     return map;
@@ -139,8 +143,11 @@ function buildTranslations(brand) {
       brand_parts_title: 'Diese Teilenummern anfragen',
       brand_parts_intro: 'Codes zur Anfrage (aus Angeboten, Lieferungen oder Herstellerlisten). Keine Preise auf der Seite — klicken Sie auf einen Code, um das vorausgefüllte Formular zu öffnen.',
       brand_parts_search: 'Teilenummer suchen…',
+      brand_parts_search_hint: 'Mindestens 3 Zeichen eingeben, dann auf einen Code klicken, um anzufragen.',
+      brand_parts_listino_intro: 'Herstellerliste: suchen Sie eine Teilenummer und fordern Sie ein unverbindliches Angebot an. Es werden keine Preise angezeigt.',
       brand_parts_count: 'codes',
       brand_parts_empty: 'Keine Treffer',
+      brand_parts_type_more: 'Bitte mindestens 3 Zeichen eingeben…',
       brand_parts_case: 'Erfolgsgeschichte',
       brand_parts_quote: 'Angebot anfragen',
       quote_modal_title: 'Unverbindliche Anfrage',
@@ -183,8 +190,11 @@ function buildTranslations(brand) {
       brand_parts_title: 'Request these part numbers',
       brand_parts_intro: 'Codes available to request (from quotations, deliveries, or price lists). No prices on this page — click a code to open the pre-filled enquiry form.',
       brand_parts_search: 'Search part number…',
+      brand_parts_search_hint: 'Type at least 3 characters, then click a code to request a quote.',
+      brand_parts_listino_intro: 'Manufacturer list: search a part number and request a no-obligation quote. No prices are shown.',
       brand_parts_count: 'codes',
       brand_parts_empty: 'No matches',
+      brand_parts_type_more: 'Please type at least 3 characters…',
       brand_parts_case: 'Success story',
       brand_parts_quote: 'Request quote',
       quote_modal_title: 'No-obligation enquiry',
@@ -227,8 +237,11 @@ function buildTranslations(brand) {
       brand_parts_title: 'Richiedi questi codici articolo',
       brand_parts_intro: 'Codici disponibili per richiesta (da preventivi, forniture o listini). Nessun prezzo in pagina: clicchi su un codice per aprire il modulo già compilato.',
       brand_parts_search: 'Cerca codice articolo…',
+      brand_parts_search_hint: 'Digiti almeno 3 caratteri, poi clicchi su un codice per richiederlo.',
+      brand_parts_listino_intro: 'Listino costruttore: cerchi un codice e richieda un preventivo senza impegno. I prezzi non sono mostrati.',
       brand_parts_count: 'codici',
       brand_parts_empty: 'Nessun risultato',
+      brand_parts_type_more: 'Digiti almeno 3 caratteri…',
       brand_parts_case: 'Caso di successo',
       brand_parts_quote: 'Richiedi preventivo',
       quote_modal_title: 'Richiesta senza impegno',
@@ -269,10 +282,13 @@ function buildTranslations(brand) {
       contact_iframe_title: `Formulario – recambios ${H}`,
       contact_legal_note: 'Datos legales completos en el <a href="../impressum.html" target="_blank" rel="noopener">Aviso legal</a>.',
       brand_parts_title: 'Solicitar estas referencias',
-      brand_parts_intro: 'Códigos de presupuestos, suministros o nuestras listas de precios del fabricante. Haga clic en un código para abrir el formulario precargado (descripción opcional).',
+      brand_parts_intro: 'Códigos disponibles para solicitud (presupuestos, suministros o listas). Sin precios en la página: haga clic en un código para abrir el formulario precargado.',
       brand_parts_search: 'Buscar referencia…',
+      brand_parts_search_hint: 'Escriba al menos 3 caracteres y haga clic en un código para solicitarlo.',
+      brand_parts_listino_intro: 'Lista del fabricante: busque una referencia y solicite presupuesto sin compromiso. No se muestran precios.',
       brand_parts_count: 'códigos',
       brand_parts_empty: 'Sin resultados',
+      brand_parts_type_more: 'Escriba al menos 3 caracteres…',
       brand_parts_case: 'Caso de éxito',
       brand_parts_quote: 'Solicitar presupuesto',
       quote_modal_title: 'Solicitud sin compromiso',
@@ -313,10 +329,13 @@ function buildTranslations(brand) {
       contact_iframe_title: `Formulaire – pièces ${H}`,
       contact_legal_note: 'Informations légales complètes dans les <a href="../impressum.html" target="_blank" rel="noopener">mentions légales</a>.',
       brand_parts_title: 'Demander ces références',
-      brand_parts_intro: 'Codes issus de devis, livraisons ou de nos listes tarifaires constructeur. Cliquez sur un code pour ouvrir le formulaire prérempli (description optionnelle).',
+      brand_parts_intro: 'Codes disponibles pour demande (devis, livraisons ou listes). Aucun prix sur la page : cliquez sur un code pour ouvrir le formulaire prérempli.',
       brand_parts_search: 'Rechercher une référence…',
+      brand_parts_search_hint: 'Saisissez au moins 3 caractères, puis cliquez sur un code pour demander un devis.',
+      brand_parts_listino_intro: 'Liste constructeur : recherchez une référence et demandez un devis sans engagement. Aucun prix n’est affiché.',
       brand_parts_count: 'références',
       brand_parts_empty: 'Aucun résultat',
+      brand_parts_type_more: 'Saisissez au moins 3 caractères…',
       brand_parts_case: 'Histoire de réussite',
       brand_parts_quote: 'Demander un devis',
       quote_modal_title: 'Demande sans engagement',
@@ -370,7 +389,7 @@ function enrichMetaWithParts(translations, parts) {
   return translations;
 }
 
-function buildLdJson(brand, slug, tDe, suppliedParts) {
+function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
   const webPage = {
     '@type': 'WebPage',
@@ -384,7 +403,7 @@ function buildLdJson(brand, slug, tDe, suppliedParts) {
     publisher: { '@id': `${BASE}/#organization` },
     primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
   };
-  if (suppliedParts && suppliedParts.length) {
+  if ((suppliedParts && suppliedParts.length) || listino?.count) {
     webPage.dateModified = TODAY;
     webPage.mainEntity = { '@id': pageUrl + '#quotable-parts' };
   }
@@ -424,7 +443,7 @@ function buildLdJson(brand, slug, tDe, suppliedParts) {
       name: `${brand} – quotable part numbers`,
       description: tDe.brand_parts_intro.replace(/<[^>]+>/g, ''),
       numberOfItems: suppliedParts.length,
-      itemListElement: suppliedParts.map((part, i) => ({
+      itemListElement: suppliedParts.slice(0, 50).map((part, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         item: {
@@ -436,12 +455,21 @@ function buildLdJson(brand, slug, tDe, suppliedParts) {
           brand: { '@type': 'Brand', name: brand },
           offers: {
             '@type': 'Offer',
-            url: `${pageUrl}?part=${encodeURIComponent(part.part_number)}#contact`,
+            url: `${pageUrl}?part=${encodeURIComponent(part.part_number)}`,
             availability: 'https://schema.org/InStock',
             seller: { '@id': `${BASE}/#organization` }
           }
         }
       }))
+    });
+  } else if (listino?.count) {
+    graph['@graph'].push({
+      '@type': 'ItemList',
+      '@id': pageUrl + '#quotable-parts',
+      name: `${brand} – searchable manufacturer part codes`,
+      description: (tDe.brand_parts_listino_intro || tDe.brand_parts_intro).replace(/<[^>]+>/g, ''),
+      numberOfItems: listino.count,
+      url: pageUrl
     });
   }
   return JSON.stringify(graph);
@@ -462,12 +490,17 @@ function buildQuoteModalHtml() {
   </div>`;
 }
 
-function buildSuppliedPartsHtml(suppliedParts) {
-  if (!suppliedParts || !suppliedParts.length) return '';
-  const showSearch = suppliedParts.length >= 12;
-  const compact = suppliedParts.every(
-    (part) => !part.description || part.description === part.part_number
-  );
+function buildSuppliedPartsHtml(brandParts) {
+  if (!brandParts) return '';
+  const suppliedParts = brandParts.parts || [];
+  const listino = brandParts.listino;
+  if (!suppliedParts.length && !listino?.count) return '';
+
+  const compact = suppliedParts.length
+    ? suppliedParts.every((part) => !part.description || part.description === part.part_number)
+    : true;
+  const showInlineSearch = suppliedParts.length >= 12 && !listino?.count;
+
   const items = suppliedParts
     .map((part) => {
       const pn = escapeHtml(part.part_number);
@@ -483,7 +516,8 @@ function buildSuppliedPartsHtml(suppliedParts) {
       return `<li class="part-row" data-part-search="${searchKey}"><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
     })
     .join('\n          ');
-  const searchHtml = showSearch
+
+  const inlineSearchHtml = showInlineSearch
     ? `<div class="parts-toolbar">
         <label class="parts-search-label" for="partsSearchInput"><span class="visually-hidden" data-i18n="brand_parts_search">Teilenummer suchen…</span></label>
         <input type="search" id="partsSearchInput" class="parts-search-input" data-i18n-placeholder="brand_parts_search" placeholder="Teilenummer suchen…" autocomplete="off">
@@ -491,27 +525,50 @@ function buildSuppliedPartsHtml(suppliedParts) {
       </div>
       <p class="parts-empty" id="partsEmpty" hidden data-i18n="brand_parts_empty">Keine Treffer</p>`
     : '';
+
+  const listinoHtml = listino?.count
+    ? `<div class="listino-search" id="listinoSearch" data-listino-src="../${escapeAttr(listino.file)}" data-listino-count="${listino.count}">
+        <p class="parts-intro" data-i18n="brand_parts_listino_intro">Herstellerliste: suchen Sie eine Teilenummer und fordern Sie ein unverbindliches Angebot an. Es werden keine Preise angezeigt.</p>
+        <div class="parts-toolbar">
+          <label class="parts-search-label" for="listinoSearchInput"><span class="visually-hidden" data-i18n="brand_parts_search">Teilenummer suchen…</span></label>
+          <input type="search" id="listinoSearchInput" class="parts-search-input" data-i18n-placeholder="brand_parts_search" placeholder="Teilenummer suchen…" autocomplete="off" enterkeyhint="search">
+          <span class="parts-count" id="listinoCountLabel">${listino.count} <span data-i18n="brand_parts_count">codes</span></span>
+        </div>
+        <p class="parts-hint" data-i18n="brand_parts_search_hint">Mindestens 3 Zeichen eingeben, dann auf einen Code klicken, um anzufragen.</p>
+        <p class="parts-empty" id="listinoEmpty" hidden data-i18n="brand_parts_empty">Keine Treffer</p>
+        <p class="parts-type-more" id="listinoTypeMore" data-i18n="brand_parts_type_more">Bitte mindestens 3 Zeichen eingeben…</p>
+        <ul class="brand-parts-list parts-compact-list" id="listinoResults"></ul>
+      </div>`
+    : '';
+
+  const inlineList = suppliedParts.length
+    ? `${inlineSearchHtml}
+        <ul class="brand-parts-list" id="brandPartsList">
+          ${items}
+        </ul>`
+    : '';
+
   return `
       <section class="brand-supplied-parts${compact ? ' parts-compact' : ''}" id="quotable-parts" aria-labelledby="brand-parts-heading">
         <h2 id="brand-parts-heading" data-i18n="brand_parts_title">Diese Teilenummern anfragen</h2>
-        <p class="parts-intro" data-i18n="brand_parts_intro">Codes aus Angeboten, Lieferungen oder unseren Herstellerlisten.</p>
-        ${searchHtml}
-        <ul class="brand-parts-list" id="brandPartsList">
-          ${items}
-        </ul>
+        <p class="parts-intro" data-i18n="brand_parts_intro">Codes zur Anfrage. Keine Preise auf der Seite.</p>
+        ${inlineList}
+        ${listinoHtml}
       </section>`;
 }
 
-function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
+function buildHtml(brand, slug, translations, relatedRows, brandParts) {
   const pagePath = `marche/${slug}.html`;
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
   const d = translations.de;
-  const hasSuppliedParts = !!(suppliedParts && suppliedParts.length);
-  const ld = buildLdJson(brand, slug, d, suppliedParts);
+  const suppliedParts = brandParts?.parts || [];
+  const listino = brandParts?.listino || null;
+  const hasSuppliedParts = suppliedParts.length > 0 || !!(listino && listino.count);
+  const ld = buildLdJson(brand, slug, d, suppliedParts, listino);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
-  const suppliedPartsHtml = buildSuppliedPartsHtml(suppliedParts);
+  const suppliedPartsHtml = buildSuppliedPartsHtml(brandParts);
   const quoteModalHtml = hasSuppliedParts ? buildQuoteModalHtml() : '';
   const suppliedPartsExtraCss = hasSuppliedParts ? `
     .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.35rem 0.65rem; cursor: pointer; }
@@ -520,10 +577,13 @@ function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
     .parts-search-input { flex: 1; min-width: 180px; padding: 0.55rem 0.75rem; border: 1px solid #c5d4e3; border-radius: 8px; font-size: 0.95rem; }
     .parts-search-input:focus { outline: 2px solid #e67e22; border-color: #e67e22; }
     .parts-count { font-size: 0.85rem; color: #556; white-space: nowrap; }
-    .parts-empty { font-size: 0.9rem; color: #666; margin: 0 0 0.75rem; }
+    .parts-empty, .parts-hint, .parts-type-more { font-size: 0.9rem; color: #666; margin: 0 0 0.75rem; }
+    .listino-search { margin-top: 0.5rem; }
     .brand-parts-list { max-height: min(520px, 60vh); overflow: auto; padding-right: 0.25rem; }
-    .brand-supplied-parts.parts-compact .brand-parts-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.45rem; }
-    .brand-supplied-parts.parts-compact .brand-parts-list li { padding: 0; background: transparent; border: none; border-radius: 0; }
+    .brand-supplied-parts.parts-compact .brand-parts-list,
+    .parts-compact-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.45rem; }
+    .brand-supplied-parts.parts-compact .brand-parts-list li,
+    .parts-compact-list li { padding: 0; background: transparent; border: none; border-radius: 0; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
     .quote-modal[hidden] { display: none !important; }
     .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
@@ -537,7 +597,7 @@ function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
     .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
     .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
     body.quote-modal-open { overflow: hidden; }` : '';
-  const partsJson = JSON.stringify((suppliedParts || []).map((p) => p.part_number));
+  const partsJson = JSON.stringify(suppliedParts.map((p) => p.part_number));
   const relatedLinks = (relatedRows || [])
     .map(({ brand: relatedBrand, slug: relatedSlug }) =>
       `<li><a href="../marche/${relatedSlug}.html">${escapeHtml(relatedBrand)}</a></li>`
@@ -838,6 +898,101 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
         }
       }
       input.addEventListener('input', applyFilter);
+    }
+    function initListinoSearch() {
+      var box = document.getElementById('listinoSearch');
+      if (!box) return;
+      var src = box.getAttribute('data-listino-src');
+      var input = document.getElementById('listinoSearchInput');
+      var results = document.getElementById('listinoResults');
+      var empty = document.getElementById('listinoEmpty');
+      var typeMore = document.getElementById('listinoTypeMore');
+      var countLabel = document.getElementById('listinoCountLabel');
+      var total = parseInt(box.getAttribute('data-listino-count') || '0', 10) || 0;
+      var codes = null;
+      var loading = false;
+      var MAX_SHOW = 40;
+      function escapeHtmlLocal(s) {
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');
+      }
+      function render(matches, q) {
+        results.innerHTML = '';
+        matches.slice(0, MAX_SHOW).forEach(function (code) {
+          var li = document.createElement('li');
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'part-quote-btn';
+          btn.setAttribute('data-part', code);
+          btn.title = code;
+          btn.textContent = code;
+          btn.addEventListener('click', function () {
+            var langSel = document.getElementById('languageSelect');
+            var lang = langSel ? langSel.value : 'de';
+            openQuoteModal(code, lang);
+          });
+          li.appendChild(btn);
+          results.appendChild(li);
+        });
+        if (empty) empty.hidden = !(q && matches.length === 0);
+        if (typeMore) typeMore.hidden = !!q;
+        if (countLabel) {
+          var unit = countLabel.querySelector('[data-i18n=\"brand_parts_count\"]');
+          var shown = matches.length ? Math.min(matches.length, MAX_SHOW) + (matches.length > MAX_SHOW ? '+' : '') : total;
+          countLabel.childNodes[0].nodeValue = shown + ' ';
+          if (!unit) countLabel.textContent = String(shown);
+        }
+      }
+      function searchNow() {
+        var q = (input.value || '').trim().toLowerCase().replace(/\\s+/g, '');
+        if (q.length < 3) {
+          render([], '');
+          if (typeMore) typeMore.hidden = false;
+          if (empty) empty.hidden = true;
+          return;
+        }
+        if (!codes) return;
+        var matches = [];
+        for (var i = 0; i < codes.length; i++) {
+          var c = codes[i];
+          if (String(c).toLowerCase().replace(/\\s+/g, '').indexOf(q) !== -1) {
+            matches.push(c);
+            if (matches.length >= 200) break;
+          }
+        }
+        render(matches, q);
+      }
+      function ensureLoaded(cb) {
+        if (codes) { cb(); return; }
+        if (loading) return;
+        loading = true;
+        fetch(src).then(function (r) { return r.json(); }).then(function (data) {
+          codes = data.codes || [];
+          total = data.count || codes.length;
+          loading = false;
+          cb();
+        }).catch(function () {
+          loading = false;
+          if (empty) { empty.hidden = false; empty.textContent = 'Catalog load error'; }
+        });
+      }
+      if (input) {
+        input.addEventListener('input', function () {
+          var q = (input.value || '').trim();
+          if (q.length < 3) { searchNow(); return; }
+          ensureLoaded(searchNow);
+        });
+        input.addEventListener('focus', function () { ensureLoaded(function () {}); });
+      }
+      // Deep-link ?part=CODE opens modal even for listino-only pages
+      var urlPart = getUrlPart();
+      if (urlPart) {
+        ensureLoaded(function () {
+          var hit = codes && codes.some(function (c) { return String(c).toLowerCase() === String(urlPart).toLowerCase(); });
+          if (hit || true) {
+            // Always allow quote for typed part on brand page
+          }
+        });
+      }
     }` : ''}
     function changeLanguage(lang) {
       var t = translations[lang] || translations.de;
@@ -881,6 +1036,7 @@ ${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden')
       changeLanguage(lang);
 ${hasSuppliedParts ? `      initPartQuoteButtons();
       initPartsSearch();
+      initListinoSearch();
       if (initialPart) {
         setTimeout(function () { openQuoteModal(initialPart, lang); }, 200);
       }` : ''}
@@ -989,9 +1145,24 @@ function main() {
     }
     const translations = buildTranslations(brand);
     mergeTopBrandContent(translations, slug);
-    const suppliedParts = partsBySlug.get(slug) || [];
-    if (suppliedParts.length) enrichMetaWithParts(translations, suppliedParts);
-    const html = buildHtml(brand, slug, translations, relatedRows, suppliedParts);
+    const brandParts = partsBySlug.get(slug) || null;
+    if (brandParts?.parts?.length) enrichMetaWithParts(translations, brandParts.parts);
+    else if (brandParts?.listino?.count) {
+      for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+        const base = String(translations[lang].meta_description || '');
+        const note = {
+          de: ` ${brandParts.listino.count}+ Teilenummern suchbar — Anfrage ohne Preise.`,
+          en: ` ${brandParts.listino.count}+ searchable part numbers — request a quote, no prices shown.`,
+          it: ` ${brandParts.listino.count}+ codici cercabili — richiesta senza prezzi in pagina.`,
+          es: ` ${brandParts.listino.count}+ códigos buscables — solicitud sin precios en página.`,
+          fr: ` ${brandParts.listino.count}+ références recherchables — demande sans prix affichés.`
+        }[lang];
+        let meta = base + note;
+        if (meta.length > MAX_META_LEN) meta = `${meta.slice(0, MAX_META_LEN - 1).trim()}…`;
+        translations[lang].meta_description = meta;
+      }
+    }
+    const html = buildHtml(brand, slug, translations, relatedRows, brandParts);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
     if (n % 500 === 0) console.log('Written', n, '/', rows.length);

@@ -13,8 +13,9 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-32 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). Total: 77 part references.
+33 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 127869 part references.
 
+- [ABB](https://abcspareparts.eu/marche/abb.html): 00-0031, 00-0114, 00-0140, 00-0160 (+127792 listino codes, search on page)
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
 - [Autronica](https://abcspareparts.eu/marche/autronica.html): V-430/BH200, V-530/BH500
 - [Baldwin](https://abcspareparts.eu/marche/baldwin.html): 13144.04, 13144.05, 45.877.05
@@ -49,8 +50,9 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
 ## Full part number catalog
 
-77 quotable part references with direct enquiry links (`?part=` on brand pages):
+Quotable part references with direct enquiry links (`?part=` on brand pages). Large manufacturer listini use on-page search (codes only, no prices):
 
+- [ABB listino](https://abcspareparts.eu/marche/abb.html) — 127792 codes searchable on page (no prices); data: https://abcspareparts.eu/listini-data/abb.json
 - [ATLAS COPCO 80701.000507](https://abcspareparts.eu/marche/atlas-copco.html?part=80701.000507) — BALL JOINT ASSEMBLY
 - [Autronica V-430/BH200](https://abcspareparts.eu/marche/autronica.html?part=V-430%2FBH200) — Smoke Detector** Replacement for 116-BHH-200** Please check that the socket installed on board have been produced after…
 - [Autronica V-530/BH500](https://abcspareparts.eu/marche/autronica.html?part=V-530%2FBH500) — Smoke Detector ** Replacement for 116-BHH-500** Please check that the socket installed on board have been produced afte…
@@ -144,8 +146,8 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 ## XML sitemaps (search engines)
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 32 high-priority brand URLs
-- [Individual part codes](https://abcspareparts.eu/sitemap-part-codes.xml) — 77 part-specific URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 33 high-priority brand URLs
+- [Individual part codes](https://abcspareparts.eu/sitemap-part-codes.xml) — inline ERP/case part URLs (large listini use brand-page search)
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 ## Optional

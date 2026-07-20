@@ -43,10 +43,11 @@ Senza intestazione: **prima colonna = codice**. Colonne prezzo ignorate.
 
 Prima foglio del workbook. Basta la colonna codice; descrizione e prezzi possono esserci o no.
 
-## Build
+## Listini grandi (es. ABB 100k+ codici)
 
-```bash
-npm run build:brand-parts-pages
-```
+Se il file ha più di 200 codici:
+- i codici vanno in `listini-data/{slug}.json` (solo codici, **senza prezzi**)
+- sulla pagina marca compare una **ricerca** (min. 3 caratteri)
+- click sul risultato → form di richiesta precompilato
 
-I codici già presenti in ordini/preventivi **non vengono duplicati**.
+Il file Excel originale (`.xlsx`) non va in git: resta locale in `listini/` per il rebuild.

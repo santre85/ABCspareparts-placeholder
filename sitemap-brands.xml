@@ -133,8 +133,8 @@ layout: none
     <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/marche/abb.html?lang=fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/marche/abb.html"/>
     <lastmod>2026-07-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/abb-sace.html</loc>
