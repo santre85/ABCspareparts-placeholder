@@ -137,7 +137,10 @@ function buildTranslations(brand) {
       contact_iframe_title: `Anfrageformular – ${H} Ersatzteile`,
       contact_legal_note: 'Vollständige rechtliche Angaben im <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
       brand_parts_title: 'Diese Teilenummern anfragen',
-      brand_parts_intro: 'Diese Referenzen haben wir bereits für Kunden angeboten oder beschafft. Klicken Sie auf einen Code — das Anfrageformular öffnet sich in einem Fenster mit vorausgefüllter Marke und Teilenummer.',
+      brand_parts_intro: 'Codes aus Angeboten, Lieferungen oder unseren Herstellerlisten. Klicken Sie auf einen Code — das Formular öffnet sich vorausgefüllt (Beschreibung optional).',
+      brand_parts_search: 'Teilenummer suchen…',
+      brand_parts_count: 'codes',
+      brand_parts_empty: 'Keine Treffer',
       brand_parts_case: 'Erfolgsgeschichte',
       brand_parts_quote: 'Angebot anfragen',
       quote_modal_title: 'Unverbindliche Anfrage',
@@ -178,7 +181,10 @@ function buildTranslations(brand) {
       contact_iframe_title: `Request form – ${H} spare parts`,
       contact_legal_note: 'Full legal details in our <a href="../impressum.html" target="_blank" rel="noopener">Imprint</a>.',
       brand_parts_title: 'Request these part numbers',
-      brand_parts_intro: 'We have already quoted or supplied these references for customers across Europe. Click a part number to open the request form in a window with brand and code pre-filled.',
+      brand_parts_intro: 'Codes from quotations, deliveries, or our manufacturer price lists. Click a code to open the pre-filled request form (description optional).',
+      brand_parts_search: 'Search part number…',
+      brand_parts_count: 'codes',
+      brand_parts_empty: 'No matches',
       brand_parts_case: 'Success story',
       brand_parts_quote: 'Request quote',
       quote_modal_title: 'No-obligation enquiry',
@@ -219,7 +225,10 @@ function buildTranslations(brand) {
       contact_iframe_title: `Modulo richiesta – ricambi ${H}`,
       contact_legal_note: 'Dati legali completi nell\'<a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
       brand_parts_title: 'Richiedi questi codici articolo',
-      brand_parts_intro: 'Queste referenze le abbiamo già quotate o fornite per clienti in Europa. Clicchi su un codice per aprire il modulo di richiesta in una finestra con marca e codice articolo già compilati.',
+      brand_parts_intro: 'Codici da preventivi, forniture o dai nostri listini costruttore. Clicchi su un codice per aprire il modulo già compilato (la descrizione è opzionale).',
+      brand_parts_search: 'Cerca codice articolo…',
+      brand_parts_count: 'codici',
+      brand_parts_empty: 'Nessun risultato',
       brand_parts_case: 'Caso di successo',
       brand_parts_quote: 'Richiedi preventivo',
       quote_modal_title: 'Richiesta senza impegno',
@@ -260,7 +269,10 @@ function buildTranslations(brand) {
       contact_iframe_title: `Formulario – recambios ${H}`,
       contact_legal_note: 'Datos legales completos en el <a href="../impressum.html" target="_blank" rel="noopener">Aviso legal</a>.',
       brand_parts_title: 'Solicitar estas referencias',
-      brand_parts_intro: 'Estas referencias ya las hemos presupuestado o suministrado a clientes en Europa. Haga clic en un código para abrir el formulario de solicitud en una ventana con marca y referencia precargadas.',
+      brand_parts_intro: 'Códigos de presupuestos, suministros o nuestras listas de precios del fabricante. Haga clic en un código para abrir el formulario precargado (descripción opcional).',
+      brand_parts_search: 'Buscar referencia…',
+      brand_parts_count: 'códigos',
+      brand_parts_empty: 'Sin resultados',
       brand_parts_case: 'Caso de éxito',
       brand_parts_quote: 'Solicitar presupuesto',
       quote_modal_title: 'Solicitud sin compromiso',
@@ -301,7 +313,10 @@ function buildTranslations(brand) {
       contact_iframe_title: `Formulaire – pièces ${H}`,
       contact_legal_note: 'Informations légales complètes dans les <a href="../impressum.html" target="_blank" rel="noopener">mentions légales</a>.',
       brand_parts_title: 'Demander ces références',
-      brand_parts_intro: 'Nous avons déjà chiffré ou fourni ces références pour des clients en Europe. Cliquez sur une référence pour ouvrir le formulaire de demande dans une fenêtre avec marque et code préremplis.',
+      brand_parts_intro: 'Codes issus de devis, livraisons ou de nos listes tarifaires constructeur. Cliquez sur un code pour ouvrir le formulaire prérempli (description optionnelle).',
+      brand_parts_search: 'Rechercher une référence…',
+      brand_parts_count: 'références',
+      brand_parts_empty: 'Aucun résultat',
       brand_parts_case: 'Histoire de réussite',
       brand_parts_quote: 'Demander un devis',
       quote_modal_title: 'Demande sans engagement',
@@ -449,22 +464,39 @@ function buildQuoteModalHtml() {
 
 function buildSuppliedPartsHtml(suppliedParts) {
   if (!suppliedParts || !suppliedParts.length) return '';
-  const items = suppliedParts.map((part) => {
-    const pn = escapeHtml(part.part_number);
-    const pnAttr = escapeAttr(part.part_number);
-    const desc = part.description && part.description !== part.part_number
-      ? `<span class="part-desc">${escapeHtml(part.description)}</span>`
-      : '';
-    const caseLink = part.case_slug
-      ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
-      : '';
-    return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
-  }).join('\n          ');
+  const showSearch = suppliedParts.length >= 12;
+  const compact = suppliedParts.every(
+    (part) => !part.description || part.description === part.part_number
+  );
+  const items = suppliedParts
+    .map((part) => {
+      const pn = escapeHtml(part.part_number);
+      const pnAttr = escapeAttr(part.part_number);
+      const searchKey = escapeAttr(String(part.part_number).toLowerCase());
+      const desc =
+        part.description && part.description !== part.part_number
+          ? `<span class="part-desc">${escapeHtml(part.description)}</span>`
+          : '';
+      const caseLink = part.case_slug
+        ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
+        : '';
+      return `<li class="part-row" data-part-search="${searchKey}"><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
+    })
+    .join('\n          ');
+  const searchHtml = showSearch
+    ? `<div class="parts-toolbar">
+        <label class="parts-search-label" for="partsSearchInput"><span class="visually-hidden" data-i18n="brand_parts_search">Teilenummer suchen…</span></label>
+        <input type="search" id="partsSearchInput" class="parts-search-input" data-i18n-placeholder="brand_parts_search" placeholder="Teilenummer suchen…" autocomplete="off">
+        <span class="parts-count" id="partsCountLabel">${suppliedParts.length} <span data-i18n="brand_parts_count">codes</span></span>
+      </div>
+      <p class="parts-empty" id="partsEmpty" hidden data-i18n="brand_parts_empty">Keine Treffer</p>`
+    : '';
   return `
-      <section class="brand-supplied-parts" id="quotable-parts" aria-labelledby="brand-parts-heading">
+      <section class="brand-supplied-parts${compact ? ' parts-compact' : ''}" id="quotable-parts" aria-labelledby="brand-parts-heading">
         <h2 id="brand-parts-heading" data-i18n="brand_parts_title">Diese Teilenummern anfragen</h2>
-        <p class="parts-intro" data-i18n="brand_parts_intro">Diese Referenzen haben wir bereits für Kunden angeboten oder beschafft.</p>
-        <ul class="brand-parts-list">
+        <p class="parts-intro" data-i18n="brand_parts_intro">Codes aus Angeboten, Lieferungen oder unseren Herstellerlisten.</p>
+        ${searchHtml}
+        <ul class="brand-parts-list" id="brandPartsList">
           ${items}
         </ul>
       </section>`;
@@ -484,6 +516,15 @@ function buildHtml(brand, slug, translations, relatedRows, suppliedParts) {
   const suppliedPartsExtraCss = hasSuppliedParts ? `
     .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.35rem 0.65rem; cursor: pointer; }
     .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .parts-toolbar { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center; margin-bottom: 0.85rem; }
+    .parts-search-input { flex: 1; min-width: 180px; padding: 0.55rem 0.75rem; border: 1px solid #c5d4e3; border-radius: 8px; font-size: 0.95rem; }
+    .parts-search-input:focus { outline: 2px solid #e67e22; border-color: #e67e22; }
+    .parts-count { font-size: 0.85rem; color: #556; white-space: nowrap; }
+    .parts-empty { font-size: 0.9rem; color: #666; margin: 0 0 0.75rem; }
+    .brand-parts-list { max-height: min(520px, 60vh); overflow: auto; padding-right: 0.25rem; }
+    .brand-supplied-parts.parts-compact .brand-parts-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.45rem; }
+    .brand-supplied-parts.parts-compact .brand-parts-list li { padding: 0; background: transparent; border: none; border-radius: 0; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
     .quote-modal[hidden] { display: none !important; }
     .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
     .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
@@ -773,6 +814,30 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
       });
+    }
+    function initPartsSearch() {
+      var input = document.getElementById('partsSearchInput');
+      if (!input) return;
+      var rows = document.querySelectorAll('#brandPartsList .part-row');
+      var empty = document.getElementById('partsEmpty');
+      var countLabel = document.getElementById('partsCountLabel');
+      function applyFilter() {
+        var q = (input.value || '').trim().toLowerCase().replace(/\\s+/g, '');
+        var visible = 0;
+        rows.forEach(function (row) {
+          var key = (row.getAttribute('data-part-search') || '').replace(/\\s+/g, '');
+          var show = !q || key.indexOf(q) !== -1;
+          row.hidden = !show;
+          if (show) visible++;
+        });
+        if (empty) empty.hidden = visible !== 0;
+        if (countLabel) {
+          var unit = countLabel.querySelector('[data-i18n=\"brand_parts_count\"]');
+          countLabel.childNodes[0].nodeValue = visible + ' ';
+          if (!unit) countLabel.textContent = visible + '';
+        }
+      }
+      input.addEventListener('input', applyFilter);
     }` : ''}
     function changeLanguage(lang) {
       var t = translations[lang] || translations.de;
@@ -791,6 +856,10 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
       document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
         var k = el.getAttribute('data-i18n-aria');
         if (t[k]) el.setAttribute('aria-label', t[k]);
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        var k = el.getAttribute('data-i18n-placeholder');
+        if (t[k]) el.setAttribute('placeholder', t[k]);
       });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
@@ -811,6 +880,7 @@ ${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden')
       if (initialPart) SELECTED_PART = initialPart;
       changeLanguage(lang);
 ${hasSuppliedParts ? `      initPartQuoteButtons();
+      initPartsSearch();
       if (initialPart) {
         setTimeout(function () { openQuoteModal(initialPart, lang); }, 200);
       }` : ''}

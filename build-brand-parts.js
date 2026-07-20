@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { slugify } = require('./brand-slug.js');
+const { loadListiniParts } = require('./import-listino.js');
 
 const ROOT = __dirname;
 const BASE = 'https://abcspareparts.eu';
@@ -172,6 +173,30 @@ function mergePartLists(parts) {
   return [...byPart.values()].sort((a, b) => a.part_number.localeCompare(b.part_number, undefined, { sensitivity: 'base' }));
 }
 
+function supplementFromListini(rowsBySlug, brandSlugs, caseMap, listiniBySlug) {
+  if (!listiniBySlug || !listiniBySlug.size) return;
+
+  const slugToBrand = new Map();
+  for (const [name, slug] of Object.entries(brandSlugs)) {
+    slugToBrand.set(slug, name);
+  }
+
+  for (const [slug, listParts] of listiniBySlug) {
+    const brand = slugToBrand.get(slug) || resolveBrand(slug, brandSlugs).brand;
+    const brand_slug = slugToBrand.has(slug) ? slug : resolveBrand(brand, brandSlugs).brand_slug;
+    const parts = mergePartLists(
+      listParts.map((part) => attachCaseSlug(part, brand, caseMap))
+    );
+
+    if (!rowsBySlug.has(brand_slug)) {
+      rowsBySlug.set(brand_slug, { brand, brand_slug, parts: [] });
+    }
+    const row = rowsBySlug.get(brand_slug);
+    row.brand = brand;
+    row.parts = mergePartLists([...row.parts, ...parts]);
+  }
+}
+
 function supplementFromCases(rowsBySlug, brandSlugs, caseMap) {
   const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'supply-cases.json'), 'utf8'));
   const cases = Array.isArray(raw) ? raw : (raw.cases || []);
@@ -234,11 +259,15 @@ function buildBrandRows() {
   }
 
   supplementFromCases(rowsBySlug, brandSlugs, caseMap);
+  const listiniBySlug = loadListiniParts();
+  supplementFromListini(rowsBySlug, brandSlugs, caseMap, listiniBySlug);
 
   const brands = [...rowsBySlug.values()].sort((a, b) => a.brand.localeCompare(b.brand, undefined, { sensitivity: 'base' }));
+  const listiniCount = [...listiniBySlug.values()].reduce((n, parts) => n + parts.length, 0);
   return {
-    source: 'ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt',
+    source: 'ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/',
     generated: new Date().toISOString().slice(0, 10),
+    listini_files: listiniCount,
     brands
   };
 }
@@ -327,7 +356,7 @@ function updateLlmsTxt(brands) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
   const partCount = brands.reduce((sum, row) => sum + row.parts.length, 0);
-  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers that ABCspareparts has quoted or supplied — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via \`?lang=\`). Total: ${partCount} part references.\n`;
+  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via \`?lang=\`). Total: ${partCount} part references.\n`;
   const lines = brands.map((row) => {
     const url = `${BASE}/marche/${row.brand_slug}.html`;
     const preview = formatPartPreview(row.parts);
