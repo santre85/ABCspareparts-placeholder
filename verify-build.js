@@ -57,7 +57,9 @@ const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
 if (!fs.existsSync(sbpPath)) throw new Error('sitemap-brand-parts.xml missing — run npm run build:brand-parts');
 const sbp = fs.readFileSync(sbpPath, 'utf8');
 const partsDataEarly = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
-const partsBrandCount = (partsDataEarly.brands || []).filter((b) => b.brand_slug && b.parts?.length).length;
+const partsBrandCount = (partsDataEarly.brands || []).filter(
+  (b) => b.brand_slug && ((b.parts && b.parts.length) || b.listino?.count)
+).length;
 const partsUrlCount = (sbp.match(/<loc>/g) || []).length;
 if (partsUrlCount !== partsBrandCount) {
   throw new Error(`sitemap-brand-parts.xml <loc> count ${partsUrlCount} !== brands with parts ${partsBrandCount}`);
@@ -66,6 +68,7 @@ if (partsUrlCount !== partsBrandCount) {
 const spcPath = path.join(__dirname, 'sitemap-part-codes.xml');
 if (!fs.existsSync(spcPath)) throw new Error('sitemap-part-codes.xml missing — run npm run build:brand-parts');
 const spc = fs.readFileSync(spcPath, 'utf8');
+// Large listini live in listini-data/*.json and use on-page search — not one sitemap URL per code.
 const totalPartRefs = (partsDataEarly.brands || []).reduce((sum, row) => sum + (row.parts?.length || 0), 0);
 const partCodeUrlCount = (spc.match(/<loc>/g) || []).length;
 if (partCodeUrlCount !== totalPartRefs) {
@@ -212,15 +215,19 @@ for (const f of toCheck) {
 }
 
 const partsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
-const partsSlugs = (partsData.brands || []).filter((b) => b.brand_slug && b.parts?.length).map((b) => b.brand_slug);
 for (const row of partsData.brands || []) {
-  if (!row.brand_slug || !row.parts?.length) continue;
+  if (!row.brand_slug) continue;
+  if (!row.parts?.length && !row.listino?.count) continue;
   if (!llmsTxt.includes(`marche/${row.brand_slug}.html`)) {
     throw new Error(`llms.txt does not mention brand page marche/${row.brand_slug}.html`);
   }
 }
-for (const slug of partsSlugs) {
-  const f = slug + '.html';
+for (const row of partsData.brands || []) {
+  if (!row.brand_slug) continue;
+  const hasInline = !!(row.parts && row.parts.length);
+  const hasListino = !!(row.listino && row.listino.count);
+  if (!hasInline && !hasListino) continue;
+  const f = row.brand_slug + '.html';
   const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
   if (!content.includes('brand-supplied-parts')) {
     throw new Error(`Missing supplied-parts section in marche/${f}`);
@@ -228,8 +235,20 @@ for (const slug of partsSlugs) {
   if (!content.includes('id="quotable-parts"')) {
     throw new Error(`Missing quotable-parts section id in marche/${f}`);
   }
-  if (!content.includes('id="quoteModal"') || !content.includes('part-quote-btn')) {
-    throw new Error(`Missing quote modal / part buttons in marche/${f}`);
+  if (!content.includes('id="quoteModal"')) {
+    throw new Error(`Missing quote modal in marche/${f}`);
+  }
+  if (hasInline && !content.includes('part-quote-btn')) {
+    throw new Error(`Missing quote part buttons in marche/${f}`);
+  }
+  if (hasListino) {
+    if (!content.includes('id="listinoSearch"') || !content.includes(row.listino.file)) {
+      throw new Error(`Missing listino search UI in marche/${f}`);
+    }
+    const dataFile = path.join(__dirname, row.listino.file);
+    if (!fs.existsSync(dataFile)) {
+      throw new Error(`Missing listino data file ${row.listino.file}`);
+    }
   }
   if (!content.includes('custom_part_numbers=')) {
     throw new Error(`Missing ERP part prefill param in marche/${f}`);
