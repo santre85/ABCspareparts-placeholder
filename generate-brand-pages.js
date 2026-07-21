@@ -1303,4 +1303,6 @@ function main() {
   console.log('Brand pages:', n, onlySlugs.length ? `(only: ${onlySlugs.join(',')})` : '', 'in', path.relative(ROOT, MARCHE_DIR));
 }
 
-main();
+if (require.main === module) {
+  main();
+}
