@@ -68,8 +68,19 @@ if (partsUrlCount !== partsBrandCount) {
 const spcPath = path.join(__dirname, 'sitemap-part-codes.xml');
 if (!fs.existsSync(spcPath)) throw new Error('sitemap-part-codes.xml missing — run npm run build:brand-parts');
 const spc = fs.readFileSync(spcPath, 'utf8');
-// Large listini live in listini-data/*.json and use on-page search — not one sitemap URL per code.
-const totalPartRefs = (partsDataEarly.brands || []).reduce((sum, row) => sum + (row.parts?.length || 0), 0);
+// Inline ERP/case parts + listino preview samples (not full 100k+ listini).
+const totalPartRefs = (partsDataEarly.brands || []).reduce((sum, row) => {
+  const seen = new Set();
+  for (const part of row.parts || []) {
+    const key = String(part.part_number || '').toLowerCase();
+    if (key) seen.add(key);
+  }
+  for (const code of row.listino?.preview || []) {
+    const key = String(code || '').toLowerCase();
+    if (key) seen.add(key);
+  }
+  return sum + seen.size;
+}, 0);
 const partCodeUrlCount = (spc.match(/<loc>/g) || []).length;
 if (partCodeUrlCount !== totalPartRefs) {
   throw new Error(`sitemap-part-codes.xml <loc> count ${partCodeUrlCount} !== total parts ${totalPartRefs}`);
@@ -248,6 +259,19 @@ for (const row of partsData.brands || []) {
     const dataFile = path.join(__dirname, row.listino.file);
     if (!fs.existsSync(dataFile)) {
       throw new Error(`Missing listino data file ${row.listino.file}`);
+    }
+    if (!(row.listino.preview || []).length) {
+      throw new Error(`Listino ${row.brand_slug} missing crawlable preview codes`);
+    }
+    if (!content.includes('id="listinoSample"') || !content.includes('id="listinoSampleList"')) {
+      throw new Error(`Missing listino sample list in marche/${f}`);
+    }
+    const sampleCode = row.listino.preview[0];
+    if (sampleCode && !content.includes(`data-part="${sampleCode}"`)) {
+      throw new Error(`Sample code ${sampleCode} not embedded in marche/${f}`);
+    }
+    if ((row.listino.examples || []).length && !content.includes('data-listino-example=')) {
+      throw new Error(`Missing listino search examples in marche/${f}`);
     }
   }
   if (!content.includes('custom_part_numbers=')) {
