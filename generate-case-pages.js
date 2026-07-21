@@ -4,12 +4,126 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const CASES_SUBDIR = 'casi-di-successo';
-const HUB_FILE = 'casi-di-successo.html';
+const CASES_SUBDIR = 'casi';
+const HUB_FILE = 'casi.html';
+const LEGACY_HUB_FILE = 'casi-di-successo.html';
+const LEGACY_CASES_SUBDIR = 'casi-di-successo';
 const CASI_DIR = path.join(ROOT, CASES_SUBDIR);
 const BASE = 'https://abcspareparts.eu';
 const LANGS = ['de', 'en', 'it', 'es', 'fr'];
 const TODAY = new Date().toISOString().slice(0, 10);
+
+const QUOTE_I18N = {
+  de: {
+    quote_parts_title: 'Diese Teilenummern anfragen',
+    quote_parts_intro: 'Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.',
+    quote_modal_title: 'Unverbindliche Anfrage',
+    quote_modal_close: 'Schließen',
+    quote_modal_part_label: 'Teilenummer',
+    quote_iframe_title: 'Anfrageformular'
+  },
+  en: {
+    quote_parts_title: 'Request a quote for these part numbers',
+    quote_parts_intro: 'Click a code to open the request form with brand and part number pre-filled.',
+    quote_modal_title: 'No-obligation enquiry',
+    quote_modal_close: 'Close',
+    quote_modal_part_label: 'Part number',
+    quote_iframe_title: 'Request form'
+  },
+  it: {
+    quote_parts_title: 'Richiedi preventivo per questi codici',
+    quote_parts_intro: 'Clicchi su un codice per aprire il modulo con marca e codice articolo già compilati.',
+    quote_modal_title: 'Richiesta senza impegno',
+    quote_modal_close: 'Chiudi',
+    quote_modal_part_label: 'Codice articolo',
+    quote_iframe_title: 'Modulo richiesta'
+  },
+  es: {
+    quote_parts_title: 'Solicitar presupuesto para estas referencias',
+    quote_parts_intro: 'Haga clic en un código para abrir el formulario con marca y referencia precargadas.',
+    quote_modal_title: 'Solicitud sin compromiso',
+    quote_modal_close: 'Cerrar',
+    quote_modal_part_label: 'Referencia',
+    quote_iframe_title: 'Formulario de solicitud'
+  },
+  fr: {
+    quote_parts_title: 'Demander un devis pour ces références',
+    quote_parts_intro: 'Cliquez sur une référence pour ouvrir le formulaire avec marque et code préremplis.',
+    quote_modal_title: 'Demande sans engagement',
+    quote_modal_close: 'Fermer',
+    quote_modal_part_label: 'Référence',
+    quote_iframe_title: 'Formulaire de demande'
+  }
+};
+
+let partsByCaseSlugCache = null;
+
+function loadPartsByCaseSlug() {
+  if (partsByCaseSlugCache) return partsByCaseSlugCache;
+  partsByCaseSlugCache = new Map();
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'brand-order-parts.json'), 'utf8'));
+    for (const row of data.brands || []) {
+      for (const part of row.parts || []) {
+        if (!part.case_slug) continue;
+        if (!partsByCaseSlugCache.has(part.case_slug)) {
+          partsByCaseSlugCache.set(part.case_slug, []);
+        }
+        partsByCaseSlugCache.get(part.case_slug).push(part.part_number);
+      }
+    }
+  } catch (e) {
+    console.warn('brand-order-parts.json:', e.message);
+  }
+  return partsByCaseSlugCache;
+}
+
+function getQuotableParts(caseRow) {
+  if (Array.isArray(caseRow.quotable_parts) && caseRow.quotable_parts.length) {
+    return [...new Set(caseRow.quotable_parts.map(String))];
+  }
+  const fromCatalog = loadPartsByCaseSlug().get(caseRow.slug);
+  if (fromCatalog && fromCatalog.length) return [...new Set(fromCatalog)];
+  const pn = String(caseRow.part_number || '').trim();
+  if (!pn) return [];
+  if (pn.includes('·')) {
+    return [...new Set(pn.split('·').map((s) => s.trim()).filter(Boolean))];
+  }
+  return [pn];
+}
+
+function buildQuotablePartsHtml(parts) {
+  if (!parts.length) return '';
+  const items = parts
+    .map(
+      (part) =>
+        `<li><button type="button" class="part-quote-btn" data-part="${escapeAttr(part)}">${escapeHtml(part)}</button></li>`
+    )
+    .join('\n          ');
+  return `
+      <section class="case-quote-parts" aria-labelledby="case-quote-parts-heading">
+        <h2 id="case-quote-parts-heading" data-i18n="quote_parts_title">Diese Teilenummern anfragen</h2>
+        <p class="quote-parts-intro" data-i18n="quote_parts_intro">Klicken Sie auf einen Code — das Anfrageformular öffnet sich mit vorausgefüllter Marke und Teilenummer.</p>
+        <ul class="case-parts-list">
+          ${items}
+        </ul>
+      </section>`;
+}
+
+function buildQuoteModalHtml() {
+  return `
+  <div id="quoteModal" class="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-modal></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button type="button" class="quote-modal-close" data-close-modal data-i18n-aria="quote_modal_close" aria-label="Schließen">&times;</button>
+      <h2 id="quoteModalTitle" data-i18n="quote_modal_title">Unverbindliche Anfrage</h2>
+      <p class="quote-modal-part"><span data-i18n="quote_modal_part_label">Teilenummer</span>: <strong id="quoteModalPart"></strong></p>
+      <div class="quote-modal-iframe-wrap">
+        <iframe id="quoteFormIframe" data-i18n-title="quote_iframe_title" title="Anfrageformular"></iframe>
+      </div>
+    </div>
+  </div>`;
+}
 
 function escapeHtml(s) {
   return String(s)
@@ -32,11 +146,147 @@ function pickLang(caseRow, lang) {
   return caseRow[lang] || caseRow.de;
 }
 
+const { FOOTER_CSS, FOOTER_I18N, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
+
+function buildCaseHubLabels(caseRow) {
+  const breadcrumb = {
+    de: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Erfolgsgeschichten</a> · ${caseRow.brand}`,
+    en: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Success stories</a> · ${caseRow.brand}`,
+    it: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi di successo</a> · ${caseRow.brand}`,
+    es: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${caseRow.brand}`,
+    fr: `<a href="../index.html">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${caseRow.brand}`
+  };
+  const out = {};
+  for (const L of LANGS) {
+    out[L] = { case_breadcrumb: breadcrumb[L], ...FOOTER_I18N[L], ...QUOTE_I18N[L] };
+  }
+  return out;
+}
+
+function primaryPartNumber(partField) {
+  const first = String(partField || '').split(/\s*(?:·|&|,)\s*/)[0].trim();
+  return first || String(partField || '').trim();
+}
+
+function buildCaseJsonLd(caseRow, de, canonical) {
+  const productName = `${caseRow.brand} ${caseRow.part_number}`;
+  const mpn = primaryPartNumber(caseRow.part_number);
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@id': `${BASE}/#organization`,
+        '@type': 'Organization',
+        name: 'ABCspareparts',
+        url: `${BASE}/`,
+        logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: de.title,
+        description: de.meta_description,
+        isPartOf: { '@id': `${BASE}/#website` },
+        inLanguage: LANGS,
+        breadcrumb: { '@id': `${canonical}#breadcrumb` }
+      },
+      {
+        '@type': 'Article',
+        '@id': `${canonical}#article`,
+        headline: de.title,
+        description: de.meta_description,
+        articleSection: 'Success stories',
+        datePublished: caseRow.request_date || undefined,
+        dateModified: caseRow.ship_date || caseRow.quote_date || caseRow.request_date || undefined,
+        author: { '@id': `${BASE}/#organization` },
+        publisher: { '@id': `${BASE}/#organization` },
+        isPartOf: { '@id': `${canonical}#webpage` },
+        about: [
+          { '@type': 'Brand', name: caseRow.brand },
+          { '@id': `${canonical}#product` }
+        ],
+        inLanguage: 'de',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
+      },
+      {
+        '@type': 'Product',
+        '@id': `${canonical}#product`,
+        name: productName,
+        sku: caseRow.part_number,
+        mpn,
+        brand: { '@type': 'Brand', name: caseRow.brand },
+        description: de.meta_description,
+        category: de.fact_component_val
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/${HUB_FILE}` },
+          { '@type': 'ListItem', position: 3, name: caseRow.brand, item: canonical }
+        ]
+      }
+    ]
+  };
+}
+
+function buildHubJsonLd(cases, hubI18n) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@id': `${BASE}/#organization`,
+        '@type': 'Organization',
+        name: 'ABCspareparts',
+        url: `${BASE}/`,
+        logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE}/${HUB_FILE}#webpage`,
+        url: `${BASE}/${HUB_FILE}`,
+        name: hubI18n.de.hub_h1,
+        description: hubI18n.de.meta_description,
+        isPartOf: { '@id': `${BASE}/#website` },
+        inLanguage: LANGS,
+        breadcrumb: { '@id': `${BASE}/${HUB_FILE}#breadcrumb` },
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: cases.length,
+          itemListElement: cases.map((c, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: pickLang(c, 'de').title,
+            url: `${BASE}/${CASES_SUBDIR}/${c.slug}.html`
+          }))
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${BASE}/${HUB_FILE}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/${HUB_FILE}` }
+        ]
+      }
+    ]
+  };
+}
+
 function buildCasePage(caseRow) {
   const slug = caseRow.slug;
   const de = pickLang(caseRow, 'de');
   const canonical = `${BASE}/${CASES_SUBDIR}/${slug}.html`;
-  const brandUrl = `../marche/${caseRow.brand_slug}.html`;
+  const quotableParts = getQuotableParts(caseRow);
+  const quotablePartsHtml = buildQuotablePartsHtml(quotableParts);
+  const quoteModalHtml = buildQuoteModalHtml();
+  let brandUrl = '../index.html#contact';
+  if (caseRow.brand_slug) {
+    const brandPage = path.join(ROOT, 'marche', `${caseRow.brand_slug}.html`);
+    brandUrl = fs.existsSync(brandPage) ? `../marche/${caseRow.brand_slug}.html` : '../marche.html';
+  }
   const translationsPayload = {};
   for (const L of LANGS) {
     const t = pickLang(caseRow, L);
@@ -56,6 +306,7 @@ function buildCasePage(caseRow) {
   <meta id="pageDescription" name="description" content="${escapeAttr(de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${canonical}">
+  <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
 ${hreflang}
   <meta property="og:type" content="article">
@@ -68,39 +319,7 @@ ${hreflang}
   <meta name="twitter:title" content="${escapeAttr(de.meta_title)}">
   <meta name="twitter:description" content="${escapeAttr(de.meta_description)}">
   <meta name="twitter:image" content="${BASE}/logo.png">
-  <script type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@id': `${BASE}/#organization`,
-        '@type': 'Organization',
-        name: 'ABCspareparts',
-        url: `${BASE}/`,
-        logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
-      },
-      {
-        '@type': 'Article',
-        '@id': `${canonical}#article`,
-        headline: de.title,
-        description: de.meta_description,
-        datePublished: caseRow.request_date || undefined,
-        dateModified: caseRow.ship_date || caseRow.request_date || undefined,
-        author: { '@id': `${BASE}/#organization` },
-        publisher: { '@id': `${BASE}/#organization` },
-        about: { '@type': 'Brand', name: caseRow.brand },
-        inLanguage: 'de',
-        mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE}/` },
-          { '@type': 'ListItem', position: 2, name: 'Success stories', item: `${BASE}/${HUB_FILE}` },
-          { '@type': 'ListItem', position: 3, name: caseRow.brand, item: canonical }
-        ]
-      }
-    ]
-  })}</script>
+  <script type="application/ld+json">${JSON.stringify(buildCaseJsonLd(caseRow, de, canonical))}</script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #fff; }
@@ -131,10 +350,26 @@ ${hreflang}
     .cta-primary:hover { background: #d35400; }
     .cta-secondary { background: #1e3a5f; color: #fff !important; }
     .cta-secondary:hover { background: #2d5a87; }
+    .case-quote-parts { background: #f0f6fb; border: 1px solid #dce8f4; border-radius: 10px; padding: 1.15rem 1.2rem; margin-bottom: 1.75rem; }
+    .case-quote-parts h2 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 0.45rem; }
+    .quote-parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 0.9rem; }
+    .case-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.45rem 0.75rem; cursor: pointer; }
+    .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .quote-modal[hidden] { display: none !important; }
+    .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
+    .quote-modal-dialog { position: relative; z-index: 1; width: min(720px, 100%); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.25); padding: 1.25rem 1.25rem 1rem; }
+    .quote-modal-dialog h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.35rem; padding-right: 2rem; }
+    .quote-modal-part { font-size: 0.92rem; color: #444; margin-bottom: 0.85rem; }
+    .quote-modal-part strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
+    .quote-modal-close { position: absolute; top: 0.65rem; right: 0.75rem; border: none; background: transparent; font-size: 1.75rem; line-height: 1; color: #666; cursor: pointer; }
+    .quote-modal-close:hover { color: #e67e22; }
+    .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
+    body.quote-modal-open { overflow: hidden; }
     .disclaimer { font-size: 0.85rem; color: #666; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; }
-    .footer { background: #1e3a5f; color: #fff; padding: 1.75rem 1.5rem; text-align: center; }
-    .footer a { color: #fff; text-decoration: none; margin: 0 0.35rem; }
-    .footer a:hover { text-decoration: underline; }
+${FOOTER_CSS}
   </style>
 </head>
 <body>
@@ -159,10 +394,11 @@ ${hreflang}
       <dl class="facts-box">
         <dt data-i18n="fact_sector">${escapeHtml(de.fact_sector)}</dt><dd data-i18n="fact_sector_val">${de.fact_sector_val}</dd>
         <dt data-i18n="fact_brand">${escapeHtml(de.fact_brand)}</dt><dd>${escapeHtml(caseRow.brand)}</dd>
-        <dt data-i18n="fact_part">${escapeHtml(de.fact_part)}</dt><dd><strong>${escapeHtml(caseRow.part_number)}</strong></dd>
+        <dt data-i18n="fact_part">${escapeHtml(de.fact_part)}</dt><dd data-i18n="fact_part_val">${de.fact_part_val || '<strong>' + escapeHtml(caseRow.part_number) + '</strong>'}</dd>
         <dt data-i18n="fact_component">${escapeHtml(de.fact_component)}</dt><dd data-i18n="fact_component_val">${de.fact_component_val}</dd>
         <dt data-i18n="fact_destination">${escapeHtml(de.fact_destination)}</dt><dd data-i18n="fact_destination_val">${de.fact_destination_val}</dd>
       </dl>
+${quotablePartsHtml}
       <p data-i18n="intro">${de.intro}</p>
       <p data-i18n="body_p1">${de.body_p1}</p>
       <p data-i18n="body_p2">${de.body_p2}</p>
@@ -177,34 +413,25 @@ ${hreflang}
       <p data-i18n="outro">${de.outro}</p>
       <div class="cta-row">
         <a class="cta-primary" href="${brandUrl}" data-i18n="cta_brand">${escapeHtml(de.cta_brand)}</a>
-        <a class="cta-secondary" href="../index.html#contact" data-i18n="cta_contact">${escapeHtml(de.cta_contact)}</a>
+        <button type="button" class="cta-secondary open-quote-modal" data-i18n="cta_contact">${escapeHtml(de.cta_contact)}</button>
       </div>
       <p class="disclaimer" data-i18n="disclaimer">${de.disclaimer}</p>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <a href="../index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="../${HUB_FILE}" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
-      <a href="../marche.html" data-i18n="footer_brands">Marche</a>
-    </div>
-  </footer>
+  ${quoteModalHtml}
+  ${buildFooterHtml('../')}
   <script>
   (function () {
+    var BRAND = ${JSON.stringify(caseRow.brand)};
+    var DEFAULT_PART = ${JSON.stringify(quotableParts[0] || caseRow.part_number || '')};
     var BRAND_SLUG = ${JSON.stringify(caseRow.brand_slug)};
     var translations = ${JSON.stringify(translationsPayload)};
-    var hubLabels = {
-      de: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Erfolgsgeschichten</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Erfolgsgeschichten', footer_brands: 'Marken' },
-      en: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Success stories</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Success stories', footer_brands: 'Brands' },
-      it: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi di successo</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casi di successo', footer_brands: 'Marche' },
-      es: { case_breadcrumb: '<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Casos de éxito', footer_brands: 'Marcas' },
-      fr: { case_breadcrumb: '<a href="../index.html">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${escapeHtml(caseRow.brand)}', footer_home: 'ABCspareparts', footer_cases: 'Histoires de réussite', footer_brands: 'Marques' }
-    };
-    var pages = ['index.html', 'marche.html', '${HUB_FILE}', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+    var hubLabels = ${JSON.stringify(buildCaseHubLabels(caseRow))};
+    var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
       if (/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if (/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
+      if (/^casi\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
     function getLangFromUrl() {
@@ -249,9 +476,64 @@ ${hreflang}
         var key = el.getAttribute('data-i18n');
         if (merged[key]) el.innerHTML = merged[key];
       });
+      document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-title');
+        if (merged[key]) el.setAttribute('title', merged[key]);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        if (merged[key]) el.setAttribute('aria-label', merged[key]);
+      });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
+      if (quoteModal && !quoteModal.hasAttribute('hidden') && quoteIframe) {
+        var activePart = quoteModalPart ? quoteModalPart.textContent : '';
+        quoteIframe.src = buildQuoteIframeSrc(lang, activePart);
+      }
+    }
+    var quoteModal = document.getElementById('quoteModal');
+    var quoteIframe = document.getElementById('quoteFormIframe');
+    var quoteModalPart = document.getElementById('quoteModalPart');
+    function buildQuoteIframeSrc(lang, part) {
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang || 'en');
+      url += '&custom_manufacturer=' + encodeURIComponent(BRAND);
+      if (part) url += '&custom_part_numbers=' + encodeURIComponent(part);
+      return url;
+    }
+    function openQuoteModal(part, lang) {
+      if (!quoteModal) return;
+      var code = part || DEFAULT_PART || '';
+      if (quoteModalPart) quoteModalPart.textContent = code;
+      if (quoteIframe) quoteIframe.src = buildQuoteIframeSrc(lang, code);
+      quoteModal.removeAttribute('hidden');
+      document.body.classList.add('quote-modal-open');
+    }
+    function closeQuoteModal() {
+      if (!quoteModal) return;
+      quoteModal.setAttribute('hidden', '');
+      document.body.classList.remove('quote-modal-open');
+      if (quoteIframe) quoteIframe.src = 'about:blank';
+    }
+    function initQuoteModal() {
+      document.querySelectorAll('.part-quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(btn.getAttribute('data-part') || '', lang);
+        });
+      });
+      document.querySelectorAll('.open-quote-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = document.getElementById('languageSelect').value || 'de';
+          openQuoteModal(DEFAULT_PART, lang);
+        });
+      });
+      document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeQuoteModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
+      });
     }
     document.addEventListener('DOMContentLoaded', function () {
       var raw = getCurrentLang();
@@ -259,6 +541,7 @@ ${hreflang}
       var sel = document.getElementById('languageSelect');
       if (sel) sel.value = lang;
       changeLanguage(lang);
+      initQuoteModal();
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();
@@ -290,17 +573,14 @@ function buildHubPage(cases) {
     }
   }
 
-  const hubI18n = {
+  const hubPageI18n = {
     de: {
       meta_title: 'Erfolgsgeschichten — Industrieersatzteile in Europa | ABCspareparts',
       meta_description: 'Echte Erfolgsfälle: Marke, Teilenummer, Branche und Lieferzeit — von der Anfrage bis zum Versand in Europa. Kunden anonymisiert.',
       hub_h1: 'Erfolgsgeschichten',
       hub_subtitle: 'Echte Lieferungen — Marke, Teilenummer und Ablauf, ohne Kundennamen.',
       hub_intro: 'Hier zeigen wir ausgewählte Erfolgsfälle: welches Ersatzteil, welche Marke, welche Branche und wie schnell von der Anfrage bis zum Versand. Kundennamen nennen wir aus Vertraulichkeitsgründen nicht.',
-      hub_read_more: 'Weiterlesen',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Erfolgsgeschichten',
-      footer_brands: 'Marken'
+      hub_read_more: 'Weiterlesen'
     },
     en: {
       meta_title: 'Success stories — industrial spare parts in Europe | ABCspareparts',
@@ -308,10 +588,7 @@ function buildHubPage(cases) {
       hub_h1: 'Success stories',
       hub_subtitle: 'Real deliveries — brand, part number and timeline, without naming customers.',
       hub_intro: 'Selected success stories: which spare part, which brand, which industry, and how fast from request to shipment. We do not publish customer names for confidentiality.',
-      hub_read_more: 'Read more',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Success stories',
-      footer_brands: 'Brands'
+      hub_read_more: 'Read more'
     },
     it: {
       meta_title: 'Casi di successo — ricambi industriali in Europa | ABCspareparts',
@@ -319,10 +596,7 @@ function buildHubPage(cases) {
       hub_h1: 'Casi di successo',
       hub_subtitle: 'Forniture reali — marca, codice e tempi, senza nominare i clienti.',
       hub_intro: 'Documentiamo casi di successo selezionati: quale ricambio, quale marca, quale settore e quanto tempo dalla richiesta alla spedizione. I nomi dei clienti non vengono pubblicati per riservatezza.',
-      hub_read_more: 'Leggi tutto',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Casi di successo',
-      footer_brands: 'Marche'
+      hub_read_more: 'Leggi tutto'
     },
     es: {
       meta_title: 'Casos de éxito — recambios industriales en Europa | ABCspareparts',
@@ -330,10 +604,7 @@ function buildHubPage(cases) {
       hub_h1: 'Casos de éxito',
       hub_subtitle: 'Entregas reales — marca, referencia y plazos, sin nombrar clientes.',
       hub_intro: 'Casos de éxito seleccionados: qué recambio, qué marca, qué sector y cuánto tiempo hasta el envío. No publicamos nombres de clientes por confidencialidad.',
-      hub_read_more: 'Leer más',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Casos de éxito',
-      footer_brands: 'Marcas'
+      hub_read_more: 'Leer más'
     },
     fr: {
       meta_title: 'Histoires de réussite — pièces industrielles en Europe | ABCspareparts',
@@ -341,16 +612,16 @@ function buildHubPage(cases) {
       hub_h1: 'Histoires de réussite',
       hub_subtitle: 'Livraisons réelles — marque, référence et délais, sans nommer les clients.',
       hub_intro: 'Histoires de réussite sélectionnées : quelle pièce, quelle marque, quel secteur et délai jusqu’à l’expédition. Les noms des clients ne sont pas publiés pour confidentialité.',
-      hub_read_more: 'Lire la suite',
-      footer_home: 'ABCspareparts',
-      footer_cases: 'Histoires de réussite',
-      footer_brands: 'Marques'
+      hub_read_more: 'Lire la suite'
     }
   };
+  const hubI18n = withFooterI18n(hubPageI18n);
 
   const hreflang = LANGS.map(
     (l) => `  <link rel="alternate" hreflang="${l}" href="${BASE}/${HUB_FILE}?lang=${l}">`
   ).join('\n');
+
+  const hubJsonLd = buildHubJsonLd(cases, hubI18n);
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -359,14 +630,22 @@ function buildHubPage(cases) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">${escapeHtml(hubI18n.de.meta_title)}</title>
   <meta id="pageDescription" name="description" content="${escapeAttr(hubI18n.de.meta_description)}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" hreflang="x-default" href="${BASE}/${HUB_FILE}">
+  <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI crawlers">
 ${hreflang}
   <meta property="og:type" content="website">
   <meta property="og:url" content="${BASE}/${HUB_FILE}">
   <meta property="og:title" content="${escapeAttr(hubI18n.de.meta_title)}">
   <meta property="og:description" content="${escapeAttr(hubI18n.de.meta_description)}">
   <meta property="og:image" content="${BASE}/logo.png">
+  <meta property="og:site_name" content="ABCspareparts">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeAttr(hubI18n.de.meta_title)}">
+  <meta name="twitter:description" content="${escapeAttr(hubI18n.de.meta_description)}">
+  <meta name="twitter:image" content="${BASE}/logo.png">
+  <script type="application/ld+json">${JSON.stringify(hubJsonLd)}</script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; color: #333; }
@@ -388,8 +667,7 @@ ${hreflang}
     .case-teaser { font-size: 0.94rem; color: #444; margin-bottom: 0.75rem; }
     .case-read { font-weight: 600; color: #e67e22; text-decoration: none; font-size: 0.92rem; }
     .case-read:hover { text-decoration: underline; }
-    .footer { background: #1e3a5f; color: #fff; padding: 1.75rem 1.5rem; text-align: center; }
-    .footer a { color: #fff; text-decoration: none; margin: 0 0.35rem; }
+${FOOTER_CSS}
   </style>
 </head>
 <body>
@@ -411,27 +689,21 @@ ${hreflang}
   <main>
     <div class="container">
       <p class="hub-intro" data-i18n="hub_intro">${escapeHtml(hubI18n.de.hub_intro)}</p>
-      <div class="case-list">
+      <nav class="case-list" aria-label="Success stories">
 ${cardsHtml}
-      </div>
+      </nav>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <a href="index.html" data-i18n="footer_home">ABCspareparts</a> ·
-      <a href="${HUB_FILE}" data-i18n="footer_cases">Erfolgsgeschichten</a> ·
-      <a href="marche.html" data-i18n="footer_brands">Marken</a>
-    </div>
-  </footer>
+  ${buildFooterHtml('')}
   <script>
   (function(){
     var translations = ${JSON.stringify(hubI18n)};
     var cardTranslations = ${JSON.stringify(cardTranslations)};
-    var pages = ['index.html','marche.html','${HUB_FILE}','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+    var pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
     function isLangInternalPage(base){
       if(pages.indexOf(base)!==-1) return true;
       if(/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if(/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
+      if(/^casi\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
     function getLangFromUrl(){ var p=new URLSearchParams(window.location.search); var l=p.get('lang'); return l&&['de','en','it','es','fr'].indexOf(l)!==-1?l:null; }
@@ -511,23 +783,131 @@ ${body}</urlset>
   fs.writeFileSync(path.join(ROOT, 'sitemap-cases.xml'), xml, 'utf8');
 }
 
-function removeLegacyCasePaths() {
-  const legacyHub = path.join(ROOT, 'casi.html');
-  if (fs.existsSync(legacyHub)) {
-    fs.unlinkSync(legacyHub);
-    console.log('Removed legacy casi.html');
+function updateSitemapIndex() {
+  const p = path.join(ROOT, 'sitemap-index.xml');
+  let xml = fs.readFileSync(p, 'utf8');
+  if (!xml.includes('/sitemap-cases.xml')) {
+    xml = xml.replace(
+      '</sitemapindex>',
+      `  <sitemap>
+    <loc>${BASE}/sitemap-cases.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+</sitemapindex>`
+    );
+  } else {
+    xml = xml.replace(
+      /(<loc>https:\/\/abcspareparts\.eu\/sitemap-cases\.xml<\/loc>\s*<lastmod>)[^<]+(<\/lastmod>)/,
+      `$1${TODAY}$2`
+    );
   }
-  const legacyDir = path.join(ROOT, 'casi');
-  if (fs.existsSync(legacyDir)) {
-    for (const f of fs.readdirSync(legacyDir)) {
-      if (f.endsWith('.html')) fs.unlinkSync(path.join(legacyDir, f));
+  fs.writeFileSync(p, xml, 'utf8');
+}
+
+function updateLlmsTxt(cases) {
+  const llmsPath = path.join(ROOT, 'llms.txt');
+  let content = fs.readFileSync(llmsPath, 'utf8');
+  const hubLine = `- [Success stories hub (casi di successo)](${BASE}/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (?lang=).`;
+  content = content.replace(/- \[Success stories[^\n]+\n/, hubLine + '\n');
+
+  const caseLines = cases.map((c) => {
+    const en = pickLang(c, 'en');
+    return `- [${en.title}](${BASE}/casi/${c.slug}.html): ${en.meta_description}`;
+  });
+  const caseSection = `## Success story pages\n\n${caseLines.join('\n')}\n`;
+
+  if (/## Success story pages/.test(content)) {
+    content = content.replace(/## Success story pages[\s\S]*?(?=\n## )/, caseSection.trimEnd());
+  } else {
+    content = content.replace(/\n## Optional/, `\n${caseSection}\n## Optional`);
+  }
+  fs.writeFileSync(llmsPath, content, 'utf8');
+}
+
+function buildRedirectPage(targetPath) {
+  const safeTarget = targetPath.replace(/'/g, "\\'");
+  return `<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Redirect…</title>
+  <script>location.replace('${safeTarget}' + location.search + location.hash);</script>
+</head>
+<body>
+  <p><a href="${targetPath}">Continue</a></p>
+</body>
+</html>
+`;
+}
+
+function writeLegacyRedirects(cases) {
+  fs.writeFileSync(path.join(ROOT, LEGACY_HUB_FILE), buildRedirectPage(HUB_FILE), 'utf8');
+  console.log('Wrote', LEGACY_HUB_FILE, 'redirect →', HUB_FILE);
+
+  const legacyCaseSlugs = new Set();
+  for (const c of cases) {
+    for (const oldSlug of c.legacy_slugs || []) legacyCaseSlugs.add(oldSlug);
+  }
+
+  const legacyCasesDir = path.join(ROOT, LEGACY_CASES_SUBDIR);
+  if (!fs.existsSync(legacyCasesDir)) fs.mkdirSync(legacyCasesDir);
+  const expectedLegacyCaseFiles = new Set();
+  for (const c of cases) {
+    const target = `../casi/${c.slug}.html`;
+    const legacyFile = `${c.slug}.html`;
+    expectedLegacyCaseFiles.add(legacyFile);
+    fs.writeFileSync(path.join(legacyCasesDir, legacyFile), buildRedirectPage(target), 'utf8');
+  }
+  for (const f of fs.readdirSync(legacyCasesDir)) {
+    if (f.endsWith('.html') && !expectedLegacyCaseFiles.has(f)) {
+      fs.unlinkSync(path.join(legacyCasesDir, f));
+      console.log('Removed stale', LEGACY_CASES_SUBDIR + '/' + f);
     }
-    try {
-      fs.rmdirSync(legacyDir);
-      console.log('Removed legacy casi/ directory');
-    } catch (e) {
-      console.warn('Could not remove legacy casi/ directory:', e.message);
+  }
+  console.log('Wrote', cases.length, 'redirect(s) in', LEGACY_CASES_SUBDIR + '/');
+
+  for (const c of cases) {
+    for (const oldSlug of c.legacy_slugs || []) {
+      if (oldSlug === c.slug) continue;
+      const target = `${c.slug}.html`;
+      fs.writeFileSync(path.join(CASI_DIR, `${oldSlug}.html`), buildRedirectPage(target), 'utf8');
+      console.log('Wrote casi/' + oldSlug + '.html redirect →', target);
     }
+  }
+}
+
+function updateBrandCaseLinks(cases) {
+  const byBrand = new Map();
+  for (const c of cases) {
+    if (c.brand_slug) byBrand.set(c.brand_slug, c);
+  }
+  const marker = 'class="brand-success-story"';
+  for (const [brandSlug, caseRow] of byBrand) {
+    const brandPath = path.join(ROOT, 'marche', `${brandSlug}.html`);
+    if (!fs.existsSync(brandPath)) continue;
+    let html = fs.readFileSync(brandPath, 'utf8');
+    const caseUrl = `../casi/${caseRow.slug}.html`;
+    const en = pickLang(caseRow, 'en');
+    const block = `      <section ${marker} aria-label="Success story">
+        <h2>Success story</h2>
+        <p>Real supply case for ${escapeHtml(caseRow.brand)}: <a href="${caseUrl}">${escapeHtml(en.title)}</a> — <a href="../casi.html">all success stories</a>.</p>
+      </section>
+`;
+    if (html.includes(marker)) {
+      html = html.replace(
+        new RegExp(`\\s*<section ${marker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^]*?</section>\\n`),
+        '\n' + block
+      );
+    } else {
+      html = html.replace(
+        '      <section class="related-brands"',
+        block + '      <section class="related-brands"'
+      );
+    }
+    fs.writeFileSync(brandPath, html, 'utf8');
+    console.log('Updated brand page link:', brandSlug);
   }
 }
 
@@ -535,7 +915,10 @@ function main() {
   const cases = loadCases();
   if (!cases.length) throw new Error('No published cases in supply-cases.json');
 
-  removeLegacyCasePaths();
+  const legacyCaseSlugs = new Set();
+  for (const c of cases) {
+    for (const oldSlug of c.legacy_slugs || []) legacyCaseSlugs.add(oldSlug);
+  }
 
   if (!fs.existsSync(CASI_DIR)) fs.mkdirSync(CASI_DIR);
 
@@ -543,7 +926,7 @@ function main() {
   for (const f of fs.readdirSync(CASI_DIR)) {
     if (!f.endsWith('.html')) continue;
     const slug = f.replace(/\.html$/, '');
-    if (!slugs.has(slug)) {
+    if (!slugs.has(slug) && !legacyCaseSlugs.has(slug)) {
       fs.unlinkSync(path.join(CASI_DIR, f));
       console.log('Removed stale', f);
     }
@@ -558,8 +941,19 @@ function main() {
   fs.writeFileSync(path.join(ROOT, HUB_FILE), buildHubPage(cases), 'utf8');
   console.log('Wrote', HUB_FILE);
 
+  writeLegacyRedirects(cases);
+
   writeSitemapCases(cases);
   console.log('Wrote sitemap-cases.xml');
+
+  updateSitemapIndex();
+  console.log('Updated sitemap-index.xml lastmod for cases');
+
+  updateLlmsTxt(cases);
+  console.log('Updated llms.txt success story pages');
+
+  updateBrandCaseLinks(cases);
+
   console.log('Done —', cases.length, 'case page(s)');
 }
 

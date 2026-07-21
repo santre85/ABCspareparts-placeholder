@@ -1,0 +1,281 @@
+ORDINI CLIENTE — CATALOGO MARCHE E CODICI ARTICOLO
+ABC Spare Parts · ERPNext
+Generato: 2026-07-05
+
+Scopo: elenco ordini ricevuti con marche e codici articolo,
+da usare per arricchire le pagine marca su www.abcspareparts.eu
+(SEO, ricerca codici, richieste dirette clienti).
+
+========================================================================
+RIEPILOGO
+========================================================================
+Ordini cliente: 18
+Marche distinte: 14
+Codici articolo distinti: 20
+
+Marche presenti negli ordini:
+Autronica, Baldwin, HUMPHREY, Hübner Elektromaschinen AG, Leuze, M&S Armaturen, M+S Hydraulic, PRONOMIC, Rexroth, Siemens, Steute, SYM BANG, Tamagawa, TOKHEIM
+
+========================================================================
+SEZIONE A — PER MARCA (utile per pagine online singola marca)
+========================================================================
+
+--- MARCA: Autronica (2 codici, 2 righe ordine) ---
+  V-430/BH200 | V-430/BH200  →  ordini: SAL-ORD-2026-00014
+  V-530/BH500 | V-530/BH500  →  ordini: SAL-ORD-2026-00014
+
+--- MARCA: Baldwin (3 codici, 3 righe ordine) ---
+  13144.04 | 13144.04  →  ordini: SAL-ORD-2026-00011
+  13144.05 | 13144.05  →  ordini: SAL-ORD-2026-00011
+  45.877.05 | 45.877.05  →  ordini: SAL-ORD-2026-00015
+
+--- MARCA: HUMPHREY (1 codici, 1 righe ordine) ---
+  41024VDC | 41024VDC  →  ordini: SAL-ORD-2026-00013
+
+--- MARCA: Hübner Elektromaschinen AG (1 codici, 1 righe ordine) ---
+  GT9.06L/420k | Tachogenerator  →  ordini: SAL-ORD-2026-00001
+
+--- MARCA: Leuze (2 codici, 2 righe ordine) ---
+  53800105 | 53800105  →  ordini: SAL-ORD-2026-00008
+  53800117 | 53800117 CU408-M12  →  ordini: SAL-ORD-2026-00009
+
+--- MARCA: M&S Armaturen (1 codici, 1 righe ordine) ---
+  57600-1000300 | 57600-1000300  →  ordini: SAL-ORD-2026-00016
+
+--- MARCA: M+S Hydraulic (1 codici, 1 righe ordine) ---
+  MMS50C | MMS50C  →  ordini: SAL-ORD-2026-00003
+
+--- MARCA: PRONOMIC (2 codici, 2 righe ordine) ---
+  220390 | 220390  →  ordini: SAL-ORD-2026-00002
+  Prog. 1211 Controller – Typ 20001A-70E R | Prog. 1211 Controller – Typ 20001A-70E R  →  ordini: SAL-ORD-2026-00005
+
+--- MARCA: Rexroth (1 codici, 1 righe ordine) ---
+  A10VSO28DFR1/31L-PPA12N | A10VSO28DFR1/31L-PPA12N  →  ordini: SAL-ORD-2026-00004
+
+--- MARCA: Senza marca (1 codici, 1 righe ordine) ---
+  TTN0507 | TTN0507  →  ordini: SAL-ORD-2025-00009
+
+--- MARCA: Siemens (1 codici, 1 righe ordine) ---
+  6AV2124-0MC010-AX0 | 6AV2124-0MC010-AX0  →  ordini: SAL-ORD-2026-00007
+
+--- MARCA: Steute (1 codici, 1 righe ordine) ---
+  1188542 | 1188542  →  ordini: SAL-ORD-2026-00010
+
+--- MARCA: SYM BANG (1 codici, 1 righe ordine) ---
+  A18065V2HBT-S | A18065V2HBT-S  →  ordini: SAL-ORD-2025-00008
+
+--- MARCA: Tamagawa (1 codici, 1 righe ordine) ---
+  TS5013N61 | TS5013N61  →  ordini: SAL-ORD-2026-00012
+
+--- MARCA: TOKHEIM (1 codici, 1 righe ordine) ---
+  947944-004 | 947944-004  →  ordini: SAL-ORD-2026-00017
+
+========================================================================
+SEZIONE B — ELENCO CODICI UNIVOCI (copia rapida)
+========================================================================
+
+1188542 [Steute]
+13144.04 [Baldwin]
+13144.05 [Baldwin]
+220390 [PRONOMIC]
+41024VDC [HUMPHREY]
+45.877.05 [Baldwin]
+53800105 [Leuze]
+53800117 [Leuze]
+57600-1000300 [M&S Armaturen]
+6AV2124-0MC010-AX0 [Siemens]
+947944-004 [TOKHEIM]
+A10VSO28DFR1/31L-PPA12N [Rexroth]
+A18065V2HBT-S [SYM BANG]
+GT9.06L/420k [Hübner Elektromaschinen AG]
+MMS50C [M+S Hydraulic]
+Prog. 1211 Controller – Typ 20001A-70E R [PRONOMIC]
+TS5013N61 [Tamagawa]
+TTN0507
+V-430/BH200 [Autronica]
+V-530/BH500 [Autronica]
+
+========================================================================
+SEZIONE C — DETTAGLIO PER ORDINE
+========================================================================
+
+ORDINE: SAL-ORD-2025-00008  (anno 2025)
+Data: 2025-11-24
+Cliente: KREBS & RIEDEL Schleifscheibenfabrik GmbH & Co. KG
+Fornitore acquisto: SP Services GmbH
+Importo vendita: 189.69 EUR
+Marche: SYM BANG
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2025-00008
+Articoli:
+  · A18065V2HBT-S | SYM BANG (qty 1.0, 182.00 EUR)
+
+ORDINE: SAL-ORD-2025-00009  (anno 2025)
+Data: 2025-12-02
+Cliente: LEIMER KG
+Fornitore acquisto: E. KRETZSCHMAR Antriebs- und Verfahrenstechnik Entwicklungs- und Vertriebs-GmbH
+Importo vendita: 977.89 EUR
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2025-00009
+Articoli:
+  · TTN0507 | — (qty 1.0, 970.20 EUR)
+
+ORDINE: SAL-ORD-2026-00001  (anno 2026)
+Data: 2026-01-22
+Cliente: SAE Elettromeccanica SRL
+Fornitore acquisto: Baumer GmbH
+Importo vendita: 1217.49 EUR
+Marche: Hübner Elektromaschinen AG
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00001
+Articoli:
+  · GT9.06L/420k — Tachogenerator | Hübner Elektromaschinen AG (qty 1.0, 1200.00 EUR)
+
+ORDINE: SAL-ORD-2026-00002  (anno 2026)
+Data: 2026-02-09
+Cliente: AVI.COOP Società Cooperativa Agricola
+Fornitore acquisto: PRONOMIC GmbH
+Importo vendita: 412.85 EUR
+Marche: PRONOMIC
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00002
+Articoli:
+  · 220390 | PRONOMIC (qty 1.0, 412.85 EUR)
+
+ORDINE: SAL-ORD-2026-00003  (anno 2026)
+Data: 2026-02-20
+Cliente: Boatech S.L.U.
+Fornitore acquisto: Hydroma
+Importo vendita: 300.23 EUR
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00003
+Articoli:
+  · MMS50C | M+S Hydraulic (qty 1.0, 270.24 EUR)
+
+ORDINE: SAL-ORD-2026-00004  (anno 2026)
+Data: 2026-03-04
+Cliente: Lausitz Energie Kraftwerke AG
+Fornitore acquisto: MH Hydraulics BV
+Importo vendita: 3193.00 EUR
+Marche: Rexroth
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00004
+Articoli:
+  · A10VSO28DFR1/31L-PPA12N | Rexroth (qty 1.0, 3193.00 EUR)
+
+ORDINE: SAL-ORD-2026-00005  (anno 2026)
+Data: 2026-03-13
+Cliente: AVI.COOP Società Cooperativa Agricola
+Fornitore acquisto: PRONOMIC GmbH
+Importo vendita: 1468.80 EUR
+Marche: PRONOMIC
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00005
+Articoli:
+  · Prog. 1211 Controller – Typ 20001A-70E R | PRONOMIC (qty 1.0, 1468.80 EUR)
+
+ORDINE: SAL-ORD-2026-00007  (anno 2026)
+Data: 2026-04-08
+Cliente: AVI.COOP Società Cooperativa Agricola
+Fornitore acquisto: Kemeri OÜ
+Importo vendita: 1890.00 EUR
+Marche: Siemens
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00007
+Articoli:
+  · 6AV2124-0MC010-AX0 | Siemens (qty 1.0, 1890.00 EUR)
+
+ORDINE: SAL-ORD-2026-00008  (anno 2026)
+Data: 2026-04-14
+Cliente: All4Labels Italy S.p.A.
+Fornitore acquisto: Linden Electro s.r.o.
+Importo vendita: 3290.29 EUR
+Marche: Leuze
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00008
+Articoli:
+  · 53800105 | Leuze (qty 1.0, 3244.80 EUR)
+
+ORDINE: SAL-ORD-2026-00009  (anno 2026)
+Data: 2026-04-14
+Cliente: All4Labels Italy S.p.A.
+Fornitore acquisto: Linden Electro s.r.o.
+Importo vendita: 233.04 EUR
+Marche: Leuze
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00009
+Articoli:
+  · 53800117 — 53800117 CU408-M12 | Leuze (qty 1.0, 215.55 EUR)
+
+ORDINE: SAL-ORD-2026-00010  (anno 2026)
+Data: 2026-04-22
+Cliente: All4Labels Italy S.p.A.
+Fornitore acquisto: FOXLINE SRL
+Importo vendita: 1158.01 EUR
+Marche: Steute
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00010
+Articoli:
+  · 1188542 | Steute (qty 1.0, 1126.52 EUR)
+
+ORDINE: SAL-ORD-2026-00011  (anno 2026)
+Data: 2026-05-18
+Cliente: Serigrafía Margi S.A.
+Fornitore acquisto: BW Converting GmbH
+Importo vendita: 1770.76 EUR
+Marche: Baldwin
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00011
+Articoli:
+  · 13144.04 | Baldwin (qty 4.0, 906.24 EUR)
+  · 13144.05 | Baldwin (qty 4.0, 814.52 EUR)
+
+ORDINE: SAL-ORD-2026-00012  (anno 2026)
+Data: 2026-05-21
+Cliente: ABACEXI - Exportação, Importação, Lda
+Fornitore acquisto: Wiautomation
+Importo vendita: 2250.00 EUR
+Marche: Tamagawa
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00012
+Articoli:
+  · TS5013N61 | Tamagawa (qty 1.0, 2200.00 EUR)
+
+ORDINE: SAL-ORD-2026-00013  (anno 2026)
+Data: 2026-05-21
+Cliente: All4Labels Italy S.p.A.
+Fornitore acquisto: BMT Fluid Control Solutions GmbH
+Importo vendita: 246.18 EUR
+Marche: HUMPHREY
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00013
+Articoli:
+  · 41024VDC | HUMPHREY (qty 1.0, 211.18 EUR)
+
+ORDINE: SAL-ORD-2026-00014  (anno 2026)
+Data: 2026-06-04
+Cliente: Diamantides Yachting LTD
+Fornitore acquisto: Lavastica International B.V.
+Importo vendita: 1637.65 EUR
+Marche: Autronica
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00014
+Articoli:
+  · V-430/BH200 | Autronica (qty 1.0, 686.00 EUR)
+  · V-530/BH500 | Autronica (qty 1.0, 916.65 EUR)
+
+ORDINE: SAL-ORD-2026-00015  (anno 2026)
+Data: 2026-06-19
+Cliente: Serigrafía Margi S.A.
+Fornitore acquisto: BW Converting GmbH
+Importo vendita: 980.73 EUR
+Marche: Baldwin
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00015
+Articoli:
+  · 45.877.05 | Baldwin (qty 1.0, 930.73 EUR)
+
+ORDINE: SAL-ORD-2026-00016  (anno 2026)
+Data: 2026-06-25
+Cliente: VBN Vertriebs GmbH
+Fornitore acquisto: Merinox Metallwaren GmbH
+Importo vendita: 609.40 EUR
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00016
+Articoli:
+  · 57600-1000300 | M&S Armaturen (qty 10.0, 574.40 EUR)
+
+ORDINE: SAL-ORD-2026-00017  (anno 2026)
+Data: 2026-06-30
+Cliente: VBN Vertriebs GmbH
+Fornitore acquisto: ERS Elektronik GmbH
+Importo vendita: 8568.00 EUR
+Marche: TOKHEIM
+ERP: https://erp.abcspareparts.eu/app/sales-order/SAL-ORD-2026-00017
+Articoli:
+  · 947944-004 | TOKHEIM (qty 20.0, 8568.00 EUR)
+
+— Fine file —

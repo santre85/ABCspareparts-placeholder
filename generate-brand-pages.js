@@ -3,11 +3,13 @@
 const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
+const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
 
 const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
 const BASE = 'https://abcspareparts.eu';
 const TODAY = new Date().toISOString().slice(0, 10);
+const MAX_META_LEN = 158;
 
 function loadTopBrandBySlug() {
   try {
@@ -23,6 +25,28 @@ function loadTopBrandBySlug() {
 const TOP_BRAND_BY_SLUG = loadTopBrandBySlug();
 if (Object.keys(TOP_BRAND_BY_SLUG).length) {
   console.log('top-brands-content.json: slugs', Object.keys(TOP_BRAND_BY_SLUG).length);
+}
+
+function loadPartsBySlug() {
+  try {
+    const p = path.join(ROOT, 'brand-order-parts.json');
+    if (!fs.existsSync(p)) return new Map();
+    const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const map = new Map();
+    for (const row of data.brands || []) {
+      if (!row.brand_slug) continue;
+      if (!row.parts?.length && !row.listino?.count) continue;
+      map.set(row.brand_slug, {
+        parts: row.parts || [],
+        listino: row.listino || null
+      });
+    }
+    console.log('brand-order-parts.json: brands with parts', map.size);
+    return map;
+  } catch (e) {
+    console.warn('brand-order-parts.json:', e.message);
+    return new Map();
+  }
 }
 
 function mergeTopBrandContent(translations, slug) {
@@ -83,7 +107,7 @@ function buildTranslations(brand) {
     fr: encodeURIComponent(`Demande pièces ${brand} – ABCspareparts`)
   };
 
-  return {
+  return withFooterI18n({
     de: {
       meta_title: highlightPricing
         ? `${H} Ersatzteile zu Top-Konditionen | ABCspareparts`
@@ -116,10 +140,20 @@ function buildTranslations(brand) {
       contact_form_title: 'Online-Anfrage',
       contact_iframe_title: `Anfrageformular – ${H} Ersatzteile`,
       contact_legal_note: 'Vollständige rechtliche Angaben im <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marken',
-      marca_footer_imprint: 'Impressum',
-      marca_footer_privacy: 'Datenschutz'
+      brand_parts_title: 'Diese Teilenummern anfragen',
+      brand_parts_intro: 'Codes zur Anfrage (aus Angeboten, Lieferungen oder Herstellerlisten). Keine Preise auf der Seite — klicken Sie auf einen Code, um das vorausgefüllte Formular zu öffnen.',
+      brand_parts_search: 'Teilenummer suchen…',
+      brand_parts_search_hint: 'Mindestens 3 Zeichen eingeben, dann auf einen Code klicken, um anzufragen.',
+      brand_parts_listino_intro: 'Herstellerliste: suchen Sie eine Teilenummer und fordern Sie ein unverbindliches Angebot an. Es werden keine Preise angezeigt.',
+      brand_parts_count: 'codes',
+      brand_parts_empty: 'Keine Treffer',
+      brand_parts_type_more: 'Bitte mindestens 3 Zeichen eingeben…',
+      brand_parts_case: 'Erfolgsgeschichte',
+      brand_parts_quote: 'Angebot anfragen',
+      quote_modal_title: 'Unverbindliche Anfrage',
+      quote_modal_close: 'Schließen',
+      quote_modal_part_label: 'Teilenummer',
+      quote_iframe_title: 'Anfrageformular'
     },
     en: {
       meta_title: highlightPricing
@@ -153,10 +187,20 @@ function buildTranslations(brand) {
       contact_form_title: 'Online request',
       contact_iframe_title: `Request form – ${H} spare parts`,
       contact_legal_note: 'Full legal details in our <a href="../impressum.html" target="_blank" rel="noopener">Imprint</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Brands',
-      marca_footer_imprint: 'Imprint',
-      marca_footer_privacy: 'Privacy'
+      brand_parts_title: 'Request these part numbers',
+      brand_parts_intro: 'Codes available to request (from quotations, deliveries, or price lists). No prices on this page — click a code to open the pre-filled enquiry form.',
+      brand_parts_search: 'Search part number…',
+      brand_parts_search_hint: 'Type at least 3 characters, then click a code to request a quote.',
+      brand_parts_listino_intro: 'Manufacturer list: search a part number and request a no-obligation quote. No prices are shown.',
+      brand_parts_count: 'codes',
+      brand_parts_empty: 'No matches',
+      brand_parts_type_more: 'Please type at least 3 characters…',
+      brand_parts_case: 'Success story',
+      brand_parts_quote: 'Request quote',
+      quote_modal_title: 'No-obligation enquiry',
+      quote_modal_close: 'Close',
+      quote_modal_part_label: 'Part number',
+      quote_iframe_title: 'Request form'
     },
     it: {
       meta_title: highlightPricing
@@ -190,10 +234,20 @@ function buildTranslations(brand) {
       contact_form_title: 'Richiesta online',
       contact_iframe_title: `Modulo richiesta – ricambi ${H}`,
       contact_legal_note: 'Dati legali completi nell\'<a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marche',
-      marca_footer_imprint: 'Impressum',
-      marca_footer_privacy: 'Privacy'
+      brand_parts_title: 'Richiedi questi codici articolo',
+      brand_parts_intro: 'Codici disponibili per richiesta (da preventivi, forniture o listini). Nessun prezzo in pagina: clicchi su un codice per aprire il modulo già compilato.',
+      brand_parts_search: 'Cerca codice articolo…',
+      brand_parts_search_hint: 'Digiti almeno 3 caratteri, poi clicchi su un codice per richiederlo.',
+      brand_parts_listino_intro: 'Listino costruttore: cerchi un codice e richieda un preventivo senza impegno. I prezzi non sono mostrati.',
+      brand_parts_count: 'codici',
+      brand_parts_empty: 'Nessun risultato',
+      brand_parts_type_more: 'Digiti almeno 3 caratteri…',
+      brand_parts_case: 'Caso di successo',
+      brand_parts_quote: 'Richiedi preventivo',
+      quote_modal_title: 'Richiesta senza impegno',
+      quote_modal_close: 'Chiudi',
+      quote_modal_part_label: 'Codice articolo',
+      quote_iframe_title: 'Modulo richiesta'
     },
     es: {
       meta_title: highlightPricing
@@ -227,10 +281,20 @@ function buildTranslations(brand) {
       contact_form_title: 'Solicitud en línea',
       contact_iframe_title: `Formulario – recambios ${H}`,
       contact_legal_note: 'Datos legales completos en el <a href="../impressum.html" target="_blank" rel="noopener">Aviso legal</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marcas',
-      marca_footer_imprint: 'Aviso legal',
-      marca_footer_privacy: 'Privacidad'
+      brand_parts_title: 'Solicitar estas referencias',
+      brand_parts_intro: 'Códigos disponibles para solicitud (presupuestos, suministros o listas). Sin precios en la página: haga clic en un código para abrir el formulario precargado.',
+      brand_parts_search: 'Buscar referencia…',
+      brand_parts_search_hint: 'Escriba al menos 3 caracteres y haga clic en un código para solicitarlo.',
+      brand_parts_listino_intro: 'Lista del fabricante: busque una referencia y solicite presupuesto sin compromiso. No se muestran precios.',
+      brand_parts_count: 'códigos',
+      brand_parts_empty: 'Sin resultados',
+      brand_parts_type_more: 'Escriba al menos 3 caracteres…',
+      brand_parts_case: 'Caso de éxito',
+      brand_parts_quote: 'Solicitar presupuesto',
+      quote_modal_title: 'Solicitud sin compromiso',
+      quote_modal_close: 'Cerrar',
+      quote_modal_part_label: 'Referencia',
+      quote_iframe_title: 'Formulario de solicitud'
     },
     fr: {
       meta_title: highlightPricing
@@ -264,16 +328,85 @@ function buildTranslations(brand) {
       contact_form_title: 'Demande en ligne',
       contact_iframe_title: `Formulaire – pièces ${H}`,
       contact_legal_note: 'Informations légales complètes dans les <a href="../impressum.html" target="_blank" rel="noopener">mentions légales</a>.',
-      marca_footer_home: 'ABCspareparts',
-      marca_footer_brands: 'Marques',
-      marca_footer_imprint: 'Mentions légales',
-      marca_footer_privacy: 'Confidentialité'
+      brand_parts_title: 'Demander ces références',
+      brand_parts_intro: 'Codes disponibles pour demande (devis, livraisons ou listes). Aucun prix sur la page : cliquez sur un code pour ouvrir le formulaire prérempli.',
+      brand_parts_search: 'Rechercher une référence…',
+      brand_parts_search_hint: 'Saisissez au moins 3 caractères, puis cliquez sur un code pour demander un devis.',
+      brand_parts_listino_intro: 'Liste constructeur : recherchez une référence et demandez un devis sans engagement. Aucun prix n’est affiché.',
+      brand_parts_count: 'références',
+      brand_parts_empty: 'Aucun résultat',
+      brand_parts_type_more: 'Saisissez au moins 3 caractères…',
+      brand_parts_case: 'Histoire de réussite',
+      brand_parts_quote: 'Demander un devis',
+      quote_modal_title: 'Demande sans engagement',
+      quote_modal_close: 'Fermer',
+      quote_modal_part_label: 'Référence',
+      quote_iframe_title: 'Formulaire de demande'
     }
-  };
+  });
 }
 
-function buildLdJson(brand, slug, tDe) {
+const PARTS_META_PREFIX = {
+  de: ' Beispielcodes:',
+  en: ' Example parts:',
+  it: ' Codici es.:',
+  es: ' Códigos ej.:',
+  fr: ' Ex. références:'
+};
+
+const PARTS_META_MORE = {
+  de: (n) => ` (+${n} weitere)`,
+  en: (n) => ` (+${n} more)`,
+  it: (n) => ` (+${n} altri)`,
+  es: (n) => ` (+${n} más)`,
+  fr: (n) => ` (+${n} de plus)`
+};
+
+function enrichMetaWithParts(translations, parts) {
+  if (!parts || !parts.length) return translations;
+  const codes = parts.map((p) => p.part_number);
+  for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+    const base = translations[lang].meta_description;
+    const prefix = PARTS_META_PREFIX[lang];
+    let budget = MAX_META_LEN - base.length - prefix.length;
+    const shown = [];
+    for (const code of codes) {
+      const sep = shown.length ? ', ' : '';
+      if (sep.length + code.length > budget - 8) break;
+      shown.push(code);
+      budget -= sep.length + code.length;
+    }
+    let extra = '';
+    if (shown.length < codes.length) {
+      extra = PARTS_META_MORE[lang](codes.length - shown.length);
+    }
+    let meta = `${base}${prefix} ${shown.join(', ')}${extra}`;
+    if (meta.length > MAX_META_LEN) {
+      meta = `${meta.slice(0, MAX_META_LEN - 1).trim()}…`;
+    }
+    translations[lang].meta_description = meta;
+  }
+  return translations;
+}
+
+function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
+  const webPage = {
+    '@type': 'WebPage',
+    '@id': pageUrl + '#webpage',
+    url: pageUrl,
+    name: `${brand} – Industrieersatzteile & MRO | ABCspareparts`,
+    description: tDe.meta_description,
+    inLanguage: 'de',
+    isPartOf: { '@id': `${BASE}/#website` },
+    about: { '@type': 'Brand', name: brand },
+    publisher: { '@id': `${BASE}/#organization` },
+    primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
+  };
+  if ((suppliedParts && suppliedParts.length) || listino?.count) {
+    webPage.dateModified = TODAY;
+    webPage.mainEntity = { '@id': pageUrl + '#quotable-parts' };
+  }
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -284,18 +417,7 @@ function buildLdJson(brand, slug, tDe) {
         url: `${BASE}/`,
         logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
       },
-      {
-        '@type': 'WebPage',
-        '@id': pageUrl + '#webpage',
-        url: pageUrl,
-        name: `${brand} – Industrieersatzteile & MRO | ABCspareparts`,
-        description: tDe.meta_description,
-        inLanguage: 'de',
-        isPartOf: { '@id': `${BASE}/#website` },
-        about: { '@type': 'Brand', name: brand },
-        publisher: { '@id': `${BASE}/#organization` },
-        primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
-      },
+      webPage,
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -314,17 +436,168 @@ function buildLdJson(brand, slug, tDe) {
       }
     ]
   };
+  if (suppliedParts && suppliedParts.length) {
+    graph['@graph'].push({
+      '@type': 'ItemList',
+      '@id': pageUrl + '#quotable-parts',
+      name: `${brand} – quotable part numbers`,
+      description: tDe.brand_parts_intro.replace(/<[^>]+>/g, ''),
+      numberOfItems: suppliedParts.length,
+      itemListElement: suppliedParts.slice(0, 50).map((part, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Product',
+          name: `${brand} ${part.part_number}`,
+          sku: part.part_number,
+          mpn: part.part_number,
+          description: part.description || part.part_number,
+          brand: { '@type': 'Brand', name: brand },
+          offers: {
+            '@type': 'Offer',
+            url: `${pageUrl}?part=${encodeURIComponent(part.part_number)}`,
+            availability: 'https://schema.org/InStock',
+            seller: { '@id': `${BASE}/#organization` }
+          }
+        }
+      }))
+    });
+  } else if (listino?.count) {
+    graph['@graph'].push({
+      '@type': 'ItemList',
+      '@id': pageUrl + '#quotable-parts',
+      name: `${brand} – searchable manufacturer part codes`,
+      description: (tDe.brand_parts_listino_intro || tDe.brand_parts_intro).replace(/<[^>]+>/g, ''),
+      numberOfItems: listino.count,
+      url: pageUrl
+    });
+  }
   return JSON.stringify(graph);
 }
 
-function buildHtml(brand, slug, translations, relatedRows) {
+function buildQuoteModalHtml() {
+  return `
+  <div id="quoteModal" class="quote-modal" hidden>
+    <div class="quote-modal-backdrop" data-close-modal></div>
+    <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+      <button type="button" class="quote-modal-close" data-close-modal data-i18n-aria="quote_modal_close" aria-label="Schließen">&times;</button>
+      <h2 id="quoteModalTitle" data-i18n="quote_modal_title">Unverbindliche Anfrage</h2>
+      <p class="quote-modal-part"><span data-i18n="quote_modal_part_label">Teilenummer</span>: <strong id="quoteModalPart"></strong></p>
+      <div class="quote-modal-iframe-wrap">
+        <iframe id="quoteFormIframe" data-i18n-title="quote_iframe_title" title="Anfrageformular"></iframe>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildSuppliedPartsHtml(brandParts) {
+  if (!brandParts) return '';
+  const suppliedParts = brandParts.parts || [];
+  const listino = brandParts.listino;
+  if (!suppliedParts.length && !listino?.count) return '';
+
+  const compact = suppliedParts.length
+    ? suppliedParts.every((part) => !part.description || part.description === part.part_number)
+    : true;
+  const showInlineSearch = suppliedParts.length >= 12 && !listino?.count;
+
+  const items = suppliedParts
+    .map((part) => {
+      const pn = escapeHtml(part.part_number);
+      const pnAttr = escapeAttr(part.part_number);
+      const searchKey = escapeAttr(String(part.part_number).toLowerCase());
+      const desc =
+        part.description && part.description !== part.part_number
+          ? `<span class="part-desc">${escapeHtml(part.description)}</span>`
+          : '';
+      const caseLink = part.case_slug
+        ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
+        : '';
+      return `<li class="part-row" data-part-search="${searchKey}"><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
+    })
+    .join('\n          ');
+
+  const inlineSearchHtml = showInlineSearch
+    ? `<div class="parts-toolbar">
+        <label class="parts-search-label" for="partsSearchInput"><span class="visually-hidden" data-i18n="brand_parts_search">Teilenummer suchen…</span></label>
+        <input type="search" id="partsSearchInput" class="parts-search-input" data-i18n-placeholder="brand_parts_search" placeholder="Teilenummer suchen…" autocomplete="off">
+        <span class="parts-count" id="partsCountLabel">${suppliedParts.length} <span data-i18n="brand_parts_count">codes</span></span>
+      </div>
+      <p class="parts-empty" id="partsEmpty" hidden data-i18n="brand_parts_empty">Keine Treffer</p>`
+    : '';
+
+  const listinoHtml = listino?.count
+    ? `<div class="listino-search" id="listinoSearch" data-listino-src="../${escapeAttr(listino.file)}" data-listino-count="${listino.count}">
+        <p class="parts-intro" data-i18n="brand_parts_listino_intro">Herstellerliste: suchen Sie eine Teilenummer und fordern Sie ein unverbindliches Angebot an. Es werden keine Preise angezeigt.</p>
+        <div class="parts-toolbar">
+          <label class="parts-search-label" for="listinoSearchInput"><span class="visually-hidden" data-i18n="brand_parts_search">Teilenummer suchen…</span></label>
+          <input type="search" id="listinoSearchInput" class="parts-search-input" data-i18n-placeholder="brand_parts_search" placeholder="Teilenummer suchen…" autocomplete="off" enterkeyhint="search">
+          <span class="parts-count" id="listinoCountLabel">${listino.count} <span data-i18n="brand_parts_count">codes</span></span>
+        </div>
+        <p class="parts-hint" data-i18n="brand_parts_search_hint">Mindestens 3 Zeichen eingeben, dann auf einen Code klicken, um anzufragen.</p>
+        <p class="parts-empty" id="listinoEmpty" hidden data-i18n="brand_parts_empty">Keine Treffer</p>
+        <p class="parts-type-more" id="listinoTypeMore" data-i18n="brand_parts_type_more">Bitte mindestens 3 Zeichen eingeben…</p>
+        <ul class="brand-parts-list parts-compact-list" id="listinoResults"></ul>
+      </div>`
+    : '';
+
+  const inlineList = suppliedParts.length
+    ? `${inlineSearchHtml}
+        <ul class="brand-parts-list" id="brandPartsList">
+          ${items}
+        </ul>`
+    : '';
+
+  return `
+      <section class="brand-supplied-parts${compact ? ' parts-compact' : ''}" id="quotable-parts" aria-labelledby="brand-parts-heading">
+        <h2 id="brand-parts-heading" data-i18n="brand_parts_title">Diese Teilenummern anfragen</h2>
+        <p class="parts-intro" data-i18n="brand_parts_intro">Codes zur Anfrage. Keine Preise auf der Seite.</p>
+        ${inlineList}
+        ${listinoHtml}
+      </section>`;
+}
+
+function buildHtml(brand, slug, translations, relatedRows, brandParts) {
   const pagePath = `marche/${slug}.html`;
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
   const d = translations.de;
-  const ld = buildLdJson(brand, slug, d);
+  const suppliedParts = brandParts?.parts || [];
+  const listino = brandParts?.listino || null;
+  const hasSuppliedParts = suppliedParts.length > 0 || !!(listino && listino.count);
+  const ld = buildLdJson(brand, slug, d, suppliedParts, listino);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
+  const suppliedPartsHtml = buildSuppliedPartsHtml(brandParts);
+  const quoteModalHtml = hasSuppliedParts ? buildQuoteModalHtml() : '';
+  const suppliedPartsExtraCss = hasSuppliedParts ? `
+    .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.35rem 0.65rem; cursor: pointer; }
+    .part-quote-btn:hover, .part-quote-btn:focus { color: #fff; background: #e67e22; outline: none; }
+    .parts-toolbar { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center; margin-bottom: 0.85rem; }
+    .parts-search-input { flex: 1; min-width: 180px; padding: 0.55rem 0.75rem; border: 1px solid #c5d4e3; border-radius: 8px; font-size: 0.95rem; }
+    .parts-search-input:focus { outline: 2px solid #e67e22; border-color: #e67e22; }
+    .parts-count { font-size: 0.85rem; color: #556; white-space: nowrap; }
+    .parts-empty, .parts-hint, .parts-type-more { font-size: 0.9rem; color: #666; margin: 0 0 0.75rem; }
+    .listino-search { margin-top: 0.5rem; }
+    .brand-parts-list { max-height: min(520px, 60vh); overflow: auto; padding-right: 0.25rem; }
+    .brand-supplied-parts.parts-compact .brand-parts-list,
+    .parts-compact-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.45rem; }
+    .brand-supplied-parts.parts-compact .brand-parts-list li,
+    .parts-compact-list li { padding: 0; background: transparent; border: none; border-radius: 0; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .quote-modal[hidden] { display: none !important; }
+    .quote-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .quote-modal-backdrop { position: absolute; inset: 0; background: rgba(30, 58, 95, 0.55); }
+    .quote-modal-dialog { position: relative; z-index: 1; width: min(720px, 100%); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,0.25); padding: 1.25rem 1.25rem 1rem; }
+    .quote-modal-dialog h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.35rem; padding-right: 2rem; }
+    .quote-modal-part { font-size: 0.92rem; color: #444; margin-bottom: 0.85rem; }
+    .quote-modal-part strong { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
+    .quote-modal-close { position: absolute; top: 0.65rem; right: 0.75rem; border: none; background: transparent; font-size: 1.75rem; line-height: 1; color: #666; cursor: pointer; }
+    .quote-modal-close:hover { color: #e67e22; }
+    .quote-modal-iframe-wrap { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
+    body.quote-modal-open { overflow: hidden; }` : '';
+  const partsJson = JSON.stringify(suppliedParts.map((p) => p.part_number));
   const relatedLinks = (relatedRows || [])
     .map(({ brand: relatedBrand, slug: relatedSlug }) =>
       `<li><a href="../marche/${relatedSlug}.html">${escapeHtml(relatedBrand)}</a></li>`
@@ -340,6 +613,7 @@ function buildHtml(brand, slug, translations, relatedRows) {
   <meta id="pageDescription" name="description" content="${escapeAttr(translations.de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${pageUrl}">
+  <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${pageUrl}">
   <link rel="alternate" hreflang="de" href="${pageUrl}?lang=de">
   <link rel="alternate" hreflang="en" href="${pageUrl}?lang=en">
@@ -390,6 +664,15 @@ function buildHtml(brand, slug, translations, relatedRows) {
     .brand-faq .faq-item { margin-bottom: 0.95rem; }
     .brand-faq h3 { font-size: 0.98rem; color: #1e3a5f; margin: 0 0 0.3rem; font-weight: 600; }
     .brand-faq p { margin: 0; font-size: 0.92rem; color: #444; line-height: 1.55; }
+    .brand-supplied-parts { max-width: 820px; margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #f0f6fb; }
+    .brand-supplied-parts h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.5rem; }
+    .brand-supplied-parts .parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 1rem; line-height: 1.55; }
+    .brand-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+    .brand-parts-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.75rem; padding: 0.55rem 0.65rem; background: #fff; border: 1px solid #e3eaf1; border-radius: 8px; }
+    .part-desc { font-size: 0.88rem; color: #556; flex: 1; min-width: 120px; }
+    .part-case-link { font-size: 0.85rem; color: #2d5a87; text-decoration: none; font-weight: 600; white-space: nowrap; }
+    .part-case-link:hover { text-decoration: underline; }
+${suppliedPartsExtraCss}
     .muted { color: #666; font-weight: 400; }
     .contact-lead { text-align: center; max-width: 640px; margin: 0 auto 2rem; color: #555; font-size: 1.05rem; line-height: 1.55; }
     .contact-layout { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 2.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
@@ -409,10 +692,7 @@ function buildHtml(brand, slug, translations, relatedRows) {
     .contact-form-wrap h3 { font-size: 1.15rem; color: #1e3a5f; margin-bottom: 1rem; text-align: center; }
     .contact-iframe-wrap { max-width: 700px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; }
     .contact-iframe-wrap iframe { width: 100%; height: 1050px; border: none; display: block; }
-    .footer { background: #1e3a5f; color: #fff; padding: 1.75rem 1.5rem; text-align: center; margin-top: 1rem; }
-    .footer a { color: #fff; text-decoration: none; margin: 0 0.35rem; }
-    .footer a:hover { text-decoration: underline; }
-    .footer .sep { opacity: 0.7; margin: 0 0.15rem; }
+${FOOTER_CSS}
   </style>
 </head>
 <body>
@@ -441,6 +721,7 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
     <div class="container">
       <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
       <p class="brand-email-alt" data-i18n="brand_email_alt">${d.brand_email_alt}</p>
+${suppliedPartsHtml}
       <section class="related-brands" aria-label="Related brands">
         <h2 data-i18n="related_title">${escapeHtml(d.related_title)}</h2>
         <p data-i18n="related_intro">${escapeHtml(d.related_intro)}</p>
@@ -489,31 +770,22 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
     </div>
   </section>
   </main>
+${quoteModalHtml}
 
-  <footer class="footer">
-    <div class="container">
-      <a href="../index.html" data-i18n="marca_footer_home">ABCspareparts</a>
-      <span class="sep">·</span>
-      <a href="../marche.html" data-i18n="marca_footer_brands">Marken</a>
-      <span class="sep">·</span>
-      <a href="../impressum.html" target="_blank" rel="noopener" data-i18n="marca_footer_imprint">Impressum</a>
-      <span class="sep">·</span>
-      <a href="../datenschutz.html" target="_blank" rel="noopener" data-i18n="marca_footer_privacy">Datenschutz</a>
-      <p style="margin-top:1rem;font-size:0.9rem;opacity:0.9">&copy; 2026 ABCspareparts.</p>
-    </div>
-  </footer>
+${buildFooterHtml('../')}
 
   <script>
   (function () {
     var BRAND = ${brandJson};
     var translations = ${translationsJson};
+    var SELECTED_PART = '';
 
-    var pages = ['index.html', 'marche.html', 'casi-di-successo.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+    var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
 
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
       if (/^marche\\/[^/]+\\.html$/i.test(base)) return true;
-      if (/^casi-di-successo\\/[^/]+\\.html$/i.test(base)) return true;
+      if (/^casi\\/[^/]+\\.html$/i.test(base)) return true;
       return false;
     }
 
@@ -545,12 +817,183 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
         }
       });
     }
-    function updateFormIframeLang(langCode) {
+    function getUrlPart() {
+      var p = new URLSearchParams(window.location.search);
+      return p.get('part') || '';
+    }
+    function buildIframeSrc(langCode, partNumber) {
+      var lang = langCode || 'en';
+      var url = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang) + '&custom_manufacturer=' + encodeURIComponent(BRAND);
+      var part = partNumber || SELECTED_PART || getUrlPart() || '';
+      if (part) url += '&custom_part_numbers=' + encodeURIComponent(part);
+      return url;
+    }
+    function updateFormIframeLang(langCode, partNumber) {
       var iframe = document.getElementById('contactFormIframe');
       if (!iframe) return;
-      var lang = langCode || 'en';
-      iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + encodeURIComponent(lang) + '&manufacturer=' + encodeURIComponent(BRAND);
+      iframe.src = buildIframeSrc(langCode, partNumber);
     }
+${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal');
+    var quoteIframe = document.getElementById('quoteFormIframe');
+    var quoteModalPart = document.getElementById('quoteModalPart');
+    function openQuoteModal(part, lang) {
+      if (!quoteModal) return;
+      var code = part || SELECTED_PART || getUrlPart() || '';
+      SELECTED_PART = code;
+      if (quoteModalPart) quoteModalPart.textContent = code;
+      if (quoteIframe) quoteIframe.src = buildIframeSrc(lang, code);
+      quoteModal.removeAttribute('hidden');
+      document.body.classList.add('quote-modal-open');
+      try {
+        if (history.replaceState) {
+          var u = new URL(window.location.href);
+          if (code) u.searchParams.set('part', code);
+          else u.searchParams.delete('part');
+          u.hash = '';
+          history.replaceState(null, '', u.toString());
+        }
+      } catch (err) {}
+    }
+    function closeQuoteModal() {
+      if (!quoteModal) return;
+      quoteModal.setAttribute('hidden', '');
+      document.body.classList.remove('quote-modal-open');
+      if (quoteIframe) quoteIframe.src = 'about:blank';
+    }
+    function initPartQuoteButtons() {
+      document.querySelectorAll('.part-quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var langSel = document.getElementById('languageSelect');
+          var lang = langSel ? langSel.value : 'de';
+          openQuoteModal(btn.getAttribute('data-part') || '', lang);
+        });
+      });
+      document.querySelectorAll('[data-close-modal]').forEach(function (el) {
+        el.addEventListener('click', closeQuoteModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && quoteModal && !quoteModal.hasAttribute('hidden')) closeQuoteModal();
+      });
+    }
+    function initPartsSearch() {
+      var input = document.getElementById('partsSearchInput');
+      if (!input) return;
+      var rows = document.querySelectorAll('#brandPartsList .part-row');
+      var empty = document.getElementById('partsEmpty');
+      var countLabel = document.getElementById('partsCountLabel');
+      function applyFilter() {
+        var q = (input.value || '').trim().toLowerCase().replace(/\\s+/g, '');
+        var visible = 0;
+        rows.forEach(function (row) {
+          var key = (row.getAttribute('data-part-search') || '').replace(/\\s+/g, '');
+          var show = !q || key.indexOf(q) !== -1;
+          row.hidden = !show;
+          if (show) visible++;
+        });
+        if (empty) empty.hidden = visible !== 0;
+        if (countLabel) {
+          var unit = countLabel.querySelector('[data-i18n=\"brand_parts_count\"]');
+          countLabel.childNodes[0].nodeValue = visible + ' ';
+          if (!unit) countLabel.textContent = visible + '';
+        }
+      }
+      input.addEventListener('input', applyFilter);
+    }
+    function initListinoSearch() {
+      var box = document.getElementById('listinoSearch');
+      if (!box) return;
+      var src = box.getAttribute('data-listino-src');
+      var input = document.getElementById('listinoSearchInput');
+      var results = document.getElementById('listinoResults');
+      var empty = document.getElementById('listinoEmpty');
+      var typeMore = document.getElementById('listinoTypeMore');
+      var countLabel = document.getElementById('listinoCountLabel');
+      var total = parseInt(box.getAttribute('data-listino-count') || '0', 10) || 0;
+      var codes = null;
+      var loading = false;
+      var MAX_SHOW = 40;
+      function escapeHtmlLocal(s) {
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');
+      }
+      function render(matches, q) {
+        results.innerHTML = '';
+        matches.slice(0, MAX_SHOW).forEach(function (code) {
+          var li = document.createElement('li');
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'part-quote-btn';
+          btn.setAttribute('data-part', code);
+          btn.title = code;
+          btn.textContent = code;
+          btn.addEventListener('click', function () {
+            var langSel = document.getElementById('languageSelect');
+            var lang = langSel ? langSel.value : 'de';
+            openQuoteModal(code, lang);
+          });
+          li.appendChild(btn);
+          results.appendChild(li);
+        });
+        if (empty) empty.hidden = !(q && matches.length === 0);
+        if (typeMore) typeMore.hidden = !!q;
+        if (countLabel) {
+          var unit = countLabel.querySelector('[data-i18n=\"brand_parts_count\"]');
+          var shown = matches.length ? Math.min(matches.length, MAX_SHOW) + (matches.length > MAX_SHOW ? '+' : '') : total;
+          countLabel.childNodes[0].nodeValue = shown + ' ';
+          if (!unit) countLabel.textContent = String(shown);
+        }
+      }
+      function searchNow() {
+        var q = (input.value || '').trim().toLowerCase().replace(/\\s+/g, '');
+        if (q.length < 3) {
+          render([], '');
+          if (typeMore) typeMore.hidden = false;
+          if (empty) empty.hidden = true;
+          return;
+        }
+        if (!codes) return;
+        var matches = [];
+        for (var i = 0; i < codes.length; i++) {
+          var c = codes[i];
+          if (String(c).toLowerCase().replace(/\\s+/g, '').indexOf(q) !== -1) {
+            matches.push(c);
+            if (matches.length >= 200) break;
+          }
+        }
+        render(matches, q);
+      }
+      function ensureLoaded(cb) {
+        if (codes) { cb(); return; }
+        if (loading) return;
+        loading = true;
+        fetch(src).then(function (r) { return r.json(); }).then(function (data) {
+          codes = data.codes || [];
+          total = data.count || codes.length;
+          loading = false;
+          cb();
+        }).catch(function () {
+          loading = false;
+          if (empty) { empty.hidden = false; empty.textContent = 'Catalog load error'; }
+        });
+      }
+      if (input) {
+        input.addEventListener('input', function () {
+          var q = (input.value || '').trim();
+          if (q.length < 3) { searchNow(); return; }
+          ensureLoaded(searchNow);
+        });
+        input.addEventListener('focus', function () { ensureLoaded(function () {}); });
+      }
+      // Deep-link ?part=CODE opens modal even for listino-only pages
+      var urlPart = getUrlPart();
+      if (urlPart) {
+        ensureLoaded(function () {
+          var hit = codes && codes.some(function (c) { return String(c).toLowerCase() === String(urlPart).toLowerCase(); });
+          if (hit || true) {
+            // Always allow quote for typed part on brand page
+          }
+        });
+      }
+    }` : ''}
     function changeLanguage(lang) {
       var t = translations[lang] || translations.de;
       var pt = document.getElementById('pageTitle');
@@ -565,10 +1008,22 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
         var k = el.getAttribute('data-i18n-title');
         if (t[k]) el.setAttribute('title', t[k]);
       });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var k = el.getAttribute('data-i18n-aria');
+        if (t[k]) el.setAttribute('aria-label', t[k]);
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        var k = el.getAttribute('data-i18n-placeholder');
+        if (t[k]) el.setAttribute('placeholder', t[k]);
+      });
       document.documentElement.lang = lang;
       try { localStorage.setItem('lang', lang); } catch (e) {}
       updateLinksWithLang(lang);
-      updateFormIframeLang(lang);
+      updateFormIframeLang(lang, SELECTED_PART || getUrlPart());
+${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden') && quoteIframe) {
+        var activePart = quoteModalPart ? quoteModalPart.textContent : '';
+        quoteIframe.src = buildIframeSrc(lang, activePart);
+      }` : ''}
     }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -576,7 +1031,15 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
       var lang = ['de', 'en', 'it', 'es', 'fr'].indexOf(raw) !== -1 ? raw : 'de';
       var sel = document.getElementById('languageSelect');
       if (sel) sel.value = lang;
+      var initialPart = getUrlPart();
+      if (initialPart) SELECTED_PART = initialPart;
       changeLanguage(lang);
+${hasSuppliedParts ? `      initPartQuoteButtons();
+      initPartsSearch();
+      initListinoSearch();
+      if (initialPart) {
+        setTimeout(function () { openQuoteModal(initialPart, lang); }, 200);
+      }` : ''}
       if (sel) sel.addEventListener('change', function () { changeLanguage(this.value); });
     });
   })();
@@ -586,12 +1049,13 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
 `;
 }
 
-function writeSitemapBrands(rows) {
+function writeSitemapBrands(rows, partsBySlug) {
   const outPath = path.join(ROOT, 'sitemap-brands.xml');
   const langs = ['it', 'de', 'en', 'es', 'fr'];
   let body = '';
   for (const { slug } of rows) {
     const loc = `${BASE}/marche/${slug}.html`;
+    const hasParts = partsBySlug && partsBySlug.has(slug);
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
     for (const l of langs) {
@@ -599,8 +1063,8 @@ function writeSitemapBrands(rows) {
     }
     body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}"/>\n`;
     body += `    <lastmod>${TODAY}</lastmod>\n`;
-    body += '    <changefreq>monthly</changefreq>\n';
-    body += '    <priority>0.65</priority>\n';
+    body += `    <changefreq>${hasParts ? 'weekly' : 'monthly'}</changefreq>\n`;
+    body += `    <priority>${hasParts ? '0.8' : '0.65'}</priority>\n`;
     body += '  </url>\n';
   }
   const xml = `---
@@ -616,6 +1080,27 @@ ${body}</urlset>
 
 function writeSitemapIndex() {
   const outPath = path.join(ROOT, 'sitemap-index.xml');
+  const casesBlock = fs.existsSync(path.join(ROOT, 'sitemap-cases.xml'))
+    ? `  <sitemap>
+    <loc>${BASE}/sitemap-cases.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+`
+    : '';
+  const partsBlock = fs.existsSync(path.join(ROOT, 'sitemap-brand-parts.xml'))
+    ? `  <sitemap>
+    <loc>${BASE}/sitemap-brand-parts.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+`
+    : '';
+  const partCodesBlock = fs.existsSync(path.join(ROOT, 'sitemap-part-codes.xml'))
+    ? `  <sitemap>
+    <loc>${BASE}/sitemap-part-codes.xml</loc>
+    <lastmod>${TODAY}</lastmod>
+  </sitemap>
+`
+    : '';
   const xml = `---
 layout: none
 ---
@@ -629,17 +1114,39 @@ layout: none
     <loc>${BASE}/sitemap-brands.xml</loc>
     <lastmod>${TODAY}</lastmod>
   </sitemap>
-</sitemapindex>
+${partsBlock}${partCodesBlock}${casesBlock}</sitemapindex>
 `;
   fs.writeFileSync(outPath, xml, 'utf8');
 }
 
+function parseOnlySlugs(argv) {
+  const only = [];
+  for (let i = 2; i < argv.length; i++) {
+    const a = argv[i];
+    if (a === '--only' && argv[i + 1]) {
+      only.push(...String(argv[++i]).split(',').map((s) => s.trim()).filter(Boolean));
+    } else if (a.startsWith('--only=')) {
+      only.push(...a.slice('--only='.length).split(',').map((s) => s.trim()).filter(Boolean));
+    }
+  }
+  return [...new Set(only.map((s) => s.toLowerCase()))];
+}
+
 function main() {
+  const onlySlugs = parseOnlySlugs(process.argv);
   const brands = readBrandsFromIndex();
   const rows = assignUniqueSlugs(brands);
+  const partsBySlug = loadPartsBySlug();
+  const targetRows = onlySlugs.length
+    ? rows.filter((r) => onlySlugs.includes(r.slug))
+    : rows;
+
+  if (onlySlugs.length && !targetRows.length) {
+    throw new Error(`No matching brand slugs for --only=${onlySlugs.join(',')}`);
+  }
 
   fs.mkdirSync(MARCHE_DIR, { recursive: true });
-  if (fs.existsSync(MARCHE_DIR)) {
+  if (!onlySlugs.length && fs.existsSync(MARCHE_DIR)) {
     for (const name of fs.readdirSync(MARCHE_DIR)) {
       if (name.endsWith('.html')) {
         fs.unlinkSync(path.join(MARCHE_DIR, name));
@@ -650,6 +1157,8 @@ function main() {
   let n = 0;
   for (let i = 0; i < rows.length; i++) {
     const { brand, slug } = rows[i];
+    if (onlySlugs.length && !onlySlugs.includes(slug)) continue;
+
     const relatedRows = [];
     for (let step = 1; step <= 3; step++) {
       const left = rows[i - step];
@@ -659,25 +1168,46 @@ function main() {
     }
     const translations = buildTranslations(brand);
     mergeTopBrandContent(translations, slug);
-    const html = buildHtml(brand, slug, translations, relatedRows);
+    const brandParts = partsBySlug.get(slug) || null;
+    if (brandParts?.parts?.length) enrichMetaWithParts(translations, brandParts.parts);
+    else if (brandParts?.listino?.count) {
+      for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+        const base = String(translations[lang].meta_description || '');
+        const note = {
+          de: ` ${brandParts.listino.count}+ Teilenummern suchbar — Anfrage ohne Preise.`,
+          en: ` ${brandParts.listino.count}+ searchable part numbers — request a quote, no prices shown.`,
+          it: ` ${brandParts.listino.count}+ codici cercabili — richiesta senza prezzi in pagina.`,
+          es: ` ${brandParts.listino.count}+ códigos buscables — solicitud sin precios en página.`,
+          fr: ` ${brandParts.listino.count}+ références recherchables — demande sans prix affichés.`
+        }[lang];
+        let meta = base + note;
+        if (meta.length > MAX_META_LEN) meta = `${meta.slice(0, MAX_META_LEN - 1).trim()}…`;
+        translations[lang].meta_description = meta;
+      }
+    }
+    const html = buildHtml(brand, slug, translations, relatedRows, brandParts);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
-    if (n % 500 === 0) console.log('Written', n, '/', rows.length);
+    if (n % 500 === 0) console.log('Written', n, '/', targetRows.length);
   }
 
-  writeSitemapBrands(rows);
-  writeSitemapIndex();
-  fs.writeFileSync(
-    path.join(ROOT, 'brand-slugs.json'),
-    JSON.stringify(rows.reduce((acc, { brand, slug }) => {
-      acc[brand] = slug;
-      return acc;
-    }, {}), null, 0),
-    'utf8'
-  );
+  if (!onlySlugs.length) {
+    writeSitemapBrands(rows, partsBySlug);
+    writeSitemapIndex();
+    fs.writeFileSync(
+      path.join(ROOT, 'brand-slugs.json'),
+      JSON.stringify(rows.reduce((acc, { brand, slug }) => {
+        acc[brand] = slug;
+        return acc;
+      }, {}), null, 0),
+      'utf8'
+    );
+    console.log('sitemap-brands.xml, sitemap-index.xml and brand-slugs.json updated.');
+  } else {
+    console.log('Partial rebuild (--only): skipped full sitemap-brands rewrite.');
+  }
 
-  console.log('Brand pages:', n, 'in', path.relative(ROOT, MARCHE_DIR));
-  console.log('sitemap-brands.xml, sitemap-index.xml and brand-slugs.json updated.');
+  console.log('Brand pages:', n, onlySlugs.length ? `(only: ${onlySlugs.join(',')})` : '', 'in', path.relative(ROOT, MARCHE_DIR));
 }
 
 main();

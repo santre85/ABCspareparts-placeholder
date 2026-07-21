@@ -1,10 +1,16 @@
 {
   "scripts": {
     "build:marche": "node extract-brands.js",
+    "build:brand-parts": "node build-brand-parts.js",
     "build:brand-pages": "node generate-brand-pages.js",
+    "build:brand-pages:only": "node generate-brand-pages.js --only",
+    "build:brand-parts-pages": "node build-brand-parts.js && node generate-brand-pages.js",
+    "import:listino": "node -e \"require('./import-listino').loadListiniParts()\"",
     "build:brands": "node extract-brands.js && node generate-brand-pages.js",
     "build:casi": "node generate-case-pages.js",
     "verify": "node verify-build.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
 }

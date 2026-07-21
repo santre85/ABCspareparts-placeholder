@@ -1,5 +1,12 @@
 const fs = require('fs');
 const { assignUniqueSlugs } = require('./brand-slug.js');
+const { FOOTER_CSS, FOOTER_I18N, buildFooterHtml } = require('./site-footer.js');
+
+function footerI18nLiteral(lang) {
+  return Object.entries(FOOTER_I18N[lang])
+    .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
+    .join(', ');
+}
 const s = fs.readFileSync('index.html', 'utf8');
 // Match the brands array: from "const brands = [" until "];" followed by newline (so we don't stop at "[0];" elsewhere)
 const match = s.match(/const brands = (\[[\s\S]*?\];\s*\n)/);
@@ -45,7 +52,9 @@ const marcheHtml = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile unverbindlich anfragen</title>
   <meta name="description" content="Marke suchen, Liste filtern: ${b.length}+ Hersteller für Industrieersatzteile und MRO. Originalteile &amp; Alternativen. Jetzt Teilenummer einreichen – Antwort meist innerhalb von 24 Stunden. Formular oder E-Mail.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${base}/marche.html">
+  <link rel="alternate" type="text/plain" href="${base}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${base}/marche.html">
   <link rel="alternate" hreflang="de" href="${base}/marche.html?lang=de">
   <link rel="alternate" hreflang="en" href="${base}/marche.html?lang=en">
@@ -101,9 +110,7 @@ const marcheHtml = `<!DOCTYPE html>
     .back-to-top{position:fixed;right:1rem;bottom:1rem;z-index:1100;display:none;align-items:center;justify-content:center;padding:0.6rem 0.85rem;border:none;border-radius:999px;background:#1e3a5f;color:#fff;font-weight:700;font-size:0.82rem;box-shadow:0 10px 22px rgba(30,58,95,0.22);cursor:pointer}
     .back-to-top:hover{background:#2d5a87}
     .back-to-top.visible{display:inline-flex}
-    .footer{background:#1e3a5f;color:#fff;padding:1.5rem;text-align:center;margin-top:2rem}
-    .footer a{color:#fff;text-decoration:none}
-    .footer a:hover{text-decoration:underline}
+${FOOTER_CSS.replace(/\n/g, '\n    ')}
     .language-selector{position:fixed;top:1rem;right:1rem;z-index:1000}
     .language-selector select{padding:0.5rem 2rem 0.5rem 0.75rem;font-size:0.9rem;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer}
     .brand-search-wrap{margin-bottom:1.5rem;padding:1rem 0;border-bottom:1px solid #e9ecef}
@@ -156,11 +163,7 @@ const marcheHtml = `<!DOCTYPE html>
       <div class="brand-groups" id="brandGroups"></div>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <a href="index.html" data-i18n="marche_footer_home">ABCspareparts</a> &middot; <a href="impressum.html" data-i18n="marche_footer_imprint">Impressum</a> &middot; <a href="datenschutz.html" data-i18n="marche_footer_privacy">Datenschutz</a>
-    </div>
-  </footer>
+  ${buildFooterHtml('')}
   <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" data-i18n-aria-label="marche_back_top_aria" data-i18n="marche_back_top">Nach oben</button>
   <script>
   (function(){
@@ -169,11 +172,11 @@ const marcheHtml = `<!DOCTYPE html>
     var groupsReady = false;
     var pendingQuery = null;
     var translations = {
-      de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über ${b.length} Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Datenschutz', marche_search_label: 'Marke suchen', marche_search_placeholder: 'z. B. Siemens', marche_search_button: 'Suchen', marche_search_count: '{n} Marken passen zur Suche', marche_search_none: 'Keine Marke passt zur Suche. Schreibweise prüfen oder Feld leeren.', marche_letters_title: 'Schnellnavigation A-Z', marche_back_top: 'Nach oben', marche_back_top_aria: 'Zurück nach oben' },
-      en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over ${b.length} brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Imprint', marche_footer_privacy: 'Privacy', marche_search_label: 'Search brand', marche_search_placeholder: 'e.g. Siemens', marche_search_button: 'Search', marche_search_count: '{n} brands match', marche_search_none: 'No brand matches. Check spelling or clear the field.', marche_letters_title: 'A-Z quick navigation', marche_back_top: 'Back to top', marche_back_top_aria: 'Go back to top' },
-      it: { marche_h1: 'Marche e produttori', marche_subtitle: 'Oltre ${b.length} marchi per ricambi industriali. <a href="index.html">Torna alla home</a>', marche_list_title: 'Elenco marchi distribuiti da ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Impressum', marche_footer_privacy: 'Privacy', marche_search_label: 'Cerca marchio', marche_search_placeholder: 'es. Siemens', marche_search_button: 'Cerca', marche_search_count: '{n} marchi corrispondono', marche_search_none: 'Nessun marchio corrisponde. Controllare la scrittura o svuotare il campo.', marche_letters_title: 'Navigazione rapida A-Z', marche_back_top: 'Torna su', marche_back_top_aria: 'Torna all’inizio pagina' },
-      es: { marche_h1: 'Marcas y fabricantes', marche_subtitle: 'Más de ${b.length} marcas de recambios industriales. <a href="index.html">Volver al inicio</a>', marche_list_title: 'Listado de marcas distribuidas por ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Aviso legal', marche_footer_privacy: 'Privacidad', marche_search_label: 'Buscar marca', marche_search_placeholder: 'ej. Siemens', marche_search_button: 'Buscar', marche_search_count: '{n} marcas coinciden', marche_search_none: 'Ninguna marca coincide. Revise la ortografía o vacíe el campo.', marche_letters_title: 'Navegación rápida A-Z', marche_back_top: 'Volver arriba', marche_back_top_aria: 'Volver al inicio' },
-      fr: { marche_h1: 'Marques et fabricants', marche_subtitle: 'Plus de ${b.length} marques de pièces industrielles. <a href="index.html">Retour à l\\'accueil</a>', marche_list_title: 'Liste des marques distribuées par ABCspareparts', marche_footer_home: 'ABCspareparts', marche_footer_imprint: 'Mentions légales', marche_footer_privacy: 'Confidentialité', marche_search_label: 'Rechercher une marque', marche_search_placeholder: 'ex. Siemens', marche_search_button: 'Rechercher', marche_search_count: '{n} marques correspondent', marche_search_none: 'Aucune marque ne correspond. Vérifiez l’orthographe ou videz le champ.', marche_letters_title: 'Navigation rapide A-Z', marche_back_top: 'Haut de page', marche_back_top_aria: 'Retour en haut de page' }
+      de: { marche_h1: 'Marken und Hersteller', marche_subtitle: 'Über ${b.length} Marken für Industrieersatzteile. <a href="index.html">Zur Startseite</a>', marche_list_title: 'Liste der von ABCspareparts vertriebenen Marken', marche_search_label: 'Marke suchen', marche_search_placeholder: 'z. B. Siemens', marche_search_button: 'Suchen', marche_search_count: '{n} Marken passen zur Suche', marche_search_none: 'Keine Marke passt zur Suche. Schreibweise prüfen oder Feld leeren.', marche_letters_title: 'Schnellnavigation A-Z', marche_back_top: 'Nach oben', marche_back_top_aria: 'Zurück nach oben', ${footerI18nLiteral('de')} },
+      en: { marche_h1: 'Brands and manufacturers', marche_subtitle: 'Over ${b.length} brands for industrial spare parts. <a href="index.html">Back to home</a>', marche_list_title: 'List of brands distributed by ABCspareparts', marche_search_label: 'Search brand', marche_search_placeholder: 'e.g. Siemens', marche_search_button: 'Search', marche_search_count: '{n} brands match', marche_search_none: 'No brand matches. Check spelling or clear the field.', marche_letters_title: 'A-Z quick navigation', marche_back_top: 'Back to top', marche_back_top_aria: 'Go back to top', ${footerI18nLiteral('en')} },
+      it: { marche_h1: 'Marche e produttori', marche_subtitle: 'Oltre ${b.length} marchi per ricambi industriali. <a href="index.html">Torna alla home</a>', marche_list_title: 'Elenco marchi distribuiti da ABCspareparts', marche_search_label: 'Cerca marchio', marche_search_placeholder: 'es. Siemens', marche_search_button: 'Cerca', marche_search_count: '{n} marchi corrispondono', marche_search_none: 'Nessun marchio corrisponde. Controllare la scrittura o svuotare il campo.', marche_letters_title: 'Navigazione rapida A-Z', marche_back_top: 'Torna su', marche_back_top_aria: 'Torna all’inizio pagina', ${footerI18nLiteral('it')} },
+      es: { marche_h1: 'Marcas y fabricantes', marche_subtitle: 'Más de ${b.length} marcas de recambios industriales. <a href="index.html">Volver al inicio</a>', marche_list_title: 'Listado de marcas distribuidas por ABCspareparts', marche_search_label: 'Buscar marca', marche_search_placeholder: 'ej. Siemens', marche_search_button: 'Buscar', marche_search_count: '{n} marcas coinciden', marche_search_none: 'Ninguna marca coincide. Revise la ortografía o vacíe el campo.', marche_letters_title: 'Navegación rápida A-Z', marche_back_top: 'Volver arriba', marche_back_top_aria: 'Volver al inicio', ${footerI18nLiteral('es')} },
+      fr: { marche_h1: 'Marques et fabricants', marche_subtitle: 'Plus de ${b.length} marques de pièces industrielles. <a href="index.html">Retour à l\\'accueil</a>', marche_list_title: 'Liste des marques distribuées par ABCspareparts', marche_search_label: 'Rechercher une marque', marche_search_placeholder: 'ex. Siemens', marche_search_button: 'Rechercher', marche_search_count: '{n} marques correspondent', marche_search_none: 'Aucune marque ne correspond. Vérifiez l’orthographe ou videz le champ.', marche_letters_title: 'Navigation rapide A-Z', marche_back_top: 'Haut de page', marche_back_top_aria: 'Retour en haut de page', ${footerI18nLiteral('fr')} }
     };
     function getLangFromUrl(){ var p = new URLSearchParams(window.location.search); var l = p.get('lang'); return l && ['de','en','it','es','fr'].indexOf(l)!==-1 ? l : null; }
     function getQueryQ(){ try { return new URLSearchParams(window.location.search).get('q') || ''; } catch(e){ return ''; } }
@@ -181,7 +184,7 @@ const marcheHtml = `<!DOCTYPE html>
     function updateLinksWithLang(lang){
       var curQ = getQueryQ();
       if(!curQ){ var inp0 = document.getElementById('brandSearchInput'); if(inp0 && inp0.value) curQ = inp0.value.trim(); }
-      var pages = ['index.html','marche.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+      var pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
       function internalPage(base){ if(pages.indexOf(base)!==-1) return true; return /^marche\\/[^/]+\\.html$/i.test(base); }
       document.querySelectorAll('a[href]').forEach(function(a){
         var h = a.getAttribute('href')||'';

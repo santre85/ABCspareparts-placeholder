@@ -1,0 +1,4 @@
+node_modules/
+listini/*.xlsx
+listini/*.xls
+!listini/README.md
