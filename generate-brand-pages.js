@@ -145,6 +145,9 @@ function buildTranslations(brand) {
       brand_parts_search: 'Teilenummer suchen…',
       brand_parts_search_hint: 'Mindestens 3 Zeichen eingeben, dann auf einen Code klicken, um anzufragen.',
       brand_parts_listino_intro: 'Herstellerliste: suchen Sie eine Teilenummer und fordern Sie ein unverbindliches Angebot an. Es werden keine Preise angezeigt.',
+      brand_parts_examples_label: 'Suchbeispiele (klicken zum Ausprobieren):',
+      brand_parts_sample_title: 'Beispiel-Artikel (Auswahl)',
+      brand_parts_sample_intro: 'Kleine Liste aus dem Katalog — klicken Sie einen Code, um anzufragen. Weitere Codes über die Suche oben.',
       brand_parts_count: 'codes',
       brand_parts_empty: 'Keine Treffer',
       brand_parts_type_more: 'Bitte mindestens 3 Zeichen eingeben…',
@@ -192,6 +195,9 @@ function buildTranslations(brand) {
       brand_parts_search: 'Search part number…',
       brand_parts_search_hint: 'Type at least 3 characters, then click a code to request a quote.',
       brand_parts_listino_intro: 'Manufacturer list: search a part number and request a no-obligation quote. No prices are shown.',
+      brand_parts_examples_label: 'Search examples (click to try):',
+      brand_parts_sample_title: 'Sample part numbers',
+      brand_parts_sample_intro: 'A small selection from the catalog — click a code to enquire. Use search above for more codes.',
       brand_parts_count: 'codes',
       brand_parts_empty: 'No matches',
       brand_parts_type_more: 'Please type at least 3 characters…',
@@ -239,6 +245,9 @@ function buildTranslations(brand) {
       brand_parts_search: 'Cerca codice articolo…',
       brand_parts_search_hint: 'Digiti almeno 3 caratteri, poi clicchi su un codice per richiederlo.',
       brand_parts_listino_intro: 'Listino costruttore: cerchi un codice e richieda un preventivo senza impegno. I prezzi non sono mostrati.',
+      brand_parts_examples_label: 'Esempi di ricerca (clic per provare):',
+      brand_parts_sample_title: 'Esempi di articoli',
+      brand_parts_sample_intro: 'Piccola selezione dal catalogo — clicchi su un codice per richiederlo. Per altri codici usi la ricerca sopra.',
       brand_parts_count: 'codici',
       brand_parts_empty: 'Nessun risultato',
       brand_parts_type_more: 'Digiti almeno 3 caratteri…',
@@ -286,6 +295,9 @@ function buildTranslations(brand) {
       brand_parts_search: 'Buscar referencia…',
       brand_parts_search_hint: 'Escriba al menos 3 caracteres y haga clic en un código para solicitarlo.',
       brand_parts_listino_intro: 'Lista del fabricante: busque una referencia y solicite presupuesto sin compromiso. No se muestran precios.',
+      brand_parts_examples_label: 'Ejemplos de búsqueda (clic para probar):',
+      brand_parts_sample_title: 'Ejemplos de referencias',
+      brand_parts_sample_intro: 'Pequeña selección del catálogo — haga clic en un código para solicitarlo. Use la búsqueda arriba para más códigos.',
       brand_parts_count: 'códigos',
       brand_parts_empty: 'Sin resultados',
       brand_parts_type_more: 'Escriba al menos 3 caracteres…',
@@ -333,6 +345,9 @@ function buildTranslations(brand) {
       brand_parts_search: 'Rechercher une référence…',
       brand_parts_search_hint: 'Saisissez au moins 3 caractères, puis cliquez sur un code pour demander un devis.',
       brand_parts_listino_intro: 'Liste constructeur : recherchez une référence et demandez un devis sans engagement. Aucun prix n’est affiché.',
+      brand_parts_examples_label: 'Exemples de recherche (cliquez pour essayer) :',
+      brand_parts_sample_title: 'Exemples de références',
+      brand_parts_sample_intro: 'Petite sélection du catalogue — cliquez sur un code pour demander. Utilisez la recherche ci-dessus pour d’autres codes.',
       brand_parts_count: 'références',
       brand_parts_empty: 'Aucun résultat',
       brand_parts_type_more: 'Saisissez au moins 3 caractères…',
@@ -463,13 +478,32 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
       }))
     });
   } else if (listino?.count) {
+    const preview = listino.preview || [];
     graph['@graph'].push({
       '@type': 'ItemList',
       '@id': pageUrl + '#quotable-parts',
       name: `${brand} – searchable manufacturer part codes`,
       description: (tDe.brand_parts_listino_intro || tDe.brand_parts_intro).replace(/<[^>]+>/g, ''),
       numberOfItems: listino.count,
-      url: pageUrl
+      url: pageUrl,
+      itemListElement: preview.slice(0, 50).map((code, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Product',
+          name: `${brand} ${code}`,
+          sku: code,
+          mpn: code,
+          description: `${brand} ${code} – request a quote (no list price on site)`,
+          brand: { '@type': 'Brand', name: brand },
+          offers: {
+            '@type': 'Offer',
+            url: `${pageUrl}?part=${encodeURIComponent(code)}`,
+            availability: 'https://schema.org/InStock',
+            seller: { '@id': `${BASE}/#organization` }
+          }
+        }
+      }))
     });
   }
   return JSON.stringify(graph);
@@ -526,6 +560,40 @@ function buildSuppliedPartsHtml(brandParts) {
       <p class="parts-empty" id="partsEmpty" hidden data-i18n="brand_parts_empty">Keine Treffer</p>`
     : '';
 
+  const listinoPreview = listino?.preview || [];
+  const listinoExamples = listino?.examples || [];
+
+  const sampleListHtml = listinoPreview.length
+    ? `<div class="listino-sample" id="listinoSample">
+        <h3 class="parts-sample-title" data-i18n="brand_parts_sample_title">Beispiel-Artikel (Auswahl)</h3>
+        <p class="parts-intro parts-sample-intro" data-i18n="brand_parts_sample_intro">Kleine Liste aus dem Katalog — klicken Sie einen Code, um anzufragen. Weitere Codes über die Suche oben.</p>
+        <ul class="brand-parts-list parts-compact-list" id="listinoSampleList">
+          ${listinoPreview
+            .map((code) => {
+              const pn = escapeHtml(code);
+              const pnAttr = escapeAttr(code);
+              return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button></li>`;
+            })
+            .join('\n          ')}
+        </ul>
+      </div>`
+    : '';
+
+  const examplesHtml = listinoExamples.length
+    ? `<div class="listino-examples" id="listinoExamples">
+        <p class="parts-examples-label" data-i18n="brand_parts_examples_label">Suchbeispiele (klicken zum Ausprobieren):</p>
+        <div class="parts-example-chips" role="group" aria-label="Search examples">
+          ${listinoExamples
+            .map((ex) => {
+              const v = escapeHtml(ex);
+              const a = escapeAttr(ex);
+              return `<button type="button" class="parts-example-chip" data-listino-example="${a}">${v}</button>`;
+            })
+            .join('\n          ')}
+        </div>
+      </div>`
+    : '';
+
   const listinoHtml = listino?.count
     ? `<div class="listino-search" id="listinoSearch" data-listino-src="../${escapeAttr(listino.file)}" data-listino-count="${listino.count}">
         <p class="parts-intro" data-i18n="brand_parts_listino_intro">Herstellerliste: suchen Sie eine Teilenummer und fordern Sie ein unverbindliches Angebot an. Es werden keine Preise angezeigt.</p>
@@ -534,10 +602,15 @@ function buildSuppliedPartsHtml(brandParts) {
           <input type="search" id="listinoSearchInput" class="parts-search-input" data-i18n-placeholder="brand_parts_search" placeholder="Teilenummer suchen…" autocomplete="off" enterkeyhint="search">
           <span class="parts-count" id="listinoCountLabel">${listino.count} <span data-i18n="brand_parts_count">codes</span></span>
         </div>
+        ${examplesHtml}
         <p class="parts-hint" data-i18n="brand_parts_search_hint">Mindestens 3 Zeichen eingeben, dann auf einen Code klicken, um anzufragen.</p>
         <p class="parts-empty" id="listinoEmpty" hidden data-i18n="brand_parts_empty">Keine Treffer</p>
         <p class="parts-type-more" id="listinoTypeMore" data-i18n="brand_parts_type_more">Bitte mindestens 3 Zeichen eingeben…</p>
         <ul class="brand-parts-list parts-compact-list" id="listinoResults"></ul>
+        ${sampleListHtml}
+        <noscript>
+          <p class="parts-intro">${escapeHtml((listinoPreview.length ? listinoPreview : []).join(', '))}</p>
+        </noscript>
       </div>`
     : '';
 
@@ -579,7 +652,16 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts) {
     .parts-count { font-size: 0.85rem; color: #556; white-space: nowrap; }
     .parts-empty, .parts-hint, .parts-type-more { font-size: 0.9rem; color: #666; margin: 0 0 0.75rem; }
     .listino-search { margin-top: 0.5rem; }
+    .listino-examples { margin: 0 0 0.85rem; }
+    .parts-examples-label { font-size: 0.88rem; color: #445; margin: 0 0 0.4rem; }
+    .parts-example-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .parts-example-chip { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; font-weight: 600; color: #2d5a87; background: #fff; border: 1px solid #b8c9dc; border-radius: 6px; padding: 0.3rem 0.55rem; cursor: pointer; }
+    .parts-example-chip:hover, .parts-example-chip:focus { border-color: #e67e22; color: #e67e22; outline: none; }
+    .listino-sample { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #d5e2ef; }
+    .parts-sample-title { font-size: 1.05rem; color: #1e3a5f; margin: 0 0 0.35rem; font-weight: 700; }
+    .parts-sample-intro { margin-bottom: 0.75rem !important; }
     .brand-parts-list { max-height: min(520px, 60vh); overflow: auto; padding-right: 0.25rem; }
+    #listinoSampleList { max-height: none; overflow: visible; }
     .brand-supplied-parts.parts-compact .brand-parts-list,
     .parts-compact-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.45rem; }
     .brand-supplied-parts.parts-compact .brand-parts-list li,
@@ -983,6 +1065,14 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
         });
         input.addEventListener('focus', function () { ensureLoaded(function () {}); });
       }
+      box.querySelectorAll('[data-listino-example]').forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          if (!input) return;
+          input.value = chip.getAttribute('data-listino-example') || '';
+          input.focus();
+          ensureLoaded(searchNow);
+        });
+      });
       // Deep-link ?part=CODE opens modal even for listino-only pages
       var urlPart = getUrlPart();
       if (urlPart) {
@@ -1171,16 +1261,19 @@ function main() {
     const brandParts = partsBySlug.get(slug) || null;
     if (brandParts?.parts?.length) enrichMetaWithParts(translations, brandParts.parts);
     else if (brandParts?.listino?.count) {
+      const sample = (brandParts.listino.preview || []).slice(0, 3).join(', ');
       for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
         const base = String(translations[lang].meta_description || '');
         const note = {
-          de: ` ${brandParts.listino.count}+ Teilenummern suchbar — Anfrage ohne Preise.`,
-          en: ` ${brandParts.listino.count}+ searchable part numbers — request a quote, no prices shown.`,
-          it: ` ${brandParts.listino.count}+ codici cercabili — richiesta senza prezzi in pagina.`,
-          es: ` ${brandParts.listino.count}+ códigos buscables — solicitud sin precios en página.`,
-          fr: ` ${brandParts.listino.count}+ références recherchables — demande sans prix affichés.`
+          de: ` z. B. ${sample}. ${brandParts.listino.count}+ Codes suchbar — Anfrage ohne Preise.`,
+          en: ` e.g. ${sample}. ${brandParts.listino.count}+ codes searchable — quote, no prices.`,
+          it: ` es. ${sample}. ${brandParts.listino.count}+ codici cercabili — senza prezzi.`,
+          es: ` p. ej. ${sample}. ${brandParts.listino.count}+ códigos — solicitud sin precios.`,
+          fr: ` ex. ${sample}. ${brandParts.listino.count}+ références — devis sans prix.`
         }[lang];
-        let meta = base + note;
+        const budget = Math.max(40, MAX_META_LEN - note.length);
+        const head = base.length > budget ? `${base.slice(0, budget - 1).trim()}…` : base;
+        let meta = head + note;
         if (meta.length > MAX_META_LEN) meta = `${meta.slice(0, MAX_META_LEN - 1).trim()}…`;
         translations[lang].meta_description = meta;
       }

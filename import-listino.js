@@ -237,9 +237,77 @@ function loadListiniParts() {
   return bySlug;
 }
 
+/** How many sample codes to embed in HTML / schema / llms for crawlability. */
+const LISTINO_PREVIEW_COUNT = 24;
+/** Prefix chips shown under the search box so visitors know how to search. */
+const LISTINO_EXAMPLE_PREFIX_COUNT = 6;
+
+/**
+ * Pick a diverse sample of codes (not just the first alphabetical ones)
+ * so the brand page shows recognizable product families.
+ */
+function pickDiversePreview(codes, limit = LISTINO_PREVIEW_COUNT) {
+  if (!codes.length) return [];
+  if (codes.length <= limit) return codes.slice();
+
+  const byPrefix = new Map();
+  for (const code of codes) {
+    const prefix = String(code).slice(0, 4).toUpperCase();
+    if (!byPrefix.has(prefix)) byPrefix.set(prefix, []);
+    byPrefix.get(prefix).push(code);
+  }
+  const ranked = [...byPrefix.entries()].sort((a, b) => b[1].length - a[1].length);
+  const picked = [];
+  const used = new Set();
+
+  // Round-robin across top prefixes for variety
+  const top = ranked.slice(0, Math.min(16, ranked.length));
+  let round = 0;
+  while (picked.length < limit && round < 8) {
+    let added = false;
+    for (const [, group] of top) {
+      if (picked.length >= limit) break;
+      const candidate = group[Math.min(round, group.length - 1)];
+      if (candidate && !used.has(candidate)) {
+        used.add(candidate);
+        picked.push(candidate);
+        added = true;
+      }
+    }
+    if (!added) break;
+    round += 1;
+  }
+
+  // Fill remaining from start of catalog
+  for (const code of codes) {
+    if (picked.length >= limit) break;
+    if (!used.has(code)) {
+      used.add(code);
+      picked.push(code);
+    }
+  }
+  return picked;
+}
+
+/** Popular code prefixes used as clickable search examples. */
+function pickSearchExamples(codes, limit = LISTINO_EXAMPLE_PREFIX_COUNT) {
+  const counts = new Map();
+  for (const code of codes) {
+    const prefix = String(code).slice(0, 4).toUpperCase();
+    if (prefix.length < 3) continue;
+    counts.set(prefix, (counts.get(prefix) || 0) + 1);
+  }
+  return [...counts.entries()]
+    .filter(([, n]) => n >= 20)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([prefix]) => prefix);
+}
+
 /**
  * Write compact JSON catalog for large listini (codes only, no prices).
- * @returns {{ file: string, count: number, preview: string[] }}
+ * Preview + example prefixes are embedded for SEO/AI and the brand-page UI.
+ * @returns {{ file: string, count: number, preview: string[], examples: string[] }}
  */
 function writeListinoDataFile(brandSlug, brandName, parts) {
   if (!fs.existsSync(LISTINI_DATA_DIR)) fs.mkdirSync(LISTINI_DATA_DIR, { recursive: true });
@@ -247,6 +315,8 @@ function writeListinoDataFile(brandSlug, brandName, parts) {
     .map((p) => String(p.part_number || '').trim())
     .filter(Boolean)
     .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+  const preview = pickDiversePreview(codes);
+  const examples = pickSearchExamples(codes);
   const rel = `listini-data/${brandSlug}.json`;
   const payload = {
     brand: brandName,
@@ -254,24 +324,83 @@ function writeListinoDataFile(brandSlug, brandName, parts) {
     count: codes.length,
     generated: new Date().toISOString().slice(0, 10),
     note: 'Part codes only — no prices. Click a code on the brand page to request a quote.',
+    preview,
+    examples,
     codes
   };
   fs.writeFileSync(path.join(ROOT, rel), `${JSON.stringify(payload)}\n`, 'utf8');
   return {
     file: rel,
     count: codes.length,
-    preview: codes.slice(0, 8)
+    preview,
+    examples
   };
+}
+
+/**
+ * Recompute preview/examples on an existing listini-data/{slug}.json (no XLSX needed).
+ * @returns {{ file: string, count: number, preview: string[], examples: string[] } | null}
+ */
+function refreshListinoMeta(brandSlug) {
+  const rel = `listini-data/${brandSlug}.json`;
+  const full = path.join(ROOT, rel);
+  if (!fs.existsSync(full)) return null;
+  const data = JSON.parse(fs.readFileSync(full, 'utf8'));
+  const codes = Array.isArray(data.codes) ? data.codes.map(String) : [];
+  if (!codes.length) return null;
+  const preview = pickDiversePreview(codes);
+  const examples = pickSearchExamples(codes);
+  data.count = codes.length;
+  data.preview = preview;
+  data.examples = examples;
+  data.generated = new Date().toISOString().slice(0, 10);
+  data.note = data.note || 'Part codes only — no prices. Click a code on the brand page to request a quote.';
+  fs.writeFileSync(full, `${JSON.stringify(data)}\n`, 'utf8');
+  return { file: rel, count: codes.length, preview, examples };
+}
+
+/**
+ * When listini/{slug}.xlsx is absent, keep published catalogs from listini-data/*.json
+ * so rebuilds do not drop large listini already on the site.
+ */
+function loadPublishedListiniData() {
+  const bySlug = new Map();
+  if (!fs.existsSync(LISTINI_DATA_DIR)) return bySlug;
+  for (const file of fs.readdirSync(LISTINI_DATA_DIR)) {
+    if (!file.endsWith('.json')) continue;
+    const slug = file.replace(/\.json$/i, '').toLowerCase();
+    try {
+      const data = JSON.parse(fs.readFileSync(path.join(LISTINI_DATA_DIR, file), 'utf8'));
+      const codes = Array.isArray(data.codes) ? data.codes : [];
+      if (!codes.length) continue;
+      bySlug.set(
+        slug,
+        codes.map((code) => ({
+          part_number: String(code),
+          description: String(code)
+        }))
+      );
+    } catch (e) {
+      console.warn(`listini-data/${file}:`, e.message);
+    }
+  }
+  return bySlug;
 }
 
 module.exports = {
   loadListiniParts,
+  loadPublishedListiniData,
   writeListinoDataFile,
+  refreshListinoMeta,
+  pickDiversePreview,
+  pickSearchExamples,
   parseTxt,
   parseCsv,
   parseXlsx,
   isLikelyPartCode,
   LISTINI_DIR,
   LISTINI_DATA_DIR,
-  INLINE_LISTINO_MAX
+  INLINE_LISTINO_MAX,
+  LISTINO_PREVIEW_COUNT,
+  LISTINO_EXAMPLE_PREFIX_COUNT
 };

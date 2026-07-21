@@ -47,9 +47,11 @@ Prima foglio del workbook. Basta la colonna codice; descrizione e prezzi possono
 
 Se il file ha più di 200 codici:
 - i codici vanno in `listini-data/{slug}.json` (solo codici, **senza prezzi**)
-- sulla pagina marca compare una **ricerca** (min. 3 caratteri)
-- click sul risultato → form di richiesta precompilato
-- il `.xlsx` resta locale (gitignore), in git va solo il JSON
+- sulla pagina marca: **ricerca** (min. 3 caratteri), **esempi di prefisso** cliccabili, e una **piccola lista campione** in HTML (per SEO/AI e per far capire come cercare)
+- click sul risultato o sul campione → form di richiesta precompilato
+- il `.xlsx` resta locale (gitignore); in git vanno il JSON e la pagina marca
+
+La rebuild senza il file Excel riusa `listini-data/{slug}.json` già pubblicato.
 
 ## Build (step-by-step)
 
