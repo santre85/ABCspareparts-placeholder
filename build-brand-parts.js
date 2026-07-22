@@ -348,6 +348,9 @@ ${body}</urlset>
   fs.writeFileSync(path.join(ROOT, 'sitemap-brand-parts.xml'), xml, 'utf8');
 }
 
+/** Max URLs per sitemap file (Google limit is 50 000). */
+const SITEMAP_URL_LIMIT = 45000;
+
 function writeSitemapPartCodes(brands) {
   const langs = ['it', 'de', 'en', 'es', 'fr'];
   let body = '';
@@ -358,7 +361,7 @@ function writeSitemapPartCodes(brands) {
     for (const part of row.parts || []) {
       if (part.part_number) partNums.push(part.part_number);
     }
-    // Large listini: index a small diverse preview only (not 100k+ URLs).
+    // High-priority samples with hreflang (full listini go into shard files).
     for (const code of row.listino?.preview || []) {
       if (code) partNums.push(code);
     }
@@ -393,7 +396,116 @@ ${body}</urlset>
   return urlCount;
 }
 
-function updateLlmsTxt(brands) {
+/**
+ * Write compact sitemap shards covering every listino code (no hreflang),
+ * so search engines / AI crawlers can discover deep-links beyond the sample set.
+ * @returns {{ files: string[], urlCount: number }}
+ */
+function writeSitemapListinoShards(brands) {
+  // Remove previous shards so renames/count changes do not leave orphans.
+  for (const name of fs.readdirSync(ROOT)) {
+    if (/^sitemap-parts-[a-z0-9-]+(?:-\d+)?\.xml$/i.test(name)) {
+      fs.unlinkSync(path.join(ROOT, name));
+    }
+  }
+
+  const files = [];
+  let urlCount = 0;
+
+  for (const row of brands) {
+    if (!row.brand_slug || !row.listino?.file || !row.listino?.count) continue;
+    const dataPath = path.join(ROOT, row.listino.file);
+    if (!fs.existsSync(dataPath)) {
+      console.warn('Missing listino data for sitemap:', row.listino.file);
+      continue;
+    }
+    const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    const codes = Array.isArray(data.codes) ? data.codes : [];
+    if (!codes.length) continue;
+
+    const shardCount = Math.ceil(codes.length / SITEMAP_URL_LIMIT);
+    for (let shard = 0; shard < shardCount; shard++) {
+      const chunk = codes.slice(shard * SITEMAP_URL_LIMIT, (shard + 1) * SITEMAP_URL_LIMIT);
+      let body = '';
+      for (const code of chunk) {
+        if (!code) continue;
+        const loc = partPageUrl(row.brand_slug, code);
+        body += '  <url>\n';
+        body += `    <loc>${escapeXml(loc)}</loc>\n`;
+        body += `    <lastmod>${TODAY}</lastmod>\n`;
+        body += '    <changefreq>monthly</changefreq>\n';
+        body += '    <priority>0.65</priority>\n';
+        body += '  </url>\n';
+        urlCount++;
+      }
+      const fileName =
+        shardCount === 1
+          ? `sitemap-parts-${row.brand_slug}.xml`
+          : `sitemap-parts-${row.brand_slug}-${shard + 1}.xml`;
+      const xml = `---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${body}</urlset>
+`;
+      fs.writeFileSync(path.join(ROOT, fileName), xml, 'utf8');
+      files.push(fileName);
+      console.log(`${fileName}: ${chunk.length} URLs (${row.brand})`);
+    }
+  }
+
+  return { files, urlCount };
+}
+
+function writeSitemapIndex(listinoSitemapFiles = []) {
+  const entries = [
+    'sitemap.xml',
+    'sitemap-brands.xml',
+    'sitemap-brand-parts.xml',
+    'sitemap-part-codes.xml',
+    ...listinoSitemapFiles,
+    'sitemap-cases.xml'
+  ];
+  let body = '';
+  for (const file of entries) {
+    body += '  <sitemap>\n';
+    body += `    <loc>${BASE}/${file}</loc>\n`;
+    body += `    <lastmod>${TODAY}</lastmod>\n`;
+    body += '  </sitemap>\n';
+  }
+  const xml = `---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${body}</sitemapindex>
+`;
+  fs.writeFileSync(path.join(ROOT, 'sitemap-index.xml'), xml, 'utf8');
+}
+
+function updateRobotsTxt(listinoSitemapFiles = []) {
+  const robotsPath = path.join(ROOT, 'robots.txt');
+  let content = fs.readFileSync(robotsPath, 'utf8');
+  const sitemapBlock = [
+    'Sitemap: https://abcspareparts.eu/sitemap-index.xml',
+    'Sitemap: https://abcspareparts.eu/sitemap.xml',
+    'Sitemap: https://abcspareparts.eu/sitemap-brands.xml',
+    'Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml',
+    'Sitemap: https://abcspareparts.eu/sitemap-part-codes.xml',
+    ...listinoSitemapFiles.map((f) => `Sitemap: https://abcspareparts.eu/${f}`),
+    'Sitemap: https://abcspareparts.eu/sitemap-cases.xml'
+  ].join('\n');
+
+  if (/^Sitemap:/m.test(content)) {
+    content = content.replace(/(?:^Sitemap:[^\n]*\n?)+/m, `${sitemapBlock}\n`);
+  } else {
+    content = `${content.trimEnd()}\n\n${sitemapBlock}\n`;
+  }
+  fs.writeFileSync(robotsPath, content.endsWith('\n') ? content : `${content}\n`, 'utf8');
+}
+
+function updateLlmsTxt(brands, listinoSitemapFiles = []) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
   const partCount = brands.reduce((sum, row) => sum + (row.parts?.length || 0) + (row.listino?.count || 0), 0);
@@ -433,7 +545,7 @@ function updateLlmsTxt(brands) {
       catalogLines.push(`- [${row.brand} ${part.part_number}](${url})${desc}`);
     }
   }
-  const catalogSection = `## Full part number catalog\n\nQuotable part references with direct enquiry links (\`?part=\` on brand pages). Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices):\n\n${catalogLines.join('\n')}\n`;
+  const catalogSection = `## Full part number catalog\n\nQuotable part references with direct enquiry links (\`?part=\` on brand pages). Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Every listino code is also listed in XML sitemaps for search engines and AI crawlers:\n\n${catalogLines.join('\n')}\n`;
 
   if (/## Full part number catalog/.test(content)) {
     content = content.replace(/## Full part number catalog[\s\S]*?(?=\n## )/, catalogSection.trimEnd());
@@ -442,7 +554,18 @@ function updateLlmsTxt(brands) {
   }
 
   const brandPartsCount = brands.filter((r) => (r.parts?.length || 0) + (r.listino?.count || 0) > 0).length;
-  const sitemapSection = `## XML sitemaps (search engines)\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [Individual part codes](${BASE}/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes (full listini stay on brand-page search)\n- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n`;
+  const listinoSitemapLines = listinoSitemapFiles.length
+    ? listinoSitemapFiles
+        .map((f) => {
+          const label = f
+            .replace(/^sitemap-parts-/, '')
+            .replace(/\.xml$/, '')
+            .replace(/-\d+$/, '');
+          return `- [${label} listino sitemap](${BASE}/${f})`;
+        })
+        .join('\n') + '\n'
+    : '';
+  const sitemapSection = `## XML sitemaps (search engines)\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [Individual part codes (samples + ERP)](${BASE}/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes\n${listinoSitemapLines}- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n`;
 
   if (/## XML sitemaps \(search engines\)/.test(content)) {
     content = content.replace(/## XML sitemaps \(search engines\)[\s\S]*?(?=\n## |$)/, sitemapSection.trimEnd());
@@ -461,13 +584,17 @@ function main() {
   fs.writeFileSync(outPath, `${JSON.stringify(output, null, 2)}\n`, 'utf8');
   writeSitemapBrandParts(output.brands);
   const partUrlCount = writeSitemapPartCodes(output.brands);
-  updateLlmsTxt(output.brands);
+  const listinoSitemaps = writeSitemapListinoShards(output.brands);
+  writeSitemapIndex(listinoSitemaps.files);
+  updateRobotsTxt(listinoSitemaps.files);
+  updateLlmsTxt(output.brands, listinoSitemaps.files);
 
   const partCount = output.brands.reduce((sum, row) => sum + (row.parts?.length || 0) + (row.listino?.count || 0), 0);
   console.log('brand-order-parts.json:', output.brands.length, 'brands,', partCount, 'parts');
   console.log('sitemap-brand-parts.xml:', output.brands.length, 'URLs');
   console.log('sitemap-part-codes.xml:', partUrlCount, 'URLs');
-  console.log('llms.txt: brand parts + full catalog + sitemaps updated');
+  console.log('listino sitemap shards:', listinoSitemaps.files.length, 'files,', listinoSitemaps.urlCount, 'URLs');
+  console.log('sitemap-index.xml + robots.txt + llms.txt updated');
   for (const row of output.brands) {
     const extra = row.listino?.count ? ` + listino ${row.listino.count}` : '';
     console.log(`  ${row.brand} (${row.brand_slug}): ${(row.parts || []).length}${extra}`);
@@ -484,6 +611,10 @@ module.exports = {
   cleanDescription,
   writeSitemapBrandParts,
   writeSitemapPartCodes,
+  writeSitemapListinoShards,
+  writeSitemapIndex,
+  updateRobotsTxt,
   updateLlmsTxt,
-  partPageUrl
+  partPageUrl,
+  SITEMAP_URL_LIMIT
 };

@@ -53,6 +53,17 @@ if (!si.includes('/sitemap-cases.xml')) throw new Error('sitemap-index.xml missi
 if (!si.includes('/sitemap-brand-parts.xml')) throw new Error('sitemap-index.xml missing sitemap-brand-parts.xml reference');
 if (!si.includes('/sitemap-part-codes.xml')) throw new Error('sitemap-index.xml missing sitemap-part-codes.xml reference');
 
+const robotsTxt = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf8');
+if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) {
+  throw new Error('robots.txt is missing sitemap-cases.xml reference');
+}
+if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml')) {
+  throw new Error('robots.txt is missing sitemap-brand-parts.xml reference');
+}
+if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-part-codes.xml')) {
+  throw new Error('robots.txt is missing sitemap-part-codes.xml reference');
+}
+
 const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
 if (!fs.existsSync(sbpPath)) throw new Error('sitemap-brand-parts.xml missing — run npm run build:brand-parts');
 const sbp = fs.readFileSync(sbpPath, 'utf8');
@@ -68,7 +79,7 @@ if (partsUrlCount !== partsBrandCount) {
 const spcPath = path.join(__dirname, 'sitemap-part-codes.xml');
 if (!fs.existsSync(spcPath)) throw new Error('sitemap-part-codes.xml missing — run npm run build:brand-parts');
 const spc = fs.readFileSync(spcPath, 'utf8');
-// Inline ERP/case parts + listino preview samples (not full 100k+ listini).
+// Inline ERP/case parts + listino preview samples (full listini live in shard files).
 const totalPartRefs = (partsDataEarly.brands || []).reduce((sum, row) => {
   const seen = new Set();
   for (const part of row.parts || []) {
@@ -84,6 +95,39 @@ const totalPartRefs = (partsDataEarly.brands || []).reduce((sum, row) => {
 const partCodeUrlCount = (spc.match(/<loc>/g) || []).length;
 if (partCodeUrlCount !== totalPartRefs) {
   throw new Error(`sitemap-part-codes.xml <loc> count ${partCodeUrlCount} !== total parts ${totalPartRefs}`);
+}
+
+// Full listino shard sitemaps (one or more files per brand with large catalog).
+const listinoBrands = (partsDataEarly.brands || []).filter((b) => b.listino?.count && b.listino?.file);
+const listinoShardFiles = fs
+  .readdirSync(__dirname)
+  .filter((name) => /^sitemap-parts-[a-z0-9-]+(?:-\d+)?\.xml$/i.test(name))
+  .sort();
+if (listinoBrands.length && !listinoShardFiles.length) {
+  throw new Error('Missing sitemap-parts-*.xml listino shards — run npm run build:brand-parts');
+}
+let listinoShardUrlTotal = 0;
+for (const file of listinoShardFiles) {
+  if (!si.includes(`/${file}`)) {
+    throw new Error(`sitemap-index.xml missing ${file} reference`);
+  }
+  if (!robotsTxt.includes(`Sitemap: https://abcspareparts.eu/${file}`)) {
+    throw new Error(`robots.txt is missing ${file} reference`);
+  }
+  const xml = fs.readFileSync(path.join(__dirname, file), 'utf8');
+  if (!xml.includes('<?xml version="1.0"') || !xml.includes('</urlset>')) {
+    throw new Error(`${file} is not a valid urlset sitemap`);
+  }
+  const n = (xml.match(/<loc>/g) || []).length;
+  if (!n) throw new Error(`${file} has no <loc> entries`);
+  if (n > 50000) throw new Error(`${file} exceeds 50 000 URL sitemap limit (${n})`);
+  listinoShardUrlTotal += n;
+}
+const expectedListinoUrls = listinoBrands.reduce((sum, row) => sum + (row.listino.count || 0), 0);
+if (listinoBrands.length && listinoShardUrlTotal !== expectedListinoUrls) {
+  throw new Error(
+    `listino sitemap shard <loc> total ${listinoShardUrlTotal} !== listino codes ${expectedListinoUrls}`
+  );
 }
 
 const casesPath = path.join(__dirname, 'supply-cases.json');
@@ -162,17 +206,6 @@ for (const c of publishedCases) {
   if (!llmsTxt.includes(`casi/${c.slug}.html`)) {
     throw new Error(`llms.txt does not mention case page casi/${c.slug}.html`);
   }
-}
-
-const robotsTxt = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf8');
-if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) {
-  throw new Error('robots.txt is missing sitemap-cases.xml reference');
-}
-if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml')) {
-  throw new Error('robots.txt is missing sitemap-brand-parts.xml reference');
-}
-if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-part-codes.xml')) {
-  throw new Error('robots.txt is missing sitemap-part-codes.xml reference');
 }
 
 const indexHead = indexHtml;
