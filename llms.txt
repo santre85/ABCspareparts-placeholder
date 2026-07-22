@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-33 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 127869 part references.
+34 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 128606 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
@@ -40,6 +40,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Radio Energie](https://abcspareparts.eu/marche/radio-energie.html): TTN0507RE.0
 - [Renishaw](https://abcspareparts.eu/marche/renishaw.html): A-5191-0049
 - [Rexroth](https://abcspareparts.eu/marche/rexroth.html): A10VSO28DFR1/31L-PPA12N
+- [SCHNEIDER](https://abcspareparts.eu/marche/schneider.html): 9001A9, 9007AA1, 9422A1, 9070FB2B (+737 listino codes, search on page)
 - [Schunk](https://abcspareparts.eu/marche/schunk.html): LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058, PGN-plus 64-2-AS / 371093 (+1 more)
 - [Siemens](https://abcspareparts.eu/marche/siemens.html): 6AV2124-0MC010-AX0
 - [Spectrex INC.](https://abcspareparts.eu/marche/spectrex-inc.html): UF IR3 Flame Detector, SS316, ATEX, 3/4"
@@ -139,6 +140,31 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 - [Radio Energie TTN0507RE.0](https://abcspareparts.eu/marche/radio-energie.html?part=TTN0507RE.0) — RE.O110 1CB 0.007 CA
 - [Renishaw A-5191-0049](https://abcspareparts.eu/marche/renishaw.html?part=A-5191-0049) — OMI-2 - optical machine interface
 - [Rexroth A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/marche/rexroth.html?part=A10VSO28DFR1%2F31L-PPA12N)
+- [SCHNEIDER listino](https://abcspareparts.eu/marche/schneider.html) — 737 codes searchable on page (no prices); try searching prefixes like 9001, 9007, 9422, 9070, 9080, 9012; data: https://abcspareparts.eu/listini-data/schneider.json
+- [SCHNEIDER 9001A9](https://abcspareparts.eu/marche/schneider.html?part=9001A9) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9007AA1](https://abcspareparts.eu/marche/schneider.html?part=9007AA1) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9422A1](https://abcspareparts.eu/marche/schneider.html?part=9422A1) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9070FB2B](https://abcspareparts.eu/marche/schneider.html?part=9070FB2B) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9080FB3621J](https://abcspareparts.eu/marche/schneider.html?part=9080FB3621J) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9012GAR5](https://abcspareparts.eu/marche/schneider.html?part=9012GAR5) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER A9A15035](https://abcspareparts.eu/marche/schneider.html?part=A9A15035) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 490NAC0100](https://abcspareparts.eu/marche/schneider.html?part=490NAC0100) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 8501CDO16V53](https://abcspareparts.eu/marche/schneider.html?part=8501CDO16V53) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9065SDO8](https://abcspareparts.eu/marche/schneider.html?part=9065SDO8) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 990NAD21110](https://abcspareparts.eu/marche/schneider.html?part=990NAD21110) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9013FSG2J20](https://abcspareparts.eu/marche/schneider.html?part=9013FSG2J20) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9421LD4](https://abcspareparts.eu/marche/schneider.html?part=9421LD4) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 8502SAO12V02S](https://abcspareparts.eu/marche/schneider.html?part=8502SAO12V02S) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9999D10](https://abcspareparts.eu/marche/schneider.html?part=9999D10) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9037EG8](https://abcspareparts.eu/marche/schneider.html?part=9037EG8) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9001B11](https://abcspareparts.eu/marche/schneider.html?part=9001B11) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9007AB21](https://abcspareparts.eu/marche/schneider.html?part=9007AB21) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9422A2](https://abcspareparts.eu/marche/schneider.html?part=9422A2) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9070FSC2](https://abcspareparts.eu/marche/schneider.html?part=9070FSC2) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9080FB3621R](https://abcspareparts.eu/marche/schneider.html?part=9080FB3621R) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 9012GAW2](https://abcspareparts.eu/marche/schneider.html?part=9012GAW2) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER A9A15096](https://abcspareparts.eu/marche/schneider.html?part=A9A15096) — sample code from manufacturer list (request quote, no price shown)
+- [SCHNEIDER 490NAE91100](https://abcspareparts.eu/marche/schneider.html?part=490NAE91100) — sample code from manufacturer list (request quote, no price shown)
 - [Schunk LM 100-H125 / 314065](https://abcspareparts.eu/marche/schunk.html?part=LM%20100-H125%20%2F%20314065) — Universal Linear Axis
 - [Schunk LM 100-H175 / 314067](https://abcspareparts.eu/marche/schunk.html?part=LM%20100-H175%20%2F%20314067) — Universal Linear Axis
 - [Schunk LM 50-H75 / 314058](https://abcspareparts.eu/marche/schunk.html?part=LM%2050-H75%20%2F%20314058) — Universal Linear Axis
@@ -170,7 +196,7 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 ## XML sitemaps (search engines)
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 33 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 34 high-priority brand URLs
 - [Individual part codes](https://abcspareparts.eu/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes (full listini stay on brand-page search)
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)

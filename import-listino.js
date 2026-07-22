@@ -25,9 +25,10 @@ const LISTINI_DATA_DIR = path.join(ROOT, 'listini-data');
 const INLINE_LISTINO_MAX = 200;
 
 const CODE_HEADERS = new Set([
-  'part_number', 'partnumber', 'part', 'code', 'codice', 'codicearticolo',
-  'articolo', 'artikel', 'artikelnummer', 'teilenummer', 'sku', 'item',
-  'item_code', 'itemcode', 'reference', 'ref', 'pn', 'mpn'
+  'part_number', 'partnumber', 'part_no', 'partno', 'part_nr', 'partnr',
+  'part', 'code', 'codice', 'codice articolo',
+  'articolo', 'artikel', 'artikelnummer', 'artikel_nr', 'teilenummer',
+  'sku', 'item', 'item_code', 'itemcode', 'reference', 'ref', 'pn', 'mpn'
 ]);
 
 const DESC_HEADERS = new Set([

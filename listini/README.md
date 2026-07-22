@@ -5,6 +5,7 @@ Metti qui i file listino. Il **nome file** deve essere lo **slug** della pagina 
 | File | Pagina |
 |------|--------|
 | `abb.xlsx` / `abb.csv` / `abb.txt` | https://abcspareparts.eu/marche/abb.html |
+| `schneider.xlsx` / `schneider.csv` | https://abcspareparts.eu/marche/schneider.html |
 | `siemens.csv` | https://abcspareparts.eu/marche/siemens.html |
 
 ## Cosa viene pubblicato sul sito

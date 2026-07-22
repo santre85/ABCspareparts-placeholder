@@ -1,7 +1,7 @@
 {
   "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
   "generated": "2026-07-21",
-  "listini_files": 127792,
+  "listini_files": 128529,
   "brands": [
     {
       "brand": "ABB",
@@ -447,6 +447,49 @@
           "case_slug": "rexroth-pump-a10vso28dfr1-ppa12n"
         }
       ]
+    },
+    {
+      "brand": "SCHNEIDER",
+      "brand_slug": "schneider",
+      "parts": [],
+      "listino": {
+        "file": "listini-data/schneider.json",
+        "count": 737,
+        "preview": [
+          "9001A9",
+          "9007AA1",
+          "9422A1",
+          "9070FB2B",
+          "9080FB3621J",
+          "9012GAR5",
+          "A9A15035",
+          "490NAC0100",
+          "8501CDO16V53",
+          "9065SDO8",
+          "990NAD21110",
+          "9013FSG2J20",
+          "9421LD4",
+          "8502SAO12V02S",
+          "9999D10",
+          "9037EG8",
+          "9001B11",
+          "9007AB21",
+          "9422A2",
+          "9070FSC2",
+          "9080FB3621R",
+          "9012GAW2",
+          "A9A15096",
+          "490NAE91100"
+        ],
+        "examples": [
+          "9001",
+          "9007",
+          "9422",
+          "9070",
+          "9080",
+          "9012"
+        ]
+      }
     },
     {
       "brand": "Schunk",
