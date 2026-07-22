@@ -52,7 +52,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
 ## Full part number catalog
 
-Quotable part references with direct enquiry links (`?part=` on brand pages). Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices):
+Quotable part references with direct enquiry links (`?part=` on brand pages). Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Every listino code is also listed in XML sitemaps for search engines and AI crawlers:
 
 - [ABB listino](https://abcspareparts.eu/marche/abb.html) — 127792 codes searchable on page (no prices); try searching prefixes like 1SDA, 7TCA, 2CPX, 1STQ, 2CKA, 2CDS; data: https://abcspareparts.eu/listini-data/abb.json
 - [ABB 1SDA013676R1](https://abcspareparts.eu/marche/abb.html?part=1SDA013676R1) — sample code from manufacturer list (request quote, no price shown)
@@ -248,7 +248,15 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
 - [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 35 high-priority brand URLs
-- [Individual part codes](https://abcspareparts.eu/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes (full listini stay on brand-page search)
+- [Individual part codes (samples + ERP)](https://abcspareparts.eu/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-abb-1.xml)
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-abb-2.xml)
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-abb-3.xml)
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-ifm.xml)
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-schneider.xml)
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-siemens-1.xml)
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-siemens-2.xml)
+- [Listino part codes](https://abcspareparts.eu/sitemap-parts-siemens-3.xml)
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 ## Optional
