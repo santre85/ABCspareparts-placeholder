@@ -451,16 +451,16 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
       }
     ]
   };
-  if (suppliedParts && suppliedParts.length) {
-    graph['@graph'].push({
-      '@type': 'ItemList',
-      '@id': pageUrl + '#quotable-parts',
-      name: `${brand} – quotable part numbers`,
-      description: tDe.brand_parts_intro.replace(/<[^>]+>/g, ''),
-      numberOfItems: suppliedParts.length,
-      itemListElement: suppliedParts.slice(0, 50).map((part, i) => ({
+  if ((suppliedParts && suppliedParts.length) || listino?.count) {
+    const seen = new Set();
+    const elements = [];
+    for (const part of suppliedParts || []) {
+      const key = String(part.part_number || '').toLowerCase();
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      elements.push({
         '@type': 'ListItem',
-        position: i + 1,
+        position: elements.length + 1,
         item: {
           '@type': 'Product',
           name: `${brand} ${part.part_number}`,
@@ -475,20 +475,15 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
             seller: { '@id': `${BASE}/#organization` }
           }
         }
-      }))
-    });
-  } else if (listino?.count) {
-    const preview = listino.preview || [];
-    graph['@graph'].push({
-      '@type': 'ItemList',
-      '@id': pageUrl + '#quotable-parts',
-      name: `${brand} – searchable manufacturer part codes`,
-      description: (tDe.brand_parts_listino_intro || tDe.brand_parts_intro).replace(/<[^>]+>/g, ''),
-      numberOfItems: listino.count,
-      url: pageUrl,
-      itemListElement: preview.slice(0, 50).map((code, i) => ({
+      });
+    }
+    for (const code of listino?.preview || []) {
+      const key = String(code || '').toLowerCase();
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      elements.push({
         '@type': 'ListItem',
-        position: i + 1,
+        position: elements.length + 1,
         item: {
           '@type': 'Product',
           name: `${brand} ${code}`,
@@ -503,7 +498,21 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
             seller: { '@id': `${BASE}/#organization` }
           }
         }
-      }))
+      });
+    }
+    graph['@graph'].push({
+      '@type': 'ItemList',
+      '@id': pageUrl + '#quotable-parts',
+      name: listino?.count
+        ? `${brand} – searchable manufacturer part codes`
+        : `${brand} – quotable part numbers`,
+      description: (listino?.count
+        ? (tDe.brand_parts_listino_intro || tDe.brand_parts_intro)
+        : tDe.brand_parts_intro
+      ).replace(/<[^>]+>/g, ''),
+      numberOfItems: listino?.count || suppliedParts.length,
+      url: pageUrl,
+      itemListElement: elements.slice(0, 50)
     });
   }
   return JSON.stringify(graph);
