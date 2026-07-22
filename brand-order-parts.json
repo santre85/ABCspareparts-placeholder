@@ -565,9 +565,553 @@
       "brand_slug": "siemens",
       "parts": [
         {
+          "part_number": "6AG12221HH322XB0",
+          "description": "6AG12221HH322XB0"
+        },
+        {
+          "part_number": "6AU14252AD000AA0",
+          "description": "6AU14252AD000AA0"
+        },
+        {
+          "part_number": "6AU14352AD000AA0",
+          "description": "6AU14352AD000AA0"
+        },
+        {
+          "part_number": "6AV21232DB030AX0",
+          "description": "6AV21232DB030AX0"
+        },
+        {
+          "part_number": "6AV21232GA030AX0",
+          "description": "6AV21232GA030AX0"
+        },
+        {
+          "part_number": "6AV21232GB030AX0",
+          "description": "6AV21232GB030AX0"
+        },
+        {
           "part_number": "6AV2124-0MC010-AX0",
           "description": "SIMATIC HMI TP1200 COMFORT",
           "case_slug": "siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0"
+        },
+        {
+          "part_number": "6AV21240GC010AX0",
+          "description": "6AV21240GC010AX0"
+        },
+        {
+          "part_number": "6AV21240GC130AX0",
+          "description": "6AV21240GC130AX0"
+        },
+        {
+          "part_number": "6AV21240JC010AX0",
+          "description": "6AV21240JC010AX0"
+        },
+        {
+          "part_number": "6AV21240MC010AX0",
+          "description": "6AV21240MC010AX0"
+        },
+        {
+          "part_number": "6AV21240QC130AX0",
+          "description": "6AV21240QC130AX0"
+        },
+        {
+          "part_number": "6AV21240UC020AX1",
+          "description": "6AV21240UC020AX1"
+        },
+        {
+          "part_number": "6AV21240XC020AX1",
+          "description": "6AV21240XC020AX1"
+        },
+        {
+          "part_number": "6AV21241GC010AX0",
+          "description": "6AV21241GC010AX0"
+        },
+        {
+          "part_number": "6AV21242DC010AX0",
+          "description": "6AV21242DC010AX0"
+        },
+        {
+          "part_number": "6AV21252AE130AX0",
+          "description": "6AV21252AE130AX0"
+        },
+        {
+          "part_number": "6AV21252AE230AX0",
+          "description": "6AV21252AE230AX0"
+        },
+        {
+          "part_number": "6AV21252GB230AX0",
+          "description": "6AV21252GB230AX0"
+        },
+        {
+          "part_number": "6AV21252JB230AX0",
+          "description": "6AV21252JB230AX0"
+        },
+        {
+          "part_number": "6AV21448GC100AA0",
+          "description": "6AV21448GC100AA0"
+        },
+        {
+          "part_number": "6AV21448JC100AA0",
+          "description": "6AV21448JC100AA0"
+        },
+        {
+          "part_number": "6DL11366AA000PH1",
+          "description": "6DL11366AA000PH1"
+        },
+        {
+          "part_number": "6DL11366DA000PH1",
+          "description": "6DL11366DA000PH1"
+        },
+        {
+          "part_number": "6DL11366TH000PH1",
+          "description": "6DL11366TH000PH1"
+        },
+        {
+          "part_number": "6DL11556AU000PM0",
+          "description": "6DL11556AU000PM0"
+        },
+        {
+          "part_number": "6DL11936GA000NN0",
+          "description": "6DL11936GA000NN0"
+        },
+        {
+          "part_number": "6DL11936TP000DH1",
+          "description": "6DL11936TP000DH1"
+        },
+        {
+          "part_number": "6EP14372BA20",
+          "description": "6EP14372BA20"
+        },
+        {
+          "part_number": "6EP19332EC51",
+          "description": "6EP19332EC51"
+        },
+        {
+          "part_number": "6ES71356HD000BA1",
+          "description": "6ES71356HD000BA1"
+        },
+        {
+          "part_number": "6ES71376BD000BA0",
+          "description": "6ES71376BD000BA0"
+        },
+        {
+          "part_number": "6ES71444GF010AB0",
+          "description": "6ES71444GF010AB0"
+        },
+        {
+          "part_number": "6ES71556AU010CN0",
+          "description": "6ES71556AU010CN0"
+        },
+        {
+          "part_number": "6ES71580AD010XA0",
+          "description": "6ES71580AD010XA0"
+        },
+        {
+          "part_number": "6ES71583AD100XA0",
+          "description": "6ES71583AD100XA0"
+        },
+        {
+          "part_number": "6ES71936BP000BA0",
+          "description": "6ES71936BP000BA0"
+        },
+        {
+          "part_number": "6ES71936BP200DA0",
+          "description": "6ES71936BP200DA0"
+        },
+        {
+          "part_number": "6ES72121AF400XB0",
+          "description": "6ES72121AF400XB0"
+        },
+        {
+          "part_number": "6ES72121HE400XB0",
+          "description": "6ES72121HE400XB0"
+        },
+        {
+          "part_number": "6ES72141AG400XB0",
+          "description": "6ES72141AG400XB0"
+        },
+        {
+          "part_number": "6ES72141BG400XB0",
+          "description": "6ES72141BG400XB0"
+        },
+        {
+          "part_number": "6ES72141HG400XB0",
+          "description": "6ES72141HG400XB0"
+        },
+        {
+          "part_number": "6ES72151AG400XB0",
+          "description": "6ES72151AG400XB0"
+        },
+        {
+          "part_number": "6ES72151HF400XB0",
+          "description": "6ES72151HF400XB0"
+        },
+        {
+          "part_number": "6ES72151HG400XB0",
+          "description": "6ES72151HG400XB0"
+        },
+        {
+          "part_number": "6ES72171AG400XB0",
+          "description": "6ES72171AG400XB0"
+        },
+        {
+          "part_number": "6ES72211BH320XB0",
+          "description": "6ES72211BH320XB0"
+        },
+        {
+          "part_number": "6ES72221HH320XB0",
+          "description": "6ES72221HH320XB0"
+        },
+        {
+          "part_number": "6ES72231BH320XB0",
+          "description": "6ES72231BH320XB0"
+        },
+        {
+          "part_number": "6ES72231PL320XB0",
+          "description": "6ES72231PL320XB0"
+        },
+        {
+          "part_number": "6ES72266DA320XB0",
+          "description": "6ES72266DA320XB0"
+        },
+        {
+          "part_number": "6ES72314HF320XB0",
+          "description": "6ES72314HF320XB0"
+        },
+        {
+          "part_number": "6ES72315PD320XB0",
+          "description": "6ES72315PD320XB0"
+        },
+        {
+          "part_number": "6ES72324HA300XB0",
+          "description": "6ES72324HA300XB0"
+        },
+        {
+          "part_number": "6ES75050KA000AB0",
+          "description": "6ES75050KA000AB0"
+        },
+        {
+          "part_number": "6ES75211BL000AB0",
+          "description": "6ES75211BL000AB0"
+        },
+        {
+          "part_number": "6ES75221BL010AB0",
+          "description": "6ES75221BL010AB0"
+        },
+        {
+          "part_number": "6ES75261BH000AB0",
+          "description": "6ES75261BH000AB0"
+        },
+        {
+          "part_number": "6ES75262BF000AB0",
+          "description": "6ES75262BF000AB0"
+        },
+        {
+          "part_number": "6ES75317KF000AB0",
+          "description": "6ES75317KF000AB0"
+        },
+        {
+          "part_number": "6ES75317NF000AB0",
+          "description": "6ES75317NF000AB0"
+        },
+        {
+          "part_number": "6ES75325HF000AB0",
+          "description": "6ES75325HF000AB0"
+        },
+        {
+          "part_number": "6ES75325NB000AB0",
+          "description": "6ES75325NB000AB0"
+        },
+        {
+          "part_number": "6ES75455DA000AB0",
+          "description": "6ES75455DA000AB0"
+        },
+        {
+          "part_number": "6ES75921BM000XB0",
+          "description": "6ES75921BM000XB0"
+        },
+        {
+          "part_number": "6ES76532BA000XB5",
+          "description": "6ES76532BA000XB5"
+        },
+        {
+          "part_number": "6ES76585AX780CA5",
+          "description": "6ES76585AX780CA5"
+        },
+        {
+          "part_number": "6ES78331CC460YA5",
+          "description": "6ES78331CC460YA5"
+        },
+        {
+          "part_number": "6ES79601AA060XA0",
+          "description": "6ES79601AA060XA0"
+        },
+        {
+          "part_number": "6ES79601AA080XA0",
+          "description": "6ES79601AA080XA0"
+        },
+        {
+          "part_number": "6ES79720BB520XB0",
+          "description": "6ES79720BB520XB0"
+        },
+        {
+          "part_number": "6FX80025CS011BA0",
+          "description": "6FX80025CS011BA0"
+        },
+        {
+          "part_number": "6GK17040HB003AK0",
+          "description": "6GK17040HB003AK0"
+        },
+        {
+          "part_number": "6GK52080BA002AB2",
+          "description": "6GK52080BA002AB2"
+        },
+        {
+          "part_number": "6GK52080BA002AC2",
+          "description": "6GK52080BA002AC2"
+        },
+        {
+          "part_number": "6GK56150AA002AA2",
+          "description": "6GK56150AA002AA2"
+        },
+        {
+          "part_number": "6GK72431BX300XE0",
+          "description": "6GK72431BX300XE0"
+        },
+        {
+          "part_number": "6RA80856DS220AA0",
+          "description": "6RA80856DS220AA0"
+        },
+        {
+          "part_number": "6SL30000BE236DA1",
+          "description": "6SL30000BE236DA1"
+        },
+        {
+          "part_number": "6SL30000CE210AA0",
+          "description": "6SL30000CE210AA0"
+        },
+        {
+          "part_number": "6SL30400JA010AA0",
+          "description": "6SL30400JA010AA0"
+        },
+        {
+          "part_number": "6SL30400PA000AA1",
+          "description": "6SL30400PA000AA1"
+        },
+        {
+          "part_number": "6SL30400PA010AA0",
+          "description": "6SL30400PA010AA0"
+        },
+        {
+          "part_number": "6SL30401LA010AA0",
+          "description": "6SL30401LA010AA0"
+        },
+        {
+          "part_number": "6SL30401MA010AA0",
+          "description": "6SL30401MA010AA0"
+        },
+        {
+          "part_number": "6SL30550AA005DA0",
+          "description": "6SL30550AA005DA0"
+        },
+        {
+          "part_number": "6SL30550AA006AA1",
+          "description": "6SL30550AA006AA1"
+        },
+        {
+          "part_number": "6SL30550AA006AB0",
+          "description": "6SL30550AA006AB0"
+        },
+        {
+          "part_number": "6SL31000BE255AB0",
+          "description": "6SL31000BE255AB0"
+        },
+        {
+          "part_number": "6SL31001DE220AA1",
+          "description": "6SL31001DE220AA1"
+        },
+        {
+          "part_number": "6SL31201TE130AD0",
+          "description": "6SL31201TE130AD0"
+        },
+        {
+          "part_number": "6SL31201TE150AD0",
+          "description": "6SL31201TE150AD0"
+        },
+        {
+          "part_number": "6SL31201TE230AC0",
+          "description": "6SL31201TE230AC0"
+        },
+        {
+          "part_number": "6SL31201TE320AA4",
+          "description": "6SL31201TE320AA4"
+        },
+        {
+          "part_number": "6SL31202TE130AD0",
+          "description": "6SL31202TE130AD0"
+        },
+        {
+          "part_number": "6SL31202TE150AD0",
+          "description": "6SL31202TE150AD0"
+        },
+        {
+          "part_number": "6SL31202TE210AD0",
+          "description": "6SL31202TE210AD0"
+        },
+        {
+          "part_number": "6SL31202TE218AC0",
+          "description": "6SL31202TE218AC0"
+        },
+        {
+          "part_number": "6SL31306AE210AB1",
+          "description": "6SL31306AE210AB1"
+        },
+        {
+          "part_number": "6SL31306TE236AA3",
+          "description": "6SL31306TE236AA3"
+        },
+        {
+          "part_number": "6SL31306TE255AA3",
+          "description": "6SL31306TE255AA3"
+        },
+        {
+          "part_number": "6SL31307TE255AA3",
+          "description": "6SL31307TE255AA3"
+        },
+        {
+          "part_number": "6SL31307TE312AA3",
+          "description": "6SL31307TE312AA3"
+        },
+        {
+          "part_number": "6SL32101KE132AF2",
+          "description": "6SL32101KE132AF2"
+        },
+        {
+          "part_number": "6SL32101KE158AF2",
+          "description": "6SL32101KE158AF2"
+        },
+        {
+          "part_number": "6SL32101KE175AF1",
+          "description": "6SL32101KE175AF1"
+        },
+        {
+          "part_number": "6SL32101KE188AF1",
+          "description": "6SL32101KE188AF1"
+        },
+        {
+          "part_number": "6SL32101KE188UF1",
+          "description": "6SL32101KE188UF1"
+        },
+        {
+          "part_number": "6SL32101KE217UF1",
+          "description": "6SL32101KE217UF1"
+        },
+        {
+          "part_number": "6SL32101KE232AF1",
+          "description": "6SL32101KE232AF1"
+        },
+        {
+          "part_number": "6SL32101KE232UF1",
+          "description": "6SL32101KE232UF1"
+        },
+        {
+          "part_number": "6SL32101KE238AF1",
+          "description": "6SL32101KE238AF1"
+        },
+        {
+          "part_number": "6SL32101PE118UL1",
+          "description": "6SL32101PE118UL1"
+        },
+        {
+          "part_number": "6SL32101PE123UL1",
+          "description": "6SL32101PE123UL1"
+        },
+        {
+          "part_number": "6SL32101PE214AL0",
+          "description": "6SL32101PE214AL0"
+        },
+        {
+          "part_number": "6SL32101PE218UL0",
+          "description": "6SL32101PE218UL0"
+        },
+        {
+          "part_number": "6SL32101PE260AL0",
+          "description": "6SL32101PE260AL0"
+        },
+        {
+          "part_number": "6SL32101PE288AL0",
+          "description": "6SL32101PE288AL0"
+        },
+        {
+          "part_number": "6SL32101PE315AL0",
+          "description": "6SL32101PE315AL0"
+        },
+        {
+          "part_number": "6SL32105BE155CV0",
+          "description": "6SL32105BE155CV0"
+        },
+        {
+          "part_number": "6SL32105BE215CV0",
+          "description": "6SL32105BE215CV0"
+        },
+        {
+          "part_number": "6SL32105BE322CV0",
+          "description": "6SL32105BE322CV0"
+        },
+        {
+          "part_number": "6SL32250BE330AA0",
+          "description": "6SL32250BE330AA0"
+        },
+        {
+          "part_number": "6SL32430BB301PA3",
+          "description": "6SL32430BB301PA3"
+        },
+        {
+          "part_number": "6SL32440BB121BA1",
+          "description": "6SL32440BB121BA1"
+        },
+        {
+          "part_number": "6SL32440BB121FA0",
+          "description": "6SL32440BB121FA0"
+        },
+        {
+          "part_number": "6SL32440BB131FA0",
+          "description": "6SL32440BB131FA0"
+        },
+        {
+          "part_number": "6SL32460BA221FA0",
+          "description": "6SL32460BA221FA0"
+        },
+        {
+          "part_number": "6SL33101GE361AA3",
+          "description": "6SL33101GE361AA3"
+        },
+        {
+          "part_number": "6SL33201TE326AA3",
+          "description": "6SL33201TE326AA3"
+        },
+        {
+          "part_number": "6SL33201TE375AA3",
+          "description": "6SL33201TE375AA3"
+        },
+        {
+          "part_number": "6SL33306TE355AA3",
+          "description": "6SL33306TE355AA3"
+        },
+        {
+          "part_number": "6SL33307TE384AA3",
+          "description": "6SL33307TE384AA3"
+        },
+        {
+          "part_number": "6SL34201TE150AA1",
+          "description": "6SL34201TE150AA1"
+        },
+        {
+          "part_number": "7KM42111BA003AA0",
+          "description": "7KM42111BA003AA0"
+        },
+        {
+          "part_number": "TM251MESC",
+          "description": "TM251MESC"
         }
       ]
     },
