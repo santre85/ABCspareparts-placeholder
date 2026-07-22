@@ -1,7 +1,7 @@
 {
   "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
   "generated": "2026-07-22",
-  "listini_files": 128665,
+  "listini_files": 143316,
   "brands": [
     {
       "brand": "ABB",
@@ -220,6 +220,49 @@
           "case_slug": "humphrey-valve-41024vdc"
         }
       ]
+    },
+    {
+      "brand": "IFM",
+      "brand_slug": "ifm",
+      "parts": [],
+      "listino": {
+        "file": "listini-data/ifm.json",
+        "count": 14787,
+        "preview": [
+          "EVC001",
+          "EVC100",
+          "EVC200",
+          "EVC500",
+          "EVC800",
+          "EVCA00",
+          "EVT200",
+          "EVC600",
+          "EVC900",
+          "EVT101",
+          "EVT300",
+          "EVW001",
+          "EVC700",
+          "EVF500",
+          "EVC400",
+          "EVT001",
+          "EVC002",
+          "EVC101",
+          "EVC201",
+          "EVC501",
+          "EVC801",
+          "EVCA01",
+          "EVT201",
+          "EVC601"
+        ],
+        "examples": [
+          "EVC0",
+          "EVC1",
+          "EVC2",
+          "EVC5",
+          "EVC8",
+          "EVCA"
+        ]
+      }
     },
     {
       "brand": "Konecranes",

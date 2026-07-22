@@ -149,6 +149,18 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://abcspareparts.eu/marche/ifm.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://abcspareparts.eu/marche/ifm.html?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://abcspareparts.eu/marche/ifm.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://abcspareparts.eu/marche/ifm.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/marche/ifm.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/marche/ifm.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/marche/ifm.html"/>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://abcspareparts.eu/marche/konecranes.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://abcspareparts.eu/marche/konecranes.html?lang=it"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://abcspareparts.eu/marche/konecranes.html?lang=de"/>

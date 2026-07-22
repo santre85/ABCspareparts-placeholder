@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-34 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 128742 part references.
+35 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 143529 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
@@ -27,6 +27,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Hi-Force Hydraulics](https://abcspareparts.eu/marche/hi-force-hydraulics.html): HPR-2H, PKC50
 - [Hübner Elektromaschinen AG](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html): GT9.06L/420k
 - [HUMPHREY](https://abcspareparts.eu/marche/humphrey.html): 41024VDC
+- [IFM](https://abcspareparts.eu/marche/ifm.html): EVC001, EVC100, EVC200, EVC500 (+14787 listino codes, search on page)
 - [Konecranes](https://abcspareparts.eu/marche/konecranes.html): 52294077, 52302509, 52302518, 52589491 (+1 more)
 - [Kübler](https://abcspareparts.eu/marche/kubler.html): 279383
 - [Kuhnke](https://abcspareparts.eu/marche/kuhnke.html): 76.147.92.00
@@ -104,6 +105,31 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 - [Hi-Force Hydraulics PKC50](https://abcspareparts.eu/marche/hi-force-hydraulics.html?part=PKC50) — Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing puller…
 - [Hübner Elektromaschinen AG GT9.06L/420k](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html?part=GT9.06L%2F420k) — Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…
 - [HUMPHREY 41024VDC](https://abcspareparts.eu/marche/humphrey.html?part=41024VDC)
+- [IFM listino](https://abcspareparts.eu/marche/ifm.html) — 14787 codes searchable on page (no prices); try searching prefixes like EVC0, EVC1, EVC2, EVC5, EVC8, EVCA; data: https://abcspareparts.eu/listini-data/ifm.json
+- [IFM EVC001](https://abcspareparts.eu/marche/ifm.html?part=EVC001) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC100](https://abcspareparts.eu/marche/ifm.html?part=EVC100) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC200](https://abcspareparts.eu/marche/ifm.html?part=EVC200) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC500](https://abcspareparts.eu/marche/ifm.html?part=EVC500) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC800](https://abcspareparts.eu/marche/ifm.html?part=EVC800) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVCA00](https://abcspareparts.eu/marche/ifm.html?part=EVCA00) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVT200](https://abcspareparts.eu/marche/ifm.html?part=EVT200) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC600](https://abcspareparts.eu/marche/ifm.html?part=EVC600) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC900](https://abcspareparts.eu/marche/ifm.html?part=EVC900) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVT101](https://abcspareparts.eu/marche/ifm.html?part=EVT101) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVT300](https://abcspareparts.eu/marche/ifm.html?part=EVT300) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVW001](https://abcspareparts.eu/marche/ifm.html?part=EVW001) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC700](https://abcspareparts.eu/marche/ifm.html?part=EVC700) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVF500](https://abcspareparts.eu/marche/ifm.html?part=EVF500) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC400](https://abcspareparts.eu/marche/ifm.html?part=EVC400) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVT001](https://abcspareparts.eu/marche/ifm.html?part=EVT001) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC002](https://abcspareparts.eu/marche/ifm.html?part=EVC002) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC101](https://abcspareparts.eu/marche/ifm.html?part=EVC101) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC201](https://abcspareparts.eu/marche/ifm.html?part=EVC201) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC501](https://abcspareparts.eu/marche/ifm.html?part=EVC501) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC801](https://abcspareparts.eu/marche/ifm.html?part=EVC801) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVCA01](https://abcspareparts.eu/marche/ifm.html?part=EVCA01) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVT201](https://abcspareparts.eu/marche/ifm.html?part=EVT201) — sample code from manufacturer list (request quote, no price shown)
+- [IFM EVC601](https://abcspareparts.eu/marche/ifm.html?part=EVC601) — sample code from manufacturer list (request quote, no price shown)
 - [Konecranes 52294077](https://abcspareparts.eu/marche/konecranes.html?part=52294077) — Mounting Plate
 - [Konecranes 52302509](https://abcspareparts.eu/marche/konecranes.html?part=52302509) — Translation Wheel
 - [Konecranes 52302518](https://abcspareparts.eu/marche/konecranes.html?part=52302518) — set of idler wheels
@@ -332,7 +358,7 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 ## XML sitemaps (search engines)
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 34 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 35 high-priority brand URLs
 - [Individual part codes](https://abcspareparts.eu/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes (full listini stay on brand-page search)
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
