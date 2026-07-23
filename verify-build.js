@@ -130,6 +130,21 @@ if (listinoBrands.length && listinoShardUrlTotal !== expectedListinoUrls) {
   );
 }
 
+// Root sitemap.xml must stay fresh whenever the index is maintained (Search Console).
+const mainSitemapPath = path.join(__dirname, 'sitemap.xml');
+if (!fs.existsSync(mainSitemapPath)) throw new Error('sitemap.xml missing');
+const mainSitemap = fs.readFileSync(mainSitemapPath, 'utf8');
+const mainLastmods = [...mainSitemap.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
+if (!mainLastmods.length) throw new Error('sitemap.xml has no <lastmod> entries');
+const today = new Date().toISOString().slice(0, 10);
+if (mainLastmods.some((d) => d !== today)) {
+  throw new Error(`sitemap.xml lastmod must be ${today} (got ${[...new Set(mainLastmods)].join(', ')}) — rebuild brand-parts/brand-pages/casi`);
+}
+const indexLastmods = [...si.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
+if (indexLastmods.some((d) => d !== today)) {
+  throw new Error(`sitemap-index.xml lastmod must be ${today} — rebuild brand-parts/brand-pages/casi`);
+}
+
 const casesPath = path.join(__dirname, 'supply-cases.json');
 if (!fs.existsSync(casesPath)) throw new Error('supply-cases.json missing');
 const casesData = JSON.parse(fs.readFileSync(casesPath, 'utf8'));

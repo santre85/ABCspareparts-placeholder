@@ -784,24 +784,11 @@ ${body}</urlset>
 }
 
 function updateSitemapIndex() {
-  const p = path.join(ROOT, 'sitemap-index.xml');
-  let xml = fs.readFileSync(p, 'utf8');
-  if (!xml.includes('/sitemap-cases.xml')) {
-    xml = xml.replace(
-      '</sitemapindex>',
-      `  <sitemap>
-    <loc>${BASE}/sitemap-cases.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>
-</sitemapindex>`
-    );
-  } else {
-    xml = xml.replace(
-      /(<loc>https:\/\/abcspareparts\.eu\/sitemap-cases\.xml<\/loc>\s*<lastmod>)[^<]+(<\/lastmod>)/,
-      `$1${TODAY}$2`
-    );
-  }
-  fs.writeFileSync(p, xml, 'utf8');
+  // Full rewrite so sitemap-index.xml always lists every sitemap (including listino shards)
+  // and sitemap.xml lastmod stays fresh.
+  const { writeSitemapIndex, updateRobotsTxt } = require('./build-brand-parts.js');
+  writeSitemapIndex();
+  updateRobotsTxt();
 }
 
 function updateLlmsTxt(cases) {

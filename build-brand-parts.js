@@ -458,17 +458,49 @@ ${body}</urlset>
   return { files, urlCount };
 }
 
-function writeSitemapIndex(listinoSitemapFiles = []) {
+/** Discover listino shard sitemap files currently on disk. */
+function listListinoSitemapFiles() {
+  return fs
+    .readdirSync(ROOT)
+    .filter((name) => /^sitemap-parts-[a-z0-9-]+(?:-\d+)?\.xml$/i.test(name))
+    .sort();
+}
+
+/**
+ * Refresh lastmod dates in the root sitemap.xml (core site URLs).
+ * Keeps Google Search Console / crawlers aware the main sitemap changed.
+ */
+function touchMainSitemap() {
+  const p = path.join(ROOT, 'sitemap.xml');
+  if (!fs.existsSync(p)) return;
+  let xml = fs.readFileSync(p, 'utf8');
+  xml = xml.replace(/<lastmod>[^<]+<\/lastmod>/g, `<lastmod>${TODAY}</lastmod>`);
+  fs.writeFileSync(p, xml, 'utf8');
+}
+
+/**
+ * Always rewrite sitemap-index.xml with every known sitemap, including listino shards.
+ * Call this from brand-parts, brand-pages, and cases builds so the index never drifts.
+ * @param {string[]} [listinoSitemapFiles]
+ */
+function writeSitemapIndex(listinoSitemapFiles) {
+  const shards = Array.isArray(listinoSitemapFiles) && listinoSitemapFiles.length
+    ? [...listinoSitemapFiles].sort()
+    : listListinoSitemapFiles();
+
   const entries = [
     'sitemap.xml',
     'sitemap-brands.xml',
     'sitemap-brand-parts.xml',
     'sitemap-part-codes.xml',
-    ...listinoSitemapFiles,
+    ...shards,
     'sitemap-cases.xml'
-  ];
+  ].filter((file, idx, arr) => arr.indexOf(file) === idx);
+
   let body = '';
   for (const file of entries) {
+    // Skip optional files that are not present yet (e.g. first bootstrap).
+    if (file !== 'sitemap.xml' && !fs.existsSync(path.join(ROOT, file))) continue;
     body += '  <sitemap>\n';
     body += `    <loc>${BASE}/${file}</loc>\n`;
     body += `    <lastmod>${TODAY}</lastmod>\n`;
@@ -482,18 +514,22 @@ layout: none
 ${body}</sitemapindex>
 `;
   fs.writeFileSync(path.join(ROOT, 'sitemap-index.xml'), xml, 'utf8');
+  touchMainSitemap();
 }
 
-function updateRobotsTxt(listinoSitemapFiles = []) {
+function updateRobotsTxt(listinoSitemapFiles) {
   const robotsPath = path.join(ROOT, 'robots.txt');
   let content = fs.readFileSync(robotsPath, 'utf8');
+  const shards = Array.isArray(listinoSitemapFiles) && listinoSitemapFiles.length
+    ? [...listinoSitemapFiles].sort()
+    : listListinoSitemapFiles();
   const sitemapBlock = [
     'Sitemap: https://abcspareparts.eu/sitemap-index.xml',
     'Sitemap: https://abcspareparts.eu/sitemap.xml',
     'Sitemap: https://abcspareparts.eu/sitemap-brands.xml',
     'Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml',
     'Sitemap: https://abcspareparts.eu/sitemap-part-codes.xml',
-    ...listinoSitemapFiles.map((f) => `Sitemap: https://abcspareparts.eu/${f}`),
+    ...shards.map((f) => `Sitemap: https://abcspareparts.eu/${f}`),
     'Sitemap: https://abcspareparts.eu/sitemap-cases.xml'
   ].join('\n');
 
@@ -594,7 +630,7 @@ function main() {
   console.log('sitemap-brand-parts.xml:', output.brands.length, 'URLs');
   console.log('sitemap-part-codes.xml:', partUrlCount, 'URLs');
   console.log('listino sitemap shards:', listinoSitemaps.files.length, 'files,', listinoSitemaps.urlCount, 'URLs');
-  console.log('sitemap-index.xml + robots.txt + llms.txt updated');
+  console.log('sitemap-index.xml + sitemap.xml + robots.txt + llms.txt updated');
   for (const row of output.brands) {
     const extra = row.listino?.count ? ` + listino ${row.listino.count}` : '';
     console.log(`  ${row.brand} (${row.brand_slug}): ${(row.parts || []).length}${extra}`);
@@ -612,6 +648,8 @@ module.exports = {
   writeSitemapBrandParts,
   writeSitemapPartCodes,
   writeSitemapListinoShards,
+  listListinoSitemapFiles,
+  touchMainSitemap,
   writeSitemapIndex,
   updateRobotsTxt,
   updateLlmsTxt,
