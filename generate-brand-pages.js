@@ -1178,44 +1178,10 @@ ${body}</urlset>
 }
 
 function writeSitemapIndex() {
-  const outPath = path.join(ROOT, 'sitemap-index.xml');
-  const casesBlock = fs.existsSync(path.join(ROOT, 'sitemap-cases.xml'))
-    ? `  <sitemap>
-    <loc>${BASE}/sitemap-cases.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>
-`
-    : '';
-  const partsBlock = fs.existsSync(path.join(ROOT, 'sitemap-brand-parts.xml'))
-    ? `  <sitemap>
-    <loc>${BASE}/sitemap-brand-parts.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>
-`
-    : '';
-  const partCodesBlock = fs.existsSync(path.join(ROOT, 'sitemap-part-codes.xml'))
-    ? `  <sitemap>
-    <loc>${BASE}/sitemap-part-codes.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>
-`
-    : '';
-  const xml = `---
-layout: none
----
-<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>${BASE}/sitemap.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${BASE}/sitemap-brands.xml</loc>
-    <lastmod>${TODAY}</lastmod>
-  </sitemap>
-${partsBlock}${partCodesBlock}${casesBlock}</sitemapindex>
-`;
-  fs.writeFileSync(outPath, xml, 'utf8');
+  // Keep listino shard sitemaps in the index (do not overwrite with a partial list).
+  const { writeSitemapIndex: writeFullSitemapIndex, updateRobotsTxt } = require('./build-brand-parts.js');
+  writeFullSitemapIndex();
+  updateRobotsTxt();
 }
 
 function parseOnlySlugs(argv) {
