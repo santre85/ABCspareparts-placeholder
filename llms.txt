@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-35 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 234686 part references.
+36 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 295424 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
@@ -42,6 +42,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Renishaw](https://abcspareparts.eu/marche/renishaw.html): A-5191-0049
 - [Rexroth](https://abcspareparts.eu/marche/rexroth.html): A10VSO28DFR1/31L-PPA12N
 - [SCHNEIDER](https://abcspareparts.eu/marche/schneider.html): 9001A9, 9007AA1, 9422A1, 9070FB2B (+737 listino codes, search on page)
+- [Schneider Electric](https://abcspareparts.eu/marche/schneider-electric.html): LC1D066M7, NSYS04, LVS01005, LV841940 (+60738 listino codes, search on page)
 - [Schunk](https://abcspareparts.eu/marche/schunk.html): LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058, PGN-plus 64-2-AS / 371093 (+1 more)
 - [Siemens](https://abcspareparts.eu/marche/siemens.html): 3SU1000-0AA10-0AA0, 1FK7032-2AF21-1BA0, 3RT2015-1AB01, 6ES7131-4BD01-0AA0 (+91293 listino codes, search on page)
 - [Spectrex INC.](https://abcspareparts.eu/marche/spectrex-inc.html): UF IR3 Flame Detector, SS316, ATEX, 3/4"
@@ -191,6 +192,31 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 - [SCHNEIDER 9012GAW2](https://abcspareparts.eu/marche/schneider.html?part=9012GAW2) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER A9A15096](https://abcspareparts.eu/marche/schneider.html?part=A9A15096) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER 490NAE91100](https://abcspareparts.eu/marche/schneider.html?part=490NAE91100) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric listino](https://abcspareparts.eu/marche/schneider-electric.html) — 60738 codes searchable on page (no prices); try searching prefixes like LC1D, NSYS, LVS0, LV84, KTA1, ZB5A; data: https://abcspareparts.eu/listini-data/schneider-electric.json
+- [Schneider Electric LC1D066M7](https://abcspareparts.eu/marche/schneider-electric.html?part=LC1D066M7) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric NSYS04](https://abcspareparts.eu/marche/schneider-electric.html?part=NSYS04) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric LVS01005](https://abcspareparts.eu/marche/schneider-electric.html?part=LVS01005) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric LV841940](https://abcspareparts.eu/marche/schneider-electric.html?part=LV841940) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric KTA1000CP31](https://abcspareparts.eu/marche/schneider-electric.html?part=KTA1000CP31) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric ZB5AA0](https://abcspareparts.eu/marche/schneider-electric.html?part=ZB5AA0) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric ZB4BA0](https://abcspareparts.eu/marche/schneider-electric.html?part=ZB4BA0) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric KTA2000CP31](https://abcspareparts.eu/marche/schneider-electric.html?part=KTA2000CP31) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric NSYCAC228RMB](https://abcspareparts.eu/marche/schneider-electric.html?part=NSYCAC228RMB) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric NSYTBC3105](https://abcspareparts.eu/marche/schneider-electric.html?part=NSYTBC3105) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric 9001A31](https://abcspareparts.eu/marche/schneider-electric.html?part=9001A31) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric BMH1001P01A1A](https://abcspareparts.eu/marche/schneider-electric.html?part=BMH1001P01A1A) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric SDD111011](https://abcspareparts.eu/marche/schneider-electric.html?part=SDD111011) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric NSYPA3025PLMG](https://abcspareparts.eu/marche/schneider-electric.html?part=NSYPA3025PLMG) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric VW3A1006](https://abcspareparts.eu/marche/schneider-electric.html?part=VW3A1006) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric MVS20H3MF5L](https://abcspareparts.eu/marche/schneider-electric.html?part=MVS20H3MF5L) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric LC1D093B7](https://abcspareparts.eu/marche/schneider-electric.html?part=LC1D093B7) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric NSYS06](https://abcspareparts.eu/marche/schneider-electric.html?part=NSYS06) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric LVS01006](https://abcspareparts.eu/marche/schneider-electric.html?part=LVS01006) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric LV845000](https://abcspareparts.eu/marche/schneider-electric.html?part=LV845000) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric KTA1000CP32](https://abcspareparts.eu/marche/schneider-electric.html?part=KTA1000CP32) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric ZB5AA0TQ](https://abcspareparts.eu/marche/schneider-electric.html?part=ZB5AA0TQ) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric ZB4BA1](https://abcspareparts.eu/marche/schneider-electric.html?part=ZB4BA1) — sample code from manufacturer list (request quote, no price shown)
+- [Schneider Electric KTA2000CP32](https://abcspareparts.eu/marche/schneider-electric.html?part=KTA2000CP32) — sample code from manufacturer list (request quote, no price shown)
 - [Schunk LM 100-H125 / 314065](https://abcspareparts.eu/marche/schunk.html?part=LM%20100-H125%20%2F%20314065) — Universal Linear Axis
 - [Schunk LM 100-H175 / 314067](https://abcspareparts.eu/marche/schunk.html?part=LM%20100-H175%20%2F%20314067) — Universal Linear Axis
 - [Schunk LM 50-H75 / 314058](https://abcspareparts.eu/marche/schunk.html?part=LM%2050-H75%20%2F%20314058) — Universal Linear Axis
@@ -247,16 +273,18 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 ## XML sitemaps (search engines)
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 35 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 36 high-priority brand URLs
 - [Individual part codes (samples + ERP)](https://abcspareparts.eu/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-abb-1.xml)
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-abb-2.xml)
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-abb-3.xml)
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-ifm.xml)
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-schneider.xml)
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-siemens-1.xml)
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-siemens-2.xml)
-- [Listino part codes](https://abcspareparts.eu/sitemap-parts-siemens-3.xml)
+- [abb listino sitemap](https://abcspareparts.eu/sitemap-parts-abb-1.xml)
+- [abb listino sitemap](https://abcspareparts.eu/sitemap-parts-abb-2.xml)
+- [abb listino sitemap](https://abcspareparts.eu/sitemap-parts-abb-3.xml)
+- [ifm listino sitemap](https://abcspareparts.eu/sitemap-parts-ifm.xml)
+- [schneider-electric listino sitemap](https://abcspareparts.eu/sitemap-parts-schneider-electric-1.xml)
+- [schneider-electric listino sitemap](https://abcspareparts.eu/sitemap-parts-schneider-electric-2.xml)
+- [schneider listino sitemap](https://abcspareparts.eu/sitemap-parts-schneider.xml)
+- [siemens listino sitemap](https://abcspareparts.eu/sitemap-parts-siemens-1.xml)
+- [siemens listino sitemap](https://abcspareparts.eu/sitemap-parts-siemens-2.xml)
+- [siemens listino sitemap](https://abcspareparts.eu/sitemap-parts-siemens-3.xml)
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 ## Optional

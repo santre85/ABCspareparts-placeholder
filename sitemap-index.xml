@@ -5,54 +5,62 @@ layout: none
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-brands.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-brand-parts.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-part-codes.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-abb-1.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-abb-2.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-abb-3.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-ifm.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://abcspareparts.eu/sitemap-parts-schneider-electric-1.xml</loc>
+    <lastmod>2026-07-23</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://abcspareparts.eu/sitemap-parts-schneider-electric-2.xml</loc>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-schneider.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-siemens-1.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-siemens-2.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-parts-siemens-3.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-cases.xml</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </sitemap>
 </sitemapindex>
