@@ -6,6 +6,7 @@ Metti qui i file listino. Il **nome file** deve essere lo **slug** della pagina 
 |------|--------|
 | `abb.xlsx` / `abb.csv` / `abb.txt` | https://abcspareparts.eu/marche/abb.html |
 | `schneider.xlsx` / `schneider.csv` | https://abcspareparts.eu/marche/schneider.html |
+| `schneider-electric.xlsx` / `schneider-electric.csv` | https://abcspareparts.eu/marche/schneider-electric.html |
 | `ifm.xlsx` / `ifm.csv` | https://abcspareparts.eu/marche/ifm.html |
 | `siemens.xlsx` / `siemens.csv` | https://abcspareparts.eu/marche/siemens.html |
 

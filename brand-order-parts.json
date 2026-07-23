@@ -1,7 +1,7 @@
 {
   "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
-  "generated": "2026-07-22",
-  "listini_files": 234609,
+  "generated": "2026-07-23",
+  "listini_files": 295424,
   "brands": [
     {
       "brand": "ABB",
@@ -531,6 +531,49 @@
           "9070",
           "9080",
           "9012"
+        ]
+      }
+    },
+    {
+      "brand": "Schneider Electric",
+      "brand_slug": "schneider-electric",
+      "parts": [],
+      "listino": {
+        "file": "listini-data/schneider-electric.json",
+        "count": 60738,
+        "preview": [
+          "LC1D066M7",
+          "NSYS04",
+          "LVS01005",
+          "LV841940",
+          "KTA1000CP31",
+          "ZB5AA0",
+          "ZB4BA0",
+          "KTA2000CP31",
+          "NSYCAC228RMB",
+          "NSYTBC3105",
+          "9001A31",
+          "BMH1001P01A1A",
+          "SDD111011",
+          "NSYPA3025PLMG",
+          "VW3A1006",
+          "MVS20H3MF5L",
+          "LC1D093B7",
+          "NSYS06",
+          "LVS01006",
+          "LV845000",
+          "KTA1000CP32",
+          "ZB5AA0TQ",
+          "ZB4BA1",
+          "KTA2000CP32"
+        ],
+        "examples": [
+          "LC1D",
+          "NSYS",
+          "LVS0",
+          "LV84",
+          "KTA1",
+          "ZB5A"
         ]
       }
     },

@@ -36,6 +36,8 @@ Sitemap: https://abcspareparts.eu/sitemap-parts-abb-1.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-abb-2.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-abb-3.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-ifm.xml
+Sitemap: https://abcspareparts.eu/sitemap-parts-schneider-electric-1.xml
+Sitemap: https://abcspareparts.eu/sitemap-parts-schneider-electric-2.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-schneider.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-1.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-2.xml
