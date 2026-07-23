@@ -1,44 +1,99 @@
-# ABCspareparts – Pagina statica esportata
+# ABCspareparts
 
-Pagina landing statica esportata da ERPNext, pronta per il deployment su un altro dominio.
+Sito statico multilingue (**DE / EN / IT / ES / FR**) per [abcspareparts.eu](https://abcspareparts.eu): ricambi industriali e MRO, ~12 000 marche, richieste senza impegno tramite form ERP.
 
-## Contenuto
+## Contenuto principale
 
-- **index.html** – Pagina principale con HTML, CSS e JavaScript incorporati
-- **legal.css** – Stili condivisi per le pagine legali
-- **legal-i18n.js** – Traduzioni (DE, EN, IT, ES, FR) per le pagine legali
-- **datenschutz.html** – Datenschutzerklärung (Privacy)
-- **impressum.html** – Impressum
-- **agb.html** – Allgemeine Geschäftsbedingungen (AGB)
-- **versand.html** – Informazioni versand
-- **cookies.html** – Cookie-Richtlinie
+| Path | Descrizione |
+|------|-------------|
+| `index.html` | Homepage |
+| `marche.html` + `marche/*.html` | Indice A–Z e pagine marca (~11 962) |
+| `casi.html` + `casi/*.html` | Casi di successo (storie anonime) |
+| `brand-order-parts.json` | Codici richiedibili (ordini, offerte, listini) |
+| `listini-data/*.json` | Listini grandi (solo codici, **senza prezzi**) |
+| `llms.txt` | Catalogo per AI / LLM |
+| `sitemap-index.xml` | Indice sitemap (Search Console) |
+| `sitemap-parts-*.xml` | Deep-link `?part=` per tutti i codici listino |
+| `robots.txt` | Allow crawler + elenco sitemap |
+
+Pagine legali: `impressum.html`, `datenschutz.html`, `agb.html`, `versand.html`, `cookies.html`.
+
+## Listini pubblicati (codici richiedibili)
+
+Nessun prezzo online: ogni codice apre il form di richiesta ERP.
+
+| Marca | Pagina | Codici | Dati |
+|-------|--------|--------|------|
+| ABB | [marche/abb.html](https://abcspareparts.eu/marche/abb.html) | 127 792 | `listini-data/abb.json` |
+| Siemens | [marche/siemens.html](https://abcspareparts.eu/marche/siemens.html) | 91 293 | `listini-data/siemens.json` |
+| Schneider Electric | [marche/schneider-electric.html](https://abcspareparts.eu/marche/schneider-electric.html) | 60 738 | `listini-data/schneider-electric.json` |
+| IFM | [marche/ifm.html](https://abcspareparts.eu/marche/ifm.html) | 14 787 | `listini-data/ifm.json` |
+| SCHNEIDER | [marche/schneider.html](https://abcspareparts.eu/marche/schneider.html) | 737 | `listini-data/schneider.json` |
+
+Totale listino grande: **~295 000** codici (+ codici ERP/casi su altre marche).
+
+Dettagli import: [`listini/README.md`](listini/README.md).
+
+## Sitemap (Google Search Console)
+
+Caricare preferibilmente l’indice:
+
+```
+https://abcspareparts.eu/sitemap-index.xml
+```
+
+Altri URL (già referenziati dall’indice):
+
+```
+https://abcspareparts.eu/sitemap.xml
+https://abcspareparts.eu/sitemap-brands.xml
+https://abcspareparts.eu/sitemap-brand-parts.xml
+https://abcspareparts.eu/sitemap-part-codes.xml
+https://abcspareparts.eu/sitemap-parts-abb-1.xml
+https://abcspareparts.eu/sitemap-parts-abb-2.xml
+https://abcspareparts.eu/sitemap-parts-abb-3.xml
+https://abcspareparts.eu/sitemap-parts-siemens-1.xml
+https://abcspareparts.eu/sitemap-parts-siemens-2.xml
+https://abcspareparts.eu/sitemap-parts-siemens-3.xml
+https://abcspareparts.eu/sitemap-parts-schneider-electric-1.xml
+https://abcspareparts.eu/sitemap-parts-schneider-electric-2.xml
+https://abcspareparts.eu/sitemap-parts-ifm.xml
+https://abcspareparts.eu/sitemap-parts-schneider.xml
+https://abcspareparts.eu/sitemap-cases.xml
+```
+
+`npm run build:brand-parts` aggiorna **sempre** `sitemap-index.xml`, `sitemap.xml` (lastmod), `robots.txt` e gli shard listino.
+
+## Build
+
+```bash
+npm install
+
+# Catalogo codici + sitemap listino + llms.txt
+npm run build:brand-parts
+
+# Una sola pagina marca (consigliato con listini grandi)
+node generate-brand-pages.js --only=abb
+
+# Tutte le pagine marca (~12k) + sitemap-brands
+npm run build:brand-pages
+
+# Casi di successo
+npm run build:casi
+
+# Verifica coerenza HTML / sitemap / SEO
+npm run verify
+```
+
+Import listino: metti `listini/{slug}.xlsx` (o `.csv` / `.txt`), poi `build:brand-parts` e `--only={slug}`. I file Excel restano in gitignore; in repo vanno `listini-data/{slug}.json` e la pagina marca.
 
 ## Funzionalità
 
-- Selettore lingua (DE, EN, IT, ES, FR)
-- Persistenza della lingua scelta (localStorage)
-- Hero, Benefits, Contatto, Footer responsive
+- Lingue DE / EN / IT / ES / FR (`?lang=` + localStorage)
+- Pagine marca con ricerca listino (≥3 caratteri), chip di esempio, sample SEO
+- Click sul codice → modale form ERP (`erp.abcspareparts.eu`) precompilato
+- JSON-LD (Organization, FAQ, ItemList/Product) e `llms.txt` per discoverability
 
 ## Deployment
 
-1. Copia la cartella `static-export` sul tuo server web o hosting (Netlify, Vercel, hosting statico, ecc.)
-2. Configura il server per servire `index.html` come pagina principale
-3. Aggiorna i link nel footer se necessario (vedi sotto)
-
-## Personalizzazione
-
-### Contenuto pagine legali
-
-Le pagine legali contengono **template/placeholder**. Sostituiscili con il contenuto reale da ERPNext o dal tuo avvocato. Ogni pagina ha una nota "Ersetzen Sie diesen Inhalt..." con indicazioni.
-
-### Link legali
-
-I link nel footer puntano alle pagine locali (datenschutz.html, impressum.html, ecc.). Se le pagine legali sono su un altro dominio, aggiorna i link in index.html e nelle pagine legali con URL assoluti.
-
-### Email contatto
-
-Il form usa `mailto:info@abcspareparts.eu`. Per un form che invii a un backend, sostituisci l'attributo `action` del form con l'URL del tuo endpoint.
-
-## Requisiti
-
-Nessuna dipendenza. Funziona su qualsiasi server che serva file HTML statici.
+Sito statico (GitHub Pages / hosting HTML). Dominio: **abcspareparts.eu** (`CNAME` nel repo).
