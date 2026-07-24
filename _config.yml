@@ -3,21 +3,36 @@ title: ABCspareparts
 description: MRO industrial spare parts distributor
 url: "https://abcspareparts.eu"
 
-# Include sitemap.xml as proper XML
+# Root static files that must always publish.
+# build-brand-parts.js rewrites the listino-sitemaps markers when listini change.
 include:
+  - robots.txt
+  - llms.txt
+  - listini-data
   - sitemap.xml
-  - sitemap-brands.xml
-  - sitemap-cases.xml
   - sitemap-index.xml
+  - sitemap-brands.xml
+  - sitemap-brand-parts.xml
+  - sitemap-part-codes.xml
+  - sitemap-cases.xml
+  # BEGIN listino-sitemaps
+  - sitemap-parts-abb-1.xml
+  - sitemap-parts-abb-2.xml
+  - sitemap-parts-abb-3.xml
+  - sitemap-parts-ifm.xml
+  - sitemap-parts-schneider-electric-1.xml
+  - sitemap-parts-schneider-electric-2.xml
+  - sitemap-parts-schneider.xml
+  - sitemap-parts-siemens-1.xml
+  - sitemap-parts-siemens-2.xml
+  - sitemap-parts-siemens-3.xml
+  - sitemap-parts-telemecanique.xml
+  # END listino-sitemaps
 
-# Disable Jekyll processing on XML files
+# Serve sitemap XML without Liquid wrapping (layout: none strips front matter).
 defaults:
   - scope:
       path: "sitemap.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-brands.xml"
     values:
       layout: none
   - scope:
@@ -25,6 +40,64 @@ defaults:
     values:
       layout: none
   - scope:
+      path: "sitemap-brands.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-brand-parts.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-part-codes.xml"
+    values:
+      layout: none
+  - scope:
       path: "sitemap-cases.xml"
     values:
       layout: none
+  # BEGIN listino-sitemap-defaults
+  - scope:
+      path: "sitemap-parts-abb-1.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-abb-2.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-abb-3.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-ifm.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-schneider-electric-1.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-schneider-electric-2.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-schneider.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-siemens-1.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-siemens-2.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-siemens-3.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-parts-telemecanique.xml"
+    values:
+      layout: none
+  # END listino-sitemap-defaults
