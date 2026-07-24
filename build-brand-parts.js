@@ -515,6 +515,51 @@ ${body}</sitemapindex>
 `;
   fs.writeFileSync(path.join(ROOT, 'sitemap-index.xml'), xml, 'utf8');
   touchMainSitemap();
+  updateJekyllConfig(shards);
+}
+
+/**
+ * Keep _config.yml include + defaults in sync with listino sitemap shards
+ * so GitHub Pages / Jekyll always publishes them.
+ */
+function updateJekyllConfig(listinoSitemapFiles) {
+  const configPath = path.join(ROOT, '_config.yml');
+  if (!fs.existsSync(configPath)) return;
+  const shards = Array.isArray(listinoSitemapFiles) && listinoSitemapFiles.length
+    ? [...listinoSitemapFiles].sort()
+    : listListinoSitemapFiles();
+
+  const includeBlock = [
+    '  # BEGIN listino-sitemaps',
+    ...shards.map((f) => `  - ${f}`),
+    '  # END listino-sitemaps'
+  ].join('\n');
+
+  const defaultsBlock = [
+    '  # BEGIN listino-sitemap-defaults',
+    ...shards.map(
+      (f) => `  - scope:
+      path: "${f}"
+    values:
+      layout: none`
+    ),
+    '  # END listino-sitemap-defaults'
+  ].join('\n');
+
+  let content = fs.readFileSync(configPath, 'utf8');
+  if (!/# BEGIN listino-sitemaps/.test(content) || !/# BEGIN listino-sitemap-defaults/.test(content)) {
+    console.warn('_config.yml missing listino sitemap markers — skip auto-update');
+    return;
+  }
+  content = content.replace(
+    /  # BEGIN listino-sitemaps[\s\S]*?  # END listino-sitemaps/,
+    includeBlock
+  );
+  content = content.replace(
+    /  # BEGIN listino-sitemap-defaults[\s\S]*?  # END listino-sitemap-defaults/,
+    defaultsBlock
+  );
+  fs.writeFileSync(configPath, content.endsWith('\n') ? content : `${content}\n`, 'utf8');
 }
 
 function updateRobotsTxt(listinoSitemapFiles) {
@@ -650,6 +695,7 @@ module.exports = {
   writeSitemapListinoShards,
   listListinoSitemapFiles,
   touchMainSitemap,
+  updateJekyllConfig,
   writeSitemapIndex,
   updateRobotsTxt,
   updateLlmsTxt,
