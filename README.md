@@ -28,9 +28,10 @@ Nessun prezzo online: ogni codice apre il form di richiesta ERP.
 | Siemens | [marche/siemens.html](https://abcspareparts.eu/marche/siemens.html) | 91 293 | `listini-data/siemens.json` |
 | Schneider Electric | [marche/schneider-electric.html](https://abcspareparts.eu/marche/schneider-electric.html) | 60 738 | `listini-data/schneider-electric.json` |
 | IFM | [marche/ifm.html](https://abcspareparts.eu/marche/ifm.html) | 14 787 | `listini-data/ifm.json` |
+| Telemecanique | [marche/telemecanique.html](https://abcspareparts.eu/marche/telemecanique.html) | 6 301 | `listini-data/telemecanique.json` |
 | SCHNEIDER | [marche/schneider.html](https://abcspareparts.eu/marche/schneider.html) | 737 | `listini-data/schneider.json` |
 
-Totale listino grande: **~295 000** codici (+ codici ERP/casi su altre marche).
+Totale listino grande: **~302 000** codici (+ codici ERP/casi su altre marche).
 
 Dettagli import: [`listini/README.md`](listini/README.md).
 
@@ -58,6 +59,7 @@ https://abcspareparts.eu/sitemap-parts-siemens-3.xml
 https://abcspareparts.eu/sitemap-parts-schneider-electric-1.xml
 https://abcspareparts.eu/sitemap-parts-schneider-electric-2.xml
 https://abcspareparts.eu/sitemap-parts-ifm.xml
+https://abcspareparts.eu/sitemap-parts-telemecanique.xml
 https://abcspareparts.eu/sitemap-parts-schneider.xml
 https://abcspareparts.eu/sitemap-cases.xml
 ```

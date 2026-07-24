@@ -9,6 +9,7 @@ Metti qui i file listino. Il **nome file** deve essere lo **slug** della pagina 
 | `schneider-electric.xlsx` / `schneider-electric.csv` | https://abcspareparts.eu/marche/schneider-electric.html |
 | `ifm.xlsx` / `ifm.csv` | https://abcspareparts.eu/marche/ifm.html |
 | `siemens.xlsx` / `siemens.csv` | https://abcspareparts.eu/marche/siemens.html |
+| `telemecanique.xlsx` / `telemecanique.csv` | https://abcspareparts.eu/marche/telemecanique.html |
 
 ## Cosa viene pubblicato sul sito
 
