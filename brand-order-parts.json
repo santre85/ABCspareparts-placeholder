@@ -1,7 +1,7 @@
 {
   "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
-  "generated": "2026-07-23",
-  "listini_files": 295424,
+  "generated": "2026-07-24",
+  "listini_files": 301725,
   "brands": [
     {
       "brand": "ABB",
@@ -696,6 +696,49 @@
           "description": "68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 68 series . Outside diameter 68 mm Shaft diameter 10 mm Re…"
         }
       ]
+    },
+    {
+      "brand": "Telemecanique",
+      "brand_slug": "telemecanique",
+      "parts": [],
+      "listino": {
+        "file": "listini-data/telemecanique.json",
+        "count": 6301,
+        "preview": [
+          "XY2CD01",
+          "XZCP0166L10",
+          "XUSL2E2BB051N",
+          "90070000",
+          "XMLP001GC21F",
+          "XCMD1656046",
+          "ZC2JC1",
+          "ZCKJ01",
+          "XCKJ105",
+          "XS4P08MA230",
+          "XS612B1DAL2",
+          "XCKP2101G11",
+          "XMLR001G0T25",
+          "XCSL521B1",
+          "XCSD3702G13",
+          "XCSP3902G13",
+          "XY2CD111",
+          "XZCP0166L2",
+          "XUSL2E30H016N",
+          "9007000000",
+          "XMLP001GC7BF",
+          "XCMD1656049",
+          "ZC2JC13",
+          "ZCKJ0121"
+        ],
+        "examples": [
+          "XY2C",
+          "XZCP",
+          "XUSL",
+          "9007",
+          "XMLP",
+          "XCMD"
+        ]
+      }
     },
     {
       "brand": "TOKHEIM",

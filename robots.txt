@@ -42,4 +42,5 @@ Sitemap: https://abcspareparts.eu/sitemap-parts-schneider.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-1.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-2.xml
 Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-3.xml
+Sitemap: https://abcspareparts.eu/sitemap-parts-telemecanique.xml
 Sitemap: https://abcspareparts.eu/sitemap-cases.xml

@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-36 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 295424 part references.
+37 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via `?lang=`). No list prices are published. Total: 301725 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
@@ -49,6 +49,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Steute](https://abcspareparts.eu/marche/steute.html): 1188542
 - [SYM BANG](https://abcspareparts.eu/marche/sym-bang.html): A18065V2HBT-S
 - [Tamagawa](https://abcspareparts.eu/marche/tamagawa.html): 68-2048C/T-L3-12V, TS5013N61
+- [Telemecanique](https://abcspareparts.eu/marche/telemecanique.html): XY2CD01, XZCP0166L10, XUSL2E2BB051N, 90070000 (+6301 listino codes, search on page)
 - [TOKHEIM](https://abcspareparts.eu/marche/tokheim.html): 941828, 947944-004
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
 ## Full part number catalog
@@ -253,6 +254,31 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 - [SYM BANG A18065V2HBT-S](https://abcspareparts.eu/marche/sym-bang.html?part=A18065V2HBT-S) — Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W
 - [Tamagawa 68-2048C/T-L3-12V](https://abcspareparts.eu/marche/tamagawa.html?part=68-2048C%2FT-L3-12V)
 - [Tamagawa TS5013N61](https://abcspareparts.eu/marche/tamagawa.html?part=TS5013N61) — 68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 68 series . Outside diameter 68 mm Shaft diameter 10 mm Re…
+- [Telemecanique listino](https://abcspareparts.eu/marche/telemecanique.html) — 6301 codes searchable on page (no prices); try searching prefixes like XY2C, XZCP, XUSL, 9007, XMLP, XCMD; data: https://abcspareparts.eu/listini-data/telemecanique.json
+- [Telemecanique XY2CD01](https://abcspareparts.eu/marche/telemecanique.html?part=XY2CD01) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XZCP0166L10](https://abcspareparts.eu/marche/telemecanique.html?part=XZCP0166L10) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XUSL2E2BB051N](https://abcspareparts.eu/marche/telemecanique.html?part=XUSL2E2BB051N) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique 90070000](https://abcspareparts.eu/marche/telemecanique.html?part=90070000) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XMLP001GC21F](https://abcspareparts.eu/marche/telemecanique.html?part=XMLP001GC21F) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XCMD1656046](https://abcspareparts.eu/marche/telemecanique.html?part=XCMD1656046) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique ZC2JC1](https://abcspareparts.eu/marche/telemecanique.html?part=ZC2JC1) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique ZCKJ01](https://abcspareparts.eu/marche/telemecanique.html?part=ZCKJ01) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XCKJ105](https://abcspareparts.eu/marche/telemecanique.html?part=XCKJ105) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XS4P08MA230](https://abcspareparts.eu/marche/telemecanique.html?part=XS4P08MA230) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XS612B1DAL2](https://abcspareparts.eu/marche/telemecanique.html?part=XS612B1DAL2) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XCKP2101G11](https://abcspareparts.eu/marche/telemecanique.html?part=XCKP2101G11) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XMLR001G0T25](https://abcspareparts.eu/marche/telemecanique.html?part=XMLR001G0T25) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XCSL521B1](https://abcspareparts.eu/marche/telemecanique.html?part=XCSL521B1) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XCSD3702G13](https://abcspareparts.eu/marche/telemecanique.html?part=XCSD3702G13) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XCSP3902G13](https://abcspareparts.eu/marche/telemecanique.html?part=XCSP3902G13) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XY2CD111](https://abcspareparts.eu/marche/telemecanique.html?part=XY2CD111) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XZCP0166L2](https://abcspareparts.eu/marche/telemecanique.html?part=XZCP0166L2) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XUSL2E30H016N](https://abcspareparts.eu/marche/telemecanique.html?part=XUSL2E30H016N) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique 9007000000](https://abcspareparts.eu/marche/telemecanique.html?part=9007000000) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XMLP001GC7BF](https://abcspareparts.eu/marche/telemecanique.html?part=XMLP001GC7BF) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XCMD1656049](https://abcspareparts.eu/marche/telemecanique.html?part=XCMD1656049) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique ZC2JC13](https://abcspareparts.eu/marche/telemecanique.html?part=ZC2JC13) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique ZCKJ0121](https://abcspareparts.eu/marche/telemecanique.html?part=ZCKJ0121) — sample code from manufacturer list (request quote, no price shown)
 - [TOKHEIM 941828](https://abcspareparts.eu/marche/tokheim.html?part=941828) — LCD Anzeige Quantium / WWC mit LED Hintergrundbeleuchtung
 - [TOKHEIM 947944-004](https://abcspareparts.eu/marche/tokheim.html?part=947944-004) — TQC LCD Display
 - [ZOLLERN 1199181](https://abcspareparts.eu/marche/zollern.html?part=1199181) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250
@@ -273,7 +299,7 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 ## XML sitemaps (search engines)
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 36 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 37 high-priority brand URLs
 - [Individual part codes (samples + ERP)](https://abcspareparts.eu/sitemap-part-codes.xml) — ERP/case parts plus listino sample codes
 - [abb listino sitemap](https://abcspareparts.eu/sitemap-parts-abb-1.xml)
 - [abb listino sitemap](https://abcspareparts.eu/sitemap-parts-abb-2.xml)
@@ -285,6 +311,7 @@ Quotable part references with direct enquiry links (`?part=` on brand pages). La
 - [siemens listino sitemap](https://abcspareparts.eu/sitemap-parts-siemens-1.xml)
 - [siemens listino sitemap](https://abcspareparts.eu/sitemap-parts-siemens-2.xml)
 - [siemens listino sitemap](https://abcspareparts.eu/sitemap-parts-siemens-3.xml)
+- [telemecanique listino sitemap](https://abcspareparts.eu/sitemap-parts-telemecanique.xml)
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 ## Optional
