@@ -37,34 +37,24 @@ Dettagli import: [`listini/README.md`](listini/README.md).
 
 ## Sitemap (Google Search Console)
 
-Caricare preferibilmente l’indice:
+Caricare **solo** l’indice (contiene tutto ciò che va indicizzato):
 
 ```
 https://abcspareparts.eu/sitemap-index.xml
 ```
 
-Altri URL (già referenziati dall’indice):
+Sitemap figlie (URL puliti, **senza** `?part=` / `?lang=`):
 
 ```
 https://abcspareparts.eu/sitemap.xml
 https://abcspareparts.eu/sitemap-brands.xml
 https://abcspareparts.eu/sitemap-brand-parts.xml
-https://abcspareparts.eu/sitemap-part-codes.xml
-https://abcspareparts.eu/sitemap-parts-abb-1.xml
-https://abcspareparts.eu/sitemap-parts-abb-2.xml
-https://abcspareparts.eu/sitemap-parts-abb-3.xml
-https://abcspareparts.eu/sitemap-parts-siemens-1.xml
-https://abcspareparts.eu/sitemap-parts-siemens-2.xml
-https://abcspareparts.eu/sitemap-parts-siemens-3.xml
-https://abcspareparts.eu/sitemap-parts-schneider-electric-1.xml
-https://abcspareparts.eu/sitemap-parts-schneider-electric-2.xml
-https://abcspareparts.eu/sitemap-parts-ifm.xml
-https://abcspareparts.eu/sitemap-parts-telemecanique.xml
-https://abcspareparts.eu/sitemap-parts-schneider.xml
 https://abcspareparts.eu/sitemap-cases.xml
 ```
 
-`npm run build:brand-parts` aggiorna **sempre** `sitemap-index.xml`, `sitemap.xml` (lastmod), `robots.txt` e gli shard listino.
+**Importante (GSC):** i deep-link `?part=` e le varianti `?lang=` sono solo UX lato client sulla stessa pagina HTML (canonical = URL pulito). Non vanno in sitemap: Google li trattava come duplicati / “scansionata ma non indicizzata”. `robots.txt` li disabilita al crawl.
+
+`npm run build:brand-parts` aggiorna `sitemap-index.xml`, `sitemap.xml` (lastmod) e `robots.txt`.
 
 ## Build
 

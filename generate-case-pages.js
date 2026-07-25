@@ -293,10 +293,6 @@ function buildCasePage(caseRow) {
     translationsPayload[L] = t;
   }
 
-  const hreflang = LANGS.map(
-    (l) => `  <link rel="alternate" hreflang="${l}" href="${canonical}?lang=${l}">`
-  ).join('\n');
-
   return `<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -308,7 +304,6 @@ function buildCasePage(caseRow) {
   <link rel="canonical" href="${canonical}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
-${hreflang}
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonical}">
   <meta property="og:title" content="${escapeAttr(de.meta_title)}">
@@ -617,10 +612,6 @@ function buildHubPage(cases) {
   };
   const hubI18n = withFooterI18n(hubPageI18n);
 
-  const hreflang = LANGS.map(
-    (l) => `  <link rel="alternate" hreflang="${l}" href="${BASE}/${HUB_FILE}?lang=${l}">`
-  ).join('\n');
-
   const hubJsonLd = buildHubJsonLd(cases, hubI18n);
 
   return `<!DOCTYPE html>
@@ -634,7 +625,6 @@ function buildHubPage(cases) {
   <link rel="canonical" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" hreflang="x-default" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI crawlers">
-${hreflang}
   <meta property="og:type" content="website">
   <meta property="og:url" content="${BASE}/${HUB_FILE}">
   <meta property="og:title" content="${escapeAttr(hubI18n.de.meta_title)}">
@@ -749,10 +739,6 @@ function writeSitemapCases(cases) {
   const hubLoc = `${BASE}/${HUB_FILE}`;
   body += '  <url>\n';
   body += `    <loc>${hubLoc}</loc>\n`;
-  for (const l of LANGS) {
-    body += `    <xhtml:link rel="alternate" hreflang="${l}" href="${hubLoc}?lang=${l}"/>\n`;
-  }
-  body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${hubLoc}"/>\n`;
   body += `    <lastmod>${TODAY}</lastmod>\n`;
   body += '    <changefreq>weekly</changefreq>\n';
   body += '    <priority>0.75</priority>\n';
@@ -762,10 +748,6 @@ function writeSitemapCases(cases) {
     const loc = `${BASE}/${CASES_SUBDIR}/${c.slug}.html`;
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
-    for (const l of LANGS) {
-      body += `    <xhtml:link rel="alternate" hreflang="${l}" href="${loc}?lang=${l}"/>\n`;
-    }
-    body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}"/>\n`;
     body += `    <lastmod>${TODAY}</lastmod>\n`;
     body += '    <changefreq>monthly</changefreq>\n';
     body += '    <priority>0.7</priority>\n';
@@ -776,8 +758,7 @@ function writeSitemapCases(cases) {
 layout: none
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${body}</urlset>
 `;
   fs.writeFileSync(path.join(ROOT, 'sitemap-cases.xml'), xml, 'utf8');

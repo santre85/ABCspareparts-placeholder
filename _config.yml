@@ -16,17 +16,6 @@ include:
   - sitemap-part-codes.xml
   - sitemap-cases.xml
   # BEGIN listino-sitemaps
-  - sitemap-parts-abb-1.xml
-  - sitemap-parts-abb-2.xml
-  - sitemap-parts-abb-3.xml
-  - sitemap-parts-ifm.xml
-  - sitemap-parts-schneider-electric-1.xml
-  - sitemap-parts-schneider-electric-2.xml
-  - sitemap-parts-schneider.xml
-  - sitemap-parts-siemens-1.xml
-  - sitemap-parts-siemens-2.xml
-  - sitemap-parts-siemens-3.xml
-  - sitemap-parts-telemecanique.xml
   # END listino-sitemaps
 
 # Serve sitemap XML without Liquid wrapping (layout: none strips front matter).
@@ -56,48 +45,4 @@ defaults:
     values:
       layout: none
   # BEGIN listino-sitemap-defaults
-  - scope:
-      path: "sitemap-parts-abb-1.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-abb-2.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-abb-3.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-ifm.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-schneider-electric-1.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-schneider-electric-2.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-schneider.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-siemens-1.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-siemens-2.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-siemens-3.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-parts-telemecanique.xml"
-    values:
-      layout: none
   # END listino-sitemap-defaults

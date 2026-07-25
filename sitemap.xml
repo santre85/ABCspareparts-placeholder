@@ -2,19 +2,12 @@
 layout: none
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Homepage -->
   <url>
     <loc>https://abcspareparts.eu/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://abcspareparts.eu/?lang=it"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://abcspareparts.eu/?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://abcspareparts.eu/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/"/>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -22,13 +15,7 @@ layout: none
   <!-- Marche -->
   <url>
     <loc>https://abcspareparts.eu/marche.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://abcspareparts.eu/marche.html?lang=it"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://abcspareparts.eu/marche.html?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://abcspareparts.eu/marche.html?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/marche.html?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/marche.html?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/marche.html"/>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -39,13 +26,7 @@ layout: none
   <!-- Success stories hub (casi di successo) -->
   <url>
     <loc>https://abcspareparts.eu/casi.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://abcspareparts.eu/casi.html?lang=it"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://abcspareparts.eu/casi.html?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://abcspareparts.eu/casi.html?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://abcspareparts.eu/casi.html?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/casi.html?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi.html"/>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -55,7 +36,7 @@ layout: none
   <!-- Impressum -->
   <url>
     <loc>https://abcspareparts.eu/impressum.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -63,7 +44,7 @@ layout: none
   <!-- Datenschutz -->
   <url>
     <loc>https://abcspareparts.eu/datenschutz.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -71,7 +52,7 @@ layout: none
   <!-- AGB -->
   <url>
     <loc>https://abcspareparts.eu/agb.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -79,7 +60,7 @@ layout: none
   <!-- Versand -->
   <url>
     <loc>https://abcspareparts.eu/versand.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
