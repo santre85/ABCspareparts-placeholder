@@ -51,7 +51,13 @@ if (!si.includes('/sitemap.xml')) throw new Error('sitemap-index.xml missing sit
 if (!si.includes('/sitemap-brands.xml')) throw new Error('sitemap-index.xml missing sitemap-brands.xml reference');
 if (!si.includes('/sitemap-cases.xml')) throw new Error('sitemap-index.xml missing sitemap-cases.xml reference');
 if (!si.includes('/sitemap-brand-parts.xml')) throw new Error('sitemap-index.xml missing sitemap-brand-parts.xml reference');
-if (!si.includes('/sitemap-part-codes.xml')) throw new Error('sitemap-index.xml missing sitemap-part-codes.xml reference');
+// Parameter deep-link sitemaps must NOT be submitted (GSC crawl/index waste).
+if (si.includes('/sitemap-part-codes.xml')) {
+  throw new Error('sitemap-index.xml must not reference sitemap-part-codes.xml (?part= URLs)');
+}
+if (/sitemap-parts-/.test(si)) {
+  throw new Error('sitemap-index.xml must not reference sitemap-parts-*.xml listino shards');
+}
 
 const robotsTxt = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf8');
 if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) {
@@ -60,8 +66,11 @@ if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) 
 if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml')) {
   throw new Error('robots.txt is missing sitemap-brand-parts.xml reference');
 }
-if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-part-codes.xml')) {
-  throw new Error('robots.txt is missing sitemap-part-codes.xml reference');
+if (robotsTxt.includes('sitemap-part-codes.xml') || /sitemap-parts-/.test(robotsTxt)) {
+  throw new Error('robots.txt must not list ?part= parameter sitemaps');
+}
+if (!robotsTxt.includes('Disallow: /*?part=') || !robotsTxt.includes('Disallow: /*?lang=')) {
+  throw new Error('robots.txt must disallow ?part= and ?lang= crawl variants');
 }
 
 const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
@@ -75,59 +84,19 @@ const partsUrlCount = (sbp.match(/<loc>/g) || []).length;
 if (partsUrlCount !== partsBrandCount) {
   throw new Error(`sitemap-brand-parts.xml <loc> count ${partsUrlCount} !== brands with parts ${partsBrandCount}`);
 }
-
-const spcPath = path.join(__dirname, 'sitemap-part-codes.xml');
-if (!fs.existsSync(spcPath)) throw new Error('sitemap-part-codes.xml missing — run npm run build:brand-parts');
-const spc = fs.readFileSync(spcPath, 'utf8');
-// Inline ERP/case parts + listino preview samples (full listini live in shard files).
-const totalPartRefs = (partsDataEarly.brands || []).reduce((sum, row) => {
-  const seen = new Set();
-  for (const part of row.parts || []) {
-    const key = String(part.part_number || '').toLowerCase();
-    if (key) seen.add(key);
-  }
-  for (const code of row.listino?.preview || []) {
-    const key = String(code || '').toLowerCase();
-    if (key) seen.add(key);
-  }
-  return sum + seen.size;
-}, 0);
-const partCodeUrlCount = (spc.match(/<loc>/g) || []).length;
-if (partCodeUrlCount !== totalPartRefs) {
-  throw new Error(`sitemap-part-codes.xml <loc> count ${partCodeUrlCount} !== total parts ${totalPartRefs}`);
+if (/\?part=|\?lang=/.test(sbp)) {
+  throw new Error('sitemap-brand-parts.xml must not contain ?part= or ?lang= URLs');
 }
 
-// Full listino shard sitemaps (one or more files per brand with large catalog).
-const listinoBrands = (partsDataEarly.brands || []).filter((b) => b.listino?.count && b.listino?.file);
-const listinoShardFiles = fs
+// Legacy parameter sitemaps must be deleted.
+if (fs.existsSync(path.join(__dirname, 'sitemap-part-codes.xml'))) {
+  throw new Error('sitemap-part-codes.xml must be removed — do not submit ?part= URLs to Google');
+}
+const leftoverShards = fs
   .readdirSync(__dirname)
-  .filter((name) => /^sitemap-parts-[a-z0-9-]+(?:-\d+)?\.xml$/i.test(name))
-  .sort();
-if (listinoBrands.length && !listinoShardFiles.length) {
-  throw new Error('Missing sitemap-parts-*.xml listino shards — run npm run build:brand-parts');
-}
-let listinoShardUrlTotal = 0;
-for (const file of listinoShardFiles) {
-  if (!si.includes(`/${file}`)) {
-    throw new Error(`sitemap-index.xml missing ${file} reference`);
-  }
-  if (!robotsTxt.includes(`Sitemap: https://abcspareparts.eu/${file}`)) {
-    throw new Error(`robots.txt is missing ${file} reference`);
-  }
-  const xml = fs.readFileSync(path.join(__dirname, file), 'utf8');
-  if (!xml.includes('<?xml version="1.0"') || !xml.includes('</urlset>')) {
-    throw new Error(`${file} is not a valid urlset sitemap`);
-  }
-  const n = (xml.match(/<loc>/g) || []).length;
-  if (!n) throw new Error(`${file} has no <loc> entries`);
-  if (n > 50000) throw new Error(`${file} exceeds 50 000 URL sitemap limit (${n})`);
-  listinoShardUrlTotal += n;
-}
-const expectedListinoUrls = listinoBrands.reduce((sum, row) => sum + (row.listino.count || 0), 0);
-if (listinoBrands.length && listinoShardUrlTotal !== expectedListinoUrls) {
-  throw new Error(
-    `listino sitemap shard <loc> total ${listinoShardUrlTotal} !== listino codes ${expectedListinoUrls}`
-  );
+  .filter((name) => /^sitemap-parts-[a-z0-9-]+(?:-\d+)?\.xml$/i.test(name));
+if (leftoverShards.length) {
+  throw new Error(`Remove legacy listino sitemap shards: ${leftoverShards.join(', ')}`);
 }
 
 // Root sitemap.xml must stay fresh whenever the index is maintained (Search Console).

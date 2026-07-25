@@ -1,8 +1,15 @@
 # robots.txt for abcspareparts.eu
-# Allow all crawlers (search engines and AI) to index the site
+# Index brand pages, hubs, and cases — not query-parameter deep links.
 
 User-agent: *
 Allow: /
+
+# ?part= and ?lang= are client-side UX on the same HTML document.
+# Canonical is always the clean /marche/{slug}.html URL — do not crawl variants.
+Disallow: /*?part=
+Disallow: /*?*part=
+Disallow: /*?lang=
+Disallow: /*?*lang=
 
 # AI and search crawlers (common bots)
 User-agent: GPTBot
@@ -26,21 +33,9 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Sitemap location (update the domain if different)
+# Sitemaps (indexable URLs only)
 Sitemap: https://abcspareparts.eu/sitemap-index.xml
 Sitemap: https://abcspareparts.eu/sitemap.xml
 Sitemap: https://abcspareparts.eu/sitemap-brands.xml
 Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml
-Sitemap: https://abcspareparts.eu/sitemap-part-codes.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-abb-1.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-abb-2.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-abb-3.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-ifm.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-schneider-electric-1.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-schneider-electric-2.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-schneider.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-1.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-2.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-siemens-3.xml
-Sitemap: https://abcspareparts.eu/sitemap-parts-telemecanique.xml
 Sitemap: https://abcspareparts.eu/sitemap-cases.xml

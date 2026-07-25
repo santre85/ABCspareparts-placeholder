@@ -54,7 +54,8 @@ Se il file ha più di 200 codici:
 - sulla pagina marca: **ricerca** (min. 3 caratteri), **esempi di prefisso** cliccabili, e una **piccola lista campione** in HTML (per SEO/AI e per far capire come cercare)
 - click sul risultato o sul campione → form di richiesta precompilato
 - il `.xlsx` resta locale (gitignore); in git vanno il JSON e la pagina marca
-- `npm run build:brand-parts` aggiorna **sempre** anche `sitemap-index.xml`, `sitemap.xml` (lastmod), `robots.txt` e gli shard `sitemap-parts-*.xml`
+- `npm run build:brand-parts` aggiorna **sempre** anche `sitemap-index.xml`, `sitemap.xml` (lastmod) e `robots.txt`
+- i codici listino **non** vengono più pubblicati come URL `?part=` in sitemap Google (solo ricerca sulla pagina marca + sample HTML); così si evita crawl budget sprecato su duplicati thin
 
 La rebuild senza il file Excel riusa `listini-data/{slug}.json` già pubblicato.
 

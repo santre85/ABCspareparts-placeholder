@@ -470,7 +470,7 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
           brand: { '@type': 'Brand', name: brand },
           offers: {
             '@type': 'Offer',
-            url: `${pageUrl}?part=${encodeURIComponent(part.part_number)}`,
+            url: pageUrl,
             availability: 'https://schema.org/InStock',
             seller: { '@id': `${BASE}/#organization` }
           }
@@ -493,7 +493,7 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
           brand: { '@type': 'Brand', name: brand },
           offers: {
             '@type': 'Offer',
-            url: `${pageUrl}?part=${encodeURIComponent(code)}`,
+            url: pageUrl,
             availability: 'https://schema.org/InStock',
             seller: { '@id': `${BASE}/#organization` }
           }
@@ -706,11 +706,6 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts) {
   <link rel="canonical" href="${pageUrl}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${pageUrl}">
-  <link rel="alternate" hreflang="de" href="${pageUrl}?lang=de">
-  <link rel="alternate" hreflang="en" href="${pageUrl}?lang=en">
-  <link rel="alternate" hreflang="it" href="${pageUrl}?lang=it">
-  <link rel="alternate" hreflang="es" href="${pageUrl}?lang=es">
-  <link rel="alternate" hreflang="fr" href="${pageUrl}?lang=fr">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${pageUrl}">
   <meta property="og:title" content="${escapeAttr(d.meta_title)}">
@@ -1150,17 +1145,12 @@ ${hasSuppliedParts ? `      initPartQuoteButtons();
 
 function writeSitemapBrands(rows, partsBySlug) {
   const outPath = path.join(ROOT, 'sitemap-brands.xml');
-  const langs = ['it', 'de', 'en', 'es', 'fr'];
   let body = '';
   for (const { slug } of rows) {
     const loc = `${BASE}/marche/${slug}.html`;
     const hasParts = partsBySlug && partsBySlug.has(slug);
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
-    for (const l of langs) {
-      body += `    <xhtml:link rel="alternate" hreflang="${l}" href="${loc}?lang=${l}"/>\n`;
-    }
-    body += `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}"/>\n`;
     body += `    <lastmod>${TODAY}</lastmod>\n`;
     body += `    <changefreq>${hasParts ? 'weekly' : 'monthly'}</changefreq>\n`;
     body += `    <priority>${hasParts ? '0.8' : '0.65'}</priority>\n`;
@@ -1170,8 +1160,7 @@ function writeSitemapBrands(rows, partsBySlug) {
 layout: none
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${body}</urlset>
 `;
   fs.writeFileSync(outPath, xml, 'utf8');
