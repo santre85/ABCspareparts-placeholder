@@ -1202,9 +1202,12 @@ function main() {
   fs.mkdirSync(MARCHE_DIR, { recursive: true });
   if (!onlySlugs.length && fs.existsSync(MARCHE_DIR)) {
     for (const name of fs.readdirSync(MARCHE_DIR)) {
-      if (name.endsWith('.html')) {
-        fs.unlinkSync(path.join(MARCHE_DIR, name));
-      }
+      if (!name.endsWith('.html')) continue;
+      const full = path.join(MARCHE_DIR, name);
+      const content = fs.readFileSync(full, 'utf8');
+      // Preserve noindex redirect stubs for removed brands (GSC / old bookmarks).
+      if (content.includes('<!-- brand-redirect-stub -->')) continue;
+      fs.unlinkSync(full);
     }
   }
 

@@ -10,7 +10,11 @@ if (!match) throw new Error('brands array not found in index.html');
 const brands = eval(match[1].replace(/\];\s*\n?$/, ']'));
 const rows = assignUniqueSlugs(brands);
 const marcheDir = path.join(__dirname, 'marche');
-const htmlFiles = fs.readdirSync(marcheDir).filter((f) => f.endsWith('.html'));
+const htmlFiles = fs.readdirSync(marcheDir).filter((f) => f.endsWith('.html')).filter((f) => {
+  const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
+  // Keep optional noindex redirect stubs for removed brands (not counted as brand pages).
+  return !content.includes('<!-- brand-redirect-stub -->');
+});
 
 if (htmlFiles.length !== brands.length) {
   throw new Error(`marche/*.html count ${htmlFiles.length} !== brands ${brands.length}`);
