@@ -884,6 +884,9 @@ ${buildFooterHtml('../')}
       return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de';
     }
     function updateLinksWithLang(lang) {
+      // Keep language in localStorage only — do not append ?lang= to every link.
+      // Query variants were flooding GSC as "Alternate page with proper canonical".
+      try { localStorage.setItem('lang', lang); } catch (e) {}
       document.querySelectorAll('a[href]').forEach(function (a) {
         var h = a.getAttribute('href') || '';
         if (h.indexOf('#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('https://wa.me') === 0) return;
@@ -899,13 +902,29 @@ ${buildFooterHtml('../')}
           base = pathNoQuery.slice(strip);
         }
         if (isLangInternalPage(base)) {
-          a.href = relPrefix + base + '?lang=' + lang + (parts[1] ? '#' + parts[1] : '');
+          a.href = relPrefix + base + (parts[1] ? '#' + parts[1] : '');
         }
       });
     }
     function getUrlPart() {
       var p = new URLSearchParams(window.location.search);
-      return p.get('part') || '';
+      var fromQuery = p.get('part');
+      if (fromQuery) return fromQuery;
+      var hash = (window.location.hash || '').replace(/^#/, '');
+      if (hash.indexOf('quote=') === 0) {
+        try { return decodeURIComponent(hash.slice(6)); } catch (e) { return hash.slice(6); }
+      }
+      return '';
+    }
+    function setQuoteDeepLink(code) {
+      try {
+        if (!history.replaceState) return;
+        var u = new URL(window.location.href);
+        u.searchParams.delete('part');
+        u.searchParams.delete('lang');
+        var path = u.pathname + (u.search || '');
+        history.replaceState(null, '', code ? path + '#quote=' + encodeURIComponent(code) : path);
+      } catch (err) {}
     }
     function buildIframeSrc(langCode, partNumber) {
       var lang = langCode || 'en';
@@ -930,15 +949,7 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
       if (quoteIframe) quoteIframe.src = buildIframeSrc(lang, code);
       quoteModal.removeAttribute('hidden');
       document.body.classList.add('quote-modal-open');
-      try {
-        if (history.replaceState) {
-          var u = new URL(window.location.href);
-          if (code) u.searchParams.set('part', code);
-          else u.searchParams.delete('part');
-          u.hash = '';
-          history.replaceState(null, '', u.toString());
-        }
-      } catch (err) {}
+      setQuoteDeepLink(code);
     }
     function closeQuoteModal() {
       if (!quoteModal) return;

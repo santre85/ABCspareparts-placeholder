@@ -195,6 +195,18 @@ for (const c of publishedCases) {
     throw new Error(`llms.txt does not mention case page casi/${c.slug}.html`);
   }
 }
+if (/\(https:\/\/abcspareparts\.eu\/[^)]*\?part=/.test(llmsTxt)) {
+  throw new Error('llms.txt must not link ?part= URLs (use #quote= or clean brand URLs)');
+}
+if (/hreflang="(?:de|en|it|es|fr)"[^>]*\?lang=/.test(indexHtml) || /href="[^"]*\?lang=(?:de|en|it|es|fr)"/.test(indexHtml.match(/hreflang[\s\S]{0,800}/)?.[0] || '')) {
+  throw new Error('index.html hreflang must not use ?lang= query variants');
+}
+if (indexHtml.includes("a.href = base + '?lang='")) {
+  throw new Error('index.html must not rewrite internal links with ?lang=');
+}
+if (fs.readFileSync(path.join(__dirname, 'legal-i18n.js'), 'utf8').includes("'?lang=' + lang")) {
+  throw new Error('legal-i18n.js must not rewrite links with ?lang=');
+}
 
 const indexHead = indexHtml;
 if (!indexHtml.includes('rel="alternate" type="text/plain" href="llms.txt"')) {
@@ -303,6 +315,12 @@ for (const row of partsData.brands || []) {
   }
   if (!content.includes('#quotable-parts')) {
     throw new Error(`Missing quotable-parts JSON-LD in marche/${f}`);
+  }
+  if (content.includes("searchParams.set('part'") || content.includes('searchParams.set("part"')) {
+    throw new Error(`marche/${f} must not push ?part= into the address bar (use #quote=)`);
+  }
+  if (content.includes("'?lang=' + lang") || content.includes('"?lang=" + lang')) {
+    throw new Error(`marche/${f} must not rewrite internal links with ?lang=`);
   }
 }
 
