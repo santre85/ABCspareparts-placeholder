@@ -442,6 +442,7 @@ function getCurrentLang() {
   return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || navigator.language.split('-')[0];
 }
 function updateLegalLinksWithLang(lang) {
+  try { localStorage.setItem('lang', lang); } catch (e) {}
   const pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
   function internalLegalLink(base) {
     if (pages.includes(base)) return true;
@@ -455,7 +456,7 @@ function updateLegalLinksWithLang(lang) {
     const [path, hash] = h.split('#');
     const base = path.split('?')[0];
     if (internalLegalLink(base)) {
-      a.href = base + '?lang=' + lang + (hash ? '#' + hash : '');
+      a.href = base + (hash ? '#' + hash : '');
     }
   });
 }

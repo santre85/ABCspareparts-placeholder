@@ -8,13 +8,13 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://abcspareparts.eu/">
     <link rel="alternate" type="text/plain" href="llms.txt" title="Site summary for AI assistants">
-    <!-- hreflang multilingua -->
+    <!-- hreflang: one clean URL (i18n is client-side; ?lang= variants are not separate pages) -->
   <link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/">
-  <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/?lang=de">
-  <link rel="alternate" hreflang="it" href="https://abcspareparts.eu/?lang=it">
-  <link rel="alternate" hreflang="en" href="https://abcspareparts.eu/?lang=en">
-  <link rel="alternate" hreflang="es" href="https://abcspareparts.eu/?lang=es">
-  <link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/?lang=fr">
+  <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/">
+  <link rel="alternate" hreflang="it" href="https://abcspareparts.eu/">
+  <link rel="alternate" hreflang="en" href="https://abcspareparts.eu/">
+  <link rel="alternate" hreflang="es" href="https://abcspareparts.eu/">
+  <link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/">
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
   <meta property="og:type" content="website">
     <meta property="og:url" content="https://abcspareparts.eu/">
@@ -1098,6 +1098,8 @@
       navigator.language.split('-')[0];
   }
   function updateLinksWithLang(lang) {
+    // Language stays in localStorage — do not pollute hrefs with ?lang= (GSC alternate noise).
+    try { localStorage.setItem('lang', lang); } catch (e) {}
     const pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
     function isLangInternalPage(base) {
       if (pages.includes(base)) return true;
@@ -1111,7 +1113,7 @@
       const [path, hash] = h.split('#');
       const base = path.split('?')[0];
       if (isLangInternalPage(base)) {
-        a.href = base + '?lang=' + lang + (hash ? '#' + hash : '');
+        a.href = base + (hash ? '#' + hash : '');
       }
     });
   }
@@ -1212,8 +1214,8 @@
         var q = inp && inp.value ? inp.value.trim() : '';
         var l = langSelect.value || 'de';
         if (['de', 'en', 'it', 'es', 'fr'].indexOf(l) === -1) l = 'de';
-        var url = 'marche.html?lang=' + encodeURIComponent(l);
-        if (q) url += '&q=' + encodeURIComponent(q);
+        var url = 'marche.html';
+        if (q) url += '?q=' + encodeURIComponent(q);
         window.location.href = url;
       });
     }

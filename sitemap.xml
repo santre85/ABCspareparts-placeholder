@@ -7,7 +7,7 @@ layout: none
   <!-- Homepage -->
   <url>
     <loc>https://abcspareparts.eu/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@ layout: none
   <!-- Marche -->
   <url>
     <loc>https://abcspareparts.eu/marche.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -26,7 +26,7 @@ layout: none
   <!-- Success stories hub (casi di successo) -->
   <url>
     <loc>https://abcspareparts.eu/casi.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -36,7 +36,7 @@ layout: none
   <!-- Impressum -->
   <url>
     <loc>https://abcspareparts.eu/impressum.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -44,7 +44,7 @@ layout: none
   <!-- Datenschutz -->
   <url>
     <loc>https://abcspareparts.eu/datenschutz.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -52,7 +52,7 @@ layout: none
   <!-- AGB -->
   <url>
     <loc>https://abcspareparts.eu/agb.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -60,7 +60,7 @@ layout: none
   <!-- Versand -->
   <url>
     <loc>https://abcspareparts.eu/versand.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

@@ -56,11 +56,11 @@ const marcheHtml = `<!DOCTYPE html>
   <link rel="canonical" href="${base}/marche.html">
   <link rel="alternate" type="text/plain" href="${base}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${base}/marche.html">
-  <link rel="alternate" hreflang="de" href="${base}/marche.html?lang=de">
-  <link rel="alternate" hreflang="en" href="${base}/marche.html?lang=en">
-  <link rel="alternate" hreflang="it" href="${base}/marche.html?lang=it">
-  <link rel="alternate" hreflang="es" href="${base}/marche.html?lang=es">
-  <link rel="alternate" hreflang="fr" href="${base}/marche.html?lang=fr">
+  <link rel="alternate" hreflang="de" href="${base}/marche.html">
+  <link rel="alternate" hreflang="en" href="${base}/marche.html">
+  <link rel="alternate" hreflang="it" href="${base}/marche.html">
+  <link rel="alternate" hreflang="es" href="${base}/marche.html">
+  <link rel="alternate" hreflang="fr" href="${base}/marche.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${base}/marche.html">
   <meta property="og:locale" content="de_DE">
@@ -182,6 +182,7 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
     function getQueryQ(){ try { return new URLSearchParams(window.location.search).get('q') || ''; } catch(e){ return ''; } }
     function getCurrentLang(){ return getLangFromUrl() || (typeof localStorage!=='undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de'; }
     function updateLinksWithLang(lang){
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       var curQ = getQueryQ();
       if(!curQ){ var inp0 = document.getElementById('brandSearchInput'); if(inp0 && inp0.value) curQ = inp0.value.trim(); }
       var pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
@@ -192,8 +193,8 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
         var parts = h.split('#');
         var base = parts[0].split('?')[0];
         if(internalPage(base)) {
-          var qs = '?lang=' + encodeURIComponent(lang);
-          if(base==='marche.html' && curQ) qs += '&q=' + encodeURIComponent(curQ);
+          var qs = '';
+          if(base==='marche.html' && curQ) qs = '?q=' + encodeURIComponent(curQ);
           a.href = base + qs + (parts[1] ? '#'+parts[1] : '');
         }
       });

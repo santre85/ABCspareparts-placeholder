@@ -315,8 +315,9 @@ function escapeXml(value) {
     .replace(/"/g, '&quot;');
 }
 
+/** Clean brand URL + hash deep-link (hashes are not separate Google URLs). */
 function partPageUrl(brandSlug, partNumber) {
-  return `${BASE}/marche/${brandSlug}.html?part=${encodeURIComponent(partNumber)}`;
+  return `${BASE}/marche/${brandSlug}.html#quote=${encodeURIComponent(partNumber)}`;
 }
 
 function writeSitemapBrandParts(brands) {
@@ -522,7 +523,7 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
   const partCount = brands.reduce((sum, row) => sum + (row.parts?.length || 0) + (row.listino?.count || 0), 0);
-  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via \`?lang=\`). No list prices are published. Total: ${partCount} part references.\n`;
+  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages: DE/EN/IT/ES/FR via the page language selector / localStorage). No list prices are published. Total: ${partCount} part references.\n`;
   const lines = brands.map((row) => {
     const url = `${BASE}/marche/${row.brand_slug}.html`;
     const preview = formatPartPreview(row);
@@ -558,7 +559,7 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
       catalogLines.push(`- [${row.brand} ${part.part_number}](${url})${desc}`);
     }
   }
-  const catalogSection = `## Full part number catalog\n\nQuotable part references. Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Deep links with \`?part=\` open the enquiry form for humans/AI; Google Search Console sitemaps list only the clean brand page URL (canonical):\n\n${catalogLines.join('\n')}\n`;
+  const catalogSection = `## Full part number catalog\n\nQuotable part references. Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Deep links use a URL hash (\`#quote=CODE\`) so Google indexes only the clean brand page — not \`?part=\` / \`?lang=\` query variants:\n\n${catalogLines.join('\n')}\n`;
 
   if (/## Full part number catalog/.test(content)) {
     content = content.replace(/## Full part number catalog[\s\S]*?(?=\n## )/, catalogSection.trimEnd());

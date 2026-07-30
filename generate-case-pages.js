@@ -438,6 +438,7 @@ ${quotablePartsHtml}
       return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de';
     }
     function updateLinksWithLang(lang) {
+      try { localStorage.setItem('lang', lang); } catch (e) {}
       document.querySelectorAll('a[href]').forEach(function (a) {
         var h = a.getAttribute('href') || '';
         if (h.indexOf('#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('https://wa.me') === 0) return;
@@ -453,7 +454,7 @@ ${quotablePartsHtml}
           base = pathNoQuery.slice(strip);
         }
         if (isLangInternalPage(base)) {
-          a.href = relPrefix + base + '?lang=' + lang + (parts[1] ? '#' + parts[1] : '');
+          a.href = relPrefix + base + (parts[1] ? '#' + parts[1] : '');
         }
       });
     }
@@ -699,11 +700,12 @@ ${cardsHtml}
     function getLangFromUrl(){ var p=new URLSearchParams(window.location.search); var l=p.get('lang'); return l&&['de','en','it','es','fr'].indexOf(l)!==-1?l:null; }
     function getCurrentLang(){ return getLangFromUrl()||(typeof localStorage!=='undefined'&&localStorage.getItem('lang'))||(navigator.language&&navigator.language.split('-')[0])||'de'; }
     function updateLinksWithLang(lang){
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       document.querySelectorAll('a[href]').forEach(function(a){
         var h=a.getAttribute('href')||'';
         if(h.indexOf('#')===0||h.indexOf('mailto:')===0||h.indexOf('tel:')===0||h.indexOf('https://wa.me')===0||h.indexOf('http://')===0||h.indexOf('https://')===0) return;
         var parts=h.split('#'); var base=parts[0].split('?')[0];
-        if(isLangInternalPage(base)) a.href=base+'?lang='+lang+(parts[1]?'#'+parts[1]:'');
+        if(isLangInternalPage(base)) a.href=base+(parts[1]?'#'+parts[1]:'');
       });
     }
     function changeLanguage(lang){
@@ -775,7 +777,7 @@ function updateSitemapIndex() {
 function updateLlmsTxt(cases) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
-  const hubLine = `- [Success stories hub (casi di successo)](${BASE}/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (?lang=).`;
+  const hubLine = `- [Success stories hub (casi di successo)](${BASE}/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (client-side language selector).`;
   content = content.replace(/- \[Success stories[^\n]+\n/, hubLine + '\n');
 
   const caseLines = cases.map((c) => {

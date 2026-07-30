@@ -180,11 +180,12 @@
     function getLangFromUrl(){ var p=new URLSearchParams(window.location.search); var l=p.get('lang'); return l&&['de','en','it','es','fr'].indexOf(l)!==-1?l:null; }
     function getCurrentLang(){ return getLangFromUrl()||(typeof localStorage!=='undefined'&&localStorage.getItem('lang'))||(navigator.language&&navigator.language.split('-')[0])||'de'; }
     function updateLinksWithLang(lang){
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       document.querySelectorAll('a[href]').forEach(function(a){
         var h=a.getAttribute('href')||'';
         if(h.indexOf('#')===0||h.indexOf('mailto:')===0||h.indexOf('tel:')===0||h.indexOf('https://wa.me')===0||h.indexOf('http://')===0||h.indexOf('https://')===0) return;
         var parts=h.split('#'); var base=parts[0].split('?')[0];
-        if(isLangInternalPage(base)) a.href=base+'?lang='+lang+(parts[1]?'#'+parts[1]:'');
+        if(isLangInternalPage(base)) a.href=base+(parts[1]?'#'+parts[1]:'');
       });
     }
     function changeLanguage(lang){

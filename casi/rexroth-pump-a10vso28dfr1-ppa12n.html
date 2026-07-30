@@ -193,6 +193,7 @@
       return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de';
     }
     function updateLinksWithLang(lang) {
+      try { localStorage.setItem('lang', lang); } catch (e) {}
       document.querySelectorAll('a[href]').forEach(function (a) {
         var h = a.getAttribute('href') || '';
         if (h.indexOf('#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('https://wa.me') === 0) return;
@@ -208,7 +209,7 @@
           base = pathNoQuery.slice(strip);
         }
         if (isLangInternalPage(base)) {
-          a.href = relPrefix + base + '?lang=' + lang + (parts[1] ? '#' + parts[1] : '');
+          a.href = relPrefix + base + (parts[1] ? '#' + parts[1] : '');
         }
       });
     }

@@ -9,11 +9,11 @@
   <link rel="canonical" href="https://abcspareparts.eu/marche.html">
   <link rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/marche.html">
-  <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/marche.html?lang=de">
-  <link rel="alternate" hreflang="en" href="https://abcspareparts.eu/marche.html?lang=en">
-  <link rel="alternate" hreflang="it" href="https://abcspareparts.eu/marche.html?lang=it">
-  <link rel="alternate" hreflang="es" href="https://abcspareparts.eu/marche.html?lang=es">
-  <link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/marche.html?lang=fr">
+  <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/marche.html">
+  <link rel="alternate" hreflang="en" href="https://abcspareparts.eu/marche.html">
+  <link rel="alternate" hreflang="it" href="https://abcspareparts.eu/marche.html">
+  <link rel="alternate" hreflang="es" href="https://abcspareparts.eu/marche.html">
+  <link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/marche.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abcspareparts.eu/marche.html">
   <meta property="og:locale" content="de_DE">
@@ -167,6 +167,7 @@
     function getQueryQ(){ try { return new URLSearchParams(window.location.search).get('q') || ''; } catch(e){ return ''; } }
     function getCurrentLang(){ return getLangFromUrl() || (typeof localStorage!=='undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de'; }
     function updateLinksWithLang(lang){
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       var curQ = getQueryQ();
       if(!curQ){ var inp0 = document.getElementById('brandSearchInput'); if(inp0 && inp0.value) curQ = inp0.value.trim(); }
       var pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
@@ -177,8 +178,8 @@
         var parts = h.split('#');
         var base = parts[0].split('?')[0];
         if(internalPage(base)) {
-          var qs = '?lang=' + encodeURIComponent(lang);
-          if(base==='marche.html' && curQ) qs += '&q=' + encodeURIComponent(curQ);
+          var qs = '';
+          if(base==='marche.html' && curQ) qs = '?q=' + encodeURIComponent(curQ);
           a.href = base + qs + (parts[1] ? '#'+parts[1] : '');
         }
       });
