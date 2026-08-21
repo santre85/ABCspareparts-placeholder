@@ -34,8 +34,8 @@ for (const f of toCheck) {
   if (wrong.test(content)) {
     throw new Error(`Wrong href (missing ../) in marche/${f}`);
   }
-  if (!content.includes('href="../index.html"')) {
-    throw new Error(`Missing ../index.html link in marche/${f}`);
+  if (!content.includes('href="../index.html"') && !content.includes('href="../"') && !content.includes('href="/"')) {
+    throw new Error(`Missing home link (../ or /) in marche/${f}`);
   }
 }
 
@@ -73,8 +73,11 @@ if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-brand-parts.x
 if (robotsTxt.includes('sitemap-part-codes.xml') || /sitemap-parts-/.test(robotsTxt)) {
   throw new Error('robots.txt must not list ?part= parameter sitemaps');
 }
-if (!robotsTxt.includes('Disallow: /*?part=') || !robotsTxt.includes('Disallow: /*?lang=')) {
-  throw new Error('robots.txt must disallow ?part= and ?lang= crawl variants');
+if (/Disallow:.*\?part=|Disallow:.*\?lang=/.test(robotsTxt)) {
+  throw new Error('robots.txt must not Disallow ?part=/?lang= — use canonical tags instead');
+}
+if (/^Sitemap:.*\?(part|lang)=/m.test(robotsTxt)) {
+  throw new Error('robots.txt must not list parameter URLs as sitemaps');
 }
 
 const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
@@ -195,6 +198,24 @@ for (const c of publishedCases) {
     throw new Error(`llms.txt does not mention case page casi/${c.slug}.html`);
   }
 }
+if (/\(https:\/\/abcspareparts\.eu\/[^)]*\?part=/.test(llmsTxt)) {
+  throw new Error('llms.txt must not link ?part= URLs (use #quote= or clean brand URLs)');
+}
+if (/\?lang=/.test(mainSitemap) || /\?part=/.test(mainSitemap)) {
+  throw new Error('sitemap.xml must not contain ?lang= or ?part= URLs');
+}
+if (indexHtml.includes('?lang=de') || indexHtml.includes("'?lang=' + lang") || indexHtml.includes('"?lang=" + lang')) {
+  throw new Error('index.html must not publish ?lang= hreflang or rewrite links with ?lang=');
+}
+if (!indexHtml.includes('Soft redirect /index.html')) {
+  throw new Error('index.html must soft-redirect /index.html → /');
+}
+if (fs.readFileSync(path.join(__dirname, 'legal-i18n.js'), 'utf8').includes("'?lang=' + lang")) {
+  throw new Error('legal-i18n.js must not rewrite links with ?lang=');
+}
+if (fs.readFileSync(path.join(__dirname, '_config.yml'), 'utf8').includes('sitemap-part-codes')) {
+  throw new Error('_config.yml must not reference sitemap-part-codes.xml');
+}
 
 const indexHead = indexHtml;
 if (!indexHtml.includes('rel="alternate" type="text/plain" href="llms.txt"')) {
@@ -225,8 +246,8 @@ if (!indexHtml.includes('"@type": "CollectionPage"') && !indexHtml.includes('"@t
 if (/2600\+/.test(indexHead)) {
   throw new Error('index.html still contains outdated 2600+ SEO text');
 }
-if (!indexHead.includes('11960+')) {
-  throw new Error('index.html missing updated 11960+ SEO marker');
+if (!indexHead.includes('11959+') && !indexHead.includes('11960+')) {
+  throw new Error('index.html missing updated brand-count SEO marker (11959+/11960+)');
 }
 
 for (const f of toCheck) {
@@ -303,6 +324,12 @@ for (const row of partsData.brands || []) {
   }
   if (!content.includes('#quotable-parts')) {
     throw new Error(`Missing quotable-parts JSON-LD in marche/${f}`);
+  }
+  if (content.includes("searchParams.set('part'") || content.includes('searchParams.set("part"')) {
+    throw new Error(`marche/${f} must not push ?part= into the address bar (use #quote=)`);
+  }
+  if (content.includes("'?lang=' + lang") || content.includes('"?lang=" + lang')) {
+    throw new Error(`marche/${f} must not rewrite internal links with ?lang=`);
   }
 }
 

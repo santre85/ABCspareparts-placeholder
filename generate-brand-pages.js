@@ -115,7 +115,7 @@ function buildTranslations(brand) {
       meta_description: highlightPricing
         ? `${H} Ersatzteile zu wettbewerbsfähigen Preisen: Originalteile und geprüfte Alternativen. Teilenummer senden und schnell ein unverbindliches Angebot erhalten.`
         : `${H} Originalteile und geprüfte Alternativen für Automatisierung und MRO. Teilenummer einreichen – unverbindliches Angebot, Rückmeldung meist innerhalb von 24 Stunden. Europa-weit.`,
-      brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marken</a> · ${H}`,
+      brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Marken</a> · ${H}`,
       brand_h1: `${H} – Industrieersatzteile & MRO`,
       brand_intro: `ABCspareparts beschafft Originalteile und geprüfte Alternativen für ${H} (Industrieersatzteile, Automatisierung, MRO). Nutzen Sie das Formular für Teilenummern und Mengen – wir melden uns in der Regel innerhalb von 24 Stunden.`,
       brand_intro_p2: `Für ${H} prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href="#contact">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.`,
@@ -165,7 +165,7 @@ function buildTranslations(brand) {
       meta_description: highlightPricing
         ? `Competitive pricing on ${H} spare parts, with original components and verified alternatives. Send part numbers for a fast, no-obligation quotation.`
         : `Original ${H} parts and verified alternatives for automation and MRO. Send part numbers – no-obligation quote, we usually reply within 24 hours. Europe-wide delivery.`,
-      brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Brands</a> · ${H}`,
+      brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Brands</a> · ${H}`,
       brand_h1: `${H} – industrial spare parts & MRO`,
       brand_intro: `ABCspareparts supplies original ${H} parts and verified alternatives for industrial automation and MRO. Send part numbers and quantities via the form – we usually respond within 24 hours.`,
       brand_intro_p2: `For ${H} we check stock options, Europe-wide supply, and – where appropriate – verified non-original alternatives. This page is not a live stock feed: use the <a href="#contact">no-obligation request</a> with part numbers and quantities so we can price and source accurately.`,
@@ -215,7 +215,7 @@ function buildTranslations(brand) {
       meta_description: highlightPricing
         ? `Prezzi vantaggiosi su ricambi ${H}, originali e alternative verificate per automazione e MRO. Invia i codici articolo per una quotazione rapida senza impegno.`
         : `Ricambi originali ${H} e alternative verificate per automazione e MRO. Invii i codici articolo – preventivo senza impegno, di solito risposta entro 24 ore. Consegna in Europa.`,
-      brand_breadcrumb: `<a href="../index.html">Home</a> · <a href="../marche.html">Marche</a> · ${H}`,
+      brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Marche</a> · ${H}`,
       brand_h1: `${H} – ricambi industriali e MRO`,
       brand_intro: `ABCspareparts fornisce ricambi ${H} originali e alternative verificate per automazione e MRO. Indichi codici articolo e quantità nel modulo – di solito rispondiamo entro 24 ore.`,
       brand_intro_p2: `Per ${H} verifichiamo disponibilità, consegne in Europa e, se adatto, alternative verificate. Questa scheda non sostituisce un elenco live: usi la <a href="#contact">richiesta senza impegno</a> con riferimenti e quantità per un preventivo mirato.`,
@@ -265,7 +265,7 @@ function buildTranslations(brand) {
       meta_description: highlightPricing
         ? `Precios competitivos en recambios ${H}, originales y alternativas verificadas para automatización y MRO. Envíe referencias para una cotización rápida sin compromiso.`
         : `Recambios originales ${H} y alternativas verificadas para automatización y MRO. Envíe referencias – presupuesto sin compromiso, respuesta habitual en 24 horas. Envío en Europa.`,
-      brand_breadcrumb: `<a href="../index.html">Inicio</a> · <a href="../marche.html">Marcas</a> · ${H}`,
+      brand_breadcrumb: `<a href="../">Inicio</a> · <a href="../marche.html">Marcas</a> · ${H}`,
       brand_h1: `${H} – recambios industriales y MRO`,
       brand_intro: `ABCspareparts suministra piezas ${H} originales y alternativas verificadas para automatización y MRO. Envíe referencias y cantidades en el formulario – solemos responder en 24 horas.`,
       brand_intro_p2: `Para ${H} comprobamos disponibilidad, envíos en Europa y, si aplica, alternativas verificadas. Esta página no es stock en vivo: use la <a href="#contact">solicitud sin compromiso</a> con referencias y cantidades para un presupuesto fiable.`,
@@ -315,7 +315,7 @@ function buildTranslations(brand) {
       meta_description: highlightPricing
         ? `Prix compétitifs sur les pièces ${H}, d’origine et alternatives vérifiées pour l’automatisation et le MRO. Envoyez les références pour un devis rapide sans engagement.`
         : `Pièces d’origine ${H} et alternatives vérifiées pour l’automatisation et le MRO. Indiquez les références – devis sans engagement, réponse en général sous 24 h. Livraison en Europe.`,
-      brand_breadcrumb: `<a href="../index.html">Accueil</a> · <a href="../marche.html">Marques</a> · ${H}`,
+      brand_breadcrumb: `<a href="../">Accueil</a> · <a href="../marche.html">Marques</a> · ${H}`,
       brand_h1: `${H} – pièces industrielles et MRO`,
       brand_intro: `ABCspareparts fournit des pièces ${H} d’origine et des alternatives vérifiées pour l’automatisation et le MRO. Indiquez références et quantités dans le formulaire – réponse en général sous 24 h.`,
       brand_intro_p2: `Pour ${H}, nous contrôlons la disponibilité, les possibilités d’expédition en Europe et, le cas échéant, des alternatives vérifiées. Cette page n’est pas un stock temps réel : utilisez la <a href="#contact">demande sans engagement</a> avec références et quantités pour un devis fiable.`,
@@ -706,6 +706,7 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts) {
   <link rel="canonical" href="${pageUrl}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${pageUrl}">
+  <link rel="alternate" hreflang="de" href="${pageUrl}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${pageUrl}">
   <meta property="og:title" content="${escapeAttr(d.meta_title)}">
@@ -866,7 +867,7 @@ ${buildFooterHtml('../')}
     var translations = ${translationsJson};
     var SELECTED_PART = '';
 
-    var pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+    var pages = ['index.html', '', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
 
     function isLangInternalPage(base) {
       if (pages.indexOf(base) !== -1) return true;
@@ -884,6 +885,8 @@ ${buildFooterHtml('../')}
       return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de';
     }
     function updateLinksWithLang(lang) {
+      // Language stays in localStorage — do not append ?lang= (GSC alternate noise).
+      try { localStorage.setItem('lang', lang); } catch (e) {}
       document.querySelectorAll('a[href]').forEach(function (a) {
         var h = a.getAttribute('href') || '';
         if (h.indexOf('#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('https://wa.me') === 0) return;
@@ -898,14 +901,32 @@ ${buildFooterHtml('../')}
           relPrefix = pathNoQuery.slice(0, strip);
           base = pathNoQuery.slice(strip);
         }
-        if (isLangInternalPage(base)) {
-          a.href = relPrefix + base + '?lang=' + lang + (parts[1] ? '#' + parts[1] : '');
+        if (base === 'index.html') base = '';
+        if (isLangInternalPage(base) || base === '') {
+          var path = base === '' ? (relPrefix || '../') : (relPrefix + base);
+          a.href = path + (parts[1] ? '#' + parts[1] : '');
         }
       });
     }
     function getUrlPart() {
       var p = new URLSearchParams(window.location.search);
-      return p.get('part') || '';
+      var fromQuery = p.get('part');
+      if (fromQuery) return fromQuery;
+      var hash = (window.location.hash || '').replace(/^#/, '');
+      if (hash.indexOf('quote=') === 0) {
+        try { return decodeURIComponent(hash.slice(6)); } catch (e) { return hash.slice(6); }
+      }
+      return '';
+    }
+    function setQuoteDeepLink(code) {
+      try {
+        if (!history.replaceState) return;
+        var u = new URL(window.location.href);
+        u.searchParams.delete('part');
+        u.searchParams.delete('lang');
+        var path = u.pathname + (u.search || '');
+        history.replaceState(null, '', code ? path + '#quote=' + encodeURIComponent(code) : path);
+      } catch (err) {}
     }
     function buildIframeSrc(langCode, partNumber) {
       var lang = langCode || 'en';
@@ -930,15 +951,7 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
       if (quoteIframe) quoteIframe.src = buildIframeSrc(lang, code);
       quoteModal.removeAttribute('hidden');
       document.body.classList.add('quote-modal-open');
-      try {
-        if (history.replaceState) {
-          var u = new URL(window.location.href);
-          if (code) u.searchParams.set('part', code);
-          else u.searchParams.delete('part');
-          u.hash = '';
-          history.replaceState(null, '', u.toString());
-        }
-      } catch (err) {}
+      setQuoteDeepLink(code);
     }
     function closeQuoteModal() {
       if (!quoteModal) return;

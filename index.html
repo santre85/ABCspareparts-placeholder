@@ -6,15 +6,22 @@
     <title id="pageTitle">ABCspareparts – Industrieersatzteile &amp; MRO | 11960+ Marken, Angebot in 24h</title>
     <meta id="pageDescription" name="description" content="Originalteile und geprüfte Alternativen für Automatisierung und MRO. Siemens, Festo, ABB, Schneider u. v. m. Jetzt Anfrage stellen – Rückmeldung meist innerhalb von 24 Stunden, Lieferung europaweit.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+      <script>
+  /* Soft redirect /index.html → / (true 301: Cloudflare/nginx — see nginx-seo-redirects.example.conf) */
+  (function () {
+    try {
+      if (/\/index\.html$/i.test(location.pathname)) {
+        var dest = location.pathname.replace(/index\.html$/i, '') || '/';
+        location.replace(dest + location.search + location.hash);
+      }
+    } catch (e) {}
+  })();
+  </script>
     <link rel="canonical" href="https://abcspareparts.eu/">
     <link rel="alternate" type="text/plain" href="llms.txt" title="Site summary for AI assistants">
-    <!-- hreflang multilingua -->
+    <!-- hreflang: primary language (de) until dedicated /en/, /it/, … URLs exist -->
   <link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/">
-  <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/?lang=de">
-  <link rel="alternate" hreflang="it" href="https://abcspareparts.eu/?lang=it">
-  <link rel="alternate" hreflang="en" href="https://abcspareparts.eu/?lang=en">
-  <link rel="alternate" hreflang="es" href="https://abcspareparts.eu/?lang=es">
-  <link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/?lang=fr">
+  <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/">
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
   <meta property="og:type" content="website">
     <meta property="og:url" content="https://abcspareparts.eu/">
@@ -639,7 +646,7 @@
         <span class="separator">|</span>
         <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
         <span class="separator">|</span>
-        <a href="index.html#contact" data-i18n="footer_contact">Kontakt</a>
+        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
         <span class="separator">|</span>
         <a href="impressum.html" target="_blank" data-i18n="footer_imprint">Impressum</a>
         <span class="separator">|</span>
@@ -1098,7 +1105,8 @@
       navigator.language.split('-')[0];
   }
   function updateLinksWithLang(lang) {
-    const pages = ['index.html','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    const pages = ['index.html','','/','marche.html','casi.html','impressum.html','datenschutz.html','agb.html','versand.html','cookies.html'];
     function isLangInternalPage(base) {
       if (pages.includes(base)) return true;
       if (/^marche\/[^/]+\.html$/i.test(base)) return true;
@@ -1109,9 +1117,10 @@
       const h = a.getAttribute('href') || '';
       if (h.startsWith('#') || h.startsWith('mailto:') || h.startsWith('tel:') || h.startsWith('https://wa.me')) return;
       const [path, hash] = h.split('#');
-      const base = path.split('?')[0];
+      let base = path.split('?')[0];
+      if (base === 'index.html') base = '/';
       if (isLangInternalPage(base)) {
-        a.href = base + '?lang=' + lang + (hash ? '#' + hash : '');
+        a.href = (base || '/') + (hash ? '#' + hash : '');
       }
     });
   }
@@ -1212,8 +1221,8 @@
         var q = inp && inp.value ? inp.value.trim() : '';
         var l = langSelect.value || 'de';
         if (['de', 'en', 'it', 'es', 'fr'].indexOf(l) === -1) l = 'de';
-        var url = 'marche.html?lang=' + encodeURIComponent(l);
-        if (q) url += '&q=' + encodeURIComponent(q);
+        var url = 'marche.html';
+        if (q) url += '?q=' + encodeURIComponent(q);
         window.location.href = url;
       });
     }

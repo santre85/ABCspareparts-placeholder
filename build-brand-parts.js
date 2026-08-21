@@ -315,8 +315,9 @@ function escapeXml(value) {
     .replace(/"/g, '&quot;');
 }
 
+/** Hash deep-link (not a separate Google URL). Prefer over ?part= for llms.txt. */
 function partPageUrl(brandSlug, partNumber) {
-  return `${BASE}/marche/${brandSlug}.html?part=${encodeURIComponent(partNumber)}`;
+  return `${BASE}/marche/${brandSlug}.html#quote=${encodeURIComponent(partNumber)}`;
 }
 
 function writeSitemapBrandParts(brands) {
@@ -473,20 +474,14 @@ function updateJekyllConfig(listinoSitemapFiles) {
 
 function updateRobotsTxt() {
   const robotsPath = path.join(ROOT, 'robots.txt');
+  // Do not Disallow ?part= / ?lang= — indexation is controlled by canonical tags.
   const content = `# robots.txt for abcspareparts.eu
-# Index brand pages, hubs, and cases — not query-parameter deep links.
+# Crawl freely. Indexation of query variants is controlled by canonical tags
+# (clean URLs only), not by Disallow rules.
 
 User-agent: *
 Allow: /
 
-# ?part= and ?lang= are client-side UX on the same HTML document.
-# Canonical is always the clean /marche/{slug}.html URL — do not crawl variants.
-Disallow: /*?part=
-Disallow: /*?*part=
-Disallow: /*?lang=
-Disallow: /*?*lang=
-
-# AI and search crawlers (common bots)
 User-agent: GPTBot
 Allow: /
 
@@ -508,7 +503,7 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Sitemaps (indexable URLs only)
+# Canonical sitemaps only (no ?part= / ?lang= URLs)
 Sitemap: https://abcspareparts.eu/sitemap-index.xml
 Sitemap: https://abcspareparts.eu/sitemap.xml
 Sitemap: https://abcspareparts.eu/sitemap-brands.xml
@@ -522,7 +517,7 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
   const partCount = brands.reduce((sum, row) => sum + (row.parts?.length || 0) + (row.listino?.count || 0), 0);
-  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (DE/EN/IT/ES/FR via \`?lang=\`). No list prices are published. Total: ${partCount} part references.\n`;
+  const intro = `## Brand pages with quotable part numbers\n\n${brands.length} manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: ${partCount} part references.\n`;
   const lines = brands.map((row) => {
     const url = `${BASE}/marche/${row.brand_slug}.html`;
     const preview = formatPartPreview(row);
@@ -558,7 +553,7 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
       catalogLines.push(`- [${row.brand} ${part.part_number}](${url})${desc}`);
     }
   }
-  const catalogSection = `## Full part number catalog\n\nQuotable part references. Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Deep links with \`?part=\` open the enquiry form for humans/AI; Google Search Console sitemaps list only the clean brand page URL (canonical):\n\n${catalogLines.join('\n')}\n`;
+  const catalogSection = `## Full part number catalog\n\nQuotable part references. Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Deep links use a URL hash (\`#quote=CODE\`) so Google indexes only the clean brand page — not \`?part=\` / \`?lang=\` query variants:\n\n${catalogLines.join('\n')}\n`;
 
   if (/## Full part number catalog/.test(content)) {
     content = content.replace(/## Full part number catalog[\s\S]*?(?=\n## )/, catalogSection.trimEnd());

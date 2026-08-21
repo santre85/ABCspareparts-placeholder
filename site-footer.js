@@ -88,7 +88,7 @@ function buildFooterHtml(linkPrefix, options) {
         <span class="separator">|</span>
         <a href="${p}${casesHub}" data-i18n="footer_cases">Erfolgsgeschichten</a>
         <span class="separator">|</span>
-        <a href="${p}index.html#contact" data-i18n="footer_contact">Kontakt</a>
+        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
         <span class="separator">|</span>
         <a href="${p}impressum.html" target="_blank" rel="noopener" data-i18n="footer_imprint">Impressum</a>
         <span class="separator">|</span>
