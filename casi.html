@@ -8,6 +8,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://abcspareparts.eu/casi.html">
   <link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi.html">
+  <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/casi.html">
   <link rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt" title="Site summary for AI crawlers">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abcspareparts.eu/casi.html">
@@ -148,7 +149,7 @@
         <span class="separator">|</span>
         <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
         <span class="separator">|</span>
-        <a href="index.html#contact" data-i18n="footer_contact">Kontakt</a>
+        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
         <span class="separator">|</span>
         <a href="impressum.html" target="_blank" rel="noopener" data-i18n="footer_imprint">Impressum</a>
         <span class="separator">|</span>
@@ -180,11 +181,13 @@
     function getLangFromUrl(){ var p=new URLSearchParams(window.location.search); var l=p.get('lang'); return l&&['de','en','it','es','fr'].indexOf(l)!==-1?l:null; }
     function getCurrentLang(){ return getLangFromUrl()||(typeof localStorage!=='undefined'&&localStorage.getItem('lang'))||(navigator.language&&navigator.language.split('-')[0])||'de'; }
     function updateLinksWithLang(lang){
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       document.querySelectorAll('a[href]').forEach(function(a){
         var h=a.getAttribute('href')||'';
         if(h.indexOf('#')===0||h.indexOf('mailto:')===0||h.indexOf('tel:')===0||h.indexOf('https://wa.me')===0||h.indexOf('http://')===0||h.indexOf('https://')===0) return;
         var parts=h.split('#'); var base=parts[0].split('?')[0];
-        if(isLangInternalPage(base)) a.href=base+'?lang='+lang+(parts[1]?'#'+parts[1]:'');
+        if(base==='index.html') base='';
+        if(isLangInternalPage(base)||base==='') a.href=(base===''?'./':base)+(parts[1]?'#'+parts[1]:'');
       });
     }
     function changeLanguage(lang){

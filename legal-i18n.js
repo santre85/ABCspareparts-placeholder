@@ -442,7 +442,8 @@ function getCurrentLang() {
   return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || navigator.language.split('-')[0];
 }
 function updateLegalLinksWithLang(lang) {
-  const pages = ['index.html', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  const pages = ['index.html', '', '/', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
   function internalLegalLink(base) {
     if (pages.includes(base)) return true;
     if (/^marche\/[^/]+\.html$/i.test(base)) return true;
@@ -453,9 +454,10 @@ function updateLegalLinksWithLang(lang) {
     const h = a.getAttribute('href') || '';
     if (h.startsWith('#') || h.startsWith('mailto:') || h.startsWith('tel:') || h.startsWith('https://wa.me')) return;
     const [path, hash] = h.split('#');
-    const base = path.split('?')[0];
+    let base = path.split('?')[0];
+    if (base === 'index.html') base = '/';
     if (internalLegalLink(base)) {
-      a.href = base + '?lang=' + lang + (hash ? '#' + hash : '');
+      a.href = (base || '/') + (hash ? '#' + hash : '');
     }
   });
 }

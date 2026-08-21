@@ -1,17 +1,10 @@
 # robots.txt for abcspareparts.eu
-# Index brand pages, hubs, and cases — not query-parameter deep links.
+# Crawl freely. Indexation of query variants is controlled by canonical tags
+# (clean URLs only), not by Disallow rules.
 
 User-agent: *
 Allow: /
 
-# ?part= and ?lang= are client-side UX on the same HTML document.
-# Canonical is always the clean /marche/{slug}.html URL — do not crawl variants.
-Disallow: /*?part=
-Disallow: /*?*part=
-Disallow: /*?lang=
-Disallow: /*?*lang=
-
-# AI and search crawlers (common bots)
 User-agent: GPTBot
 Allow: /
 
@@ -33,7 +26,7 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Sitemaps (indexable URLs only)
+# Canonical sitemaps only (no ?part= / ?lang= URLs)
 Sitemap: https://abcspareparts.eu/sitemap-index.xml
 Sitemap: https://abcspareparts.eu/sitemap.xml
 Sitemap: https://abcspareparts.eu/sitemap-brands.xml

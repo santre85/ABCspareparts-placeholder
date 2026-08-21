@@ -13,8 +13,9 @@ include:
   - sitemap-index.xml
   - sitemap-brands.xml
   - sitemap-brand-parts.xml
-  - sitemap-part-codes.xml
   - sitemap-cases.xml
+  - _redirects
+  - seo-config.js
   # BEGIN listino-sitemaps
   # END listino-sitemaps
 
@@ -34,10 +35,6 @@ defaults:
       layout: none
   - scope:
       path: "sitemap-brand-parts.xml"
-    values:
-      layout: none
-  - scope:
-      path: "sitemap-part-codes.xml"
     values:
       layout: none
   - scope:

@@ -1,0 +1,4 @@
+# Netlify-style redirects (ignored by GitHub Pages; useful if host supports _redirects).
+# True 301 for /index.html → / must be configured at CDN/server (see .htaccess.example).
+
+/index.html   /   301

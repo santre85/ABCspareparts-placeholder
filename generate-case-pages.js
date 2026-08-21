@@ -150,11 +150,11 @@ const { FOOTER_CSS, FOOTER_I18N, withFooterI18n, buildFooterHtml } = require('./
 
 function buildCaseHubLabels(caseRow) {
   const breadcrumb = {
-    de: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Erfolgsgeschichten</a> · ${caseRow.brand}`,
-    en: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Success stories</a> · ${caseRow.brand}`,
-    it: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi di successo</a> · ${caseRow.brand}`,
-    es: `<a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${caseRow.brand}`,
-    fr: `<a href="../index.html">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${caseRow.brand}`
+    de: `<a href="../">Home</a> · <a href="../${HUB_FILE}">Erfolgsgeschichten</a> · ${caseRow.brand}`,
+    en: `<a href="../">Home</a> · <a href="../${HUB_FILE}">Success stories</a> · ${caseRow.brand}`,
+    it: `<a href="../">Home</a> · <a href="../${HUB_FILE}">Casi di successo</a> · ${caseRow.brand}`,
+    es: `<a href="../">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${caseRow.brand}`,
+    fr: `<a href="../">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${caseRow.brand}`
   };
   const out = {};
   for (const L of LANGS) {
@@ -282,7 +282,7 @@ function buildCasePage(caseRow) {
   const quotableParts = getQuotableParts(caseRow);
   const quotablePartsHtml = buildQuotablePartsHtml(quotableParts);
   const quoteModalHtml = buildQuoteModalHtml();
-  let brandUrl = '../index.html#contact';
+  let brandUrl = '../#contact';
   if (caseRow.brand_slug) {
     const brandPage = path.join(ROOT, 'marche', `${caseRow.brand_slug}.html`);
     brandUrl = fs.existsSync(brandPage) ? `../marche/${caseRow.brand_slug}.html` : '../marche.html';
@@ -304,6 +304,7 @@ function buildCasePage(caseRow) {
   <link rel="canonical" href="${canonical}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
+  <link rel="alternate" hreflang="de" href="${canonical}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonical}">
   <meta property="og:title" content="${escapeAttr(de.meta_title)}">
@@ -379,7 +380,7 @@ ${FOOTER_CSS}
   </div>
   <header class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" data-i18n="case_breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> · <a href="../${HUB_FILE}">Casi</a> · ${escapeHtml(caseRow.brand)}</nav>
+      <nav class="breadcrumb" data-i18n="case_breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> · <a href="../${HUB_FILE}">Casi</a> · ${escapeHtml(caseRow.brand)}</nav>
       <h1 data-i18n="title">${escapeHtml(de.title)}</h1>
       <p class="subtitle" data-i18n="subtitle">${escapeHtml(de.subtitle)}</p>
     </div>
@@ -438,6 +439,7 @@ ${quotablePartsHtml}
       return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de';
     }
     function updateLinksWithLang(lang) {
+      try { localStorage.setItem('lang', lang); } catch (e) {}
       document.querySelectorAll('a[href]').forEach(function (a) {
         var h = a.getAttribute('href') || '';
         if (h.indexOf('#') === 0 || h.indexOf('mailto:') === 0 || h.indexOf('tel:') === 0 || h.indexOf('https://wa.me') === 0) return;
@@ -452,8 +454,10 @@ ${quotablePartsHtml}
           relPrefix = pathNoQuery.slice(0, strip);
           base = pathNoQuery.slice(strip);
         }
-        if (isLangInternalPage(base)) {
-          a.href = relPrefix + base + '?lang=' + lang + (parts[1] ? '#' + parts[1] : '');
+        if (base === 'index.html') base = '';
+        if (isLangInternalPage(base) || base === '') {
+          var path = base === '' ? (relPrefix || '../') : (relPrefix + base);
+          a.href = path + (parts[1] ? '#' + parts[1] : '');
         }
       });
     }
@@ -624,6 +628,7 @@ function buildHubPage(cases) {
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" hreflang="x-default" href="${BASE}/${HUB_FILE}">
+  <link rel="alternate" hreflang="de" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI crawlers">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${BASE}/${HUB_FILE}">
@@ -699,11 +704,13 @@ ${cardsHtml}
     function getLangFromUrl(){ var p=new URLSearchParams(window.location.search); var l=p.get('lang'); return l&&['de','en','it','es','fr'].indexOf(l)!==-1?l:null; }
     function getCurrentLang(){ return getLangFromUrl()||(typeof localStorage!=='undefined'&&localStorage.getItem('lang'))||(navigator.language&&navigator.language.split('-')[0])||'de'; }
     function updateLinksWithLang(lang){
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       document.querySelectorAll('a[href]').forEach(function(a){
         var h=a.getAttribute('href')||'';
         if(h.indexOf('#')===0||h.indexOf('mailto:')===0||h.indexOf('tel:')===0||h.indexOf('https://wa.me')===0||h.indexOf('http://')===0||h.indexOf('https://')===0) return;
         var parts=h.split('#'); var base=parts[0].split('?')[0];
-        if(isLangInternalPage(base)) a.href=base+'?lang='+lang+(parts[1]?'#'+parts[1]:'');
+        if(base==='index.html') base='';
+        if(isLangInternalPage(base)||base==='') a.href=(base===''?'./':base)+(parts[1]?'#'+parts[1]:'');
       });
     }
     function changeLanguage(lang){
@@ -775,7 +782,7 @@ function updateSitemapIndex() {
 function updateLlmsTxt(cases) {
   const llmsPath = path.join(ROOT, 'llms.txt');
   let content = fs.readFileSync(llmsPath, 'utf8');
-  const hubLine = `- [Success stories hub (casi di successo)](${BASE}/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (?lang=).`;
+  const hubLine = `- [Success stories hub (casi di successo)](${BASE}/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (client-side language selector).`;
   content = content.replace(/- \[Success stories[^\n]+\n/, hubLine + '\n');
 
   const caseLines = cases.map((c) => {
