@@ -169,6 +169,12 @@ for (const c of publishedCases) {
   if (!html.includes('"mpn"')) {
     throw new Error(`Case page ${c.slug}.html is missing mpn in Product JSON-LD`);
   }
+  if (!html.includes('"image"')) {
+    throw new Error(`Case page ${c.slug}.html Product JSON-LD is missing image`);
+  }
+  if (/"@type":"Offer"/.test(html) && !/"price"/.test(html) && !/"priceSpecification"/.test(html)) {
+    throw new Error(`Case page ${c.slug}.html has Offer without price (GSC Merchant listings)`);
+  }
   if (!html.includes('rel="canonical"')) {
     throw new Error(`Case page ${c.slug}.html is missing canonical URL`);
   }
@@ -324,6 +330,12 @@ for (const row of partsData.brands || []) {
   }
   if (!content.includes('#quotable-parts')) {
     throw new Error(`Missing quotable-parts JSON-LD in marche/${f}`);
+  }
+  if (!content.includes('"image":"https://abcspareparts.eu/logo.png"') && !content.includes('"image": "https://abcspareparts.eu/logo.png"')) {
+    throw new Error(`marche/${f} Product JSON-LD is missing image (GSC Merchant listings)`);
+  }
+  if (/"@type":"Offer"/.test(content)) {
+    throw new Error(`marche/${f} must not use Offer JSON-LD without public prices (quote-only site)`);
   }
   if (content.includes("searchParams.set('part'") || content.includes('searchParams.set("part"')) {
     throw new Error(`marche/${f} must not push ?part= into the address bar (use #quote=)`);
