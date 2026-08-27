@@ -458,6 +458,8 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
       const key = String(part.part_number || '').toLowerCase();
       if (!key || seen.has(key)) continue;
       seen.add(key);
+      // No Offer/price: site is quote-only (no public list prices). Merchant listing
+      // markup requires price — omit offers to avoid GSC critical errors.
       elements.push({
         '@type': 'ListItem',
         position: elements.length + 1,
@@ -467,13 +469,9 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
           sku: part.part_number,
           mpn: part.part_number,
           description: part.description || part.part_number,
+          image: `${BASE}/logo.png`,
           brand: { '@type': 'Brand', name: brand },
-          offers: {
-            '@type': 'Offer',
-            url: pageUrl,
-            availability: 'https://schema.org/InStock',
-            seller: { '@id': `${BASE}/#organization` }
-          }
+          url: pageUrl
         }
       });
     }
@@ -490,13 +488,9 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
           sku: code,
           mpn: code,
           description: `${brand} ${code} – request a quote (no list price on site)`,
+          image: `${BASE}/logo.png`,
           brand: { '@type': 'Brand', name: brand },
-          offers: {
-            '@type': 'Offer',
-            url: pageUrl,
-            availability: 'https://schema.org/InStock',
-            seller: { '@id': `${BASE}/#organization` }
-          }
+          url: pageUrl
         }
       });
     }

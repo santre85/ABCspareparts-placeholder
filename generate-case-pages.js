@@ -215,9 +215,12 @@ function buildCaseJsonLd(caseRow, de, canonical) {
         name: productName,
         sku: caseRow.part_number,
         mpn,
+        image: `${BASE}/logo.png`,
         brand: { '@type': 'Brand', name: caseRow.brand },
         description: de.meta_description,
-        category: de.fact_component_val
+        category: de.fact_component_val,
+        url: canonical
+        // No Offer: quote-only site — no public price for Merchant listings
       },
       {
         '@type': 'BreadcrumbList',
