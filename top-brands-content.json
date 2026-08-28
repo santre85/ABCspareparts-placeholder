@@ -82,5 +82,114 @@
     "it": "Bosch Rexroth: idraulica, assi lineari, servi. Numero, targa, carico e forature per pompe, valvole, indramat/electric.",
     "es": "Bosch Rexroth: hidráulica, lineales, servos. Número, chapa, carga/rozamiento para un repuesto fiable y compatible.",
     "fr": "Bosch Rexroth : hydraulique, lineaires, servos. Référence, plaque, charge, filetage : pour pompes, vérins, variateurs, rails."
+  },
+  "termet": {
+    "fields": {
+      "meta_title": {
+        "de": "TERMET Heizkessel-Ersatzteile – alle Teile anfragen | ABCspareparts",
+        "en": "TERMET boiler spare parts – request any part | ABCspareparts",
+        "it": "Ricambi caldaie TERMET – tutti i pezzi | ABCspareparts",
+        "es": "Recambios caldera TERMET – todas las piezas | ABCspareparts",
+        "fr": "Pièces chaudière TERMET – toutes références | ABCspareparts"
+      },
+      "meta_description": {
+        "de": "TERMET Gasheizkessel-Ersatzteile (EcoCondens, MiniTerm, MaxiTerm): Pumpen, Wärmetauscher, Ventile, NTC. Original oder geprüft – Anfrage oft in 24h.",
+        "en": "TERMET gas boiler spare parts (EcoCondens, MiniTerm, MaxiTerm): pumps, heat exchangers, valves, NTC. Original or verified – quote usually within 24h.",
+        "it": "Ricambi caldaie a gas TERMET (EcoCondens, MiniTerm, MaxiTerm): pompe, scambiatori, valvole, sonde NTC. Originali o verificati – preventivo spesso in 24h.",
+        "es": "Recambios caldera gas TERMET (EcoCondens, MiniTerm, MaxiTerm): bombas, intercambiadores, válvulas, NTC. Original o verificado – presupuesto en 24h.",
+        "fr": "Pièces chaudière gaz TERMET (EcoCondens, MiniTerm, MaxiTerm) : pompes, échangeurs, vannes, NTC. Origine ou vérifié – devis souvent sous 24 h."
+      },
+      "brand_h1": {
+        "de": "TERMET – Ersatzteile für Gasheizkessel und Therme",
+        "en": "TERMET – spare parts for gas boilers",
+        "it": "TERMET – ricambi per caldaie a gas",
+        "es": "TERMET – recambios para calderas de gas",
+        "fr": "TERMET – pièces pour chaudières à gaz"
+      },
+      "brand_intro": {
+        "de": "ABCspareparts liefert Ersatzteile für TERMET-Heizkessel und -Therme: wir beschaffen praktisch alle benötigten Bauteile – Originalteile und geprüfte Alternativen. Teilenummer und Kesseltyp angeben – Antwort meist innerhalb von 24 Stunden.",
+        "en": "ABCspareparts supplies spare parts for TERMET gas boilers: we source virtually all required components – originals and verified alternatives. Send part numbers and boiler model – we usually reply within 24 hours.",
+        "it": "ABCspareparts fornisce ricambi per caldaie a gas TERMET: forniamo praticamente tutti i pezzi necessari – originali e alternative verificate. Indichi codice articolo e modello caldaia – di solito rispondiamo entro 24 ore.",
+        "es": "ABCspareparts suministra recambios para calderas de gas TERMET: conseguimos prácticamente todas las piezas necesarias – originales y alternativas verificadas. Indique referencia y modelo – solemos responder en 24 horas.",
+        "fr": "ABCspareparts fournit des pièces pour chaudières à gaz TERMET : nous sourçons pratiquement toutes les pièces nécessaires – origine et alternatives vérifiées. Indiquez référence et modèle – réponse en général sous 24 h."
+      },
+      "brand_intro_p2": {
+        "de": "Ob Wärmetauscher, Umwälzpumpe, Gasarmatur, Sicherheitsventil, Ausdehnungsgefäß, Zünd- und Ionisationselektrode oder NTC-Fühler: für TERMET-Serien wie EcoCondens, MiniTerm, MaxiTerm, Elegance und uniCO prüfen wir Verfügbarkeit und Lieferung in Europa. Nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a> mit Teilenummer, Menge und Typenschild.",
+        "en": "Whether heat exchanger, circulation pump, gas valve, safety valve, expansion vessel, ignition/flame electrode or NTC sensor: for TERMET ranges such as EcoCondens, MiniTerm, MaxiTerm, Elegance and uniCO we check availability and Europe-wide supply. Use the <a href=\"#contact\">no-obligation request</a> with part number, quantity and nameplate details.",
+        "it": "Che si tratti di scambiatore, pompa di circolazione, valvola gas, valvola di sicurezza, vaso di espansione, elettrodo di accensione/ionizzazione o sonda NTC: per le serie TERMET come EcoCondens, MiniTerm, MaxiTerm, Elegance e uniCO verifichiamo disponibilità e consegna in Europa. Usi la <a href=\"#contact\">richiesta senza impegno</a> con codice, quantità e dati della targa.",
+        "es": "Intercambiador, bomba de circulación, válvula de gas, válvula de seguridad, vaso de expansión, electrodo de encendido/ionización o sonda NTC: para series TERMET como EcoCondens, MiniTerm, MaxiTerm, Elegance y uniCO comprobamos disponibilidad y envío en Europa. Use la <a href=\"#contact\">solicitud sin compromiso</a> con referencia, cantidad y placa.",
+        "fr": "Échangeur, pompe de circulation, vanne gaz, soupape de sécurité, vase d’expansion, électrode d’allumage/ionisation ou sonde NTC : pour les gammes TERMET EcoCondens, MiniTerm, MaxiTerm, Elegance et uniCO nous vérifions disponibilité et livraison en Europe. Utilisez la <a href=\"#contact\">demande sans engagement</a> avec référence, quantité et plaque signalétique."
+      },
+      "brand_top_extra": {
+        "de": "Wir decken den typischen Ersatzteilbedarf für TERMET-Kessel ab: Hydraulik und Pumpen, Wärmetauscher, Gaswege und Armaturen, Sensorik (NTC, Druck), Elektroden, Elektronik/Steuerungen sowie Dichtungen und Verschleißteile. Bitte Katalognummer und möglichst den Kesseltyp angeben.",
+        "en": "We cover typical TERMET boiler spares: hydraulics and pumps, heat exchangers, gas train and valves, sensors (NTC, pressure), electrodes, control boards, plus gaskets and wear parts. Include the catalogue number and boiler model when possible.",
+        "it": "Copriamo il fabbisogno tipico di ricambi caldaie TERMET: idraulica e pompe, scambiatori, circuito gas e valvole, sensori (NTC, pressione), elettrodi, schede di controllo, oltre a guarnizioni e parti di usura. Indichi il codice catalogo e, se possibile, il modello della caldaia.",
+        "es": "Cubrimos el recambio habitual de calderas TERMET: hidráulica y bombas, intercambiadores, circuito de gas y válvulas, sensores (NTC, presión), electrodos, placas de control, más juntas y piezas de desgaste. Indique el código de catálogo y, si puede, el modelo.",
+        "fr": "Nous couvrons l’essentiel des pièces chaudière TERMET : hydraulique et pompes, échangeurs, train gaz et vannes, capteurs (NTC, pression), électrodes, cartes de commande, plus joints et pièces d’usure. Indiquez le n° catalogue et, si possible, le modèle."
+      },
+      "brand_form_hint": {
+        "de": "Im Formular bitte Hersteller (TERMET), Teilenummer, Menge und möglichst Kesseltyp / Typenschild angeben.",
+        "en": "Please include manufacturer (TERMET), part number, quantity and boiler model / nameplate in the form where possible.",
+        "it": "Nel modulo indichi costruttore (TERMET), codice articolo, quantità e se possibile modello caldaia / targa.",
+        "es": "Indique en el formulario fabricante (TERMET), referencia, cantidad y, si puede, modelo de caldera / placa.",
+        "fr": "Indiquez fabricant (TERMET), référence, quantité et si possible modèle de chaudière / plaque dans le formulaire."
+      },
+      "brand_faq_q1": {
+        "de": "Welche TERMET-Ersatzteile können Sie liefern?",
+        "en": "Which TERMET spare parts can you supply?",
+        "it": "Quali ricambi TERMET potete fornire?",
+        "es": "¿Qué recambios TERMET pueden suministrar?",
+        "fr": "Quelles pièces TERMET pouvez-vous fournir ?"
+      },
+      "brand_faq_a1": {
+        "de": "Wir beschaffen Ersatzteile für TERMET-Gasheizkessel und -Therme über die gängigen Serien hinweg – von Pumpen und Wärmetauschern bis zu Ventilen, Sensoren und Elektronik. Senden Sie Teilenummer und möglichst den Kesseltyp über das Formular oder an info@abcspareparts.eu.",
+        "en": "We source spare parts for TERMET gas boilers across common ranges – from pumps and heat exchangers to valves, sensors and control boards. Send the part number and boiler model via the form below or to info@abcspareparts.eu.",
+        "it": "Forniamo ricambi per caldaie a gas TERMET sulle serie più diffuse – da pompe e scambiatori a valvole, sensori e schede. Invii codice articolo e, se noto, il modello caldaia tramite il modulo o a info@abcspareparts.eu.",
+        "es": "Suministramos recambios para calderas de gas TERMET en las series habituales – desde bombas e intercambiadores hasta válvulas, sensores y placas. Envíe la referencia y, si conoce, el modelo por el formulario o a info@abcspareparts.eu.",
+        "fr": "Nous sourçons des pièces pour chaudières gaz TERMET sur les gammes courantes – pompes, échangeurs, vannes, capteurs et cartes. Envoyez la référence et, si connu, le modèle via le formulaire ou à info@abcspareparts.eu."
+      },
+      "brand_faq_q2": {
+        "de": "Reicht die Teilenummer, oder brauchen Sie den Kesseltyp?",
+        "en": "Is the part number enough, or do you need the boiler model?",
+        "it": "Basta il codice ricambio o serve anche il modello della caldaia?",
+        "es": "¿Basta la referencia o también necesitan el modelo de caldera?",
+        "fr": "La référence suffit-elle, ou faut-il aussi le modèle de chaudière ?"
+      },
+      "brand_faq_a2": {
+        "de": "Die Katalog- oder Zeichnungsnummer ist der schnellste Weg. Typenschild (Serie, z. B. EcoCondens / MiniTerm) hilft bei Mehrdeutigkeiten und bei der Prüfung von Alternativen. Lieferung in Europa nach Verfügbarkeit.",
+        "en": "The catalogue or drawing number is fastest. The nameplate (range, e.g. EcoCondens / MiniTerm) helps when codes are ambiguous and when checking alternatives. Europe-wide delivery subject to availability.",
+        "it": "Il codice catalogo o di disegno è la via più rapida. La targa (serie, es. EcoCondens / MiniTerm) aiuta in caso di ambiguità e per valutare alternative. Consegna in Europa in base alla disponibilità.",
+        "es": "El código de catálogo o plano es lo más rápido. La placa (serie, p. ej. EcoCondens / MiniTerm) ayuda si hay ambigüedad y al valorar alternativas. Envío en Europa según disponibilidad.",
+        "fr": "Le n° catalogue ou de plan est le plus rapide. La plaque (gamme, ex. EcoCondens / MiniTerm) aide en cas d’ambiguïté et pour les alternatives. Livraison en Europe selon disponibilité."
+      },
+      "brand_faq_q3": {
+        "de": "Liefern Sie auch geprüfte Alternativen zu Original-TERMET-Teilen?",
+        "en": "Do you also offer verified alternatives to original TERMET parts?",
+        "it": "Fornite anche alternative verificate agli originali TERMET?",
+        "es": "¿También ofrecen alternativas verificadas a originales TERMET?",
+        "fr": "Proposez-vous aussi des alternatives vérifiées aux pièces TERMET d’origine ?"
+      },
+      "brand_faq_a3": {
+        "de": "Ja, wo technisch sinnvoll und geprüft. Geben Sie im Formular an, ob Sie Original, Alternative oder beides akzeptieren – besonders bei Verschleißteilen und Sensorik oft hilfreich.",
+        "en": "Yes, where technically suitable and verified. State in the form whether you want original, alternative, or either – often useful for wear parts and sensors.",
+        "it": "Sì, se tecnicamente adatte e verificate. Indichi in modulo se preferisce originale, alternativa o indifferente – utile soprattutto per parti di usura e sensori.",
+        "es": "Sí, cuando sea técnicamente adecuado y verificado. Indique en el formulario si prefiere original, alternativa o ambas – útil sobre todo en desgaste y sensores.",
+        "fr": "Oui, lorsque c’est techniquement cohérent et vérifié. Indiquez dans le formulaire origine, alternative ou les deux – utile surtout pour pièces d’usure et capteurs."
+      },
+      "related_intro": {
+        "de": "Weitere Marken für Heizungs-, Industrie- und MRO-Ersatzteile:",
+        "en": "Other brands for heating, industrial and MRO spare parts:",
+        "it": "Altre marche per ricambi caldaie, industriali e MRO:",
+        "es": "Otras marcas de recambios para calefacción, industria y MRO:",
+        "fr": "Autres marques pour pièces chauffage, industrie et MRO :"
+      },
+      "contact_iframe_title": {
+        "de": "Anfrageformular – TERMET Heizkessel-Ersatzteile",
+        "en": "Request form – TERMET boiler spare parts",
+        "it": "Modulo richiesta – ricambi caldaie TERMET",
+        "es": "Formulario – recambios caldera TERMET",
+        "fr": "Formulaire – pièces chaudière TERMET"
+      }
+    }
   }
 }

@@ -53,6 +53,21 @@ function mergeTopBrandContent(translations, slug) {
   const row = TOP_BRAND_BY_SLUG[slug];
   if (!row || typeof row !== 'object') return;
   const langs = ['de', 'en', 'it', 'es', 'fr'];
+
+  // Extended format: { fields: { meta_title: {de,en,...}, brand_intro: {...}, ... } }
+  // Overrides any translation key (SEO title/description, H1, FAQ, etc.).
+  if (row.fields && typeof row.fields === 'object') {
+    for (const [key, byLang] of Object.entries(row.fields)) {
+      if (!byLang || typeof byLang !== 'object' || Array.isArray(byLang)) continue;
+      for (const L of langs) {
+        const text = String(byLang[L] || byLang.de || byLang.en || '').trim();
+        if (text) translations[L][key] = text;
+      }
+    }
+    return;
+  }
+
+  // Legacy format: { de: "...", en: "..." } → brand_top_extra only
   for (const L of langs) {
     const text = String(row[L] || row.de || row.en || '').trim();
     if (text) translations[L].brand_top_extra = text;
@@ -406,11 +421,12 @@ function enrichMetaWithParts(translations, parts) {
 
 function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
+  const pageName = String(tDe.brand_h1 || `${brand} – Industrieersatzteile & MRO`).trim();
   const webPage = {
     '@type': 'WebPage',
     '@id': pageUrl + '#webpage',
     url: pageUrl,
-    name: `${brand} – Industrieersatzteile & MRO | ABCspareparts`,
+    name: `${pageName} | ABCspareparts`,
     description: tDe.meta_description,
     inLanguage: 'de',
     isPartOf: { '@id': `${BASE}/#website` },
