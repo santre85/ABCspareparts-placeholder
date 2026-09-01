@@ -298,7 +298,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Radio Energie DC tachogenerator TTN0507RE.0](https://abcspareparts.eu/casi/radio-energie-tachogenerator-ttn0507re0.html): Success story: Radio Energie RE.O110 DC tachogenerator TTN0507RE.0 — 7 V/1000 rpm, B14 flange, for food production in Bavaria.
 - [M&S Armaturen gasket 57600-1000300](https://abcspareparts.eu/casi/ms-armaturen-gasket-57600-1000300-dn100.html): Success story: M&S Armaturen EPDM Classic gasket 57600-1000300 for DN100 butterfly valve. Order 25 Jun 2026, delivery date 13 Jul 2026 — 10 pcs for a new customer.
 - [Leuze laser scanner RSL410-M](https://abcspareparts.eu/casi/leuze-laser-scanner-rsl410-m.html): Success story: Leuze RSL410-M laser scanner for an Italian label producer — much more competitive than existing suppliers, installed at once, line back online.
-- [Roemheld block cylinder HBZ 500160/100/100](https://abcspareparts.eu/casi/roemheld-cylinder-hbz-500160-100-100.html): Success story: August Berger Metallwarenfabrik — Roemheld HBZ 500160/100/100 repaired instead of 7–8 week OEM lead time. Production back in under a week.
+- [Roemheld block cylinder HBZ 500160/100/100](https://abcspareparts.eu/casi/roemheld-cylinder-hbz-500160-100-100.html): Success story: metal goods manufacturer in Germany — Roemheld HBZ 500160/100/100 repaired instead of 7–8 week OEM lead time. Production back in under a week.
 ## XML sitemaps (search engines)
 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
