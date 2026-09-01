@@ -7,13 +7,16 @@ Sito statico multilingue (**DE / EN / IT / ES / FR**) per [abcspareparts.eu](htt
 | Path | Descrizione |
 |------|-------------|
 | `index.html` | Homepage |
-| `marche.html` + `marche/*.html` | Indice A–Z e pagine marca (~11 962) |
+| `marche.html` + `marche/*.html` | Indice A–Z e pagine marca (~11 959) |
 | `casi.html` + `casi/*.html` | Casi di successo (storie anonime) |
 | `brand-order-parts.json` | Codici richiedibili (ordini, offerte, listini) |
 | `listini-data/*.json` | Listini grandi (solo codici, **senza prezzi**) |
 | `llms.txt` | Catalogo per AI / LLM |
 | `sitemap-index.xml` | Indice sitemap (Search Console) |
-| `sitemap-parts-*.xml` | Deep-link `?part=` per tutti i codici listino |
+| `sitemap.xml` | Homepage, hub marche, pagine legali (URL puliti) |
+| `sitemap-brands.xml` | Tutte le pagine marca (~11 959) |
+| `sitemap-brand-parts.xml` | Marche con codici richiedibili / listino (priorità) |
+| `sitemap-cases.xml` | Hub casi + pagine caso |
 | `robots.txt` | Allow crawler + elenco sitemap |
 
 Pagine legali: `impressum.html`, `datenschutz.html`, `agb.html`, `versand.html`, `cookies.html`.
@@ -43,16 +46,18 @@ Caricare **solo** l’indice (contiene tutto ciò che va indicizzato):
 https://abcspareparts.eu/sitemap-index.xml
 ```
 
-Sitemap figlie (URL puliti, **senza** `?part=` / `?lang=`):
+Sitemap figlie (URL puliti, **senza** `?part=` / `?lang=` / `?q=`):
 
 ```
-https://abcspareparts.eu/sitemap.xml
-https://abcspareparts.eu/sitemap-brands.xml
-https://abcspareparts.eu/sitemap-brand-parts.xml
-https://abcspareparts.eu/sitemap-cases.xml
+https://abcspareparts.eu/sitemap.xml          — homepage, marche.html, pagine legali
+https://abcspareparts.eu/sitemap-brands.xml   — tutte le pagine marca
+https://abcspareparts.eu/sitemap-brand-parts.xml — marche con codici richiedibili
+https://abcspareparts.eu/sitemap-cases.xml    — hub casi + storie
 ```
 
-**Importante (GSC):** i deep-link `?part=` e le varianti `?lang=` sono solo UX lato client sulla stessa pagina HTML (canonical = URL pulito). Non vanno in sitemap: Google li trattava come duplicati / “scansionata ma non indicizzata”. `robots.txt` li disabilita al crawl.
+**Nota:** i deep-link `?part=` e le varianti `?lang=` / `?q=` sono solo UX lato client sulla stessa pagina HTML (canonical = URL pulito). Non vanno in sitemap. `robots.txt` **non** disabilita `?part=` né `?lang=` — la strategia è canonical + non includere parametri nelle sitemap.
+
+I vecchi shard `sitemap-parts-*.xml` e `sitemap-part-codes.xml` **non** sono più usati (rimossi in favore di indicizzazione a livello marca).
 
 `npm run build:brand-parts` aggiorna `sitemap-index.xml`, `sitemap.xml` (lastmod) e `robots.txt`.
 
@@ -81,7 +86,7 @@ Import listino: metti `listini/{slug}.xlsx` (o `.csv` / `.txt`), poi `build:bran
 
 ## Funzionalità
 
-- Lingue DE / EN / IT / ES / FR (`?lang=` + localStorage)
+- Lingue DE / EN / IT / ES / FR (`localStorage`; `?lang=` non scritto in URL su marche.html)
 - Pagine marca con ricerca listino (≥3 caratteri), chip di esempio, sample SEO
 - Click sul codice → modale form ERP (`erp.abcspareparts.eu`) precompilato
 - JSON-LD (Organization, FAQ, ItemList/Product) e `llms.txt` per discoverability

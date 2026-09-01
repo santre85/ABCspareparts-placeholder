@@ -510,6 +510,7 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
         }
       });
     }
+    const itemListElements = elements.slice(0, 50);
     graph['@graph'].push({
       '@type': 'ItemList',
       '@id': pageUrl + '#quotable-parts',
@@ -520,9 +521,9 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
         ? (tDe.brand_parts_listino_intro || tDe.brand_parts_intro)
         : tDe.brand_parts_intro
       ).replace(/<[^>]+>/g, ''),
-      numberOfItems: listino?.count || suppliedParts.length,
+      numberOfItems: itemListElements.length,
       url: pageUrl,
-      itemListElement: elements.slice(0, 50)
+      itemListElement: itemListElements
     });
   }
   return JSON.stringify(graph);

@@ -7,6 +7,67 @@ function footerI18nLiteral(lang) {
     .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
     .join(', ');
 }
+
+function escHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function buildStaticBrandGroupsHtml(orderedKeys, groupsPayload) {
+  let html = '';
+  for (const key of orderedKeys) {
+    const rows = groupsPayload[key];
+    if (!rows || !rows.length) continue;
+    html +=
+      `<section class="brand-group" id="letter-${key}" data-letter="${key}">` +
+      `<h3 class="brand-letter-heading">${key}</h3>` +
+      `<ul class="brands-list">` +
+      rows.map((r) => `<li><a href="marche/${r.slug}.html">${escHtml(r.brand)}</a></li>`).join('') +
+      `</ul></section>`;
+  }
+  return html;
+}
+
+function patchIndexHtml(brandCount, slugByBrand) {
+  let idx = fs.readFileSync('index.html', 'utf8');
+  idx = idx.replace(/11960\+/g, `${brandCount}+`);
+  idx = idx.replace(/11960(?= marche)/g, String(brandCount));
+  idx = idx.replace(/Oltre 11960/g, `Oltre ${brandCount}`);
+  idx = idx.replace(/Más de 11960/g, `Más de ${brandCount}`);
+  idx = idx.replace(/Plus de 11960/g, `Plus de ${brandCount}`);
+  idx = idx.replace(/11960 brands/g, `${brandCount} brands`);
+
+  const partsData = JSON.parse(fs.readFileSync('brand-order-parts.json', 'utf8'));
+  const priorityLinks = (partsData.brands || [])
+    .filter((row) => row.brand_slug && slugByBrand.get(row.brand) === row.brand_slug)
+    .map((row) => `        <li><a href="marche/${row.brand_slug}.html">${escHtml(row.brand)}</a></li>`)
+    .join('\n');
+
+  const section = `<!-- SEO_STATIC_PRIORITY_BRANDS_START -->
+<section class="section-priority-brands" id="priorityBrands" aria-labelledby="priorityBrandsHeading">
+  <div class="container">
+    <h2 id="priorityBrandsHeading">Ersatzteile nach Hersteller</h2>
+    <ul class="priority-brands-grid">
+${priorityLinks}
+    </ul>
+    <p class="priority-brands-all"><a href="marche.html">Alle ${brandCount} Marken anzeigen</a></p>
+  </div>
+</section>
+<!-- SEO_STATIC_PRIORITY_BRANDS_END -->`;
+
+  if (idx.includes('SEO_STATIC_PRIORITY_BRANDS_START')) {
+    idx = idx.replace(
+      /<!-- SEO_STATIC_PRIORITY_BRANDS_START -->[\s\S]*?<!-- SEO_STATIC_PRIORITY_BRANDS_END -->/,
+      section
+    );
+  } else {
+    idx = idx.replace('<!-- About / Profile Section -->', `${section}\n\n<!-- About / Profile Section -->`);
+  }
+  fs.writeFileSync('index.html', idx, 'utf8');
+}
 const s = fs.readFileSync('index.html', 'utf8');
 // Match the brands array: from "const brands = [" until "];" followed by newline (so we don't stop at "[0];" elsewhere)
 const match = s.match(/const brands = (\[[\s\S]*?\];\s*\n)/);
@@ -44,6 +105,7 @@ const groupsData = {
   orderedKeys,
   groups: groupsPayload
 };
+const staticBrandGroupsHtml = buildStaticBrandGroupsHtml(orderedKeys, groupsPayload);
 const base = 'https://abcspareparts.eu';
 const marcheHtml = `<!DOCTYPE html>
 <html lang="de">
@@ -156,13 +218,16 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
         </form>
         <p class="brand-search-meta" id="brandSearchMeta" aria-live="polite"></p>
       </div>
-      <div class="brand-groups" id="brandGroups"></div>
+      <div class="brand-groups" id="brandGroups">${staticBrandGroupsHtml}</div>
     </div>
   </main>
   ${buildFooterHtml('')}
   <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" data-i18n-aria-label="marche_back_top_aria" data-i18n="marche_back_top">Nach oben</button>
   <script>
   (function(){
+    var BRAND_GROUPS_INIT = ${JSON.stringify(groupsPayload)};
+    var ORDERED_KEYS_INIT = ${JSON.stringify(orderedKeys)};
+    var STATIC_BRAND_GROUPS_HTML = ${JSON.stringify(staticBrandGroupsHtml)};
     var BRAND_GROUPS = null;
     var ORDERED_KEYS = null;
     var groupsReady = false;
@@ -205,17 +270,10 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       var lang = sel && sel.value ? sel.value : 'de';
       return ['de','en','it','es','fr'].indexOf(lang)!==-1 ? lang : 'de';
     }
-    function loadGroupsData(){
-      return fetch('brand-groups.json', { cache: 'force-cache' })
-        .then(function(res){
-          if(!res.ok) throw new Error('HTTP ' + res.status);
-          return res.json();
-        })
-        .then(function(data){
-          ORDERED_KEYS = (data && data.orderedKeys) || [];
-          BRAND_GROUPS = (data && data.groups) || {};
-          groupsReady = true;
-        });
+    function initGroupsData(){
+      ORDERED_KEYS = ORDERED_KEYS_INIT || [];
+      BRAND_GROUPS = BRAND_GROUPS_INIT || {};
+      groupsReady = true;
     }
     function renderSections(filterQuery){
       var container = document.getElementById('brandGroups');
@@ -226,30 +284,9 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       }
       var q = norm(filterQuery);
       if(!q){
-        if(currentBrandQuery === '') return countAllBrands();
         currentBrandQuery = '';
-        container.innerHTML = '';
-        var idx = 0;
-        function renderBatch(){
-          if(currentBrandQuery !== '') return;
-          var html = '';
-          var rendered = 0;
-          while(idx < ORDERED_KEYS.length && rendered < 3){
-            var key = ORDERED_KEYS[idx++];
-            var rows = BRAND_GROUPS[key] || [];
-            if(!rows.length) continue;
-            html += '<section class="brand-group" id="letter-' + key + '" data-letter="' + key + '">' +
-              '<h3 class="brand-letter-heading">' + key + '</h3>' +
-              '<ul class="brands-list">' +
-              rows.map(function(r){ return '<li><a href="marche/' + r.slug + '.html">' + esc(r.brand) + '</a></li>'; }).join('') +
-              '</ul></section>';
-            rendered++;
-          }
-          if(html) container.insertAdjacentHTML('beforeend', html);
-          updateLinksWithLang(getSelectedLang());
-          if(idx < ORDERED_KEYS.length) requestAnimationFrame(renderBatch);
-        }
-        requestAnimationFrame(renderBatch);
+        container.innerHTML = STATIC_BRAND_GROUPS_HTML;
+        updateLinksWithLang(getSelectedLang());
         return countAllBrands();
       }
       currentBrandQuery = q;
@@ -305,9 +342,10 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       }
       try{
         var u = new URL(window.location.href);
-        u.searchParams.set('lang', lang);
+        u.searchParams.delete('lang');
         if(qRaw && String(qRaw).trim()) u.searchParams.set('q', String(qRaw).trim()); else u.searchParams.delete('q');
-        history.replaceState(null, '', u.pathname + u.search);
+        var qs = u.searchParams.toString();
+        history.replaceState(null, '', u.pathname + (qs ? '?' + qs : ''));
       }catch(e){}
     }
     function applyBrandFilterDebounced(){
@@ -331,6 +369,7 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       else btn.classList.remove('visible');
     }
     document.addEventListener('DOMContentLoaded', function(){
+      initGroupsData();
       var raw = getCurrentLang();
       var lang = ['de','en','it','es','fr'].indexOf(raw)!==-1 ? raw : 'de';
       var sel = document.getElementById('languageSelect');
@@ -350,22 +389,14 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
       window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
       toggleBackToTopButton();
-      loadGroupsData().then(function(){
+      applyBrandFilterImmediate();
+      if(pendingQuery !== null){
+        var v = pendingQuery;
+        pendingQuery = null;
+        var inEl = document.getElementById('brandSearchInput');
+        if(inEl && String(inEl.value || '') !== String(v || '')) inEl.value = String(v || '');
         applyBrandFilterImmediate();
-        if(pendingQuery !== null){
-          var v = pendingQuery;
-          pendingQuery = null;
-          var inEl = document.getElementById('brandSearchInput');
-          if(inEl && String(inEl.value || '') !== String(v || '')) inEl.value = String(v || '');
-          applyBrandFilterImmediate();
-        }
-      }).catch(function(){
-        var meta = document.getElementById('brandSearchMeta');
-        if(meta){
-          meta.textContent = 'Brand list loading failed. Please reload.';
-          meta.className = 'brand-search-meta brand-search-empty';
-        }
-      });
+      }
     });
   })();
   </script>
@@ -373,4 +404,5 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
 </html>`;
 fs.writeFileSync('marche.html', marcheHtml);
 fs.writeFileSync('brand-groups.json', JSON.stringify(groupsData), 'utf8');
-console.log('Count:', b.length, '- marche.html and brand-groups.json written');
+patchIndexHtml(b.length, slugByBrand);
+console.log('Count:', b.length, '- marche.html, brand-groups.json, and index.html priority brands written');

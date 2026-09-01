@@ -23,15 +23,7 @@ layout: none
   <!-- Brand landing pages: see sitemap-brands.xml -->
   <!-- Brand pages with parts: see sitemap-brand-parts.xml -->
 
-  <!-- Success stories hub -->
-  <url>
-    <loc>https://abcspareparts.eu/casi.html</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- Case stories: see sitemap-cases.xml -->
+  <!-- Success stories hub: see sitemap-cases.xml -->
 
   <url>
     <loc>https://abcspareparts.eu/impressum.html</loc>
@@ -59,13 +51,6 @@ layout: none
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://abcspareparts.eu/cookies.html</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
   </url>
 
 </urlset>
