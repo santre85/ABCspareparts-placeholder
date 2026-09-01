@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-37 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 301725 part references.
+38 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 301726 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
@@ -41,6 +41,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Radio Energie](https://abcspareparts.eu/marche/radio-energie.html): TTN0507RE.0
 - [Renishaw](https://abcspareparts.eu/marche/renishaw.html): A-5191-0049
 - [Rexroth](https://abcspareparts.eu/marche/rexroth.html): A10VSO28DFR1/31L-PPA12N
+- [Roemheld](https://abcspareparts.eu/marche/roemheld.html): HBZ 500160/100/100
 - [SCHNEIDER](https://abcspareparts.eu/marche/schneider.html): 9001A9, 9007AA1, 9422A1, 9070FB2B (+737 listino codes, search on page)
 - [Schneider Electric](https://abcspareparts.eu/marche/schneider-electric.html): LC1D066M7, NSYS04, LVS01005, LV841940 (+60738 listino codes, search on page)
 - [Schunk](https://abcspareparts.eu/marche/schunk.html): LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058, PGN-plus 64-2-AS / 371093 (+1 more)
@@ -168,6 +169,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Radio Energie TTN0507RE.0](https://abcspareparts.eu/marche/radio-energie.html#quote=TTN0507RE.0) — RE.O110 1CB 0.007 CA
 - [Renishaw A-5191-0049](https://abcspareparts.eu/marche/renishaw.html#quote=A-5191-0049) — OMI-2 - optical machine interface
 - [Rexroth A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/marche/rexroth.html#quote=A10VSO28DFR1%2F31L-PPA12N)
+- [Roemheld HBZ 500160/100/100](https://abcspareparts.eu/marche/roemheld.html#quote=HBZ%20500160%2F100%2F100)
 - [SCHNEIDER listino](https://abcspareparts.eu/marche/schneider.html) — 737 codes searchable on page (no prices); try searching prefixes like 9001, 9007, 9422, 9070, 9080, 9012; data: https://abcspareparts.eu/listini-data/schneider.json
 - [SCHNEIDER 9001A9](https://abcspareparts.eu/marche/schneider.html#quote=9001A9) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER 9007AA1](https://abcspareparts.eu/marche/schneider.html#quote=9007AA1) — sample code from manufacturer list (request quote, no price shown)
@@ -296,12 +298,13 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Radio Energie DC tachogenerator TTN0507RE.0](https://abcspareparts.eu/casi/radio-energie-tachogenerator-ttn0507re0.html): Success story: Radio Energie RE.O110 DC tachogenerator TTN0507RE.0 — 7 V/1000 rpm, B14 flange, for food production in Bavaria.
 - [M&S Armaturen gasket 57600-1000300](https://abcspareparts.eu/casi/ms-armaturen-gasket-57600-1000300-dn100.html): Success story: M&S Armaturen EPDM Classic gasket 57600-1000300 for DN100 butterfly valve. Order 25 Jun 2026, delivery date 13 Jul 2026 — 10 pcs for a new customer.
 - [Leuze laser scanner RSL410-M](https://abcspareparts.eu/casi/leuze-laser-scanner-rsl410-m.html): Success story: Leuze RSL410-M laser scanner for an Italian label producer — much more competitive than existing suppliers, installed at once, line back online.
+- [Roemheld block cylinder HBZ 500160/100/100](https://abcspareparts.eu/casi/roemheld-cylinder-hbz-500160-100-100.html): Success story: August Berger Metallwarenfabrik — Roemheld HBZ 500160/100/100 repaired instead of 7–8 week OEM lead time. Production back in under a week.
 ## XML sitemaps (search engines)
 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 37 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 38 high-priority brand URLs
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [Core pages](https://abcspareparts.eu/sitemap.xml)

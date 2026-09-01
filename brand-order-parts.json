@@ -1,6 +1,6 @@
 {
   "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
-  "generated": "2026-08-21",
+  "generated": "2026-09-01",
   "listini_files": 301648,
   "brands": [
     {
@@ -488,6 +488,17 @@
           "part_number": "A10VSO28DFR1/31L-PPA12N",
           "description": "A10VSO28DFR1/31L-PPA12N",
           "case_slug": "rexroth-pump-a10vso28dfr1-ppa12n"
+        }
+      ]
+    },
+    {
+      "brand": "Roemheld",
+      "brand_slug": "roemheld",
+      "parts": [
+        {
+          "part_number": "HBZ 500160/100/100",
+          "description": "HBZ 500160/100/100",
+          "case_slug": "roemheld-cylinder-hbz-500160-100-100"
         }
       ]
     },
