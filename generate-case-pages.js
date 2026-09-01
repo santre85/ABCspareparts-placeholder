@@ -188,7 +188,7 @@ function buildCaseJsonLd(caseRow, de, canonical) {
         name: de.title,
         description: de.meta_description,
         isPartOf: { '@id': `${BASE}/#website` },
-        inLanguage: LANGS,
+        inLanguage: 'de',
         breadcrumb: { '@id': `${canonical}#breadcrumb` }
       },
       {
@@ -253,7 +253,7 @@ function buildHubJsonLd(cases, hubI18n) {
         name: hubI18n.de.hub_h1,
         description: hubI18n.de.meta_description,
         isPartOf: { '@id': `${BASE}/#website` },
-        inLanguage: LANGS,
+        inLanguage: 'de',
         breadcrumb: { '@id': `${BASE}/${HUB_FILE}#breadcrumb` },
         mainEntity: {
           '@type': 'ItemList',

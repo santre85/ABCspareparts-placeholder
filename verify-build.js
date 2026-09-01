@@ -252,8 +252,52 @@ if (!indexHtml.includes('"@type": "CollectionPage"') && !indexHtml.includes('"@t
 if (/2600\+/.test(indexHead)) {
   throw new Error('index.html still contains outdated 2600+ SEO text');
 }
-if (!indexHead.includes('11959+') && !indexHead.includes('11960+')) {
-  throw new Error('index.html missing updated brand-count SEO marker (11959+/11960+)');
+if (!indexHead.includes(`${brands.length}+`)) {
+  throw new Error(`index.html missing unified brand-count marker (${brands.length}+)`);
+}
+
+// SEO-001: marche.html must ship crawlable static brand links in initial HTML.
+const marcheGroupsMatch = marcheHubHtml.match(/<div class="brand-groups" id="brandGroups">([\s\S]*?)<\/div>\s*<\/div>\s*<\/main>/);
+if (!marcheGroupsMatch || !marcheGroupsMatch[1].trim()) {
+  throw new Error('marche.html #brandGroups is empty — run npm run build:marche');
+}
+const marcheStaticBrandLinks = (marcheGroupsMatch[1].match(/href="marche\/[^"]+\.html"/g) || []).length;
+if (marcheStaticBrandLinks < 1000) {
+  throw new Error(`marche.html has only ${marcheStaticBrandLinks} static brand links (expected ~${brands.length})`);
+}
+
+// SEO-002: homepage static priority brand links + marche.html hub link.
+if (!indexHtml.includes('id="priorityBrands"')) {
+  throw new Error('index.html missing static priority brands section (#priorityBrands)');
+}
+const homePriorityLinks = (indexHtml.match(/href="marche\/[^"]+\.html"/g) || []).length;
+if (homePriorityLinks < 30) {
+  throw new Error(`index.html has only ${homePriorityLinks} static marche/*.html links (expected 30–50 priority brands)`);
+}
+if (!indexHtml.includes('href="marche.html"')) {
+  throw new Error('index.html missing static link to marche.html');
+}
+if (!marcheHubHtml.includes(`Über ${brands.length} Marken`) && !marcheHubHtml.includes(`Oltre ${brands.length} marchi`)) {
+  throw new Error(`marche.html brand count text does not match brands array (${brands.length})`);
+}
+
+// SEO-008/009: sitemap hygiene — no cookies.html; casi.html in exactly one sitemap; no param URLs.
+const sitemapFiles = ['sitemap.xml', 'sitemap-brands.xml', 'sitemap-brand-parts.xml', 'sitemap-cases.xml'];
+let casiSitemapCount = 0;
+for (const sf of sitemapFiles) {
+  const sp = path.join(__dirname, sf);
+  if (!fs.existsSync(sp)) continue;
+  const xml = fs.readFileSync(sp, 'utf8');
+  if (xml.includes('cookies.html')) {
+    throw new Error(`${sf} must not include cookies.html (page is noindex)`);
+  }
+  if (/\?lang=|\?q=|\?part=/.test(xml)) {
+    throw new Error(`${sf} must not contain ?lang=, ?q=, or ?part= URLs`);
+  }
+  casiSitemapCount += (xml.match(/<loc>[^<]*\/casi\.html<\/loc>/g) || []).length;
+}
+if (casiSitemapCount !== 1) {
+  throw new Error(`casi.html must appear in exactly one sitemap (found ${casiSitemapCount})`);
 }
 
 for (const f of toCheck) {
@@ -274,6 +318,40 @@ for (const f of toCheck) {
 }
 
 const partsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
+
+// SEO-003: ItemList numberOfItems must match emitted itemListElement entries (listino brands).
+for (const row of partsData.brands || []) {
+  if (!row.brand_slug || !row.listino?.count) continue;
+  const f = row.brand_slug + '.html';
+  const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
+  const ldBlocks = [...content.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+  let checked = false;
+  for (const raw of ldBlocks) {
+    let graph;
+    try {
+      graph = JSON.parse(raw);
+    } catch {
+      continue;
+    }
+    const nodes = graph['@graph'] || (graph['@type'] ? [graph] : []);
+    for (const node of nodes) {
+      if (node['@type'] !== 'ItemList' || !node['@id']?.includes('#quotable-parts')) continue;
+      const declared = node.numberOfItems;
+      const emitted = (node.itemListElement || []).length;
+      if (declared !== emitted) {
+        throw new Error(`marche/${f} ItemList numberOfItems ${declared} !== itemListElement count ${emitted}`);
+      }
+      if (declared > 50) {
+        throw new Error(`marche/${f} ItemList numberOfItems ${declared} exceeds cap of 50`);
+      }
+      checked = true;
+    }
+  }
+  if (!checked) {
+    throw new Error(`marche/${f} missing quotable-parts ItemList JSON-LD`);
+  }
+}
+
 for (const row of partsData.brands || []) {
   if (!row.brand_slug) continue;
   if (!row.parts?.length && !row.listino?.count) continue;
