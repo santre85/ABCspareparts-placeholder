@@ -216,6 +216,22 @@ if (!indexHtml.includes('Soft redirect /index.html')) {
 if (fs.readFileSync(path.join(__dirname, 'legal-i18n.js'), 'utf8').includes("'?lang=' + lang")) {
   throw new Error('legal-i18n.js must not rewrite links with ?lang=');
 }
+for (const legalFile of ['impressum.html', 'datenschutz.html', 'agb.html', 'versand.html']) {
+  const legalHtml = fs.readFileSync(path.join(__dirname, legalFile), 'utf8');
+  if (/\?lang=/.test(legalHtml)) {
+    throw new Error(`${legalFile} must not advertise ?lang= (use clean hreflang like brand pages)`);
+  }
+  if (!legalHtml.includes('hreflang="x-default"') || !legalHtml.includes('hreflang="de"')) {
+    throw new Error(`${legalFile} missing x-default/de hreflang`);
+  }
+}
+if (/— use the `\?lang=/.test(llmsTxt) || /use the `\?lang=de\|en/.test(llmsTxt)) {
+  throw new Error('llms.txt must not instruct assistants to use ?lang= query params');
+}
+const legacyHub = fs.readFileSync(path.join(__dirname, 'casi-di-successo.html'), 'utf8');
+if (!legacyHub.includes('rel="canonical"') || !legacyHub.includes('noindex')) {
+  throw new Error('casi-di-successo.html redirect stub must have canonical + noindex');
+}
 if (fs.readFileSync(path.join(__dirname, '_config.yml'), 'utf8').includes('sitemap-part-codes')) {
   throw new Error('_config.yml must not reference sitemap-part-codes.xml');
 }

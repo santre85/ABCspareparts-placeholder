@@ -789,14 +789,25 @@ function updateLlmsTxt(cases) {
 
 function buildRedirectPage(targetPath) {
   const safeTarget = targetPath.replace(/'/g, "\\'");
+  // Resolve relative redirect target to an absolute canonical URL for Google.
+  let canonicalPath = targetPath.replace(/^\.\.\//, '');
+  if (!canonicalPath.startsWith('/') && !canonicalPath.startsWith('http')) {
+    canonicalPath = '/' + canonicalPath;
+  }
+  const canonicalAbs = canonicalPath.startsWith('http')
+    ? canonicalPath
+    : `${BASE}${canonicalPath}`;
   return `<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- brand-redirect-stub -->
   <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="${canonicalAbs}">
   <title>Redirect…</title>
   <script>location.replace('${safeTarget}' + location.search + location.hash);</script>
+  <meta http-equiv="refresh" content="0;url=${targetPath}">
 </head>
 <body>
   <p><a href="${targetPath}">Continue</a></p>
