@@ -64,11 +64,12 @@ if (/sitemap-parts-/.test(si)) {
 }
 
 const robotsTxt = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf8');
-if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-cases.xml')) {
-  throw new Error('robots.txt is missing sitemap-cases.xml reference');
+if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-index.xml')) {
+  throw new Error('robots.txt is missing sitemap-index.xml reference');
 }
-if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml')) {
-  throw new Error('robots.txt is missing sitemap-brand-parts.xml reference');
+const robotsSitemapLines = robotsTxt.split('\n').filter((l) => /^Sitemap:/i.test(l.trim()));
+if (robotsSitemapLines.length !== 1) {
+  throw new Error('robots.txt must list only sitemap-index.xml (child sitemaps live in the index)');
 }
 if (robotsTxt.includes('sitemap-part-codes.xml') || /sitemap-parts-/.test(robotsTxt)) {
   throw new Error('robots.txt must not list ?part= parameter sitemaps');
@@ -232,6 +233,28 @@ const legacyHub = fs.readFileSync(path.join(__dirname, 'casi-di-successo.html'),
 if (!legacyHub.includes('rel="canonical"') || !legacyHub.includes('noindex')) {
   throw new Error('casi-di-successo.html redirect stub must have canonical + noindex');
 }
+const baldwinSpagna = path.join(__dirname, 'casi', 'baldwin-flow-meter-4587705-spagna.html');
+if (fs.existsSync(baldwinSpagna)) {
+  const stub = fs.readFileSync(baldwinSpagna, 'utf8');
+  if (!stub.includes('canonical" href="https://abcspareparts.eu/casi/baldwin-flow-meter-4587705.html"')) {
+    throw new Error('casi/baldwin-*-spagna.html canonical must point at /casi/{slug}.html (not site root)');
+  }
+}
+const marcaSiemens = path.join(__dirname, 'marca-siemens.html');
+if (fs.existsSync(marcaSiemens)) {
+  const ms = fs.readFileSync(marcaSiemens, 'utf8');
+  if (!ms.includes('noindex') || !ms.includes('canonical" href="https://abcspareparts.eu/marche/siemens.html"')) {
+    throw new Error('marca-siemens.html must have noindex + canonical to marche/siemens.html');
+  }
+}
+for (const slug of ['m-plus-s-hydraulic', 'm-and-s-armaturen']) {
+  const bp = path.join(marcheDir, slug + '.html');
+  if (!fs.existsSync(bp)) continue;
+  const html = fs.readFileSync(bp, 'utf8');
+  if (!html.includes('brand-success-story')) {
+    throw new Error(`marche/${slug}.html missing brand-success-story link (set brand_slug on case)`);
+  }
+}
 if (fs.readFileSync(path.join(__dirname, '_config.yml'), 'utf8').includes('sitemap-part-codes')) {
   throw new Error('_config.yml must not reference sitemap-part-codes.xml');
 }
@@ -249,6 +272,12 @@ if (!impressumHtml.includes('data-i18n="footer_cases"')) {
 const marcheHubHtml = fs.readFileSync(path.join(__dirname, 'marche.html'), 'utf8');
 if (!marcheHubHtml.includes('data-i18n="footer_cases"')) {
   throw new Error('marche.html is missing unified footer');
+}
+if (!/"@type":"ItemList"/.test(marcheHubHtml) || !/"itemListElement"/.test(marcheHubHtml)) {
+  throw new Error('marche.html ItemList JSON-LD must include a capped itemListElement sample');
+}
+if (/"@type":"Product"/.test(marcheHubHtml)) {
+  throw new Error('marche.html must not emit Product JSON-LD');
 }
 if (!marcheHubHtml.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
   throw new Error('marche.html is missing llms.txt discovery link');

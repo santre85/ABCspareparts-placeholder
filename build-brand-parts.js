@@ -503,12 +503,8 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Canonical sitemaps only (no ?part= / ?lang= URLs)
+# Submit the sitemap index only (child sitemaps are listed inside it).
 Sitemap: https://abcspareparts.eu/sitemap-index.xml
-Sitemap: https://abcspareparts.eu/sitemap.xml
-Sitemap: https://abcspareparts.eu/sitemap-brands.xml
-Sitemap: https://abcspareparts.eu/sitemap-brand-parts.xml
-Sitemap: https://abcspareparts.eu/sitemap-cases.xml
 `;
   fs.writeFileSync(robotsPath, content, 'utf8');
 }
