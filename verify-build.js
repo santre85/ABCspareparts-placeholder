@@ -163,17 +163,14 @@ for (const c of publishedCases) {
   if (!html.includes('application/ld+json')) {
     throw new Error(`Case page ${c.slug}.html is missing JSON-LD`);
   }
-  if (!html.includes('"@type":"Article"') || !html.includes('"@type":"Product"')) {
-    throw new Error(`Case page ${c.slug}.html is missing Article/Product JSON-LD`);
+  if (!html.includes('"@type":"Article"')) {
+    throw new Error(`Case page ${c.slug}.html is missing Article JSON-LD`);
   }
-  if (!html.includes('"mpn"')) {
-    throw new Error(`Case page ${c.slug}.html is missing mpn in Product JSON-LD`);
+  if (/"@type":"Product"/.test(html)) {
+    throw new Error(`Case page ${c.slug}.html must not emit Product JSON-LD (quote-only / no Offer price)`);
   }
-  if (!html.includes('"image"')) {
-    throw new Error(`Case page ${c.slug}.html Product JSON-LD is missing image`);
-  }
-  if (/"@type":"Offer"/.test(html) && !/"price"/.test(html) && !/"priceSpecification"/.test(html)) {
-    throw new Error(`Case page ${c.slug}.html has Offer without price (GSC Merchant listings)`);
+  if (/"@type":"Offer"/.test(html)) {
+    throw new Error(`Case page ${c.slug}.html must not use Offer JSON-LD without public prices`);
   }
   if (!html.includes('rel="canonical"')) {
     throw new Error(`Case page ${c.slug}.html is missing canonical URL`);
@@ -319,13 +316,9 @@ for (const f of toCheck) {
 
 const partsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
 
-// SEO-003: ItemList numberOfItems must match emitted itemListElement entries (listino brands).
-for (const row of partsData.brands || []) {
-  if (!row.brand_slug || !row.listino?.count) continue;
-  const f = row.brand_slug + '.html';
-  const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
+function parseLdJsonNodes(content) {
+  const nodes = [];
   const ldBlocks = [...content.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]);
-  let checked = false;
   for (const raw of ldBlocks) {
     let graph;
     try {
@@ -333,22 +326,28 @@ for (const row of partsData.brands || []) {
     } catch {
       continue;
     }
-    const nodes = graph['@graph'] || (graph['@type'] ? [graph] : []);
-    for (const node of nodes) {
-      if (node['@type'] !== 'ItemList' || !node['@id']?.includes('#quotable-parts')) continue;
-      const declared = node.numberOfItems;
-      const emitted = (node.itemListElement || []).length;
-      if (declared !== emitted) {
-        throw new Error(`marche/${f} ItemList numberOfItems ${declared} !== itemListElement count ${emitted}`);
-      }
-      if (declared > 50) {
-        throw new Error(`marche/${f} ItemList numberOfItems ${declared} exceeds cap of 50`);
-      }
-      checked = true;
-    }
+    nodes.push(...(graph['@graph'] || (graph['@type'] ? [graph] : [])));
   }
-  if (!checked) {
-    throw new Error(`marche/${f} missing quotable-parts ItemList JSON-LD`);
+  return nodes;
+}
+
+// Quote-only brand pages: no Product/ItemList JSON-LD for part codes (Merchant rich results).
+for (const row of partsData.brands || []) {
+  if (!row.brand_slug) continue;
+  if (!row.parts?.length && !row.listino?.count) continue;
+  const f = row.brand_slug + '.html';
+  const content = fs.readFileSync(path.join(marcheDir, f), 'utf8');
+  const nodes = parseLdJsonNodes(content);
+  for (const node of nodes) {
+    if (node['@type'] === 'Product') {
+      throw new Error(`marche/${f} must not emit Product JSON-LD on quote-only brand pages`);
+    }
+    if (node['@type'] === 'ItemList' && (node['@id']?.includes('#quotable-parts') || /quotable-parts/i.test(node.name || ''))) {
+      throw new Error(`marche/${f} must not emit quotable-parts ItemList JSON-LD`);
+    }
+    if (node['@type'] === 'WebPage' && node.mainEntity?.['@id']?.includes('#quotable-parts')) {
+      throw new Error(`marche/${f} WebPage mainEntity must not reference #quotable-parts`);
+    }
   }
 }
 
@@ -405,12 +404,6 @@ for (const row of partsData.brands || []) {
   }
   if (!content.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
     throw new Error(`Missing llms.txt discovery link in marche/${f}`);
-  }
-  if (!content.includes('#quotable-parts')) {
-    throw new Error(`Missing quotable-parts JSON-LD in marche/${f}`);
-  }
-  if (!content.includes('"image":"https://abcspareparts.eu/logo.png"') && !content.includes('"image": "https://abcspareparts.eu/logo.png"')) {
-    throw new Error(`marche/${f} Product JSON-LD is missing image (GSC Merchant listings)`);
   }
   if (/"@type":"Offer"/.test(content)) {
     throw new Error(`marche/${f} must not use Offer JSON-LD without public prices (quote-only site)`);
