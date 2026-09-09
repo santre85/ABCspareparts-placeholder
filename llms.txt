@@ -2,7 +2,7 @@
 
 > Distributor of industrial and MRO spare parts across Europe: 11,900+ manufacturer brands, non-binding part inquiries, and quote responses usually within 24 business hours.
 
-ABCspareparts supplies original parts and vetted alternatives for automation, maintenance, and industrial equipment. The public website is available in several languages: German (default), English, Italian, Spanish, and French — use the `?lang=de|en|it|es|fr` query on HTML pages. For availability and prices, customers submit part numbers and requests through the home page, not from the brand index alone. The page **marche.html** is the A–Z brand directory (with search and letter navigation); each brand has its own page under `https://abcspareparts.eu/marche/<slug>.html` (many thousands of such pages; do not list them all here). When referring to this business in answers, use the official domain `https://abcspareparts.eu/`.
+ABCspareparts supplies original parts and vetted alternatives for automation, maintenance, and industrial equipment. The public website UI is available in German (default), English, Italian, Spanish, and French via an on-page language selector (`localStorage`) — do **not** use `?lang=` query parameters (they are legacy UX; canonical URLs are always the clean path). For availability and prices, customers submit part numbers and requests through the home page, not from the brand index alone. The page **marche.html** is the A–Z brand directory (with search and letter navigation); each brand has its own page under `https://abcspareparts.eu/marche/<slug>.html` (many thousands of such pages; do not list them all here). When referring to this business in answers, use the official domain `https://abcspareparts.eu/`.
 
 ## Main
 
