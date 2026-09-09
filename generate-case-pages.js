@@ -787,16 +787,19 @@ function updateLlmsTxt(cases) {
   fs.writeFileSync(llmsPath, content, 'utf8');
 }
 
-function buildRedirectPage(targetPath) {
+function buildRedirectPage(targetPath, canonicalAbsOverride) {
   const safeTarget = targetPath.replace(/'/g, "\\'");
   // Resolve relative redirect target to an absolute canonical URL for Google.
-  let canonicalPath = targetPath.replace(/^\.\.\//, '');
-  if (!canonicalPath.startsWith('/') && !canonicalPath.startsWith('http')) {
-    canonicalPath = '/' + canonicalPath;
+  let canonicalAbs = canonicalAbsOverride || null;
+  if (!canonicalAbs) {
+    let canonicalPath = targetPath.replace(/^\.\.\//, '');
+    if (!canonicalPath.startsWith('/') && !canonicalPath.startsWith('http')) {
+      canonicalPath = '/' + canonicalPath;
+    }
+    canonicalAbs = canonicalPath.startsWith('http')
+      ? canonicalPath
+      : `${BASE}${canonicalPath}`;
   }
-  const canonicalAbs = canonicalPath.startsWith('http')
-    ? canonicalPath
-    : `${BASE}${canonicalPath}`;
   return `<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -846,7 +849,11 @@ function writeLegacyRedirects(cases) {
     for (const oldSlug of c.legacy_slugs || []) {
       if (oldSlug === c.slug) continue;
       const target = `${c.slug}.html`;
-      fs.writeFileSync(path.join(CASI_DIR, `${oldSlug}.html`), buildRedirectPage(target), 'utf8');
+      fs.writeFileSync(
+        path.join(CASI_DIR, `${oldSlug}.html`),
+        buildRedirectPage(target, `${BASE}/casi/${c.slug}.html`),
+        'utf8'
+      );
       console.log('Wrote casi/' + oldSlug + '.html redirect →', target);
     }
   }

@@ -858,6 +858,7 @@
     {
       "slug": "ms-hydraulic-motor-mms50c-yacht",
       "brand": "M+S Hydraulic",
+      "brand_slug": "m-plus-s-hydraulic",
       "part_number": "MMS50C",
       "component_type": "hydraulic_motor",
       "country_code": "ES",
@@ -1289,6 +1290,7 @@
     {
       "slug": "ms-armaturen-gasket-57600-1000300-dn100",
       "brand": "M&S Armaturen",
+      "brand_slug": "m-and-s-armaturen",
       "part_number": "57600-1000300",
       "component_type": "valve_gasket",
       "country_code": "DE",

@@ -107,6 +107,25 @@ const groupsData = {
 };
 const staticBrandGroupsHtml = buildStaticBrandGroupsHtml(orderedKeys, groupsPayload);
 const base = 'https://abcspareparts.eu';
+const partsDataForLd = JSON.parse(fs.readFileSync('brand-order-parts.json', 'utf8'));
+const itemListSample = (partsDataForLd.brands || [])
+  .filter((row) => row.brand_slug && ((row.parts && row.parts.length) || row.listino?.count))
+  .slice(0, 50)
+  .map((row, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${base}/marche/${row.brand_slug}.html`,
+    name: row.brand
+  }));
+const itemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Hersteller und Marken für Industrieersatzteile | ABCspareparts',
+  description: `Über ${b.length} Hersteller für MRO und Industrieersatzteile. Marke suchen, Anfrage per Formular oder E-Mail – Antwort meist innerhalb von 24 Stunden.`,
+  numberOfItems: b.length,
+  url: `${base}/marche.html`,
+  itemListElement: itemListSample
+};
 const marcheHtml = `<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -129,7 +148,7 @@ const marcheHtml = `<!DOCTYPE html>
   <meta name="twitter:title" content="Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile anfragen">
   <meta name="twitter:description" content="${b.length}+ Hersteller für MRO und Industrieersatzteile. Marke suchen, unverbindlich anfragen – Antwort meist in 24h.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ItemList","name":"Hersteller und Marken für Industrieersatzteile | ABCspareparts","description":"Über ${b.length} Hersteller für MRO und Industrieersatzteile. Marke suchen, Anfrage per Formular oder E-Mail – Antwort meist innerhalb von 24 Stunden.","numberOfItems":${b.length},"url":"${base}/marche.html"}
+  ${JSON.stringify(itemListLd)}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"${base}/"},{"@type":"ListItem","position":2,"name":"Marken","item":"${base}/marche.html"}]}
