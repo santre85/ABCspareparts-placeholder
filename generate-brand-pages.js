@@ -436,7 +436,6 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
   };
   if ((suppliedParts && suppliedParts.length) || listino?.count) {
     webPage.dateModified = TODAY;
-    webPage.mainEntity = { '@id': pageUrl + '#quotable-parts' };
   }
   const graph = {
     '@context': 'https://schema.org',
@@ -467,65 +466,8 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
       }
     ]
   };
-  if ((suppliedParts && suppliedParts.length) || listino?.count) {
-    const seen = new Set();
-    const elements = [];
-    for (const part of suppliedParts || []) {
-      const key = String(part.part_number || '').toLowerCase();
-      if (!key || seen.has(key)) continue;
-      seen.add(key);
-      // No Offer/price: site is quote-only (no public list prices). Merchant listing
-      // markup requires price — omit offers to avoid GSC critical errors.
-      elements.push({
-        '@type': 'ListItem',
-        position: elements.length + 1,
-        item: {
-          '@type': 'Product',
-          name: `${brand} ${part.part_number}`,
-          sku: part.part_number,
-          mpn: part.part_number,
-          description: part.description || part.part_number,
-          image: `${BASE}/logo.png`,
-          brand: { '@type': 'Brand', name: brand },
-          url: pageUrl
-        }
-      });
-    }
-    for (const code of listino?.preview || []) {
-      const key = String(code || '').toLowerCase();
-      if (!key || seen.has(key)) continue;
-      seen.add(key);
-      elements.push({
-        '@type': 'ListItem',
-        position: elements.length + 1,
-        item: {
-          '@type': 'Product',
-          name: `${brand} ${code}`,
-          sku: code,
-          mpn: code,
-          description: `${brand} ${code} – request a quote (no list price on site)`,
-          image: `${BASE}/logo.png`,
-          brand: { '@type': 'Brand', name: brand },
-          url: pageUrl
-        }
-      });
-    }
-    const itemListElements = elements.slice(0, 50);
-    graph['@graph'].push({
-      '@type': 'ItemList',
-      '@id': pageUrl + '#quotable-parts',
-      name: listino?.count
-        ? `${brand} – searchable manufacturer part codes`
-        : `${brand} – quotable part numbers`,
-      description: (listino?.count
-        ? (tDe.brand_parts_listino_intro || tDe.brand_parts_intro)
-        : tDe.brand_parts_intro
-      ).replace(/<[^>]+>/g, ''),
-      numberOfItems: itemListElements.length,
-      url: pageUrl,
-      itemListElement: itemListElements
-    });
-  }
+  // Quote-only: do not emit Product/ItemList JSON-LD for part codes. Merchant rich
+  // results require Offer/price we do not publish — omit schema instead of inventing it.
   return JSON.stringify(graph);
 }
 

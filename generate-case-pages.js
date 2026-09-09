@@ -169,8 +169,8 @@ function primaryPartNumber(partField) {
 }
 
 function buildCaseJsonLd(caseRow, de, canonical) {
-  const productName = `${caseRow.brand} ${caseRow.part_number}`;
-  const mpn = primaryPartNumber(caseRow.part_number);
+  // No Product JSON-LD: quote-only site has no public Offer/price; Product nodes
+  // trigger GSC Merchant critical errors (missing price/image eligibility).
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -202,25 +202,10 @@ function buildCaseJsonLd(caseRow, de, canonical) {
         author: { '@id': `${BASE}/#organization` },
         publisher: { '@id': `${BASE}/#organization` },
         isPartOf: { '@id': `${canonical}#webpage` },
-        about: [
-          { '@type': 'Brand', name: caseRow.brand },
-          { '@id': `${canonical}#product` }
-        ],
+        about: { '@type': 'Brand', name: caseRow.brand },
+        keywords: String(caseRow.part_number || ''),
         inLanguage: 'de',
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }
-      },
-      {
-        '@type': 'Product',
-        '@id': `${canonical}#product`,
-        name: productName,
-        sku: caseRow.part_number,
-        mpn,
-        image: `${BASE}/logo.png`,
-        brand: { '@type': 'Brand', name: caseRow.brand },
-        description: de.meta_description,
-        category: de.fact_component_val,
-        url: canonical
-        // No Offer: quote-only site — no public price for Merchant listings
       },
       {
         '@type': 'BreadcrumbList',
