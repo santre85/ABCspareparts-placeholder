@@ -823,6 +823,14 @@ function writeLegacyRedirects(cases) {
   fs.writeFileSync(path.join(ROOT, LEGACY_HUB_FILE), buildRedirectPage(HUB_FILE), 'utf8');
   console.log('Wrote', LEGACY_HUB_FILE, 'redirect →', HUB_FILE);
 
+  // Root legacy stub kept for old Siemens bookmarks.
+  fs.writeFileSync(
+    path.join(ROOT, 'marca-siemens.html'),
+    buildRedirectPage('marche/siemens.html', `${BASE}/marche/siemens.html`),
+    'utf8'
+  );
+  console.log('Wrote marca-siemens.html redirect → marche/siemens.html');
+
   const legacyCaseSlugs = new Set();
   for (const c of cases) {
     for (const oldSlug of c.legacy_slugs || []) legacyCaseSlugs.add(oldSlug);
