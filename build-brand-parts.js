@@ -481,27 +481,35 @@ function updateRobotsTxt() {
 
 User-agent: *
 Allow: /
+Disallow: /listini-data/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /listini-data/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /listini-data/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /listini-data/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /listini-data/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /listini-data/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /listini-data/
 
 User-agent: Bytespider
 Allow: /
+Disallow: /listini-data/
 
 # Submit the sitemap index only (child sitemaps are listed inside it).
 Sitemap: https://abcspareparts.eu/sitemap-index.xml
@@ -534,7 +542,7 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
       const examples = (row.listino.examples || []).slice(0, 6).join(', ');
       const exNote = examples ? `; try searching prefixes like ${examples}` : '';
       catalogLines.push(
-        `- [${row.brand} listino](${BASE}/marche/${row.brand_slug}.html) — ${row.listino.count} codes searchable on page (no prices)${exNote}; data: ${BASE}/${row.listino.file}`
+        `- [${row.brand} listino](${BASE}/marche/${row.brand_slug}.html) — ${row.listino.count} codes searchable on page (no prices)${exNote}`
       );
       for (const code of row.listino.preview || []) {
         const url = partPageUrl(row.brand_slug, code);

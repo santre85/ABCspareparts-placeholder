@@ -80,6 +80,9 @@ if (/Disallow:.*\?part=|Disallow:.*\?lang=/.test(robotsTxt)) {
 if (/^Sitemap:.*\?(part|lang)=/m.test(robotsTxt)) {
   throw new Error('robots.txt must not list parameter URLs as sitemaps');
 }
+if (!/Disallow:\s*\/listini-data\//.test(robotsTxt)) {
+  throw new Error('robots.txt must Disallow /listini-data/ (raw JSON is not for indexing)');
+}
 
 const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
 if (!fs.existsSync(sbpPath)) throw new Error('sitemap-brand-parts.xml missing — run npm run build:brand-parts');
@@ -217,7 +220,7 @@ if (!indexHtml.includes('Soft redirect /index.html')) {
 if (fs.readFileSync(path.join(__dirname, 'legal-i18n.js'), 'utf8').includes("'?lang=' + lang")) {
   throw new Error('legal-i18n.js must not rewrite links with ?lang=');
 }
-for (const legalFile of ['impressum.html', 'datenschutz.html', 'agb.html', 'versand.html']) {
+for (const legalFile of ['impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html']) {
   const legalHtml = fs.readFileSync(path.join(__dirname, legalFile), 'utf8');
   if (/\?lang=/.test(legalHtml)) {
     throw new Error(`${legalFile} must not advertise ?lang= (use clean hreflang like brand pages)`);
@@ -225,9 +228,22 @@ for (const legalFile of ['impressum.html', 'datenschutz.html', 'agb.html', 'vers
   if (!legalHtml.includes('hreflang="x-default"') || !legalHtml.includes('hreflang="de"')) {
     throw new Error(`${legalFile} missing x-default/de hreflang`);
   }
+  if (!/<html[^>]*\slang="de"/i.test(legalHtml)) {
+    throw new Error(`${legalFile} static shell must use lang="de"`);
+  }
+}
+const cookiesHtml = fs.readFileSync(path.join(__dirname, 'cookies.html'), 'utf8');
+if (!cookiesHtml.includes('noindex')) {
+  throw new Error('cookies.html must remain noindex');
 }
 if (/— use the `\?lang=/.test(llmsTxt) || /use the `\?lang=de\|en/.test(llmsTxt)) {
   throw new Error('llms.txt must not instruct assistants to use ?lang= query params');
+}
+if (/listini-data\//.test(llmsTxt)) {
+  throw new Error('llms.txt must not link raw listini-data JSON files');
+}
+if (/cookies\.html/.test(llmsTxt)) {
+  throw new Error('llms.txt must not promote noindex cookies.html');
 }
 const legacyHub = fs.readFileSync(path.join(__dirname, 'casi-di-successo.html'), 'utf8');
 if (!legacyHub.includes('rel="canonical"') || !legacyHub.includes('noindex')) {
@@ -241,19 +257,29 @@ if (fs.existsSync(baldwinSpagna)) {
   }
 }
 const marcaSiemens = path.join(__dirname, 'marca-siemens.html');
-if (fs.existsSync(marcaSiemens)) {
+if (!fs.existsSync(marcaSiemens)) {
+  throw new Error('marca-siemens.html missing');
+}
+{
   const ms = fs.readFileSync(marcaSiemens, 'utf8');
-  if (!ms.includes('noindex') || !ms.includes('canonical" href="https://abcspareparts.eu/marche/siemens.html"')) {
-    throw new Error('marca-siemens.html must have noindex + canonical to marche/siemens.html');
+  if (!ms.includes('<!-- brand-redirect-stub -->') || !ms.includes('noindex') || !ms.includes('canonical" href="https://abcspareparts.eu/marche/siemens.html"')) {
+    throw new Error('marca-siemens.html must use redirect-stub template with noindex + Siemens canonical');
   }
 }
-for (const slug of ['m-plus-s-hydraulic', 'm-and-s-armaturen']) {
-  const bp = path.join(marcheDir, slug + '.html');
-  if (!fs.existsSync(bp)) continue;
-  const html = fs.readFileSync(bp, 'utf8');
-  if (!html.includes('brand-success-story')) {
-    throw new Error(`marche/${slug}.html missing brand-success-story link (set brand_slug on case)`);
+for (const row of publishedCases) {
+  if (!row.brand_slug) {
+    throw new Error(`Case ${row.slug} missing brand_slug`);
   }
+  const bp = path.join(marcheDir, row.brand_slug + '.html');
+  if (!fs.existsSync(bp)) {
+    throw new Error(`Case ${row.slug} brand_slug ${row.brand_slug} has no brand page`);
+  }
+  if (!fs.readFileSync(bp, 'utf8').includes('brand-success-story')) {
+    throw new Error(`marche/${row.brand_slug}.html missing brand-success-story for case ${row.slug}`);
+  }
+}
+if (/www\.abcspareparts\.eu/.test(llmsTxt + mainSitemap + robotsTxt)) {
+  throw new Error('Do not advertise www.abcspareparts.eu in sitemaps/llms/robots (apex canonical)');
 }
 if (fs.readFileSync(path.join(__dirname, '_config.yml'), 'utf8').includes('sitemap-part-codes')) {
   throw new Error('_config.yml must not reference sitemap-part-codes.xml');

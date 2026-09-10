@@ -4,27 +4,35 @@
 
 User-agent: *
 Allow: /
+Disallow: /listini-data/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /listini-data/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /listini-data/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /listini-data/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /listini-data/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /listini-data/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /listini-data/
 
 User-agent: Bytespider
 Allow: /
+Disallow: /listini-data/
 
 # Submit the sitemap index only (child sitemaps are listed inside it).
 Sitemap: https://abcspareparts.eu/sitemap-index.xml

@@ -57,7 +57,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 Quotable part references. Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Deep links use a URL hash (`#quote=CODE`) so Google indexes only the clean brand page — not `?part=` / `?lang=` query variants:
 
-- [ABB listino](https://abcspareparts.eu/marche/abb.html) — 127792 codes searchable on page (no prices); try searching prefixes like 1SDA, 7TCA, 2CPX, 1STQ, 2CKA, 2CDS; data: https://abcspareparts.eu/listini-data/abb.json
+- [ABB listino](https://abcspareparts.eu/marche/abb.html) — 127792 codes searchable on page (no prices); try searching prefixes like 1SDA, 7TCA, 2CPX, 1STQ, 2CKA, 2CDS
 - [ABB 1SDA013676R1](https://abcspareparts.eu/marche/abb.html#quote=1SDA013676R1) — sample code from manufacturer list (request quote, no price shown)
 - [ABB 7TCA017200R0001](https://abcspareparts.eu/marche/abb.html#quote=7TCA017200R0001) — sample code from manufacturer list (request quote, no price shown)
 - [ABB 2CPX010000R9999](https://abcspareparts.eu/marche/abb.html#quote=2CPX010000R9999) — sample code from manufacturer list (request quote, no price shown)
@@ -108,7 +108,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Hi-Force Hydraulics PKC50](https://abcspareparts.eu/marche/hi-force-hydraulics.html#quote=PKC50) — Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing puller…
 - [Hübner Elektromaschinen AG GT9.06L/420k](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html#quote=GT9.06L%2F420k) — Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…
 - [HUMPHREY 41024VDC](https://abcspareparts.eu/marche/humphrey.html#quote=41024VDC)
-- [IFM listino](https://abcspareparts.eu/marche/ifm.html) — 14787 codes searchable on page (no prices); try searching prefixes like EVC0, EVC1, EVC2, EVC5, EVC8, EVCA; data: https://abcspareparts.eu/listini-data/ifm.json
+- [IFM listino](https://abcspareparts.eu/marche/ifm.html) — 14787 codes searchable on page (no prices); try searching prefixes like EVC0, EVC1, EVC2, EVC5, EVC8, EVCA
 - [IFM EVC001](https://abcspareparts.eu/marche/ifm.html#quote=EVC001) — sample code from manufacturer list (request quote, no price shown)
 - [IFM EVC100](https://abcspareparts.eu/marche/ifm.html#quote=EVC100) — sample code from manufacturer list (request quote, no price shown)
 - [IFM EVC200](https://abcspareparts.eu/marche/ifm.html#quote=EVC200) — sample code from manufacturer list (request quote, no price shown)
@@ -170,7 +170,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Renishaw A-5191-0049](https://abcspareparts.eu/marche/renishaw.html#quote=A-5191-0049) — OMI-2 - optical machine interface
 - [Rexroth A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/marche/rexroth.html#quote=A10VSO28DFR1%2F31L-PPA12N)
 - [Roemheld HBZ 500160/100/100](https://abcspareparts.eu/marche/roemheld.html#quote=HBZ%20500160%2F100%2F100)
-- [SCHNEIDER listino](https://abcspareparts.eu/marche/schneider.html) — 737 codes searchable on page (no prices); try searching prefixes like 9001, 9007, 9422, 9070, 9080, 9012; data: https://abcspareparts.eu/listini-data/schneider.json
+- [SCHNEIDER listino](https://abcspareparts.eu/marche/schneider.html) — 737 codes searchable on page (no prices); try searching prefixes like 9001, 9007, 9422, 9070, 9080, 9012
 - [SCHNEIDER 9001A9](https://abcspareparts.eu/marche/schneider.html#quote=9001A9) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER 9007AA1](https://abcspareparts.eu/marche/schneider.html#quote=9007AA1) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER 9422A1](https://abcspareparts.eu/marche/schneider.html#quote=9422A1) — sample code from manufacturer list (request quote, no price shown)
@@ -195,7 +195,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [SCHNEIDER 9012GAW2](https://abcspareparts.eu/marche/schneider.html#quote=9012GAW2) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER A9A15096](https://abcspareparts.eu/marche/schneider.html#quote=A9A15096) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER 490NAE91100](https://abcspareparts.eu/marche/schneider.html#quote=490NAE91100) — sample code from manufacturer list (request quote, no price shown)
-- [Schneider Electric listino](https://abcspareparts.eu/marche/schneider-electric.html) — 60738 codes searchable on page (no prices); try searching prefixes like LC1D, NSYS, LVS0, LV84, KTA1, ZB5A; data: https://abcspareparts.eu/listini-data/schneider-electric.json
+- [Schneider Electric listino](https://abcspareparts.eu/marche/schneider-electric.html) — 60738 codes searchable on page (no prices); try searching prefixes like LC1D, NSYS, LVS0, LV84, KTA1, ZB5A
 - [Schneider Electric LC1D066M7](https://abcspareparts.eu/marche/schneider-electric.html#quote=LC1D066M7) — sample code from manufacturer list (request quote, no price shown)
 - [Schneider Electric NSYS04](https://abcspareparts.eu/marche/schneider-electric.html#quote=NSYS04) — sample code from manufacturer list (request quote, no price shown)
 - [Schneider Electric LVS01005](https://abcspareparts.eu/marche/schneider-electric.html#quote=LVS01005) — sample code from manufacturer list (request quote, no price shown)
@@ -225,7 +225,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Schunk LM 50-H75 / 314058](https://abcspareparts.eu/marche/schunk.html#quote=LM%2050-H75%20%2F%20314058) — Universal Linear Axis
 - [Schunk PGN-plus 64-2-AS / 371093](https://abcspareparts.eu/marche/schunk.html#quote=PGN-plus%2064-2-AS%20%2F%20371093) — Universal Gripper
 - [Schunk RM 200-W90-1 / 313007](https://abcspareparts.eu/marche/schunk.html#quote=RM%20200-W90-1%20%2F%20313007) — Universal Swivel Unit
-- [Siemens listino](https://abcspareparts.eu/marche/siemens.html) — 91293 codes searchable on page (no prices); try searching prefixes like 3SU1, 1FK7, 3RT2, 6ES7, 6SL3, 3VA6; data: https://abcspareparts.eu/listini-data/siemens.json
+- [Siemens listino](https://abcspareparts.eu/marche/siemens.html) — 91293 codes searchable on page (no prices); try searching prefixes like 3SU1, 1FK7, 3RT2, 6ES7, 6SL3, 3VA6
 - [Siemens 3SU1000-0AA10-0AA0](https://abcspareparts.eu/marche/siemens.html#quote=3SU1000-0AA10-0AA0) — sample code from manufacturer list (request quote, no price shown)
 - [Siemens 1FK7032-2AF21-1BA0](https://abcspareparts.eu/marche/siemens.html#quote=1FK7032-2AF21-1BA0) — sample code from manufacturer list (request quote, no price shown)
 - [Siemens 3RT2015-1AB01](https://abcspareparts.eu/marche/siemens.html#quote=3RT2015-1AB01) — sample code from manufacturer list (request quote, no price shown)
@@ -256,7 +256,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [SYM BANG A18065V2HBT-S](https://abcspareparts.eu/marche/sym-bang.html#quote=A18065V2HBT-S) — Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W
 - [Tamagawa 68-2048C/T-L3-12V](https://abcspareparts.eu/marche/tamagawa.html#quote=68-2048C%2FT-L3-12V)
 - [Tamagawa TS5013N61](https://abcspareparts.eu/marche/tamagawa.html#quote=TS5013N61) — 68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 68 series . Outside diameter 68 mm Shaft diameter 10 mm Re…
-- [Telemecanique listino](https://abcspareparts.eu/marche/telemecanique.html) — 6301 codes searchable on page (no prices); try searching prefixes like XY2C, XZCP, XUSL, 9007, XMLP, XCMD; data: https://abcspareparts.eu/listini-data/telemecanique.json
+- [Telemecanique listino](https://abcspareparts.eu/marche/telemecanique.html) — 6301 codes searchable on page (no prices); try searching prefixes like XY2C, XZCP, XUSL, 9007, XMLP, XCMD
 - [Telemecanique XY2CD01](https://abcspareparts.eu/marche/telemecanique.html#quote=XY2CD01) — sample code from manufacturer list (request quote, no price shown)
 - [Telemecanique XZCP0166L10](https://abcspareparts.eu/marche/telemecanique.html#quote=XZCP0166L10) — sample code from manufacturer list (request quote, no price shown)
 - [Telemecanique XUSL2E2BB051N](https://abcspareparts.eu/marche/telemecanique.html#quote=XUSL2E2BB051N) — sample code from manufacturer list (request quote, no price shown)
@@ -314,4 +314,3 @@ Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side U
 - [Privacy (Datenschutz)](https://abcspareparts.eu/datenschutz.html)
 - [General terms (AGB)](https://abcspareparts.eu/agb.html)
 - [Shipping (Versand)](https://abcspareparts.eu/versand.html)
-- [Cookie information](https://abcspareparts.eu/cookies.html)
