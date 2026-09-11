@@ -2,7 +2,9 @@
 
 **Branch:** `cursor/seo-indexing-mvp-b832`  
 **Date:** 2026-09-11  
-**Status:** MVP `/parts/` **prepared for review** — pages + draft `sitemap-parts.xml` generated; **not yet declared in `sitemap-index.xml`** pending your approval of the list/example below.
+**Status:** MVP `/parts/` **PUBLISHED in repo** — `sitemap-parts.xml` is listed in `sitemap-index.xml`. Pre-merge gate `npm run verify` / `verify:parts` = **77/77 PASS**. No next batch.
+
+**Test artifacts:** `PARTS-MVP-TEST-REPORT.md`, `PARTS-MVP-TEST-RESULTS.json`
 
 ---
 
@@ -10,25 +12,25 @@
 
 | File | Ruolo |
 |------|--------|
-| `parts-mvp.json` | Selezione curata 77 part number (RFQ + casi) |
+| `parts-mvp.json` | Selezione curata **77** part number (RFQ + casi) — frozen |
 | `generate-parts-pages.js` | Template/generatore `/parts/{brand}/{part}.html` |
-| `parts/**/*.html` | 77 pagine MVP generate |
-| `sitemap-parts.xml` | Sitemap parts (**draft**, non in index) |
-| `generate-brand-pages.js` | Link crawlable «Teileseite» verso `/parts/` (stesso stile dei link case) |
+| `parts/**/*.html` | 77 pagine MVP |
+| `sitemap-parts.xml` | Sitemap parts (**live** in index) |
+| `verify-parts-mvp.js` | Gate pre-merge obbligatorio URL-per-URL |
+| `generate-brand-pages.js` | Link crawlable «Teileseite» verso `/parts/` |
 | `build-brand-parts.js` | `writeSitemapIndex({ includePartsSitemap })` |
-| `verify-build.js` | Controlli MVP + igiene sitemap |
+| `verify-build.js` | Controlli MVP + richiede parts in index dopo publish |
 | `seo-config.js` | `hreflangLinksForAlternates` |
 | `top-brands-content.json` | SEO copy brand prioritarie (no redesign) |
 | `_config.yml` | Include/defaults per `sitemap-parts.xml` |
-| `package.json` | `build:parts`, `build:parts:publish` |
+| `package.json` | `build:parts`, `build:parts:publish`, `verify:parts` |
 | `ARCHITECTURE-LINGUE.md` | Architettura lingue + pilota |
 | `CLOUDFLARE-REDIRECT-CHECKLIST.md` | Checklist 301 `/index.html` → `/` |
 | `PRIORITY-BRANDS-SEO-CONTENT.md` | Prep contenuti 38 brand |
 | `REPORT-SEO-INDEXING.md` | Questo report |
-| Brand HTML prioritarie / con MVP | Rigenerate (contenuti + link parts) |
-| Case brand links | Ripristinati via `npm run build:casi` |
+| `PARTS-MVP-TEST-REPORT.md` | Esito test URL-per-URL |
 
-**Non toccati:** design system globale, CSS condiviso brand form, CTA commerciali, ERP iframe, Product schema sulle brand page (resta vietato).
+**Non toccati:** design system, CSS layout brand, form, CTA commerciali. Nessun Product/Offer sulle brand page.
 
 ---
 
@@ -74,12 +76,25 @@ sitemap-index.xml
   ├── sitemap-brands.xml          (~11959 brand clean)
   ├── sitemap-brand-parts.xml     (38 brand prioritarie)
   ├── sitemap-cases.xml           (hub + 12 casi)
-  └── sitemap-parts.xml           (77 MVP /parts/)  ← DOPO approvazione: npm run build:parts:publish
+  └── sitemap-parts.xml           (77 MVP /parts/)  ← LIVE
 ```
 
-**Ora:** `sitemap-parts.xml` esiste on-disk come **draft** e **non** è referenziato dall’index (policy: generare/attivare la sitemap parts solo al lancio MVP).
+`lastmod` = data reale di build (`YYYY-MM-DD`). Solo URL **200**, indexabili, canoniche `/parts/…`, senza query/redirect/noindex/404/duplicati.
 
-Solo URL **200**, indexabili, canoniche, senza query/redirect/noindex/404/duplicati.
+---
+
+## 4b. Esito test pre-merge (obbligatorio)
+
+| Gate | Esito |
+|------|-------|
+| `npm run build:parts:publish` | OK — 77 pages, sitemap in index |
+| `npm run verify` (= verify-build + verify-parts-mvp) | **PASS 77/77** |
+| Errori risolti in sessione | HTML entity decode in confronti title/H1/Product.name (`&quot;`, `&amp;`); gate robots/canonical/JSON-LD |
+| Prossimo batch | **Non generato** (fermo fino a GSC/organic) |
+
+Dettaglio URL-per-URL: `PARTS-MVP-TEST-REPORT.md`.
+
+**HTTP 200 post-deploy:** dopo merge su GitHub Pages, rieseguire curl/`URL Inspection` sulle 77 URL (pre-merge: file statici presenti e HTML validi = surrogate 200).
 
 ---
 
@@ -151,11 +166,11 @@ Pubblicare un nuovo `/parts/{brand}/{code}` **solo se**:
 
 ---
 
-## 9. Come pubblicare la sitemap parts (dopo il tuo OK)
+## 9. Publish eseguito
 
 ```bash
-npm run build:parts:publish   # include sitemap-parts.xml in sitemap-index.xml
-npm run verify
+npm run build:parts:publish   # ✓ sitemap-parts.xml in sitemap-index.xml
+npm run verify                # ✓ 77/77
 ```
 
-Fino ad allora: pagine possono restare sul branch/PR per review senza essere dichiarate a Google.
+Nessun batch successivo. Prossima espansione solo dopo verifica Search Console e rendimento organico del MVP.
