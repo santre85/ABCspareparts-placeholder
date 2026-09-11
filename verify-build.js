@@ -174,7 +174,9 @@ if (fs.existsSync(mvpPath)) {
   if (si.includes('/sitemap-parts.xml')) {
     console.log('verify-build: sitemap-parts.xml is live in sitemap-index (MVP published)');
   } else {
-    console.log('verify-build: sitemap-parts.xml present as draft (not yet in sitemap-index)');
+    throw new Error(
+      'sitemap-parts.xml must be listed in sitemap-index.xml after MVP publish (npm run build:parts:publish)'
+    );
   }
 }
 
