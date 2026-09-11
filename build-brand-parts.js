@@ -395,11 +395,28 @@ function touchMainSitemap() {
 /**
  * Always rewrite sitemap-index.xml with indexable sitemaps only (no ?part= shards).
  * Call this from brand-parts, brand-pages, and cases builds so the index never drifts.
+ *
+ * Path-based MVP part pages live in sitemap-parts.xml and are included only when
+ * explicitly published (includePartsSitemap) or when the file was previously launched
+ * and publish flag is true. Default: omit until MVP launch approval.
  */
-function writeSitemapIndex() {
+function writeSitemapIndex(options = {}) {
   // Drop legacy parameter sitemaps if still on disk.
   writeSitemapPartCodes();
   writeSitemapListinoShards();
+
+  let includeParts = false;
+  if (options.includePartsSitemap === true) {
+    includeParts = fs.existsSync(path.join(ROOT, 'sitemap-parts.xml'));
+  } else if (options.includePartsSitemap === false) {
+    includeParts = false;
+  } else {
+    // Preserve prior launch state when other rebuilders omit the flag.
+    includeParts =
+      fs.existsSync(path.join(ROOT, 'sitemap-parts.xml')) &&
+      fs.existsSync(path.join(ROOT, 'sitemap-index.xml')) &&
+      fs.readFileSync(path.join(ROOT, 'sitemap-index.xml'), 'utf8').includes('/sitemap-parts.xml');
+  }
 
   const entries = [
     'sitemap.xml',
@@ -407,6 +424,7 @@ function writeSitemapIndex() {
     'sitemap-brand-parts.xml',
     'sitemap-cases.xml'
   ];
+  if (includeParts) entries.push('sitemap-parts.xml');
 
   let body = '';
   for (const file of entries) {
@@ -566,7 +584,13 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
   }
 
   const brandPartsCount = brands.filter((r) => (r.parts?.length || 0) + (r.listino?.count || 0) > 0).length;
-  const sitemapSection = `## XML sitemaps (search engines)\n\nIndexable URLs only (no \`?part=\` / \`?lang=\` variants — those are client-side UX):\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n- [Core pages](${BASE}/sitemap.xml)\n`;
+  const partsSitemapLive =
+    fs.existsSync(path.join(ROOT, 'sitemap-index.xml')) &&
+    fs.readFileSync(path.join(ROOT, 'sitemap-index.xml'), 'utf8').includes('/sitemap-parts.xml');
+  const partsSitemapLine = partsSitemapLive
+    ? `- [MVP part pages](${BASE}/sitemap-parts.xml) — dedicated \`/parts/{brand}/{code}\` URLs\n`
+    : '';
+  const sitemapSection = `## XML sitemaps (search engines)\n\nIndexable URLs only (no \`?part=\` / \`?lang=\` variants — those are client-side UX):\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n${partsSitemapLine}- [Core pages](${BASE}/sitemap.xml)\n`;
 
   if (/## XML sitemaps \(search engines\)/.test(content)) {
     content = content.replace(/## XML sitemaps \(search engines\)[\s\S]*?(?=\n## |$)/, sitemapSection.trimEnd());

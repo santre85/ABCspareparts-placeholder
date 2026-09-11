@@ -191,5 +191,243 @@
         "fr": "Formulaire – pièces chaudière TERMET"
       }
     }
+  },
+  "abb": {
+    "de": "ABB: umfangreicher Herstellerkatalog (127792+ Codes) mit On-Page-Suche. Senden Sie MLFB/Typenschild — unverbindliches Angebot ohne Preise auf der Seite.",
+    "en": "ABB: large manufacturer catalog (127792+ codes) with on-page search. Send MLFB/nameplate — no-obligation quote, no prices on the page.",
+    "it": "ABB: listino costruttore (127792+ codici) con ricerca in pagina. Invii MLFB/targa — preventivo senza prezzi in pagina.",
+    "es": "ABB: catálogo del fabricante (127792+ códigos) con búsqueda. Envíe MLFB/placa — presupuesto sin precios en la página.",
+    "fr": "ABB: catalogue constructeur (127792+ références) avec recherche. Indiquez MLFB/plaque — devis sans prix sur la page."
+  },
+  "atlas-copco": {
+    "de": "ATLAS COPCO: Referenzen aus realen Anfragen/Lieferungen (u. a. 80701.000507). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "ATLAS COPCO: codes from real RFQs/deliveries (e.g. 80701.000507). Availability and terms after review — no prices shown on the page.",
+    "it": "ATLAS COPCO: riferimenti da richieste/forniture reali (es. 80701.000507). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "ATLAS COPCO: referencias de solicitudes/entregas reales (p. ej. 80701.000507). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "ATLAS COPCO: références issues de demandes/livraisons réelles (ex. 80701.000507). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "autronica": {
+    "de": "Autronica: dokumentierte Beschaffung u. a. für V-430/BH200 · V-530/BH500 sowie V-430/BH200, V-530/BH500. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "Autronica: documented sourcing including V-430/BH200 · V-530/BH500 and V-430/BH200, V-530/BH500. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "Autronica: riferimenti da richieste/forniture reali (es. V-430/BH200, V-530/BH500). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Autronica: referencias de solicitudes/entregas reales (p. ej. V-430/BH200, V-530/BH500). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Autronica: références issues de demandes/livraisons réelles (ex. V-430/BH200, V-530/BH500). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "baldwin": {
+    "de": "Baldwin: dokumentierte Beschaffung u. a. für 45.877.05 sowie 13144.04, 13144.05, 45.877.05. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "Baldwin: documented sourcing including 45.877.05 and 13144.04, 13144.05, 45.877.05. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "Baldwin: riferimenti da richieste/forniture reali (es. 13144.04, 13144.05, 45.877.05). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Baldwin: referencias de solicitudes/entregas reales (p. ej. 13144.04, 13144.05, 45.877.05). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Baldwin: références issues de demandes/livraisons réelles (ex. 13144.04, 13144.05, 45.877.05). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "fagor": {
+    "de": "Fagor: Referenzen aus realen Anfragen/Lieferungen (u. a. 12023211, 12024980, 12025076). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Fagor: codes from real RFQs/deliveries (e.g. 12023211, 12024980, 12025076). Availability and terms after review — no prices shown on the page.",
+    "it": "Fagor: riferimenti da richieste/forniture reali (es. 12023211, 12024980, 12025076). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Fagor: referencias de solicitudes/entregas reales (p. ej. 12023211, 12024980, 12025076). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Fagor: références issues de demandes/livraisons réelles (ex. 12023211, 12024980, 12025076). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "harmsco": {
+    "de": "Harmsco: Referenzen aus realen Anfragen/Lieferungen (u. a. Guarnizione coperchio 550 e11). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Harmsco: codes from real RFQs/deliveries (e.g. Guarnizione coperchio 550 e11). Availability and terms after review — no prices shown on the page.",
+    "it": "Harmsco: riferimenti da richieste/forniture reali (es. Guarnizione coperchio 550 e11). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Harmsco: referencias de solicitudes/entregas reales (p. ej. Guarnizione coperchio 550 e11). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Harmsco: références issues de demandes/livraisons réelles (ex. Guarnizione coperchio 550 e11). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "hengstler": {
+    "de": "Hengstler: Referenzen aus realen Anfragen/Lieferungen (u. a. 0634713, 3 520 068, RI58-O/ 1000AS.41TF-F0). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Hengstler: codes from real RFQs/deliveries (e.g. 0634713, 3 520 068, RI58-O/ 1000AS.41TF-F0). Availability and terms after review — no prices shown on the page.",
+    "it": "Hengstler: riferimenti da richieste/forniture reali (es. 0634713, 3 520 068, RI58-O/ 1000AS.41TF-F0). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Hengstler: referencias de solicitudes/entregas reales (p. ej. 0634713, 3 520 068, RI58-O/ 1000AS.41TF-F0). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Hengstler: références issues de demandes/livraisons réelles (ex. 0634713, 3 520 068, RI58-O/ 1000AS.41TF-F0). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "herborner": {
+    "de": "HERBORNER: Referenzen aus realen Anfragen/Lieferungen (u. a. 2A.0B.A2.6B, 3D.1L.30.01, 3E.3F.30.00). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "HERBORNER: codes from real RFQs/deliveries (e.g. 2A.0B.A2.6B, 3D.1L.30.01, 3E.3F.30.00). Availability and terms after review — no prices shown on the page.",
+    "it": "HERBORNER: riferimenti da richieste/forniture reali (es. 2A.0B.A2.6B, 3D.1L.30.01, 3E.3F.30.00). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "HERBORNER: referencias de solicitudes/entregas reales (p. ej. 2A.0B.A2.6B, 3D.1L.30.01, 3E.3F.30.00). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "HERBORNER: références issues de demandes/livraisons réelles (ex. 2A.0B.A2.6B, 3D.1L.30.01, 3E.3F.30.00). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "hi-force-hydraulics": {
+    "de": "Hi-Force Hydraulics: Referenzen aus realen Anfragen/Lieferungen (u. a. HPR-2H, PKC50). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Hi-Force Hydraulics: codes from real RFQs/deliveries (e.g. HPR-2H, PKC50). Availability and terms after review — no prices shown on the page.",
+    "it": "Hi-Force Hydraulics: riferimenti da richieste/forniture reali (es. HPR-2H, PKC50). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Hi-Force Hydraulics: referencias de solicitudes/entregas reales (p. ej. HPR-2H, PKC50). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Hi-Force Hydraulics: références issues de demandes/livraisons réelles (ex. HPR-2H, PKC50). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "hubner-elektromaschinen-ag": {
+    "de": "Hübner Elektromaschinen AG: dokumentierte Beschaffung u. a. für GT9.06L/420K sowie GT9.06L/420k. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "Hübner Elektromaschinen AG: documented sourcing including GT9.06L/420K and GT9.06L/420k. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "Hübner Elektromaschinen AG: riferimenti da richieste/forniture reali (es. GT9.06L/420k). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Hübner Elektromaschinen AG: referencias de solicitudes/entregas reales (p. ej. GT9.06L/420k). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Hübner Elektromaschinen AG: références issues de demandes/livraisons réelles (ex. GT9.06L/420k). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "humphrey": {
+    "de": "HUMPHREY: dokumentierte Beschaffung u. a. für 41024VDC. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "HUMPHREY: documented sourcing including 41024VDC. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "HUMPHREY: riferimenti da richieste/forniture reali (es. 41024VDC). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "HUMPHREY: referencias de solicitudes/entregas reales (p. ej. 41024VDC). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "HUMPHREY: références issues de demandes/livraisons réelles (ex. 41024VDC). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "konecranes": {
+    "de": "Konecranes: Referenzen aus realen Anfragen/Lieferungen (u. a. 52294077, 52302509, 52302518). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Konecranes: codes from real RFQs/deliveries (e.g. 52294077, 52302509, 52302518). Availability and terms after review — no prices shown on the page.",
+    "it": "Konecranes: riferimenti da richieste/forniture reali (es. 52294077, 52302509, 52302518). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Konecranes: referencias de solicitudes/entregas reales (p. ej. 52294077, 52302509, 52302518). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Konecranes: références issues de demandes/livraisons réelles (ex. 52294077, 52302509, 52302518). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "kubler": {
+    "de": "Kübler: Referenzen aus realen Anfragen/Lieferungen (u. a. 279383). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Kübler: codes from real RFQs/deliveries (e.g. 279383). Availability and terms after review — no prices shown on the page.",
+    "it": "Kübler: riferimenti da richieste/forniture reali (es. 279383). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Kübler: referencias de solicitudes/entregas reales (p. ej. 279383). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Kübler: références issues de demandes/livraisons réelles (ex. 279383). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "kuhnke": {
+    "de": "Kuhnke: Referenzen aus realen Anfragen/Lieferungen (u. a. 76.147.92.00). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Kuhnke: codes from real RFQs/deliveries (e.g. 76.147.92.00). Availability and terms after review — no prices shown on the page.",
+    "it": "Kuhnke: riferimenti da richieste/forniture reali (es. 76.147.92.00). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Kuhnke: referencias de solicitudes/entregas reales (p. ej. 76.147.92.00). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Kuhnke: références issues de demandes/livraisons réelles (ex. 76.147.92.00). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "m-and-s-armaturen": {
+    "de": "M&S Armaturen: dokumentierte Beschaffung u. a. für 57600-1000300. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "M&S Armaturen: documented sourcing including 57600-1000300. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "M&S Armaturen: riferimenti da richieste/forniture reali (es. 57600-1000300). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "M&S Armaturen: referencias de solicitudes/entregas reales (p. ej. 57600-1000300). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "M&S Armaturen: références issues de demandes/livraisons réelles (ex. 57600-1000300). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "m-plus-s-hydraulic": {
+    "de": "M+S Hydraulic: dokumentierte Beschaffung u. a. für MMS50C. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "M+S Hydraulic: documented sourcing including MMS50C. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "M+S Hydraulic: riferimenti da richieste/forniture reali (es. MMS50C). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "M+S Hydraulic: referencias de solicitudes/entregas reales (p. ej. MMS50C). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "M+S Hydraulic: références issues de demandes/livraisons réelles (ex. MMS50C). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "mettler-toledo": {
+    "de": "Mettler Toledo: Referenzen aus realen Anfragen/Lieferungen (u. a. 119106, 119171, 51119547). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Mettler Toledo: codes from real RFQs/deliveries (e.g. 119106, 119171, 51119547). Availability and terms after review — no prices shown on the page.",
+    "it": "Mettler Toledo: riferimenti da richieste/forniture reali (es. 119106, 119171, 51119547). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Mettler Toledo: referencias de solicitudes/entregas reales (p. ej. 119106, 119171, 51119547). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Mettler Toledo: références issues de demandes/livraisons réelles (ex. 119106, 119171, 51119547). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "mst": {
+    "de": "MST: Referenzen aus realen Anfragen/Lieferungen (u. a. 135859, 149826, 2485C041). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "MST: codes from real RFQs/deliveries (e.g. 135859, 149826, 2485C041). Availability and terms after review — no prices shown on the page.",
+    "it": "MST: riferimenti da richieste/forniture reali (es. 135859, 149826, 2485C041). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "MST: referencias de solicitudes/entregas reales (p. ej. 135859, 149826, 2485C041). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "MST: références issues de demandes/livraisons réelles (ex. 135859, 149826, 2485C041). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "ningbo-hongbo-weite-motor-co-ltd": {
+    "de": "NINGBO HONGBO WEITE MOTOR CO.,LTD: Referenzen aus realen Anfragen/Lieferungen (u. a. HB18065HA2B). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "NINGBO HONGBO WEITE MOTOR CO.,LTD: codes from real RFQs/deliveries (e.g. HB18065HA2B). Availability and terms after review — no prices shown on the page.",
+    "it": "NINGBO HONGBO WEITE MOTOR CO.,LTD: riferimenti da richieste/forniture reali (es. HB18065HA2B). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "NINGBO HONGBO WEITE MOTOR CO.,LTD: referencias de solicitudes/entregas reales (p. ej. HB18065HA2B). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "NINGBO HONGBO WEITE MOTOR CO.,LTD: références issues de demandes/livraisons réelles (ex. HB18065HA2B). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "pronomic": {
+    "de": "PRONOMIC: Referenzen aus realen Anfragen/Lieferungen (u. a. 220390, Prog. 1211 Controller – Typ 20001A-70E R). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "PRONOMIC: codes from real RFQs/deliveries (e.g. 220390, Prog. 1211 Controller – Typ 20001A-70E R). Availability and terms after review — no prices shown on the page.",
+    "it": "PRONOMIC: riferimenti da richieste/forniture reali (es. 220390, Prog. 1211 Controller – Typ 20001A-70E R). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "PRONOMIC: referencias de solicitudes/entregas reales (p. ej. 220390, Prog. 1211 Controller – Typ 20001A-70E R). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "PRONOMIC: références issues de demandes/livraisons réelles (ex. 220390, Prog. 1211 Controller – Typ 20001A-70E R). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "radio-energie": {
+    "de": "Radio Energie: dokumentierte Beschaffung u. a. für TTN0507RE.0. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "Radio Energie: documented sourcing including TTN0507RE.0. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "Radio Energie: riferimenti da richieste/forniture reali (es. TTN0507RE.0). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Radio Energie: referencias de solicitudes/entregas reales (p. ej. TTN0507RE.0). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Radio Energie: références issues de demandes/livraisons réelles (ex. TTN0507RE.0). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "renishaw": {
+    "de": "Renishaw: Referenzen aus realen Anfragen/Lieferungen (u. a. A-5191-0049). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Renishaw: codes from real RFQs/deliveries (e.g. A-5191-0049). Availability and terms after review — no prices shown on the page.",
+    "it": "Renishaw: riferimenti da richieste/forniture reali (es. A-5191-0049). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Renishaw: referencias de solicitudes/entregas reales (p. ej. A-5191-0049). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Renishaw: références issues de demandes/livraisons réelles (ex. A-5191-0049). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "rexroth": {
+    "de": "Rexroth: dokumentierte Beschaffung u. a. für A10VSO28DFR1/31L-PPA12N. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "Rexroth: documented sourcing including A10VSO28DFR1/31L-PPA12N. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "Rexroth: riferimenti da richieste/forniture reali (es. A10VSO28DFR1/31L-PPA12N). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Rexroth: referencias de solicitudes/entregas reales (p. ej. A10VSO28DFR1/31L-PPA12N). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Rexroth: références issues de demandes/livraisons réelles (ex. A10VSO28DFR1/31L-PPA12N). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "roemheld": {
+    "de": "Roemheld: dokumentierte Beschaffung u. a. für HBZ 500160/100/100. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "Roemheld: documented sourcing including HBZ 500160/100/100. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "Roemheld: riferimenti da richieste/forniture reali (es. HBZ 500160/100/100). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Roemheld: referencias de solicitudes/entregas reales (p. ej. HBZ 500160/100/100). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Roemheld: références issues de demandes/livraisons réelles (ex. HBZ 500160/100/100). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "schneider": {
+    "de": "SCHNEIDER: umfangreicher Herstellerkatalog (737+ Codes) mit On-Page-Suche. Senden Sie MLFB/Typenschild — unverbindliches Angebot ohne Preise auf der Seite.",
+    "en": "SCHNEIDER: large manufacturer catalog (737+ codes) with on-page search. Send MLFB/nameplate — no-obligation quote, no prices on the page.",
+    "it": "SCHNEIDER: listino costruttore (737+ codici) con ricerca in pagina. Invii MLFB/targa — preventivo senza prezzi in pagina.",
+    "es": "SCHNEIDER: catálogo del fabricante (737+ códigos) con búsqueda. Envíe MLFB/placa — presupuesto sin precios en la página.",
+    "fr": "SCHNEIDER: catalogue constructeur (737+ références) avec recherche. Indiquez MLFB/plaque — devis sans prix sur la page."
+  },
+  "schneider-electric": {
+    "de": "Schneider Electric: umfangreicher Herstellerkatalog (60738+ Codes) mit On-Page-Suche. Senden Sie MLFB/Typenschild — unverbindliches Angebot ohne Preise auf der Seite.",
+    "en": "Schneider Electric: large manufacturer catalog (60738+ codes) with on-page search. Send MLFB/nameplate — no-obligation quote, no prices on the page.",
+    "it": "Schneider Electric: listino costruttore (60738+ codici) con ricerca in pagina. Invii MLFB/targa — preventivo senza prezzi in pagina.",
+    "es": "Schneider Electric: catálogo del fabricante (60738+ códigos) con búsqueda. Envíe MLFB/placa — presupuesto sin precios en la página.",
+    "fr": "Schneider Electric: catalogue constructeur (60738+ références) avec recherche. Indiquez MLFB/plaque — devis sans prix sur la page."
+  },
+  "schunk": {
+    "de": "Schunk: Referenzen aus realen Anfragen/Lieferungen (u. a. LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Schunk: codes from real RFQs/deliveries (e.g. LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058). Availability and terms after review — no prices shown on the page.",
+    "it": "Schunk: riferimenti da richieste/forniture reali (es. LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Schunk: referencias de solicitudes/entregas reales (p. ej. LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Schunk: références issues de demandes/livraisons réelles (ex. LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "spectrex-inc": {
+    "de": "Spectrex INC.: Referenzen aus realen Anfragen/Lieferungen (u. a. UF IR3 Flame Detector, SS316, ATEX, 3/4\"). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Spectrex INC.: codes from real RFQs/deliveries (e.g. UF IR3 Flame Detector, SS316, ATEX, 3/4\"). Availability and terms after review — no prices shown on the page.",
+    "it": "Spectrex INC.: riferimenti da richieste/forniture reali (es. UF IR3 Flame Detector, SS316, ATEX, 3/4\"). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Spectrex INC.: referencias de solicitudes/entregas reales (p. ej. UF IR3 Flame Detector, SS316, ATEX, 3/4\"). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Spectrex INC.: références issues de demandes/livraisons réelles (ex. UF IR3 Flame Detector, SS316, ATEX, 3/4\"). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "steute": {
+    "de": "Steute: Referenzen aus realen Anfragen/Lieferungen (u. a. 1188542). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "Steute: codes from real RFQs/deliveries (e.g. 1188542). Availability and terms after review — no prices shown on the page.",
+    "it": "Steute: riferimenti da richieste/forniture reali (es. 1188542). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Steute: referencias de solicitudes/entregas reales (p. ej. 1188542). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Steute: références issues de demandes/livraisons réelles (ex. 1188542). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "sym-bang": {
+    "de": "SYM BANG: Referenzen aus realen Anfragen/Lieferungen (u. a. A18065V2HBT-S). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "SYM BANG: codes from real RFQs/deliveries (e.g. A18065V2HBT-S). Availability and terms after review — no prices shown on the page.",
+    "it": "SYM BANG: riferimenti da richieste/forniture reali (es. A18065V2HBT-S). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "SYM BANG: referencias de solicitudes/entregas reales (p. ej. A18065V2HBT-S). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "SYM BANG: références issues de demandes/livraisons réelles (ex. A18065V2HBT-S). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "tamagawa": {
+    "de": "Tamagawa: dokumentierte Beschaffung u. a. für 68-2048C/T-L3-12V sowie 68-2048C/T-L3-12V, TS5013N61. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
+    "en": "Tamagawa: documented sourcing including 68-2048C/T-L3-12V and 68-2048C/T-L3-12V, TS5013N61. We check original and verified alternatives for MRO — quote request, no prices on the page.",
+    "it": "Tamagawa: riferimenti da richieste/forniture reali (es. 68-2048C/T-L3-12V, TS5013N61). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "Tamagawa: referencias de solicitudes/entregas reales (p. ej. 68-2048C/T-L3-12V, TS5013N61). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "Tamagawa: références issues de demandes/livraisons réelles (ex. 68-2048C/T-L3-12V, TS5013N61). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "telemecanique": {
+    "de": "Telemecanique: umfangreicher Herstellerkatalog (6301+ Codes) mit On-Page-Suche. Senden Sie MLFB/Typenschild — unverbindliches Angebot ohne Preise auf der Seite.",
+    "en": "Telemecanique: large manufacturer catalog (6301+ codes) with on-page search. Send MLFB/nameplate — no-obligation quote, no prices on the page.",
+    "it": "Telemecanique: listino costruttore (6301+ codici) con ricerca in pagina. Invii MLFB/targa — preventivo senza prezzi in pagina.",
+    "es": "Telemecanique: catálogo del fabricante (6301+ códigos) con búsqueda. Envíe MLFB/placa — presupuesto sin precios en la página.",
+    "fr": "Telemecanique: catalogue constructeur (6301+ références) avec recherche. Indiquez MLFB/plaque — devis sans prix sur la page."
+  },
+  "tokheim": {
+    "de": "TOKHEIM: Referenzen aus realen Anfragen/Lieferungen (u. a. 941828, 947944-004). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "TOKHEIM: codes from real RFQs/deliveries (e.g. 941828, 947944-004). Availability and terms after review — no prices shown on the page.",
+    "it": "TOKHEIM: riferimenti da richieste/forniture reali (es. 941828, 947944-004). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "TOKHEIM: referencias de solicitudes/entregas reales (p. ej. 941828, 947944-004). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "TOKHEIM: références issues de demandes/livraisons réelles (ex. 941828, 947944-004). Disponibilité après contrôle — aucun prix affiché."
+  },
+  "zollern": {
+    "de": "ZOLLERN: Referenzen aus realen Anfragen/Lieferungen (u. a. 1199181, 1199182). Verfügbarkeit und Konditionen nach Prüfung — unverbindliche Anfrage, keine Preise auf der Seite.",
+    "en": "ZOLLERN: codes from real RFQs/deliveries (e.g. 1199181, 1199182). Availability and terms after review — no prices shown on the page.",
+    "it": "ZOLLERN: riferimenti da richieste/forniture reali (es. 1199181, 1199182). Disponibilità dopo verifica — nessun prezzo in pagina.",
+    "es": "ZOLLERN: referencias de solicitudes/entregas reales (p. ej. 1199181, 1199182). Disponibilidad tras revisión — sin precios en la página.",
+    "fr": "ZOLLERN: références issues de demandes/livraisons réelles (ex. 1199181, 1199182). Disponibilité après contrôle — aucun prix affiché."
   }
 }

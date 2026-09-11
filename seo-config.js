@@ -43,6 +43,22 @@ function hreflangLinks(absoluteCleanUrl) {
   ].join('\n  ');
 }
 
+/**
+ * Reciprocal hreflang for real translated equivalents only.
+ * @param {Record<string, string>} langToAbsoluteUrl e.g. { de: '...', en: '...' }
+ * Always emits x-default (defaults to de, else first entry).
+ */
+function hreflangLinksForAlternates(langToAbsoluteUrl) {
+  const entries = Object.entries(langToAbsoluteUrl || {}).filter(([, url]) => !!url);
+  if (!entries.length) throw new Error('hreflangLinksForAlternates requires at least one URL');
+  const xDefault = langToAbsoluteUrl[PRIMARY_LANG] || entries[0][1];
+  const lines = [`<link rel="alternate" hreflang="x-default" href="${xDefault}">`];
+  for (const [lang, url] of entries) {
+    lines.push(`<link rel="alternate" hreflang="${lang}" href="${url}">`);
+  }
+  return lines.join('\n  ');
+}
+
 /** Absolute canonical for a site-root-relative path (e.g. "marche/siemens.html" or ""). */
 function canonicalUrl(pathFromRoot) {
   const clean = String(pathFromRoot || '').replace(/^\//, '');
@@ -54,5 +70,6 @@ module.exports = {
   PRIMARY_LANG,
   FUTURE_LANG_PREFIXES,
   hreflangLinks,
+  hreflangLinksForAlternates,
   canonicalUrl
 };

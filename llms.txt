@@ -307,6 +307,7 @@ Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side U
 - [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 38 high-priority brand URLs
 - [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
+- [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)
 ## Optional
 
