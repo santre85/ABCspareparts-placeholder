@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const { BASE, hreflangLinks, canonicalUrl } = require('./seo-config.js');
 const { writeSitemapIndex, touchMainSitemap } = require('./build-brand-parts.js');
+const { FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
 
 const ROOT = __dirname;
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -207,12 +208,7 @@ function buildPageHtml(part) {
     .cta-secondary:hover { background: #2d5a87; }
     .note { font-size: 0.9rem; color: #555; }
     .part-case a { color: #1e3a5f; font-weight: 600; }
-    .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
-    .footer-links { margin-bottom: 1rem; }
-    .footer-links a { color: #fff; text-decoration: none; }
-    .footer-links a:hover { text-decoration: underline; }
-    .separator { margin: 0 0.5rem; opacity: 0.7; }
-    .footer-info { font-size: 0.9rem; opacity: 0.9; }
+${FOOTER_CSS}
   </style>
 </head>
 <body>
@@ -244,17 +240,7 @@ function buildPageHtml(part) {
       <p class="note">Auswahlgrund (intern/SEO): ${escapeHtml(reasons)}. MVP-Seite — kein Massen-Katalog.</p>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-links">
-        <a href="../../marche.html">Marche</a><span class="separator">|</span>
-        <a href="../../casi.html">Erfolgsgeschichten</a><span class="separator">|</span>
-        <a href="/#contact">Kontakt</a><span class="separator">|</span>
-        <a href="../../impressum.html">Impressum</a>
-      </div>
-      <div class="footer-info"><p>&copy; ${TODAY.slice(0, 4)} ABCspareparts.</p></div>
-    </div>
-  </footer>
+${buildFooterHtml('../../')}
 </body>
 </html>
 `;
