@@ -49,6 +49,26 @@ function loadPartsBySlug() {
   }
 }
 
+/** MVP /parts/{brand}/{slug}.html pages — crawlable internal links only (no ?part=). */
+function loadMvpPartsIndex() {
+  try {
+    const p = path.join(ROOT, 'parts-mvp.json');
+    if (!fs.existsSync(p)) return new Map();
+    const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const map = new Map();
+    for (const part of data.parts || []) {
+      if (!part.brand_slug || !part.part_number || !part.part_slug) continue;
+      const key = `${part.brand_slug}|${String(part.part_number).toLowerCase()}`;
+      map.set(key, part);
+    }
+    console.log('parts-mvp.json: indexable part pages', map.size);
+    return map;
+  } catch (e) {
+    console.warn('parts-mvp.json:', e.message);
+    return new Map();
+  }
+}
+
 function mergeTopBrandContent(translations, slug) {
   const row = TOP_BRAND_BY_SLUG[slug];
   if (!row || typeof row !== 'object') return;
@@ -167,6 +187,7 @@ function buildTranslations(brand) {
       brand_parts_empty: 'Keine Treffer',
       brand_parts_type_more: 'Bitte mindestens 3 Zeichen eingeben…',
       brand_parts_case: 'Erfolgsgeschichte',
+      brand_parts_detail: 'Teileseite',
       brand_parts_quote: 'Angebot anfragen',
       quote_modal_title: 'Unverbindliche Anfrage',
       quote_modal_close: 'Schließen',
@@ -217,6 +238,7 @@ function buildTranslations(brand) {
       brand_parts_empty: 'No matches',
       brand_parts_type_more: 'Please type at least 3 characters…',
       brand_parts_case: 'Success story',
+      brand_parts_detail: 'Part page',
       brand_parts_quote: 'Request quote',
       quote_modal_title: 'No-obligation enquiry',
       quote_modal_close: 'Close',
@@ -267,6 +289,7 @@ function buildTranslations(brand) {
       brand_parts_empty: 'Nessun risultato',
       brand_parts_type_more: 'Digiti almeno 3 caratteri…',
       brand_parts_case: 'Caso di successo',
+      brand_parts_detail: 'Scheda codice',
       brand_parts_quote: 'Richiedi preventivo',
       quote_modal_title: 'Richiesta senza impegno',
       quote_modal_close: 'Chiudi',
@@ -317,6 +340,7 @@ function buildTranslations(brand) {
       brand_parts_empty: 'Sin resultados',
       brand_parts_type_more: 'Escriba al menos 3 caracteres…',
       brand_parts_case: 'Caso de éxito',
+      brand_parts_detail: 'Ficha del código',
       brand_parts_quote: 'Solicitar presupuesto',
       quote_modal_title: 'Solicitud sin compromiso',
       quote_modal_close: 'Cerrar',
@@ -367,6 +391,7 @@ function buildTranslations(brand) {
       brand_parts_empty: 'Aucun résultat',
       brand_parts_type_more: 'Saisissez au moins 3 caractères…',
       brand_parts_case: 'Histoire de réussite',
+      brand_parts_detail: 'Fiche référence',
       brand_parts_quote: 'Demander un devis',
       quote_modal_title: 'Demande sans engagement',
       quote_modal_close: 'Fermer',
@@ -486,7 +511,7 @@ function buildQuoteModalHtml() {
   </div>`;
 }
 
-function buildSuppliedPartsHtml(brandParts) {
+function buildSuppliedPartsHtml(brandParts, brandSlug, mvpIndex) {
   if (!brandParts) return '';
   const suppliedParts = brandParts.parts || [];
   const listino = brandParts.listino;
@@ -509,7 +534,13 @@ function buildSuppliedPartsHtml(brandParts) {
       const caseLink = part.case_slug
         ? `<a class="part-case-link" href="../casi/${escapeAttr(part.case_slug)}.html" data-i18n="brand_parts_case">Erfolgsgeschichte</a>`
         : '';
-      return `<li class="part-row" data-part-search="${searchKey}"><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${caseLink}</li>`;
+      const mvp = mvpIndex && brandSlug
+        ? mvpIndex.get(`${brandSlug}|${String(part.part_number).toLowerCase()}`)
+        : null;
+      const partPageLink = mvp
+        ? `<a class="part-case-link" href="../parts/${escapeAttr(mvp.brand_slug)}/${escapeAttr(mvp.part_slug)}.html" data-i18n="brand_parts_detail">Teileseite</a>`
+        : '';
+      return `<li class="part-row" data-part-search="${searchKey}"><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${desc}${partPageLink}${caseLink}</li>`;
     })
     .join('\n          ');
 
@@ -592,7 +623,7 @@ function buildSuppliedPartsHtml(brandParts) {
       </section>`;
 }
 
-function buildHtml(brand, slug, translations, relatedRows, brandParts) {
+function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex) {
   const pagePath = `marche/${slug}.html`;
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
@@ -603,7 +634,7 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts) {
   const ld = buildLdJson(brand, slug, d, suppliedParts, listino);
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
-  const suppliedPartsHtml = buildSuppliedPartsHtml(brandParts);
+  const suppliedPartsHtml = buildSuppliedPartsHtml(brandParts, slug, mvpIndex);
   const quoteModalHtml = hasSuppliedParts ? buildQuoteModalHtml() : '';
   const suppliedPartsExtraCss = hasSuppliedParts ? `
     .part-quote-btn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.92rem; font-weight: 700; color: #1e3a5f; background: #fff; border: 2px solid #e67e22; border-radius: 8px; padding: 0.35rem 0.65rem; cursor: pointer; }
@@ -1157,6 +1188,7 @@ function main() {
   const brands = readBrandsFromIndex();
   const rows = assignUniqueSlugs(brands);
   const partsBySlug = loadPartsBySlug();
+  const mvpIndex = loadMvpPartsIndex();
   const targetRows = onlySlugs.length
     ? rows.filter((r) => onlySlugs.includes(r.slug))
     : rows;
@@ -1211,7 +1243,7 @@ function main() {
         translations[lang].meta_description = meta;
       }
     }
-    const html = buildHtml(brand, slug, translations, relatedRows, brandParts);
+    const html = buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
     if (n % 500 === 0) console.log('Written', n, '/', targetRows.length);

@@ -8,6 +8,8 @@
     "import:listino": "node -e \"require('./import-listino').loadListiniParts()\"",
     "build:brands": "node extract-brands.js && node generate-brand-pages.js",
     "build:casi": "node generate-case-pages.js",
+    "build:parts": "node generate-parts-pages.js",
+    "build:parts:publish": "node generate-parts-pages.js --publish-sitemap",
     "verify": "node verify-build.js"
   },
   "dependencies": {

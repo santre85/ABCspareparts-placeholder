@@ -1,0 +1,1248 @@
+{
+  "version": 1,
+  "generated": "2026-09-11",
+  "policy": "MVP only: RFQ/order history and/or published success cases with unique description beyond brand+code+form. No listino mass expansion. No invented price/availability/Offer.",
+  "count": 77,
+  "parts": [
+    {
+      "brand": "ATLAS COPCO",
+      "brand_slug": "atlas-copco",
+      "part_number": "80701.000507",
+      "part_slug": "80701.000507",
+      "description": "BALL JOINT ASSEMBLY",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/atlas-copco/80701.000507.html",
+      "canonical": "https://abcspareparts.eu/parts/atlas-copco/80701.000507.html"
+    },
+    {
+      "brand": "Autronica",
+      "brand_slug": "autronica",
+      "part_number": "V-430/BH200",
+      "part_slug": "v-430-bh200",
+      "description": "Smoke Detector** Replacement for 116-BHH-200** Please check that the socket installed on board have been produced after…",
+      "case_slug": "autronica-smoke-detectors-v430-v530",
+      "component_type": "smoke_detector",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/autronica/v-430-bh200.html",
+      "canonical": "https://abcspareparts.eu/parts/autronica/v-430-bh200.html"
+    },
+    {
+      "brand": "Autronica",
+      "brand_slug": "autronica",
+      "part_number": "V-530/BH500",
+      "part_slug": "v-530-bh500",
+      "description": "Smoke Detector ** Replacement for 116-BHH-500** Please check that the socket installed on board have been produced afte…",
+      "case_slug": "autronica-smoke-detectors-v430-v530",
+      "component_type": "smoke_detector",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/autronica/v-530-bh500.html",
+      "canonical": "https://abcspareparts.eu/parts/autronica/v-530-bh500.html"
+    },
+    {
+      "brand": "Baldwin",
+      "brand_slug": "baldwin",
+      "part_number": "13144.04",
+      "part_slug": "13144.04",
+      "description": "RUECKSCHLAGVENTIL I.RV 0015.RGG 1/4\",0.2 BAR",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/baldwin/13144.04.html",
+      "canonical": "https://abcspareparts.eu/parts/baldwin/13144.04.html"
+    },
+    {
+      "brand": "Baldwin",
+      "brand_slug": "baldwin",
+      "part_number": "13144.05",
+      "part_slug": "13144.05",
+      "description": "RUECKSCHLAGVENTIL IRV 0013G 1/4\",0,2 BAR",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/baldwin/13144.05.html",
+      "canonical": "https://abcspareparts.eu/parts/baldwin/13144.05.html"
+    },
+    {
+      "brand": "Baldwin",
+      "brand_slug": "baldwin",
+      "part_number": "45.877.05",
+      "part_slug": "45.877.05",
+      "description": "Flow meter",
+      "case_slug": "baldwin-flow-meter-4587705",
+      "component_type": "flow_meter",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/baldwin/45.877.05.html",
+      "canonical": "https://abcspareparts.eu/parts/baldwin/45.877.05.html"
+    },
+    {
+      "brand": "Baumer",
+      "brand_slug": "baumer",
+      "part_number": "EN580C.ML-SC10.HH2C1.21160.H-11267453",
+      "part_slug": "en580c.ml-sc10.hh2c1.21160.h-11267453",
+      "description": "Absoluter Drehgeber EN580C (successor of GXMMW.0205P32)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/baumer/en580c.ml-sc10.hh2c1.21160.h-11267453.html",
+      "canonical": "https://abcspareparts.eu/parts/baumer/en580c.ml-sc10.hh2c1.21160.h-11267453.html"
+    },
+    {
+      "brand": "Fagor",
+      "brand_slug": "fagor",
+      "part_number": "12023211",
+      "part_slug": "12023211",
+      "description": "Door electromagnet (Previous part code/s #: P613002000, SAV W08 0024)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/fagor/12023211.html",
+      "canonical": "https://abcspareparts.eu/parts/fagor/12023211.html"
+    },
+    {
+      "brand": "Fagor",
+      "brand_slug": "fagor",
+      "part_number": "12024980",
+      "part_slug": "12024980",
+      "description": "Damper 140n (Previous part code/s #: 12029086, P630111000)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/fagor/12024980.html",
+      "canonical": "https://abcspareparts.eu/parts/fagor/12024980.html"
+    },
+    {
+      "brand": "Fagor",
+      "brand_slug": "fagor",
+      "part_number": "12025076",
+      "part_slug": "12025076",
+      "description": "250n damper (Previous part code/s #: P630110000)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/fagor/12025076.html",
+      "canonical": "https://abcspareparts.eu/parts/fagor/12025076.html"
+    },
+    {
+      "brand": "Fagor",
+      "brand_slug": "fagor",
+      "part_number": "12049230",
+      "part_slug": "12049230",
+      "description": "Hydraullic damper (Previous part code/s #: P680220000, 12023492, 12017724)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/fagor/12049230.html",
+      "canonical": "https://abcspareparts.eu/parts/fagor/12049230.html"
+    },
+    {
+      "brand": "Harmsco",
+      "brand_slug": "harmsco",
+      "part_number": "Guarnizione coperchio 550 e11",
+      "part_slug": "guarnizione-coperchio-550-e11",
+      "description": "Guarnizione EPDM/HIF7/24-HUR-BB-HP rif. HARMSCO 550-E",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/harmsco/guarnizione-coperchio-550-e11.html",
+      "canonical": "https://abcspareparts.eu/parts/harmsco/guarnizione-coperchio-550-e11.html"
+    },
+    {
+      "brand": "Hengstler",
+      "brand_slug": "hengstler",
+      "part_number": "0634713",
+      "part_slug": "0634713",
+      "description": "HENGSTLER IMP.ZAE 24DC 7ST RO",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/hengstler/0634713.html",
+      "canonical": "https://abcspareparts.eu/parts/hengstler/0634713.html"
+    },
+    {
+      "brand": "Hengstler",
+      "brand_slug": "hengstler",
+      "part_number": "3 520 068",
+      "part_slug": "3-520-068",
+      "description": "BALGKUPPLUNG 6 - 6",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/hengstler/3-520-068.html",
+      "canonical": "https://abcspareparts.eu/parts/hengstler/3-520-068.html"
+    },
+    {
+      "brand": "Hengstler",
+      "brand_slug": "hengstler",
+      "part_number": "RI58-O/ 1000AS.41TF-F0",
+      "part_slug": "ri58-o-1000as.41tf-f0",
+      "description": "Drehgeber Typ RI 58",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/hengstler/ri58-o-1000as.41tf-f0.html",
+      "canonical": "https://abcspareparts.eu/parts/hengstler/ri58-o-1000as.41tf-f0.html"
+    },
+    {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "part_number": "2A.0B.A2.6B",
+      "part_slug": "2a.0b.a2.6b",
+      "description": "Mechanical seal elastomer bellow D24mmItem 433",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/herborner/2a.0b.a2.6b.html",
+      "canonical": "https://abcspareparts.eu/parts/herborner/2a.0b.a2.6b.html"
+    },
+    {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "part_number": "3D.1L.30.01",
+      "part_slug": "3d.1l.30.01",
+      "description": "Bearing 6205-2Z-N-C3Item 320.1",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/herborner/3d.1l.30.01.html",
+      "canonical": "https://abcspareparts.eu/parts/herborner/3d.1l.30.01.html"
+    },
+    {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "part_number": "3E.3F.30.00",
+      "part_slug": "3e.3f.30.00",
+      "description": "Anti-friction bearing 3306-C3Item 320.2",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/herborner/3e.3f.30.00.html",
+      "canonical": "https://abcspareparts.eu/parts/herborner/3e.3f.30.00.html"
+    },
+    {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "part_number": "97.10.08.00",
+      "part_slug": "97.10.08.00",
+      "description": "Shaft with rotor WR07-VFor motor VEM 100L2Item 819",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/herborner/97.10.08.00.html",
+      "canonical": "https://abcspareparts.eu/parts/herborner/97.10.08.00.html"
+    },
+    {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "part_number": "97.18.03.00",
+      "part_slug": "97.18.03.00",
+      "description": "Shaft seal ring B30x55x7-FK, item 423(labyrinth disc)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/herborner/97.18.03.00.html",
+      "canonical": "https://abcspareparts.eu/parts/herborner/97.18.03.00.html"
+    },
+    {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "part_number": "LT.0D.11.00",
+      "part_slug": "lt.0d.11.00",
+      "description": "Impeller LT-HK/50A-1-120, item 230Material: GG-25",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/herborner/lt.0d.11.00.html",
+      "canonical": "https://abcspareparts.eu/parts/herborner/lt.0d.11.00.html"
+    },
+    {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "part_number": "RM.03.2D.00",
+      "part_slug": "rm.03.2d.00",
+      "description": "Impeller nut H50/131S-GD-M12Item 922",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/herborner/rm.03.2d.00.html",
+      "canonical": "https://abcspareparts.eu/parts/herborner/rm.03.2d.00.html"
+    },
+    {
+      "brand": "Hi-Force Hydraulics",
+      "brand_slug": "hi-force-hydraulics",
+      "part_number": "HPR-2H",
+      "part_slug": "hpr-2h",
+      "description": "Hi-Force Model no.: HPR-2H, 50 tonnes pin and bush replacement tool kit incorporating Hi-Force HHA504 lightweight, alum…",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/hi-force-hydraulics/hpr-2h.html",
+      "canonical": "https://abcspareparts.eu/parts/hi-force-hydraulics/hpr-2h.html"
+    },
+    {
+      "brand": "Hi-Force Hydraulics",
+      "brand_slug": "hi-force-hydraulics",
+      "part_number": "PKC50",
+      "part_slug": "pkc50",
+      "description": "Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing puller…",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/hi-force-hydraulics/pkc50.html",
+      "canonical": "https://abcspareparts.eu/parts/hi-force-hydraulics/pkc50.html"
+    },
+    {
+      "brand": "Hübner Elektromaschinen AG",
+      "brand_slug": "hubner-elektromaschinen-ag",
+      "part_number": "GT9.06L/420k",
+      "part_slug": "gt9.06l-420k",
+      "description": "Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…",
+      "case_slug": "hubner-tachogenerator-gt906l-420k",
+      "component_type": "tachogenerator",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/hubner-elektromaschinen-ag/gt9.06l-420k.html",
+      "canonical": "https://abcspareparts.eu/parts/hubner-elektromaschinen-ag/gt9.06l-420k.html"
+    },
+    {
+      "brand": "Humphrey",
+      "brand_slug": "humphrey",
+      "part_number": "41024VDC",
+      "part_slug": "41024vdc",
+      "description": "Humphrey Pneumatikventil 41024VDC",
+      "case_slug": "humphrey-valve-41024vdc",
+      "component_type": "pneumatic_valve",
+      "selection_reasons": [
+        "success_case",
+        "unique_case_narrative"
+      ],
+      "product_schema": true,
+      "path": "parts/humphrey/41024vdc.html",
+      "canonical": "https://abcspareparts.eu/parts/humphrey/41024vdc.html"
+    },
+    {
+      "brand": "Konecranes",
+      "brand_slug": "konecranes",
+      "part_number": "52294077",
+      "part_slug": "52294077",
+      "description": "Mounting Plate",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/konecranes/52294077.html",
+      "canonical": "https://abcspareparts.eu/parts/konecranes/52294077.html"
+    },
+    {
+      "brand": "Konecranes",
+      "brand_slug": "konecranes",
+      "part_number": "52302509",
+      "part_slug": "52302509",
+      "description": "Translation Wheel",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/konecranes/52302509.html",
+      "canonical": "https://abcspareparts.eu/parts/konecranes/52302509.html"
+    },
+    {
+      "brand": "Konecranes",
+      "brand_slug": "konecranes",
+      "part_number": "52302518",
+      "part_slug": "52302518",
+      "description": "set of idler wheels",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/konecranes/52302518.html",
+      "canonical": "https://abcspareparts.eu/parts/konecranes/52302518.html"
+    },
+    {
+      "brand": "Konecranes",
+      "brand_slug": "konecranes",
+      "part_number": "52589491",
+      "part_slug": "52589491",
+      "description": "set of covers",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/konecranes/52589491.html",
+      "canonical": "https://abcspareparts.eu/parts/konecranes/52589491.html"
+    },
+    {
+      "brand": "Konecranes",
+      "brand_slug": "konecranes",
+      "part_number": "53024331",
+      "part_slug": "53024331",
+      "description": "End Plate",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/konecranes/53024331.html",
+      "canonical": "https://abcspareparts.eu/parts/konecranes/53024331.html"
+    },
+    {
+      "brand": "Kübler",
+      "brand_slug": "kubler",
+      "part_number": "279383",
+      "part_slug": "279383",
+      "description": "1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/kubler/279383.html",
+      "canonical": "https://abcspareparts.eu/parts/kubler/279383.html"
+    },
+    {
+      "brand": "Kuhnke",
+      "brand_slug": "kuhnke",
+      "part_number": "76.147.92.00",
+      "part_slug": "76.147.92.00",
+      "description": "Elettrovalvola",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/kuhnke/76.147.92.00.html",
+      "canonical": "https://abcspareparts.eu/parts/kuhnke/76.147.92.00.html"
+    },
+    {
+      "brand": "Leuze",
+      "brand_slug": "leuze",
+      "part_number": "53800105",
+      "part_slug": "53800105",
+      "description": "RSL410-M Laserscanner",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/leuze/53800105.html",
+      "canonical": "https://abcspareparts.eu/parts/leuze/53800105.html"
+    },
+    {
+      "brand": "Leuze",
+      "brand_slug": "leuze",
+      "part_number": "53800117",
+      "part_slug": "53800117",
+      "description": "Connection unit",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/leuze/53800117.html",
+      "canonical": "https://abcspareparts.eu/parts/leuze/53800117.html"
+    },
+    {
+      "brand": "Leuze",
+      "brand_slug": "leuze",
+      "part_number": "RSL410-M",
+      "part_slug": "rsl410-m",
+      "description": "Leuze Laserscanner RSL410-M",
+      "case_slug": "leuze-laser-scanner-rsl410-m",
+      "component_type": "laser_scanner",
+      "selection_reasons": [
+        "success_case",
+        "unique_case_narrative"
+      ],
+      "product_schema": true,
+      "path": "parts/leuze/rsl410-m.html",
+      "canonical": "https://abcspareparts.eu/parts/leuze/rsl410-m.html"
+    },
+    {
+      "brand": "M&S Armaturen",
+      "brand_slug": "m-and-s-armaturen",
+      "part_number": "57600-1000300",
+      "part_slug": "57600-1000300",
+      "description": "Dichtung, Typ Classic Werkstoff: EPDMfür ScheibenventilDN100",
+      "case_slug": "ms-armaturen-gasket-57600-1000300-dn100",
+      "component_type": "valve_gasket",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/m-and-s-armaturen/57600-1000300.html",
+      "canonical": "https://abcspareparts.eu/parts/m-and-s-armaturen/57600-1000300.html"
+    },
+    {
+      "brand": "M+S Hydraulic",
+      "brand_slug": "m-plus-s-hydraulic",
+      "part_number": "MMS50C",
+      "part_slug": "mms50c",
+      "description": "Hydraulic Motor",
+      "case_slug": "ms-hydraulic-motor-mms50c-yacht",
+      "component_type": "hydraulic_motor",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/m-plus-s-hydraulic/mms50c.html",
+      "canonical": "https://abcspareparts.eu/parts/m-plus-s-hydraulic/mms50c.html"
+    },
+    {
+      "brand": "Mettler Toledo",
+      "brand_slug": "mettler-toledo",
+      "part_number": "119106",
+      "part_slug": "119106",
+      "description": "Heizelement DSC",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mettler-toledo/119106.html",
+      "canonical": "https://abcspareparts.eu/parts/mettler-toledo/119106.html"
+    },
+    {
+      "brand": "Mettler Toledo",
+      "brand_slug": "mettler-toledo",
+      "part_number": "119171",
+      "part_slug": "119171",
+      "description": "PT100 Sensor DSC820/821E",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mettler-toledo/119171.html",
+      "canonical": "https://abcspareparts.eu/parts/mettler-toledo/119171.html"
+    },
+    {
+      "brand": "Mettler Toledo",
+      "brand_slug": "mettler-toledo",
+      "part_number": "51119547",
+      "part_slug": "51119547",
+      "description": "PT100 Ofen DSC821E",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mettler-toledo/51119547.html",
+      "canonical": "https://abcspareparts.eu/parts/mettler-toledo/51119547.html"
+    },
+    {
+      "brand": "Mettler Toledo",
+      "brand_slug": "mettler-toledo",
+      "part_number": "51119999",
+      "part_slug": "51119999",
+      "description": "Keramiksensor FRS 5+ (DSC 1/3)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mettler-toledo/51119999.html",
+      "canonical": "https://abcspareparts.eu/parts/mettler-toledo/51119999.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "135859",
+      "part_slug": "135859",
+      "description": "O-RING",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/135859.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/135859.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "149826",
+      "part_slug": "149826",
+      "description": "BRAKE REPAIR KIT",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/149826.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/149826.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "2485C041",
+      "part_slug": "2485c041",
+      "description": "TERMOSTAT",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/2485c041.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/2485c041.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "3175P003",
+      "part_slug": "3175p003",
+      "description": "Spring",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/3175p003.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/3175p003.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "40701",
+      "part_slug": "40701",
+      "description": "FILTER, OIL",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/40701.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/40701.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "46221",
+      "part_slug": "46221",
+      "description": "SPIDER",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/46221.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/46221.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "49944",
+      "part_slug": "49944",
+      "description": "SEAL KIT",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/49944.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/49944.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "54204201",
+      "part_slug": "54204201",
+      "description": "NUT",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/54204201.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/54204201.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "54204202",
+      "part_slug": "54204202",
+      "description": "TOOTH, PLAIN",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/54204202.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/54204202.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "5421114",
+      "part_slug": "5421114",
+      "description": "SIDECUTTER",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/5421114.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/5421114.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "54211213",
+      "part_slug": "54211213",
+      "description": "BOLT",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/54211213.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/54211213.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "54218106",
+      "part_slug": "54218106",
+      "description": "SPIDER",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/54218106.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/54218106.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "5421897",
+      "part_slug": "5421897",
+      "description": "BOLT",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/5421897.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/5421897.html"
+    },
+    {
+      "brand": "MST",
+      "brand_slug": "mst",
+      "part_number": "5421899",
+      "part_slug": "5421899",
+      "description": "BEARING STRAP",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/mst/5421899.html",
+      "canonical": "https://abcspareparts.eu/parts/mst/5421899.html"
+    },
+    {
+      "brand": "NINGBO HONGBO WEITE MOTOR CO.,LTD",
+      "brand_slug": "ningbo-hongbo-weite-motor-co-ltd",
+      "part_number": "HB18065HA2B",
+      "part_slug": "hb18065ha2b",
+      "description": "Lüfter",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/ningbo-hongbo-weite-motor-co-ltd/hb18065ha2b.html",
+      "canonical": "https://abcspareparts.eu/parts/ningbo-hongbo-weite-motor-co-ltd/hb18065ha2b.html"
+    },
+    {
+      "brand": "PRONOMIC",
+      "brand_slug": "pronomic",
+      "part_number": "220390",
+      "part_slug": "220390",
+      "description": "Charger LiftDrive",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/pronomic/220390.html",
+      "canonical": "https://abcspareparts.eu/parts/pronomic/220390.html"
+    },
+    {
+      "brand": "Radio Energie",
+      "brand_slug": "radio-energie",
+      "part_number": "TTN0507RE.0",
+      "part_slug": "ttn0507re.0",
+      "description": "RE.O110 1CB 0.007 CA",
+      "case_slug": "radio-energie-tachogenerator-ttn0507re0",
+      "component_type": "tachogenerator",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/radio-energie/ttn0507re.0.html",
+      "canonical": "https://abcspareparts.eu/parts/radio-energie/ttn0507re.0.html"
+    },
+    {
+      "brand": "Renishaw",
+      "brand_slug": "renishaw",
+      "part_number": "A-5191-0049",
+      "part_slug": "a-5191-0049",
+      "description": "OMI-2 - optical machine interface",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/renishaw/a-5191-0049.html",
+      "canonical": "https://abcspareparts.eu/parts/renishaw/a-5191-0049.html"
+    },
+    {
+      "brand": "Rexroth",
+      "brand_slug": "rexroth",
+      "part_number": "A10VSO28DFR1/31L-PPA12N",
+      "part_slug": "a10vso28dfr1-31l-ppa12n",
+      "description": "Rexroth Axialkolbenpumpe A10VSO28DFR1/31L-PPA12N",
+      "case_slug": "rexroth-pump-a10vso28dfr1-ppa12n",
+      "component_type": "hydraulic_pump",
+      "selection_reasons": [
+        "success_case",
+        "unique_case_narrative"
+      ],
+      "product_schema": true,
+      "path": "parts/rexroth/a10vso28dfr1-31l-ppa12n.html",
+      "canonical": "https://abcspareparts.eu/parts/rexroth/a10vso28dfr1-31l-ppa12n.html"
+    },
+    {
+      "brand": "Roemheld",
+      "brand_slug": "roemheld",
+      "part_number": "HBZ 500160/100/100",
+      "part_slug": "hbz-500160-100-100",
+      "description": "Roemheld Blockzylinder HBZ 500160/100/100",
+      "case_slug": "roemheld-cylinder-hbz-500160-100-100",
+      "component_type": "clamp_cylinder",
+      "selection_reasons": [
+        "success_case",
+        "unique_case_narrative"
+      ],
+      "product_schema": true,
+      "path": "parts/roemheld/hbz-500160-100-100.html",
+      "canonical": "https://abcspareparts.eu/parts/roemheld/hbz-500160-100-100.html"
+    },
+    {
+      "brand": "Schunk",
+      "brand_slug": "schunk",
+      "part_number": "LM 100-H125 / 314065",
+      "part_slug": "lm-100-h125-314065",
+      "description": "Universal Linear Axis",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/schunk/lm-100-h125-314065.html",
+      "canonical": "https://abcspareparts.eu/parts/schunk/lm-100-h125-314065.html"
+    },
+    {
+      "brand": "Schunk",
+      "brand_slug": "schunk",
+      "part_number": "LM 100-H175 / 314067",
+      "part_slug": "lm-100-h175-314067",
+      "description": "Universal Linear Axis",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/schunk/lm-100-h175-314067.html",
+      "canonical": "https://abcspareparts.eu/parts/schunk/lm-100-h175-314067.html"
+    },
+    {
+      "brand": "Schunk",
+      "brand_slug": "schunk",
+      "part_number": "LM 50-H75 / 314058",
+      "part_slug": "lm-50-h75-314058",
+      "description": "Universal Linear Axis",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/schunk/lm-50-h75-314058.html",
+      "canonical": "https://abcspareparts.eu/parts/schunk/lm-50-h75-314058.html"
+    },
+    {
+      "brand": "Schunk",
+      "brand_slug": "schunk",
+      "part_number": "PGN-plus 64-2-AS / 371093",
+      "part_slug": "pgn-plus-64-2-as-371093",
+      "description": "Universal Gripper",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/schunk/pgn-plus-64-2-as-371093.html",
+      "canonical": "https://abcspareparts.eu/parts/schunk/pgn-plus-64-2-as-371093.html"
+    },
+    {
+      "brand": "Schunk",
+      "brand_slug": "schunk",
+      "part_number": "RM 200-W90-1 / 313007",
+      "part_slug": "rm-200-w90-1-313007",
+      "description": "Universal Swivel Unit",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/schunk/rm-200-w90-1-313007.html",
+      "canonical": "https://abcspareparts.eu/parts/schunk/rm-200-w90-1-313007.html"
+    },
+    {
+      "brand": "Siemens",
+      "brand_slug": "siemens",
+      "part_number": "6AV2124-0MC010-AX0",
+      "part_slug": "6av2124-0mc010-ax0",
+      "description": "SIMATIC HMI TP1200 COMFORT",
+      "case_slug": "siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0",
+      "component_type": "hmi_panel",
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description",
+        "success_case"
+      ],
+      "product_schema": true,
+      "path": "parts/siemens/6av2124-0mc010-ax0.html",
+      "canonical": "https://abcspareparts.eu/parts/siemens/6av2124-0mc010-ax0.html"
+    },
+    {
+      "brand": "Spectrex INC.",
+      "brand_slug": "spectrex-inc",
+      "part_number": "UF IR3 Flame Detector, SS316, ATEX, 3/4\"",
+      "part_slug": "uf-ir3-flame-detector-ss316-atex-3-4",
+      "description": "Spectrex SharpEye Ultra Fast triple IR, universal wiring; relays, analog, 0-20mA, HART, RS-485 Modbus, -60 to +85 deg C…",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/spectrex-inc/uf-ir3-flame-detector-ss316-atex-3-4.html",
+      "canonical": "https://abcspareparts.eu/parts/spectrex-inc/uf-ir3-flame-detector-ss316-atex-3-4.html"
+    },
+    {
+      "brand": "Steute",
+      "brand_slug": "steute",
+      "part_number": "1188542",
+      "part_slug": "1188542",
+      "description": "Ex solenoid interlockEx STM 295 1Ö1S/1Ö1S-A/90°Article no.: 1188542 (old article no.: 95353310)",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/steute/1188542.html",
+      "canonical": "https://abcspareparts.eu/parts/steute/1188542.html"
+    },
+    {
+      "brand": "SYM BANG",
+      "brand_slug": "sym-bang",
+      "part_number": "A18065V2HBT-S",
+      "part_slug": "a18065v2hbt-s",
+      "description": "Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/sym-bang/a18065v2hbt-s.html",
+      "canonical": "https://abcspareparts.eu/parts/sym-bang/a18065v2hbt-s.html"
+    },
+    {
+      "brand": "Tamagawa",
+      "brand_slug": "tamagawa",
+      "part_number": "68-2048C/T-L3-12V",
+      "part_slug": "68-2048c-t-l3-12v",
+      "description": "Tamagawa-Inkrementalencoder 68-2048C/T-L3-12V",
+      "case_slug": "tamagawa-encoder-68-2048c-t-l3-12v",
+      "component_type": "incremental_encoder",
+      "selection_reasons": [
+        "success_case",
+        "unique_case_narrative"
+      ],
+      "product_schema": true,
+      "path": "parts/tamagawa/68-2048c-t-l3-12v.html",
+      "canonical": "https://abcspareparts.eu/parts/tamagawa/68-2048c-t-l3-12v.html"
+    },
+    {
+      "brand": "Tamagawa",
+      "brand_slug": "tamagawa",
+      "part_number": "TS5013N61",
+      "part_slug": "ts5013n61",
+      "description": "68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 68 series . Outside diameter 68 mm Shaft diameter 10 mm Re…",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/tamagawa/ts5013n61.html",
+      "canonical": "https://abcspareparts.eu/parts/tamagawa/ts5013n61.html"
+    },
+    {
+      "brand": "TOKHEIM",
+      "brand_slug": "tokheim",
+      "part_number": "941828",
+      "part_slug": "941828",
+      "description": "LCD Anzeige Quantium / WWC mit LED Hintergrundbeleuchtung",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/tokheim/941828.html",
+      "canonical": "https://abcspareparts.eu/parts/tokheim/941828.html"
+    },
+    {
+      "brand": "TOKHEIM",
+      "brand_slug": "tokheim",
+      "part_number": "947944-004",
+      "part_slug": "947944-004",
+      "description": "TQC LCD Display",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/tokheim/947944-004.html",
+      "canonical": "https://abcspareparts.eu/parts/tokheim/947944-004.html"
+    },
+    {
+      "brand": "ZOLLERN",
+      "brand_slug": "zollern",
+      "part_number": "1199181",
+      "part_slug": "1199181",
+      "description": "Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/zollern/1199181.html",
+      "canonical": "https://abcspareparts.eu/parts/zollern/1199181.html"
+    },
+    {
+      "brand": "ZOLLERN",
+      "brand_slug": "zollern",
+      "part_number": "1199182",
+      "part_slug": "1199182",
+      "description": "Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLB 22-250",
+      "case_slug": null,
+      "component_type": null,
+      "selection_reasons": [
+        "rfq_order_history",
+        "unique_description"
+      ],
+      "product_schema": true,
+      "path": "parts/zollern/1199182.html",
+      "canonical": "https://abcspareparts.eu/parts/zollern/1199182.html"
+    }
+  ]
+}

@@ -62,6 +62,13 @@ if (si.includes('/sitemap-part-codes.xml')) {
 if (/sitemap-parts-/.test(si)) {
   throw new Error('sitemap-index.xml must not reference sitemap-parts-*.xml listino shards');
 }
+// Path-based MVP /parts/ sitemap is allowed only as sitemap-parts.xml (no query strings).
+if (si.includes('/sitemap-parts.xml')) {
+  const spParts = path.join(__dirname, 'sitemap-parts.xml');
+  if (!fs.existsSync(spParts)) {
+    throw new Error('sitemap-index.xml references sitemap-parts.xml but file is missing');
+  }
+}
 
 const robotsTxt = fs.readFileSync(path.join(__dirname, 'robots.txt'), 'utf8');
 if (!robotsTxt.includes('Sitemap: https://abcspareparts.eu/sitemap-index.xml')) {
@@ -108,6 +115,67 @@ const leftoverShards = fs
   .filter((name) => /^sitemap-parts-[a-z0-9-]+(?:-\d+)?\.xml$/i.test(name));
 if (leftoverShards.length) {
   throw new Error(`Remove legacy listino sitemap shards: ${leftoverShards.join(', ')}`);
+}
+
+// MVP path-based part pages (pages may exist before sitemap-index launch).
+const mvpPath = path.join(__dirname, 'parts-mvp.json');
+if (fs.existsSync(mvpPath)) {
+  const mvp = JSON.parse(fs.readFileSync(mvpPath, 'utf8'));
+  const mvpParts = mvp.parts || [];
+  if (mvpParts.length < 50 || mvpParts.length > 100) {
+    throw new Error(`parts-mvp.json count ${mvpParts.length} outside 50–100 policy`);
+  }
+  const spPartsPath = path.join(__dirname, 'sitemap-parts.xml');
+  if (!fs.existsSync(spPartsPath)) {
+    throw new Error('sitemap-parts.xml missing — run npm run build:parts');
+  }
+  const spPartsXml = fs.readFileSync(spPartsPath, 'utf8');
+  if (/\?part=|\?lang=/.test(spPartsXml)) {
+    throw new Error('sitemap-parts.xml must not contain query-string URLs');
+  }
+  const partsLocCount = (spPartsXml.match(/<loc>/g) || []).length;
+  if (partsLocCount !== mvpParts.length) {
+    throw new Error(`sitemap-parts.xml <loc> ${partsLocCount} !== MVP parts ${mvpParts.length}`);
+  }
+  for (const part of mvpParts) {
+    const file = path.join(__dirname, part.path);
+    if (!fs.existsSync(file)) {
+      throw new Error(`Missing MVP part page ${part.path}`);
+    }
+    const html = fs.readFileSync(file, 'utf8');
+    if (!html.includes(`rel="canonical" href="${part.canonical}"`)) {
+      throw new Error(`${part.path} missing self-referencing absolute canonical`);
+    }
+    if (!html.includes('name="robots" content="index, follow')) {
+      throw new Error(`${part.path} must remain indexable`);
+    }
+    if (/"@type":"Offer"/.test(html) || /"price"\s*:/.test(html)) {
+      throw new Error(`${part.path} must not invent Offer/price schema`);
+    }
+    if (!/"@type":"BreadcrumbList"/.test(html)) {
+      throw new Error(`${part.path} missing BreadcrumbList JSON-LD`);
+    }
+    if (part.product_schema !== false && !/"@type":"Product"/.test(html)) {
+      throw new Error(`${part.path} expected Product JSON-LD for verifiable part data`);
+    }
+    const brandHtmlPath = path.join(__dirname, 'marche', `${part.brand_slug}.html`);
+    if (!fs.existsSync(brandHtmlPath)) {
+      throw new Error(`Brand page missing for MVP part: marche/${part.brand_slug}.html`);
+    }
+    const brandHtml = fs.readFileSync(brandHtmlPath, 'utf8');
+    if (brandHtml.includes('noindex')) {
+      throw new Error(`Priority/MVP brand marche/${part.brand_slug}.html must not be noindex`);
+    }
+    const crawlHref = `href="../parts/${part.brand_slug}/${part.part_slug}.html"`;
+    if (!brandHtml.includes(crawlHref)) {
+      throw new Error(`marche/${part.brand_slug}.html missing crawlable link to ${part.path}`);
+    }
+  }
+  if (si.includes('/sitemap-parts.xml')) {
+    console.log('verify-build: sitemap-parts.xml is live in sitemap-index (MVP published)');
+  } else {
+    console.log('verify-build: sitemap-parts.xml present as draft (not yet in sitemap-index)');
+  }
 }
 
 // Root sitemap.xml must stay fresh whenever the index is maintained (Search Console).
@@ -350,7 +418,7 @@ if (!marcheHubHtml.includes(`Über ${brands.length} Marken`) && !marcheHubHtml.i
 }
 
 // SEO-008/009: sitemap hygiene — no cookies.html; casi.html in exactly one sitemap; no param URLs.
-const sitemapFiles = ['sitemap.xml', 'sitemap-brands.xml', 'sitemap-brand-parts.xml', 'sitemap-cases.xml'];
+const sitemapFiles = ['sitemap.xml', 'sitemap-brands.xml', 'sitemap-brand-parts.xml', 'sitemap-cases.xml', 'sitemap-parts.xml'];
 let casiSitemapCount = 0;
 for (const sf of sitemapFiles) {
   const sp = path.join(__dirname, sf);
