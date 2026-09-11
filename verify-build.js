@@ -365,6 +365,53 @@ if (!impressumHtml.includes('data-i18n="footer_cases"')) {
   throw new Error('impressum.html is missing unified footer');
 }
 
+const { LINKEDIN_COMPANY_URL } = require('./site-footer.js');
+const LINKEDIN_MARKER = `href="${LINKEDIN_COMPANY_URL}"`;
+const LINKEDIN_ARIA = 'aria-label="Segui ABCspareparts su LinkedIn"';
+function assertLinkedInFooter(label, html) {
+  if (!html.includes(LINKEDIN_MARKER)) {
+    throw new Error(`${label} missing LinkedIn company footer link`);
+  }
+  if (!html.includes(LINKEDIN_ARIA)) {
+    throw new Error(`${label} LinkedIn link missing required aria-label`);
+  }
+  if (!html.includes('rel="noopener noreferrer"') || !new RegExp(
+    `${LINKEDIN_MARKER.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^>]*rel="noopener noreferrer"`
+  ).test(html)) {
+    throw new Error(`${label} LinkedIn link must use rel="noopener noreferrer"`);
+  }
+  if (!new RegExp(
+    `${LINKEDIN_MARKER.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^>]*target="_blank"`
+  ).test(html)) {
+    throw new Error(`${label} LinkedIn link must use target="_blank"`);
+  }
+  const liChunk = html.match(
+    new RegExp(`<a[^>]*${LINKEDIN_MARKER.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^>]*>`, 'i')
+  );
+  if (liChunk && /nofollow/i.test(liChunk[0])) {
+    throw new Error(`${label} LinkedIn link must not use rel="nofollow"`);
+  }
+}
+
+assertLinkedInFooter('index.html', indexHtml);
+assertLinkedInFooter('impressum.html', impressumHtml);
+assertLinkedInFooter('marche.html', fs.readFileSync(path.join(__dirname, 'marche.html'), 'utf8'));
+assertLinkedInFooter('casi.html', fs.readFileSync(path.join(__dirname, 'casi.html'), 'utf8'));
+for (const legal of ['datenschutz.html', 'agb.html', 'versand.html', 'cookies.html']) {
+  assertLinkedInFooter(legal, fs.readFileSync(path.join(__dirname, legal), 'utf8'));
+}
+// Sample brand + case + MVP part pages
+assertLinkedInFooter('marche/siemens.html', fs.readFileSync(path.join(marcheDir, 'siemens.html'), 'utf8'));
+assertLinkedInFooter('marche/abb.html', fs.readFileSync(path.join(marcheDir, 'abb.html'), 'utf8'));
+const sampleCase = path.join(__dirname, 'casi', 'humphrey-valve-41024vdc.html');
+if (fs.existsSync(sampleCase)) {
+  assertLinkedInFooter('casi/humphrey-valve-41024vdc.html', fs.readFileSync(sampleCase, 'utf8'));
+}
+const samplePart = path.join(__dirname, 'parts', 'humphrey', '41024vdc.html');
+if (fs.existsSync(samplePart)) {
+  assertLinkedInFooter('parts/humphrey/41024vdc.html', fs.readFileSync(samplePart, 'utf8'));
+}
+
 const marcheHubHtml = fs.readFileSync(path.join(__dirname, 'marche.html'), 'utf8');
 if (!marcheHubHtml.includes('data-i18n="footer_cases"')) {
   throw new Error('marche.html is missing unified footer');

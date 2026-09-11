@@ -45,7 +45,9 @@
     .cta-secondary:hover { background: #2d5a87; }
     .note { font-size: 0.9rem; color: #555; }
     .part-case a { color: #1e3a5f; font-weight: 600; }
+
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
+    .footer-content { max-width: 800px; margin: 0 auto; }
     .footer-links { margin-bottom: 1rem; }
     .footer-links a { color: #fff; text-decoration: none; }
     .footer-links a:hover { text-decoration: underline; }
@@ -82,16 +84,33 @@
       <p class="note">Auswahlgrund (intern/SEO): rfq_order_history, unique_description. MVP-Seite — kein Massen-Katalog.</p>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container">
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
       <div class="footer-links">
-        <a href="../../marche.html">Marche</a><span class="separator">|</span>
-        <a href="../../casi.html">Erfolgsgeschichten</a><span class="separator">|</span>
-        <a href="/#contact">Kontakt</a><span class="separator">|</span>
-        <a href="../../impressum.html">Impressum</a>
+        <a href="../../marche.html" data-i18n="footer_brands">Marche</a>
+        <span class="separator">|</span>
+        <a href="../../casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
+        <span class="separator">|</span>
+        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
+        <span class="separator">|</span>
+        <a href="../../impressum.html" target="_blank" rel="noopener" data-i18n="footer_imprint">Impressum</a>
+        <span class="separator">|</span>
+        <a href="../../datenschutz.html" target="_blank" rel="noopener" data-i18n="footer_privacy">Datenschutz</a>
+        <span class="separator">|</span>
+        <a href="../../agb.html" target="_blank" rel="noopener" data-i18n="footer_terms">AGB</a>
+        <span class="separator">|</span>
+        <a href="../../versand.html" target="_blank" rel="noopener" data-i18n="footer_shipping">Versand</a>
+        <span class="separator">|</span>
+        <a href="../../cookies.html" target="_blank" rel="noopener" data-i18n="footer_cookies">Cookies</a>
+        <span class="separator">|</span>
+        <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
       </div>
-      <div class="footer-info"><p>&copy; 2026 ABCspareparts.</p></div>
+      <div class="footer-info">
+        <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 </body>
 </html>

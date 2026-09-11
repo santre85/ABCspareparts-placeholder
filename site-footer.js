@@ -1,5 +1,7 @@
 'use strict';
 
+const LINKEDIN_COMPANY_URL = 'https://www.linkedin.com/company/abcspareparts';
+
 const FOOTER_CSS = `
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
     .footer-content { max-width: 800px; margin: 0 auto; }
@@ -19,6 +21,7 @@ const FOOTER_I18N = {
     footer_terms: 'AGB',
     footer_shipping: 'Versand',
     footer_cookies: 'Cookies',
+    footer_linkedin: 'LinkedIn',
     footer_rights: 'Alle Rechte vorbehalten.'
   },
   en: {
@@ -30,6 +33,7 @@ const FOOTER_I18N = {
     footer_terms: 'Terms',
     footer_shipping: 'Shipping',
     footer_cookies: 'Cookies',
+    footer_linkedin: 'LinkedIn',
     footer_rights: 'All rights reserved.'
   },
   it: {
@@ -41,6 +45,7 @@ const FOOTER_I18N = {
     footer_terms: 'Condizioni',
     footer_shipping: 'Spedizione',
     footer_cookies: 'Cookie',
+    footer_linkedin: 'LinkedIn',
     footer_rights: 'Tutti i diritti riservati.'
   },
   es: {
@@ -52,6 +57,7 @@ const FOOTER_I18N = {
     footer_terms: 'Términos',
     footer_shipping: 'Envío',
     footer_cookies: 'Cookies',
+    footer_linkedin: 'LinkedIn',
     footer_rights: 'Todos los derechos reservados.'
   },
   fr: {
@@ -63,6 +69,7 @@ const FOOTER_I18N = {
     footer_terms: 'CGV',
     footer_shipping: 'Livraison',
     footer_cookies: 'Cookies',
+    footer_linkedin: 'LinkedIn',
     footer_rights: 'Tous droits réservés.'
   }
 };
@@ -75,6 +82,11 @@ function withFooterI18n(pageI18n) {
     out[lang] = { ...(pageI18n[lang] || {}), ...FOOTER_I18N[lang] };
   }
   return out;
+}
+
+/** Discrete text link for the company LinkedIn page (no new graphic block). */
+function buildLinkedInFooterAnchor() {
+  return `<a href="${LINKEDIN_COMPANY_URL}" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>`;
 }
 
 function buildFooterHtml(linkPrefix, options) {
@@ -99,6 +111,8 @@ function buildFooterHtml(linkPrefix, options) {
         <a href="${p}versand.html" target="_blank" rel="noopener" data-i18n="footer_shipping">Versand</a>
         <span class="separator">|</span>
         <a href="${p}cookies.html" target="_blank" rel="noopener" data-i18n="footer_cookies">Cookies</a>
+        <span class="separator">|</span>
+        ${buildLinkedInFooterAnchor()}
       </div>
       <div class="footer-info">
         <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
@@ -109,9 +123,11 @@ function buildFooterHtml(linkPrefix, options) {
 }
 
 module.exports = {
+  LINKEDIN_COMPANY_URL,
   FOOTER_CSS,
   FOOTER_I18N,
   FOOTER_LANGS,
   withFooterI18n,
+  buildLinkedInFooterAnchor,
   buildFooterHtml
 };

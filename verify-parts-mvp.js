@@ -299,6 +299,22 @@ function main() {
       pageErrors.push('missing crawlable inbound link from brand or case page');
     }
 
+    // Shared footer must expose company LinkedIn (no nofollow)
+    if (!html.includes('href="https://www.linkedin.com/company/abcspareparts"')) {
+      pageErrors.push('missing LinkedIn company footer link');
+    } else {
+      const li = html.match(/<a[^>]*href="https:\/\/www\.linkedin\.com\/company\/abcspareparts"[^>]*>/i);
+      if (!li) pageErrors.push('LinkedIn anchor malformed');
+      else {
+        if (!/target="_blank"/.test(li[0])) pageErrors.push('LinkedIn missing target=_blank');
+        if (!/rel="noopener noreferrer"/.test(li[0])) pageErrors.push('LinkedIn missing rel=noopener noreferrer');
+        if (/nofollow/i.test(li[0])) pageErrors.push('LinkedIn must not use nofollow');
+      }
+      if (!html.includes('aria-label="Segui ABCspareparts su LinkedIn"')) {
+        pageErrors.push('LinkedIn missing required aria-label');
+      }
+    }
+
     // sitemap contains this URL exactly once (already checked duplicates globally)
     const sitemapHits = locs.filter((u) => u === part.canonical).length;
     if (sitemapHits !== 1) pageErrors.push(`sitemap occurrences = ${sitemapHits}, expected 1`);
