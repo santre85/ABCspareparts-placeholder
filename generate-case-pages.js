@@ -564,6 +564,7 @@ function buildHubPage(cases) {
     de: {
       meta_title: 'Erfolgsgeschichten — Industrieersatzteile in Europa | ABCspareparts',
       meta_description: 'Echte Erfolgsfälle: Marke, Teilenummer, Branche und Lieferzeit — von der Anfrage bis zum Versand in Europa. Kunden anonymisiert.',
+      hub_breadcrumb: '<a href="/">Home</a> · Erfolgsgeschichten',
       hub_h1: 'Erfolgsgeschichten',
       hub_subtitle: 'Echte Lieferungen — Marke, Teilenummer und Ablauf, ohne Kundennamen.',
       hub_intro: 'Hier zeigen wir ausgewählte Erfolgsfälle: welches Ersatzteil, welche Marke, welche Branche und wie schnell von der Anfrage bis zum Versand. Kundennamen nennen wir aus Vertraulichkeitsgründen nicht.',
@@ -572,6 +573,7 @@ function buildHubPage(cases) {
     en: {
       meta_title: 'Success stories — industrial spare parts in Europe | ABCspareparts',
       meta_description: 'Real success stories: brand, part number, sector and lead time — from enquiry to dispatch across Europe. Customers kept anonymous.',
+      hub_breadcrumb: '<a href="/">Home</a> · Success stories',
       hub_h1: 'Success stories',
       hub_subtitle: 'Real deliveries — brand, part number and timeline, without naming customers.',
       hub_intro: 'Selected success stories: which spare part, which brand, which industry, and how fast from request to shipment. We do not publish customer names for confidentiality.',
@@ -580,6 +582,7 @@ function buildHubPage(cases) {
     it: {
       meta_title: 'Casi di successo — ricambi industriali in Europa | ABCspareparts',
       meta_description: 'Casi di successo reali: marca, codice articolo, settore e tempi dalla richiesta alla spedizione in Europa. Clienti non nominati.',
+      hub_breadcrumb: '<a href="/">Home</a> · Casi di successo',
       hub_h1: 'Casi di successo',
       hub_subtitle: 'Forniture reali — marca, codice e tempi, senza nominare i clienti.',
       hub_intro: 'Documentiamo casi di successo selezionati: quale ricambio, quale marca, quale settore e quanto tempo dalla richiesta alla spedizione. I nomi dei clienti non vengono pubblicati per riservatezza.',
@@ -588,6 +591,7 @@ function buildHubPage(cases) {
     es: {
       meta_title: 'Casos de éxito — recambios industriales en Europa | ABCspareparts',
       meta_description: 'Casos de éxito reales: marca, referencia, sector y plazos desde la consulta hasta el envío en Europa. Clientes anónimos.',
+      hub_breadcrumb: '<a href="/">Home</a> · Casos de éxito',
       hub_h1: 'Casos de éxito',
       hub_subtitle: 'Entregas reales — marca, referencia y plazos, sin nombrar clientes.',
       hub_intro: 'Casos de éxito seleccionados: qué recambio, qué marca, qué sector y cuánto tiempo hasta el envío. No publicamos nombres de clientes por confidencialidad.',
@@ -596,6 +600,7 @@ function buildHubPage(cases) {
     fr: {
       meta_title: 'Histoires de réussite — pièces industrielles en Europe | ABCspareparts',
       meta_description: 'Vraies histoires de réussite : marque, référence, secteur et délais de la demande à l’expédition en Europe. Clients anonymisés.',
+      hub_breadcrumb: '<a href="/">Home</a> · Histoires de réussite',
       hub_h1: 'Histoires de réussite',
       hub_subtitle: 'Livraisons réelles — marque, référence et délais, sans nommer les clients.',
       hub_intro: 'Histoires de réussite sélectionnées : quelle pièce, quelle marque, quel secteur et délai jusqu’à l’expédition. Les noms des clients ne sont pas publiés pour confidentialité.',
@@ -635,7 +640,13 @@ function buildHubPage(cases) {
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
     .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
     .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; }
-    .page-header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 2.5rem 1.5rem; text-align: center; }
+    .page-header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 4.25rem 1.5rem 2.5rem; text-align: center; position: relative; }
+    .hub-logo-link { position: absolute; top: 1rem; left: 1.5rem; z-index: 5; display: inline-block; line-height: 0; }
+    .hub-logo-link img { height: 44px; width: auto; max-width: min(220px, 52vw); display: block; border-radius: 4px; }
+    .hub-logo-link:focus-visible { outline: 2px solid #e67e22; outline-offset: 3px; border-radius: 4px; }
+    .breadcrumb { font-size: 0.9rem; opacity: 0.95; margin-bottom: 1rem; }
+    .breadcrumb a { color: #e67e22; text-decoration: none; font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
     .page-header h1 { font-size: 1.85rem; margin-bottom: 0.5rem; }
     .page-header p { opacity: 0.95; max-width: 640px; margin: 0 auto; }
     main { padding: 2rem 1.5rem 3rem; }
@@ -664,7 +675,11 @@ ${FOOTER_CSS}
     </select>
   </div>
   <header class="page-header">
+    <a href="/" class="hub-logo-link" aria-label="ABCspareparts – Home">
+      <img src="logo.png" alt="ABCspareparts" width="190" height="50">
+    </a>
     <div class="container">
+      <nav class="breadcrumb" data-i18n="hub_breadcrumb" aria-label="Breadcrumb">${hubI18n.de.hub_breadcrumb}</nav>
       <h1 data-i18n="hub_h1">${escapeHtml(hubI18n.de.hub_h1)}</h1>
       <p data-i18n="hub_subtitle">${escapeHtml(hubI18n.de.hub_subtitle)}</p>
     </div>

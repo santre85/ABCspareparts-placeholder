@@ -228,6 +228,15 @@ if (!casiHtml.includes('"@type":"CollectionPage"') || !casiHtml.includes('"@type
 if (!casiHtml.includes('rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt"')) {
   throw new Error('casi.html is missing llms.txt discovery link');
 }
+if (!casiHtml.includes('class="hub-logo-link"') || !casiHtml.includes('href="/" class="hub-logo-link"')) {
+  throw new Error('casi.html missing home logo link (hub-logo-link → /)');
+}
+if (!casiHtml.includes('src="logo.png"') || !casiHtml.includes('aria-label="ABCspareparts – Home"')) {
+  throw new Error('casi.html home logo must use logo.png with Home aria-label');
+}
+if (!casiHtml.includes('data-i18n="hub_breadcrumb"') || !casiHtml.includes('href="/">Home</a>')) {
+  throw new Error('casi.html missing Home breadcrumb link');
+}
 
 for (const c of publishedCases) {
   const html = fs.readFileSync(path.join(__dirname, 'casi', `${c.slug}.html`), 'utf8');
