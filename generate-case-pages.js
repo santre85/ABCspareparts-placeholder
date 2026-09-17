@@ -928,6 +928,70 @@ function writeLegacyRedirects(cases) {
   }
 }
 
+const BRAND_SUCCESS_I18N = {
+  de: {
+    title: 'Erfolgsgeschichte',
+    body: (brand, caseUrl, title) =>
+      `Reale Beschaffung für ${escapeHtml(brand)}: <a href="${caseUrl}">${escapeHtml(title)}</a> — <a href="../casi.html">alle Erfolgsgeschichten</a>.`
+  },
+  en: {
+    title: 'Success story',
+    body: (brand, caseUrl, title) =>
+      `Real supply case for ${escapeHtml(brand)}: <a href="${caseUrl}">${escapeHtml(title)}</a> — <a href="../casi.html">all success stories</a>.`
+  },
+  it: {
+    title: 'Caso di successo',
+    body: (brand, caseUrl, title) =>
+      `Fornitura reale per ${escapeHtml(brand)}: <a href="${caseUrl}">${escapeHtml(title)}</a> — <a href="../casi.html">tutti i casi di successo</a>.`
+  },
+  es: {
+    title: 'Caso de éxito',
+    body: (brand, caseUrl, title) =>
+      `Suministro real para ${escapeHtml(brand)}: <a href="${caseUrl}">${escapeHtml(title)}</a> — <a href="../casi.html">todos los casos de éxito</a>.`
+  },
+  fr: {
+    title: 'Histoire de réussite',
+    body: (brand, caseUrl, title) =>
+      `Fourniture réelle pour ${escapeHtml(brand)} : <a href="${caseUrl}">${escapeHtml(title)}</a> — <a href="../casi.html">toutes les histoires de réussite</a>.`
+  }
+};
+
+const BRAND_SUCCESS_CSS = `    .brand-success-story { margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #fff8f0; max-width: 820px; }
+    .brand-success-story h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.45rem; }
+    .brand-success-story p { font-size: 0.92rem; color: #445; line-height: 1.55; margin: 0; }
+    .brand-success-story a { color: #1e3a5f; font-weight: 600; text-decoration: none; border-bottom: 1px solid #c5d4e3; }
+    .brand-success-story a:hover { color: #e67e22; border-bottom-color: #e67e22; }
+`;
+
+function ensureBrandSuccessCss(html) {
+  if (html.includes('.brand-success-story {')) return html;
+  if (html.includes('.related-brands {')) {
+    return html.replace('.related-brands {', `${BRAND_SUCCESS_CSS}    .related-brands {`);
+  }
+  return html.replace('  </style>', `${BRAND_SUCCESS_CSS}  </style>`);
+}
+
+function upsertBrandSuccessI18n(html, extraByLang) {
+  const marker = 'var translations = ';
+  const start = html.indexOf(marker);
+  if (start < 0) return html;
+  const jsonStart = start + marker.length;
+  const jsonEnd = html.indexOf(';\n', jsonStart);
+  if (jsonEnd < 0) return html;
+  let translations;
+  try {
+    translations = JSON.parse(html.slice(jsonStart, jsonEnd));
+  } catch (e) {
+    console.warn('Could not parse brand translations JSON for success-story i18n');
+    return html;
+  }
+  for (const lang of LANGS) {
+    if (!translations[lang]) translations[lang] = {};
+    Object.assign(translations[lang], extraByLang[lang] || extraByLang.de);
+  }
+  return html.slice(0, jsonStart) + JSON.stringify(translations) + html.slice(jsonEnd);
+}
+
 function updateBrandCaseLinks(cases) {
   const byBrand = new Map();
   for (const c of cases) {
@@ -939,10 +1003,19 @@ function updateBrandCaseLinks(cases) {
     if (!fs.existsSync(brandPath)) continue;
     let html = fs.readFileSync(brandPath, 'utf8');
     const caseUrl = `../casi/${caseRow.slug}.html`;
-    const en = pickLang(caseRow, 'en');
-    const block = `      <section ${marker} aria-label="Success story">
-        <h2>Success story</h2>
-        <p>Real supply case for ${escapeHtml(caseRow.brand)}: <a href="${caseUrl}">${escapeHtml(en.title)}</a> — <a href="../casi.html">all success stories</a>.</p>
+    const de = pickLang(caseRow, 'de');
+    const extraByLang = {};
+    for (const lang of LANGS) {
+      const t = pickLang(caseRow, lang);
+      const copy = BRAND_SUCCESS_I18N[lang] || BRAND_SUCCESS_I18N.de;
+      extraByLang[lang] = {
+        brand_success_title: copy.title,
+        brand_success_body: copy.body(caseRow.brand, caseUrl, t.title)
+      };
+    }
+    const block = `      <section ${marker} aria-labelledby="brand-success-heading">
+        <h2 id="brand-success-heading" data-i18n="brand_success_title">${escapeHtml(BRAND_SUCCESS_I18N.de.title)}</h2>
+        <p data-i18n="brand_success_body">${BRAND_SUCCESS_I18N.de.body(caseRow.brand, caseUrl, de.title)}</p>
       </section>
 `;
     if (html.includes(marker)) {
@@ -956,6 +1029,8 @@ function updateBrandCaseLinks(cases) {
         block + '      <section class="related-brands"'
       );
     }
+    html = ensureBrandSuccessCss(html);
+    html = upsertBrandSuccessI18n(html, extraByLang);
     fs.writeFileSync(brandPath, html, 'utf8');
     console.log('Updated brand page link:', brandSlug);
   }

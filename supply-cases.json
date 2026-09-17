@@ -1875,12 +1875,12 @@
         "card_teaser": "Maintenance thermique DE — kit TERMET EcoCondens-35 (6 codes) quand les canaux habituels bloquaient."
       },
       "quotable_part_descriptions": {
-        "Z1780.04.04.00": "Ionisation electrode",
-        "Z1780.04.00.20": "Electrode gasket",
-        "Z1780.04.03.00": "Ignition electrode",
-        "Z1780.04.00.19": "Electrode gasket",
-        "Z1780.04.00.22": "Front door gasket",
-        "Z0720.04.00.10": "Front door gasket"
+        "Z1780.04.04.00": "Ionisationselektrode",
+        "Z1780.04.00.20": "Elektrodendichtung",
+        "Z1780.04.03.00": "Zündelektrode",
+        "Z1780.04.00.19": "Elektrodendichtung",
+        "Z1780.04.00.22": "Dichtung Frontklappe",
+        "Z0720.04.00.10": "Dichtung Frontklappe"
       }
     }
   ]
