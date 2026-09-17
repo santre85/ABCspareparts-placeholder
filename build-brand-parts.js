@@ -100,6 +100,21 @@ function loadBrandSlugs() {
   return JSON.parse(fs.readFileSync(path.join(ROOT, 'brand-slugs.json'), 'utf8'));
 }
 
+function casePartTokens(row) {
+  if (Array.isArray(row.quotable_parts) && row.quotable_parts.length) {
+    return [...new Set(row.quotable_parts.map((p) => String(p).trim()).filter(Boolean))];
+  }
+  const partField = String(row.part_number || '');
+  return [
+    ...new Set(
+      partField
+        .split(/\s*·\s*|\s*,\s*/)
+        .map((p) => p.trim())
+        .filter(Boolean)
+    )
+  ];
+}
+
 function loadCaseSlugMap() {
   const map = new Map();
   try {
@@ -107,10 +122,7 @@ function loadCaseSlugMap() {
     const rows = Array.isArray(raw) ? raw : (raw.cases || []);
     for (const row of rows) {
       if (!row.slug || !row.brand) continue;
-      const partField = String(row.part_number || '');
-      for (const part of partField.split(/\s*·\s*|\s*,\s*/)) {
-        const token = part.trim();
-        if (!token) continue;
+      for (const token of casePartTokens(row)) {
         map.set(`${normalizeKey(row.brand)}|${normalizePart(token)}`, row.slug);
       }
     }
@@ -222,14 +234,12 @@ function supplementFromCases(rowsBySlug, brandSlugs, caseMap) {
   for (const row of cases) {
     if (!row.slug || !row.brand) continue;
     const { brand, brand_slug } = resolveBrand(row.brand, brandSlugs);
-    const partField = String(row.part_number || '');
-    for (const token of partField.split(/\s*·\s*|\s*,\s*/)) {
-      const partNumber = token.trim();
-      if (!partNumber) continue;
-
+    const labels = row.quotable_part_descriptions || {};
+    for (const partNumber of casePartTokens(row)) {
+      const label = labels[partNumber] || (row.part_number === partNumber ? row.title || partNumber : partNumber);
       const part = {
         part_number: partNumber,
-        description: cleanDescription(partNumber, row.part_number === partNumber ? row.title || partNumber : partNumber),
+        description: cleanDescription(partNumber, label),
         case_slug: row.slug
       };
 

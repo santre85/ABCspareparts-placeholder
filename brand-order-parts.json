@@ -1,6 +1,6 @@
 {
   "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
-  "generated": "2026-09-01",
+  "generated": "2026-09-17",
   "listini_files": 301648,
   "brands": [
     {
@@ -750,6 +750,42 @@
           "XCMD"
         ]
       }
+    },
+    {
+      "brand": "TERMET",
+      "brand_slug": "termet",
+      "parts": [
+        {
+          "part_number": "Z0720.04.00.10",
+          "description": "Front door gasket",
+          "case_slug": "termet-kit-ecocondens-35"
+        },
+        {
+          "part_number": "Z1780.04.00.19",
+          "description": "Electrode gasket",
+          "case_slug": "termet-kit-ecocondens-35"
+        },
+        {
+          "part_number": "Z1780.04.00.20",
+          "description": "Electrode gasket",
+          "case_slug": "termet-kit-ecocondens-35"
+        },
+        {
+          "part_number": "Z1780.04.00.22",
+          "description": "Front door gasket",
+          "case_slug": "termet-kit-ecocondens-35"
+        },
+        {
+          "part_number": "Z1780.04.03.00",
+          "description": "Ignition electrode",
+          "case_slug": "termet-kit-ecocondens-35"
+        },
+        {
+          "part_number": "Z1780.04.04.00",
+          "description": "Ionisation electrode",
+          "case_slug": "termet-kit-ecocondens-35"
+        }
+      ]
     },
     {
       "brand": "TOKHEIM",
