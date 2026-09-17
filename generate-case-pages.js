@@ -564,6 +564,12 @@ function buildHubPage(cases) {
     de: {
       meta_title: 'Erfolgsgeschichten — Industrieersatzteile in Europa | ABCspareparts',
       meta_description: 'Echte Erfolgsfälle: Marke, Teilenummer, Branche und Lieferzeit — von der Anfrage bis zum Versand in Europa. Kunden anonymisiert.',
+      nav_home: 'Home',
+      nav_impressum: 'Impressum',
+      nav_datenschutz: 'Datenschutz',
+      nav_agb: 'AGB',
+      nav_versand: 'Versand',
+      nav_cookies: 'Cookies',
       hub_breadcrumb: '<a href="/">Home</a> · Erfolgsgeschichten',
       hub_h1: 'Erfolgsgeschichten',
       hub_subtitle: 'Echte Lieferungen — Marke, Teilenummer und Ablauf, ohne Kundennamen.',
@@ -573,6 +579,12 @@ function buildHubPage(cases) {
     en: {
       meta_title: 'Success stories — industrial spare parts in Europe | ABCspareparts',
       meta_description: 'Real success stories: brand, part number, sector and lead time — from enquiry to dispatch across Europe. Customers kept anonymous.',
+      nav_home: 'Home',
+      nav_impressum: 'Imprint',
+      nav_datenschutz: 'Privacy',
+      nav_agb: 'Terms',
+      nav_versand: 'Shipping',
+      nav_cookies: 'Cookies',
       hub_breadcrumb: '<a href="/">Home</a> · Success stories',
       hub_h1: 'Success stories',
       hub_subtitle: 'Real deliveries — brand, part number and timeline, without naming customers.',
@@ -582,6 +594,12 @@ function buildHubPage(cases) {
     it: {
       meta_title: 'Casi di successo — ricambi industriali in Europa | ABCspareparts',
       meta_description: 'Casi di successo reali: marca, codice articolo, settore e tempi dalla richiesta alla spedizione in Europa. Clienti non nominati.',
+      nav_home: 'Home',
+      nav_impressum: 'Impressum',
+      nav_datenschutz: 'Privacy',
+      nav_agb: 'Condizioni',
+      nav_versand: 'Spedizione',
+      nav_cookies: 'Cookie',
       hub_breadcrumb: '<a href="/">Home</a> · Casi di successo',
       hub_h1: 'Casi di successo',
       hub_subtitle: 'Forniture reali — marca, codice e tempi, senza nominare i clienti.',
@@ -591,6 +609,12 @@ function buildHubPage(cases) {
     es: {
       meta_title: 'Casos de éxito — recambios industriales en Europa | ABCspareparts',
       meta_description: 'Casos de éxito reales: marca, referencia, sector y plazos desde la consulta hasta el envío en Europa. Clientes anónimos.',
+      nav_home: 'Home',
+      nav_impressum: 'Aviso legal',
+      nav_datenschutz: 'Privacidad',
+      nav_agb: 'Términos',
+      nav_versand: 'Envío',
+      nav_cookies: 'Cookies',
       hub_breadcrumb: '<a href="/">Home</a> · Casos de éxito',
       hub_h1: 'Casos de éxito',
       hub_subtitle: 'Entregas reales — marca, referencia y plazos, sin nombrar clientes.',
@@ -600,6 +624,12 @@ function buildHubPage(cases) {
     fr: {
       meta_title: 'Histoires de réussite — pièces industrielles en Europe | ABCspareparts',
       meta_description: 'Vraies histoires de réussite : marque, référence, secteur et délais de la demande à l’expédition en Europe. Clients anonymisés.',
+      nav_home: 'Accueil',
+      nav_impressum: 'Mentions légales',
+      nav_datenschutz: 'Confidentialité',
+      nav_agb: 'CGV',
+      nav_versand: 'Livraison',
+      nav_cookies: 'Cookies',
       hub_breadcrumb: '<a href="/">Home</a> · Histoires de réussite',
       hub_h1: 'Histoires de réussite',
       hub_subtitle: 'Livraisons réelles — marque, référence et délais, sans nommer les clients.',
@@ -636,20 +666,24 @@ function buildHubPage(cases) {
   <script type="application/ld+json">${JSON.stringify(hubJsonLd)}</script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; color: #333; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-    .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
-    .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; }
-    .page-header { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 4.25rem 1.5rem 2.5rem; text-align: center; position: relative; }
-    .hub-logo-link { position: absolute; top: 1rem; left: 1.5rem; z-index: 5; display: inline-block; line-height: 0; }
-    .hub-logo-link img { height: 44px; width: auto; max-width: min(220px, 52vw); display: block; border-radius: 4px; }
-    .hub-logo-link:focus-visible { outline: 2px solid #e67e22; outline-offset: 3px; border-radius: 4px; }
+    .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1001; }
+    .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .legal-header { background: #1e3a5f; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    .legal-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .legal-header .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .legal-header .logo:hover { opacity: 0.9; }
+    .legal-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .legal-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.9rem; }
+    .legal-nav a:hover { color: #fff; text-decoration: underline; }
+    .hub-hero { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 2.5rem 1.5rem; text-align: center; }
     .breadcrumb { font-size: 0.9rem; opacity: 0.95; margin-bottom: 1rem; }
     .breadcrumb a { color: #e67e22; text-decoration: none; font-weight: 600; }
     .breadcrumb a:hover { text-decoration: underline; }
-    .page-header h1 { font-size: 1.85rem; margin-bottom: 0.5rem; }
-    .page-header p { opacity: 0.95; max-width: 640px; margin: 0 auto; }
-    main { padding: 2rem 1.5rem 3rem; }
+    .hub-hero h1 { font-size: 1.85rem; margin-bottom: 0.5rem; }
+    .hub-hero p { opacity: 0.95; max-width: 640px; margin: 0 auto; }
+    main { flex: 1; padding: 2rem 1.5rem 3rem; }
     .hub-intro { margin-bottom: 2rem; color: #444; font-size: 1rem; }
     .case-list { display: grid; gap: 1.25rem; }
     .case-card { border: 1px solid #e3eaf1; border-radius: 10px; padding: 1.25rem 1.3rem; background: #f9fbfe; }
@@ -674,16 +708,28 @@ ${FOOTER_CSS}
       <option value="fr">🇫🇷 Français</option>
     </select>
   </div>
-  <header class="page-header">
-    <a href="/" class="hub-logo-link" aria-label="ABCspareparts – Home">
-      <img src="logo.png" alt="ABCspareparts" width="190" height="50">
-    </a>
+  <header class="legal-header">
+    <div class="container">
+      <a href="/" class="logo">ABCspareparts</a>
+      <nav class="legal-nav">
+        <a href="/" data-i18n="nav_home">Home</a>
+        <a href="impressum.html" data-i18n="nav_impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="nav_datenschutz">Datenschutz</a>
+        <a href="agb.html" data-i18n="nav_agb">AGB</a>
+        <a href="versand.html" data-i18n="nav_versand">Versand</a>
+        <a href="cookies.html" data-i18n="nav_cookies">Cookies</a>
+        <span class="separator">|</span>
+        <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hub-hero">
     <div class="container">
       <nav class="breadcrumb" data-i18n="hub_breadcrumb" aria-label="Breadcrumb">${hubI18n.de.hub_breadcrumb}</nav>
       <h1 data-i18n="hub_h1">${escapeHtml(hubI18n.de.hub_h1)}</h1>
       <p data-i18n="hub_subtitle">${escapeHtml(hubI18n.de.hub_subtitle)}</p>
     </div>
-  </header>
+  </section>
   <main>
     <div class="container">
       <p class="hub-intro" data-i18n="hub_intro">${escapeHtml(hubI18n.de.hub_intro)}</p>
