@@ -357,6 +357,36 @@ for (const row of publishedCases) {
     throw new Error(`marche/${row.brand_slug}.html missing brand-success-story for case ${row.slug}`);
   }
 }
+{
+  const termetHtml = fs.readFileSync(path.join(marcheDir, 'termet.html'), 'utf8');
+  if (/terminator\.html|termite\.html|terlel\.html|termac\.html/i.test(termetHtml)) {
+    throw new Error('marche/termet.html related brands must be heating brands, not alphabetic neighbors');
+  }
+  for (const slug of ['vaillant', 'baxi', 'immergas', 'weishaupt', 'de-dietrich', 'wilo']) {
+    if (!termetHtml.includes(`marche/${slug}.html`)) {
+      throw new Error(`marche/termet.html missing related heating brand ${slug}`);
+    }
+  }
+  const termetMeta = (termetHtml.match(/name="description" content="([^"]*)"/) || [])[1] || '';
+  if (/Beispielc…|Example pa…|Codici es…/.test(termetMeta) || /Beispielcodes?:?\s*…/i.test(termetMeta)) {
+    throw new Error('marche/termet.html meta description is truncated while appending part codes');
+  }
+  if (termetMeta.includes('…') && /Beispielc|Example pa|Codici es/i.test(termetMeta)) {
+    throw new Error('marche/termet.html meta description truncated mid-label');
+  }
+  if (termetHtml.includes('<h2>Success story</h2>')) {
+    throw new Error('marche/termet.html success-story teaser must default to German, not English');
+  }
+  if (!termetHtml.includes('data-i18n="brand_success_title"') || !termetHtml.includes('Erfolgsgeschichte')) {
+    throw new Error('marche/termet.html missing localized success-story teaser');
+  }
+  if (!termetHtml.includes('.brand-success-story {')) {
+    throw new Error('marche/termet.html missing brand-success-story CSS');
+  }
+  if (!termetHtml.includes('Dichtung Frontklappe') || !termetHtml.includes('Zündelektrode')) {
+    throw new Error('marche/termet.html part descriptions should use German labels on the default page');
+  }
+}
 if (/www\.abcspareparts\.eu/.test(llmsTxt + mainSitemap + robotsTxt)) {
   throw new Error('Do not advertise www.abcspareparts.eu in sitemaps/llms/robots (apex canonical)');
 }

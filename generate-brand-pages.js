@@ -424,6 +424,8 @@ function enrichMetaWithParts(translations, parts) {
     const base = translations[lang].meta_description;
     const prefix = PARTS_META_PREFIX[lang];
     let budget = MAX_META_LEN - base.length - prefix.length;
+    // Keep curated SEO descriptions intact instead of truncating to "Beispielc…"
+    if (budget < 12) continue;
     const shown = [];
     for (const code of codes) {
       const sep = shown.length ? ', ' : '';
@@ -431,6 +433,7 @@ function enrichMetaWithParts(translations, parts) {
       shown.push(code);
       budget -= sep.length + code.length;
     }
+    if (!shown.length) continue;
     let extra = '';
     if (shown.length < codes.length) {
       extra = PARTS_META_MORE[lang](codes.length - shown.length);
@@ -442,6 +445,31 @@ function enrichMetaWithParts(translations, parts) {
     translations[lang].meta_description = meta;
   }
   return translations;
+}
+
+function relatedRowsFor(slug, rows, index) {
+  const override = TOP_BRAND_BY_SLUG[slug] && TOP_BRAND_BY_SLUG[slug].related_slugs;
+  if (Array.isArray(override) && override.length) {
+    const bySlug = new Map(rows.map((r) => [r.slug, r]));
+    const picked = [];
+    const seen = new Set([slug]);
+    for (const relatedSlug of override) {
+      const row = bySlug.get(String(relatedSlug || '').trim());
+      if (!row || seen.has(row.slug)) continue;
+      seen.add(row.slug);
+      picked.push(row);
+      if (picked.length >= 6) break;
+    }
+    if (picked.length) return picked;
+  }
+  const relatedRows = [];
+  for (let step = 1; step <= 3; step++) {
+    const left = rows[index - step];
+    const right = rows[index + step];
+    if (left) relatedRows.push(left);
+    if (right) relatedRows.push(right);
+  }
+  return relatedRows;
 }
 
 function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
@@ -724,6 +752,11 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex)
     .brand-form-hint { max-width: 720px; margin: 0 auto 1rem; color: #555; font-size: 0.98rem; text-align: center; }
     .brand-email-alt { max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.95rem; color: #444; }
     .brand-email-alt a { color: #1e3a5f; font-weight: 600; }
+    .brand-success-story { max-width: 820px; margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #fff8f0; }
+    .brand-success-story h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.45rem; }
+    .brand-success-story p { font-size: 0.92rem; color: #445; line-height: 1.55; margin: 0; }
+    .brand-success-story a { color: #1e3a5f; font-weight: 600; text-decoration: none; border-bottom: 1px solid #c5d4e3; }
+    .brand-success-story a:hover { color: #e67e22; border-bottom-color: #e67e22; }
     .related-brands { max-width: 820px; margin: 0 auto 2rem; padding: 1rem 1.1rem; border: 1px solid #e6eaf0; border-radius: 10px; background: #f9fbfe; }
     .related-brands h2 { font-size: 1.15rem; color: #1e3a5f; margin-bottom: 0.35rem; }
     .related-brands p { font-size: 0.92rem; color: #556; margin-bottom: 0.7rem; }
@@ -1214,13 +1247,7 @@ function main() {
     const { brand, slug } = rows[i];
     if (onlySlugs.length && !onlySlugs.includes(slug)) continue;
 
-    const relatedRows = [];
-    for (let step = 1; step <= 3; step++) {
-      const left = rows[i - step];
-      const right = rows[i + step];
-      if (left) relatedRows.push(left);
-      if (right) relatedRows.push(right);
-    }
+    const relatedRows = relatedRowsFor(slug, rows, i);
     const translations = buildTranslations(brand);
     mergeTopBrandContent(translations, slug);
     const brandParts = partsBySlug.get(slug) || null;

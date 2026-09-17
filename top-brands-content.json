@@ -84,6 +84,14 @@
     "fr": "Bosch Rexroth : hydraulique, lineaires, servos. Référence, plaque, charge, filetage : pour pompes, vérins, variateurs, rails."
   },
   "termet": {
+    "related_slugs": [
+      "vaillant",
+      "baxi",
+      "immergas",
+      "weishaupt",
+      "de-dietrich",
+      "wilo"
+    ],
     "fields": {
       "meta_title": {
         "de": "TERMET Heizkessel-Ersatzteile – alle Teile anfragen | ABCspareparts",

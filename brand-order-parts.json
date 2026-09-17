@@ -757,32 +757,32 @@
       "parts": [
         {
           "part_number": "Z0720.04.00.10",
-          "description": "Front door gasket",
+          "description": "Dichtung Frontklappe",
           "case_slug": "termet-kit-ecocondens-35"
         },
         {
           "part_number": "Z1780.04.00.19",
-          "description": "Electrode gasket",
+          "description": "Elektrodendichtung",
           "case_slug": "termet-kit-ecocondens-35"
         },
         {
           "part_number": "Z1780.04.00.20",
-          "description": "Electrode gasket",
+          "description": "Elektrodendichtung",
           "case_slug": "termet-kit-ecocondens-35"
         },
         {
           "part_number": "Z1780.04.00.22",
-          "description": "Front door gasket",
+          "description": "Dichtung Frontklappe",
           "case_slug": "termet-kit-ecocondens-35"
         },
         {
           "part_number": "Z1780.04.03.00",
-          "description": "Ignition electrode",
+          "description": "Zündelektrode",
           "case_slug": "termet-kit-ecocondens-35"
         },
         {
           "part_number": "Z1780.04.04.00",
-          "description": "Ionisation electrode",
+          "description": "Ionisationselektrode",
           "case_slug": "termet-kit-ecocondens-35"
         }
       ]
