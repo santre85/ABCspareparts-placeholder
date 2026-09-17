@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
-const { FOOTER_CSS, withFooterI18n, buildFooterHtml, LINKEDIN_COMPANY_URL } = require('./site-footer.js');
+const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
 
 const NAV_I18N = {
   de: {
