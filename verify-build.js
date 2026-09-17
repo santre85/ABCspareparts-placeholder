@@ -380,8 +380,8 @@ for (const row of publishedCases) {
   if (!termetHtml.includes('data-i18n="brand_success_title"') || !termetHtml.includes('Erfolgsgeschichte')) {
     throw new Error('marche/termet.html missing localized success-story teaser');
   }
-  if (!termetHtml.includes('.brand-success-story {')) {
-    throw new Error('marche/termet.html missing brand-success-story CSS');
+  if (!termetHtml.includes('class="legal-header"') || !termetHtml.includes('class="logo">ABCspareparts')) {
+    throw new Error('marche/termet.html must include the site header with logo, matching casi/impressum');
   }
   if (!termetHtml.includes('Dichtung Frontklappe') || !termetHtml.includes('Zündelektrode')) {
     throw new Error('marche/termet.html part descriptions should use German labels on the default page');

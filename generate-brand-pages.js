@@ -3,7 +3,58 @@
 const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
-const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
+const { FOOTER_CSS, withFooterI18n, buildFooterHtml, LINKEDIN_COMPANY_URL } = require('./site-footer.js');
+
+const NAV_I18N = {
+  de: {
+    nav_home: 'Home',
+    nav_impressum: 'Impressum',
+    nav_datenschutz: 'Datenschutz',
+    nav_agb: 'AGB',
+    nav_versand: 'Versand',
+    nav_cookies: 'Cookies'
+  },
+  en: {
+    nav_home: 'Home',
+    nav_impressum: 'Imprint',
+    nav_datenschutz: 'Privacy',
+    nav_agb: 'Terms',
+    nav_versand: 'Shipping',
+    nav_cookies: 'Cookies'
+  },
+  it: {
+    nav_home: 'Home',
+    nav_impressum: 'Impressum',
+    nav_datenschutz: 'Privacy',
+    nav_agb: 'Condizioni',
+    nav_versand: 'Spedizione',
+    nav_cookies: 'Cookie'
+  },
+  es: {
+    nav_home: 'Home',
+    nav_impressum: 'Aviso legal',
+    nav_datenschutz: 'Privacidad',
+    nav_agb: 'Términos',
+    nav_versand: 'Envío',
+    nav_cookies: 'Cookies'
+  },
+  fr: {
+    nav_home: 'Accueil',
+    nav_impressum: 'Mentions légales',
+    nav_datenschutz: 'Confidentialité',
+    nav_agb: 'CGV',
+    nav_versand: 'Livraison',
+    nav_cookies: 'Cookies'
+  }
+};
+
+function withNavI18n(pageI18n) {
+  const out = {};
+  for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+    out[lang] = { ...NAV_I18N[lang], ...(pageI18n[lang] || {}) };
+  }
+  return out;
+}
 
 const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
@@ -142,7 +193,7 @@ function buildTranslations(brand) {
     fr: encodeURIComponent(`Demande pièces ${brand} – ABCspareparts`)
   };
 
-  return withFooterI18n({
+  return withFooterI18n(withNavI18n({
     de: {
       meta_title: highlightPricing
         ? `${H} Ersatzteile zu Top-Konditionen | ABCspareparts`
@@ -398,7 +449,7 @@ function buildTranslations(brand) {
       quote_modal_part_label: 'Référence',
       quote_iframe_title: 'Formulaire de demande'
     }
-  });
+  }));
 }
 
 const PARTS_META_PREFIX = {
@@ -735,44 +786,56 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex)
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
+    .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+    .section-contact > .container { max-width: 1100px; }
+    .legal-header { background: #1e3a5f; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    .legal-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem 1rem; max-width: 1100px; }
+    .legal-header .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; margin-right: auto; }
+    .legal-header .logo:hover { opacity: 0.9; }
+    .legal-nav { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .legal-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.9rem; }
+    .legal-nav a:hover { color: #fff; text-decoration: underline; }
+    .language-selector { position: static; }
     .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; }
     .page-hero { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 2.5rem 1.5rem 2rem; }
     .breadcrumb { font-size: 0.9rem; opacity: 0.95; margin-bottom: 1rem; }
     .breadcrumb a { color: #e67e22; text-decoration: none; font-weight: 600; }
     .breadcrumb a:hover { text-decoration: underline; }
     .page-hero h1 { font-size: clamp(1.35rem, 4vw, 2rem); line-height: 1.3; margin-bottom: 0.75rem; word-wrap: break-word; }
-    .page-hero .lead { max-width: 720px; font-size: 1.05rem; opacity: 0.95; }
+    .page-hero .lead { max-width: none; font-size: 1.05rem; opacity: 0.95; }
     .page-hero .lead.lead-extra { margin-top: 0.7rem; font-size: 0.98rem; line-height: 1.6; }
     .page-hero .lead a { color: #e67e22; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(230, 126, 34, 0.5); }
     .page-hero .lead a:hover { text-decoration: underline; border-bottom-color: #fff; }
-    .page-hero .lead.lead-top-brand { margin-top: 0.9rem; padding: 0.75rem 0.9rem; max-width: 720px; font-size: 0.95rem; line-height: 1.55; background: rgba(0,0,0,0.12); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); }
+    .page-hero .lead.lead-top-brand { margin-top: 0.9rem; padding: 0.75rem 0.9rem; max-width: none; font-size: 0.95rem; line-height: 1.55; background: rgba(0,0,0,0.12); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); }
     .brand-body { padding: 2rem 1.5rem 1rem; }
-    .brand-form-hint { max-width: 720px; margin: 0 auto 1rem; color: #555; font-size: 0.98rem; text-align: center; }
-    .brand-email-alt { max-width: 720px; margin: 0 auto 2rem; text-align: center; font-size: 0.95rem; color: #444; }
+    .brand-form-hint { max-width: none; margin: 0 0 1rem; color: #555; font-size: 0.98rem; text-align: left; }
+    .brand-email-alt { max-width: none; margin: 0 0 2rem; text-align: left; font-size: 0.95rem; color: #444; }
     .brand-email-alt a { color: #1e3a5f; font-weight: 600; }
-    .brand-success-story { max-width: 820px; margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #fff8f0; }
+    .brand-success-story { margin: 0 0 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #fff8f0; }
     .brand-success-story h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.45rem; }
     .brand-success-story p { font-size: 0.92rem; color: #445; line-height: 1.55; margin: 0; }
     .brand-success-story a { color: #1e3a5f; font-weight: 600; text-decoration: none; border-bottom: 1px solid #c5d4e3; }
     .brand-success-story a:hover { color: #e67e22; border-bottom-color: #e67e22; }
-    .related-brands { max-width: 820px; margin: 0 auto 2rem; padding: 1rem 1.1rem; border: 1px solid #e6eaf0; border-radius: 10px; background: #f9fbfe; }
+    .related-brands { margin: 0 0 2rem; padding: 1rem 1.1rem; border: 1px solid #e6eaf0; border-radius: 10px; background: #f9fbfe; }
     .related-brands h2 { font-size: 1.15rem; color: #1e3a5f; margin-bottom: 0.35rem; }
     .related-brands p { font-size: 0.92rem; color: #556; margin-bottom: 0.7rem; }
     .related-brands ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.4rem 1rem; }
     .related-brands a { color: #1e3a5f; text-decoration: none; font-weight: 600; border-bottom: 1px solid #c5d4e3; }
     .related-brands a:hover { color: #e67e22; border-bottom-color: #e67e22; }
-    .brand-faq { max-width: 820px; margin: 0 auto 2.25rem; padding: 1.2rem 1.15rem; border: 1px solid #e3eaf1; border-radius: 10px; background: #f6f9fc; }
+    .brand-faq { margin: 0 0 2.25rem; padding: 1.2rem 1.15rem; border: 1px solid #e3eaf1; border-radius: 10px; background: #f6f9fc; }
     .brand-faq h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.9rem; }
     .brand-faq .faq-item { margin-bottom: 0.95rem; }
     .brand-faq h3 { font-size: 0.98rem; color: #1e3a5f; margin: 0 0 0.3rem; font-weight: 600; }
     .brand-faq p { margin: 0; font-size: 0.92rem; color: #444; line-height: 1.55; }
-    .brand-supplied-parts { max-width: 820px; margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #f0f6fb; }
+    .brand-supplied-parts { margin: 0 0 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #f0f6fb; }
     .brand-supplied-parts h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.5rem; }
     .brand-supplied-parts .parts-intro { font-size: 0.92rem; color: #445; margin-bottom: 1rem; line-height: 1.55; }
     .brand-parts-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
-    .brand-parts-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.75rem; padding: 0.55rem 0.65rem; background: #fff; border: 1px solid #e3eaf1; border-radius: 8px; }
+    .brand-parts-list li { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.35rem 0.75rem; padding: 0.55rem 0.65rem; background: #fff; border: 1px solid #e3eaf1; border-radius: 8px; }
+    @media (max-width: 640px) {
+      .brand-parts-list li { grid-template-columns: auto 1fr; }
+      .part-case-link { grid-column: 2; }
+    }
     .part-desc { font-size: 0.88rem; color: #556; flex: 1; min-width: 120px; }
     .part-case-link { font-size: 0.85rem; color: #2d5a87; text-decoration: none; font-weight: 600; white-space: nowrap; }
     .part-case-link:hover { text-decoration: underline; }
@@ -800,15 +863,30 @@ ${FOOTER_CSS}
   </style>
 </head>
 <body>
-  <div class="language-selector">
-    <select id="languageSelect">
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="fr">🇫🇷 Français</option>
-    </select>
-  </div>
+  <header class="legal-header">
+    <div class="container">
+      <a href="/" class="logo">ABCspareparts</a>
+      <nav class="legal-nav">
+        <a href="/" data-i18n="nav_home">Home</a>
+        <a href="../impressum.html" data-i18n="nav_impressum">Impressum</a>
+        <a href="../datenschutz.html" data-i18n="nav_datenschutz">Datenschutz</a>
+        <a href="../agb.html" data-i18n="nav_agb">AGB</a>
+        <a href="../versand.html" data-i18n="nav_versand">Versand</a>
+        <a href="../cookies.html" data-i18n="nav_cookies">Cookies</a>
+        <span class="separator">|</span>
+        <a href="${LINKEDIN_COMPANY_URL}" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
+      </nav>
+      <div class="language-selector">
+        <select id="languageSelect">
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+        </select>
+      </div>
+    </div>
+  </header>
 
   <header class="page-hero">
     <div class="container">

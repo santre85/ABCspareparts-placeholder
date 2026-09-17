@@ -956,7 +956,7 @@ const BRAND_SUCCESS_I18N = {
   }
 };
 
-const BRAND_SUCCESS_CSS = `    .brand-success-story { max-width: 820px; margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #fff8f0; }
+const BRAND_SUCCESS_CSS = `    .brand-success-story { margin: 0 auto 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #fff8f0; max-width: 820px; }
     .brand-success-story h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.45rem; }
     .brand-success-story p { font-size: 0.92rem; color: #445; line-height: 1.55; margin: 0; }
     .brand-success-story a { color: #1e3a5f; font-weight: 600; text-decoration: none; border-bottom: 1px solid #c5d4e3; }
