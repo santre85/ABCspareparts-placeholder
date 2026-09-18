@@ -65,11 +65,37 @@ function canonicalUrl(pathFromRoot) {
   return clean ? `${BASE}/${clean}` : `${BASE}/`;
 }
 
+/** Favicon / touch icon — absolute so it works from /marche/ and /parts/. */
+const ICON_LINKS = [
+  `<link rel="icon" type="image/svg+xml" href="${BASE}/ABC_logo4.svg">`,
+  `<link rel="apple-touch-icon" href="${BASE}/logo.png">`
+].join('\n  ');
+
+/**
+ * Brand slugs worth advertising in XML sitemaps (unique content: listino/RFQ
+ * parts and/or curated top-brand copy). Thin template-only brand pages stay
+ * index,follow in HTML but are not submitted for crawl.
+ * @param {Iterable<string>} partSlugs
+ * @param {Record<string, unknown>} topBrandBySlug
+ */
+function collectIndexWorthySlugs(partSlugs, topBrandBySlug) {
+  const set = new Set();
+  for (const slug of partSlugs || []) {
+    if (slug) set.add(String(slug));
+  }
+  for (const slug of Object.keys(topBrandBySlug || {})) {
+    if (slug) set.add(slug);
+  }
+  return set;
+}
+
 module.exports = {
   BASE,
   PRIMARY_LANG,
   FUTURE_LANG_PREFIXES,
   hreflangLinks,
   hreflangLinksForAlternates,
-  canonicalUrl
+  canonicalUrl,
+  ICON_LINKS,
+  collectIndexWorthySlugs
 };

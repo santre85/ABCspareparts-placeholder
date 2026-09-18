@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
+const { collectIndexWorthySlugs } = require('./seo-config.js');
 
 const indexHtml = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
 const match = indexHtml.match(/const brands = (\[[\s\S]*?\];\s*\n)/);
@@ -41,8 +42,22 @@ for (const f of toCheck) {
 
 const sb = fs.readFileSync(path.join(__dirname, 'sitemap-brands.xml'), 'utf8');
 const urlCount = (sb.match(/<loc>/g) || []).length;
-if (urlCount !== brands.length) {
-  throw new Error(`sitemap-brands.xml <loc> count ${urlCount} !== brands ${brands.length}`);
+const partsDataEarly = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
+const topBrandBySlug = JSON.parse(fs.readFileSync(path.join(__dirname, 'top-brands-content.json'), 'utf8'));
+const partsSlugSet = new Set(
+  (partsDataEarly.brands || [])
+    .filter((b) => b.brand_slug && ((b.parts && b.parts.length) || b.listino?.count))
+    .map((b) => b.brand_slug)
+);
+const worthySlugs = collectIndexWorthySlugs(partsSlugSet, topBrandBySlug);
+const expectedBrandsSitemap = [...worthySlugs].filter((slug) => !partsSlugSet.has(slug)).length;
+if (urlCount !== expectedBrandsSitemap) {
+  throw new Error(
+    `sitemap-brands.xml <loc> count ${urlCount} !== index-worthy brands excluding parts-priority ${expectedBrandsSitemap}`
+  );
+}
+if (urlCount > 200) {
+  throw new Error(`sitemap-brands.xml is too large (${urlCount}) — do not submit thin template brand pages`);
 }
 if (!sb.includes('<?xml version="1.0"')) throw new Error('sitemap-brands.xml missing xml header');
 if (!sb.includes('</urlset>')) throw new Error('sitemap-brands.xml missing urlset close');
@@ -94,16 +109,25 @@ if (!/Disallow:\s*\/listini-data\//.test(robotsTxt)) {
 const sbpPath = path.join(__dirname, 'sitemap-brand-parts.xml');
 if (!fs.existsSync(sbpPath)) throw new Error('sitemap-brand-parts.xml missing — run npm run build:brand-parts');
 const sbp = fs.readFileSync(sbpPath, 'utf8');
-const partsDataEarly = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
-const partsBrandCount = (partsDataEarly.brands || []).filter(
-  (b) => b.brand_slug && ((b.parts && b.parts.length) || b.listino?.count)
-).length;
+const partsBrandCount = partsSlugSet.size;
 const partsUrlCount = (sbp.match(/<loc>/g) || []).length;
 if (partsUrlCount !== partsBrandCount) {
   throw new Error(`sitemap-brand-parts.xml <loc> count ${partsUrlCount} !== brands with parts ${partsBrandCount}`);
 }
 if (/\?part=|\?lang=/.test(sbp)) {
   throw new Error('sitemap-brand-parts.xml must not contain ?part= or ?lang= URLs');
+}
+
+const brandSitemapLocs = [...sb.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+const partsSitemapLocs = new Set([...sbp.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
+for (const loc of brandSitemapLocs) {
+  if (partsSitemapLocs.has(loc)) {
+    throw new Error(`Duplicate sitemap URL ${loc} in both sitemap-brands.xml and sitemap-brand-parts.xml`);
+  }
+  const slug = (loc.match(/\/marche\/([^/]+)\.html$/) || [])[1];
+  if (!slug || !worthySlugs.has(slug) || partsSlugSet.has(slug)) {
+    throw new Error(`sitemap-brands.xml unexpected URL ${loc}`);
+  }
 }
 
 // Legacy parameter sitemaps must be deleted.
@@ -267,6 +291,9 @@ for (const c of publishedCases) {
   if (!html.includes('class="part-quote-btn"') && !html.includes('class="open-quote-modal"')) {
     throw new Error(`Case page ${c.slug}.html is missing quote CTA controls`);
   }
+  if (!html.includes('class="legal-header"') || !html.includes('data-i18n="footer_cases"') || !html.includes('id="languageSelect"')) {
+    throw new Error(`Case page ${c.slug}.html missing site header (logo, nav, language selector)`);
+  }
 }
 
 const llmsTxt = fs.readFileSync(path.join(__dirname, 'llms.txt'), 'utf8');
@@ -387,6 +414,23 @@ for (const row of publishedCases) {
     throw new Error('marche/termet.html part descriptions should use German labels on the default page');
   }
 }
+{
+  const hubnerHtml = fs.readFileSync(path.join(marcheDir, 'hubner-elektromaschinen-ag.html'), 'utf8');
+  if (!hubnerHtml.includes('Tachogeneratoren und Antriebsmesstechnik')) {
+    throw new Error('marche/hubner-elektromaschinen-ag.html must use unique Hübner H1 (tachogenerators), not the generic MRO template');
+  }
+  if (!hubnerHtml.includes('GT9.06L/420K')) {
+    throw new Error('marche/hubner-elektromaschinen-ag.html must mention documented GT9.06L/420K');
+  }
+  if (!hubnerHtml.includes('class="legal-header"') || !hubnerHtml.includes('data-i18n="footer_cases"')) {
+    throw new Error('marche/hubner-elektromaschinen-ag.html missing site header with success-stories nav');
+  }
+  for (const slug of ['siemens', 'radio-energie', 'hengstler', 'kubler', 'tamagawa']) {
+    if (!hubnerHtml.includes(`marche/${slug}.html`)) {
+      throw new Error(`marche/hubner-elektromaschinen-ag.html missing related measurement brand ${slug}`);
+    }
+  }
+}
 if (/www\.abcspareparts\.eu/.test(llmsTxt + mainSitemap + robotsTxt)) {
   throw new Error('Do not advertise www.abcspareparts.eu in sitemaps/llms/robots (apex canonical)');
 }
@@ -454,6 +498,12 @@ if (fs.existsSync(samplePart)) {
 const marcheHubHtml = fs.readFileSync(path.join(__dirname, 'marche.html'), 'utf8');
 if (!marcheHubHtml.includes('data-i18n="footer_cases"')) {
   throw new Error('marche.html is missing unified footer');
+}
+if (!marcheHubHtml.includes("fetch('brand-groups.json'")) {
+  throw new Error('marche.html search must load brand-groups.json instead of inlining a second 12k-brand copy');
+}
+if (/var STATIC_BRAND_GROUPS_HTML = "</.test(marcheHubHtml)) {
+  throw new Error('marche.html must not duplicate #brandGroups HTML inside JavaScript');
 }
 if (!/"@type":"ItemList"/.test(marcheHubHtml) || !/"itemListElement"/.test(marcheHubHtml)) {
   throw new Error('marche.html ItemList JSON-LD must include a capped itemListElement sample');
@@ -638,9 +688,23 @@ for (const row of partsData.brands || []) {
   if (content.includes("searchParams.set('part'") || content.includes('searchParams.set("part"')) {
     throw new Error(`marche/${f} must not push ?part= into the address bar (use #quote=)`);
   }
-  if (content.includes("'?lang=' + lang") || content.includes('"?lang=" + lang')) {
+  if (content.includes("?lang=") && content.includes("+ lang")) {
     throw new Error(`marche/${f} must not rewrite internal links with ?lang=`);
   }
 }
 
-console.log('verify-build: OK —', brands.length, 'brands,', htmlFiles.length, 'HTML pages,', urlCount, 'sitemap URLs + SEO checks');
+for (const row of partsDataEarly.brands || []) {
+  if (!row.brand_slug) continue;
+  const f = `${row.brand_slug}.html`;
+  if (!htmlFiles.includes(f)) continue;
+  const html = fs.readFileSync(path.join(marcheDir, f), 'utf8');
+  const desc = (html.match(/name="description" content="([^"]*)"/) || [, ''])[1];
+  if (/…$/.test(desc) || /\.\.\.$/.test(desc)) {
+    throw new Error(`Truncated meta description on marche/${f}`);
+  }
+  if (desc.length > 160) {
+    throw new Error(`Meta description too long (${desc.length}) on marche/${f}`);
+  }
+}
+
+console.log('verify-build: OK —', brands.length, 'brands,', htmlFiles.length, 'HTML pages,', urlCount, 'index-worthy sitemap-brands URLs + SEO checks');

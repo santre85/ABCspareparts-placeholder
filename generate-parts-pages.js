@@ -8,7 +8,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { BASE, hreflangLinks, canonicalUrl } = require('./seo-config.js');
+const { BASE, hreflangLinks, canonicalUrl, ICON_LINKS } = require('./seo-config.js');
 const { writeSitemapIndex, touchMainSitemap } = require('./build-brand-parts.js');
 const { FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
 
@@ -171,6 +171,7 @@ function buildPageHtml(part) {
   <meta name="description" content="${escapeAttr(metaDesc)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${pageUrl}">
+  ${ICON_LINKS}
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   ${hreflangLinks(pageUrl)}
   <meta property="og:type" content="website">

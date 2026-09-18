@@ -282,12 +282,12 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Telemecanique XCMD1656049](https://abcspareparts.eu/marche/telemecanique.html#quote=XCMD1656049) — sample code from manufacturer list (request quote, no price shown)
 - [Telemecanique ZC2JC13](https://abcspareparts.eu/marche/telemecanique.html#quote=ZC2JC13) — sample code from manufacturer list (request quote, no price shown)
 - [Telemecanique ZCKJ0121](https://abcspareparts.eu/marche/telemecanique.html#quote=ZCKJ0121) — sample code from manufacturer list (request quote, no price shown)
-- [TERMET Z0720.04.00.10](https://abcspareparts.eu/marche/termet.html#quote=Z0720.04.00.10) — Front door gasket
-- [TERMET Z1780.04.00.19](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.00.19) — Electrode gasket
-- [TERMET Z1780.04.00.20](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.00.20) — Electrode gasket
-- [TERMET Z1780.04.00.22](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.00.22) — Front door gasket
-- [TERMET Z1780.04.03.00](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.03.00) — Ignition electrode
-- [TERMET Z1780.04.04.00](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.04.00) — Ionisation electrode
+- [TERMET Z0720.04.00.10](https://abcspareparts.eu/marche/termet.html#quote=Z0720.04.00.10) — Dichtung Frontklappe
+- [TERMET Z1780.04.00.19](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.00.19) — Elektrodendichtung
+- [TERMET Z1780.04.00.20](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.00.20) — Elektrodendichtung
+- [TERMET Z1780.04.00.22](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.00.22) — Dichtung Frontklappe
+- [TERMET Z1780.04.03.00](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.03.00) — Zündelektrode
+- [TERMET Z1780.04.04.00](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.04.00) — Ionisationselektrode
 - [TOKHEIM 941828](https://abcspareparts.eu/marche/tokheim.html#quote=941828) — LCD Anzeige Quantium / WWC mit LED Hintergrundbeleuchtung
 - [TOKHEIM 947944-004](https://abcspareparts.eu/marche/tokheim.html#quote=947944-004) — TQC LCD Display
 - [ZOLLERN 1199181](https://abcspareparts.eu/marche/zollern.html#quote=1199181) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250
@@ -313,7 +313,7 @@ Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side U
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
 - [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 39 high-priority brand URLs
-- [All brand pages](https://abcspareparts.eu/sitemap-brands.xml)
+- [Other unique-content brand pages](https://abcspareparts.eu/sitemap-brands.xml) — curated copy, not the thin 12k template set
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)

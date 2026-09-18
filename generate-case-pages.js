@@ -10,6 +10,7 @@ const LEGACY_HUB_FILE = 'casi-di-successo.html';
 const LEGACY_CASES_SUBDIR = 'casi-di-successo';
 const CASI_DIR = path.join(ROOT, CASES_SUBDIR);
 const BASE = 'https://abcspareparts.eu';
+const { ICON_LINKS } = require('./seo-config.js');
 const LANGS = ['de', 'en', 'it', 'es', 'fr'];
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -156,12 +157,28 @@ function buildCaseHubLabels(caseRow) {
     es: `<a href="../">Home</a> · <a href="../${HUB_FILE}">Casos de éxito</a> · ${caseRow.brand}`,
     fr: `<a href="../">Accueil</a> · <a href="../${HUB_FILE}">Histoires de réussite</a> · ${caseRow.brand}`
   };
+  const navHome = { de: 'Home', en: 'Home', it: 'Home', es: 'Home', fr: 'Accueil' };
   const out = {};
   for (const L of LANGS) {
-    out[L] = { case_breadcrumb: breadcrumb[L], ...FOOTER_I18N[L], ...QUOTE_I18N[L] };
+    out[L] = { nav_home: navHome[L], case_breadcrumb: breadcrumb[L], ...FOOTER_I18N[L], ...QUOTE_I18N[L] };
   }
   return out;
 }
+
+const SITE_HEADER_CSS = `
+    .legal-header { background: #1e3a5f; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    .legal-header .container { display: flex; align-items: center; gap: 1rem; position: relative; padding-right: 9.5rem; }
+    .legal-header .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .legal-header .logo:hover { opacity: 0.9; }
+    .legal-nav { display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center; }
+    .legal-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.9rem; }
+    .legal-nav a:hover { color: #fff; text-decoration: underline; }
+    .language-selector { position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); }
+    .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; }
+    @media (max-width: 640px) {
+      .legal-header .container { padding-right: 1.5rem; padding-top: 0.25rem; }
+      .language-selector { position: static; transform: none; margin-left: auto; }
+    }`;
 
 function primaryPartNumber(partField) {
   const first = String(partField || '').split(/\s*(?:·|&|,)\s*/)[0].trim();
@@ -290,6 +307,7 @@ function buildCasePage(caseRow) {
   <meta id="pageDescription" name="description" content="${escapeAttr(de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${canonical}">
+  ${ICON_LINKS}
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
   <link rel="alternate" hreflang="de" href="${canonical}">
@@ -308,8 +326,7 @@ function buildCasePage(caseRow) {
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #fff; }
     .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
-    .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
-    .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; }
+${SITE_HEADER_CSS}
     .page-hero { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 2.5rem 1.5rem 2rem; }
     .breadcrumb { font-size: 0.9rem; opacity: 0.95; margin-bottom: 1rem; }
     .breadcrumb a { color: #e67e22; text-decoration: none; font-weight: 600; }
@@ -357,15 +374,26 @@ ${FOOTER_CSS}
   </style>
 </head>
 <body>
-  <div class="language-selector">
-    <select id="languageSelect" aria-label="Language">
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="fr">🇫🇷 Français</option>
-    </select>
-  </div>
+  <header class="legal-header">
+    <div class="container">
+      <a href="/" class="logo">ABCspareparts</a>
+      <nav class="legal-nav">
+        <a href="/" data-i18n="nav_home">Home</a>
+        <a href="../marche.html" data-i18n="footer_brands">Marken</a>
+        <a href="../casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
+        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
+      </nav>
+      <div class="language-selector">
+        <select id="languageSelect" aria-label="Language">
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+        </select>
+      </div>
+    </div>
+  </header>
   <header class="page-hero">
     <div class="container">
       <nav class="breadcrumb" data-i18n="case_breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> · <a href="../${HUB_FILE}">Casi</a> · ${escapeHtml(caseRow.brand)}</nav>
@@ -650,6 +678,7 @@ function buildHubPage(cases) {
   <meta id="pageDescription" name="description" content="${escapeAttr(hubI18n.de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${BASE}/${HUB_FILE}">
+  ${ICON_LINKS}
   <link rel="alternate" hreflang="x-default" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" hreflang="de" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI crawlers">
@@ -668,15 +697,7 @@ function buildHubPage(cases) {
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-    .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1001; }
-    .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .legal-header { background: #1e3a5f; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
-    .legal-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .legal-header .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
-    .legal-header .logo:hover { opacity: 0.9; }
-    .legal-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .legal-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.9rem; }
-    .legal-nav a:hover { color: #fff; text-decoration: underline; }
+${SITE_HEADER_CSS}
     .hub-hero { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 2.5rem 1.5rem; text-align: center; }
     .breadcrumb { font-size: 0.9rem; opacity: 0.95; margin-bottom: 1rem; }
     .breadcrumb a { color: #e67e22; text-decoration: none; font-weight: 600; }
@@ -699,28 +720,24 @@ ${FOOTER_CSS}
   </style>
 </head>
 <body>
-  <div class="language-selector">
-    <select id="languageSelect">
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="fr">🇫🇷 Français</option>
-    </select>
-  </div>
   <header class="legal-header">
     <div class="container">
       <a href="/" class="logo">ABCspareparts</a>
       <nav class="legal-nav">
         <a href="/" data-i18n="nav_home">Home</a>
-        <a href="impressum.html" data-i18n="nav_impressum">Impressum</a>
-        <a href="datenschutz.html" data-i18n="nav_datenschutz">Datenschutz</a>
-        <a href="agb.html" data-i18n="nav_agb">AGB</a>
-        <a href="versand.html" data-i18n="nav_versand">Versand</a>
-        <a href="cookies.html" data-i18n="nav_cookies">Cookies</a>
-        <span class="separator">|</span>
-        <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
+        <a href="marche.html" data-i18n="footer_brands">Marken</a>
+        <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
+        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
       </nav>
+      <div class="language-selector">
+        <select id="languageSelect">
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+        </select>
+      </div>
     </div>
   </header>
   <section class="hub-hero">

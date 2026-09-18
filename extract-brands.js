@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { assignUniqueSlugs } = require('./brand-slug.js');
 const { FOOTER_CSS, FOOTER_I18N, buildFooterHtml } = require('./site-footer.js');
+const { ICON_LINKS } = require('./seo-config.js');
 
 function footerI18nLiteral(lang) {
   return Object.entries(FOOTER_I18N[lang])
@@ -135,6 +136,7 @@ const marcheHtml = `<!DOCTYPE html>
   <meta name="description" content="Marke suchen, Liste filtern: ${b.length}+ Hersteller für Industrieersatzteile und MRO. Originalteile &amp; Alternativen. Jetzt Teilenummer einreichen – Antwort meist innerhalb von 24 Stunden. Formular oder E-Mail.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${base}/marche.html">
+  ${ICON_LINKS}
   <link rel="alternate" type="text/plain" href="${base}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${base}/marche.html">
   <link rel="alternate" hreflang="de" href="${base}/marche.html">
@@ -244,9 +246,9 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
   <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" data-i18n-aria-label="marche_back_top_aria" data-i18n="marche_back_top">Nach oben</button>
   <script>
   (function(){
-    var BRAND_GROUPS_INIT = ${JSON.stringify(groupsPayload)};
-    var ORDERED_KEYS_INIT = ${JSON.stringify(orderedKeys)};
-    var STATIC_BRAND_GROUPS_HTML = ${JSON.stringify(staticBrandGroupsHtml)};
+    var BRAND_GROUPS_INIT = null;
+    var ORDERED_KEYS_INIT = null;
+    var STATIC_BRAND_GROUPS_HTML = '';
     var BRAND_GROUPS = null;
     var ORDERED_KEYS = null;
     var groupsReady = false;
@@ -289,10 +291,19 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       var lang = sel && sel.value ? sel.value : 'de';
       return ['de','en','it','es','fr'].indexOf(lang)!==-1 ? lang : 'de';
     }
-    function initGroupsData(){
-      ORDERED_KEYS = ORDERED_KEYS_INIT || [];
-      BRAND_GROUPS = BRAND_GROUPS_INIT || {};
-      groupsReady = true;
+    function initGroupsData(done){
+      fetch('brand-groups.json')
+        .then(function(r){ if(!r.ok) throw new Error('brand-groups ' + r.status); return r.json(); })
+        .then(function(data){
+          ORDERED_KEYS = data.orderedKeys || ORDERED_KEYS_INIT || [];
+          BRAND_GROUPS = data.groups || BRAND_GROUPS_INIT || {};
+          groupsReady = true;
+          if(typeof done === 'function') done();
+        })
+        .catch(function(){
+          groupsReady = false;
+          if(typeof done === 'function') done();
+        });
     }
     function renderSections(filterQuery){
       var container = document.getElementById('brandGroups');
@@ -388,7 +399,8 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       else btn.classList.remove('visible');
     }
     document.addEventListener('DOMContentLoaded', function(){
-      initGroupsData();
+      var groupsEl = document.getElementById('brandGroups');
+      if(groupsEl) STATIC_BRAND_GROUPS_HTML = groupsEl.innerHTML;
       var raw = getCurrentLang();
       var lang = ['de','en','it','es','fr'].indexOf(raw)!==-1 ? raw : 'de';
       var sel = document.getElementById('languageSelect');
@@ -408,14 +420,9 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
       window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
       toggleBackToTopButton();
-      applyBrandFilterImmediate();
-      if(pendingQuery !== null){
-        var v = pendingQuery;
-        pendingQuery = null;
-        var inEl = document.getElementById('brandSearchInput');
-        if(inEl && String(inEl.value || '') !== String(v || '')) inEl.value = String(v || '');
+      initGroupsData(function(){
         applyBrandFilterImmediate();
-      }
+      });
     });
   })();
   </script>

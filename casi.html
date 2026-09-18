@@ -7,6 +7,8 @@
   <meta id="pageDescription" name="description" content="Echte Erfolgsfälle: Marke, Teilenummer, Branche und Lieferzeit — von der Anfrage bis zum Versand in Europa. Kunden anonymisiert.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://abcspareparts.eu/casi.html">
+  <link rel="icon" type="image/svg+xml" href="https://abcspareparts.eu/ABC_logo4.svg">
+  <link rel="apple-touch-icon" href="https://abcspareparts.eu/logo.png">
   <link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/casi.html">
   <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/casi.html">
   <link rel="alternate" type="text/plain" href="https://abcspareparts.eu/llms.txt" title="Site summary for AI crawlers">
@@ -25,15 +27,20 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-    .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1001; }
-    .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
     .legal-header { background: #1e3a5f; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
-    .legal-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .legal-header .container { display: flex; align-items: center; gap: 1rem; position: relative; padding-right: 9.5rem; }
     .legal-header .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
     .legal-header .logo:hover { opacity: 0.9; }
-    .legal-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .legal-nav { display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center; }
     .legal-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.9rem; }
     .legal-nav a:hover { color: #fff; text-decoration: underline; }
+    .language-selector { position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); }
+    .language-selector select { padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; }
+    @media (max-width: 640px) {
+      .legal-header .container { padding-right: 1.5rem; padding-top: 0.25rem; }
+      .language-selector { position: static; transform: none; margin-left: auto; }
+    }
     .hub-hero { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: #fff; padding: 2.5rem 1.5rem; text-align: center; }
     .breadcrumb { font-size: 0.9rem; opacity: 0.95; margin-bottom: 1rem; }
     .breadcrumb a { color: #e67e22; text-decoration: none; font-weight: 600; }
@@ -63,28 +70,24 @@
   </style>
 </head>
 <body>
-  <div class="language-selector">
-    <select id="languageSelect">
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="fr">🇫🇷 Français</option>
-    </select>
-  </div>
   <header class="legal-header">
     <div class="container">
       <a href="/" class="logo">ABCspareparts</a>
       <nav class="legal-nav">
         <a href="/" data-i18n="nav_home">Home</a>
-        <a href="impressum.html" data-i18n="nav_impressum">Impressum</a>
-        <a href="datenschutz.html" data-i18n="nav_datenschutz">Datenschutz</a>
-        <a href="agb.html" data-i18n="nav_agb">AGB</a>
-        <a href="versand.html" data-i18n="nav_versand">Versand</a>
-        <a href="cookies.html" data-i18n="nav_cookies">Cookies</a>
-        <span class="separator">|</span>
-        <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
+        <a href="marche.html" data-i18n="footer_brands">Marken</a>
+        <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
+        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
       </nav>
+      <div class="language-selector">
+        <select id="languageSelect">
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+        </select>
+      </div>
     </div>
   </header>
   <section class="hub-hero">
