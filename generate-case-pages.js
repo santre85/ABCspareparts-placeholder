@@ -10,6 +10,7 @@ const LEGACY_HUB_FILE = 'casi-di-successo.html';
 const LEGACY_CASES_SUBDIR = 'casi-di-successo';
 const CASI_DIR = path.join(ROOT, CASES_SUBDIR);
 const BASE = 'https://abcspareparts.eu';
+const { ICON_LINKS } = require('./seo-config.js');
 const LANGS = ['de', 'en', 'it', 'es', 'fr'];
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -290,6 +291,7 @@ function buildCasePage(caseRow) {
   <meta id="pageDescription" name="description" content="${escapeAttr(de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${canonical}">
+  ${ICON_LINKS}
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
   <link rel="alternate" hreflang="de" href="${canonical}">
@@ -650,6 +652,7 @@ function buildHubPage(cases) {
   <meta id="pageDescription" name="description" content="${escapeAttr(hubI18n.de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${BASE}/${HUB_FILE}">
+  ${ICON_LINKS}
   <link rel="alternate" hreflang="x-default" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" hreflang="de" href="${BASE}/${HUB_FILE}">
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI crawlers">

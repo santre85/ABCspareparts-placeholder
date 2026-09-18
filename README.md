@@ -49,11 +49,14 @@ https://abcspareparts.eu/sitemap-index.xml
 Sitemap figlie (URL puliti, **senza** `?part=` / `?lang=` / `?q=`):
 
 ```
-https://abcspareparts.eu/sitemap.xml          — homepage, marche.html, pagine legali
-https://abcspareparts.eu/sitemap-brands.xml   — tutte le pagine marca
-https://abcspareparts.eu/sitemap-brand-parts.xml — marche con codici richiedibili
-https://abcspareparts.eu/sitemap-cases.xml    — hub casi + storie
+https://abcspareparts.eu/sitemap.xml              — homepage, marche.html, pagine legali
+https://abcspareparts.eu/sitemap-brand-parts.xml — marche con listino/RFQ (priorità, ~39)
+https://abcspareparts.eu/sitemap-brands.xml      — altre marche con copy unica (non template thin)
+https://abcspareparts.eu/sitemap-cases.xml       — hub casi + storie
+https://abcspareparts.eu/sitemap-parts.xml       — 77 pagine MVP /parts/
 ```
+
+Le ~11.900 pagine marca **solo template** restano `index, follow` (nessun mass-noindex) ma **non** sono in sitemap: Google deve spendere crawl budget su homepage, hub, 47 marche con contenuto unico, casi e `/parts/`.
 
 **Nota:** i deep-link `?part=` e le varianti `?lang=` / `?q=` sono solo UX lato client sulla stessa pagina HTML (canonical = URL pulito). Non vanno in sitemap. `robots.txt` **non** disabilita `?part=` né `?lang=` — la strategia è canonical + non includere parametri nelle sitemap.
 

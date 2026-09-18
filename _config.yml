@@ -15,6 +15,7 @@ include:
   - sitemap-brand-parts.xml
   - sitemap-cases.xml
   - sitemap-parts.xml
+  - brand-groups.json
   - _redirects
   - seo-config.js
   # BEGIN listino-sitemaps

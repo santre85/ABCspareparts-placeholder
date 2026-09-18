@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
 const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
+const { ICON_LINKS, collectIndexWorthySlugs } = require('./seo-config.js');
 
 const NAV_I18N = {
   de: {
@@ -60,7 +61,7 @@ const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
 const BASE = 'https://abcspareparts.eu';
 const TODAY = new Date().toISOString().slice(0, 10);
-const MAX_META_LEN = 158;
+const MAX_META_LEN = 160;
 
 function loadTopBrandBySlug() {
   try {
@@ -199,8 +200,8 @@ function buildTranslations(brand) {
         ? `${H} Ersatzteile zu Top-Konditionen | ABCspareparts`
         : `${H} Ersatzteile anfragen | ABCspareparts – Angebot oft in 24h`,
       meta_description: highlightPricing
-        ? `${H} Ersatzteile zu wettbewerbsfähigen Preisen: Originalteile und geprüfte Alternativen. Teilenummer senden und schnell ein unverbindliches Angebot erhalten.`
-        : `${H} Originalteile und geprüfte Alternativen für Automatisierung und MRO. Teilenummer einreichen – unverbindliches Angebot, Rückmeldung meist innerhalb von 24 Stunden. Europa-weit.`,
+        ? `${H} Ersatzteile zu fairen Preisen: Originalteile und geprüfte Alternativen. Teilenummer senden – Angebot oft in 24h.`
+        : `${H} Originalteile und geprüfte Alternativen für MRO. Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden.`,
       brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Marken</a> · ${H}`,
       brand_h1: `${H} – Industrieersatzteile & MRO`,
       brand_intro: `ABCspareparts beschafft Originalteile und geprüfte Alternativen für ${H} (Industrieersatzteile, Automatisierung, MRO). Nutzen Sie das Formular für Teilenummern und Mengen – wir melden uns in der Regel innerhalb von 24 Stunden.`,
@@ -250,8 +251,8 @@ function buildTranslations(brand) {
         ? `${H} spare parts at competitive prices | ABCspareparts`
         : `${H} spare parts – quote in 24h | ABCspareparts`,
       meta_description: highlightPricing
-        ? `Competitive pricing on ${H} spare parts, with original components and verified alternatives. Send part numbers for a fast, no-obligation quotation.`
-        : `Original ${H} parts and verified alternatives for automation and MRO. Send part numbers – no-obligation quote, we usually reply within 24 hours. Europe-wide delivery.`,
+        ? `Competitive ${H} spare-part pricing: originals and vetted alternatives. Send part numbers for a no-obligation quote, often within 24h.`
+        : `Original ${H} parts and vetted alternatives for MRO. Send part numbers – no-obligation quote, we usually reply within 24 hours.`,
       brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Brands</a> · ${H}`,
       brand_h1: `${H} – industrial spare parts & MRO`,
       brand_intro: `ABCspareparts supplies original ${H} parts and verified alternatives for industrial automation and MRO. Send part numbers and quantities via the form – we usually respond within 24 hours.`,
@@ -301,8 +302,8 @@ function buildTranslations(brand) {
         ? `Ricambi ${H} a prezzi competitivi | ABCspareparts`
         : `Ricambi ${H} – preventivo in 24h | ABCspareparts`,
       meta_description: highlightPricing
-        ? `Prezzi vantaggiosi su ricambi ${H}, originali e alternative verificate per automazione e MRO. Invia i codici articolo per una quotazione rapida senza impegno.`
-        : `Ricambi originali ${H} e alternative verificate per automazione e MRO. Invii i codici articolo – preventivo senza impegno, di solito risposta entro 24 ore. Consegna in Europa.`,
+        ? `Prezzi competitivi su ricambi ${H}: originali e alternative verificate. Invia i codici per un preventivo senza impegno, spesso in 24h.`
+        : `Ricambi originali ${H} e alternative verificate per MRO. Invii i codici – preventivo senza impegno, di solito risposta entro 24 ore.`,
       brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Marche</a> · ${H}`,
       brand_h1: `${H} – ricambi industriali e MRO`,
       brand_intro: `ABCspareparts fornisce ricambi ${H} originali e alternative verificate per automazione e MRO. Indichi codici articolo e quantità nel modulo – di solito rispondiamo entro 24 ore.`,
@@ -352,8 +353,8 @@ function buildTranslations(brand) {
         ? `Recambios ${H} a precios competitivos | ABCspareparts`
         : `Recambios ${H} – presupuesto en 24h | ABCspareparts`,
       meta_description: highlightPricing
-        ? `Precios competitivos en recambios ${H}, originales y alternativas verificadas para automatización y MRO. Envíe referencias para una cotización rápida sin compromiso.`
-        : `Recambios originales ${H} y alternativas verificadas para automatización y MRO. Envíe referencias – presupuesto sin compromiso, respuesta habitual en 24 horas. Envío en Europa.`,
+        ? `Precios competitivos en recambios ${H}: originales y alternativas. Envíe referencias para un presupuesto sin compromiso, a menudo en 24h.`
+        : `Recambios originales ${H} y alternativas para MRO. Envíe referencias – presupuesto sin compromiso, respuesta habitual en 24 horas.`,
       brand_breadcrumb: `<a href="../">Inicio</a> · <a href="../marche.html">Marcas</a> · ${H}`,
       brand_h1: `${H} – recambios industriales y MRO`,
       brand_intro: `ABCspareparts suministra piezas ${H} originales y alternativas verificadas para automatización y MRO. Envíe referencias y cantidades en el formulario – solemos responder en 24 horas.`,
@@ -403,8 +404,8 @@ function buildTranslations(brand) {
         ? `Pièces ${H} à prix compétitifs | ABCspareparts`
         : `Pièces ${H} – devis sous 24h | ABCspareparts`,
       meta_description: highlightPricing
-        ? `Prix compétitifs sur les pièces ${H}, d’origine et alternatives vérifiées pour l’automatisation et le MRO. Envoyez les références pour un devis rapide sans engagement.`
-        : `Pièces d’origine ${H} et alternatives vérifiées pour l’automatisation et le MRO. Indiquez les références – devis sans engagement, réponse en général sous 24 h. Livraison en Europe.`,
+        ? `Prix compétitifs sur les pièces ${H} : origine et alternatives. Envoyez les références pour un devis sans engagement, souvent sous 24h.`
+        : `Pièces d’origine ${H} et alternatives pour le MRO. Indiquez les références – devis sans engagement, réponse en général sous 24 h.`,
       brand_breadcrumb: `<a href="../">Accueil</a> · <a href="../marche.html">Marques</a> · ${H}`,
       brand_h1: `${H} – pièces industrielles et MRO`,
       brand_intro: `ABCspareparts fournit des pièces ${H} d’origine et des alternatives vérifiées pour l’automatisation et le MRO. Indiquez références et quantités dans le formulaire – réponse en général sous 24 h.`,
@@ -468,48 +469,82 @@ const PARTS_META_MORE = {
   fr: (n) => ` (+${n} de plus)`
 };
 
+function clipMeta(text, max = MAX_META_LEN) {
+  const s = String(text || '').replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 90 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:–-]+$/, '').trim();
+}
+
 function enrichMetaWithParts(translations, parts) {
   if (!parts || !parts.length) return translations;
   const codes = parts.map((p) => p.part_number);
   for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
-    const base = translations[lang].meta_description;
+    const base = String(translations[lang].meta_description || '').trim();
     const prefix = PARTS_META_PREFIX[lang];
     let budget = MAX_META_LEN - base.length - prefix.length;
-    // Keep curated SEO descriptions intact instead of truncating to "Beispielc…"
-    if (budget < 12) continue;
+    // Keep curated SEO descriptions intact instead of truncating mid-sentence.
+    if (budget < 12) {
+      translations[lang].meta_description = base;
+      continue;
+    }
     const shown = [];
     for (const code of codes) {
       const sep = shown.length ? ', ' : '';
-      if (sep.length + code.length > budget - 8) break;
+      const moreLen = 14;
+      if (sep.length + code.length + moreLen > budget) break;
       shown.push(code);
       budget -= sep.length + code.length;
     }
-    if (!shown.length) continue;
-    let extra = '';
-    if (shown.length < codes.length) {
-      extra = PARTS_META_MORE[lang](codes.length - shown.length);
+    if (!shown.length) {
+      translations[lang].meta_description = base;
+      continue;
     }
-    let meta = `${base}${prefix} ${shown.join(', ')}${extra}`;
-    if (meta.length > MAX_META_LEN) {
-      meta = `${meta.slice(0, MAX_META_LEN - 1).trim()}…`;
-    }
-    translations[lang].meta_description = meta;
+    const extra = shown.length < codes.length ? PARTS_META_MORE[lang](codes.length - shown.length) : '';
+    translations[lang].meta_description = clipMeta(`${base}${prefix} ${shown.join(', ')}${extra}`);
   }
   return translations;
 }
 
-function relatedRowsFor(slug, rows, index) {
+function applyListinoMeta(translations, brand, listino) {
+  const sample = String((listino.preview || [])[0] || '').trim();
+  const count = listino.count;
+  const sampleBit = sample ? { de: ` (z. B. ${sample})`, en: ` (e.g. ${sample})`, it: ` (es. ${sample})`, es: ` (p. ej. ${sample})`, fr: ` (ex. ${sample})` } : { de: '', en: '', it: '', es: '', fr: '' };
+  const notes = {
+    de: `${brand} Ersatzteile, Original und Alternativen. ${count}+ Codes suchbar${sampleBit.de}. Anfrage ohne Preise, oft in 24h.`,
+    en: `${brand} spare parts, originals and alternatives. ${count}+ codes searchable${sampleBit.en}. Quote, no prices, often within 24h.`,
+    it: `Ricambi ${brand}, originali e alternative. ${count}+ codici cercabili${sampleBit.it}. Preventivo senza prezzi, spesso in 24h.`,
+    es: `Recambios ${brand}, originales y alternativas. ${count}+ códigos${sampleBit.es}. Solicitud sin precios, a menudo en 24h.`,
+    fr: `Pièces ${brand}, origine et alternatives. ${count}+ références${sampleBit.fr}. Devis sans prix, souvent sous 24h.`
+  };
+  for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+    translations[lang].meta_description = clipMeta(notes[lang]);
+  }
+}
+
+function relatedRowsFor(slug, rows, index, worthySet) {
+  const bySlug = new Map(rows.map((r) => [r.slug, r]));
+  const picked = [];
+  const seen = new Set([slug]);
   const override = TOP_BRAND_BY_SLUG[slug] && TOP_BRAND_BY_SLUG[slug].related_slugs;
   if (Array.isArray(override) && override.length) {
-    const bySlug = new Map(rows.map((r) => [r.slug, r]));
-    const picked = [];
-    const seen = new Set([slug]);
     for (const relatedSlug of override) {
       const row = bySlug.get(String(relatedSlug || '').trim());
       if (!row || seen.has(row.slug)) continue;
       seen.add(row.slug);
       picked.push(row);
-      if (picked.length >= 6) break;
+      if (picked.length >= 6) return picked;
+    }
+  }
+  const worthyRows = rows.filter((r) => worthySet && worthySet.has(r.slug) && !seen.has(r.slug));
+  if (worthyRows.length) {
+    const start = index % worthyRows.length;
+    for (let i = 0; i < worthyRows.length && picked.length < 6; i++) {
+      const row = worthyRows[(start + i) % worthyRows.length];
+      if (seen.has(row.slug)) continue;
+      seen.add(row.slug);
+      picked.push(row);
     }
     if (picked.length) return picked;
   }
@@ -767,6 +802,7 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex)
   <meta id="pageDescription" name="description" content="${escapeAttr(translations.de.meta_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${pageUrl}">
+  ${ICON_LINKS}
   <link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="Site summary for AI assistants">
   <link rel="alternate" hreflang="x-default" href="${pageUrl}">
   <link rel="alternate" hreflang="de" href="${pageUrl}">
@@ -775,8 +811,8 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex)
   <meta property="og:title" content="${escapeAttr(d.meta_title)}">
   <meta property="og:description" content="${escapeAttr(d.meta_description)}">
   <meta property="og:image" content="${BASE}/logo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="760">
+  <meta property="og:image:height" content="200">
   <meta property="og:site_name" content="ABCspareparts">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeAttr(d.meta_title)}">
@@ -1253,16 +1289,23 @@ ${hasSuppliedParts ? `      initPartQuoteButtons();
 
 function writeSitemapBrands(rows, partsBySlug) {
   const outPath = path.join(ROOT, 'sitemap-brands.xml');
+  const worthy = collectIndexWorthySlugs(
+    partsBySlug ? [...partsBySlug.keys()] : [],
+    TOP_BRAND_BY_SLUG
+  );
+  const partsPriority = new Set(partsBySlug ? [...partsBySlug.keys()] : []);
   let body = '';
+  let n = 0;
   for (const { slug } of rows) {
+    if (!worthy.has(slug) || partsPriority.has(slug)) continue;
     const loc = `${BASE}/marche/${slug}.html`;
-    const hasParts = partsBySlug && partsBySlug.has(slug);
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
     body += `    <lastmod>${TODAY}</lastmod>\n`;
-    body += `    <changefreq>${hasParts ? 'weekly' : 'monthly'}</changefreq>\n`;
-    body += `    <priority>${hasParts ? '0.8' : '0.65'}</priority>\n`;
+    body += '    <changefreq>monthly</changefreq>\n';
+    body += '    <priority>0.7</priority>\n';
     body += '  </url>\n';
+    n++;
   }
   const xml = `---
 layout: none
@@ -1272,6 +1315,7 @@ layout: none
 ${body}</urlset>
 `;
   fs.writeFileSync(outPath, xml, 'utf8');
+  console.log('sitemap-brands.xml: index-worthy brands excluding parts-priority', n);
 }
 
 function writeSitemapIndex() {
@@ -1299,6 +1343,7 @@ function main() {
   const brands = readBrandsFromIndex();
   const rows = assignUniqueSlugs(brands);
   const partsBySlug = loadPartsBySlug();
+  const worthySet = collectIndexWorthySlugs([...partsBySlug.keys()], TOP_BRAND_BY_SLUG);
   const mvpIndex = loadMvpPartsIndex();
   const targetRows = onlySlugs.length
     ? rows.filter((r) => onlySlugs.includes(r.slug))
@@ -1325,28 +1370,17 @@ function main() {
     const { brand, slug } = rows[i];
     if (onlySlugs.length && !onlySlugs.includes(slug)) continue;
 
-    const relatedRows = relatedRowsFor(slug, rows, i);
+    const relatedRows = relatedRowsFor(slug, rows, i, worthySet);
     const translations = buildTranslations(brand);
     mergeTopBrandContent(translations, slug);
     const brandParts = partsBySlug.get(slug) || null;
-    if (brandParts?.parts?.length) enrichMetaWithParts(translations, brandParts.parts);
-    else if (brandParts?.listino?.count) {
-      const sample = (brandParts.listino.preview || []).slice(0, 3).join(', ');
-      for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
-        const base = String(translations[lang].meta_description || '');
-        const note = {
-          de: ` z. B. ${sample}. ${brandParts.listino.count}+ Codes suchbar — Anfrage ohne Preise.`,
-          en: ` e.g. ${sample}. ${brandParts.listino.count}+ codes searchable — quote, no prices.`,
-          it: ` es. ${sample}. ${brandParts.listino.count}+ codici cercabili — senza prezzi.`,
-          es: ` p. ej. ${sample}. ${brandParts.listino.count}+ códigos — solicitud sin precios.`,
-          fr: ` ex. ${sample}. ${brandParts.listino.count}+ références — devis sans prix.`
-        }[lang];
-        const budget = Math.max(40, MAX_META_LEN - note.length);
-        const head = base.length > budget ? `${base.slice(0, budget - 1).trim()}…` : base;
-        let meta = head + note;
-        if (meta.length > MAX_META_LEN) meta = `${meta.slice(0, MAX_META_LEN - 1).trim()}…`;
-        translations[lang].meta_description = meta;
-      }
+    if (brandParts?.listino?.count) {
+      applyListinoMeta(translations, brand, brandParts.listino);
+    } else if (brandParts?.parts?.length) {
+      enrichMetaWithParts(translations, brandParts.parts);
+    }
+    for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+      translations[lang].meta_description = clipMeta(translations[lang].meta_description);
     }
     const html = buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex);
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
@@ -1354,8 +1388,8 @@ function main() {
     if (n % 500 === 0) console.log('Written', n, '/', targetRows.length);
   }
 
+  writeSitemapBrands(rows, partsBySlug);
   if (!onlySlugs.length) {
-    writeSitemapBrands(rows, partsBySlug);
     writeSitemapIndex();
     fs.writeFileSync(
       path.join(ROOT, 'brand-slugs.json'),
@@ -1367,7 +1401,7 @@ function main() {
     );
     console.log('sitemap-brands.xml, sitemap-index.xml and brand-slugs.json updated.');
   } else {
-    console.log('Partial rebuild (--only): skipped full sitemap-brands rewrite.');
+    console.log('Partial rebuild (--only): sitemap-brands.xml refreshed; skipped sitemap-index / brand-slugs rewrite.');
   }
 
   console.log('Brand pages:', n, onlySlugs.length ? `(only: ${onlySlugs.join(',')})` : '', 'in', path.relative(ROOT, MARCHE_DIR));
@@ -1376,3 +1410,8 @@ function main() {
 if (require.main === module) {
   main();
 }
+
+module.exports = {
+  writeSitemapBrands,
+  loadPartsBySlug
+};

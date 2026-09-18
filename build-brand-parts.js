@@ -600,7 +600,7 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
   const partsSitemapLine = partsSitemapLive
     ? `- [MVP part pages](${BASE}/sitemap-parts.xml) — dedicated \`/parts/{brand}/{code}\` URLs\n`
     : '';
-  const sitemapSection = `## XML sitemaps (search engines)\n\nIndexable URLs only (no \`?part=\` / \`?lang=\` variants — those are client-side UX):\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [All brand pages](${BASE}/sitemap-brands.xml)\n- [Success stories](${BASE}/sitemap-cases.xml)\n${partsSitemapLine}- [Core pages](${BASE}/sitemap.xml)\n`;
+  const sitemapSection = `## XML sitemaps (search engines)\n\nIndexable URLs only (no \`?part=\` / \`?lang=\` variants — those are client-side UX):\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [Other unique-content brand pages](${BASE}/sitemap-brands.xml) — curated copy, not the thin 12k template set\n- [Success stories](${BASE}/sitemap-cases.xml)\n${partsSitemapLine}- [Core pages](${BASE}/sitemap.xml)\n`;
 
   if (/## XML sitemaps \(search engines\)/.test(content)) {
     content = content.replace(/## XML sitemaps \(search engines\)[\s\S]*?(?=\n## |$)/, sitemapSection.trimEnd());
