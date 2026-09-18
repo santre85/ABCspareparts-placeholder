@@ -264,11 +264,120 @@
     "fr": "Hi-Force Hydraulics: références issues de demandes/livraisons réelles (ex. HPR-2H, PKC50). Disponibilité après contrôle — aucun prix affiché."
   },
   "hubner-elektromaschinen-ag": {
-    "de": "Hübner Elektromaschinen AG: dokumentierte Beschaffung u. a. für GT9.06L/420K sowie GT9.06L/420k. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",
-    "en": "Hübner Elektromaschinen AG: documented sourcing including GT9.06L/420K and GT9.06L/420k. We check original and verified alternatives for MRO — quote request, no prices on the page.",
-    "it": "Hübner Elektromaschinen AG: riferimenti da richieste/forniture reali (es. GT9.06L/420k). Disponibilità dopo verifica — nessun prezzo in pagina.",
-    "es": "Hübner Elektromaschinen AG: referencias de solicitudes/entregas reales (p. ej. GT9.06L/420k). Disponibilidad tras revisión — sin precios en la página.",
-    "fr": "Hübner Elektromaschinen AG: références issues de demandes/livraisons réelles (ex. GT9.06L/420k). Disponibilité après contrôle — aucun prix affiché."
+    "related_slugs": [
+      "siemens",
+      "radio-energie",
+      "hengstler",
+      "kubler",
+      "tamagawa"
+    ],
+    "fields": {
+      "meta_title": {
+        "de": "Hübner Tachogeneratoren GT9 – Ersatzteile | ABCspareparts",
+        "en": "Hübner GT9 tachogenerators – spare parts | ABCspareparts",
+        "it": "Hübner tachogeneratori GT9 – ricambi | ABCspareparts",
+        "es": "Hübner tacogeneradores GT9 – recambios | ABCspareparts",
+        "fr": "Hübner tachymètres GT9 – pièces | ABCspareparts"
+      },
+      "meta_description": {
+        "de": "Hübner Elektromaschinen AG: Tachogeneratoren GT9, Drehzahlmessung für Siemens 1HU. Original oder geprüft – Anfrage oft in 24h.",
+        "en": "Hübner Elektromaschinen AG: GT9 tachogenerators, speed feedback for Siemens 1HU. Original or verified – quote usually within 24h.",
+        "it": "Hübner Elektromaschinen AG: tachogeneratori GT9, misura velocità per Siemens 1HU. Originale o verificato – preventivo spesso in 24h.",
+        "es": "Hübner Elektromaschinen AG: tacogeneradores GT9, realimentación para Siemens 1HU. Original o verificado – presupuesto en 24h.",
+        "fr": "Hübner Elektromaschinen AG : tachymètres GT9, retour vitesse pour Siemens 1HU. Origine ou vérifié – devis souvent sous 24 h."
+      },
+      "brand_h1": {
+        "de": "Hübner – Tachogeneratoren und Antriebsmesstechnik",
+        "en": "Hübner – tachogenerators and drive measurement",
+        "it": "Hübner – tachogeneratori e misura per azionamenti",
+        "es": "Hübner – tacogeneradores y medición de accionamientos",
+        "fr": "Hübner – tachymètres et mesure d’entraînement"
+      },
+      "brand_intro": {
+        "de": "ABCspareparts beschafft Tachogeneratoren und Antriebsmesstechnik von Hübner Elektromaschinen AG – Originalteile und geprüfte Alternativen. Typencode, Wellenform und Spannung pro Umdrehung angeben – Antwort meist innerhalb von 24 Stunden.",
+        "en": "ABCspareparts sources Hübner Elektromaschinen AG tachogenerators and drive-measurement parts – originals and verified alternatives. Send type code, shaft form and volts per revolution – we usually reply within 24 hours.",
+        "it": "ABCspareparts fornisce tachogeneratori e misura per azionamenti Hübner Elektromaschinen AG – originali e alternative verificate. Indichi codice tipo, forma albero e volt per giro – di solito rispondiamo entro 24 ore.",
+        "es": "ABCspareparts suministra tacogeneradores y medida de accionamiento Hübner Elektromaschinen AG – originales y alternativas verificadas. Indique código de tipo, eje y voltios por revolución – solemos responder en 24 horas.",
+        "fr": "ABCspareparts fournit tachymètres et mesure d’entraînement Hübner Elektromaschinen AG – origine et alternatives vérifiées. Indiquez le code type, l’arbre et les volts par tour – réponse en général sous 24 h."
+      },
+      "brand_intro_p2": {
+        "de": "Dokumentiert ist u. a. der Analog-Tacho Longlife DC <strong>GT9.06L/420K</strong> (20 V bei 1000 min⁻¹, bis 9000 min⁻¹, Welle Ø 17 mm Konus 1:10), passend zu Siemens-Servomotoren der Baureihe 1HU. Typencode und Typenschild über die unverbindliche <a href=\"#contact\">Anfrage</a> senden – keine Preise auf der Seite.",
+        "en": "Documented supply includes the analog Longlife DC tacho <strong>GT9.06L/420K</strong> (20 V at 1000 rpm, up to 9000 rpm, Ø 17 mm 1:10 taper shaft), compatible with Siemens 1HU servomotors. Send the type code and nameplate via the <a href=\"#contact\">no-obligation request</a> – no prices on the page.",
+        "it": "Fornitura documentata: tacho analogico Longlife DC <strong>GT9.06L/420K</strong> (20 V a 1000 min⁻¹, fino a 9000 min⁻¹, albero Ø 17 mm cono 1:10), compatibile con servomotori Siemens 1HU. Invii codice tipo e targa con la <a href=\"#contact\">richiesta senza impegno</a> – nessun prezzo in pagina.",
+        "es": "Suministro documentado: taco analógico Longlife DC <strong>GT9.06L/420K</strong> (20 V a 1000 min⁻¹, hasta 9000 min⁻¹, eje Ø 17 mm cono 1:10), compatible con servomotores Siemens 1HU. Envíe código y placa con la <a href=\"#contact\">solicitud sin compromiso</a> – sin precios en la página.",
+        "fr": "Fourniture documentée : tacho analogique Longlife DC <strong>GT9.06L/420K</strong> (20 V à 1000 tr/min, jusqu’à 9000 tr/min, arbre Ø 17 mm cône 1:10), compatible servomoteurs Siemens 1HU. Envoyez le code type et la plaque via la <a href=\"#contact\">demande sans engagement</a> – aucun prix sur la page."
+      },
+      "brand_top_extra": {
+        "de": "Schwerpunkt: analoge Tachogeneratoren (Serie GT9), Wellenform und V/1000 min⁻¹ müssen zum Antrieb passen. Für Reparaturen an älteren Siemens-1HU-Servoantrieben prüfen wir Original und geprüfte Alternativen – Verfügbarkeit nach Prüfung.",
+        "en": "Focus: analog tachogenerators (GT9 series); shaft form and V/1000 rpm must match the drive. For repairs on legacy Siemens 1HU servos we check original and verified alternatives – availability after review.",
+        "it": "Focus: tachogeneratori analogici (serie GT9); forma albero e V/1000 min⁻¹ devono coincidere con l’azionamento. Per riparazioni su servo Siemens 1HU verifichiamo originale e alternative – disponibilità dopo controllo.",
+        "es": "Foco: tacogeneradores analógicos (serie GT9); eje y V/1000 min⁻¹ deben coincidir con el accionamiento. En reparaciones de servos Siemens 1HU comprobamos original y alternativas – disponibilidad tras revisión.",
+        "fr": "Focus : tachymètres analogiques (série GT9) ; arbre et V/1000 tr/min doivent correspondre à l’entraînement. Pour réparations servo Siemens 1HU nous vérifions origine et alternatives – disponibilité après contrôle."
+      },
+      "brand_form_hint": {
+        "de": "Im Formular bitte Hersteller (Hübner), Typencode (z. B. GT9.06L/420K), Wellenform und möglichst Spannung/Drehzahl angeben.",
+        "en": "Please include manufacturer (Hübner), type code (e.g. GT9.06L/420K), shaft form and volts/rpm in the form where possible.",
+        "it": "Nel modulo indichi costruttore (Hübner), codice tipo (es. GT9.06L/420K), forma albero e se possibile volt/giri.",
+        "es": "Indique en el formulario fabricante (Hübner), código de tipo (p. ej. GT9.06L/420K), eje y, si puede, voltios/rpm.",
+        "fr": "Indiquez fabricant (Hübner), code type (ex. GT9.06L/420K), arbre et si possible volts/tr/min dans le formulaire."
+      },
+      "brand_faq_q1": {
+        "de": "Welche Hübner-Teile können Sie liefern?",
+        "en": "Which Hübner parts can you supply?",
+        "it": "Quali ricambi Hübner potete fornire?",
+        "es": "¿Qué recambios Hübner pueden suministrar?",
+        "fr": "Quelles pièces Hübner pouvez-vous fournir ?"
+      },
+      "brand_faq_a1": {
+        "de": "Wir beschaffen Tachogeneratoren und Antriebsmesstechnik von Hübner Elektromaschinen AG, dokumentiert u. a. GT9.06L/420K für Siemens 1HU. Senden Sie Typencode, Wellenform und Anwendung über das Formular oder an info@abcspareparts.eu.",
+        "en": "We source Hübner Elektromaschinen AG tachogenerators and drive-measurement parts, including documented GT9.06L/420K for Siemens 1HU. Send type code, shaft form and application via the form or to info@abcspareparts.eu.",
+        "it": "Forniamo tachogeneratori e misura per azionamenti Hübner Elektromaschinen AG, tra cui GT9.06L/420K documentato per Siemens 1HU. Invii codice tipo, albero e impiego tramite il modulo o a info@abcspareparts.eu.",
+        "es": "Suministramos tacogeneradores y medida de accionamiento Hübner Elektromaschinen AG, p. ej. GT9.06L/420K documentado para Siemens 1HU. Envíe código, eje y aplicación por el formulario o a info@abcspareparts.eu.",
+        "fr": "Nous sourçons tachymètres et mesure d’entraînement Hübner Elektromaschinen AG, dont GT9.06L/420K documenté pour Siemens 1HU. Envoyez code type, arbre et usage via le formulaire ou à info@abcspareparts.eu."
+      },
+      "brand_faq_q2": {
+        "de": "Welche Daten braucht ihr für einen Tachogenerator?",
+        "en": "What data do you need for a tachogenerator?",
+        "it": "Quali dati servono per un tachogeneratore?",
+        "es": "¿Qué datos necesitan para un tacogenerador?",
+        "fr": "Quelles données faut-il pour un tachymètre ?"
+      },
+      "brand_faq_a2": {
+        "de": "Der vollständige Typencode (z. B. GT9.06L/420K) ist der schnellste Weg. Wellenform (hier Konus 1:10, Ø 17 mm), Spannung bei 1000 min⁻¹ und der Antrieb (z. B. Siemens 1HU) helfen bei Mehrdeutigkeiten. Lieferung in Europa nach Verfügbarkeit.",
+        "en": "The full type code (e.g. GT9.06L/420K) is fastest. Shaft form (here 1:10 taper, Ø 17 mm), volts at 1000 rpm and the drive (e.g. Siemens 1HU) help when codes are ambiguous. Europe-wide delivery subject to availability.",
+        "it": "Il codice tipo completo (es. GT9.06L/420K) è la via più rapida. Forma albero (qui cono 1:10, Ø 17 mm), volt a 1000 min⁻¹ e l’azionamento (es. Siemens 1HU) aiutano in caso di ambiguità. Consegna in Europa in base alla disponibilità.",
+        "es": "El código de tipo completo (p. ej. GT9.06L/420K) es lo más rápido. Eje (aquí cono 1:10, Ø 17 mm), voltios a 1000 min⁻¹ y el accionamiento (p. ej. Siemens 1HU) ayudan si hay ambigüedad. Envío en Europa según disponibilidad.",
+        "fr": "Le code type complet (ex. GT9.06L/420K) est le plus rapide. Arbre (ici cône 1:10, Ø 17 mm), volts à 1000 tr/min et l’entraînement (ex. Siemens 1HU) aident en cas d’ambiguïté. Livraison en Europe selon disponibilité."
+      },
+      "brand_faq_q3": {
+        "de": "Liefern Sie auch geprüfte Alternativen zu Original-Hübner-Tachos?",
+        "en": "Do you also offer verified alternatives to original Hübner tachos?",
+        "it": "Fornite anche alternative verificate ai tacho originali Hübner?",
+        "es": "¿También ofrecen alternativas verificadas a tacos originales Hübner?",
+        "fr": "Proposez-vous aussi des alternatives vérifiées aux tachos Hübner d’origine ?"
+      },
+      "brand_faq_a3": {
+        "de": "Ja, wo Wellenform, Spannung und Drehzahlbereich passen und die Alternative geprüft ist. Geben Sie im Formular an, ob Sie Original, Alternative oder beides akzeptieren – besonders bei älteren 1HU-Antrieben oft hilfreich.",
+        "en": "Yes, where shaft, voltage and speed range match and the alternative is verified. State in the form whether you want original, alternative, or either – often useful on legacy 1HU drives.",
+        "it": "Sì, se albero, tensione e regime coincidono e l’alternativa è verificata. Indichi in modulo se preferisce originale, alternativa o indifferente – utile soprattutto su azionamenti 1HU datati.",
+        "es": "Sí, cuando eje, tensión y régimen coincidan y la alternativa esté verificada. Indique en el formulario si prefiere original, alternativa o ambas – útil sobre todo en accionamientos 1HU antiguos.",
+        "fr": "Oui, lorsque arbre, tension et régime correspondent et que l’alternative est vérifiée. Indiquez dans le formulaire origine, alternative ou les deux – utile surtout sur entraînements 1HU anciens."
+      },
+      "related_intro": {
+        "de": "Weitere Marken für Drehzahlmessung, Encoder und Antriebstechnik:",
+        "en": "Other brands for speed feedback, encoders and drive technology:",
+        "it": "Altre marche per misura di velocità, encoder e azionamenti:",
+        "es": "Otras marcas de realimentación de velocidad, encoders y accionamientos:",
+        "fr": "Autres marques pour retour vitesse, codeurs et entraînements :"
+      },
+      "contact_iframe_title": {
+        "de": "Anfrageformular – Hübner Tachogeneratoren",
+        "en": "Request form – Hübner tachogenerators",
+        "it": "Modulo richiesta – tachogeneratori Hübner",
+        "es": "Formulario – tacogeneradores Hübner",
+        "fr": "Formulaire – tachymètres Hübner"
+      }
+    }
   },
   "humphrey": {
     "de": "HUMPHREY: dokumentierte Beschaffung u. a. für 41024VDC. ABCspareparts prüft Original und geprüfte Alternativen für MRO — Anfrage ohne Preise auf der Seite.",

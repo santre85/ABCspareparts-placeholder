@@ -291,6 +291,9 @@ for (const c of publishedCases) {
   if (!html.includes('class="part-quote-btn"') && !html.includes('class="open-quote-modal"')) {
     throw new Error(`Case page ${c.slug}.html is missing quote CTA controls`);
   }
+  if (!html.includes('class="legal-header"') || !html.includes('data-i18n="footer_cases"') || !html.includes('id="languageSelect"')) {
+    throw new Error(`Case page ${c.slug}.html missing site header (logo, nav, language selector)`);
+  }
 }
 
 const llmsTxt = fs.readFileSync(path.join(__dirname, 'llms.txt'), 'utf8');
@@ -409,6 +412,23 @@ for (const row of publishedCases) {
   }
   if (!termetHtml.includes('Dichtung Frontklappe') || !termetHtml.includes('Zündelektrode')) {
     throw new Error('marche/termet.html part descriptions should use German labels on the default page');
+  }
+}
+{
+  const hubnerHtml = fs.readFileSync(path.join(marcheDir, 'hubner-elektromaschinen-ag.html'), 'utf8');
+  if (!hubnerHtml.includes('Tachogeneratoren und Antriebsmesstechnik')) {
+    throw new Error('marche/hubner-elektromaschinen-ag.html must use unique Hübner H1 (tachogenerators), not the generic MRO template');
+  }
+  if (!hubnerHtml.includes('GT9.06L/420K')) {
+    throw new Error('marche/hubner-elektromaschinen-ag.html must mention documented GT9.06L/420K');
+  }
+  if (!hubnerHtml.includes('class="legal-header"') || !hubnerHtml.includes('data-i18n="footer_cases"')) {
+    throw new Error('marche/hubner-elektromaschinen-ag.html missing site header with success-stories nav');
+  }
+  for (const slug of ['siemens', 'radio-energie', 'hengstler', 'kubler', 'tamagawa']) {
+    if (!hubnerHtml.includes(`marche/${slug}.html`)) {
+      throw new Error(`marche/hubner-elektromaschinen-ag.html missing related measurement brand ${slug}`);
+    }
   }
 }
 if (/www\.abcspareparts\.eu/.test(llmsTxt + mainSitemap + robotsTxt)) {
