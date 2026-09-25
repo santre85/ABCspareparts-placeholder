@@ -21,7 +21,7 @@
     <link rel="canonical" href="https://abcspareparts.eu/es/">
     <link rel="icon" type="image/svg+xml" href="https://abcspareparts.eu/ABC_logo4.svg">
     <link rel="apple-touch-icon" href="https://abcspareparts.eu/logo.png">
-    <link rel="alternate" type="text/plain" href="llms.txt" title="Site summary for AI assistants">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI assistants">
     <!-- hreflang: primary language (de) + language alternates -->
   <link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/">
   <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/">
@@ -265,7 +265,7 @@
 <section class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <h1><img src="ABC_logo4.svg" alt="ABCspareparts – Industrieersatzteile und MRO"></h1>
+      <h1><img src="/ABC_logo4.svg" alt="ABCspareparts – Repuestos industriales y MRO"></h1>
       <p class="description" data-i18n="description">Con años de experiencia en el sector, nos especializamos en la distribución de componentes para automatización industrial, sensores, actuadores y dispositivos de control de los principales fabricantes.</p>
       <a href="#contact" class="cta-button" data-i18n="cta_button">Solicitar presupuesto</a>
     </div>
@@ -339,7 +339,7 @@
   var CAROUSEL_SECONDS_PER_ITEM = 6;
   var CYCLE_SECONDS = Math.max(3600, Math.min(10800, rows.length * CAROUSEL_SECONDS_PER_ITEM));
   const html = rows.map(function(r) {
-    return '<a href="marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
+    return '<a href="/marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
   }).join('');
   track.innerHTML = html + html;
 
@@ -510,7 +510,7 @@
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
   var html = rows.map(function(r) {
-    return '<a href="marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
+    return '<a href="/marche/' + r.slug + '.html">' + escapeHtml(r.brand) + '</a><span class="sep">•</span>';
   }).join('');
   track.innerHTML = '<div class="brands-carousel-reverse-inner">' + html + html + '</div>';
   requestAnimationFrame(function() {
@@ -595,47 +595,47 @@
   <div class="container">
     <h2 id="priorityBrandsHeading">Ersatzteile nach Hersteller</h2>
     <ul class="priority-brands-grid">
-        <li><a href="marche/abb.html">ABB</a></li>
-        <li><a href="marche/atlas-copco.html">ATLAS COPCO</a></li>
-        <li><a href="marche/autronica.html">Autronica</a></li>
-        <li><a href="marche/baldwin.html">Baldwin</a></li>
-        <li><a href="marche/baumer.html">Baumer</a></li>
-        <li><a href="marche/fagor.html">Fagor</a></li>
-        <li><a href="marche/harmsco.html">Harmsco</a></li>
-        <li><a href="marche/hengstler.html">Hengstler</a></li>
-        <li><a href="marche/herborner.html">HERBORNER</a></li>
-        <li><a href="marche/hi-force-hydraulics.html">Hi-Force Hydraulics</a></li>
-        <li><a href="marche/hubner-elektromaschinen-ag.html">Hübner Elektromaschinen AG</a></li>
-        <li><a href="marche/humphrey.html">HUMPHREY</a></li>
-        <li><a href="marche/ifm.html">IFM</a></li>
-        <li><a href="marche/konecranes.html">Konecranes</a></li>
-        <li><a href="marche/kubler.html">Kübler</a></li>
-        <li><a href="marche/kuhnke.html">Kuhnke</a></li>
-        <li><a href="marche/leuze.html">Leuze</a></li>
-        <li><a href="marche/m-and-s-armaturen.html">M&amp;S Armaturen</a></li>
-        <li><a href="marche/m-plus-s-hydraulic.html">M+S Hydraulic</a></li>
-        <li><a href="marche/mettler-toledo.html">Mettler Toledo</a></li>
-        <li><a href="marche/mst.html">MST</a></li>
-        <li><a href="marche/ningbo-hongbo-weite-motor-co-ltd.html">NINGBO HONGBO WEITE MOTOR CO.,LTD</a></li>
-        <li><a href="marche/pronomic.html">PRONOMIC</a></li>
-        <li><a href="marche/radio-energie.html">Radio Energie</a></li>
-        <li><a href="marche/renishaw.html">Renishaw</a></li>
-        <li><a href="marche/rexroth.html">Rexroth</a></li>
-        <li><a href="marche/roemheld.html">Roemheld</a></li>
-        <li><a href="marche/schneider.html">SCHNEIDER</a></li>
-        <li><a href="marche/schneider-electric.html">Schneider Electric</a></li>
-        <li><a href="marche/schunk.html">Schunk</a></li>
-        <li><a href="marche/siemens.html">Siemens</a></li>
-        <li><a href="marche/spectrex-inc.html">Spectrex INC.</a></li>
-        <li><a href="marche/steute.html">Steute</a></li>
-        <li><a href="marche/sym-bang.html">SYM BANG</a></li>
-        <li><a href="marche/tamagawa.html">Tamagawa</a></li>
-        <li><a href="marche/telemecanique.html">Telemecanique</a></li>
-        <li><a href="marche/termet.html">TERMET</a></li>
-        <li><a href="marche/tokheim.html">TOKHEIM</a></li>
-        <li><a href="marche/zollern.html">ZOLLERN</a></li>
+        <li><a href="/marche/abb.html">ABB</a></li>
+        <li><a href="/marche/atlas-copco.html">ATLAS COPCO</a></li>
+        <li><a href="/marche/autronica.html">Autronica</a></li>
+        <li><a href="/marche/baldwin.html">Baldwin</a></li>
+        <li><a href="/marche/baumer.html">Baumer</a></li>
+        <li><a href="/marche/fagor.html">Fagor</a></li>
+        <li><a href="/marche/harmsco.html">Harmsco</a></li>
+        <li><a href="/marche/hengstler.html">Hengstler</a></li>
+        <li><a href="/marche/herborner.html">HERBORNER</a></li>
+        <li><a href="/marche/hi-force-hydraulics.html">Hi-Force Hydraulics</a></li>
+        <li><a href="/marche/hubner-elektromaschinen-ag.html">Hübner Elektromaschinen AG</a></li>
+        <li><a href="/marche/humphrey.html">HUMPHREY</a></li>
+        <li><a href="/marche/ifm.html">IFM</a></li>
+        <li><a href="/marche/konecranes.html">Konecranes</a></li>
+        <li><a href="/marche/kubler.html">Kübler</a></li>
+        <li><a href="/marche/kuhnke.html">Kuhnke</a></li>
+        <li><a href="/marche/leuze.html">Leuze</a></li>
+        <li><a href="/marche/m-and-s-armaturen.html">M&amp;S Armaturen</a></li>
+        <li><a href="/marche/m-plus-s-hydraulic.html">M+S Hydraulic</a></li>
+        <li><a href="/marche/mettler-toledo.html">Mettler Toledo</a></li>
+        <li><a href="/marche/mst.html">MST</a></li>
+        <li><a href="/marche/ningbo-hongbo-weite-motor-co-ltd.html">NINGBO HONGBO WEITE MOTOR CO.,LTD</a></li>
+        <li><a href="/marche/pronomic.html">PRONOMIC</a></li>
+        <li><a href="/marche/radio-energie.html">Radio Energie</a></li>
+        <li><a href="/marche/renishaw.html">Renishaw</a></li>
+        <li><a href="/marche/rexroth.html">Rexroth</a></li>
+        <li><a href="/marche/roemheld.html">Roemheld</a></li>
+        <li><a href="/marche/schneider.html">SCHNEIDER</a></li>
+        <li><a href="/marche/schneider-electric.html">Schneider Electric</a></li>
+        <li><a href="/marche/schunk.html">Schunk</a></li>
+        <li><a href="/marche/siemens.html">Siemens</a></li>
+        <li><a href="/marche/spectrex-inc.html">Spectrex INC.</a></li>
+        <li><a href="/marche/steute.html">Steute</a></li>
+        <li><a href="/marche/sym-bang.html">SYM BANG</a></li>
+        <li><a href="/marche/tamagawa.html">Tamagawa</a></li>
+        <li><a href="/marche/telemecanique.html">Telemecanique</a></li>
+        <li><a href="/marche/termet.html">TERMET</a></li>
+        <li><a href="/marche/tokheim.html">TOKHEIM</a></li>
+        <li><a href="/marche/zollern.html">ZOLLERN</a></li>
     </ul>
-    <p class="priority-brands-all"><a href="../marche.html">Alle 11959 Marken anzeigen</a></p>
+    <p class="priority-brands-all"><a href="/marche.html">Alle 11959 Marken anzeigen</a></p>
   </div>
 </section>
 <!-- SEO_STATIC_PRIORITY_BRANDS_END -->
@@ -677,7 +677,7 @@
       <div class="benefit-card">
         <h3 data-i18n="benefit1_title">11959+ Fabricantes</h3>
         <p data-i18n="benefit1_desc">Amplia red de marcas MRO en Europa.</p>
-        <p class="benefit-card-link"><a href="../marche.html" data-i18n="view_all_brands">Ver lista completa de más de 11959 marcas</a></p>
+        <p class="benefit-card-link"><a href="/marche.html" data-i18n="view_all_brands">Ver lista completa de más de 11959 marcas</a></p>
       </div>
       <div class="benefit-card">
         <h3 data-i18n="benefit2_title">Entrega rápida</h3>
@@ -715,7 +715,7 @@
         <ul class="contact-channels" data-i18n="contact_channels"><li><strong>Telefon:</strong> <a href="tel:+4915222466077">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href="https://wa.me/4915222466077" target="_blank" rel="noopener">+49 152 22466077</a></li><li><strong>E-Mail:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></li></ul>
         <h4 data-i18n="contact_hours_title">Disponibilidad</h4>
         <ul class="contact-hours" data-i18n="contact_hours"><li>Montag - Freitag: 09:00 - 18:00</li><li>Samstag: 10:00 - 14:00</li><li>Sonntag: Geschlossen</li></ul>
-        <p class="contact-legal-note" data-i18n="contact_legal_note">Vollständige rechtliche Angaben im <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.</p>
+        <p class="contact-legal-note" data-i18n="contact_legal_note">Vollständige rechtliche Angaben im <a href="/impressum.html" target="_blank" rel="noopener">Impressum</a>.</p>
       </aside>
       <div class="contact-form-wrap">
         <h3 data-i18n="contact_form_title">Solicitud online</h3>
@@ -743,21 +743,21 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-links">
-        <a href="../marche.html" data-i18n="footer_brands">Marcas</a>
+        <a href="/marche.html" data-i18n="footer_brands">Marcas</a>
         <span class="separator">|</span>
-        <a href="../casi.html" data-i18n="footer_cases">Casos de éxito</a>
+        <a href="/casi.html" data-i18n="footer_cases">Casos de éxito</a>
         <span class="separator">|</span>
-        <a href="../#contact" data-i18n="footer_contact">Contacto</a>
+        <a href="/#contact" data-i18n="footer_contact">Contacto</a>
         <span class="separator">|</span>
-        <a href="../impressum.html" target="_blank" data-i18n="footer_imprint">Aviso legal</a>
+        <a href="/impressum.html" target="_blank" data-i18n="footer_imprint">Aviso legal</a>
         <span class="separator">|</span>
-        <a href="../datenschutz.html" target="_blank" data-i18n="footer_privacy">Privacidad</a>
+        <a href="/datenschutz.html" target="_blank" data-i18n="footer_privacy">Privacidad</a>
         <span class="separator">|</span>
-        <a href="../agb.html" target="_blank" data-i18n="footer_terms">Términos</a>
+        <a href="/agb.html" target="_blank" data-i18n="footer_terms">Términos</a>
         <span class="separator">|</span>
-        <a href="../versand.html" target="_blank" data-i18n="footer_shipping">Envío</a>
+        <a href="/versand.html" target="_blank" data-i18n="footer_shipping">Envío</a>
         <span class="separator">|</span>
-        <a href="../cookies.html" target="_blank" data-i18n="footer_cookies">Cookies</a>
+        <a href="/cookies.html" target="_blank" data-i18n="footer_cookies">Cookies</a>
         <span class="separator">|</span>
         <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
       </div>
@@ -1320,11 +1320,11 @@
   });
 
   var cookieConsentText = {
-    de: { desc: '<p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. <a href="../cookies.html" target="_blank">Mehr erfahren</a></p>', acceptAll: 'Alle akzeptieren', reject: 'Nur notwendige', prefs: 'Einstellungen', prefsTitle: 'Cookie-Einstellungen', prefsDesc: '<p>Wählen Sie, welche Cookies Sie akzeptieren möchten.</p>', save: 'Speichern und schließen' },
-    en: { desc: '<p>We use cookies to enhance your experience. <a href="../cookies.html" target="_blank">Learn more</a></p>', acceptAll: 'Accept all', reject: 'Reject non-essential', prefs: 'Preferences', prefsTitle: 'Cookie preferences', prefsDesc: '<p>Choose which cookies you want to accept.</p>', save: 'Save and close' },
-    it: { desc: '<p>Utilizziamo i cookie per migliorare la tua esperienza. <a href="../cookies.html" target="_blank">Scopri di più</a></p>', acceptAll: 'Accetta tutti', reject: 'Rifiuta non essenziali', prefs: 'Preferenze', prefsTitle: 'Preferenze cookie', prefsDesc: '<p>Scegli quali cookie accettare.</p>', save: 'Salva e chiudi' },
-    es: { desc: '<p>Utilizamos cookies para mejorar tu experiencia. <a href="../cookies.html" target="_blank">Más información</a></p>', acceptAll: 'Aceptar todo', reject: 'Rechazar no esenciales', prefs: 'Preferencias', prefsTitle: 'Preferencias de cookies', prefsDesc: '<p>Elige qué cookies aceptar.</p>', save: 'Guardar y cerrar' },
-    fr: { desc: '<p>Nous utilisons des cookies pour améliorer votre expérience. <a href="../cookies.html" target="_blank">En savoir plus</a></p>', acceptAll: 'Tout accepter', reject: 'Refuser non essentiels', prefs: 'Préférences', prefsTitle: 'Préférences de cookies', prefsDesc: '<p>Choisissez les cookies à accepter.</p>', save: 'Enregistrer et fermer' }
+    de: { desc: '<p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. <a href="/cookies.html" target="_blank">Mehr erfahren</a></p>', acceptAll: 'Alle akzeptieren', reject: 'Nur notwendige', prefs: 'Einstellungen', prefsTitle: 'Cookie-Einstellungen', prefsDesc: '<p>Wählen Sie, welche Cookies Sie akzeptieren möchten.</p>', save: 'Speichern und schließen' },
+    en: { desc: '<p>We use cookies to enhance your experience. <a href="/cookies.html" target="_blank">Learn more</a></p>', acceptAll: 'Accept all', reject: 'Reject non-essential', prefs: 'Preferences', prefsTitle: 'Cookie preferences', prefsDesc: '<p>Choose which cookies you want to accept.</p>', save: 'Save and close' },
+    it: { desc: '<p>Utilizziamo i cookie per migliorare la tua esperienza. <a href="/cookies.html" target="_blank">Scopri di più</a></p>', acceptAll: 'Accetta tutti', reject: 'Rifiuta non essenziali', prefs: 'Preferenze', prefsTitle: 'Preferenze cookie', prefsDesc: '<p>Scegli quali cookie accettare.</p>', save: 'Salva e chiudi' },
+    es: { desc: '<p>Utilizamos cookies para mejorar tu experiencia. <a href="/cookies.html" target="_blank">Más información</a></p>', acceptAll: 'Aceptar todo', reject: 'Rechazar no esenciales', prefs: 'Preferencias', prefsTitle: 'Preferencias de cookies', prefsDesc: '<p>Elige qué cookies aceptar.</p>', save: 'Guardar y cerrar' },
+    fr: { desc: '<p>Nous utilisons des cookies pour améliorer votre expérience. <a href="/cookies.html" target="_blank">En savoir plus</a></p>', acceptAll: 'Tout accepter', reject: 'Refuser non essentiels', prefs: 'Préférences', prefsTitle: 'Préférences de cookies', prefsDesc: '<p>Choisissez les cookies à accepter.</p>', save: 'Enregistrer et fermer' }
   };
   function initConsentManager(lang) {
     if (typeof window.silktideConsentManager === 'undefined') return;

@@ -129,21 +129,21 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-links">
-        <a href="../marche.html" data-i18n="footer_brands">Brands</a>
+        <a href="/marche.html" data-i18n="footer_brands">Brands</a>
         <span class="separator">|</span>
-        <a href="../casi.html" data-i18n="footer_cases">Success stories</a>
+        <a href="/casi.html" data-i18n="footer_cases">Success stories</a>
         <span class="separator">|</span>
-        <a href="../#contact" data-i18n="footer_contact">Contact</a>
+        <a href="/#contact" data-i18n="footer_contact">Contact</a>
         <span class="separator">|</span>
-        <a href="../impressum.html" target="_blank" rel="noopener" data-i18n="footer_imprint">Imprint</a>
+        <a href="/impressum.html" target="_blank" rel="noopener" data-i18n="footer_imprint">Imprint</a>
         <span class="separator">|</span>
-        <a href="../datenschutz.html" target="_blank" rel="noopener" data-i18n="footer_privacy">Privacy</a>
+        <a href="/datenschutz.html" target="_blank" rel="noopener" data-i18n="footer_privacy">Privacy</a>
         <span class="separator">|</span>
-        <a href="../agb.html" target="_blank" rel="noopener" data-i18n="footer_terms">Terms</a>
+        <a href="/agb.html" target="_blank" rel="noopener" data-i18n="footer_terms">Terms</a>
         <span class="separator">|</span>
-        <a href="../versand.html" target="_blank" rel="noopener" data-i18n="footer_shipping">Shipping</a>
+        <a href="/versand.html" target="_blank" rel="noopener" data-i18n="footer_shipping">Shipping</a>
         <span class="separator">|</span>
-        <a href="../cookies.html" target="_blank" rel="noopener" data-i18n="footer_cookies">Cookies</a>
+        <a href="/cookies.html" target="_blank" rel="noopener" data-i18n="footer_cookies">Cookies</a>
         <span class="separator">|</span>
         <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
       </div>
@@ -311,18 +311,25 @@
     document.addEventListener('DOMContentLoaded', function(){
       var groupsEl = document.getElementById('brandGroups');
       if(groupsEl) STATIC_BRAND_GROUPS_HTML = groupsEl.innerHTML;
-      var raw = getCurrentLang();
-      var lang = ['de','en','it','es','fr'].indexOf(raw)!==-1 ? raw : 'de';
       var sel = document.getElementById('languageSelect');
       var inp = document.getElementById('brandSearchInput');
       var backBtn = document.getElementById('backToTopBtn');
       var qsQ = getQueryQ();
       if(inp && qsQ) inp.value = qsQ;
-      if(sel) sel.value = 'en';
+      if(sel) sel.value = 'de';
+      
+      // Navigate to language version instead of translating
       if(sel) sel.addEventListener('change', function(){ 
         const langMap = { de: '/marche.html', en: '/en/marche.html', it: '/it/marche.html', es: '/es/marche.html', fr: '/fr/marche.html' };
         window.location.href = langMap[this.value] || '/marche.html';
       });
+      
+      if(inp){
+        inp.addEventListener('input', applyBrandFilterDebounced);
+        inp.addEventListener('search', function(){ if(!this.value) applyBrandFilterImmediate(); });
+      }
+      var form = document.getElementById('brandSearchForm');
+      if(form) form.addEventListener('submit', function(e){ e.preventDefault(); applyBrandFilterImmediate(); });
       if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
       window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
       toggleBackToTopButton();
