@@ -318,15 +318,11 @@
       var backBtn = document.getElementById('backToTopBtn');
       var qsQ = getQueryQ();
       if(inp && qsQ) inp.value = qsQ;
-      if(sel) sel.value = lang;
-      changeLanguage(lang);
-      if(inp){
-        inp.addEventListener('input', applyBrandFilterDebounced);
-        inp.addEventListener('search', function(){ if(!this.value) applyBrandFilterImmediate(); });
-      }
-      var form = document.getElementById('brandSearchForm');
-      if(form) form.addEventListener('submit', function(e){ e.preventDefault(); applyBrandFilterImmediate(); });
-      if(sel) sel.addEventListener('change', function(){ changeLanguage(this.value); });
+      if(sel) sel.value = 'it';
+      if(sel) sel.addEventListener('change', function(){ 
+        const langMap = { de: '/marche.html', en: '/en/marche.html', it: '/it/marche.html', es: '/es/marche.html', fr: '/fr/marche.html' };
+        window.location.href = langMap[this.value] || '/marche.html';
+      });
       if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
       window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
       toggleBackToTopButton();
