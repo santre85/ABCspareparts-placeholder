@@ -1347,16 +1347,15 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    var raw = getCurrentLang();
-    var lang = ['de','en','it','es','fr'].indexOf(raw) !== -1 ? raw : 'de';
     var langSelect = document.getElementById('languageSelect');
-    langSelect.value = lang;
-    changeLanguage(lang);
+    langSelect.value = 'fr';
+    
+    // For static language versions, navigate to the correct URL instead of translating
     langSelect.addEventListener('change', function() {
-      changeLanguage(this.value);
-      initConsentManager(this.value);
+      const langMap = { de: '/', en: '/en/', it: '/it/', es: '/es/', fr: '/fr/' };
+      window.location.href = langMap[this.value] || '/';
     });
-    initConsentManager(lang);
+    initConsentManager('fr');
 
     var homeBrandForm = document.getElementById('homeBrandSearchForm');
     if (homeBrandForm) {
