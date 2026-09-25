@@ -238,7 +238,6 @@ ${FOOTER_CSS}
         <a class="cta-primary" href="../../marche/${escapeAttr(part.brand_slug)}.html#quote=${encodeURIComponent(part.part_number)}">Angebot anfragen</a>
         <a class="cta-secondary" href="../../marche/${escapeAttr(part.brand_slug)}.html">Zur Markenseite ${escapeHtml(part.brand)}</a>
       </div>
-      <p class="note">Auswahlgrund (intern/SEO): ${escapeHtml(reasons)}. MVP-Seite — kein Massen-Katalog.</p>
     </div>
   </main>
 ${buildFooterHtml('../../')}
