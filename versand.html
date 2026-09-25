@@ -3,76 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Versandinformationen – ABCspareparts</title>
+  <meta name="description" content="Versandinformationen">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://abcspareparts.eu/versand.html">
   <link rel="icon" type="image/svg+xml" href="https://abcspareparts.eu/ABC_logo4.svg">
   <link rel="apple-touch-icon" href="https://abcspareparts.eu/logo.png">
-  <title>Versand – ABCspareparts</title>
-  <meta name="description" content="Versandinformationen von ABCspareparts – Lieferung von Industrieersatzteilen in ganz Europa.">
-  <link rel="canonical" href="https://abcspareparts.eu/versand.html">
   <link rel="alternate" hreflang="x-default" href="https://abcspareparts.eu/versand.html">
   <link rel="alternate" hreflang="de" href="https://abcspareparts.eu/versand.html">
+  <link rel="alternate" hreflang="en" href="https://abcspareparts.eu/en/versand.html">
+  <link rel="alternate" hreflang="it" href="https://abcspareparts.eu/it/versand.html">
+  <link rel="alternate" hreflang="es" href="https://abcspareparts.eu/es/versand.html">
+  <link rel="alternate" hreflang="fr" href="https://abcspareparts.eu/fr/versand.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abcspareparts.eu/versand.html">
-  <meta property="og:title" content="Versand – ABCspareparts">
-  <meta property="og:description" content="Versandinformationen von ABCspareparts – Lieferung von Industrieersatzteilen in ganz Europa.">
+  <meta property="og:title" content="Versandinformationen – ABCspareparts">
   <meta property="og:image" content="https://abcspareparts.eu/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Versand – ABCspareparts">
-  <meta name="twitter:description" content="Versandinformationen von ABCspareparts – Lieferung von Industrieersatzteilen in ganz Europa.">
-  <link rel="stylesheet" href="legal.css">
+  <style>
+    
+    .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
+    .footer-content { max-width: 800px; margin: 0 auto; }
+    .footer-links { margin-bottom: 1rem; }
+    .footer-links a { color: #fff; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+    .separator { margin: 0 0.5rem; opacity: 0.7; }
+    .footer-info { font-size: 0.9rem; opacity: 0.9; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1rem; }
+    header { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 1rem; margin-bottom: 2rem; }
+    header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #1e3a5f; text-decoration: none; }
+    .lang-selector { margin-left: auto; }
+    .lang-selector select { padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
+    main { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+    h1 { color: #1e3a5f; margin-top: 0; }
+    h2 { color: #2c5282; margin-top: 2rem; }
+    h3 { color: #2c5282; margin-top: 1.5rem; }
+    section { margin-bottom: 2rem; }
+    ul { padding-left: 1.5rem; }
+    a { color: #2c5282; }
+    a:hover { color: #1e3a5f; }
+    .updated { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 2rem; }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; width: 100%; }
+    .nav-links a { color: #2c5282; text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .container { padding: 0.5rem; }
+      main { padding: 1rem; }
+      header .container { justify-content: center; }
+      .lang-selector { margin: 1rem 0 0 0; }
+    }
+  </style>
 </head>
 <body>
-  <div class="legal-lang-selector">
-    <select id="legalLangSelect">
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="fr">🇫🇷 Français</option>
-    </select>
-  </div>
-
-  <header class="legal-header">
+  <header>
     <div class="container">
       <a href="/" class="logo">ABCspareparts</a>
-      <nav class="legal-nav">
+      <div class="lang-selector">
+        <label for="langSelect" class="visually-hidden">Home</label>
+        <select id="langSelect" onchange="if(this.value) window.location.href=this.value;">
+          <option value="../versand.html" selected>Deutsch</option>
+        <option value="/en/versand.html" >English</option>
+        <option value="/it/versand.html" >Italiano</option>
+        <option value="/es/versand.html" >Español</option>
+        <option value="/fr/versand.html" >Français</option>
+        </select>
+      </div>
+      <nav class="nav-links">
         <a href="/" data-i18n="nav_home">Home</a>
+        <a href="marche.html" data-i18n="footer_brands">Marken</a>
         <a href="impressum.html" data-i18n="nav_impressum">Impressum</a>
         <a href="datenschutz.html" data-i18n="nav_datenschutz">Datenschutz</a>
         <a href="agb.html" data-i18n="nav_agb">AGB</a>
         <a href="versand.html" data-i18n="nav_versand">Versand</a>
         <a href="cookies.html" data-i18n="nav_cookies">Cookies</a>
-        <span class="separator">|</span>
-        <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
       </nav>
     </div>
   </header>
-
-  <main class="legal-main">
+  <main>
     <div class="container">
       <h1 data-i18n="h1">Versandinformationen</h1>
-
-      <section>
-        <h2 data-i18n="s1_title">Lieferländer</h2>
-        <p data-i18n="s1_content"></p>
-      </section>
-
-      <section>
-        <h2 data-i18n="s2_title">Lieferzeiten</h2>
-        <p data-i18n="s2_content"></p>
-      </section>
-
-      <section>
-        <h2 data-i18n="s3_title">Versandkosten</h2>
-        <p data-i18n="s3_content"></p>
-      </section>
-
-      <section>
-        <h2 data-i18n="s4_title">24h-Angebote</h2>
-        <p data-i18n="s4_content"></p>
-      </section>
+      
+      
+    <section>
+      <h2 data-i18n="s1_title">Lieferländer</h2>
+      <p data-i18n="s1_content">Wir liefern in folgende Länder: Deutschland (DE), Italien (IT), Frankreich (FR), Spanien (ES) und weitere europäische Länder.</p>
+    </section>
+    <section>
+      <h2 data-i18n="s2_title">Lieferzeiten</h2>
+      <p data-i18n="s2_content">Die Lieferzeit richtet sich nach der Verfügbarkeit der Ware und der gewählten Versandart. Standardlieferzeiten werden bei der Angebotserstellung mitgeteilt. Express-Versand ist auf Anfrage verfügbar.</p>
+    </section>
+    <section>
+      <h2 data-i18n="s3_title">Versandkosten</h2>
+      <p data-i18n="s3_content">Die Versandkosten werden individuell berechnet und im Angebot bzw. der Auftragsbestätigung ausgewiesen.</p>
+    </section>
+    <section>
+      <h2 data-i18n="s4_title">24h-Angebote</h2>
+      <p data-i18n="s4_content">Wir bemühen uns, Ihnen innerhalb von 24 Stunden ein Angebot für Ihre Anfrage zu unterbreiten.</p>
+    </section>
     </div>
   </main>
-
   <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -92,6 +122,8 @@
         <a href="versand.html" target="_blank" rel="noopener" data-i18n="footer_shipping">Versand</a>
         <span class="separator">|</span>
         <a href="cookies.html" target="_blank" rel="noopener" data-i18n="footer_cookies">Cookies</a>
+        <span class="separator">|</span>
+        <a href="https://www.linkedin.com/company/abcspareparts" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>
       </div>
       <div class="footer-info">
         <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
@@ -99,7 +131,5 @@
     </div>
   </div>
 </footer>
-
-  <script src="legal-i18n.js"></script>
 </body>
 </html>

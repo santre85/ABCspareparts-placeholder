@@ -1,6 +1,3 @@
----
-layout: none
----
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
@@ -8,7 +5,15 @@ layout: none
     <lastmod>2026-09-25</lastmod>
   </sitemap>
   <sitemap>
+    <loc>https://abcspareparts.eu/sitemap-legal.xml</loc>
+    <lastmod>2026-09-25</lastmod>
+  </sitemap>
+  <sitemap>
     <loc>https://abcspareparts.eu/sitemap-brands.xml</loc>
+    <lastmod>2026-09-25</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://abcspareparts.eu/sitemap-parts.xml</loc>
     <lastmod>2026-09-25</lastmod>
   </sitemap>
   <sitemap>
@@ -17,10 +22,6 @@ layout: none
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-cases.xml</loc>
-    <lastmod>2026-09-25</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://abcspareparts.eu/sitemap-parts.xml</loc>
     <lastmod>2026-09-25</lastmod>
   </sitemap>
 </sitemapindex>
