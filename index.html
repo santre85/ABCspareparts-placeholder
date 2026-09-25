@@ -667,9 +667,9 @@
     </h2>
     <div class="benefits-grid">
       <div class="benefit-card">
-        <h3 data-i18n="benefit1_title">9000+ Hersteller</h3>
+        <h3 data-i18n="benefit1_title">11959+ Hersteller</h3>
         <p data-i18n="benefit1_desc">Größtes Netzwerk für MRO-Ersatzteile in Europa.</p>
-        <p class="benefit-card-link"><a href="marche.html" data-i18n="view_all_brands">View full list of 9000+ brands</a></p>
+        <p class="benefit-card-link"><a href="marche.html" data-i18n="view_all_brands">Vollständige Liste der 11959+ Marken anzeigen</a></p>
       </div>
       <div class="benefit-card">
         <h3 data-i18n="benefit2_title">Schnelle Lieferung</h3>
@@ -711,8 +711,21 @@
       </aside>
       <div class="contact-form-wrap">
         <h3 data-i18n="contact_form_title">Online-Anfrage</h3>
-        <div class="contact-iframe-wrap" style="height: 1050px;">
-          <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request/new" data-i18n-title="contact_iframe_title" title="Anfrageformular für Ersatzteile" style="border: none; width: 100%; height: inherit;"></iframe>
+        <div class="contact-iframe-wrap" id="iframeContainer">
+          <div id="iframePlaceholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; background: linear-gradient(135deg, #f0f6fb 0%, #e8f2f9 100%); border: 2px solid #dce8f4; border-radius: 10px; text-align: center; padding: 2rem;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" style="margin-bottom: 1rem;">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="9" x2="15" y2="9"></line>
+              <line x1="9" y1="13" x2="15" y2="13"></line>
+              <line x1="9" y1="17" x2="13" y2="17"></line>
+            </svg>
+            <h4 style="color: #1e3a5f; margin-bottom: 0.5rem; font-size: 1.1rem;" data-i18n="load_form_heading">Anfrageformular laden</h4>
+            <p style="color: #555; margin-bottom: 1.5rem; max-width: 500px;" data-i18n="load_form_description">Klicken Sie hier, um das Kontaktformular zu laden. Das Formular ist auf einem externen Server gehostet und setzt Session-Cookies.</p>
+            <button id="loadIframeBtn" style="background: #e67e22; color: #fff; border: none; padding: 0.85rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.3s ease;" data-i18n="load_form_button">
+              Formular laden
+            </button>
+          </div>
+          <iframe id="contactFormIframe" data-src="https://erp.abcspareparts.eu/lead-request/new" data-i18n-title="contact_iframe_title" title="Anfrageformular für Ersatzteile" style="display: none; border: none; width: 100%; height: 1050px;"></iframe>
         </div>
       </div>
     </div>
@@ -759,7 +772,7 @@
       description: "Mit langjähriger Branchenerfahrung spezialisieren wir uns auf die Verteilung von Komponenten für industrielle Automation, Sensoren, Aktoren und Steuergeräte führender Hersteller.",
       cta_button: "Jetzt anfragen",
       benefits_title: "Warum ABCspareparts?",
-      benefit1_title: "9000+ Hersteller",
+      benefit1_title: "11959+ Hersteller",
       benefit1_desc: "Breites MRO-Markennetzwerk in Europa.",
       benefit2_title: "Schnelle Lieferung",
       benefit2_desc: "Schnelle Angebote, Expressversand möglich.",
@@ -781,6 +794,9 @@
       contact_form_title: "Online-Anfrage",
       contact_iframe_title: "Anfrageformular für Ersatzteile",
       contact_legal_note: "Vollständige rechtliche Angaben im <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Impressum</a>.",
+      load_form_heading: "Anfrageformular laden",
+      load_form_description: "Klicken Sie hier, um das Kontaktformular zu laden. Das Formular ist auf einem externen Server gehostet und setzt Session-Cookies.",
+      load_form_button: "Formular laden",
       footer_contact: "Kontakt",
       form_name: "Vorname",
       form_surname: "Nachname",
@@ -798,7 +814,7 @@
       form_privacy: "Ich habe die <a href=\"datenschutz.html\" target=\"_blank\">Datenschutzerklärung</a> gelesen und akzeptiere diese.",
       footer_brands: "Marken",
       footer_cases: "Erfolgsgeschichten",
-      view_all_brands: "Vollständige Liste der 9000+ Marken anzeigen",
+      view_all_brands: "Vollständige Liste der 11959+ Marken anzeigen",
       brand_search_heading: "Marke suchen",
       brand_search_label: "Marke suchen",
       brand_search_placeholder: "z. B. Siemens, Festo …",
@@ -845,7 +861,7 @@
       description: "With years of industry experience, we specialize in the distribution of components for industrial automation, sensors, actuators and control devices from leading manufacturers.",
       cta_button: "Request quote",
       benefits_title: "Why ABCspareparts?",
-      benefit1_title: "9000+ Manufacturers",
+      benefit1_title: "11959+ Manufacturers",
       benefit1_desc: "Europe-wide MRO brand network.",
       benefit2_title: "Fast Delivery",
       benefit2_desc: "Fast quotes, express shipping.",
@@ -867,6 +883,9 @@
       contact_form_title: "Online request",
       contact_iframe_title: "Spare parts request form",
       contact_legal_note: "Full legal details in our <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Imprint</a>.",
+      load_form_heading: "Load request form",
+      load_form_description: "Click here to load the contact form. The form is hosted on an external server and sets session cookies.",
+      load_form_button: "Load form",
       footer_contact: "Contact",
       form_name: "First name",
       form_surname: "Last name",
@@ -884,7 +903,7 @@
       form_privacy: "I have read and accept the <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_brands: "Brands",
       footer_cases: "Success stories",
-      view_all_brands: "View full list of 9000+ brands",
+      view_all_brands: "View full list of 11959+ brands",
       brand_search_heading: "Search brand",
       brand_search_label: "Search brand",
       brand_search_placeholder: "e.g. Siemens, Festo …",
@@ -931,7 +950,7 @@
       description: "Con anni di esperienza nel settore, ci specializziamo nella distribuzione di componenti per automazione industriale, sensori, attuatori e dispositivi di controllo dei principali produttori.",
       cta_button: "Richiedi preventivo",
       benefits_title: "Perché ABCspareparts?",
-      benefit1_title: "9000+ Produttori",
+      benefit1_title: "11959+ Produttori",
       benefit1_desc: "Ampia rete marchi MRO in Europa.",
       benefit2_title: "Consegna veloce",
       benefit2_desc: "Preventivi rapidi, spedizione express disponibile.",
@@ -953,6 +972,9 @@
       contact_form_title: "Richiesta online",
       contact_iframe_title: "Modulo richiesta ricambi",
       contact_legal_note: "Dati legali completi nell'<a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Impressum</a>.",
+      load_form_heading: "Carica il modulo di richiesta",
+      load_form_description: "Clicca qui per caricare il modulo di contatto. Il modulo è ospitato su un server esterno e imposta cookie di sessione.",
+      load_form_button: "Carica modulo",
       footer_contact: "Contatti",
       form_name: "Nome",
       form_surname: "Cognome",
@@ -970,7 +992,7 @@
       form_privacy: "Ho letto e accetto la <a href=\"datenschutz.html\" target=\"_blank\">Privacy Policy</a>.",
       footer_brands: "Marche",
       footer_cases: "Casi di successo",
-      view_all_brands: "Vedi elenco completo di 9000+ marche",
+      view_all_brands: "Vedi elenco completo di 11959+ marche",
       brand_search_heading: "Cerca marchio",
       brand_search_label: "Cerca marchio",
       brand_search_placeholder: "es. Siemens, Festo …",
@@ -1017,7 +1039,7 @@
       description: "Con años de experiencia en el sector, nos especializamos en la distribución de componentes para automatización industrial, sensores, actuadores y dispositivos de control de los principales fabricantes.",
       cta_button: "Solicitar oferta",
       benefits_title: "¿Por qué ABCspareparts?",
-      benefit1_title: "9000+ Fabricantes",
+      benefit1_title: "11959+ Fabricantes",
       benefit1_desc: "Red MRO europea de marcas.",
       benefit2_title: "Entrega rápida",
       benefit2_desc: "Ofertas rápidas, envío exprés.",
@@ -1039,6 +1061,9 @@
       contact_form_title: "Solicitud en línea",
       contact_iframe_title: "Formulario de solicitud de recambios",
       contact_legal_note: "Datos legales completos en el <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">Aviso legal</a>.",
+      load_form_heading: "Cargar formulario de solicitud",
+      load_form_description: "Haga clic aquí para cargar el formulario de contacto. El formulario está alojado en un servidor externo y establece cookies de sesión.",
+      load_form_button: "Cargar formulario",
       footer_contact: "Contacto",
       form_name: "Nombre",
       form_surname: "Apellido",
@@ -1056,7 +1081,7 @@
       form_privacy: "He leído y acepto la <a href=\"datenschutz.html\" target=\"_blank\">Política de Privacidad</a>.",
       footer_brands: "Marcas",
       footer_cases: "Casos de éxito",
-      view_all_brands: "Ver lista completa de 9000+ marcas",
+      view_all_brands: "Ver lista completa de 11959+ marcas",
       brand_search_heading: "Buscar marca",
       brand_search_label: "Buscar marca",
       brand_search_placeholder: "ej. Siemens, Festo …",
@@ -1103,7 +1128,7 @@
       description: "Avec des années d'expérience dans le secteur, nous nous spécialisons dans la distribution de composants pour l'automatisation industrielle, les capteurs, actionneurs et dispositifs de contrôle des principaux fabricants.",
       cta_button: "Demander un devis",
       benefits_title: "Pourquoi ABCspareparts?",
-      benefit1_title: "9000+ Fabricants",
+      benefit1_title: "11959+ Fabricants",
       benefit1_desc: "Réseau MRO européen de marques.",
       benefit2_title: "Livraison rapide",
       benefit2_desc: "Devis rapides, expédition express.",
@@ -1125,6 +1150,9 @@
       contact_form_title: "Demande en ligne",
       contact_iframe_title: "Formulaire de demande de pièces",
       contact_legal_note: "Informations légales complètes dans les <a href=\"impressum.html\" target=\"_blank\" rel=\"noopener\">mentions légales</a>.",
+      load_form_heading: "Charger le formulaire de demande",
+      load_form_description: "Cliquez ici pour charger le formulaire de contact. Le formulaire est hébergé sur un serveur externe et définit des cookies de session.",
+      load_form_button: "Charger le formulaire",
       footer_contact: "Contact",
       form_name: "Prénom",
       form_surname: "Nom",
@@ -1142,7 +1170,7 @@
       form_privacy: "J'ai lu et j'accepte la <a href=\"datenschutz.html\" target=\"_blank\">Politique de confidentialité</a>.",
       footer_brands: "Marques",
       footer_cases: "Histoires de réussite",
-      view_all_brands: "Voir la liste complète des 9000+ marques",
+      view_all_brands: "Voir la liste complète des 11959+ marques",
       brand_search_heading: "Rechercher une marque",
       brand_search_label: "Rechercher une marque",
       brand_search_placeholder: "ex. Siemens, Festo …",
@@ -1260,8 +1288,30 @@
   }
   function updateFormIframeLang(langCode) {
     var iframe = document.getElementById('contactFormIframe');
-    if (iframe) iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || 'en');
+    if (iframe && iframe.src) {
+      iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || 'en');
+    }
   }
+  
+  // Lazy-load iframe on button click
+  function loadContactIframe() {
+    var placeholder = document.getElementById('iframePlaceholder');
+    var iframe = document.getElementById('contactFormIframe');
+    if (iframe && placeholder) {
+      var lang = getCurrentLang();
+      var iframeSrc = iframe.getAttribute('data-src') + '?_lang=' + (lang || 'en');
+      iframe.src = iframeSrc;
+      iframe.style.display = 'block';
+      placeholder.style.display = 'none';
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var loadBtn = document.getElementById('loadIframeBtn');
+    if (loadBtn) {
+      loadBtn.addEventListener('click', loadContactIframe);
+    }
+  });
 
   var cookieConsentText = {
     de: { desc: '<p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. <a href="cookies.html" target="_blank">Mehr erfahren</a></p>', acceptAll: 'Alle akzeptieren', reject: 'Nur notwendige', prefs: 'Einstellungen', prefsTitle: 'Cookie-Einstellungen', prefsDesc: '<p>Wählen Sie, welche Cookies Sie akzeptieren möchten.</p>', save: 'Speichern und schließen' },

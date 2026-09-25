@@ -227,6 +227,9 @@ function buildTranslations(brand) {
       contact_form_title: 'Online-Anfrage',
       contact_iframe_title: `Anfrageformular – ${H} Ersatzteile`,
       contact_legal_note: 'Vollständige rechtliche Angaben im <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
+      load_form_heading: 'Anfrageformular laden',
+      load_form_description: 'Klicken Sie hier, um das Kontaktformular zu laden. Das Formular ist auf einem externen Server gehostet und setzt Session-Cookies.',
+      load_form_button: 'Formular laden',
       brand_parts_title: 'Diese Teilenummern anfragen',
       brand_parts_intro: 'Codes zur Anfrage (aus Angeboten, Lieferungen oder Herstellerlisten). Keine Preise auf der Seite — klicken Sie auf einen Code, um das vorausgefüllte Formular zu öffnen.',
       brand_parts_search: 'Teilenummer suchen…',
@@ -278,6 +281,9 @@ function buildTranslations(brand) {
       contact_form_title: 'Online request',
       contact_iframe_title: `Request form – ${H} spare parts`,
       contact_legal_note: 'Full legal details in our <a href="../impressum.html" target="_blank" rel="noopener">Imprint</a>.',
+      load_form_heading: 'Load request form',
+      load_form_description: 'Click here to load the contact form. The form is hosted on an external server and sets session cookies.',
+      load_form_button: 'Load form',
       brand_parts_title: 'Request these part numbers',
       brand_parts_intro: 'Codes available to request (from quotations, deliveries, or price lists). No prices on this page — click a code to open the pre-filled enquiry form.',
       brand_parts_search: 'Search part number…',
@@ -329,6 +335,9 @@ function buildTranslations(brand) {
       contact_form_title: 'Richiesta online',
       contact_iframe_title: `Modulo richiesta – ricambi ${H}`,
       contact_legal_note: 'Dati legali completi nell\'<a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.',
+      load_form_heading: 'Carica il modulo di richiesta',
+      load_form_description: 'Clicca qui per caricare il modulo di contatto. Il modulo è ospitato su un server esterno e imposta cookie di sessione.',
+      load_form_button: 'Carica modulo',
       brand_parts_title: 'Richiedi questi codici articolo',
       brand_parts_intro: 'Codici disponibili per richiesta (da preventivi, forniture o listini). Nessun prezzo in pagina: clicchi su un codice per aprire il modulo già compilato.',
       brand_parts_search: 'Cerca codice articolo…',
@@ -380,6 +389,9 @@ function buildTranslations(brand) {
       contact_form_title: 'Solicitud en línea',
       contact_iframe_title: `Formulario – recambios ${H}`,
       contact_legal_note: 'Datos legales completos en el <a href="../impressum.html" target="_blank" rel="noopener">Aviso legal</a>.',
+      load_form_heading: 'Cargar formulario de solicitud',
+      load_form_description: 'Haga clic aquí para cargar el formulario de contacto. El formulario está alojado en un servidor externo y establece cookies de sesión.',
+      load_form_button: 'Cargar formulario',
       brand_parts_title: 'Solicitar estas referencias',
       brand_parts_intro: 'Códigos disponibles para solicitud (presupuestos, suministros o listas). Sin precios en la página: haga clic en un código para abrir el formulario precargado.',
       brand_parts_search: 'Buscar referencia…',
@@ -431,6 +443,9 @@ function buildTranslations(brand) {
       contact_form_title: 'Demande en ligne',
       contact_iframe_title: `Formulaire – pièces ${H}`,
       contact_legal_note: 'Informations légales complètes dans les <a href="../impressum.html" target="_blank" rel="noopener">mentions légales</a>.',
+      load_form_heading: 'Charger le formulaire de demande',
+      load_form_description: 'Cliquez ici pour charger le formulaire de contact. Le formulaire est hébergé sur un serveur externe et définit des cookies de session.',
+      load_form_button: 'Charger le formulaire',
       brand_parts_title: 'Demander ces références',
       brand_parts_intro: 'Codes disponibles pour demande (devis, livraisons ou listes). Aucun prix sur la page : cliquez sur un code pour ouvrir le formulaire prérempli.',
       brand_parts_search: 'Rechercher une référence…',
@@ -980,8 +995,21 @@ ${suppliedPartsHtml}
         </aside>
         <div class="contact-form-wrap">
           <h3 data-i18n="contact_form_title">${escapeHtml(d.contact_form_title)}</h3>
-          <div class="contact-iframe-wrap">
-            <iframe id="contactFormIframe" src="https://erp.abcspareparts.eu/lead-request/new" data-i18n-title="contact_iframe_title" title="${escapeAttr(d.contact_iframe_title)}"></iframe>
+          <div class="contact-iframe-wrap" id="iframeContainer">
+            <div id="iframePlaceholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 500px; background: linear-gradient(135deg, #f0f6fb 0%, #e8f2f9 100%); border: 2px solid #dce8f4; border-radius: 10px; text-align: center; padding: 2rem;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" style="margin-bottom: 1rem;">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="9" x2="15" y2="9"></line>
+                <line x1="9" y1="13" x2="15" y2="13"></line>
+                <line x1="9" y1="17" x2="13" y2="17"></line>
+              </svg>
+              <h4 style="color: #1e3a5f; margin-bottom: 0.5rem; font-size: 1.1rem;" data-i18n="load_form_heading">Anfrageformular laden</h4>
+              <p style="color: #555; margin-bottom: 1.5rem; max-width: 500px;" data-i18n="load_form_description">Klicken Sie hier, um das Kontaktformular zu laden. Das Formular ist auf einem externen Server gehostet und setzt Session-Cookies.</p>
+              <button id="loadIframeBtn" style="background: #e67e22; color: #fff; border: none; padding: 0.85rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.3s ease;" data-i18n="load_form_button">
+                Formular laden
+              </button>
+            </div>
+            <iframe id="contactFormIframe" data-src="https://erp.abcspareparts.eu/lead-request/new" data-i18n-title="contact_iframe_title" title="${escapeAttr(d.contact_iframe_title)}" style="display: none; border: none; width: 100%; height: 1000px;"></iframe>
           </div>
         </div>
       </div>
@@ -1069,7 +1097,33 @@ ${buildFooterHtml('../')}
     function updateFormIframeLang(langCode, partNumber) {
       var iframe = document.getElementById('contactFormIframe');
       if (!iframe) return;
-      iframe.src = buildIframeSrc(langCode, partNumber);
+      if (iframe.src) {
+        iframe.src = buildIframeSrc(langCode, partNumber);
+      }
+    }
+    
+    function loadContactIframe(partNumber) {
+      var placeholder = document.getElementById('iframePlaceholder');
+      var iframe = document.getElementById('contactFormIframe');
+      if (iframe && placeholder) {
+        var lang = getCurrentLang();
+        iframe.src = buildIframeSrc(lang, partNumber);
+        iframe.style.display = 'block';
+        placeholder.style.display = 'none';
+      }
+    }
+    
+    var loadBtn = document.getElementById('loadIframeBtn');
+    if (loadBtn) {
+      loadBtn.addEventListener('click', function() {
+        loadContactIframe(SELECTED_PART || getUrlPart());
+      });
+      loadBtn.addEventListener('mouseover', function() {
+        this.style.background = '#d35400';
+      });
+      loadBtn.addEventListener('mouseout', function() {
+        this.style.background = '#e67e22';
+      });
     }
 ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal');
     var quoteIframe = document.getElementById('quoteFormIframe');
