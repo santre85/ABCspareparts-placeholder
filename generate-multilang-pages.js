@@ -50,11 +50,11 @@ function generateLegalPage(pageName, lang, outputPath) {
   // Build canonical URL
   const canonicalUrl = lang === 'de' ? `${BASE_URL}${dePath}` : `${BASE_URL}/${lang}${dePath}`;
   
-  // Build language selector dropdown
+  // Build language selector dropdown (root-absolute paths)
   const langSelectorOptions = [
-    `<option value="../${pageName}.html" ${lang === 'de' ? 'selected' : ''}>Deutsch</option>`,
+    `<option value="/${pageName}.html" ${lang === 'de' ? 'selected' : ''}>Deutsch</option>`,
     `<option value="/en/${pageName}.html" ${lang === 'en' ? 'selected' : ''}>English</option>`,
-    `<option value="/it/${pageName}.html" ${lang === 'en' ? 'selected' : ''}>Italiano</option>`,
+    `<option value="/it/${pageName}.html" ${lang === 'it' ? 'selected' : ''}>Italiano</option>`,
     `<option value="/es/${pageName}.html" ${lang === 'es' ? 'selected' : ''}>Español</option>`,
     `<option value="/fr/${pageName}.html" ${lang === 'fr' ? 'selected' : ''}>Français</option>`
   ].join('\n        ');
@@ -217,7 +217,7 @@ function generateLegalPage(pageName, lang, outputPath) {
     </section>`;
   }
   
-  const navPrefix = lang === 'de' ? '' : '../';
+  const navPrefix = '/';
   const homeLink = lang === 'de' ? '/' : `/${lang}/`;
   
   const html = `<!DOCTYPE html>

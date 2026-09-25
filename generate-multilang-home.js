@@ -104,19 +104,41 @@ function generateHomePageForLang(lang) {
     }
   );
   
-  // Update language selector to point to correct paths
+  // Fix ALL relative paths to root-absolute for language subdirectories
   if (lang !== 'de') {
-    // Update links to go up one directory
-    html = html.replace(/href="marche\.html"/g, 'href="../marche.html"');
-    html = html.replace(/href="casi\.html"/g, 'href="../casi.html"');
-    html = html.replace(/href="impressum\.html"/g, 'href="../impressum.html"');
-    html = html.replace(/href="datenschutz\.html"/g, 'href="../datenschutz.html"');
-    html = html.replace(/href="agb\.html"/g, 'href="../agb.html"');
-    html = html.replace(/href="versand\.html"/g, 'href="../versand.html"');
-    html = html.replace(/href="cookies\.html"/g, 'href="../cookies.html"');
+    // Fix logo image path and alt text
+    const logoAltTexts = {
+      en: 'ABCspareparts – Industrial spare parts and MRO',
+      it: 'ABCspareparts – Ricambi industriali e MRO',
+      es: 'ABCspareparts – Repuestos industriales y MRO',
+      fr: 'ABCspareparts – Pièces détachées industrielles et MRO'
+    };
+    html = html.replace(
+      /<img src="ABC_logo4\.svg" alt="[^"]*">/g,
+      `<img src="/ABC_logo4.svg" alt="${logoAltTexts[lang]}">`
+    );
     
-    // But keep anchor links to home page working
-    html = html.replace(/href="\/#contact"/g, 'href="../#contact"');
+    // Fix all relative hrefs to root-absolute
+    html = html.replace(/href="marche\.html"/g, 'href="/marche.html"');
+    html = html.replace(/href="casi\.html"/g, 'href="/casi.html"');
+    html = html.replace(/href="impressum\.html"/g, 'href="/impressum.html"');
+    html = html.replace(/href="datenschutz\.html"/g, 'href="/datenschutz.html"');
+    html = html.replace(/href="agb\.html"/g, 'href="/agb.html"');
+    html = html.replace(/href="versand\.html"/g, 'href="/versand.html"');
+    html = html.replace(/href="cookies\.html"/g, 'href="/cookies.html"');
+    html = html.replace(/href="llms\.txt"/g, 'href="/llms.txt"');
+    
+    // Fix brand links in navigation and JS - make them root-absolute
+    html = html.replace(/href="marche\//g, 'href="/marche/');
+    
+    // Fix JS that builds brand URLs relatively
+    html = html.replace(
+      /'marche\/' \+ r\.slug \+ '\.html'/g,
+      "'/marche/' + r.slug + '.html'"
+    );
+    
+    // Keep anchor links working - these stay relative
+    // (already correct: href="/#contact" -> href="/#contact")
   }
   
   // Update the language selector script to use static URLs instead of localStorage
