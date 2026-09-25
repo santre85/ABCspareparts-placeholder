@@ -109,6 +109,10 @@
 
     /* Language Selector */
     .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
+    .language-selector select {
+      padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd;
+      border-radius: 6px; background: #fff; cursor: pointer;
+    }
     @media (max-width: 768px) {
       .language-selector { 
         top: 0.5rem; right: 0.5rem; 
@@ -117,10 +121,6 @@
         border-radius: 8px;
       }
       .language-selector select { font-size: 0.85rem; padding: 0.4rem 1.5rem 0.4rem 0.6rem; }
-    }
-    .language-selector select {
-      padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd;
-      border-radius: 6px; background: #fff; cursor: pointer;
     }
 
     /* Hero Section */
@@ -265,7 +265,7 @@
 <section class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <h1><img src="../ABC_logo4.svg" alt="ABCspareparts – Industrial spare parts & MRO"></h1>
+      <h1><img src="ABC_logo4.svg" alt="ABCspareparts – Industrieersatzteile und MRO"></h1>
       <p class="description" data-i18n="description">With years of industry experience, we specialize in the distribution of components for industrial automation, sensors, actuators and control devices from leading manufacturers.</p>
       <a href="#contact" class="cta-button" data-i18n="cta_button">Request quote</a>
     </div>
@@ -712,14 +712,14 @@
       <aside class="contact-info-card" aria-labelledby="contact-info-heading">
         <h3 id="contact-info-heading" data-i18n="contact_info_title">Contact</h3>
         <address class="contact-address" data-i18n="contact_address">ABCspareparts<br>Serena Sarlo<br>Äussere Uferstrasse 16<br>86154 Augsburg<br>Deutschland</address>
-        <ul class="contact-channels" data-i18n="contact_channels"><li><strong>Phone:</strong> <a href="tel:+4915222466077">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href="https://wa.me/4915222466077" target="_blank" rel="noopener">+49 152 22466077</a></li><li><strong>Email:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></li></ul>
+        <ul class="contact-channels" data-i18n="contact_channels"><li><strong>Telefon:</strong> <a href="tel:+4915222466077">+49 152 22466077</a></li><li><strong>WhatsApp:</strong> <a href="https://wa.me/4915222466077" target="_blank" rel="noopener">+49 152 22466077</a></li><li><strong>E-Mail:</strong> <a href="mailto:info@abcspareparts.eu">info@abcspareparts.eu</a></li></ul>
         <h4 data-i18n="contact_hours_title">Availability</h4>
-        <ul class="contact-hours" data-i18n="contact_hours"><li>Monday - Friday: 09:00 - 18:00</li><li>Saturday: 10:00 - 14:00</li><li>Sunday: Closed</li></ul>
-        <p class="contact-legal-note" data-i18n="contact_legal_note">Full legal details in our <a href="../impressum.html" target="_blank" rel="noopener">Imprint</a>.</p>
+        <ul class="contact-hours" data-i18n="contact_hours"><li>Montag - Freitag: 09:00 - 18:00</li><li>Samstag: 10:00 - 14:00</li><li>Sonntag: Geschlossen</li></ul>
+        <p class="contact-legal-note" data-i18n="contact_legal_note">Vollständige rechtliche Angaben im <a href="../impressum.html" target="_blank" rel="noopener">Impressum</a>.</p>
       </aside>
       <div class="contact-form-wrap">
         <h3 data-i18n="contact_form_title">Online request</h3>
-        <div class="contact-iframe-wrap">
+        <div class="contact-iframe-wrap" id="iframeContainer">
           <div id="iframePlaceholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; background: linear-gradient(135deg, #f0f6fb 0%, #e8f2f9 100%); border: 2px solid #dce8f4; border-radius: 10px; text-align: center; padding: 2rem;">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" style="margin-bottom: 1rem;">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -1348,14 +1348,14 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     var langSelect = document.getElementById('languageSelect');
-    langSelect.value = 'en';
+    langSelect.value = 'de';
     
     // For static language versions, navigate to the correct URL instead of translating
     langSelect.addEventListener('change', function() {
       const langMap = { de: '/', en: '/en/', it: '/it/', es: '/es/', fr: '/fr/' };
       window.location.href = langMap[this.value] || '/';
     });
-    initConsentManager('en');
+    initConsentManager('de');
 
     var homeBrandForm = document.getElementById('homeBrandSearchForm');
     if (homeBrandForm) {
