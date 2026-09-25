@@ -109,6 +109,15 @@
 
     /* Language Selector */
     .language-selector { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
+    @media (max-width: 768px) {
+      .language-selector { 
+        top: 0.5rem; right: 0.5rem; 
+        background: rgba(255,255,255,0.95); 
+        padding: 0.25rem; 
+        border-radius: 8px;
+      }
+      .language-selector select { font-size: 0.85rem; padding: 0.4rem 1.5rem 0.4rem 0.6rem; }
+    }
     .language-selector select {
       padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.9rem; border: 1px solid #ddd;
       border-radius: 6px; background: #fff; cursor: pointer;
@@ -256,7 +265,7 @@
 <section class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <h1><img src="ABC_logo4.svg" alt="ABCspareparts – Industrieersatzteile und MRO"></h1>
+      <h1><img src="../ABC_logo4.svg" alt="ABCspareparts – Ricambi industriali e MRO"></h1>
       <p class="description" data-i18n="description">Con anni di esperienza nel settore, ci specializziamo nella distribuzione di componenti per automazione industriale, sensori, attuatori e dispositivi di controllo dei principali produttori.</p>
       <a href="#contact" class="cta-button" data-i18n="cta_button">Richiedi preventivo</a>
     </div>
