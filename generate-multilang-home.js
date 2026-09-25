@@ -32,6 +32,20 @@ function generateHomePageForLang(lang) {
   // Start with the German HTML
   let html = deHtml;
   
+  // CRITICAL: Fix language selector and cookie manager to use page language
+  // Replace hardcoded 'de' with actual page language
+  html = html.replace(/langSelect\.value = 'de';/g, `langSelect.value = '${lang}';`);
+  html = html.replace(/initConsentManager\('de'\);/g, `initConsentManager('${lang}');`);
+  
+  // Override getCurrentLang() to return page language
+  const langOverrideScript = `
+<script>
+  // Force page language, ignore localStorage/browser preference
+  window.getCurrentLang = function() { return '${lang}'; };
+  window.pageLanguage = '${lang}';
+</script>`;
+  html = html.replace(/(<script[^>]*>)/, `${langOverrideScript}\n$1`);
+  
   // Update lang attribute
   html = html.replace(/<html lang="de">/, `<html lang="${lang}">`);
   
@@ -141,36 +155,35 @@ function generateHomePageForLang(lang) {
     // (already correct: href="/#contact" -> href="/#contact")
   }
   
-  // Update the language selector script to use static URLs instead of localStorage
-  // Find the language selector related JavaScript and update it
-  const langSelectorScript = `
-  // Language selector (static URLs)
-  document.addEventListener('DOMContentLoaded', function() {
-    const langLinks = {
-      de: '/',
-      en: '/en/',
-      it: '/it/',
-      es: '/es/',
-      fr: '/fr/'
-    };
-    
-    // Disable the client-side translation
-    window.disableI18n = true;
-    
-    // Set language links for language selector
-    const langBtns = document.querySelectorAll('[data-lang]');
-    langBtns.forEach(btn => {
-      const targetLang = btn.getAttribute('data-lang');
-      if (langLinks[targetLang]) {
-        btn.href = langLinks[targetLang];
-      }
-    });
-  });`;
+  // Fix the language selector and cookie manager to use the page's language
+  // The German index.html has hardcoded lang='de' and initConsentManager('de')
+  // We need to update these to the correct language for each page
   
-  // Insert the language selector script before the closing body tag
+  // 1. Fix langSelect.value = 'de'; to correct language
   html = html.replace(
-    /<\/body>/,
-    `<script>${langSelectorScript}</script>\n</body>`
+    /langSelect\.value = 'de';/g,
+    `langSelect.value = '${lang}';`
+  );
+  
+  // 2. Fix initConsentManager('de'); to correct language
+  html = html.replace(
+    /initConsentManager\('de'\);/g,
+    `initConsentManager('${lang}');`
+  );
+  
+  // 3. Fix getCurrentLang() calls to return the page language, not from localStorage
+  // Add a script that overrides getCurrentLang before other scripts run
+  const langOverrideScript = `
+<script>
+  // Override getCurrentLang to always return page language, ignoring localStorage
+  window.getCurrentLang = function() { return '${lang}'; };
+  window.pageLanguage = '${lang}';
+</script>`;
+  
+  // Insert before first script tag in head
+  html = html.replace(
+    /(<script)/,
+    `${langOverrideScript}\n$1`
   );
   
   // Write the file

@@ -6,7 +6,13 @@
     <title id="pageTitle">ABCspareparts – Ricambi industriali e MRO | Oltre 11959 marche, preventivo in 24h</title>
     <meta id="pageDescription" name="description" content="Ricambi originali e alternative verificate per automazione e MRO. Siemens, Festo, ABB, Schneider e altre. Richiedi ora un preventivo – risposta di solito entro 24 ore, consegna in Europa.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-      <script>
+      
+<script>
+  // Override getCurrentLang to always return page language, ignoring localStorage
+  window.getCurrentLang = function() { return 'it'; };
+  window.pageLanguage = 'it';
+</script>
+<script>
   /* Soft redirect /index.html → / (true 301: Cloudflare/nginx — see nginx-seo-redirects.example.conf / _redirects) */
   (function () {
     try {
@@ -1348,14 +1354,14 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     var langSelect = document.getElementById('languageSelect');
-    langSelect.value = 'de';
+    langSelect.value = 'it';
     
     // For static language versions, navigate to the correct URL instead of translating
     langSelect.addEventListener('change', function() {
       const langMap = { de: '/', en: '/en/', it: '/it/', es: '/es/', fr: '/fr/' };
       window.location.href = langMap[this.value] || '/';
     });
-    initConsentManager('de');
+    initConsentManager('it');
 
     var homeBrandForm = document.getElementById('homeBrandSearchForm');
     if (homeBrandForm) {
@@ -1386,28 +1392,5 @@
   }
 </style>
 
-<script>
-  // Language selector (static URLs)
-  document.addEventListener('DOMContentLoaded', function() {
-    const langLinks = {
-      de: '/',
-      en: '/en/',
-      it: '/it/',
-      es: '/es/',
-      fr: '/fr/'
-    };
-    
-    // Disable the client-side translation
-    window.disableI18n = true;
-    
-    // Set language links for language selector
-    const langBtns = document.querySelectorAll('[data-lang]');
-    langBtns.forEach(btn => {
-      const targetLang = btn.getAttribute('data-lang');
-      if (langLinks[targetLang]) {
-        btn.href = langLinks[targetLang];
-      }
-    });
-  });</script>
 </body>
 </html>
