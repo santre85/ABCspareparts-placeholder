@@ -48,7 +48,9 @@ function generateMarcheForLang(lang) {
   console.log(`✓ Generated ${outputPath}`);
 }
 
-// Generate for EN and IT (main languages)
+// Generate for all languages
 generateMarcheForLang('en');
 generateMarcheForLang('it');
+generateMarcheForLang('es');
+generateMarcheForLang('fr');
 console.log('\n✅ Marche pages generated!');
