@@ -422,6 +422,7 @@ const LEGAL_PAGES = {
 };
 
 function getLegalPageName() {
+  if (typeof window === 'undefined') return null;
   const path = window.location.pathname || window.location.href;
   if (path.includes('impressum')) return 'impressum';
   if (path.includes('datenschutz')) return 'datenschutz';
@@ -432,6 +433,7 @@ function getLegalPageName() {
 }
 
 function getLangFromUrl() {
+  if (typeof window === 'undefined') return null;
   try {
     const p = new URLSearchParams(window.location.search);
     const l = p.get('lang');
@@ -439,9 +441,11 @@ function getLangFromUrl() {
   } catch (e) { return null; }
 }
 function getCurrentLang() {
+  if (typeof window === 'undefined') return 'de';
   return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || navigator.language.split('-')[0];
 }
 function updateLegalLinksWithLang(lang) {
+  if (typeof document === 'undefined') return;
   try { localStorage.setItem('lang', lang); } catch (e) {}
   const pages = ['index.html', '', '/', 'marche.html', 'casi.html', 'impressum.html', 'datenschutz.html', 'agb.html', 'versand.html', 'cookies.html'];
   function internalLegalLink(base) {
@@ -463,6 +467,7 @@ function updateLegalLinksWithLang(lang) {
 }
 
 function changeLegalLanguage(lang) {
+  if (typeof document === 'undefined') return;
   const page = getLegalPageName();
   const common = LEGAL_COMMON[lang] || LEGAL_COMMON.de;
   const pageT = page && LEGAL_PAGES[page] ? (LEGAL_PAGES[page][lang] || LEGAL_PAGES[page].de) : {};
@@ -480,12 +485,23 @@ function changeLegalLanguage(lang) {
   updateLegalLinksWithLang(lang);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const sel = document.getElementById('legalLangSelect');
-  if (!sel) return;
-  const raw = getCurrentLang();
-  const lang = ['de','en','it','es','fr'].includes(raw) ? raw : 'de';
-  sel.value = lang;
-  changeLegalLanguage(lang);
-  sel.addEventListener('change', function() { changeLegalLanguage(this.value); });
-});
+// Only run browser code if in browser environment
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', function() {
+    const sel = document.getElementById('legalLangSelect');
+    if (!sel) return;
+    const raw = getCurrentLang();
+    const lang = ['de','en','it','es','fr'].includes(raw) ? raw : 'de';
+    sel.value = lang;
+    changeLegalLanguage(lang);
+    sel.addEventListener('change', function() { changeLegalLanguage(this.value); });
+  });
+}
+
+// Node.js exports (for static page generation)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    LEGAL_COMMON,
+    LEGAL_PAGES
+  };
+}

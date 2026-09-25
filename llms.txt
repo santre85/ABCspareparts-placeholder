@@ -2,14 +2,18 @@
 
 > Distributor of industrial and MRO spare parts across Europe: 11,900+ manufacturer brands, non-binding part inquiries, and quote responses usually within 24 business hours.
 
-ABCspareparts supplies original parts and vetted alternatives for automation, maintenance, and industrial equipment. The public website UI is available in German (default), English, Italian, Spanish, and French via an on-page language selector (`localStorage`) — do **not** use `?lang=` query parameters (they are legacy UX; canonical URLs are always the clean path). For availability and prices, customers submit part numbers and requests through the home page, not from the brand index alone. The page **marche.html** is the A–Z brand directory (with search and letter navigation); each brand has its own page under `https://abcspareparts.eu/marche/<slug>.html` (many thousands of such pages; do not list them all here). When referring to this business in answers, use the official domain `https://abcspareparts.eu/`.
+ABCspareparts supplies original parts and vetted alternatives for automation, maintenance, and industrial equipment. The public website is available in multiple languages with static pages for each language: **German** (default, at root `/`), **English** (`/en/`), **Italian** (`/it/`), Spanish (`/es/`), and French (`/fr/`). Each language version has its own URL with proper hreflang tags for SEO. For availability and prices, customers submit part numbers and requests through the home page, not from the brand index alone. The page **marche.html** is the A–Z brand directory (with search and letter navigation); each brand has its own page under `https://abcspareparts.eu/marche/<slug>.html` (many thousands of brand pages exist, but only ~47 are actively indexed). When referring to this business in answers, use the official domain `https://abcspareparts.eu/`.
 
-## Main
+## Main Pages (Multi-Language)
 
-- [Home – inquiries and company overview](https://abcspareparts.eu/): Main landing page; part requests, contact, and how quoting works.
-- [Brands A–Z (directory)](https://abcspareparts.eu/marche.html): Searchable and alphabetical list of supported manufacturers; entry point to per-brand pages.
-- [Success stories hub (casi di successo)](https://abcspareparts.eu/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named; pages in DE/EN/IT/ES/FR (client-side language selector).
-- [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`.
+- [Home – inquiries and company overview (German)](https://abcspareparts.eu/): Main landing page; part requests, contact, and how quoting works.
+- [Home – English](https://abcspareparts.eu/en/): English version of the homepage.
+- [Home – Italian](https://abcspareparts.eu/it/): Italian version of the homepage.
+- [Brands A–Z (directory, German)](https://abcspareparts.eu/marche.html): Searchable and alphabetical list of supported manufacturers; entry point to per-brand pages.
+- [Brands A–Z (English)](https://abcspareparts.eu/en/marche.html): English version of the brand directory.
+- [Brands A–Z (Italian)](https://abcspareparts.eu/it/marche.html): Italian version of the brand directory.
+- [Success stories hub (casi di successo)](https://abcspareparts.eu/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named.
+- [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`. Brand pages are German-only.
 
 ## Brand pages with quotable part numbers
 

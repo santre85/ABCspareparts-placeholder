@@ -1,0 +1,165 @@
+name: IndexNow URL Submission
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+      - '**/*.html'
+
+jobs:
+  submit-to-indexnow:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout current commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Find changed HTML files and submit to IndexNow
+        run: |
+          set -e
+          
+          # IndexNow configuration
+          INDEXNOW_KEY="358d84ea693dd2169d3c624dfbbc2b17bc1d8d39d3ae3dcb40b7774fd7650a8c"
+          SITE_BASE="https://abcspareparts.eu"
+          INDEXNOW_ENDPOINT="https://api.indexnow.org/indexnow"
+          MAX_BATCH_SIZE=200
+          
+          echo "🔍 Finding changed HTML files..."
+          
+          # Get list of changed HTML files (added, modified, renamed)
+          # For first push without parent, compare against empty tree
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            CHANGED_FILES=$(git diff --name-only --diff-filter=AMR HEAD^ HEAD | grep '\.html$' || true)
+          else
+            CHANGED_FILES=$(git ls-files '*.html')
+          fi
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "ℹ️  No HTML files changed, skipping IndexNow submission"
+            exit 0
+          fi
+          
+          echo "📄 Changed HTML files:"
+          echo "$CHANGED_FILES"
+          
+          # Convert file paths to canonical URLs
+          URLS=""
+          while IFS= read -r file; do
+            # Skip if empty
+            [ -z "$file" ] && continue
+            
+            # Convert file path to URL
+            # Remove leading ./
+            file="${file#./}"
+            
+            # Handle index.html -> /
+            if [ "$file" = "index.html" ]; then
+              url="${SITE_BASE}/"
+            # Handle language directories (e.g., en/index.html -> /en/)
+            elif [[ "$file" =~ ^(en|it|es|fr)/index\.html$ ]]; then
+              lang="${file%%/*}"
+              url="${SITE_BASE}/${lang}/"
+            # Handle language subdirectories (e.g., en/marche.html -> /en/marche.html)
+            elif [[ "$file" =~ ^(en|it|es|fr)/ ]]; then
+              url="${SITE_BASE}/${file}"
+            # All other HTML files
+            else
+              url="${SITE_BASE}/${file}"
+            fi
+            
+            URLS="${URLS}${url}"$'\n'
+          done <<< "$CHANGED_FILES"
+          
+          # Remove trailing newline and convert to array
+          URLS=$(echo "$URLS" | grep -v '^$' | sort -u)
+          
+          if [ -z "$URLS" ]; then
+            echo "ℹ️  No valid URLs to submit"
+            exit 0
+          fi
+          
+          echo ""
+          echo "🌐 Canonical URLs to submit:"
+          echo "$URLS"
+          
+          # Count URLs
+          URL_COUNT=$(echo "$URLS" | wc -l)
+          echo ""
+          echo "📊 Total URLs: $URL_COUNT"
+          
+          # Submit in batches
+          batch_num=1
+          batch_urls=""
+          batch_count=0
+          
+          while IFS= read -r url; do
+            [ -z "$url" ] && continue
+            
+            batch_urls="${batch_urls}${url}"$'\n'
+            batch_count=$((batch_count + 1))
+            
+            # Submit batch when it reaches MAX_BATCH_SIZE or we're at the end
+            if [ $batch_count -eq $MAX_BATCH_SIZE ] || [ $(echo "$URLS" | grep -n "^${url}$" | cut -d: -f1) -eq $URL_COUNT ]; then
+              echo ""
+              echo "📤 Submitting batch ${batch_num} (${batch_count} URLs)..."
+              
+              # Build JSON payload
+              # Format: {"host": "example.com", "key": "key", "urlList": ["url1", "url2"]}
+              json_urls=$(echo "$batch_urls" | sed 's/^/"/;s/$/",/' | sed '$ s/,$//')
+              
+              json_payload=$(cat <<EOF
+{
+  "host": "abcspareparts.eu",
+  "key": "${INDEXNOW_KEY}",
+  "urlList": [
+    ${json_urls}
+  ]
+}
+EOF
+)
+              
+              # Submit to IndexNow
+              http_code=$(curl -s -o /tmp/indexnow_response.txt -w "%{http_code}" \
+                -X POST \
+                -H "Content-Type: application/json" \
+                -d "$json_payload" \
+                "${INDEXNOW_ENDPOINT}")
+              
+              if [ "$http_code" = "200" ] || [ "$http_code" = "202" ]; then
+                echo "✅ Batch ${batch_num} submitted successfully (HTTP ${http_code})"
+              else
+                echo "⚠️  Batch ${batch_num} submission returned HTTP ${http_code}"
+                echo "Response:"
+                cat /tmp/indexnow_response.txt
+              fi
+              
+              # Reset for next batch
+              batch_num=$((batch_num + 1))
+              batch_urls=""
+              batch_count=0
+              
+              # Rate limiting: wait 1 second between batches
+              if [ $batch_num -gt 1 ]; then
+                sleep 1
+              fi
+            fi
+          done <<< "$URLS"
+          
+          echo ""
+          echo "✨ IndexNow submission complete!"
+          
+      - name: Summary
+        if: always()
+        run: |
+          echo "### IndexNow Submission Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔑 **Key**: \`358d84ea...650a8c\`" >> $GITHUB_STEP_SUMMARY
+          echo "🌐 **Site**: https://abcspareparts.eu" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The IndexNow key file is publicly accessible at:" >> $GITHUB_STEP_SUMMARY
+          echo "https://abcspareparts.eu/358d84ea693dd2169d3c624dfbbc2b17bc1d8d39d3ae3dcb40b7774fd7650a8c.txt" >> $GITHUB_STEP_SUMMARY
