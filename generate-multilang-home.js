@@ -82,6 +82,12 @@ function generateHomePageForLang(lang) {
     `<meta property="og:description" id="ogDescription" content="${t.seo_description}">`
   );
   
+  // Replace the priority brands heading (which doesn't have data-i18n attribute yet)
+  html = html.replace(
+    /<h2 id="priorityBrandsHeading">Ersatzteile nach Hersteller<\/h2>/g,
+    `<h2 id="priorityBrandsHeading" data-i18n="priority_brands_heading">${t.priority_brands_heading}</h2>`
+  );
+  
   // Replace all data-i18n text content
   // This regex finds elements with data-i18n and replaces their content
   html = html.replace(
@@ -90,6 +96,16 @@ function generateHomePageForLang(lang) {
       const newContent = t[key] || oldContent;
       return `<${tag}${attrs}>${newContent}</${tag}>`;
     }
+  );
+  
+  // Special handling for elements with nested HTML (contact_channels and contact_hours)
+  html = html.replace(
+    /<ul class="contact-channels" data-i18n="contact_channels">.*?<\/ul>/gs,
+    `<ul class="contact-channels" data-i18n="contact_channels">${t.contact_channels}</ul>`
+  );
+  html = html.replace(
+    /<ul class="contact-hours" data-i18n="contact_hours">.*?<\/ul>/gs,
+    `<ul class="contact-hours" data-i18n="contact_hours">${t.contact_hours}</ul>`
   );
   
   // Handle data-i18n-placeholder for inputs
