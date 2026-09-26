@@ -3,159 +3,264 @@
 
 const fs = require('fs');
 const path = require('path');
+const http = require('http');
 
-const languages = ['it', 'en', 'es', 'fr'];
-const errors = [];
-const warnings = [];
-const checked = new Set();
+const PORT = 8081;
+const BASE_URL = `http://localhost:${PORT}`;
+const LANGUAGES = ['en', 'it', 'es', 'fr'];
+const PAGES_TO_CHECK = [
+  'index.html',
+  'impressum.html',
+  'datenschutz.html',
+  'agb.html',
+  'versand.html',
+  'cookies.html',
+  'marche.html'
+];
 
-function checkFileExists(filePath, context) {
-  const fullPath = path.join(__dirname, filePath.startsWith('/') ? filePath.slice(1) : filePath);
-  const key = `${fullPath}::${context}`;
+// Extract all src/href/srcset from HTML
+function extractLinks(html, pageUrl) {
+  const links = new Set();
   
-  if (checked.has(key)) return;
-  checked.add(key);
+  // Remove <script> blocks to avoid matching strings in JavaScript code
+  const htmlWithoutScripts = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
   
-  if (!fs.existsSync(fullPath)) {
-    errors.push(`❌ ${context}: File not found: ${filePath} (${fullPath})`);
-  } else {
-    console.log(`✓ ${context}: ${filePath}`);
+  // Match src="..." and href="..."
+  const srcRegex = /(?:src|href|srcset)="([^"]+)"/g;
+  let match;
+  
+  while ((match = srcRegex.exec(htmlWithoutScripts)) !== null) {
+    const url = match[1];
+    
+    // Skip external URLs, mailto, tel, and pure anchors
+    if (url.startsWith('http://') || 
+        url.startsWith('https://') || 
+        url.startsWith('mailto:') ||
+        url.startsWith('tel:') ||
+        url.startsWith('#') ||
+        url.startsWith('data:')) {
+      continue;
+    }
+    
+    // For srcset, split by comma and extract URLs
+    if (match[0].startsWith('srcset=')) {
+      const srcsetUrls = url.split(',').map(s => s.trim().split(' ')[0]);
+      srcsetUrls.forEach(u => links.add(u));
+    } else {
+      links.add(url);
+    }
   }
+  
+  // Also check CSS url() in style tags and attributes (but not in script tags, already removed)
+  const cssUrlRegex = /url\(['"]?([^'"()]+)['"]?\)/g;
+  while ((match = cssUrlRegex.exec(htmlWithoutScripts)) !== null) {
+    const url = match[1];
+    if (!url.startsWith('http://') && 
+        !url.startsWith('https://') && 
+        !url.startsWith('data:')) {
+      links.add(url);
+    }
+  }
+  
+  return Array.from(links);
 }
 
-function extractLinks(html, lang) {
-  const context = `/${lang}/marche.html`;
-  
-  // Extract href attributes from actual HTML tags (not from JS strings)
-  const hrefRegex = /<[^>]+\shref="([^"]+)"/g;
-  let match;
-  while ((match = hrefRegex.exec(html)) !== null) {
-    const href = match[1];
-    
-    // Skip if this looks like it's inside a JS string literal
-    if (href.includes("' + ")) {
-      continue;
-    }
-    
-    // Skip external, anchor-only, protocol-based links
-    if (href.startsWith('http://') || 
-        href.startsWith('https://') || 
-        href.startsWith('#') ||
-        href.startsWith('mailto:') ||
-        href.startsWith('tel:')) {
-      continue;
-    }
-    
-    // Extract the path (remove query and hash)
-    const urlPath = href.split('?')[0].split('#')[0];
-    if (!urlPath) continue;
-    
-    // Check if it's a relative path (should be absolute!)
-    if (!urlPath.startsWith('/')) {
-      errors.push(`❌ ${context}: RELATIVE link found (will break): ${href}`);
-      continue;
-    }
-    
-    // For absolute paths, check if file exists
-    if (urlPath.startsWith('/marche/') || 
-        urlPath === '/marche.html' ||
-        urlPath === '/casi.html' ||
-        urlPath === '/impressum.html' ||
-        urlPath === '/datenschutz.html' ||
-        urlPath === '/agb.html' ||
-        urlPath === '/versand.html' ||
-        urlPath === '/cookies.html') {
-      checkFileExists(urlPath, context);
-    }
+// Check for relative brand links in marche.html language pages (should be absolute)
+function checkMarcheBrandLinks(html, langPath, errors) {
+  // Only check language versions of marche.html
+  if (!langPath.includes('/marche.html') || langPath === '/marche.html') {
+    return;
   }
   
-  // Extract src attributes
-  const srcRegex = /src="([^"]+)"/g;
-  while ((match = srcRegex.exec(html)) !== null) {
-    const src = match[1];
-    
-    // Skip external
-    if (src.startsWith('http://') || src.startsWith('https://')) {
-      continue;
-    }
-    
-    // Check if it's relative (should be absolute!)
-    if (!src.startsWith('/')) {
-      errors.push(`❌ ${context}: RELATIVE src found (will break): ${src}`);
-      continue;
-    }
-    
-    // For local resources
-    if (src.startsWith('/') && !src.startsWith('//')) {
-      checkFileExists(src, context);
-    }
+  console.log(`  🔍 Checking brand links in ${langPath}...`);
+  
+  // Check static HTML: should NOT have href="marche/... (relative)
+  const relativeStaticRegex = /<a[^>]+href="marche\/[^"]+"/g;
+  const relativeStaticMatches = html.match(relativeStaticRegex);
+  
+  if (relativeStaticMatches && relativeStaticMatches.length > 0) {
+    const error = `  ❌ Found ${relativeStaticMatches.length} RELATIVE brand links in static HTML (should be absolute /marche/...)`;
+    console.error(error);
+    console.error(`     Example: ${relativeStaticMatches[0]}`);
+    errors.push(error);
+  } else {
+    console.log(`  ✓ Static brand links are absolute`);
   }
   
-  // Check JS brand URL builder
-  const jsUrlPattern = /<li><a href="([^"]+)' \+ r\.slug \+ '\.html">/;
-  const jsMatch = html.match(jsUrlPattern);
+  // Check JS brand URL builder: should use '/marche/' not 'marche/'
+  const jsBrandUrlPattern = /'<li><a href="([^"]+)' \+ r\.slug \+ '\.html">/;
+  const jsMatch = html.match(jsBrandUrlPattern);
+  
   if (jsMatch) {
     const urlPrefix = jsMatch[1];
     if (urlPrefix === '/marche/') {
-      console.log(`✓ ${context}: JS brand URL builder uses absolute path: "${urlPrefix}" + slug + ".html"`);
+      console.log(`  ✓ JS brand URL builder uses absolute path: "${urlPrefix}" + slug + ".html"`);
     } else {
-      errors.push(`❌ ${context}: JS brand URL builder uses WRONG path: "${urlPrefix}" + slug + ".html" (should be "/marche/")`);
+      const error = `  ❌ JS brand URL builder uses RELATIVE path: "${urlPrefix}" + slug + ".html" (should be "/marche/")`;
+      console.error(error);
+      errors.push(error);
     }
   } else {
-    warnings.push(`⚠️  ${context}: Could not find JS brand URL builder pattern`);
+    console.log(`  ⚠️  Could not find JS brand URL builder pattern (may be OK if page structure changed)`);
   }
 }
 
-console.log('Checking language marche pages for broken links...\n');
-
-// Check each language version
-for (const lang of languages) {
-  const filePath = path.join(__dirname, lang, 'marche.html');
-  if (!fs.existsSync(filePath)) {
-    errors.push(`❌ Language file not found: ${filePath}`);
-    continue;
-  }
-  
-  console.log(`\n--- Checking /${lang}/marche.html ---`);
-  const html = fs.readFileSync(filePath, 'utf8');
-  extractLinks(html, lang);
+// Check if URL returns 200
+function checkUrl(url) {
+  return new Promise((resolve) => {
+    http.get(url, (res) => {
+      resolve({ url, status: res.statusCode, ok: res.statusCode === 200 });
+    }).on('error', (err) => {
+      resolve({ url, status: 'ERROR', ok: false, error: err.message });
+    });
+  });
 }
 
-// Check that root marche.html still works (should have relative links, which is OK at root)
-console.log('\n--- Verifying root /marche.html ---');
-const rootPath = path.join(__dirname, 'marche.html');
-if (fs.existsSync(rootPath)) {
-  console.log('✓ Root /marche.html exists');
-  const rootHtml = fs.readFileSync(rootPath, 'utf8');
+async function checkPage(langPath) {
+  const pageUrl = `${BASE_URL}${langPath}`;
+  console.log(`\n📄 Checking: ${pageUrl}`);
   
-  // Root should still have relative links (they work from root)
-  if (rootHtml.includes('href="marche/')) {
-    console.log('✓ Root /marche.html has relative brand links (correct for root)');
+  try {
+    const response = await fetch(pageUrl);
+    if (!response.ok) {
+      console.error(`  ❌ Page itself returned ${response.status}`);
+      return { page: langPath, errors: [`Page returned ${response.status}`] };
+    }
+    
+    const html = await response.text();
+    const links = extractLinks(html, pageUrl);
+    
+    console.log(`  Found ${links.length} links to check`);
+    
+    const errors = [];
+    
+    // Check for relative brand links in marche pages (NEW CHECK)
+    checkMarcheBrandLinks(html, langPath, errors);
+    
+    const checks = [];
+    
+    for (const link of links) {
+      // Resolve relative URLs
+      let checkUrl;
+      if (link.startsWith('/')) {
+        checkUrl = `${BASE_URL}${link}`;
+      } else {
+        // Relative to page
+        const pagePath = langPath.substring(0, langPath.lastIndexOf('/') + 1);
+        const resolvedPath = path.posix.normalize(pagePath + link);
+        checkUrl = `${BASE_URL}${resolvedPath}`;
+      }
+      
+      checks.push(
+        fetch(checkUrl, { method: 'HEAD' })
+          .then(res => {
+            if (!res.ok) {
+              const error = `  ❌ ${link} → ${res.status}`;
+              console.error(error);
+              errors.push(error);
+            } else {
+              console.log(`  ✓ ${link}`);
+            }
+          })
+          .catch(err => {
+            const error = `  ❌ ${link} → ERROR: ${err.message}`;
+            console.error(error);
+            errors.push(error);
+          })
+      );
+    }
+    
+    await Promise.all(checks);
+    
+    return { page: langPath, errors };
+  } catch (err) {
+    console.error(`  ❌ Failed to fetch page: ${err.message}`);
+    return { page: langPath, errors: [`Failed to fetch: ${err.message}`] };
+  }
+}
+
+async function main() {
+  console.log('🔍 Language Pages Link Checker\n');
+  console.log(`Starting HTTP server on port ${PORT}...`);
+  
+  // Start a simple HTTP server
+  const server = http.createServer((req, res) => {
+    let filePath = path.join(__dirname, req.url);
+    
+    // Default to index.html for directories
+    if (filePath.endsWith('/')) {
+      filePath = path.join(filePath, 'index.html');
+    }
+    
+    // Remove query strings
+    filePath = filePath.split('?')[0];
+    
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        res.writeHead(404);
+        res.end('Not Found');
+        return;
+      }
+      
+      const ext = path.extname(filePath);
+      const contentTypes = {
+        '.html': 'text/html',
+        '.js': 'application/javascript',
+        '.css': 'text/css',
+        '.svg': 'image/svg+xml',
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg',
+        '.txt': 'text/plain'
+      };
+      
+      res.writeHead(200, { 'Content-Type': contentTypes[ext] || 'application/octet-stream' });
+      res.end(data);
+    });
+  });
+  
+  server.listen(PORT);
+  
+  // Wait for server to be ready
+  await new Promise(resolve => setTimeout(resolve, 500));
+  
+  const allResults = [];
+  
+  // Check all language pages
+  for (const lang of LANGUAGES) {
+    for (const page of PAGES_TO_CHECK) {
+      const langPath = `/${lang}/${page}`;
+      const result = await checkPage(langPath);
+      allResults.push(result);
+    }
+  }
+  
+  // Summary
+  console.log('\n' + '='.repeat(60));
+  console.log('📊 SUMMARY');
+  console.log('='.repeat(60));
+  
+  const failedPages = allResults.filter(r => r.errors.length > 0);
+  
+  if (failedPages.length === 0) {
+    console.log('\n✅ All checks passed! No broken links found.\n');
+    server.close();
+    process.exit(0);
   } else {
-    warnings.push('⚠️  Root /marche.html does not have relative brand links (was it accidentally changed?)');
+    console.log(`\n❌ Found issues in ${failedPages.length} page(s):\n`);
+    failedPages.forEach(result => {
+      console.log(`${result.page}:`);
+      result.errors.forEach(err => console.log(`  ${err}`));
+      console.log('');
+    });
+    server.close();
+    process.exit(1);
   }
-} else {
-  errors.push('❌ Root /marche.html not found');
 }
 
-// Summary
-console.log('\n' + '='.repeat(60));
-console.log('VERIFICATION SUMMARY');
-console.log('='.repeat(60));
+// Use native fetch (Node 18+)
+const fetch = globalThis.fetch || require('node-fetch');
 
-if (warnings.length > 0) {
-  console.log('\nWarnings:');
-  warnings.forEach(w => console.log(w));
-}
-
-if (errors.length > 0) {
-  console.log('\nErrors:');
-  errors.forEach(e => console.log(e));
-  console.log(`\n❌ FAILED: ${errors.length} error(s) found`);
+main().catch(err => {
+  console.error('Fatal error:', err);
   process.exit(1);
-} else {
-  console.log('\n✅ SUCCESS: All links are absolute and resolve correctly!');
-  console.log('   Brand links in language versions: /marche/<slug>.html');
-  console.log('   JS brand URL builder: /marche/ + slug + .html');
-  process.exit(0);
-}
+});
