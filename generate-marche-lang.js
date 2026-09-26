@@ -62,6 +62,13 @@ function generateMarcheForLang(lang) {
     `if(sel) sel.value = '${lang}';`
   );
   
+  // Fix brand links to be absolute (not relative) in language versions
+  // Static HTML: href="marche/... → href="/marche/...
+  html = html.replace(/href="marche\//g, 'href="/marche/');
+  
+  // JavaScript URL builder: 'marche/' + slug → '/marche/' + slug
+  html = html.replace(/'<li><a href="marche\/'/g, '\'<li><a href="/marche/\'');
+  
   // Write file
   const outputPath = path.join(__dirname, lang, 'marche.html');
   fs.writeFileSync(outputPath, html, 'utf8');
