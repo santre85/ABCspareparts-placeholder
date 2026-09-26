@@ -7,6 +7,13 @@ on:
     paths:
       - '**.html'
       - '**/*.html'
+  workflow_dispatch:
+    inputs:
+      submit_all:
+        description: 'Submit all URLs from sitemap instead of only changed files'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   submit-to-indexnow:
@@ -27,56 +34,97 @@ jobs:
           INDEXNOW_KEY="358d84ea693dd2169d3c624dfbbc2b17bc1d8d39d3ae3dcb40b7774fd7650a8c"
           SITE_BASE="https://abcspareparts.eu"
           INDEXNOW_ENDPOINT="https://api.indexnow.org/indexnow"
-          MAX_BATCH_SIZE=200
+          KEY_LOCATION="${SITE_BASE}/${INDEXNOW_KEY}.txt"
+          MAX_BATCH_SIZE=10000
           
-          echo "🔍 Finding changed HTML files..."
-          
-          # Get list of changed HTML files (added, modified, renamed)
-          # For first push without parent, compare against empty tree
-          if git rev-parse HEAD^ >/dev/null 2>&1; then
-            CHANGED_FILES=$(git diff --name-only --diff-filter=AMR HEAD^ HEAD | grep '\.html$' || true)
-          else
-            CHANGED_FILES=$(git ls-files '*.html')
-          fi
-          
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "ℹ️  No HTML files changed, skipping IndexNow submission"
-            exit 0
-          fi
-          
-          echo "📄 Changed HTML files:"
-          echo "$CHANGED_FILES"
-          
-          # Convert file paths to canonical URLs
-          URLS=""
-          while IFS= read -r file; do
-            # Skip if empty
-            [ -z "$file" ] && continue
-            
-            # Convert file path to URL
-            # Remove leading ./
+          # Function to convert file path to URL
+          file_to_url() {
+            local file="$1"
             file="${file#./}"
             
-            # Handle index.html -> /
             if [ "$file" = "index.html" ]; then
-              url="${SITE_BASE}/"
-            # Handle language directories (e.g., en/index.html -> /en/)
+              echo "${SITE_BASE}/"
             elif [[ "$file" =~ ^(en|it|es|fr)/index\.html$ ]]; then
-              lang="${file%%/*}"
-              url="${SITE_BASE}/${lang}/"
-            # Handle language subdirectories (e.g., en/marche.html -> /en/marche.html)
-            elif [[ "$file" =~ ^(en|it|es|fr)/ ]]; then
-              url="${SITE_BASE}/${file}"
-            # All other HTML files
+              local lang="${file%%/*}"
+              echo "${SITE_BASE}/${lang}/"
             else
-              url="${SITE_BASE}/${file}"
+              echo "${SITE_BASE}/${file}"
+            fi
+          }
+          
+          # Function to check if file should be excluded
+          should_exclude() {
+            local file="$1"
+            [[ "$file" =~ ^listini-data/ ]] || \
+            [[ "$file" =~ ^node_modules/ ]] || \
+            [[ "$file" =~ /test[^/]*\.html$ ]] || \
+            [[ "$file" =~ ^test[^/]*\.html$ ]] || \
+            [[ "$file" =~ \.txt$ ]] || \
+            [[ "$file" == *"${INDEXNOW_KEY}.txt" ]]
+          }
+          
+          if [ "${{ github.event.inputs.submit_all }}" = "true" ]; then
+            echo "🌐 Fetching all URLs from sitemap..."
+            
+            # Fetch sitemap index
+            SITEMAP_INDEX=$(curl -s "${SITE_BASE}/sitemap-index.xml")
+            
+            # Extract sitemap URLs
+            SITEMAP_URLS=$(echo "$SITEMAP_INDEX" | grep -oP '(?<=<loc>)[^<]+' || true)
+            
+            if [ -z "$SITEMAP_URLS" ]; then
+              echo "⚠️  No sitemaps found in sitemap-index.xml"
+              exit 0
             fi
             
-            URLS="${URLS}${url}"$'\n'
-          done <<< "$CHANGED_FILES"
-          
-          # Remove trailing newline and convert to array
-          URLS=$(echo "$URLS" | grep -v '^$' | sort -u)
+            echo "📑 Found sitemaps:"
+            echo "$SITEMAP_URLS"
+            
+            # Fetch all URLs from each sitemap
+            URLS=""
+            while IFS= read -r sitemap_url; do
+              [ -z "$sitemap_url" ] && continue
+              echo "Fetching: $sitemap_url"
+              SITEMAP_CONTENT=$(curl -s "$sitemap_url")
+              SITEMAP_LOCS=$(echo "$SITEMAP_CONTENT" | grep -oP '(?<=<loc>)[^<]+' || true)
+              URLS="${URLS}${SITEMAP_LOCS}"$'\n'
+            done <<< "$SITEMAP_URLS"
+            
+            URLS=$(echo "$URLS" | grep -v '^$' | sort -u)
+          else
+            echo "🔍 Finding changed HTML files..."
+            
+            # Get list of changed HTML files (added, modified, renamed)
+            if git rev-parse HEAD^ >/dev/null 2>&1; then
+              CHANGED_FILES=$(git diff --name-only --diff-filter=AMR HEAD^ HEAD | grep '\.html$' || true)
+            else
+              CHANGED_FILES=$(git ls-files '*.html')
+            fi
+            
+            if [ -z "$CHANGED_FILES" ]; then
+              echo "ℹ️  No HTML files changed, skipping IndexNow submission"
+              exit 0
+            fi
+            
+            echo "📄 Changed HTML files:"
+            echo "$CHANGED_FILES"
+            
+            # Convert file paths to canonical URLs, excluding certain paths
+            URLS=""
+            while IFS= read -r file; do
+              [ -z "$file" ] && continue
+              
+              if should_exclude "$file"; then
+                echo "⊗ Excluding: $file"
+                continue
+              fi
+              
+              url=$(file_to_url "$file")
+              URLS="${URLS}${url}"$'\n'
+            done <<< "$CHANGED_FILES"
+            
+            URLS=$(echo "$URLS" | grep -v '^$' | sort -u)
+          fi
           
           if [ -z "$URLS" ]; then
             echo "ℹ️  No valid URLs to submit"
@@ -92,63 +140,53 @@ jobs:
           echo ""
           echo "📊 Total URLs: $URL_COUNT"
           
-          # Submit in batches
+          # Split URLs into batches and submit
           batch_num=1
-          batch_urls=""
-          batch_count=0
+          echo "$URLS" | split -l "$MAX_BATCH_SIZE" - /tmp/url_batch_
           
-          while IFS= read -r url; do
-            [ -z "$url" ] && continue
+          for batch_file in /tmp/url_batch_*; do
+            [ ! -f "$batch_file" ] && continue
             
-            batch_urls="${batch_urls}${url}"$'\n'
-            batch_count=$((batch_count + 1))
+            batch_count=$(wc -l < "$batch_file")
+            echo ""
+            echo "📤 Submitting batch ${batch_num} (${batch_count} URLs)..."
             
-            # Submit batch when it reaches MAX_BATCH_SIZE or we're at the end
-            if [ $batch_count -eq $MAX_BATCH_SIZE ] || [ $(echo "$URLS" | grep -n "^${url}$" | cut -d: -f1) -eq $URL_COUNT ]; then
-              echo ""
-              echo "📤 Submitting batch ${batch_num} (${batch_count} URLs)..."
-              
-              # Build JSON payload
-              # Format: {"host": "example.com", "key": "key", "urlList": ["url1", "url2"]}
-              json_urls=$(echo "$batch_urls" | sed 's/^/"/;s/$/",/' | sed '$ s/,$//')
-              
-              json_payload=$(cat <<EOF
-{
-  "host": "abcspareparts.eu",
-  "key": "${INDEXNOW_KEY}",
-  "urlList": [
-    ${json_urls}
-  ]
-}
-EOF
-)
-              
-              # Submit to IndexNow
-              http_code=$(curl -s -o /tmp/indexnow_response.txt -w "%{http_code}" \
-                -X POST \
-                -H "Content-Type: application/json" \
-                -d "$json_payload" \
-                "${INDEXNOW_ENDPOINT}")
-              
-              if [ "$http_code" = "200" ] || [ "$http_code" = "202" ]; then
-                echo "✅ Batch ${batch_num} submitted successfully (HTTP ${http_code})"
-              else
-                echo "⚠️  Batch ${batch_num} submission returned HTTP ${http_code}"
-                echo "Response:"
-                cat /tmp/indexnow_response.txt
-              fi
-              
-              # Reset for next batch
-              batch_num=$((batch_num + 1))
-              batch_urls=""
-              batch_count=0
-              
-              # Rate limiting: wait 1 second between batches
-              if [ $batch_num -gt 1 ]; then
-                sleep 1
+            # Build JSON payload using jq
+            json_payload=$(jq -n \
+              --arg host "abcspareparts.eu" \
+              --arg key "$INDEXNOW_KEY" \
+              --arg loc "$KEY_LOCATION" \
+              --argjson urls "$(cat "$batch_file" | jq -R . | jq -s .)" \
+              '{host:$host,key:$key,keyLocation:$loc,urlList:$urls}')
+            
+            # Submit to IndexNow
+            http_code=$(curl -s -o /tmp/indexnow_response.txt -w "%{http_code}" \
+              -X POST \
+              -H "Content-Type: application/json" \
+              -d "$json_payload" \
+              "${INDEXNOW_ENDPOINT}")
+            
+            if [ "$http_code" = "200" ] || [ "$http_code" = "202" ]; then
+              echo "✅ Batch ${batch_num} submitted successfully (HTTP ${http_code})"
+            else
+              echo "❌ Batch ${batch_num} submission failed (HTTP ${http_code})"
+              echo "Response:"
+              cat /tmp/indexnow_response.txt
+              if [[ "$http_code" =~ ^4 ]]; then
+                exit 1
               fi
             fi
-          done <<< "$URLS"
+            
+            batch_num=$((batch_num + 1))
+            
+            # Rate limiting: wait 1 second between batches
+            if [ -f "/tmp/url_batch_$(printf '%02d' $batch_num)" ]; then
+              sleep 1
+            fi
+          done
+          
+          # Cleanup
+          rm -f /tmp/url_batch_* /tmp/indexnow_response.txt
           
           echo ""
           echo "✨ IndexNow submission complete!"
