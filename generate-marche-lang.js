@@ -25,6 +25,20 @@ function generateMarcheForLang(lang) {
   // Update content
   html = html.replace(/<title>.*?<\/title>/, `<title>${t.page_title}</title>`);
   html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${t.page_description}">`);
+  
+  // Update Open Graph tags
+  html = html.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${t.og_title}">`);
+  html = html.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${t.og_description}">`);
+  
+  // Update Twitter tags
+  html = html.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${t.twitter_title}">`);
+  html = html.replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${t.twitter_description}">`);
+  
+  // Update JSON-LD
+  const jsonldNamePattern = /"name":"[^"]*","description":"[^"]*"/;
+  const jsonldReplacement = `"name":"${t.jsonld_name}","description":"${t.jsonld_description}"`;
+  html = html.replace(jsonldNamePattern, jsonldReplacement);
+  
   html = html.replace(/<h1 data-i18n="marche_h1">.*?<\/h1>/, `<h1 data-i18n="marche_h1">${t.marche_h1}</h1>`);
   html = html.replace(/<p data-i18n="marche_subtitle">.*?<\/p>/, `<p data-i18n="marche_subtitle">${t.marche_subtitle}</p>`);
   html = html.replace(/<h2 data-i18n="marche_list_title">.*?<\/h2>/, `<h2 data-i18n="marche_list_title">${t.marche_list_title}</h2>`);
