@@ -79,6 +79,76 @@ if (Object.keys(TOP_BRAND_BY_SLUG).length) {
   console.log('top-brands-content.json: slugs', Object.keys(TOP_BRAND_BY_SLUG).length);
 }
 
+function loadBrandContentBySlug() {
+  try {
+    const p = path.join(ROOT, 'brand-content.json');
+    if (!fs.existsSync(p)) return {};
+    const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+    if (!data || typeof data !== 'object' || Array.isArray(data)) return {};
+    return data;
+  } catch (e) {
+    console.warn('brand-content.json:', e.message);
+    return {};
+  }
+}
+
+function cleanTextList(value) {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => String(item == null ? '' : item).trim()).filter(Boolean);
+}
+
+/** Filled brand-content.json entry, or null when the slug is missing or every field is empty. */
+function brandContentForSlug(slug) {
+  const row = BRAND_CONTENT_BY_SLUG[slug];
+  if (!row || typeof row !== 'object' || Array.isArray(row)) return null;
+  const intro = String(row.intro == null ? '' : row.intro).trim();
+  const products = cleanTextList(row.products);
+  const applications = cleanTextList(row.applications);
+  const faq = Array.isArray(row.faq)
+    ? row.faq
+        .filter((item) => item && typeof item === 'object')
+        .map((item) => ({
+          q: String(item.q == null ? '' : item.q).trim(),
+          a: String(item.a == null ? '' : item.a).trim()
+        }))
+        .filter((item) => item.q && item.a)
+    : [];
+  const blocks = Array.isArray(row.blocks) ? row.blocks : [];
+  const faqAfter = Array.isArray(row.faq_after)
+    ? row.faq_after
+        .filter((item) => item && item.q && item.a)
+        .map((item) => ({ q: String(item.q), a: String(item.a) }))
+    : [];
+  const faqNoteKey = String(row.faq_note_key || '').trim();
+  const relatedLabels = row.related_labels && typeof row.related_labels === 'object' && !Array.isArray(row.related_labels)
+    ? row.related_labels
+    : null;
+  const schema = row.schema && typeof row.schema === 'object' && !Array.isArray(row.schema) ? row.schema : null;
+  const hasRich = blocks.length || faqAfter.length || faqNoteKey || schema || (relatedLabels && Object.keys(relatedLabels).length);
+  if (!intro && !products.length && !applications.length && !faq.length && !hasRich) return null;
+  return { intro, products, applications, faq, blocks, faqAfter, faqNoteKey, relatedLabels, schema };
+}
+
+function mergeBrandContentI18n(translations, slug) {
+  const i18n = BRAND_CONTENT_BY_SLUG[slug] && BRAND_CONTENT_BY_SLUG[slug].i18n;
+  if (!i18n || typeof i18n !== 'object') return;
+  for (const L of ['de', 'en', 'it', 'es', 'fr']) {
+    const bag = i18n[L];
+    if (!bag || typeof bag !== 'object' || Array.isArray(bag)) continue;
+    for (const [key, value] of Object.entries(bag)) {
+      if (value == null) continue;
+      const text = String(value);
+      if (!text.trim()) continue;
+      translations[L][key] = text;
+    }
+  }
+}
+
+const BRAND_CONTENT_BY_SLUG = loadBrandContentBySlug();
+if (Object.keys(BRAND_CONTENT_BY_SLUG).length) {
+  console.log('brand-content.json: slugs', Object.keys(BRAND_CONTENT_BY_SLUG).length);
+}
+
 function loadPartsBySlug() {
   try {
     const p = path.join(ROOT, 'brand-order-parts.json');
@@ -542,15 +612,20 @@ function relatedRowsFor(slug, rows, index, worthySet) {
   const bySlug = new Map(rows.map((r) => [r.slug, r]));
   const picked = [];
   const seen = new Set([slug]);
-  const override = TOP_BRAND_BY_SLUG[slug] && TOP_BRAND_BY_SLUG[slug].related_slugs;
+  const fromBrand = BRAND_CONTENT_BY_SLUG[slug] && BRAND_CONTENT_BY_SLUG[slug].related_slugs;
+  const fromTop = TOP_BRAND_BY_SLUG[slug] && TOP_BRAND_BY_SLUG[slug].related_slugs;
+  const override = Array.isArray(fromBrand) && fromBrand.length ? fromBrand : fromTop;
+  const cap = Array.isArray(fromBrand) && fromBrand.length ? fromBrand.length : 6;
   if (Array.isArray(override) && override.length) {
     for (const relatedSlug of override) {
       const row = bySlug.get(String(relatedSlug || '').trim());
       if (!row || seen.has(row.slug)) continue;
       seen.add(row.slug);
       picked.push(row);
-      if (picked.length >= 6) return picked;
+      if (picked.length >= cap) break;
     }
+    if (Array.isArray(fromBrand) && fromBrand.length && picked.length) return picked;
+    if (picked.length >= 6) return picked;
   }
   const worthyRows = rows.filter((r) => worthySet && worthySet.has(r.slug) && !seen.has(r.slug));
   if (worthyRows.length) {
@@ -573,22 +648,27 @@ function relatedRowsFor(slug, rows, index, worthySet) {
   return relatedRows;
 }
 
-function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
+function buildLdJson(brand, slug, tDe, suppliedParts, listino, extraFaq, brandContent) {
   const pageUrl = `${BASE}/marche/${slug}.html`;
-  const pageName = String(tDe.brand_h1 || `${brand} – Industrieersatzteile & MRO`).trim();
+  const schema = brandContent && brandContent.schema;
+  const useMetaTitle = schema && schema.name_from === 'meta_title' && tDe.meta_title;
+  const pageName = useMetaTitle
+    ? String(tDe.meta_title).trim()
+    : `${String(tDe.brand_h1 || `${brand} – Industrieersatzteile & MRO`).trim()} | ABCspareparts`;
   const webPage = {
     '@type': 'WebPage',
     '@id': pageUrl + '#webpage',
     url: pageUrl,
-    name: `${pageName} | ABCspareparts`,
+    name: pageName,
     description: tDe.meta_description,
     inLanguage: 'de',
     isPartOf: { '@id': `${BASE}/#website` },
-    about: { '@type': 'Brand', name: brand },
+    about: (schema && schema.about) || { '@type': 'Brand', name: brand },
     publisher: { '@id': `${BASE}/#organization` },
     primaryImageOfPage: { '@type': 'ImageObject', url: `${BASE}/logo.png` }
   };
-  if ((suppliedParts && suppliedParts.length) || listino?.count) {
+  if (schema && schema.mentions) webPage.mentions = schema.mentions;
+  if ((suppliedParts && suppliedParts.length) || listino?.count || (schema && schema.date_modified)) {
     webPage.dateModified = TODAY;
   }
   const graph = {
@@ -613,16 +693,37 @@ function buildLdJson(brand, slug, tDe, suppliedParts, listino) {
       {
         '@type': 'FAQPage',
         mainEntity: [
+          ...(extraFaq || []).map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a }
+          })),
           { '@type': 'Question', name: tDe.brand_faq_q1, acceptedAnswer: { '@type': 'Answer', text: tDe.brand_faq_a1 } },
           { '@type': 'Question', name: tDe.brand_faq_q2, acceptedAnswer: { '@type': 'Answer', text: tDe.brand_faq_a2 } },
-          { '@type': 'Question', name: tDe.brand_faq_q3, acceptedAnswer: { '@type': 'Answer', text: tDe.brand_faq_a3 } }
+          { '@type': 'Question', name: tDe.brand_faq_q3, acceptedAnswer: { '@type': 'Answer', text: tDe.brand_faq_a3 } },
+          ...((brandContent && brandContent.faqAfter) || [])
+            .map((item) => ({
+              '@type': 'Question',
+              name: tDe[item.q],
+              acceptedAnswer: { '@type': 'Answer', text: tDe[item.a] }
+            }))
+            .filter((item) => item.name && item.acceptedAnswer.text)
         ]
       }
     ]
   };
+  if (schema && Array.isArray(schema.extra) && schema.extra.length) {
+    graph['@graph'].push(...schema.extra);
+  }
   // Quote-only: do not emit Product/ItemList JSON-LD for part codes. Merchant rich
   // results require Offer/price we do not publish — omit schema instead of inventing it.
-  return JSON.stringify(graph);
+  let json = JSON.stringify(graph);
+  // Keep `<` out of the script body when brand FAQs are present (JSON text stays equivalent).
+  const hasCustomLd = (extraFaq && extraFaq.length)
+    || (brandContent && brandContent.faqAfter && brandContent.faqAfter.length)
+    || (schema && Array.isArray(schema.extra) && schema.extra.length);
+  if (hasCustomLd) json = json.replace(/</g, '\\u003c');
+  return json;
 }
 
 function buildQuoteModalHtml() {
@@ -752,7 +853,113 @@ function buildSuppliedPartsHtml(brandParts, brandSlug, mvpIndex) {
       </section>`;
 }
 
-function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex) {
+function buildBrandContentListSection(title, items) {
+  const lis = items.map((item) => `          <li>${escapeHtml(item)}</li>`).join('\n');
+  return `      <section class="related-brands" aria-label="${escapeAttr(title)}">
+        <h2>${escapeHtml(title)}</h2>
+        <ul>
+${lis}
+        </ul>
+      </section>`;
+}
+
+function buildBrandContentIntroHtml(content) {
+  if (!content || !content.intro) return '';
+  return `      <p class="lead lead-extra">${escapeHtml(content.intro)}</p>\n`;
+}
+
+function buildBrandContentListsHtml(content) {
+  if (!content) return '';
+  const blocks = [];
+  if (content.products.length) {
+    blocks.push(buildBrandContentListSection('Typische Produkte und Teilenummern', content.products));
+  }
+  if (content.applications.length) {
+    blocks.push(buildBrandContentListSection('Einsatzbereiche', content.applications));
+  }
+  if (!blocks.length) return '';
+  return blocks.join('\n') + '\n';
+}
+
+function buildBrandContentFaqHtml(content) {
+  if (!content || !content.faq.length) return '';
+  return content.faq.map((item) => `        <div class="faq-item">
+          <h3>${escapeHtml(item.q)}</h3>
+          <p>${escapeHtml(item.a)}</p>
+        </div>`).join('\n') + '\n';
+}
+
+const BRAND_RICH_CSS = `
+    .brand-info { margin: 0 0 1.6rem; padding: 1.2rem 1.15rem; border: 1px solid #e3eaf1; border-radius: 10px; background: #fff; }
+    .brand-info h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.7rem; }
+    .brand-info p { margin-bottom: 0.6rem; color: #333; }
+    .brand-list { list-style: none; display: grid; gap: 0.45rem; }
+    .brand-list li { position: relative; padding-left: 1.2rem; }
+    .brand-list li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 0.45rem; height: 0.45rem; border-radius: 2px; background: #e67e22; }
+    .brand-list-compact { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.35rem 1rem; }
+    .brand-list-check li::before { content: "✓"; width: auto; height: auto; background: none; color: #e67e22; font-weight: 700; top: 0; }
+    .brand-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 1.2rem; }
+    .brand-info-accent { background: #fff8f1; border-color: #f5d6b8; }
+    .brand-note { font-size: 0.82rem; color: #667; margin-top: 1rem; }
+    .brand-note a { color: #1e3a5f; }
+`;
+
+function renderBrandBlock(block, d, indent) {
+  if (!block || typeof block !== 'object') return '';
+  const pad = indent || '      ';
+  if (block.type === 'grid') {
+    const inner = (Array.isArray(block.items) ? block.items : [])
+      .map((item) => renderBrandBlock(item, d, pad + '  '))
+      .filter(Boolean)
+      .join('\n');
+    if (!inner) return '';
+    return `${pad}<div class="${escapeAttr(block.className || 'brand-info-grid')}">\n${inner}\n${pad}</div>`;
+  }
+  const titleKey = String(block.titleKey || '');
+  if (!titleKey || !d[titleKey]) return '';
+  const headingId = block.headingId ? escapeAttr(block.headingId) : '';
+  let inner = '';
+  if (block.introKey && d[block.introKey]) {
+    inner += `\n${pad}  <p data-i18n="${escapeAttr(block.introKey)}">${d[block.introKey]}</p>`;
+  }
+  if (block.bodyKey && d[block.bodyKey]) {
+    inner += `\n${pad}  <div data-i18n="${escapeAttr(block.bodyKey)}">${d[block.bodyKey]}</div>`;
+  }
+  if (block.listKey && d[block.listKey]) {
+    inner += `\n${pad}  <ul class="${escapeAttr(block.listClass || 'brand-list')}" data-i18n="${escapeAttr(block.listKey)}">${d[block.listKey]}</ul>`;
+  }
+  return `${pad}<section class="${escapeAttr(block.className || 'brand-info')}"${block.id ? ` id="${escapeAttr(block.id)}"` : ''}${headingId ? ` aria-labelledby="${headingId}"` : ''}>
+${pad}  <h2${headingId ? ` id="${headingId}"` : ''} data-i18n="${escapeAttr(titleKey)}">${escapeHtml(d[titleKey])}</h2>${inner}
+${pad}</section>`;
+}
+
+function buildBrandBlocksHtml(content, d) {
+  if (!content || !content.blocks || !content.blocks.length) return '';
+  const html = content.blocks.map((block) => renderBrandBlock(block, d)).filter(Boolean).join('\n');
+  if (!html) return '';
+  return html + '\n';
+}
+
+function buildBrandContentFaqAfterHtml(content, d) {
+  if (!content) return '';
+  const parts = [];
+  for (const item of content.faqAfter || []) {
+    const q = d[item.q];
+    const a = d[item.a];
+    if (!q || !a) continue;
+    parts.push(`        <div class="faq-item">
+          <h3 data-i18n="${escapeAttr(item.q)}">${escapeHtml(q)}</h3>
+          <p data-i18n="${escapeAttr(item.a)}">${escapeHtml(a)}</p>
+        </div>`);
+  }
+  if (content.faqNoteKey && d[content.faqNoteKey]) {
+    parts.push(`        <p class="brand-note" data-i18n="${escapeAttr(content.faqNoteKey)}">${d[content.faqNoteKey]}</p>`);
+  }
+  if (!parts.length) return '';
+  return parts.join('\n') + '\n';
+}
+
+function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex, brandContent) {
   const pagePath = `marche/${slug}.html`;
   const pageUrl = `${BASE}/${pagePath}`;
   const tEn = translations.en;
@@ -760,7 +967,13 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex)
   const suppliedParts = brandParts?.parts || [];
   const listino = brandParts?.listino || null;
   const hasSuppliedParts = suppliedParts.length > 0 || !!(listino && listino.count);
-  const ld = buildLdJson(brand, slug, d, suppliedParts, listino);
+  const ld = buildLdJson(brand, slug, d, suppliedParts, listino, brandContent && brandContent.faq, brandContent);
+  const brandContentIntroHtml = buildBrandContentIntroHtml(brandContent);
+  const brandContentListsHtml = buildBrandContentListsHtml(brandContent);
+  const brandContentBlocksHtml = buildBrandBlocksHtml(brandContent, d);
+  const brandContentFaqHtml = buildBrandContentFaqHtml(brandContent);
+  const brandContentFaqAfterHtml = buildBrandContentFaqAfterHtml(brandContent, d);
+  const brandRichCss = brandContent && brandContent.blocks && brandContent.blocks.length ? BRAND_RICH_CSS : '';
   const translationsJson = JSON.stringify(translations);
   const brandJson = JSON.stringify(brand);
   const suppliedPartsHtml = buildSuppliedPartsHtml(brandParts, slug, mvpIndex);
@@ -802,10 +1015,12 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex)
     .quote-modal-iframe-wrap iframe { width: 100%; height: min(900px, 70vh); border: none; display: block; }
     body.quote-modal-open { overflow: hidden; }` : '';
   const partsJson = JSON.stringify(suppliedParts.map((p) => p.part_number));
+  const relatedLabels = (brandContent && brandContent.relatedLabels) || {};
   const relatedLinks = (relatedRows || [])
-    .map(({ brand: relatedBrand, slug: relatedSlug }) =>
-      `<li><a href="../marche/${relatedSlug}.html">${escapeHtml(relatedBrand)}</a></li>`
-    )
+    .map(({ brand: relatedBrand, slug: relatedSlug }) => {
+      const label = relatedLabels[relatedSlug] || relatedBrand;
+      return `<li><a href="../marche/${relatedSlug}.html">${escapeHtml(label)}</a></li>`;
+    })
     .join('');
 
   return `<!DOCTYPE html>
@@ -915,7 +1130,7 @@ ${suppliedPartsExtraCss}
     .contact-iframe-wrap { max-width: 700px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; }
     .contact-iframe-wrap iframe { width: 100%; height: 1050px; border: none; display: block; }
 ${FOOTER_CSS}
-  </style>
+${brandRichCss}  </style>
 </head>
 <body>
   <header class="legal-header">
@@ -946,7 +1161,7 @@ ${FOOTER_CSS}
       <p class="lead" data-i18n="brand_intro">${d.brand_intro}</p>
       <p class="lead lead-extra" data-i18n="brand_intro_p2">${d.brand_intro_p2}</p>
 ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top_extra">${escapeHtml(d.brand_top_extra)}</p>
-` : ''}    </div>
+` : ''}${brandContentIntroHtml}    </div>
   </header>
 
   <main id="main-content">
@@ -955,7 +1170,7 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
       <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
       <p class="brand-email-alt" data-i18n="brand_email_alt">${d.brand_email_alt}</p>
 ${suppliedPartsHtml}
-      <section class="related-brands" aria-label="Related brands">
+${brandContentListsHtml}${brandContentBlocksHtml}      <section class="related-brands" aria-label="Related brands">
         <h2 data-i18n="related_title">${escapeHtml(d.related_title)}</h2>
         <p data-i18n="related_intro">${escapeHtml(d.related_intro)}</p>
         <ul>
@@ -964,7 +1179,7 @@ ${suppliedPartsHtml}
       </section>
       <section class="brand-faq" id="marken-faq" aria-labelledby="brand-faq-heading">
         <h2 id="brand-faq-heading" data-i18n="brand_faq_title">${escapeHtml(d.brand_faq_title)}</h2>
-        <div class="faq-item">
+${brandContentFaqHtml}        <div class="faq-item">
           <h3 data-i18n="brand_faq_q1">${d.brand_faq_q1}</h3>
           <p data-i18n="brand_faq_a1">${d.brand_faq_a1}</p>
         </div>
@@ -976,7 +1191,7 @@ ${suppliedPartsHtml}
           <h3 data-i18n="brand_faq_q3">${d.brand_faq_q3}</h3>
           <p data-i18n="brand_faq_a3">${d.brand_faq_a3}</p>
         </div>
-      </section>
+${brandContentFaqAfterHtml}      </section>
     </div>
   </div>
 
@@ -1436,7 +1651,8 @@ function main() {
     for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
       translations[lang].meta_description = clipMeta(translations[lang].meta_description);
     }
-    const html = buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex);
+    mergeBrandContentI18n(translations, slug);
+    const html = buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex, brandContentForSlug(slug));
     fs.writeFileSync(path.join(MARCHE_DIR, slug + '.html'), html, 'utf8');
     n++;
     if (n % 500 === 0) console.log('Written', n, '/', targetRows.length);

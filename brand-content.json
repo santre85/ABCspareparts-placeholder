@@ -1,0 +1,643 @@
+{
+  "a-data": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "transcend",
+      "swissbit",
+      "kingston",
+      "sandisk",
+      "western-digital",
+      "micron",
+      "advantech",
+      "aaeon",
+      "adlink",
+      "kontron"
+    ],
+    "related_labels": {
+      "kingston": "Kingston",
+      "sandisk": "SanDisk",
+      "advantech": "Advantech"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "adata_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-a-data",
+        "headingId": "adata-about-heading",
+        "className": "brand-info",
+        "titleKey": "adata_about_title",
+        "bodyKey": "adata_about_text"
+      },
+      {
+        "type": "info",
+        "id": "a-data-produkte",
+        "headingId": "adata-products-heading",
+        "className": "brand-info",
+        "titleKey": "adata_products_title",
+        "introKey": "adata_products_intro",
+        "listKey": "adata_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "a-data-technik",
+        "headingId": "adata-tech-heading",
+        "className": "brand-info",
+        "titleKey": "adata_tech_title",
+        "listKey": "adata_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "a-data-anwendungen",
+            "headingId": "adata-apps-heading",
+            "className": "brand-info",
+            "titleKey": "adata_apps_title",
+            "listKey": "adata_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "a-data-anfrage",
+            "headingId": "adata-request-heading",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "adata_request_title",
+            "listKey": "adata_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/a-data.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/a-data.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/a-data.html#brand",
+          "name": "A-DATA",
+          "alternateName": [
+            "ADATA",
+            "ADATA Industrial",
+            "ADATA Technology"
+          ],
+          "url": "https://industrial.adata.com/",
+          "sameAs": [
+            "https://www.adata.com/",
+            "https://industrial.adata.com/",
+            "https://en.wikipedia.org/wiki/ADATA"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/a-data.html#manufacturer",
+          "name": "ADATA Technology Co., Ltd.",
+          "foundingDate": "2001-05-04",
+          "founder": {
+            "@type": "Person",
+            "name": "Simon Chen"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New Taipei City",
+            "addressCountry": "TW"
+          },
+          "url": "https://www.adata.com/",
+          "sameAs": [
+            "https://en.wikipedia.org/wiki/ADATA"
+          ],
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/a-data.html#brand"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/a-data.html#service",
+          "name": "Beschaffung von A-DATA Industrial Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/a-data.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "A-DATA Industrial Produktfamilien",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "2,5\" SATA SSD"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "M.2 2280 SSD (SATA/NVMe)"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "M.2 2242 SSD"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "mSATA / Half-Slim SSD"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "CFast / CFexpress"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Industrielle SD / microSD"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "eMMC / BGA SSD"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "DDR4 / DDR5 DRAM-Module (inkl. ECC)"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Industrielle USB-Speicher"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "A-DATA Industrial SSD, DRAM & Speicherkarten als Ersatzteil | ABCspareparts",
+        "meta_description": "A-DATA / ADATA Industrial Ersatzteile: SATA- & NVMe-SSDs, M.2, mSATA, CFast, DDR4/DDR5-Module, Wide-Temp −40…85 °C. Teilenummer senden – Angebot oft in 24 h.",
+        "brand_h1": "A-DATA (ADATA Industrial) – Industrie-SSDs, DRAM-Module & Speicher als Ersatzteil",
+        "brand_intro": "ABCspareparts beschafft A-DATA Industrial Speicherkomponenten – SSDs, DRAM-Module, Speicherkarten und Embedded-Speicher – als Ersatzteil für Industrie-PCs, HMIs, CNC-Steuerungen und Embedded-Systeme in ganz Europa. Senden Sie uns Teilenummer und Menge – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit des Originalteils – auch bei abgekündigten Serien – und, wo technisch sinnvoll, kompatible Alternativen mit gleichem Formfaktor, Interface und Temperaturbereich. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "adata_about_title": "Über A-DATA",
+        "adata_about_text": "<p>ADATA Technology Co., Ltd. wurde im Mai 2001 von Simon Chen gegründet und hat seinen Sitz in New Taipei City, Taiwan. Das Unternehmen ist an der Taipei Exchange notiert (TPEx: 3260) und bezeichnet sich als zweitgrößten DRAM-Modulanbieter der Welt mit über 500 Patenten rund um NAND-Flash.</p><p>Neben der Consumer-Marke ADATA und der Gaming-Marke XPG betreibt das Unternehmen die Sparte <strong>ADATA Industrial</strong>, die robuste Speicherlösungen für Automatisierung, Embedded-Systeme, Transport, Medizintechnik, Netzwerk und Videoüberwachung entwickelt. Für die industrielle Instandhaltung (MRO) ist vor allem diese Industrie-Produktlinie relevant.</p>",
+        "adata_products_title": "A-DATA Industrial Produktfamilien, die wir beschaffen",
+        "adata_products_intro": "Typische Anfragen betreffen folgende Produktgruppen (Beispielserien laut Herstellerkatalog):",
+        "adata_products_list": "<li><strong>2,5\" SATA SSD</strong> – z. B. Serien ISSS316, ISSS332, ISSS333, ISSS31C, ISSS31D</li><li><strong>M.2 2280 SSD (SATA und PCIe NVMe)</strong> – z. B. IM2S3168, IM2S3338, IM2P33F8, IM2P41F3, IM2P41E8</li><li><strong>M.2 2242 SSD</strong> – z. B. IM2S3334, IM2S3134N, IM2S3164</li><li><strong>mSATA- und Half-Slim-SSD</strong> – z. B. IMSS316, IMSS332</li><li><strong>CFast- und CFexpress-Karten</strong> für Steuerungen, Panel-PCs und Kameras</li><li><strong>Industrielle SD- und microSD-Karten</strong></li><li><strong>Embedded-Speicher</strong> – eMMC und BGA-SSD</li><li><strong>DRAM-Module</strong> – DDR4/DDR5 SO-DIMM und U-DIMM, auch als ECC-Variante</li><li><strong>Industrielle USB-Speicher</strong></li>",
+        "adata_tech_title": "Temperaturbereiche und Technik – worauf es beim Ersatz ankommt",
+        "adata_tech_list": "<li><strong>Temperaturklassen:</strong> Standard 0 °C bis 70 °C, erweitert −20 °C bis 75 °C, Industrial Wide-Temp −40 °C bis 85 °C. Ein Ersatzteil sollte mindestens denselben Bereich abdecken.</li><li><strong>A+ SLC-Modus:</strong> höhere Schreibausdauer auf Basis von 3D-TLC-NAND – wichtig bei Dauerschreiblast wie Datenlogging oder Video.</li><li><strong>Power Loss Protection (PLP):</strong> Hardware- und Firmware-Schutz gegen Datenverlust bei Stromausfall.</li><li><strong>Anti-Sulfur-Widerstände und Conformal Coating:</strong> optionaler Schutz gegen schwefelhaltige Gase, Feuchtigkeit, Staub und Ölnebel.</li><li><strong>30 µ vergoldete Kontakte, S.M.A.R.T. und Lifetime Monitoring</strong> für sicheren Steckkontakt und vorausschauende Wartung.</li><li><strong>Fixierte Stückliste (BOM):</strong> Bei validierten Maschinen wird oft dieselbe Komponentenbasis gefordert – geben Sie an, ob ein identisches Teil zwingend ist.</li>",
+        "adata_apps_title": "Typische Einsatzbereiche",
+        "adata_apps_list": "<li>Industrie-PCs und Box-PCs</li><li>HMI und Panel-PCs</li><li>CNC- und Maschinensteuerungen</li><li>Bildverarbeitung und Edge-AI</li><li>Videoüberwachung und NVR</li><li>Bahn, Fahrzeuge und Transport</li><li>Medizintechnik</li><li>Netzwerk- und Telekommunikationstechnik</li>",
+        "adata_request_title": "Diese Angaben beschleunigen Ihr Angebot",
+        "adata_request_list": "<li>Vollständige Teilenummer vom Etikett (ein Foto des Etiketts hilft)</li><li>Formfaktor und Interface, z. B. 2,5\" SATA, M.2 2280 NVMe, mSATA, CFast, SO-DIMM</li><li>Kapazität und Temperaturbereich (Standard oder Wide-Temp)</li><li>Gerät oder Maschine, in der das Teil verbaut ist (Hersteller und Typ)</li><li>Menge und gewünschter Liefertermin</li><li>Nur Originalteil zulässig oder kompatible Alternative möglich</li>",
+        "brand_faq_q4": "Beschafft ABCspareparts auch abgekündigte (EOL) A-DATA SSDs und Module?",
+        "brand_faq_a4": "Ja. Wir suchen europaweit bei Distributoren und Brokern nach Restbeständen. Ist das Original nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Nachfolger oder Alternativen mit gleichem Formfaktor, Interface, Kapazität und Temperaturbereich vor.",
+        "brand_faq_q5": "Was unterscheidet A-DATA Industrial von A-DATA Consumer-Produkten?",
+        "brand_faq_a5": "Laut Hersteller verwenden ADATA Industrial-Produkte industrietaugliche NAND-Flash-Bausteine, Controller und Power-ICs, die für −40 °C bis 85 °C validiert sind, und bieten Funktionen wie Power Loss Protection, Conformal Coating und eine fixierte Stückliste. Für Maschinen und Industrie-PCs empfehlen wir daher die Industrial-Varianten.",
+        "brand_faq_q6": "Kann eine A-DATA SSD durch ein Modell eines anderen Herstellers ersetzt werden?",
+        "brand_faq_a6": "Technisch oft ja, sofern Formfaktor, Interface, Kapazität, Temperaturbereich und – bei Steuerungen – Boot-Image bzw. Freigabe des Maschinenherstellers passen. Wir prüfen die Eckdaten und weisen darauf hin, wenn ein identisches Teil erforderlich ist.",
+        "adata_note": "A-DATA, ADATA und XPG sind Marken der ADATA Technology Co., Ltd. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Technik basieren auf öffentlichen Herstellerinformationen (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Stand: September 2026."
+      },
+      "en": {
+        "meta_title": "A-DATA Industrial SSD, DRAM & Memory Cards – Spare Parts | ABCspareparts",
+        "meta_description": "A-DATA / ADATA Industrial spare parts: SATA & NVMe SSDs, M.2, mSATA, CFast, DDR4/DDR5 modules, wide-temp −40…85 °C. Send the part number – quote often within 24 h.",
+        "brand_h1": "A-DATA (ADATA Industrial) – industrial SSDs, DRAM modules & storage as spare parts",
+        "brand_intro": "ABCspareparts sources A-DATA Industrial storage components – SSDs, DRAM modules, memory cards and embedded storage – as spare parts for industrial PCs, HMIs, CNC controls and embedded systems across Europe. Send us the part number and quantity – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability of the original part – including discontinued series – and, where technically appropriate, compatible alternatives with the same form factor, interface and temperature range. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "adata_about_title": "About A-DATA",
+        "adata_about_text": "<p>ADATA Technology Co., Ltd. was founded in May 2001 by Simon Chen and is headquartered in New Taipei City, Taiwan. The company is listed on the Taipei Exchange (TPEx: 3260) and describes itself as the world's second-largest DRAM module provider, holding more than 500 NAND flash-related patents.</p><p>Alongside the consumer brand ADATA and the gaming brand XPG, the company runs <strong>ADATA Industrial</strong>, which develops rugged storage for automation, embedded systems, transportation, medical, networking and video surveillance. For industrial maintenance (MRO), this industrial product line is the most relevant.</p>",
+        "adata_products_title": "A-DATA Industrial product families we source",
+        "adata_products_intro": "Typical requests cover the following product groups (example series from the manufacturer catalogue):",
+        "adata_products_list": "<li><strong>2.5\" SATA SSD</strong> – e.g. series ISSS316, ISSS332, ISSS333, ISSS31C, ISSS31D</li><li><strong>M.2 2280 SSD (SATA and PCIe NVMe)</strong> – e.g. IM2S3168, IM2S3338, IM2P33F8, IM2P41F3, IM2P41E8</li><li><strong>M.2 2242 SSD</strong> – e.g. IM2S3334, IM2S3134N, IM2S3164</li><li><strong>mSATA and Half-Slim SSD</strong> – e.g. IMSS316, IMSS332</li><li><strong>CFast and CFexpress cards</strong> for controllers, panel PCs and cameras</li><li><strong>Industrial SD and microSD cards</strong></li><li><strong>Embedded storage</strong> – eMMC and BGA SSD</li><li><strong>DRAM modules</strong> – DDR4/DDR5 SO-DIMM and U-DIMM, also in ECC versions</li><li><strong>Industrial USB storage</strong></li>",
+        "adata_tech_title": "Temperature grades and technology – what matters for a replacement",
+        "adata_tech_list": "<li><strong>Temperature grades:</strong> standard 0 °C to 70 °C, extended −20 °C to 75 °C, industrial wide-temp −40 °C to 85 °C. A replacement should cover at least the same range.</li><li><strong>A+ SLC mode:</strong> higher write endurance based on 3D TLC NAND – important for continuous writes such as data logging or video.</li><li><strong>Power Loss Protection (PLP):</strong> hardware and firmware protection against data loss during power failures.</li><li><strong>Anti-sulfur resistors and conformal coating:</strong> optional protection against sulfur gases, moisture, dust and oil mist.</li><li><strong>30 µ gold-plated contacts, S.M.A.R.T. and lifetime monitoring</strong> for reliable contact and predictive maintenance.</li><li><strong>Fixed bill of materials (BOM):</strong> validated machines often require the same component base – tell us whether an identical part is mandatory.</li>",
+        "adata_apps_title": "Typical applications",
+        "adata_apps_list": "<li>Industrial PCs and box PCs</li><li>HMIs and panel PCs</li><li>CNC and machine controls</li><li>Machine vision and edge AI</li><li>Video surveillance and NVR</li><li>Rail, vehicles and transportation</li><li>Medical equipment</li><li>Networking and telecom equipment</li>",
+        "adata_request_title": "This information speeds up your quote",
+        "adata_request_list": "<li>Full part number from the label (a photo of the label helps)</li><li>Form factor and interface, e.g. 2.5\" SATA, M.2 2280 NVMe, mSATA, CFast, SO-DIMM</li><li>Capacity and temperature range (standard or wide-temp)</li><li>Device or machine the part is installed in (manufacturer and model)</li><li>Quantity and required delivery date</li><li>Original part only, or compatible alternative acceptable</li>",
+        "brand_faq_q4": "Does ABCspareparts also source discontinued (EOL) A-DATA SSDs and modules?",
+        "brand_faq_a4": "Yes. We search distributors and brokers across Europe for remaining stock. If the original is no longer available, we propose – after consultation – compatible successors or alternatives with the same form factor, interface, capacity and temperature range.",
+        "brand_faq_q5": "What is the difference between A-DATA Industrial and A-DATA consumer products?",
+        "brand_faq_a5": "According to the manufacturer, ADATA Industrial products use industrial-grade NAND flash, controllers and power ICs validated for −40 °C to 85 °C, and offer features such as power loss protection, conformal coating and a fixed BOM. For machines and industrial PCs we therefore recommend the industrial versions.",
+        "brand_faq_q6": "Can an A-DATA SSD be replaced by another manufacturer's model?",
+        "brand_faq_a6": "Technically often yes, provided form factor, interface, capacity, temperature range and – for controllers – the boot image or machine builder approval match. We check the key data and tell you when an identical part is required.",
+        "adata_note": "A-DATA, ADATA and XPG are trademarks of ADATA Technology Co., Ltd. They are mentioned solely to identify products. Product family and technical information is based on public manufacturer information (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Last updated: September 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi A-DATA Industrial: SSD, DRAM e schede di memoria | ABCspareparts",
+        "meta_description": "Ricambi A-DATA / ADATA Industrial: SSD SATA e NVMe, M.2, mSATA, CFast, moduli DDR4/DDR5, wide-temp −40…85 °C. Invii il codice – preventivo spesso entro 24 h.",
+        "brand_h1": "A-DATA (ADATA Industrial) – SSD industriali, moduli DRAM e memorie come ricambio",
+        "brand_intro": "ABCspareparts fornisce componenti di memoria A-DATA Industrial – SSD, moduli DRAM, schede di memoria e memorie embedded – come ricambio per PC industriali, HMI, controlli CNC e sistemi embedded in tutta Europa. Ci invii codice articolo e quantità – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità del ricambio originale – anche per serie fuori produzione – e, se tecnicamente adatto, alternative compatibili con stesso form factor, interfaccia e range di temperatura. Questa pagina non sostituisce un elenco live: usi la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "adata_about_title": "Chi è A-DATA",
+        "adata_about_text": "<p>ADATA Technology Co., Ltd. è stata fondata nel maggio 2001 da Simon Chen e ha sede a New Taipei City, Taiwan. L'azienda è quotata al Taipei Exchange (TPEx: 3260) e si definisce il secondo fornitore mondiale di moduli DRAM, con oltre 500 brevetti legati alla memoria NAND flash.</p><p>Oltre al marchio consumer ADATA e al marchio gaming XPG, l'azienda gestisce la divisione <strong>ADATA Industrial</strong>, che sviluppa memorie robuste per automazione, sistemi embedded, trasporti, medicale, networking e videosorveglianza. Per la manutenzione industriale (MRO) è soprattutto questa linea a essere rilevante.</p>",
+        "adata_products_title": "Famiglie di prodotti A-DATA Industrial che forniamo",
+        "adata_products_intro": "Le richieste tipiche riguardano i seguenti gruppi di prodotti (serie di esempio dal catalogo del costruttore):",
+        "adata_products_list": "<li><strong>SSD SATA 2,5\"</strong> – es. serie ISSS316, ISSS332, ISSS333, ISSS31C, ISSS31D</li><li><strong>SSD M.2 2280 (SATA e PCIe NVMe)</strong> – es. IM2S3168, IM2S3338, IM2P33F8, IM2P41F3, IM2P41E8</li><li><strong>SSD M.2 2242</strong> – es. IM2S3334, IM2S3134N, IM2S3164</li><li><strong>SSD mSATA e Half-Slim</strong> – es. IMSS316, IMSS332</li><li><strong>Schede CFast e CFexpress</strong> per controllori, panel PC e telecamere</li><li><strong>Schede SD e microSD industriali</strong></li><li><strong>Memorie embedded</strong> – eMMC e SSD BGA</li><li><strong>Moduli DRAM</strong> – DDR4/DDR5 SO-DIMM e U-DIMM, anche in versione ECC</li><li><strong>Memorie USB industriali</strong></li>",
+        "adata_tech_title": "Range di temperatura e tecnologia – cosa conta nella sostituzione",
+        "adata_tech_list": "<li><strong>Classi di temperatura:</strong> standard da 0 °C a 70 °C, estesa da −20 °C a 75 °C, industrial wide-temp da −40 °C a 85 °C. Il ricambio deve coprire almeno lo stesso range.</li><li><strong>Modalità A+ SLC:</strong> maggiore resistenza in scrittura su base NAND 3D TLC – importante con scritture continue come data logging o video.</li><li><strong>Power Loss Protection (PLP):</strong> protezione hardware e firmware contro la perdita di dati in caso di blackout.</li><li><strong>Resistenze anti-zolfo e conformal coating:</strong> protezione opzionale contro gas solforosi, umidità, polvere e nebbia d'olio.</li><li><strong>Contatti dorati 30 µ, S.M.A.R.T. e lifetime monitoring</strong> per un contatto affidabile e manutenzione predittiva.</li><li><strong>Distinta base (BOM) fissa:</strong> le macchine validate richiedono spesso gli stessi componenti – indichi se è obbligatorio un ricambio identico.</li>",
+        "adata_apps_title": "Applicazioni tipiche",
+        "adata_apps_list": "<li>PC industriali e box PC</li><li>HMI e panel PC</li><li>Controlli CNC e di macchina</li><li>Visione artificiale ed edge AI</li><li>Videosorveglianza e NVR</li><li>Ferrovia, veicoli e trasporti</li><li>Dispositivi medicali</li><li>Networking e telecomunicazioni</li>",
+        "adata_request_title": "Questi dati accelerano il preventivo",
+        "adata_request_list": "<li>Codice articolo completo dall'etichetta (una foto dell'etichetta aiuta)</li><li>Form factor e interfaccia, es. SATA 2,5\", M.2 2280 NVMe, mSATA, CFast, SO-DIMM</li><li>Capacità e range di temperatura (standard o wide-temp)</li><li>Apparecchio o macchina in cui è montato il componente (costruttore e modello)</li><li>Quantità e data di consegna desiderata</li><li>Solo originale oppure alternativa compatibile ammessa</li>",
+        "brand_faq_q4": "ABCspareparts fornisce anche SSD e moduli A-DATA fuori produzione (EOL)?",
+        "brand_faq_a4": "Sì. Cerchiamo giacenze residue presso distributori e broker in tutta Europa. Se l'originale non è più disponibile, proponiamo – previo accordo – successori o alternative compatibili con stesso form factor, interfaccia, capacità e range di temperatura.",
+        "brand_faq_q5": "Che differenza c'è tra A-DATA Industrial e i prodotti A-DATA consumer?",
+        "brand_faq_a5": "Secondo il costruttore, i prodotti ADATA Industrial utilizzano NAND flash, controller e power IC di grado industriale validati da −40 °C a 85 °C e offrono funzioni come power loss protection, conformal coating e distinta base fissa. Per macchine e PC industriali consigliamo quindi le versioni Industrial.",
+        "brand_faq_q6": "Un SSD A-DATA può essere sostituito con un modello di un altro costruttore?",
+        "brand_faq_a6": "Tecnicamente spesso sì, purché coincidano form factor, interfaccia, capacità, range di temperatura e – per i controllori – immagine di boot o approvazione del costruttore della macchina. Verifichiamo i dati chiave e segnaliamo quando serve un ricambio identico.",
+        "adata_note": "A-DATA, ADATA e XPG sono marchi di ADATA Technology Co., Ltd. e sono citati solo per identificare i prodotti. Le informazioni su famiglie di prodotti e tecnologia si basano su dati pubblici del costruttore (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Aggiornato: settembre 2026."
+      },
+      "es": {
+        "meta_title": "Repuestos A-DATA Industrial: SSD, DRAM y tarjetas de memoria | ABCspareparts",
+        "meta_description": "Repuestos A-DATA / ADATA Industrial: SSD SATA y NVMe, M.2, mSATA, CFast, módulos DDR4/DDR5, wide-temp −40…85 °C. Envíe la referencia – oferta a menudo en 24 h.",
+        "brand_h1": "A-DATA (ADATA Industrial) – SSD industriales, módulos DRAM y memorias como repuesto",
+        "brand_intro": "ABCspareparts suministra componentes de memoria A-DATA Industrial – SSD, módulos DRAM, tarjetas de memoria y memoria embebida – como repuesto para PC industriales, HMI, controles CNC y sistemas embebidos en toda Europa. Envíenos la referencia y la cantidad – normalmente respondemos en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad de la pieza original – también en series descatalogadas – y, cuando es técnicamente adecuado, alternativas compatibles con el mismo formato, interfaz y rango de temperatura. Esta página no es un listado de stock en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "adata_about_title": "Sobre A-DATA",
+        "adata_about_text": "<p>ADATA Technology Co., Ltd. fue fundada en mayo de 2001 por Simon Chen y tiene su sede en New Taipei City, Taiwán. La empresa cotiza en la Taipei Exchange (TPEx: 3260) y se presenta como el segundo proveedor mundial de módulos DRAM, con más de 500 patentes relacionadas con la memoria NAND flash.</p><p>Además de la marca de consumo ADATA y la marca gaming XPG, la empresa gestiona <strong>ADATA Industrial</strong>, que desarrolla almacenamiento robusto para automatización, sistemas embebidos, transporte, sector médico, redes y videovigilancia. Para el mantenimiento industrial (MRO), esta línea industrial es la más relevante.</p>",
+        "adata_products_title": "Familias de productos A-DATA Industrial que suministramos",
+        "adata_products_intro": "Las solicitudes habituales abarcan los siguientes grupos de productos (series de ejemplo del catálogo del fabricante):",
+        "adata_products_list": "<li><strong>SSD SATA 2,5\"</strong> – p. ej. series ISSS316, ISSS332, ISSS333, ISSS31C, ISSS31D</li><li><strong>SSD M.2 2280 (SATA y PCIe NVMe)</strong> – p. ej. IM2S3168, IM2S3338, IM2P33F8, IM2P41F3, IM2P41E8</li><li><strong>SSD M.2 2242</strong> – p. ej. IM2S3334, IM2S3134N, IM2S3164</li><li><strong>SSD mSATA y Half-Slim</strong> – p. ej. IMSS316, IMSS332</li><li><strong>Tarjetas CFast y CFexpress</strong> para controladores, panel PC y cámaras</li><li><strong>Tarjetas SD y microSD industriales</strong></li><li><strong>Memoria embebida</strong> – eMMC y SSD BGA</li><li><strong>Módulos DRAM</strong> – DDR4/DDR5 SO-DIMM y U-DIMM, también en versión ECC</li><li><strong>Memorias USB industriales</strong></li>",
+        "adata_tech_title": "Rangos de temperatura y tecnología – lo que importa al sustituir",
+        "adata_tech_list": "<li><strong>Clases de temperatura:</strong> estándar de 0 °C a 70 °C, extendida de −20 °C a 75 °C, industrial wide-temp de −40 °C a 85 °C. El repuesto debe cubrir al menos el mismo rango.</li><li><strong>Modo A+ SLC:</strong> mayor resistencia de escritura sobre NAND 3D TLC – importante con escritura continua como registro de datos o vídeo.</li><li><strong>Power Loss Protection (PLP):</strong> protección por hardware y firmware contra la pérdida de datos en cortes de corriente.</li><li><strong>Resistencias antiazufre y conformal coating:</strong> protección opcional contra gases sulfurosos, humedad, polvo y niebla de aceite.</li><li><strong>Contactos dorados de 30 µ, S.M.A.R.T. y lifetime monitoring</strong> para un contacto fiable y mantenimiento predictivo.</li><li><strong>Lista de materiales (BOM) fija:</strong> las máquinas validadas suelen exigir los mismos componentes – indique si es obligatoria una pieza idéntica.</li>",
+        "adata_apps_title": "Aplicaciones típicas",
+        "adata_apps_list": "<li>PC industriales y box PC</li><li>HMI y panel PC</li><li>Controles CNC y de máquina</li><li>Visión artificial y edge AI</li><li>Videovigilancia y NVR</li><li>Ferrocarril, vehículos y transporte</li><li>Equipos médicos</li><li>Redes y telecomunicaciones</li>",
+        "adata_request_title": "Estos datos aceleran su oferta",
+        "adata_request_list": "<li>Referencia completa de la etiqueta (una foto de la etiqueta ayuda)</li><li>Formato e interfaz, p. ej. SATA 2,5\", M.2 2280 NVMe, mSATA, CFast, SO-DIMM</li><li>Capacidad y rango de temperatura (estándar o wide-temp)</li><li>Equipo o máquina en la que está montada la pieza (fabricante y modelo)</li><li>Cantidad y fecha de entrega deseada</li><li>Solo original o alternativa compatible aceptada</li>",
+        "brand_faq_q4": "¿ABCspareparts también suministra SSD y módulos A-DATA descatalogados (EOL)?",
+        "brand_faq_a4": "Sí. Buscamos existencias remanentes en distribuidores y brokers de toda Europa. Si el original ya no está disponible, proponemos – previa consulta – sucesores o alternativas compatibles con el mismo formato, interfaz, capacidad y rango de temperatura.",
+        "brand_faq_q5": "¿Qué diferencia hay entre A-DATA Industrial y los productos A-DATA de consumo?",
+        "brand_faq_a5": "Según el fabricante, los productos ADATA Industrial utilizan NAND flash, controladores y circuitos de alimentación de grado industrial validados de −40 °C a 85 °C, y ofrecen funciones como power loss protection, conformal coating y BOM fija. Para máquinas y PC industriales recomendamos, por tanto, las versiones Industrial.",
+        "brand_faq_q6": "¿Se puede sustituir un SSD A-DATA por un modelo de otro fabricante?",
+        "brand_faq_a6": "Técnicamente a menudo sí, siempre que coincidan formato, interfaz, capacidad, rango de temperatura y – en controladores – la imagen de arranque o la homologación del fabricante de la máquina. Comprobamos los datos clave y le avisamos cuando se requiere una pieza idéntica.",
+        "adata_note": "A-DATA, ADATA y XPG son marcas de ADATA Technology Co., Ltd. y se mencionan solo para identificar los productos. La información sobre familias de productos y tecnología se basa en datos públicos del fabricante (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Actualizado: septiembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces A-DATA Industrial : SSD, DRAM et cartes mémoire | ABCspareparts",
+        "meta_description": "Pièces A-DATA / ADATA Industrial : SSD SATA et NVMe, M.2, mSATA, CFast, modules DDR4/DDR5, wide-temp −40…85 °C. Envoyez la référence – devis souvent sous 24 h.",
+        "brand_h1": "A-DATA (ADATA Industrial) – SSD industriels, modules DRAM et mémoires en pièce de rechange",
+        "brand_intro": "ABCspareparts fournit des composants mémoire A-DATA Industrial – SSD, modules DRAM, cartes mémoire et stockage embarqué – comme pièces de rechange pour PC industriels, IHM, commandes CNC et systèmes embarqués dans toute l'Europe. Envoyez-nous la référence et la quantité – nous répondons généralement sous 24 heures.",
+        "brand_intro_p2": "Nous vérifions la disponibilité de la pièce d'origine – y compris pour les séries arrêtées – et, lorsque c'est techniquement pertinent, des alternatives compatibles de même format, interface et plage de température. Cette page ne remplace pas une liste de stock en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "adata_about_title": "À propos d'A-DATA",
+        "adata_about_text": "<p>ADATA Technology Co., Ltd. a été fondée en mai 2001 par Simon Chen et a son siège à New Taipei City, Taïwan. L'entreprise est cotée au Taipei Exchange (TPEx : 3260) et se présente comme le deuxième fournisseur mondial de modules DRAM, avec plus de 500 brevets liés à la mémoire NAND flash.</p><p>Outre la marque grand public ADATA et la marque gaming XPG, l'entreprise dispose de la division <strong>ADATA Industrial</strong>, qui développe des solutions de stockage robustes pour l'automatisation, les systèmes embarqués, le transport, le médical, les réseaux et la vidéosurveillance. Pour la maintenance industrielle (MRO), c'est surtout cette gamme industrielle qui compte.</p>",
+        "adata_products_title": "Familles de produits A-DATA Industrial que nous fournissons",
+        "adata_products_intro": "Les demandes typiques concernent les groupes de produits suivants (séries d'exemple issues du catalogue du fabricant) :",
+        "adata_products_list": "<li><strong>SSD SATA 2,5\"</strong> – p. ex. séries ISSS316, ISSS332, ISSS333, ISSS31C, ISSS31D</li><li><strong>SSD M.2 2280 (SATA et PCIe NVMe)</strong> – p. ex. IM2S3168, IM2S3338, IM2P33F8, IM2P41F3, IM2P41E8</li><li><strong>SSD M.2 2242</strong> – p. ex. IM2S3334, IM2S3134N, IM2S3164</li><li><strong>SSD mSATA et Half-Slim</strong> – p. ex. IMSS316, IMSS332</li><li><strong>Cartes CFast et CFexpress</strong> pour automates, panel PC et caméras</li><li><strong>Cartes SD et microSD industrielles</strong></li><li><strong>Stockage embarqué</strong> – eMMC et SSD BGA</li><li><strong>Modules DRAM</strong> – DDR4/DDR5 SO-DIMM et U-DIMM, également en version ECC</li><li><strong>Clés USB industrielles</strong></li>",
+        "adata_tech_title": "Plages de température et technologie – ce qui compte pour le remplacement",
+        "adata_tech_list": "<li><strong>Classes de température :</strong> standard de 0 °C à 70 °C, étendue de −20 °C à 75 °C, industrielle wide-temp de −40 °C à 85 °C. La pièce de rechange doit couvrir au moins la même plage.</li><li><strong>Mode A+ SLC :</strong> endurance en écriture accrue sur base NAND 3D TLC – important pour les écritures continues comme l'enregistrement de données ou la vidéo.</li><li><strong>Power Loss Protection (PLP) :</strong> protection matérielle et firmware contre la perte de données lors d'une coupure de courant.</li><li><strong>Résistances anti-soufre et conformal coating :</strong> protection optionnelle contre les gaz soufrés, l'humidité, la poussière et le brouillard d'huile.</li><li><strong>Contacts dorés 30 µ, S.M.A.R.T. et lifetime monitoring</strong> pour un contact fiable et une maintenance prédictive.</li><li><strong>Nomenclature (BOM) figée :</strong> les machines validées exigent souvent les mêmes composants – indiquez si une pièce identique est obligatoire.</li>",
+        "adata_apps_title": "Applications typiques",
+        "adata_apps_list": "<li>PC industriels et box PC</li><li>IHM et panel PC</li><li>Commandes CNC et de machines</li><li>Vision industrielle et edge AI</li><li>Vidéosurveillance et NVR</li><li>Ferroviaire, véhicules et transport</li><li>Équipements médicaux</li><li>Réseaux et télécommunications</li>",
+        "adata_request_title": "Ces informations accélèrent votre devis",
+        "adata_request_list": "<li>Référence complète figurant sur l'étiquette (une photo de l'étiquette aide)</li><li>Format et interface, p. ex. SATA 2,5\", M.2 2280 NVMe, mSATA, CFast, SO-DIMM</li><li>Capacité et plage de température (standard ou wide-temp)</li><li>Appareil ou machine dans lequel la pièce est montée (fabricant et modèle)</li><li>Quantité et date de livraison souhaitée</li><li>Pièce d'origine uniquement ou alternative compatible acceptée</li>",
+        "brand_faq_q4": "ABCspareparts fournit-il aussi des SSD et modules A-DATA arrêtés (EOL) ?",
+        "brand_faq_a4": "Oui. Nous recherchons des stocks résiduels auprès de distributeurs et de brokers dans toute l'Europe. Si l'original n'est plus disponible, nous proposons – après concertation – des successeurs ou alternatives compatibles de même format, interface, capacité et plage de température.",
+        "brand_faq_q5": "Quelle différence entre A-DATA Industrial et les produits A-DATA grand public ?",
+        "brand_faq_a5": "Selon le fabricant, les produits ADATA Industrial utilisent de la NAND flash, des contrôleurs et des circuits d'alimentation de qualité industrielle validés de −40 °C à 85 °C, et offrent des fonctions comme la power loss protection, le conformal coating et une nomenclature figée. Pour les machines et PC industriels, nous recommandons donc les versions Industrial.",
+        "brand_faq_q6": "Un SSD A-DATA peut-il être remplacé par le modèle d'un autre fabricant ?",
+        "brand_faq_a6": "Techniquement souvent oui, à condition que le format, l'interface, la capacité, la plage de température et – pour les automates – l'image de démarrage ou l'homologation du constructeur de la machine correspondent. Nous vérifions les données clés et vous signalons lorsqu'une pièce identique est nécessaire.",
+        "adata_note": "A-DATA, ADATA et XPG sont des marques d'ADATA Technology Co., Ltd., citées uniquement pour identifier les produits. Les informations sur les familles de produits et la technologie reposent sur des données publiques du fabricant (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Mise à jour : septembre 2026."
+      }
+    }
+  },
+  "a-p-o-elmos": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "jumo",
+      "siemens",
+      "endress-plus-hauser",
+      "wika",
+      "eurotherm",
+      "west-instruments",
+      "red-lion-controls",
+      "lumel",
+      "gefran",
+      "pr-electronics"
+    ],
+    "related_labels": {
+      "jumo": "JUMO",
+      "eurotherm": "Eurotherm",
+      "pr-electronics": "PR electronics"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#brand",
+          "name": "A.P.O. - ELMOS",
+          "alternateName": [
+            "APO ELMOS",
+            "A.P.O.-ELMOS",
+            "APO-ELMOS"
+          ],
+          "url": "https://www.apoelmos.com/",
+          "sameAs": [
+            "https://www.apoelmos.com/",
+            "https://www.apoelmos.cz/"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#brand"
+          },
+          "name": "A.P.O. - ELMOS v.o.s.",
+          "foundingDate": "1991",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pražská 90",
+            "postalCode": "509 01",
+            "addressLocality": "Nová Paka",
+            "addressCountry": "CZ"
+          },
+          "url": "https://www.apoelmos.com/",
+          "sameAs": [
+            "https://www.apoelmos.cz/"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#service",
+          "name": "Beschaffung von A.P.O. - ELMOS Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "A.P.O. - ELMOS Produktgruppen",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Panelmeter AP 02 / AP 11"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Regler AP 21, MRS 01, APOSYS 20"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Widerstandsthermometer STPt / STNi / TK"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Messumformer R/I.H3"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Schutzrohre J-N"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Feuchtefühler SV"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Pick-to-Light-Komponenten"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "A.P.O. - ELMOS Panelmeter, Regler & Temperaturfühler als Ersatzteil | ABCspareparts",
+        "meta_description": "A.P.O. - ELMOS (APO ELMOS) Ersatzteile: Panelmeter AP 02/AP 11, Regler AP 21, MRS 01, APOSYS 20, Pt100-Fühler STPt. Teilenummer senden – Angebot oft in 24 h.",
+        "brand_h1": "A.P.O. - ELMOS – Panelmeter, PID-Regler und Temperaturfühler als Ersatzteil",
+        "brand_intro": "ABCspareparts beschafft Mess- und Regeltechnik von A.P.O. - ELMOS – Panelmeter, PID-Regler, Widerstandsthermometer und Messumformer – als Ersatzteil für Schaltschränke, Prozessanlagen und Maschinen in ganz Europa. Senden Sie uns Typbezeichnung und Menge – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit des Originalgeräts und, wo technisch sinnvoll, kompatible Alternativen mit gleichem Einbaumaß, Eingangssignal, Ausgängen und Versorgungsspannung. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "bx_about_title": "Über A.P.O. - ELMOS",
+        "bx_about_text": "<p>A.P.O. - ELMOS v.o.s. ist ein tschechischer Hersteller und Lieferant von Mess- und Regeltechnik mit Sitz in Nová Paka (Pražská 90). Das Unternehmen wurde 1991 gegründet, ist seit 1999 nach ISO 9001 zertifiziert und seit 2014 zertifizierter Siemens Solution Partner für Prozessinstrumentierung.</p><p>Die eigene Entwicklungsabteilung konzipiert vor allem <strong>Schalttafelgeräte</strong> – Panelmeter, Anzeigen und PID-Regler – sowie Temperatur- und Feuchtefühler. Daneben liefert A.P.O. - ELMOS Prozessinstrumentierung von über 100 Herstellern und entwickelt mit „Pick to Systems“ Lösungen für die Materialausgabe und Lagerverwaltung.</p>",
+        "bx_products_title": "A.P.O. - ELMOS Produktgruppen, die wir beschaffen",
+        "bx_products_intro": "Typische Anfragen betreffen folgende Eigenprodukte (Typbezeichnungen laut Herstellerunterlagen):",
+        "bx_products_list": "<li><strong>Panelmeter</strong> – z. B. AP 02 (4-stellige Prozessanzeige) und AP 11 (5-stellig, programmierbar, auch als Zähler AP11-37)</li><li><strong>Regler</strong> – z. B. AP 21 (4-stellig, zweizeilig), MRS 01 (einkreisiger PID-Regler), APOSYS 20 (kompakter PID-Regler für elektrische Stellantriebe von Regel- und Mischarmaturen)</li><li><strong>Widerstandsthermometer</strong> – Serien STPt / STNi, STPt/I mit integriertem Messumformer, TK mit Kabelausgang</li><li><strong>Messumformer</strong> – z. B. R/I.H3 für Pt100 zum Einbau in den Anschlusskopf</li><li><strong>Zubehör für Temperaturfühler</strong> – Edelstahl-Schutzrohre J-N (G 1/2), Einschweißmuffen und Halterungen</li><li><strong>Feuchtefühler</strong> – Serie SV für relative Feuchte mit Messumformer</li><li><strong>Pick-to-Light / Pick to Systems</strong> – Komponenten für die fehlerfreie Kommissionierung und Materialausgabe</li>",
+        "bx_tech_title": "Worauf es beim Ersatz eines Panelmeters oder Reglers ankommt",
+        "bx_tech_list": "<li><strong>Einbaumaß und Frontrahmen:</strong> Schalttafelausschnitt und Einbautiefe müssen passen, damit das Gerät ohne Umbau in die Tafel passt.</li><li><strong>Eingangssignal:</strong> z. B. 4–20 mA, 0–10 V, Pt100/Ni oder Thermoelement – bei programmierbaren Geräten wie AP 11 oder AP 21 zusätzlich die Konfiguration.</li><li><strong>Ausgänge:</strong> Anzahl und Art der Relais-, Analog- oder Kommunikationsausgänge (z. B. für Alarm oder Regelung).</li><li><strong>Versorgungsspannung:</strong> AC- oder DC-Ausführung laut Typenschild.</li><li><strong>Fühlerdaten:</strong> bei STPt/STNi/TK Messelement, Genauigkeitsklasse, Schaltung (2-, 3- oder 4-Leiter), Einbaulänge, Durchmesser und Prozessanschluss.</li><li><strong>Parametrierung:</strong> Notieren Sie wenn möglich die Parameter des alten Geräts – so kann der Ersatz schnell wieder in Betrieb gehen.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Schaltschränke und Schalttafeln</li><li>Heizungs-, Lüftungs- und Klimatechnik</li><li>Wärme- und Energietechnik</li><li>Prozessanlagen und Chemie</li><li>Lebensmittel- und Getränkeindustrie</li><li>Wasser- und Abwassertechnik</li><li>Maschinen- und Anlagenbau</li><li>Lager und Kommissionierung (Pick-to-Light)</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihr Angebot",
+        "bx_request_list": "<li>Vollständige Typbezeichnung vom Typenschild (ein Foto hilft)</li><li>Eingangssignal, Ausgänge und Versorgungsspannung</li><li>Bei Fühlern: Messelement, Einbaulänge, Durchmesser und Anschluss</li><li>Anlage oder Maschine, in der das Gerät verbaut ist</li><li>Menge und gewünschter Liefertermin</li><li>Nur Originalgerät zulässig oder kompatible Alternative möglich</li>",
+        "brand_faq_q4": "Beschafft ABCspareparts auch ältere oder nicht mehr gelistete A.P.O. - ELMOS Geräte?",
+        "brand_faq_a4": "Ja. Wir fragen beim Hersteller sowie bei Distributoren und Brokern in Europa nach. Ist das Original nicht mehr erhältlich, schlagen wir nach Rücksprache ein Nachfolgemodell oder eine kompatible Alternative mit gleichem Einbaumaß, Signal und gleicher Versorgung vor.",
+        "brand_faq_q5": "Welche Geräte stellt A.P.O. - ELMOS selbst her?",
+        "brand_faq_a5": "Laut Hersteller vor allem Schalttafelgeräte wie Panelmeter (z. B. AP 02, AP 11), Regler (z. B. AP 21, MRS 01, APOSYS 20) und Anzeigen sowie Widerstandsthermometer (STPt, STNi, TK), Messumformer und Feuchtefühler. Zudem liefert das Unternehmen Instrumentierung von über 100 anderen Herstellern.",
+        "brand_faq_q6": "Kann ein A.P.O. - ELMOS Panelmeter durch ein Gerät eines anderen Herstellers ersetzt werden?",
+        "brand_faq_a6": "Oft ja, wenn Schalttafelausschnitt, Eingangssignal, Anzahl und Art der Ausgänge sowie Versorgungsspannung übereinstimmen. Wir vergleichen die Eckdaten und weisen darauf hin, wenn Verdrahtung oder Parametrierung angepasst werden müssen.",
+        "bx_note": "A.P.O. - ELMOS ist ein Name bzw. eine Marke der A.P.O. - ELMOS v.o.s. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Unternehmen und Produkten basieren auf öffentlichen Herstellerinformationen (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Stand: September 2026."
+      },
+      "en": {
+        "meta_title": "A.P.O. - ELMOS Panel Meters, Controllers & Temperature Sensors – Spare Parts | ABCspareparts",
+        "meta_description": "A.P.O. - ELMOS (APO ELMOS) spare parts: panel meters AP 02/AP 11, controllers AP 21, MRS 01, APOSYS 20, Pt100 sensors STPt. Send the type – quote often in 24 h.",
+        "brand_h1": "A.P.O. - ELMOS – panel meters, PID controllers and temperature sensors as spare parts",
+        "brand_intro": "ABCspareparts sources measurement and control equipment from A.P.O. - ELMOS – panel meters, PID controllers, resistance thermometers and transmitters – as spare parts for control cabinets, process plants and machines across Europe. Send us the type designation and quantity – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability of the original device and, where technically appropriate, compatible alternatives with the same panel cut-out, input signal, outputs and supply voltage. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "bx_about_title": "About A.P.O. - ELMOS",
+        "bx_about_text": "<p>A.P.O. - ELMOS v.o.s. is a Czech manufacturer and supplier of measurement and control technology based in Nová Paka (Pražská 90). The company was founded in 1991, has been ISO 9001 certified since 1999 and has been a certified Siemens Solution Partner for process instrumentation since 2014.</p><p>Its in-house development department mainly designs <strong>panel-mounted devices</strong> – panel meters, displays and PID controllers – as well as temperature and humidity sensors. A.P.O. - ELMOS also supplies process instrumentation from more than 100 manufacturers and develops “Pick to Systems” solutions for material issue and warehouse management.</p>",
+        "bx_products_title": "A.P.O. - ELMOS product groups we source",
+        "bx_products_intro": "Typical requests cover the following own products (type designations from manufacturer documentation):",
+        "bx_products_list": "<li><strong>Panel meters</strong> – e.g. AP 02 (4-digit process display) and AP 11 (5-digit, programmable, also as AP11-37 counter)</li><li><strong>Controllers</strong> – e.g. AP 21 (4-digit, two-line), MRS 01 (single-loop PID controller), APOSYS 20 (compact PID controller for electric actuators of control and mixing valves)</li><li><strong>Resistance temperature sensors</strong> – series STPt / STNi, STPt/I with integrated transmitter, TK with cable outlet</li><li><strong>Transmitters</strong> – e.g. R/I.H3 for Pt100, head-mounted</li><li><strong>Temperature sensor accessories</strong> – stainless thermowells J-N (G 1/2), weld-in sockets and brackets</li><li><strong>Humidity sensors</strong> – SV series for relative humidity with transmitter</li><li><strong>Pick-to-Light / Pick to Systems</strong> – components for error-free picking and material issue</li>",
+        "bx_tech_title": "What matters when replacing a panel meter or controller",
+        "bx_tech_list": "<li><strong>Panel cut-out and bezel:</strong> the cut-out and mounting depth must match so the device fits without modification.</li><li><strong>Input signal:</strong> e.g. 4–20 mA, 0–10 V, Pt100/Ni or thermocouple – for programmable devices such as AP 11 or AP 21 also the configuration.</li><li><strong>Outputs:</strong> number and type of relay, analogue or communication outputs (e.g. for alarm or control).</li><li><strong>Supply voltage:</strong> AC or DC version as on the rating plate.</li><li><strong>Sensor data:</strong> for STPt/STNi/TK the element, accuracy class, 2-, 3- or 4-wire connection, insertion length, diameter and process connection.</li><li><strong>Parameters:</strong> note the old device's settings if possible – the replacement can then be back in operation quickly.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Control cabinets and panels</li><li>HVAC</li><li>Heat and energy engineering</li><li>Process plants and chemicals</li><li>Food and beverage industry</li><li>Water and wastewater</li><li>Machine and plant engineering</li><li>Warehousing and picking (Pick-to-Light)</li>",
+        "bx_request_title": "This information speeds up your quote",
+        "bx_request_list": "<li>Full type designation from the rating plate (a photo helps)</li><li>Input signal, outputs and supply voltage</li><li>For sensors: element, insertion length, diameter and connection</li><li>Plant or machine the device is installed in</li><li>Quantity and required delivery date</li><li>Original device only, or compatible alternative acceptable</li>",
+        "brand_faq_q4": "Does ABCspareparts also source older or no longer listed A.P.O. - ELMOS devices?",
+        "brand_faq_a4": "Yes. We check with the manufacturer as well as distributors and brokers in Europe. If the original is no longer available, we propose – after consultation – a successor model or compatible alternative with the same cut-out, signal and supply.",
+        "brand_faq_q5": "Which devices does A.P.O. - ELMOS manufacture itself?",
+        "brand_faq_a5": "According to the manufacturer, mainly panel devices such as panel meters (e.g. AP 02, AP 11), controllers (e.g. AP 21, MRS 01, APOSYS 20) and displays, plus resistance thermometers (STPt, STNi, TK), transmitters and humidity sensors. The company also supplies instrumentation from more than 100 other manufacturers.",
+        "brand_faq_q6": "Can an A.P.O. - ELMOS panel meter be replaced by another manufacturer's device?",
+        "brand_faq_a6": "Often yes, if panel cut-out, input signal, number and type of outputs and supply voltage match. We compare the key data and tell you when wiring or parameters need to be adapted.",
+        "bx_note": "A.P.O. - ELMOS is a name or trademark of A.P.O. - ELMOS v.o.s., mentioned solely to identify products. Company and product information is based on public manufacturer information (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Last updated: September 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi A.P.O. - ELMOS: indicatori da pannello, regolatori e sonde | ABCspareparts",
+        "meta_description": "Ricambi A.P.O. - ELMOS (APO ELMOS): indicatori AP 02/AP 11, regolatori AP 21, MRS 01, APOSYS 20, sonde Pt100 STPt. Invii il tipo – preventivo spesso entro 24 h.",
+        "brand_h1": "A.P.O. - ELMOS – indicatori da pannello, regolatori PID e sonde di temperatura come ricambio",
+        "brand_intro": "ABCspareparts fornisce strumenti di misura e regolazione A.P.O. - ELMOS – indicatori da pannello, regolatori PID, termoresistenze e trasmettitori – come ricambio per quadri elettrici, impianti di processo e macchine in tutta Europa. Ci invii sigla del tipo e quantità – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità dello strumento originale e, se tecnicamente adatto, alternative compatibili con stessa foratura, segnale d'ingresso, uscite e tensione di alimentazione. Questa pagina non sostituisce un elenco live: usi la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "bx_about_title": "Chi è A.P.O. - ELMOS",
+        "bx_about_text": "<p>A.P.O. - ELMOS v.o.s. è un produttore e fornitore ceco di strumentazione di misura e regolazione con sede a Nová Paka (Pražská 90). Fondata nel 1991, è certificata ISO 9001 dal 1999 e dal 2014 è Siemens Solution Partner certificato per la strumentazione di processo.</p><p>Il reparto di sviluppo interno progetta soprattutto <strong>strumenti da pannello</strong> – indicatori, display e regolatori PID – oltre a sonde di temperatura e umidità. A.P.O. - ELMOS fornisce inoltre strumentazione di processo di oltre 100 produttori e sviluppa soluzioni “Pick to Systems” per la distribuzione dei materiali e la gestione del magazzino.</p>",
+        "bx_products_title": "Gruppi di prodotti A.P.O. - ELMOS che forniamo",
+        "bx_products_intro": "Le richieste tipiche riguardano i seguenti prodotti propri (sigle dalla documentazione del costruttore):",
+        "bx_products_list": "<li><strong>Indicatori da pannello</strong> – es. AP 02 (display di processo a 4 cifre) e AP 11 (5 cifre, programmabile, anche come contatore AP11-37)</li><li><strong>Regolatori</strong> – es. AP 21 (4 cifre, due righe), MRS 01 (regolatore PID a un loop), APOSYS 20 (regolatore PID compatto per attuatori elettrici di valvole di regolazione e miscelazione)</li><li><strong>Termoresistenze</strong> – serie STPt / STNi, STPt/I con trasmettitore integrato, TK con uscita cavo</li><li><strong>Trasmettitori</strong> – es. R/I.H3 per Pt100 da testina</li><li><strong>Accessori per sonde di temperatura</strong> – pozzetti inox J-N (G 1/2), manicotti a saldare e staffe</li><li><strong>Sensori di umidità</strong> – serie SV per umidità relativa con trasmettitore</li><li><strong>Pick-to-Light / Pick to Systems</strong> – componenti per prelievo e distribuzione materiali senza errori</li>",
+        "bx_tech_title": "Cosa conta nella sostituzione di un indicatore o regolatore",
+        "bx_tech_list": "<li><strong>Foratura e cornice:</strong> foratura del pannello e profondità di montaggio devono coincidere per montare lo strumento senza modifiche.</li><li><strong>Segnale d'ingresso:</strong> es. 4–20 mA, 0–10 V, Pt100/Ni o termocoppia – per strumenti programmabili come AP 11 o AP 21 anche la configurazione.</li><li><strong>Uscite:</strong> numero e tipo di uscite relè, analogiche o di comunicazione (es. per allarme o regolazione).</li><li><strong>Tensione di alimentazione:</strong> versione AC o DC come da targhetta.</li><li><strong>Dati della sonda:</strong> per STPt/STNi/TK elemento sensibile, classe di precisione, collegamento a 2, 3 o 4 fili, lunghezza d'immersione, diametro e attacco al processo.</li><li><strong>Parametri:</strong> se possibile annoti le impostazioni del vecchio strumento – così il ricambio torna rapidamente in funzione.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Quadri elettrici e pannelli</li><li>Riscaldamento, ventilazione e climatizzazione</li><li>Tecnica del calore e dell'energia</li><li>Impianti di processo e chimica</li><li>Industria alimentare e delle bevande</li><li>Acqua e acque reflue</li><li>Costruzione di macchine e impianti</li><li>Magazzino e picking (Pick-to-Light)</li>",
+        "bx_request_title": "Questi dati accelerano il preventivo",
+        "bx_request_list": "<li>Sigla completa del tipo dalla targhetta (una foto aiuta)</li><li>Segnale d'ingresso, uscite e tensione di alimentazione</li><li>Per le sonde: elemento, lunghezza, diametro e attacco</li><li>Impianto o macchina in cui è montato lo strumento</li><li>Quantità e data di consegna desiderata</li><li>Solo originale oppure alternativa compatibile ammessa</li>",
+        "brand_faq_q4": "ABCspareparts fornisce anche strumenti A.P.O. - ELMOS datati o non più a listino?",
+        "brand_faq_a4": "Sì. Verifichiamo presso il costruttore e presso distributori e broker in Europa. Se l'originale non è più disponibile, proponiamo – previo accordo – un modello successore o un'alternativa compatibile con stessa foratura, segnale e alimentazione.",
+        "brand_faq_q5": "Quali strumenti produce direttamente A.P.O. - ELMOS?",
+        "brand_faq_a5": "Secondo il costruttore soprattutto strumenti da pannello come indicatori (es. AP 02, AP 11), regolatori (es. AP 21, MRS 01, APOSYS 20) e display, oltre a termoresistenze (STPt, STNi, TK), trasmettitori e sensori di umidità. L'azienda fornisce anche strumentazione di oltre 100 altri produttori.",
+        "brand_faq_q6": "Un indicatore A.P.O. - ELMOS può essere sostituito con uno strumento di un altro costruttore?",
+        "brand_faq_a6": "Spesso sì, se coincidono foratura, segnale d'ingresso, numero e tipo di uscite e tensione di alimentazione. Confrontiamo i dati chiave e segnaliamo quando occorre adattare cablaggio o parametri.",
+        "bx_note": "A.P.O. - ELMOS è un nome o marchio di A.P.O. - ELMOS v.o.s., citato solo per identificare i prodotti. Le informazioni su azienda e prodotti si basano su dati pubblici del costruttore (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Aggiornato: settembre 2026."
+      },
+      "es": {
+        "meta_title": "Repuestos A.P.O. - ELMOS: indicadores de panel, reguladores y sondas | ABCspareparts",
+        "meta_description": "Repuestos A.P.O. - ELMOS (APO ELMOS): indicadores AP 02/AP 11, reguladores AP 21, MRS 01, APOSYS 20, sondas Pt100 STPt. Envíe el tipo – oferta a menudo en 24 h.",
+        "brand_h1": "A.P.O. - ELMOS – indicadores de panel, reguladores PID y sondas de temperatura como repuesto",
+        "brand_intro": "ABCspareparts suministra equipos de medición y control de A.P.O. - ELMOS – indicadores de panel, reguladores PID, termorresistencias y transmisores – como repuesto para armarios eléctricos, plantas de proceso y máquinas en toda Europa. Envíenos la designación del tipo y la cantidad – normalmente respondemos en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad del equipo original y, cuando es técnicamente adecuado, alternativas compatibles con el mismo recorte de panel, señal de entrada, salidas y tensión de alimentación. Esta página no es un listado de stock en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "bx_about_title": "Sobre A.P.O. - ELMOS",
+        "bx_about_text": "<p>A.P.O. - ELMOS v.o.s. es un fabricante y proveedor checo de tecnología de medición y control con sede en Nová Paka (Pražská 90). Fundada en 1991, cuenta con la certificación ISO 9001 desde 1999 y es Siemens Solution Partner certificado en instrumentación de proceso desde 2014.</p><p>Su departamento de desarrollo diseña sobre todo <strong>equipos de panel</strong> – indicadores, displays y reguladores PID – además de sondas de temperatura y humedad. A.P.O. - ELMOS también suministra instrumentación de proceso de más de 100 fabricantes y desarrolla soluciones “Pick to Systems” para la entrega de material y la gestión de almacenes.</p>",
+        "bx_products_title": "Grupos de productos A.P.O. - ELMOS que suministramos",
+        "bx_products_intro": "Las solicitudes habituales abarcan los siguientes productos propios (designaciones según la documentación del fabricante):",
+        "bx_products_list": "<li><strong>Indicadores de panel</strong> – p. ej. AP 02 (display de proceso de 4 dígitos) y AP 11 (5 dígitos, programable, también como contador AP11-37)</li><li><strong>Reguladores</strong> – p. ej. AP 21 (4 dígitos, dos líneas), MRS 01 (regulador PID de un lazo), APOSYS 20 (regulador PID compacto para actuadores eléctricos de válvulas de regulación y mezcla)</li><li><strong>Termorresistencias</strong> – series STPt / STNi, STPt/I con transmisor integrado, TK con salida de cable</li><li><strong>Transmisores</strong> – p. ej. R/I.H3 para Pt100 en cabezal</li><li><strong>Accesorios para sondas de temperatura</strong> – vainas inoxidables J-N (G 1/2), manguitos para soldar y soportes</li><li><strong>Sensores de humedad</strong> – serie SV para humedad relativa con transmisor</li><li><strong>Pick-to-Light / Pick to Systems</strong> – componentes para picking y entrega de material sin errores</li>",
+        "bx_tech_title": "Lo que importa al sustituir un indicador o regulador",
+        "bx_tech_list": "<li><strong>Recorte de panel y marco:</strong> el recorte y la profundidad de montaje deben coincidir para instalar el equipo sin modificaciones.</li><li><strong>Señal de entrada:</strong> p. ej. 4–20 mA, 0–10 V, Pt100/Ni o termopar – en equipos programables como AP 11 o AP 21, también la configuración.</li><li><strong>Salidas:</strong> número y tipo de salidas de relé, analógicas o de comunicación (p. ej. para alarma o regulación).</li><li><strong>Tensión de alimentación:</strong> versión AC o DC según la placa de características.</li><li><strong>Datos de la sonda:</strong> en STPt/STNi/TK, elemento, clase de precisión, conexión a 2, 3 o 4 hilos, longitud de inserción, diámetro y conexión a proceso.</li><li><strong>Parámetros:</strong> si es posible, anote la configuración del equipo antiguo – así el repuesto vuelve a funcionar rápidamente.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Armarios y cuadros eléctricos</li><li>Calefacción, ventilación y climatización</li><li>Técnica térmica y energética</li><li>Plantas de proceso y química</li><li>Industria alimentaria y de bebidas</li><li>Agua y aguas residuales</li><li>Construcción de máquinas e instalaciones</li><li>Almacén y picking (Pick-to-Light)</li>",
+        "bx_request_title": "Estos datos aceleran su oferta",
+        "bx_request_list": "<li>Designación completa del tipo en la placa (una foto ayuda)</li><li>Señal de entrada, salidas y tensión de alimentación</li><li>Para sondas: elemento, longitud, diámetro y conexión</li><li>Instalación o máquina en la que está montado el equipo</li><li>Cantidad y fecha de entrega deseada</li><li>Solo original o alternativa compatible aceptada</li>",
+        "brand_faq_q4": "¿ABCspareparts también suministra equipos A.P.O. - ELMOS antiguos o fuera de catálogo?",
+        "brand_faq_a4": "Sí. Consultamos al fabricante y a distribuidores y brokers en Europa. Si el original ya no está disponible, proponemos – previa consulta – un modelo sucesor o una alternativa compatible con el mismo recorte, señal y alimentación.",
+        "brand_faq_q5": "¿Qué equipos fabrica A.P.O. - ELMOS directamente?",
+        "brand_faq_a5": "Según el fabricante, principalmente equipos de panel como indicadores (p. ej. AP 02, AP 11), reguladores (p. ej. AP 21, MRS 01, APOSYS 20) y displays, además de termorresistencias (STPt, STNi, TK), transmisores y sensores de humedad. La empresa también suministra instrumentación de más de 100 fabricantes.",
+        "brand_faq_q6": "¿Se puede sustituir un indicador A.P.O. - ELMOS por un equipo de otro fabricante?",
+        "brand_faq_a6": "A menudo sí, si coinciden el recorte de panel, la señal de entrada, el número y tipo de salidas y la tensión de alimentación. Comparamos los datos clave y le avisamos cuando haya que adaptar cableado o parámetros.",
+        "bx_note": "A.P.O. - ELMOS es un nombre o marca de A.P.O. - ELMOS v.o.s., mencionado solo para identificar los productos. La información sobre la empresa y los productos se basa en datos públicos del fabricante (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Actualizado: septiembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces A.P.O. - ELMOS : afficheurs de tableau, régulateurs et sondes | ABCspareparts",
+        "meta_description": "Pièces A.P.O. - ELMOS (APO ELMOS) : afficheurs AP 02/AP 11, régulateurs AP 21, MRS 01, APOSYS 20, sondes Pt100 STPt. Envoyez le type – devis souvent sous 24 h.",
+        "brand_h1": "A.P.O. - ELMOS – afficheurs de tableau, régulateurs PID et sondes de température en pièce de rechange",
+        "brand_intro": "ABCspareparts fournit des équipements de mesure et de régulation A.P.O. - ELMOS – afficheurs de tableau, régulateurs PID, sondes à résistance et transmetteurs – comme pièces de rechange pour armoires électriques, installations de process et machines dans toute l'Europe. Envoyez-nous la désignation du type et la quantité – nous répondons généralement sous 24 heures.",
+        "brand_intro_p2": "Nous vérifions la disponibilité de l'appareil d'origine et, lorsque c'est techniquement pertinent, des alternatives compatibles de même découpe, signal d'entrée, sorties et tension d'alimentation. Cette page ne remplace pas une liste de stock en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "bx_about_title": "À propos d'A.P.O. - ELMOS",
+        "bx_about_text": "<p>A.P.O. - ELMOS v.o.s. est un fabricant et fournisseur tchèque d'équipements de mesure et de régulation basé à Nová Paka (Pražská 90). Fondée en 1991, l'entreprise est certifiée ISO 9001 depuis 1999 et Siemens Solution Partner certifié pour l'instrumentation de process depuis 2014.</p><p>Son service de développement conçoit principalement des <strong>appareils de tableau</strong> – afficheurs, indicateurs et régulateurs PID – ainsi que des sondes de température et d'humidité. A.P.O. - ELMOS fournit en outre l'instrumentation de process de plus de 100 fabricants et développe les solutions « Pick to Systems » pour la sortie de matériel et la gestion d'entrepôt.</p>",
+        "bx_products_title": "Groupes de produits A.P.O. - ELMOS que nous fournissons",
+        "bx_products_intro": "Les demandes typiques concernent les produits propres suivants (désignations issues de la documentation du fabricant) :",
+        "bx_products_list": "<li><strong>Afficheurs de tableau</strong> – p. ex. AP 02 (afficheur de process 4 chiffres) et AP 11 (5 chiffres, programmable, aussi en compteur AP11-37)</li><li><strong>Régulateurs</strong> – p. ex. AP 21 (4 chiffres, deux lignes), MRS 01 (régulateur PID mono-boucle), APOSYS 20 (régulateur PID compact pour servomoteurs électriques de vannes de régulation et de mélange)</li><li><strong>Sondes à résistance</strong> – séries STPt / STNi, STPt/I avec transmetteur intégré, TK avec sortie câble</li><li><strong>Transmetteurs</strong> – p. ex. R/I.H3 pour Pt100, montage en tête</li><li><strong>Accessoires pour sondes de température</strong> – doigts de gant inox J-N (G 1/2), manchons à souder et fixations</li><li><strong>Sondes d'humidité</strong> – série SV pour humidité relative avec transmetteur</li><li><strong>Pick-to-Light / Pick to Systems</strong> – composants pour un prélèvement et une sortie de matériel sans erreur</li>",
+        "bx_tech_title": "Ce qui compte pour remplacer un afficheur ou un régulateur",
+        "bx_tech_list": "<li><strong>Découpe et cadre :</strong> la découpe du tableau et la profondeur de montage doivent correspondre pour installer l'appareil sans modification.</li><li><strong>Signal d'entrée :</strong> p. ex. 4–20 mA, 0–10 V, Pt100/Ni ou thermocouple – pour les appareils programmables comme AP 11 ou AP 21, également la configuration.</li><li><strong>Sorties :</strong> nombre et type de sorties relais, analogiques ou de communication (p. ex. pour alarme ou régulation).</li><li><strong>Tension d'alimentation :</strong> version AC ou DC selon la plaque signalétique.</li><li><strong>Données de la sonde :</strong> pour STPt/STNi/TK, élément, classe de précision, montage 2, 3 ou 4 fils, longueur d'immersion, diamètre et raccord process.</li><li><strong>Paramètres :</strong> notez si possible les réglages de l'ancien appareil – le remplacement pourra ainsi être remis en service rapidement.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Armoires et tableaux électriques</li><li>Chauffage, ventilation et climatisation</li><li>Génie thermique et énergétique</li><li>Installations de process et chimie</li><li>Industrie agroalimentaire et des boissons</li><li>Eau et eaux usées</li><li>Construction de machines et d'installations</li><li>Entrepôt et picking (Pick-to-Light)</li>",
+        "bx_request_title": "Ces informations accélèrent votre devis",
+        "bx_request_list": "<li>Désignation complète du type sur la plaque (une photo aide)</li><li>Signal d'entrée, sorties et tension d'alimentation</li><li>Pour les sondes : élément, longueur, diamètre et raccord</li><li>Installation ou machine dans laquelle l'appareil est monté</li><li>Quantité et date de livraison souhaitée</li><li>Appareil d'origine uniquement ou alternative compatible acceptée</li>",
+        "brand_faq_q4": "ABCspareparts fournit-il aussi des appareils A.P.O. - ELMOS anciens ou plus au catalogue ?",
+        "brand_faq_a4": "Oui. Nous interrogeons le fabricant ainsi que des distributeurs et brokers en Europe. Si l'original n'est plus disponible, nous proposons – après concertation – un modèle successeur ou une alternative compatible de même découpe, signal et alimentation.",
+        "brand_faq_q5": "Quels appareils A.P.O. - ELMOS fabrique-t-il lui-même ?",
+        "brand_faq_a5": "Selon le fabricant, principalement des appareils de tableau comme les afficheurs (p. ex. AP 02, AP 11), les régulateurs (p. ex. AP 21, MRS 01, APOSYS 20) et les indicateurs, ainsi que des sondes à résistance (STPt, STNi, TK), des transmetteurs et des sondes d'humidité. L'entreprise fournit aussi l'instrumentation de plus de 100 autres fabricants.",
+        "brand_faq_q6": "Un afficheur A.P.O. - ELMOS peut-il être remplacé par l'appareil d'un autre fabricant ?",
+        "brand_faq_a6": "Souvent oui, si la découpe, le signal d'entrée, le nombre et le type de sorties et la tension d'alimentation correspondent. Nous comparons les données clés et vous signalons lorsque le câblage ou les paramètres doivent être adaptés.",
+        "bx_note": "A.P.O. - ELMOS est un nom ou une marque d'A.P.O. - ELMOS v.o.s., cité uniquement pour identifier les produits. Les informations sur l'entreprise et les produits reposent sur des données publiques du fabricant (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Mise à jour : septembre 2026."
+      }
+    }
+  }
+}
