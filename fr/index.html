@@ -6,7 +6,13 @@
     <title id="pageTitle">ABCspareparts – Pièces détachées industrielles et MRO | Plus de 11959 marques, devis en 24h</title>
     <meta id="pageDescription" name="description" content="Pièces d'origine et alternatives vérifiées pour l'automatisation et la MRO. Siemens, Festo, ABB, Schneider et plus. Demandez un devis – nous répondons généralement en 24 heures, livraison en Europe.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-      <script>
+      
+<script>
+  // Override getCurrentLang to always return page language, ignoring localStorage
+  window.getCurrentLang = function() { return 'fr'; };
+  window.pageLanguage = 'fr';
+</script>
+<script>
   /* Soft redirect /index.html → / (true 301: Cloudflare/nginx — see nginx-seo-redirects.example.conf / _redirects) */
   (function () {
     try {
@@ -1348,14 +1354,14 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     var langSelect = document.getElementById('languageSelect');
-    langSelect.value = 'de';
+    langSelect.value = 'fr';
     
     // For static language versions, navigate to the correct URL instead of translating
     langSelect.addEventListener('change', function() {
       const langMap = { de: '/', en: '/en/', it: '/it/', es: '/es/', fr: '/fr/' };
       window.location.href = langMap[this.value] || '/';
     });
-    initConsentManager('de');
+    initConsentManager('fr');
 
     var homeBrandForm = document.getElementById('homeBrandSearchForm');
     if (homeBrandForm) {
@@ -1386,28 +1392,5 @@
   }
 </style>
 
-<script>
-  // Language selector (static URLs)
-  document.addEventListener('DOMContentLoaded', function() {
-    const langLinks = {
-      de: '/',
-      en: '/en/',
-      it: '/it/',
-      es: '/es/',
-      fr: '/fr/'
-    };
-    
-    // Disable the client-side translation
-    window.disableI18n = true;
-    
-    // Set language links for language selector
-    const langBtns = document.querySelectorAll('[data-lang]');
-    langBtns.forEach(btn => {
-      const targetLang = btn.getAttribute('data-lang');
-      if (langLinks[targetLang]) {
-        btn.href = langLinks[targetLang];
-      }
-    });
-  });</script>
 </body>
 </html>
