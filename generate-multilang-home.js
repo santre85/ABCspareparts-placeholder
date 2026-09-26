@@ -155,6 +155,34 @@ function generateHomePageForLang(lang) {
     
     // Keep anchor links working - these stay relative
     // (already correct: href="/#contact" -> href="/#contact")
+    
+    // Special handling for contact_legal_note (after path fixing)
+    const match = html.match(/<p class="contact-legal-note"[^>]*>.*?<\/p>/gs);
+    if (match) {
+      console.log(`[${lang}] Found contact_legal_note:`, match[0].substring(0, 120));
+    } else {
+      console.log(`[${lang}] contact_legal_note NOT found in HTML!`);
+    }
+    html = html.replace(
+      /<p class="contact-legal-note" data-i18n="contact_legal_note">.*?<\/p>/gs,
+      `<p class="contact-legal-note" data-i18n="contact_legal_note">${t.contact_legal_note}</p>`
+    );
+    const afterCheck = html.includes('Vollständige rechtliche Angaben');
+    console.log(`[${lang}] Still has German text after replacement:`, afterCheck);
+    
+    // Handle data-i18n-title for iframes and other elements (after path fixing)
+    html = html.replace(
+      /<([a-z]+)([^>]*data-i18n-title="([^"]+)"[^>]*)>/gi,
+      (match, tagName, attrs, key) => {
+        const titleText = t[key] || '';
+        // Replace the title attribute value while preserving data-i18n-title
+        const newAttrs = attrs.replace(
+          /(data-i18n-title="[^"]+").*?(title=")[^"]+(")/,
+          `$1 $2${titleText}$3`
+        );
+        return `<${tagName}${newAttrs}>`;
+      }
+    );
   }
   
   // Fix the hardcoded language selector value and consent manager language
