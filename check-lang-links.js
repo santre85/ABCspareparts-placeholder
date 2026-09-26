@@ -22,11 +22,14 @@ const PAGES_TO_CHECK = [
 function extractLinks(html, pageUrl) {
   const links = new Set();
   
+  // Remove <script> blocks to avoid matching strings in JavaScript code
+  const htmlWithoutScripts = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+  
   // Match src="..." and href="..."
   const srcRegex = /(?:src|href|srcset)="([^"]+)"/g;
   let match;
   
-  while ((match = srcRegex.exec(html)) !== null) {
+  while ((match = srcRegex.exec(htmlWithoutScripts)) !== null) {
     const url = match[1];
     
     // Skip external URLs, mailto, tel, and pure anchors
@@ -48,9 +51,9 @@ function extractLinks(html, pageUrl) {
     }
   }
   
-  // Also check CSS url() in style tags and attributes
+  // Also check CSS url() in style tags and attributes (but not in script tags, already removed)
   const cssUrlRegex = /url\(['"]?([^'"()]+)['"]?\)/g;
-  while ((match = cssUrlRegex.exec(html)) !== null) {
+  while ((match = cssUrlRegex.exec(htmlWithoutScripts)) !== null) {
     const url = match[1];
     if (!url.startsWith('http://') && 
         !url.startsWith('https://') && 

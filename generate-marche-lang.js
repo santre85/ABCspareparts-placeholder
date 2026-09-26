@@ -42,6 +42,12 @@ function generateMarcheForLang(lang) {
   html = html.replace(/<a href="versand\.html"([^>]*)data-i18n="footer_shipping">.*?<\/a>/, `<a href="/versand.html"$1data-i18n="footer_shipping">${ft.footer_shipping}</a>`);
   html = html.replace(/<a href="cookies\.html"([^>]*)data-i18n="footer_cookies">.*?<\/a>/, `<a href="/cookies.html"$1data-i18n="footer_cookies">${ft.footer_cookies}</a>`);
   
+  // Fix the hardcoded language selector value
+  html = html.replace(
+    /if\(sel\)\s*sel\.value\s*=\s*'de';/,
+    `if(sel) sel.value = '${lang}';`
+  );
+  
   // Write file
   const outputPath = path.join(__dirname, lang, 'marche.html');
   fs.writeFileSync(outputPath, html, 'utf8');

@@ -141,6 +141,16 @@ function generateHomePageForLang(lang) {
     // (already correct: href="/#contact" -> href="/#contact")
   }
   
+  // Fix the hardcoded language selector value and consent manager language
+  html = html.replace(
+    /langSelect\.value = 'de';/,
+    `langSelect.value = '${lang}';`
+  );
+  html = html.replace(
+    /initConsentManager\('de'\);/,
+    `initConsentManager('${lang}');`
+  );
+  
   // Update the language selector script to use static URLs instead of localStorage
   // Find the language selector related JavaScript and update it
   const langSelectorScript = `
