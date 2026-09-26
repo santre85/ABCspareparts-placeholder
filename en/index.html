@@ -1348,14 +1348,14 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     var langSelect = document.getElementById('languageSelect');
-    langSelect.value = 'de';
+    langSelect.value = 'en';
     
     // For static language versions, navigate to the correct URL instead of translating
     langSelect.addEventListener('change', function() {
       const langMap = { de: '/', en: '/en/', it: '/it/', es: '/es/', fr: '/fr/' };
       window.location.href = langMap[this.value] || '/';
     });
-    initConsentManager('de');
+    initConsentManager('en');
 
     var homeBrandForm = document.getElementById('homeBrandSearchForm');
     if (homeBrandForm) {
