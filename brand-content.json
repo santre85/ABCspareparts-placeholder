@@ -639,5 +639,634 @@
         "bx_note": "A.P.O. - ELMOS est un nom ou une marque d'A.P.O. - ELMOS v.o.s., cité uniquement pour identifier les produits. Les informations sur l'entreprise et les produits reposent sur des données publiques du fabricant (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Mise à jour : septembre 2026."
       }
     }
+  },
+  "3m": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "3m-peltor",
+      "honeywell",
+      "msa",
+      "drager",
+      "uvex",
+      "tesa",
+      "henkel",
+      "loctite",
+      "norton",
+      "mirka"
+    ],
+    "related_labels": {
+      "uvex": "uvex",
+      "tesa": "tesa",
+      "henkel": "Henkel",
+      "norton": "Norton",
+      "mirka": "Mirka"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/3m.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/3m.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/3m.html#brand",
+          "name": "3M",
+          "alternateName": [
+            "3M Company",
+            "Minnesota Mining and Manufacturing"
+          ],
+          "url": "https://www.3m.com/",
+          "sameAs": [
+            "https://www.3m.com/",
+            "https://en.wikipedia.org/wiki/3M"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/3m.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/3m.html#brand"
+          },
+          "name": "3M Company",
+          "foundingDate": "1902",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3M Center",
+            "postalCode": "55144",
+            "addressLocality": "St. Paul, Minnesota",
+            "addressCountry": "US"
+          },
+          "url": "https://www.3m.com/",
+          "sameAs": [
+            "https://en.wikipedia.org/wiki/3M",
+            "https://investors.3m.com/"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/3m.html#service",
+          "name": "Beschaffung von 3M Industrie- und MRO-Produkten",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/3m.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "3M Produktgruppen",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Schleifmittel (Cubitron, Scotch-Brite, Roloc)"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Klebebänder und Klebstoffe (VHB, Scotch-Weld)"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Elektroisolierung und Kabelgarnituren (Scotch, Kaltschrumpf)"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Atemschutz (Serie 6000/7500, Versaflo)"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Schweißerschutz (Speedglas)"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Schutzbrillen und Gehörschutz"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Absturzsicherung (DBI-SALA)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "3M Industrieprodukte & MRO: Schleifmittel, Klebebänder, PSA | ABCspareparts",
+        "meta_description": "3M für Instandhaltung: Cubitron & Scotch-Brite Schleifmittel, VHB Klebebänder, Scotch Elektrobänder, Atemschutz, Speedglas. 3M ID senden – Angebot oft in 24 h.",
+        "brand_h1": "3M – Schleifmittel, Klebebänder, Elektroisolierung und Arbeitsschutz für die Industrie",
+        "brand_intro": "ABCspareparts beschafft 3M Produkte für Instandhaltung und Produktion – Schleifmittel, Klebebänder und Klebstoffe, Elektroisolierung und persönliche Schutzausrüstung – für Industriekunden in ganz Europa. Senden Sie uns Produktbezeichnung oder 3M ID und Menge – wir antworten in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit des Originalprodukts und bei Auslaufartikeln, wo technisch sinnvoll, gleichwertige Alternativen. Diese Seite ersetzt keine Live-Bestandsliste: Nutzen Sie bitte die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "bx_about_title": "Über 3M",
+        "bx_about_text": "<p>3M wurde 1902 als Minnesota Mining and Manufacturing Company gegründet, begann mit der Herstellung von Schleifpapier und hat seinen Hauptsitz in St. Paul, Minnesota (USA). Das Unternehmen ist an der New Yorker Börse notiert (NYSE: MMM).</p><p>3M ist heute in drei Geschäftssegmente gegliedert: <strong>Safety and Industrial</strong> (u. a. Arbeitsschutz, Klebebänder und Klebstoffe, Schleifmittel, Elektrotechnik), <strong>Transportation and Electronics</strong> und <strong>Consumer</strong>. Das Medizingeschäft wurde am 1. April 2024 als eigenständiges Unternehmen Solventum abgespalten.</p>",
+        "bx_products_title": "3M Produktgruppen, die wir beschaffen",
+        "bx_products_intro": "Für Instandhaltung und Produktion betreffen typische Anfragen folgende Bereiche:",
+        "bx_products_list": "<li><strong>Schleifmittel</strong> – z. B. 3M Cubitron II Fiberscheiben und Schleifbänder, Scotch-Brite Vliesprodukte zur Oberflächenbearbeitung, Roloc Schnellwechselscheiben</li><li><strong>Klebebänder und Klebstoffe</strong> – z. B. 3M VHB Hochleistungs-Klebebänder, Scotch-Weld Strukturklebstoffe, Transferklebebänder und Abdeckbänder</li><li><strong>Elektroisolierung und Kabelzubehör</strong> – z. B. Scotch Super 33+ Vinyl-Isolierband, Scotch 23 selbstverschweißendes Band, Kaltschrumpf-Garnituren, Scotchcast Gießharze</li><li><strong>Atemschutz</strong> – Halb- und Vollmasken der Serien 6000 und 7500, Filter, Aura Atemschutzmasken, Versaflo Gebläsefiltergeräte</li><li><strong>Schweißerschutz</strong> – 3M Speedglas Schweißmasken, Automatikfilter und Ersatzsichtscheiben</li><li><strong>Augen-, Gehör- und Kopfschutz</strong> – Schutzbrillen (z. B. SecureFit), E-A-R Gehörschutzstöpsel; Kapselgehörschutz und Headsets siehe <a href=\"../marche/3m-peltor.html\">3M PELTOR</a></li><li><strong>Absturzsicherung</strong> – 3M DBI-SALA Auffanggurte, Höhensicherungsgeräte und Verbindungsmittel</li>",
+        "bx_tech_title": "Worauf es bei 3M Anfragen ankommt",
+        "bx_tech_list": "<li><strong>3M ID bzw. Produktnummer:</strong> 3M führt neben dem Produktnamen eine Produktnummer und eine 3M ID (früher „3M Stock“) – mit dieser Nummer lässt sich die exakte Ausführung eindeutig bestimmen.</li><li><strong>Abmessungen und Ausführung:</strong> bei Schleifmitteln Korn, Durchmesser und Befestigung; bei Klebebändern Breite, Länge, Dicke und Klebstoffsystem.</li><li><strong>Normen bei PSA:</strong> z. B. EN 140/EN 14387 für Masken und Filter, EN 149 für partikelfiltrierende Masken, EN 175/EN 379 für Schweißerschutz – der Ersatz muss dieselbe Zulassung haben.</li><li><strong>Haltbarkeit und Charge:</strong> Klebstoffe, Harze und Filter haben ein Verfallsdatum; wir achten auf ausreichende Restlaufzeit.</li><li><strong>Auslaufprodukte:</strong> 3M hat die PFAS-Herstellung Ende 2025 eingestellt; Produkte wie Novec und Fluorinert Flüssigkeiten sind nicht mehr erhältlich – hier suchen wir Alternativen.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Instandhaltung und Werkstatt</li><li>Metallbearbeitung und Schweißen</li><li>Montage und Konstruktionskleben</li><li>Elektroinstallation und Kabelreparatur</li><li>Chemie, Pharma und Lebensmittel (Arbeitsschutz)</li><li>Fahrzeug-, Schienen- und Maschinenbau</li><li>Bau und Energieversorgung</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihr Angebot",
+        "bx_request_list": "<li>Produktname und 3M ID bzw. Produktnummer (Foto des Etiketts hilft)</li><li>Abmessungen, Körnung oder Größe</li><li>Bei PSA: Norm, Filterklasse oder Größe</li><li>Menge und Verpackungseinheit</li><li>Gewünschter Liefertermin</li><li>Nur Original oder gleichwertige Alternative möglich</li>",
+        "brand_faq_q4": "Beschafft ABCspareparts auch 3M Produkte, die nicht mehr hergestellt werden?",
+        "brand_faq_a4": "Wir fragen bei Distributoren und Brokern in Europa nach Restbeständen. Für Produkte, die 3M im Zuge des PFAS-Ausstiegs eingestellt hat (z. B. Novec Flüssigkeiten), schlagen wir nach Rücksprache Alternativen anderer Hersteller vor.",
+        "brand_faq_q5": "Welche Nummer brauche ich für eine 3M Anfrage?",
+        "brand_faq_a5": "Am besten die 3M ID oder die Produktnummer vom Etikett oder aus der Rechnung, zusammen mit Produktname und Abmessungen. Damit ist die Ausführung eindeutig.",
+        "brand_faq_q6": "Liefert ABCspareparts auch 3M Medizinprodukte?",
+        "brand_faq_a6": "Das frühere 3M Health Care Geschäft gehört seit April 2024 zu Solventum. Unser Schwerpunkt liegt auf Industrie- und MRO-Produkten von 3M; Anfragen zu anderen Bereichen prüfen wir im Einzelfall.",
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR und DBI-SALA sind Marken der 3M Company. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Herstellerinformationen (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Stand: September 2026."
+      },
+      "en": {
+        "meta_title": "3M Industrial & MRO Products: Abrasives, Tapes, PPE | ABCspareparts",
+        "meta_description": "3M for maintenance: Cubitron & Scotch-Brite abrasives, VHB tapes, Scotch electrical tapes, respirators, Speedglas. Send the 3M ID – quote often in 24 h.",
+        "brand_h1": "3M – abrasives, tapes, electrical insulation and safety products for industry",
+        "brand_intro": "ABCspareparts sources 3M products for maintenance and production – abrasives, tapes and adhesives, electrical insulation and personal protective equipment – for industrial customers across Europe. Send us the product name or 3M ID and quantity – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability of the original product and, for discontinued items and where technically appropriate, equivalent alternatives. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "bx_about_title": "About 3M",
+        "bx_about_text": "<p>3M was founded in 1902 as the Minnesota Mining and Manufacturing Company, started out making sandpaper and is headquartered in St. Paul, Minnesota (USA). The company is listed on the New York Stock Exchange (NYSE: MMM).</p><p>Today 3M is organised in three business segments: <strong>Safety and Industrial</strong> (including personal safety, tapes and adhesives, abrasives, electrical), <strong>Transportation and Electronics</strong> and <strong>Consumer</strong>. The health care business was spun off as the independent company Solventum on 1 April 2024.</p>",
+        "bx_products_title": "3M product groups we source",
+        "bx_products_intro": "For maintenance and production, typical requests cover the following areas:",
+        "bx_products_list": "<li><strong>Abrasives</strong> – e.g. 3M Cubitron II fibre discs and belts, Scotch-Brite non-woven surface conditioning products, Roloc quick-change discs</li><li><strong>Tapes and adhesives</strong> – e.g. 3M VHB high-performance tapes, Scotch-Weld structural adhesives, transfer tapes and masking tapes</li><li><strong>Electrical insulation and cable accessories</strong> – e.g. Scotch Super 33+ vinyl tape, Scotch 23 self-fusing rubber tape, cold shrink kits, Scotchcast resins</li><li><strong>Respiratory protection</strong> – 6000 and 7500 series half and full masks, filters, Aura respirators, Versaflo powered air systems</li><li><strong>Welding protection</strong> – 3M Speedglas welding helmets, auto-darkening filters and replacement lenses</li><li><strong>Eye, hearing and head protection</strong> – safety glasses (e.g. SecureFit), E-A-R earplugs; earmuffs and headsets see <a href=\"../marche/3m-peltor.html\">3M PELTOR</a></li><li><strong>Fall protection</strong> – 3M DBI-SALA harnesses, self-retracting lifelines and lanyards</li>",
+        "bx_tech_title": "What matters in a 3M request",
+        "bx_tech_list": "<li><strong>3M ID or product number:</strong> besides the product name, 3M uses a product number and a 3M ID (formerly “3M Stock”) – this number identifies the exact version.</li><li><strong>Dimensions and version:</strong> for abrasives grit, diameter and attachment; for tapes width, length, thickness and adhesive system.</li><li><strong>PPE standards:</strong> e.g. EN 140/EN 14387 for masks and filters, EN 149 for filtering facepieces, EN 175/EN 379 for welding protection – the replacement must carry the same approval.</li><li><strong>Shelf life and batch:</strong> adhesives, resins and filters have an expiry date; we make sure enough shelf life remains.</li><li><strong>Discontinued products:</strong> 3M exited PFAS manufacturing at the end of 2025; products such as Novec and Fluorinert fluids are no longer available – we look for alternatives.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Maintenance and workshops</li><li>Metalworking and welding</li><li>Assembly and structural bonding</li><li>Electrical installation and cable repair</li><li>Chemicals, pharma and food (occupational safety)</li><li>Vehicle, rail and machine building</li><li>Construction and utilities</li>",
+        "bx_request_title": "This information speeds up your quote",
+        "bx_request_list": "<li>Product name and 3M ID or product number (a photo of the label helps)</li><li>Dimensions, grit or size</li><li>For PPE: standard, filter class or size</li><li>Quantity and pack size</li><li>Required delivery date</li><li>Original only, or equivalent alternative acceptable</li>",
+        "brand_faq_q4": "Does ABCspareparts also source 3M products that are no longer manufactured?",
+        "brand_faq_a4": "We check with distributors and brokers in Europe for remaining stock. For products 3M discontinued as part of its PFAS exit (e.g. Novec fluids), we propose alternatives from other manufacturers after consultation.",
+        "brand_faq_q5": "Which number do I need for a 3M request?",
+        "brand_faq_a5": "Ideally the 3M ID or product number from the label or invoice, together with the product name and dimensions. This identifies the exact version.",
+        "brand_faq_q6": "Does ABCspareparts also supply 3M medical products?",
+        "brand_faq_a6": "The former 3M Health Care business has been part of Solventum since April 2024. Our focus is on 3M industrial and MRO products; we review requests for other areas case by case.",
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR and DBI-SALA are trademarks of 3M Company. Names are mentioned solely to identify products. Information is based on public manufacturer information (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Last updated: September 2026."
+      },
+      "it": {
+        "meta_title": "Prodotti industriali e MRO 3M: abrasivi, nastri, DPI | ABCspareparts",
+        "meta_description": "3M per la manutenzione: abrasivi Cubitron e Scotch-Brite, nastri VHB, nastri isolanti Scotch, respiratori, Speedglas. Invii il 3M ID – preventivo spesso in 24 h.",
+        "brand_h1": "3M – abrasivi, nastri, isolamento elettrico e sicurezza sul lavoro per l'industria",
+        "brand_intro": "ABCspareparts fornisce prodotti 3M per manutenzione e produzione – abrasivi, nastri e adesivi, isolamento elettrico e dispositivi di protezione individuale – a clienti industriali in tutta Europa. Ci invii nome del prodotto o 3M ID e quantità – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità del prodotto originale e, per gli articoli fuori produzione e se tecnicamente adatto, alternative equivalenti. Questa pagina non sostituisce un elenco live: usi la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "bx_about_title": "Chi è 3M",
+        "bx_about_text": "<p>3M è stata fondata nel 1902 come Minnesota Mining and Manufacturing Company, ha iniziato producendo carta abrasiva e ha sede a St. Paul, Minnesota (USA). La società è quotata alla Borsa di New York (NYSE: MMM).</p><p>Oggi 3M è organizzata in tre segmenti: <strong>Safety and Industrial</strong> (tra cui sicurezza sul lavoro, nastri e adesivi, abrasivi, settore elettrico), <strong>Transportation and Electronics</strong> e <strong>Consumer</strong>. Il settore sanitario è stato scorporato il 1° aprile 2024 nella società indipendente Solventum.</p>",
+        "bx_products_title": "Gruppi di prodotti 3M che forniamo",
+        "bx_products_intro": "Per manutenzione e produzione le richieste tipiche riguardano le seguenti aree:",
+        "bx_products_list": "<li><strong>Abrasivi</strong> – es. dischi fibra e nastri 3M Cubitron II, prodotti in tessuto non tessuto Scotch-Brite per la finitura superficiale, dischi a cambio rapido Roloc</li><li><strong>Nastri e adesivi</strong> – es. nastri ad alte prestazioni 3M VHB, adesivi strutturali Scotch-Weld, nastri transfer e nastri di mascheratura</li><li><strong>Isolamento elettrico e accessori per cavi</strong> – es. nastro isolante in vinile Scotch Super 33+, nastro autoagglomerante Scotch 23, giunzioni a freddo (cold shrink), resine Scotchcast</li><li><strong>Protezione delle vie respiratorie</strong> – semimaschere e maschere intere serie 6000 e 7500, filtri, respiratori Aura, sistemi a ventilazione assistita Versaflo</li><li><strong>Protezione per saldatura</strong> – maschere 3M Speedglas, filtri autoscuranti e lenti di ricambio</li><li><strong>Protezione occhi, udito e testa</strong> – occhiali di sicurezza (es. SecureFit), inserti auricolari E-A-R; cuffie e headset vedi <a href=\"../marche/3m-peltor.html\">3M PELTOR</a></li><li><strong>Anticaduta</strong> – imbracature 3M DBI-SALA, dispositivi retrattili e cordini</li>",
+        "bx_tech_title": "Cosa conta in una richiesta 3M",
+        "bx_tech_list": "<li><strong>3M ID o codice prodotto:</strong> oltre al nome, 3M usa un codice prodotto e un 3M ID (in passato “3M Stock”) – questo numero identifica la versione esatta.</li><li><strong>Dimensioni ed esecuzione:</strong> per gli abrasivi grana, diametro e fissaggio; per i nastri larghezza, lunghezza, spessore e sistema adesivo.</li><li><strong>Norme DPI:</strong> es. EN 140/EN 14387 per maschere e filtri, EN 149 per facciali filtranti, EN 175/EN 379 per la saldatura – il ricambio deve avere la stessa certificazione.</li><li><strong>Scadenza e lotto:</strong> adesivi, resine e filtri hanno una data di scadenza; verifichiamo che la durata residua sia sufficiente.</li><li><strong>Prodotti fuori produzione:</strong> 3M ha cessato la produzione di PFAS a fine 2025; prodotti come i fluidi Novec e Fluorinert non sono più disponibili – in questi casi cerchiamo alternative.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Manutenzione e officina</li><li>Lavorazione dei metalli e saldatura</li><li>Montaggio e incollaggio strutturale</li><li>Impianti elettrici e riparazione cavi</li><li>Chimica, farmaceutica e alimentare (sicurezza sul lavoro)</li><li>Costruzione di veicoli, ferroviaria e di macchine</li><li>Edilizia e servizi energetici</li>",
+        "bx_request_title": "Questi dati accelerano il preventivo",
+        "bx_request_list": "<li>Nome del prodotto e 3M ID o codice prodotto (una foto dell'etichetta aiuta)</li><li>Dimensioni, grana o taglia</li><li>Per i DPI: norma, classe del filtro o taglia</li><li>Quantità e confezione</li><li>Data di consegna desiderata</li><li>Solo originale oppure alternativa equivalente ammessa</li>",
+        "brand_faq_q4": "ABCspareparts fornisce anche prodotti 3M non più prodotti?",
+        "brand_faq_a4": "Verifichiamo le giacenze residue presso distributori e broker in Europa. Per i prodotti che 3M ha eliminato con l'uscita dai PFAS (es. fluidi Novec) proponiamo, previo accordo, alternative di altri produttori.",
+        "brand_faq_q5": "Quale numero serve per una richiesta 3M?",
+        "brand_faq_a5": "Idealmente il 3M ID o il codice prodotto riportato su etichetta o fattura, insieme a nome del prodotto e dimensioni. Così la versione è identificata con certezza.",
+        "brand_faq_q6": "ABCspareparts fornisce anche prodotti medicali 3M?",
+        "brand_faq_a6": "L'ex settore 3M Health Care fa parte di Solventum da aprile 2024. Ci concentriamo sui prodotti industriali e MRO di 3M; le richieste per altri settori le valutiamo caso per caso.",
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR e DBI-SALA sono marchi di 3M Company. I nomi sono citati solo per identificare i prodotti. Le informazioni si basano su dati pubblici del costruttore (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Aggiornato: settembre 2026."
+      },
+      "es": {
+        "meta_title": "Productos industriales y MRO 3M: abrasivos, cintas, EPI | ABCspareparts",
+        "meta_description": "3M para mantenimiento: abrasivos Cubitron y Scotch-Brite, cintas VHB, cintas eléctricas Scotch, protección respiratoria, Speedglas. Envíe el 3M ID – oferta a menudo en 24 h.",
+        "brand_h1": "3M – abrasivos, cintas, aislamiento eléctrico y seguridad laboral para la industria",
+        "brand_intro": "ABCspareparts suministra productos 3M para mantenimiento y producción – abrasivos, cintas y adhesivos, aislamiento eléctrico y equipos de protección individual – a clientes industriales en toda Europa. Envíenos el nombre del producto o el 3M ID y la cantidad – normalmente respondemos en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad del producto original y, para artículos descatalogados y cuando es técnicamente adecuado, alternativas equivalentes. Esta página no es un listado de stock en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "bx_about_title": "Sobre 3M",
+        "bx_about_text": "<p>3M se fundó en 1902 como Minnesota Mining and Manufacturing Company, empezó fabricando papel de lija y tiene su sede en St. Paul, Minnesota (EE. UU.). Cotiza en la Bolsa de Nueva York (NYSE: MMM).</p><p>Hoy 3M se organiza en tres segmentos: <strong>Safety and Industrial</strong> (entre otros seguridad laboral, cintas y adhesivos, abrasivos, eléctrico), <strong>Transportation and Electronics</strong> y <strong>Consumer</strong>. El negocio sanitario se escindió el 1 de abril de 2024 como la empresa independiente Solventum.</p>",
+        "bx_products_title": "Grupos de productos 3M que suministramos",
+        "bx_products_intro": "Para mantenimiento y producción, las solicitudes habituales abarcan las siguientes áreas:",
+        "bx_products_list": "<li><strong>Abrasivos</strong> – p. ej. discos de fibra y bandas 3M Cubitron II, productos de no tejido Scotch-Brite para acabado superficial, discos de cambio rápido Roloc</li><li><strong>Cintas y adhesivos</strong> – p. ej. cintas de alto rendimiento 3M VHB, adhesivos estructurales Scotch-Weld, cintas de transferencia y de enmascarar</li><li><strong>Aislamiento eléctrico y accesorios de cable</strong> – p. ej. cinta de vinilo Scotch Super 33+, cinta autofundente Scotch 23, kits contraíbles en frío, resinas Scotchcast</li><li><strong>Protección respiratoria</strong> – medias máscaras y máscaras completas de las series 6000 y 7500, filtros, mascarillas Aura, equipos motorizados Versaflo</li><li><strong>Protección para soldadura</strong> – pantallas 3M Speedglas, filtros de oscurecimiento automático y visores de recambio</li><li><strong>Protección ocular, auditiva y de la cabeza</strong> – gafas de seguridad (p. ej. SecureFit), tapones E-A-R; orejeras y headsets ver <a href=\"../marche/3m-peltor.html\">3M PELTOR</a></li><li><strong>Protección anticaídas</strong> – arneses 3M DBI-SALA, dispositivos retráctiles y elementos de amarre</li>",
+        "bx_tech_title": "Lo que importa en una solicitud 3M",
+        "bx_tech_list": "<li><strong>3M ID o número de producto:</strong> además del nombre, 3M utiliza un número de producto y un 3M ID (antes “3M Stock”) – este número identifica la versión exacta.</li><li><strong>Dimensiones y versión:</strong> en abrasivos grano, diámetro y fijación; en cintas ancho, largo, espesor y sistema adhesivo.</li><li><strong>Normas de EPI:</strong> p. ej. EN 140/EN 14387 para máscaras y filtros, EN 149 para mascarillas filtrantes, EN 175/EN 379 para soldadura – el recambio debe tener la misma homologación.</li><li><strong>Caducidad y lote:</strong> adhesivos, resinas y filtros tienen fecha de caducidad; comprobamos que quede vida útil suficiente.</li><li><strong>Productos descatalogados:</strong> 3M dejó de fabricar PFAS a finales de 2025; productos como los fluidos Novec y Fluorinert ya no están disponibles – buscamos alternativas.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Mantenimiento y taller</li><li>Metalurgia y soldadura</li><li>Montaje y pegado estructural</li><li>Instalación eléctrica y reparación de cables</li><li>Química, farmacia y alimentación (seguridad laboral)</li><li>Construcción de vehículos, ferrocarril y maquinaria</li><li>Construcción y suministro energético</li>",
+        "bx_request_title": "Estos datos aceleran su oferta",
+        "bx_request_list": "<li>Nombre del producto y 3M ID o número de producto (una foto de la etiqueta ayuda)</li><li>Dimensiones, grano o talla</li><li>Para EPI: norma, clase de filtro o talla</li><li>Cantidad y unidad de embalaje</li><li>Fecha de entrega deseada</li><li>Solo original o alternativa equivalente aceptada</li>",
+        "brand_faq_q4": "¿ABCspareparts también suministra productos 3M que ya no se fabrican?",
+        "brand_faq_a4": "Consultamos existencias restantes a distribuidores y brokers en Europa. Para productos que 3M retiró con su salida de los PFAS (p. ej. fluidos Novec), proponemos alternativas de otros fabricantes previa consulta.",
+        "brand_faq_q5": "¿Qué número necesito para una solicitud 3M?",
+        "brand_faq_a5": "Idealmente el 3M ID o el número de producto de la etiqueta o la factura, junto con el nombre del producto y las dimensiones. Así la versión queda identificada sin ambigüedad.",
+        "brand_faq_q6": "¿ABCspareparts suministra también productos médicos 3M?",
+        "brand_faq_a6": "El antiguo negocio 3M Health Care forma parte de Solventum desde abril de 2024. Nos centramos en productos industriales y MRO de 3M; revisamos otras solicitudes caso por caso.",
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR y DBI-SALA son marcas de 3M Company. Los nombres se mencionan solo para identificar los productos. La información se basa en datos públicos del fabricante (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Actualizado: septiembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Produits industriels et MRO 3M : abrasifs, rubans, EPI | ABCspareparts",
+        "meta_description": "3M pour la maintenance : abrasifs Cubitron et Scotch-Brite, rubans VHB, rubans électriques Scotch, protection respiratoire, Speedglas. Envoyez le 3M ID – devis souvent sous 24 h.",
+        "brand_h1": "3M – abrasifs, rubans, isolation électrique et protection au travail pour l'industrie",
+        "brand_intro": "ABCspareparts fournit des produits 3M pour la maintenance et la production – abrasifs, rubans et adhésifs, isolation électrique et équipements de protection individuelle – aux clients industriels dans toute l'Europe. Envoyez-nous le nom du produit ou le 3M ID et la quantité – nous répondons généralement sous 24 heures.",
+        "brand_intro_p2": "Nous vérifions la disponibilité du produit d'origine et, pour les articles arrêtés et lorsque c'est techniquement pertinent, des alternatives équivalentes. Cette page ne remplace pas une liste de stock en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "bx_about_title": "À propos de 3M",
+        "bx_about_text": "<p>3M a été fondée en 1902 sous le nom de Minnesota Mining and Manufacturing Company, a commencé par fabriquer du papier abrasif et a son siège à St. Paul, Minnesota (États-Unis). L'entreprise est cotée à la Bourse de New York (NYSE : MMM).</p><p>3M est aujourd'hui organisée en trois segments : <strong>Safety and Industrial</strong> (notamment protection individuelle, rubans et adhésifs, abrasifs, électrique), <strong>Transportation and Electronics</strong> et <strong>Consumer</strong>. L'activité santé a été scindée le 1er avril 2024 pour devenir la société indépendante Solventum.</p>",
+        "bx_products_title": "Groupes de produits 3M que nous fournissons",
+        "bx_products_intro": "Pour la maintenance et la production, les demandes typiques concernent les domaines suivants :",
+        "bx_products_list": "<li><strong>Abrasifs</strong> – p. ex. disques fibre et bandes 3M Cubitron II, produits non tissés Scotch-Brite pour la préparation de surface, disques à changement rapide Roloc</li><li><strong>Rubans et adhésifs</strong> – p. ex. rubans haute performance 3M VHB, adhésifs structuraux Scotch-Weld, rubans transfert et de masquage</li><li><strong>Isolation électrique et accessoires de câbles</strong> – p. ex. ruban vinyle Scotch Super 33+, ruban auto-amalgamant Scotch 23, jonctions rétractables à froid, résines Scotchcast</li><li><strong>Protection respiratoire</strong> – demi-masques et masques complets séries 6000 et 7500, filtres, masques Aura, systèmes à ventilation assistée Versaflo</li><li><strong>Protection du soudeur</strong> – masques 3M Speedglas, filtres auto-obscurcissants et écrans de rechange</li><li><strong>Protection des yeux, de l'ouïe et de la tête</strong> – lunettes de sécurité (p. ex. SecureFit), bouchons E-A-R ; coquilles et casques de communication voir <a href=\"../marche/3m-peltor.html\">3M PELTOR</a></li><li><strong>Antichute</strong> – harnais 3M DBI-SALA, antichutes à rappel automatique et longes</li>",
+        "bx_tech_title": "Ce qui compte dans une demande 3M",
+        "bx_tech_list": "<li><strong>3M ID ou référence produit :</strong> outre le nom, 3M utilise une référence produit et un 3M ID (anciennement « 3M Stock ») – ce numéro identifie la version exacte.</li><li><strong>Dimensions et version :</strong> pour les abrasifs grain, diamètre et fixation ; pour les rubans largeur, longueur, épaisseur et système adhésif.</li><li><strong>Normes EPI :</strong> p. ex. EN 140/EN 14387 pour masques et filtres, EN 149 pour les masques filtrants, EN 175/EN 379 pour le soudage – le remplacement doit avoir la même homologation.</li><li><strong>Péremption et lot :</strong> adhésifs, résines et filtres ont une date de péremption ; nous veillons à une durée de vie résiduelle suffisante.</li><li><strong>Produits arrêtés :</strong> 3M a cessé la fabrication de PFAS fin 2025 ; des produits comme les fluides Novec et Fluorinert ne sont plus disponibles – nous cherchons des alternatives.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Maintenance et atelier</li><li>Travail des métaux et soudage</li><li>Assemblage et collage structural</li><li>Installation électrique et réparation de câbles</li><li>Chimie, pharmacie et agroalimentaire (sécurité au travail)</li><li>Construction automobile, ferroviaire et de machines</li><li>Bâtiment et énergie</li>",
+        "bx_request_title": "Ces informations accélèrent votre devis",
+        "bx_request_list": "<li>Nom du produit et 3M ID ou référence (une photo de l'étiquette aide)</li><li>Dimensions, grain ou taille</li><li>Pour les EPI : norme, classe de filtre ou taille</li><li>Quantité et conditionnement</li><li>Date de livraison souhaitée</li><li>Original uniquement ou alternative équivalente acceptée</li>",
+        "brand_faq_q4": "ABCspareparts fournit-il aussi des produits 3M qui ne sont plus fabriqués ?",
+        "brand_faq_a4": "Nous interrogeons des distributeurs et brokers en Europe sur les stocks restants. Pour les produits arrêtés par 3M dans le cadre de sa sortie des PFAS (p. ex. fluides Novec), nous proposons après concertation des alternatives d'autres fabricants.",
+        "brand_faq_q5": "Quel numéro faut-il pour une demande 3M ?",
+        "brand_faq_a5": "Idéalement le 3M ID ou la référence produit figurant sur l'étiquette ou la facture, avec le nom du produit et les dimensions. La version est ainsi identifiée sans ambiguïté.",
+        "brand_faq_q6": "ABCspareparts fournit-il aussi des produits médicaux 3M ?",
+        "brand_faq_a6": "L'ancienne activité 3M Health Care fait partie de Solventum depuis avril 2024. Nous nous concentrons sur les produits industriels et MRO de 3M ; les autres demandes sont étudiées au cas par cas.",
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR et DBI-SALA sont des marques de 3M Company. Les noms sont cités uniquement pour identifier les produits. Les informations reposent sur des données publiques du fabricant (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Mise à jour : septembre 2026."
+      }
+    }
+  },
+  "3m-peltor": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "3m",
+      "honeywell",
+      "msa",
+      "uvex",
+      "jsp",
+      "drager",
+      "delta-plus",
+      "dupont"
+    ],
+    "related_labels": {
+      "uvex": "uvex",
+      "delta-plus": "Delta Plus",
+      "dupont": "DuPont"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/3m-peltor.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/3m-peltor.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/3m-peltor.html#brand",
+          "name": "3M PELTOR",
+          "alternateName": [
+            "Peltor",
+            "3M Peltor",
+            "PELTOR"
+          ],
+          "url": "https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/",
+          "sameAs": [
+            "https://www.3m.com/"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/3m-peltor.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/3m-peltor.html#brand"
+          },
+          "name": "3M Company",
+          "foundingDate": "1902",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3M Center",
+            "postalCode": "55144",
+            "addressLocality": "St. Paul, Minnesota",
+            "addressCountry": "US"
+          },
+          "url": "https://www.3m.com/",
+          "sameAs": [
+            "https://en.wikipedia.org/wiki/3M"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/3m-peltor.html#service",
+          "name": "Beschaffung von 3M PELTOR Gehörschutz, Headsets und Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/3m-peltor.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "3M PELTOR Produktgruppen",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Kapselgehörschutz Optime I/II/III"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Kapselgehörschutz X-Serie X1–X5"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Helmkapseln P3E"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Gehörschutz-Headsets ProTac, LiteCom, WS LiteCom Pro III"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Taktische Headsets ComTac"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Hygienesets HY51, HY54, HY79"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Akkus ACK081, ACK082 und Ladezubehör"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "3M PELTOR Gehörschutz, Headsets & Ersatzteile | ABCspareparts",
+        "meta_description": "3M PELTOR: Optime & X-Serie Kapselgehörschutz, ProTac, LiteCom, WS LiteCom Pro III, Hygienesets HY79, Akkus ACK081. Typ senden – Angebot oft in 24 h.",
+        "brand_h1": "3M PELTOR – Kapselgehörschutz, Kommunikations-Headsets und Ersatzteile",
+        "brand_intro": "ABCspareparts beschafft 3M PELTOR Gehörschutz und Kommunikationslösungen – passive Kapseln, Helmkapseln, Headsets mit Funk und Bluetooth sowie Hygienesets, Akkus und Zubehör – für Industriekunden in ganz Europa. Senden Sie uns Typbezeichnung und Menge – wir antworten in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit des Originalprodukts und bei Auslaufmodellen, wo sinnvoll, Nachfolgemodelle mit gleichwertigem Schutz. Diese Seite ersetzt keine Live-Bestandsliste: Nutzen Sie bitte die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "bx_about_title": "Über 3M PELTOR",
+        "bx_about_text": "<p>PELTOR entstand 1950 in Schweden: Gründer Tore Palmaer entwickelte für die schwedische Luftwaffe einen Gehörschutz, der zugleich Kommunikation im Lärm ermöglichte. Die Produktion befand sich in Värnamo. Über die Übernahme von Aearo Technologies gehört PELTOR seit 2008 zu 3M.</p><p>Heute ist <strong>3M PELTOR</strong> die Marke von 3M für Kapselgehörschutz und Kommunikations-Headsets für laute und gefährliche Umgebungen – von einfachen Kapseln bis zu Headsets mit integriertem Funk, Bluetooth und pegelabhängiger Umgebungsüberwachung. Weitere 3M Arbeitsschutzprodukte finden Sie auf der Seite <a href=\"../marche/3m.html\">3M</a>.</p>",
+        "bx_products_title": "3M PELTOR Produktgruppen, die wir beschaffen",
+        "bx_products_intro": "Typische Anfragen betreffen folgende Produkte (Bezeichnungen laut Herstellerunterlagen):",
+        "bx_products_list": "<li><strong>Passiver Kapselgehörschutz</strong> – Optime I (H510A, SNR 27 dB), Optime II (H520A, SNR 31 dB), Optime III (H540A, SNR 34 dB) sowie die X-Serie X1–X5 mit SNR 27 bis 37 dB</li><li><strong>Helmkapseln</strong> – Varianten zur Helmbefestigung, z. B. H510P3E, und X-Serie mit P3- oder P5-Adapter</li><li><strong>Gehörschutz-Headsets</strong> – ProTac III und WS ProTac XPI (pegelabhängig), LiteCom und LiteCom Plus mit integriertem Funkgerät (z. B. PMR446), WS LiteCom Pro III mit Bluetooth</li><li><strong>Taktische Headsets</strong> – ComTac, z. B. ComTac VIII, für Behörden und Militär</li><li><strong>Hygienesets</strong> – Dichtkissen und Dämmeinsätze, z. B. HY51 (Optime I), HY54 (Optime III), HY79 (FM Radio, ProTac, LiteCom)</li><li><strong>Akkus und Ladezubehör</strong> – z. B. Li-Ion-Akku ACK081, Ex-zugelassener Akku ACK082, USB-Ladekabel AL2AI</li><li><strong>Mikrofone, Kabel und Adapter</strong> – Sprechgarnituren, Funkgeräte-Adapter und Anschlusskabel</li>",
+        "bx_tech_title": "Worauf es beim Ersatz von PELTOR Gehörschutz ankommt",
+        "bx_tech_list": "<li><strong>Vollständige Typbezeichnung:</strong> Der Code (z. B. H540A, X4P3E, MT73H7P3E4410WS6EU) enthält Modell, Befestigung (Kopfbügel, Nackenbügel, Helm) und bei Headsets Funkfrequenz und Ausstattung.</li><li><strong>Dämmwert (SNR):</strong> Ein Ersatz muss mindestens den erforderlichen Schutz bieten, ohne überzudämmen – maßgeblich ist der Lärmpegel am Arbeitsplatz.</li><li><strong>Befestigung am Helm:</strong> Der Helmadapter (z. B. P3E) muss zum Helmtyp passen.</li><li><strong>Funk und Ex-Schutz:</strong> Frequenzband (z. B. PMR446), analog oder digital, Bluetooth sowie ATEX-Zulassung für explosionsgefährdete Bereiche – Ex-Headsets benötigen passende Ex-Akkus wie ACK082.</li><li><strong>Hygienesets passend zum Modell:</strong> Dichtkissen und Einsätze sind modellspezifisch und sollten gemäß Gebrauchsanleitung regelmäßig getauscht werden, damit die Dämmung erhalten bleibt.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Metallverarbeitung und Maschinenbau</li><li>Bau und Tiefbau</li><li>Öl, Gas und Chemie (Ex-Bereiche)</li><li>Flughäfen und Bodendienste</li><li>Forst- und Landwirtschaft</li><li>Energieversorgung und Instandhaltung</li><li>Behörden, Feuerwehr und Militär</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihr Angebot",
+        "bx_request_list": "<li>Vollständige Typbezeichnung vom Etikett in der Kapsel (ein Foto hilft)</li><li>Befestigung: Kopfbügel, Nackenbügel oder Helm (Helmtyp)</li><li>Bei Headsets: Funkfrequenz, Ex-Zulassung, Bluetooth</li><li>Bei Ersatzteilen: Modell, für das Hygieneset oder Akku gedacht ist</li><li>Menge und gewünschter Liefertermin</li><li>Nur Original oder Nachfolgemodell möglich</li>",
+        "brand_faq_q4": "Beschafft ABCspareparts auch Ersatzteile für ältere PELTOR Headsets?",
+        "brand_faq_a4": "Ja. Wir fragen bei Distributoren und Brokern in Europa nach Hygienesets, Akkus, Mikrofonen und Adaptern. Ist ein Modell ausgelaufen, schlagen wir nach Rücksprache ein Nachfolgemodell mit gleichwertiger Dämmung und passender Befestigung vor.",
+        "brand_faq_q5": "Welches Hygieneset passt zu meinem PELTOR Gehörschutz?",
+        "brand_faq_a5": "Das hängt vom Modell ab – z. B. HY51 für Optime I, HY54 für Optime III und HY79 für FM Radio, ProTac und LiteCom Headsets. Senden Sie uns die Typbezeichnung, dann prüfen wir das passende Set.",
+        "brand_faq_q6": "Ist PELTOR eine eigene Firma oder Teil von 3M?",
+        "brand_faq_a6": "PELTOR wurde 1950 in Schweden gegründet und gehört seit 2008 zu 3M. Die Produkte werden heute unter der Marke 3M PELTOR vertrieben.",
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom und ComTac sind Marken der 3M Company. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Herstellerinformationen (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Stand: September 2026."
+      },
+      "en": {
+        "meta_title": "3M PELTOR Hearing Protection, Headsets & Spare Parts | ABCspareparts",
+        "meta_description": "3M PELTOR: Optime & X series earmuffs, ProTac, LiteCom, WS LiteCom Pro III, HY79 hygiene kits, ACK081 batteries. Send the type – quote often in 24 h.",
+        "brand_h1": "3M PELTOR – earmuffs, communication headsets and spare parts",
+        "brand_intro": "ABCspareparts sources 3M PELTOR hearing protection and communication solutions – passive earmuffs, helmet-mounted earmuffs, headsets with radio and Bluetooth, plus hygiene kits, batteries and accessories – for industrial customers across Europe. Send us the type designation and quantity – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability of the original product and, for discontinued models where appropriate, successor models with equivalent protection. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "bx_about_title": "About 3M PELTOR",
+        "bx_about_text": "<p>PELTOR began in Sweden in 1950: founder Tore Palmaer developed hearing protection for the Swedish Air Force that also allowed communication in noise. Production was located in Värnamo. Through the acquisition of Aearo Technologies, PELTOR has been part of 3M since 2008.</p><p>Today <strong>3M PELTOR</strong> is 3M's brand for earmuffs and communication headsets for loud and hazardous environments – from simple earmuffs to headsets with built-in radio, Bluetooth and level-dependent ambient listening. Other 3M safety products are on the <a href=\"../marche/3m.html\">3M</a> page.</p>",
+        "bx_products_title": "3M PELTOR product groups we source",
+        "bx_products_intro": "Typical requests cover the following products (designations from manufacturer documentation):",
+        "bx_products_list": "<li><strong>Passive earmuffs</strong> – Optime I (H510A, SNR 27 dB), Optime II (H520A, SNR 31 dB), Optime III (H540A, SNR 34 dB) and the X series X1–X5 with SNR 27 to 37 dB</li><li><strong>Helmet-mounted earmuffs</strong> – helmet attachment versions, e.g. H510P3E, and X series with P3 or P5 adapter</li><li><strong>Hearing protection headsets</strong> – ProTac III and WS ProTac XPI (level-dependent), LiteCom and LiteCom Plus with built-in two-way radio (e.g. PMR446), WS LiteCom Pro III with Bluetooth</li><li><strong>Tactical headsets</strong> – ComTac, e.g. ComTac VIII, for authorities and military</li><li><strong>Hygiene kits</strong> – ear cushions and foam liners, e.g. HY51 (Optime I), HY54 (Optime III), HY79 (FM Radio, ProTac, LiteCom)</li><li><strong>Batteries and charging accessories</strong> – e.g. Li-ion battery ACK081, Ex-approved battery ACK082, USB charging cable AL2AI</li><li><strong>Microphones, cables and adapters</strong> – boom microphones, radio adapters and connection cables</li>",
+        "bx_tech_title": "What matters when replacing PELTOR hearing protection",
+        "bx_tech_list": "<li><strong>Full type designation:</strong> the code (e.g. H540A, X4P3E, MT73H7P3E4410WS6EU) contains model, attachment (headband, neckband, helmet) and, for headsets, radio frequency and features.</li><li><strong>Attenuation (SNR):</strong> a replacement must provide at least the required protection without over-protecting – the noise level at the workplace is decisive.</li><li><strong>Helmet attachment:</strong> the helmet adapter (e.g. P3E) must match the helmet type.</li><li><strong>Radio and Ex protection:</strong> frequency band (e.g. PMR446), analogue or digital, Bluetooth and ATEX approval for hazardous areas – Ex headsets need matching Ex batteries such as ACK082.</li><li><strong>Hygiene kits matching the model:</strong> cushions and liners are model-specific and should be replaced regularly as per the user instructions to maintain attenuation.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Metalworking and machine building</li><li>Construction and civil engineering</li><li>Oil, gas and chemicals (Ex areas)</li><li>Airports and ground handling</li><li>Forestry and agriculture</li><li>Utilities and maintenance</li><li>Authorities, fire services and military</li>",
+        "bx_request_title": "This information speeds up your quote",
+        "bx_request_list": "<li>Full type designation from the label inside the cup (a photo helps)</li><li>Attachment: headband, neckband or helmet (helmet type)</li><li>For headsets: radio frequency, Ex approval, Bluetooth</li><li>For spare parts: model the hygiene kit or battery is for</li><li>Quantity and required delivery date</li><li>Original only, or successor model acceptable</li>",
+        "brand_faq_q4": "Does ABCspareparts also source spare parts for older PELTOR headsets?",
+        "brand_faq_a4": "Yes. We check with distributors and brokers in Europe for hygiene kits, batteries, microphones and adapters. If a model is discontinued, we propose – after consultation – a successor with equivalent attenuation and matching attachment.",
+        "brand_faq_q5": "Which hygiene kit fits my PELTOR hearing protector?",
+        "brand_faq_a5": "It depends on the model – e.g. HY51 for Optime I, HY54 for Optime III and HY79 for FM Radio, ProTac and LiteCom headsets. Send us the type designation and we will check the right kit.",
+        "brand_faq_q6": "Is PELTOR a separate company or part of 3M?",
+        "brand_faq_a6": "PELTOR was founded in Sweden in 1950 and has been part of 3M since 2008. Products are now sold under the 3M PELTOR brand.",
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom and ComTac are trademarks of 3M Company, mentioned solely to identify products. Information is based on public manufacturer information (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Last updated: September 2026."
+      },
+      "it": {
+        "meta_title": "3M PELTOR: cuffie antirumore, headset e ricambi | ABCspareparts",
+        "meta_description": "3M PELTOR: cuffie Optime e serie X, ProTac, LiteCom, WS LiteCom Pro III, kit igienici HY79, batterie ACK081. Invii il tipo – preventivo spesso entro 24 h.",
+        "brand_h1": "3M PELTOR – cuffie antirumore, headset di comunicazione e ricambi",
+        "brand_intro": "ABCspareparts fornisce protezioni uditive e soluzioni di comunicazione 3M PELTOR – cuffie passive, cuffie per elmetto, headset con radio e Bluetooth, oltre a kit igienici, batterie e accessori – a clienti industriali in tutta Europa. Ci invii sigla del tipo e quantità – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità del prodotto originale e, per i modelli fuori produzione, se opportuno, modelli successori con protezione equivalente. Questa pagina non sostituisce un elenco live: usi la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "bx_about_title": "Chi è 3M PELTOR",
+        "bx_about_text": "<p>PELTOR nasce in Svezia nel 1950: il fondatore Tore Palmaer sviluppò per l'aeronautica militare svedese una protezione dell'udito che permetteva anche di comunicare nel rumore. La produzione aveva sede a Värnamo. Con l'acquisizione di Aearo Technologies, PELTOR fa parte di 3M dal 2008.</p><p>Oggi <strong>3M PELTOR</strong> è il marchio 3M per cuffie antirumore e headset di comunicazione per ambienti rumorosi e pericolosi – dalle cuffie semplici agli headset con radio integrata, Bluetooth e ascolto ambientale dipendente dal livello. Gli altri prodotti 3M per la sicurezza sono nella pagina <a href=\"../marche/3m.html\">3M</a>.</p>",
+        "bx_products_title": "Gruppi di prodotti 3M PELTOR che forniamo",
+        "bx_products_intro": "Le richieste tipiche riguardano i seguenti prodotti (sigle dalla documentazione del costruttore):",
+        "bx_products_list": "<li><strong>Cuffie passive</strong> – Optime I (H510A, SNR 27 dB), Optime II (H520A, SNR 31 dB), Optime III (H540A, SNR 34 dB) e la serie X X1–X5 con SNR da 27 a 37 dB</li><li><strong>Cuffie per elmetto</strong> – versioni con attacco per elmetto, es. H510P3E, e serie X con adattatore P3 o P5</li><li><strong>Cuffie di protezione con comunicazione</strong> – ProTac III e WS ProTac XPI (dipendenti dal livello), LiteCom e LiteCom Plus con radio integrata (es. PMR446), WS LiteCom Pro III con Bluetooth</li><li><strong>Headset tattici</strong> – ComTac, es. ComTac VIII, per forze dell'ordine e militari</li><li><strong>Kit igienici</strong> – cuscinetti e inserti fonoassorbenti, es. HY51 (Optime I), HY54 (Optime III), HY79 (FM Radio, ProTac, LiteCom)</li><li><strong>Batterie e accessori di ricarica</strong> – es. batteria Li-Ion ACK081, batteria certificata Ex ACK082, cavo di ricarica USB AL2AI</li><li><strong>Microfoni, cavi e adattatori</strong> – microfoni a braccetto, adattatori radio e cavi di collegamento</li>",
+        "bx_tech_title": "Cosa conta nella sostituzione di protezioni uditive PELTOR",
+        "bx_tech_list": "<li><strong>Sigla completa:</strong> il codice (es. H540A, X4P3E, MT73H7P3E4410WS6EU) indica modello, attacco (archetto, nucale, elmetto) e, per gli headset, frequenza radio e dotazioni.</li><li><strong>Attenuazione (SNR):</strong> il ricambio deve garantire almeno la protezione necessaria senza iperprotezione – conta il livello di rumore sul posto di lavoro.</li><li><strong>Attacco per elmetto:</strong> l'adattatore (es. P3E) deve essere compatibile con il tipo di elmetto.</li><li><strong>Radio e protezione Ex:</strong> banda di frequenza (es. PMR446), analogica o digitale, Bluetooth e certificazione ATEX per aree a rischio di esplosione – gli headset Ex richiedono batterie Ex adatte come ACK082.</li><li><strong>Kit igienici adatti al modello:</strong> cuscinetti e inserti sono specifici per modello e vanno sostituiti regolarmente secondo le istruzioni d'uso per mantenere l'attenuazione.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Lavorazione dei metalli e costruzione di macchine</li><li>Edilizia e ingegneria civile</li><li>Oil & gas e chimica (aree Ex)</li><li>Aeroporti e servizi di terra</li><li>Silvicoltura e agricoltura</li><li>Servizi energetici e manutenzione</li><li>Enti pubblici, vigili del fuoco e forze armate</li>",
+        "bx_request_title": "Questi dati accelerano il preventivo",
+        "bx_request_list": "<li>Sigla completa dall'etichetta nella coppa (una foto aiuta)</li><li>Attacco: archetto, nucale o elmetto (tipo di elmetto)</li><li>Per gli headset: frequenza radio, certificazione Ex, Bluetooth</li><li>Per i ricambi: modello a cui è destinato il kit igienico o la batteria</li><li>Quantità e data di consegna desiderata</li><li>Solo originale oppure modello successore ammesso</li>",
+        "brand_faq_q4": "ABCspareparts fornisce anche ricambi per headset PELTOR datati?",
+        "brand_faq_a4": "Sì. Verifichiamo presso distributori e broker in Europa kit igienici, batterie, microfoni e adattatori. Se un modello è fuori produzione, proponiamo – previo accordo – un successore con attenuazione equivalente e attacco compatibile.",
+        "brand_faq_q5": "Quale kit igienico è adatto alla mia protezione PELTOR?",
+        "brand_faq_a5": "Dipende dal modello – es. HY51 per Optime I, HY54 per Optime III e HY79 per headset FM Radio, ProTac e LiteCom. Ci invii la sigla e verifichiamo il kit corretto.",
+        "brand_faq_q6": "PELTOR è un'azienda a sé o fa parte di 3M?",
+        "brand_faq_a6": "PELTOR è stata fondata in Svezia nel 1950 e fa parte di 3M dal 2008. Oggi i prodotti sono venduti con il marchio 3M PELTOR.",
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom e ComTac sono marchi di 3M Company, citati solo per identificare i prodotti. Le informazioni si basano su dati pubblici del costruttore (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Aggiornato: settembre 2026."
+      },
+      "es": {
+        "meta_title": "3M PELTOR: orejeras, headsets y repuestos | ABCspareparts",
+        "meta_description": "3M PELTOR: orejeras Optime y serie X, ProTac, LiteCom, WS LiteCom Pro III, kits de higiene HY79, baterías ACK081. Envíe el tipo – oferta a menudo en 24 h.",
+        "brand_h1": "3M PELTOR – orejeras, headsets de comunicación y repuestos",
+        "brand_intro": "ABCspareparts suministra protección auditiva y soluciones de comunicación 3M PELTOR – orejeras pasivas, orejeras para casco, headsets con radio y Bluetooth, además de kits de higiene, baterías y accesorios – a clientes industriales en toda Europa. Envíenos la designación del tipo y la cantidad – normalmente respondemos en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad del producto original y, para modelos descatalogados cuando procede, modelos sucesores con protección equivalente. Esta página no es un listado de stock en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "bx_about_title": "Sobre 3M PELTOR",
+        "bx_about_text": "<p>PELTOR nació en Suecia en 1950: su fundador Tore Palmaer desarrolló para la Fuerza Aérea sueca una protección auditiva que también permitía comunicarse en entornos ruidosos. La producción estaba en Värnamo. Con la adquisición de Aearo Technologies, PELTOR forma parte de 3M desde 2008.</p><p>Hoy <strong>3M PELTOR</strong> es la marca de 3M para orejeras y headsets de comunicación en entornos ruidosos y peligrosos – desde orejeras sencillas hasta headsets con radio integrada, Bluetooth y escucha ambiental dependiente del nivel. Otros productos de seguridad 3M están en la página <a href=\"../marche/3m.html\">3M</a>.</p>",
+        "bx_products_title": "Grupos de productos 3M PELTOR que suministramos",
+        "bx_products_intro": "Las solicitudes habituales abarcan los siguientes productos (designaciones según la documentación del fabricante):",
+        "bx_products_list": "<li><strong>Orejeras pasivas</strong> – Optime I (H510A, SNR 27 dB), Optime II (H520A, SNR 31 dB), Optime III (H540A, SNR 34 dB) y la serie X X1–X5 con SNR de 27 a 37 dB</li><li><strong>Orejeras para casco</strong> – versiones con fijación a casco, p. ej. H510P3E, y serie X con adaptador P3 o P5</li><li><strong>Orejeras con comunicación</strong> – ProTac III y WS ProTac XPI (dependientes del nivel), LiteCom y LiteCom Plus con radio integrada (p. ej. PMR446), WS LiteCom Pro III con Bluetooth</li><li><strong>Headsets tácticos</strong> – ComTac, p. ej. ComTac VIII, para cuerpos de seguridad y militares</li><li><strong>Kits de higiene</strong> – almohadillas y espumas, p. ej. HY51 (Optime I), HY54 (Optime III), HY79 (FM Radio, ProTac, LiteCom)</li><li><strong>Baterías y accesorios de carga</strong> – p. ej. batería Li-Ion ACK081, batería homologada Ex ACK082, cable de carga USB AL2AI</li><li><strong>Micrófonos, cables y adaptadores</strong> – micrófonos de brazo, adaptadores de radio y cables de conexión</li>",
+        "bx_tech_title": "Lo que importa al sustituir protección auditiva PELTOR",
+        "bx_tech_list": "<li><strong>Designación completa:</strong> el código (p. ej. H540A, X4P3E, MT73H7P3E4410WS6EU) indica modelo, fijación (diadema, nuca, casco) y, en headsets, frecuencia de radio y equipamiento.</li><li><strong>Atenuación (SNR):</strong> el recambio debe ofrecer al menos la protección necesaria sin sobreprotección – lo decisivo es el nivel de ruido en el puesto de trabajo.</li><li><strong>Fijación a casco:</strong> el adaptador (p. ej. P3E) debe corresponder al tipo de casco.</li><li><strong>Radio y protección Ex:</strong> banda de frecuencia (p. ej. PMR446), analógica o digital, Bluetooth y homologación ATEX para zonas con riesgo de explosión – los headsets Ex requieren baterías Ex adecuadas como ACK082.</li><li><strong>Kits de higiene según el modelo:</strong> almohadillas y espumas son específicas de cada modelo y deben cambiarse con regularidad según las instrucciones para mantener la atenuación.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Metalurgia y construcción de maquinaria</li><li>Construcción y obra civil</li><li>Petróleo, gas y química (zonas Ex)</li><li>Aeropuertos y servicios en tierra</li><li>Silvicultura y agricultura</li><li>Suministro energético y mantenimiento</li><li>Administración, bomberos y ejército</li>",
+        "bx_request_title": "Estos datos aceleran su oferta",
+        "bx_request_list": "<li>Designación completa en la etiqueta de la copa (una foto ayuda)</li><li>Fijación: diadema, nuca o casco (tipo de casco)</li><li>En headsets: frecuencia de radio, homologación Ex, Bluetooth</li><li>En repuestos: modelo al que corresponde el kit de higiene o la batería</li><li>Cantidad y fecha de entrega deseada</li><li>Solo original o modelo sucesor aceptado</li>",
+        "brand_faq_q4": "¿ABCspareparts suministra también repuestos para headsets PELTOR antiguos?",
+        "brand_faq_a4": "Sí. Consultamos a distribuidores y brokers en Europa kits de higiene, baterías, micrófonos y adaptadores. Si un modelo está descatalogado, proponemos – previa consulta – un sucesor con atenuación equivalente y fijación compatible.",
+        "brand_faq_q5": "¿Qué kit de higiene corresponde a mi protector PELTOR?",
+        "brand_faq_a5": "Depende del modelo – p. ej. HY51 para Optime I, HY54 para Optime III y HY79 para headsets FM Radio, ProTac y LiteCom. Envíenos la designación y comprobamos el kit adecuado.",
+        "brand_faq_q6": "¿PELTOR es una empresa independiente o forma parte de 3M?",
+        "brand_faq_a6": "PELTOR se fundó en Suecia en 1950 y forma parte de 3M desde 2008. Hoy los productos se venden con la marca 3M PELTOR.",
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom y ComTac son marcas de 3M Company, mencionadas solo para identificar los productos. La información se basa en datos públicos del fabricante (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Actualizado: septiembre de 2026."
+      },
+      "fr": {
+        "meta_title": "3M PELTOR : coquilles antibruit, casques et pièces | ABCspareparts",
+        "meta_description": "3M PELTOR : coquilles Optime et série X, ProTac, LiteCom, WS LiteCom Pro III, kits d'hygiène HY79, batteries ACK081. Envoyez le type – devis souvent sous 24 h.",
+        "brand_h1": "3M PELTOR – coquilles antibruit, casques de communication et pièces de rechange",
+        "brand_intro": "ABCspareparts fournit les protections auditives et solutions de communication 3M PELTOR – coquilles passives, coquilles pour casque, casques avec radio et Bluetooth, ainsi que kits d'hygiène, batteries et accessoires – aux clients industriels dans toute l'Europe. Envoyez-nous la désignation du type et la quantité – nous répondons généralement sous 24 heures.",
+        "brand_intro_p2": "Nous vérifions la disponibilité du produit d'origine et, pour les modèles arrêtés le cas échéant, des modèles successeurs à protection équivalente. Cette page ne remplace pas une liste de stock en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "bx_about_title": "À propos de 3M PELTOR",
+        "bx_about_text": "<p>PELTOR est née en Suède en 1950 : son fondateur Tore Palmaer a développé pour l'armée de l'air suédoise une protection auditive permettant aussi de communiquer dans le bruit. La production se trouvait à Värnamo. Avec le rachat d'Aearo Technologies, PELTOR fait partie de 3M depuis 2008.</p><p>Aujourd'hui, <strong>3M PELTOR</strong> est la marque 3M de coquilles antibruit et de casques de communication pour environnements bruyants et dangereux – des coquilles simples aux casques avec radio intégrée, Bluetooth et écoute d'ambiance à atténuation dépendante du niveau. Les autres produits de sécurité 3M figurent sur la page <a href=\"../marche/3m.html\">3M</a>.</p>",
+        "bx_products_title": "Groupes de produits 3M PELTOR que nous fournissons",
+        "bx_products_intro": "Les demandes typiques concernent les produits suivants (désignations issues de la documentation du fabricant) :",
+        "bx_products_list": "<li><strong>Coquilles passives</strong> – Optime I (H510A, SNR 27 dB), Optime II (H520A, SNR 31 dB), Optime III (H540A, SNR 34 dB) et la série X X1–X5 avec SNR de 27 à 37 dB</li><li><strong>Coquilles pour casque</strong> – versions à fixation sur casque, p. ex. H510P3E, et série X avec adaptateur P3 ou P5</li><li><strong>Casques antibruit communicants</strong> – ProTac III et WS ProTac XPI (à atténuation dépendante du niveau), LiteCom et LiteCom Plus avec radio intégrée (p. ex. PMR446), WS LiteCom Pro III avec Bluetooth</li><li><strong>Casques tactiques</strong> – ComTac, p. ex. ComTac VIII, pour forces de l'ordre et armée</li><li><strong>Kits d'hygiène</strong> – coussinets et mousses, p. ex. HY51 (Optime I), HY54 (Optime III), HY79 (FM Radio, ProTac, LiteCom)</li><li><strong>Batteries et accessoires de charge</strong> – p. ex. batterie Li-Ion ACK081, batterie certifiée Ex ACK082, câble de charge USB AL2AI</li><li><strong>Microphones, câbles et adaptateurs</strong> – micros perche, adaptateurs radio et câbles de connexion</li>",
+        "bx_tech_title": "Ce qui compte pour remplacer une protection auditive PELTOR",
+        "bx_tech_list": "<li><strong>Désignation complète :</strong> le code (p. ex. H540A, X4P3E, MT73H7P3E4410WS6EU) indique le modèle, la fixation (serre-tête, nuquière, casque) et, pour les casques communicants, la fréquence radio et l'équipement.</li><li><strong>Atténuation (SNR) :</strong> le remplacement doit offrir au moins la protection requise sans surprotection – le niveau de bruit au poste de travail est déterminant.</li><li><strong>Fixation sur casque :</strong> l'adaptateur (p. ex. P3E) doit correspondre au type de casque.</li><li><strong>Radio et protection Ex :</strong> bande de fréquence (p. ex. PMR446), analogique ou numérique, Bluetooth et certification ATEX pour atmosphères explosives – les casques Ex nécessitent des batteries Ex adaptées comme l'ACK082.</li><li><strong>Kits d'hygiène adaptés au modèle :</strong> coussinets et mousses sont propres à chaque modèle et doivent être remplacés régulièrement selon la notice pour conserver l'atténuation.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Travail des métaux et construction de machines</li><li>Bâtiment et génie civil</li><li>Pétrole, gaz et chimie (zones Ex)</li><li>Aéroports et assistance au sol</li><li>Sylviculture et agriculture</li><li>Énergie et maintenance</li><li>Administrations, pompiers et armée</li>",
+        "bx_request_title": "Ces informations accélèrent votre devis",
+        "bx_request_list": "<li>Désignation complète sur l'étiquette dans la coquille (une photo aide)</li><li>Fixation : serre-tête, nuquière ou casque (type de casque)</li><li>Pour les casques communicants : fréquence radio, certification Ex, Bluetooth</li><li>Pour les pièces : modèle auquel est destiné le kit d'hygiène ou la batterie</li><li>Quantité et date de livraison souhaitée</li><li>Original uniquement ou modèle successeur accepté</li>",
+        "brand_faq_q4": "ABCspareparts fournit-il aussi des pièces pour d'anciens casques PELTOR ?",
+        "brand_faq_a4": "Oui. Nous interrogeons des distributeurs et brokers en Europe pour les kits d'hygiène, batteries, microphones et adaptateurs. Si un modèle est arrêté, nous proposons – après concertation – un successeur à atténuation équivalente et fixation compatible.",
+        "brand_faq_q5": "Quel kit d'hygiène convient à ma protection PELTOR ?",
+        "brand_faq_a5": "Cela dépend du modèle – p. ex. HY51 pour Optime I, HY54 pour Optime III et HY79 pour les casques FM Radio, ProTac et LiteCom. Envoyez-nous la désignation et nous vérifions le bon kit.",
+        "brand_faq_q6": "PELTOR est-elle une entreprise indépendante ou fait-elle partie de 3M ?",
+        "brand_faq_a6": "PELTOR a été fondée en Suède en 1950 et fait partie de 3M depuis 2008. Les produits sont aujourd'hui vendus sous la marque 3M PELTOR.",
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom et ComTac sont des marques de 3M Company, citées uniquement pour identifier les produits. Les informations reposent sur des données publiques du fabricant (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Mise à jour : septembre 2026."
+      }
+    }
   }
 }
