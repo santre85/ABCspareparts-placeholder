@@ -174,3 +174,13 @@ npm run verify                # ✓ 77/77
 ```
 
 Nessun batch successivo. Prossima espansione solo dopo verifica Search Console e rendimento organico del MVP.
+
+## 10. Post-deploy live verification
+
+- Timestamp: `2026-09-11T11:09:23.462Z`
+- Commit live: `777dc73a882b0ef5773f092caccbf19f8c155618`
+- Result: **77/77 PASS** (HTTP 200, self-canonical, robots index/follow, title/H1/Product coherent, present in live `sitemap-parts.xml`)
+- Detail: `POST-DEPLOY-PARTS-MVP-REPORT.md` / `POST-DEPLOY-PARTS-MVP-RESULTS.json`
+- Next `/parts/` batch: **blocked** until GSC/organic review
+- Cloudflare 301 `/index.html` → `/`: still open (manual)
+
