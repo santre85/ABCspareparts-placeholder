@@ -108,11 +108,6 @@
           "alternateName": [
             "3M Company",
             "Minnesota Mining and Manufacturing"
-          ],
-          "url": "https://www.3m.com/",
-          "sameAs": [
-            "https://www.3m.com/",
-            "https://en.wikipedia.org/wiki/3M"
           ]
         },
         {
@@ -122,19 +117,7 @@
             "@id": "https://abcspareparts.eu/marche/3m.html#brand"
           },
           "name": "3M Company",
-          "foundingDate": "1902",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "3M Center",
-            "postalCode": "55144",
-            "addressLocality": "St. Paul, Minnesota",
-            "addressCountry": "US"
-          },
-          "url": "https://www.3m.com/",
-          "sameAs": [
-            "https://en.wikipedia.org/wiki/3M",
-            "https://investors.3m.com/"
-          ]
+          "foundingDate": "1902"
         },
         {
           "@type": "Service",
@@ -212,7 +195,7 @@
         "brand_faq_a5": "Am besten die 3M ID oder die Produktnummer vom Etikett oder aus der Rechnung, zusammen mit Produktname und Abmessungen. Damit ist die Ausführung eindeutig.",
         "brand_faq_q6": "Liefert ABCspareparts auch 3M Medizinprodukte?",
         "brand_faq_a6": "Das frühere 3M Health Care Geschäft gehört seit April 2024 zu Solventum. Unser Schwerpunkt liegt auf Industrie- und MRO-Produkten von 3M; Anfragen zu anderen Bereichen prüfen wir im Einzelfall.",
-        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR und DBI-SALA sind Marken der 3M Company. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Herstellerinformationen (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Stand: September 2026."
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR und DBI-SALA sind Marken der 3M Company. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "3M Industrial & MRO Products: Abrasives, Tapes, PPE | ABCspareparts",
@@ -237,7 +220,7 @@
         "brand_faq_a5": "Ideally the 3M ID or product number from the label or invoice, together with the product name and dimensions. This identifies the exact version.",
         "brand_faq_q6": "Does ABCspareparts also supply 3M medical products?",
         "brand_faq_a6": "The former 3M Health Care business has been part of Solventum since April 2024. Our focus is on 3M industrial and MRO products; we review requests for other areas case by case.",
-        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR and DBI-SALA are trademarks of 3M Company. Names are mentioned solely to identify products. Information is based on public manufacturer information (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Last updated: September 2026."
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR and DBI-SALA are trademarks of 3M Company. Names are mentioned solely to identify products. Information is based on publicly available manufacturer information. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Prodotti industriali e MRO 3M: abrasivi, nastri, DPI | ABCspareparts",
@@ -262,7 +245,7 @@
         "brand_faq_a5": "Idealmente il 3M ID o il codice prodotto riportato su etichetta o fattura, insieme a nome del prodotto e dimensioni. Così la versione è identificata con certezza.",
         "brand_faq_q6": "ABCspareparts fornisce anche prodotti medicali 3M?",
         "brand_faq_a6": "L'ex settore 3M Health Care fa parte di Solventum da aprile 2024. Ci concentriamo sui prodotti industriali e MRO di 3M; le richieste per altri settori le valutiamo caso per caso.",
-        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR e DBI-SALA sono marchi di 3M Company. I nomi sono citati solo per identificare i prodotti. Le informazioni si basano su dati pubblici del costruttore (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Aggiornato: settembre 2026."
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR e DBI-SALA sono marchi di 3M Company. I nomi sono citati solo per identificare i prodotti. Le informazioni si basano su dati pubblici del costruttore. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Productos industriales y MRO 3M: abrasivos, cintas, EPI | ABCspareparts",
@@ -287,7 +270,7 @@
         "brand_faq_a5": "Idealmente el 3M ID o el número de producto de la etiqueta o la factura, junto con el nombre del producto y las dimensiones. Así la versión queda identificada sin ambigüedad.",
         "brand_faq_q6": "¿ABCspareparts suministra también productos médicos 3M?",
         "brand_faq_a6": "El antiguo negocio 3M Health Care forma parte de Solventum desde abril de 2024. Nos centramos en productos industriales y MRO de 3M; revisamos otras solicitudes caso por caso.",
-        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR y DBI-SALA son marcas de 3M Company. Los nombres se mencionan solo para identificar los productos. La información se basa en datos públicos del fabricante (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Actualizado: septiembre de 2026."
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR y DBI-SALA son marcas de 3M Company. Los nombres se mencionan solo para identificar los productos. La información se basa en datos públicos del fabricante. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Produits industriels et MRO 3M : abrasifs, rubans, EPI | ABCspareparts",
@@ -312,7 +295,7 @@
         "brand_faq_a5": "Idéalement le 3M ID ou la référence produit figurant sur l'étiquette ou la facture, avec le nom du produit et les dimensions. La version est ainsi identifiée sans ambiguïté.",
         "brand_faq_q6": "ABCspareparts fournit-il aussi des produits médicaux 3M ?",
         "brand_faq_a6": "L'ancienne activité 3M Health Care fait partie de Solventum depuis avril 2024. Nous nous concentrons sur les produits industriels et MRO de 3M ; les autres demandes sont étudiées au cas par cas.",
-        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR et DBI-SALA sont des marques de 3M Company. Les noms sont cités uniquement pour identifier les produits. Les informations reposent sur des données publiques du fabricant (<a href=\"https://www.3m.com/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://investors.3m.com/\" target=\"_blank\" rel=\"noopener\">investors.3m.com</a>). Mise à jour : septembre 2026."
+        "bx_note": "3M, Cubitron, Scotch-Brite, Roloc, VHB, Scotch, Scotch-Weld, Scotchcast, Aura, Versaflo, Speedglas, SecureFit, E-A-R, PELTOR et DBI-SALA sont des marques de 3M Company. Les noms sont cités uniquement pour identifier les produits. Les informations reposent sur des données publiques du fabricant. Mise à jour : septembre 2026."
       }
     }
   },
@@ -422,10 +405,6 @@
             "Peltor",
             "3M Peltor",
             "PELTOR"
-          ],
-          "url": "https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/",
-          "sameAs": [
-            "https://www.3m.com/"
           ]
         },
         {
@@ -435,18 +414,7 @@
             "@id": "https://abcspareparts.eu/marche/3m-peltor.html#brand"
           },
           "name": "3M Company",
-          "foundingDate": "1902",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "3M Center",
-            "postalCode": "55144",
-            "addressLocality": "St. Paul, Minnesota",
-            "addressCountry": "US"
-          },
-          "url": "https://www.3m.com/",
-          "sameAs": [
-            "https://en.wikipedia.org/wiki/3M"
-          ]
+          "foundingDate": "1902"
         },
         {
           "@type": "Service",
@@ -524,7 +492,7 @@
         "brand_faq_a5": "Das hängt vom Modell ab – z. B. HY51 für Optime I, HY54 für Optime III und HY79 für FM Radio, ProTac und LiteCom Headsets. Senden Sie uns die Typbezeichnung, dann prüfen wir das passende Set.",
         "brand_faq_q6": "Ist PELTOR eine eigene Firma oder Teil von 3M?",
         "brand_faq_a6": "PELTOR wurde 1950 in Schweden gegründet und gehört seit 2008 zu 3M. Die Produkte werden heute unter der Marke 3M PELTOR vertrieben.",
-        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom und ComTac sind Marken der 3M Company. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Herstellerinformationen (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Stand: September 2026."
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom und ComTac sind Marken der 3M Company. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "3M PELTOR Hearing Protection, Headsets & Spare Parts | ABCspareparts",
@@ -549,7 +517,7 @@
         "brand_faq_a5": "It depends on the model – e.g. HY51 for Optime I, HY54 for Optime III and HY79 for FM Radio, ProTac and LiteCom headsets. Send us the type designation and we will check the right kit.",
         "brand_faq_q6": "Is PELTOR a separate company or part of 3M?",
         "brand_faq_a6": "PELTOR was founded in Sweden in 1950 and has been part of 3M since 2008. Products are now sold under the 3M PELTOR brand.",
-        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom and ComTac are trademarks of 3M Company, mentioned solely to identify products. Information is based on public manufacturer information (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Last updated: September 2026."
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom and ComTac are trademarks of 3M Company, mentioned solely to identify products. Information is based on publicly available manufacturer information. Last updated: September 2026."
       },
       "it": {
         "meta_title": "3M PELTOR: cuffie antirumore, headset e ricambi | ABCspareparts",
@@ -574,7 +542,7 @@
         "brand_faq_a5": "Dipende dal modello – es. HY51 per Optime I, HY54 per Optime III e HY79 per headset FM Radio, ProTac e LiteCom. Ci invii la sigla e verifichiamo il kit corretto.",
         "brand_faq_q6": "PELTOR è un'azienda a sé o fa parte di 3M?",
         "brand_faq_a6": "PELTOR è stata fondata in Svezia nel 1950 e fa parte di 3M dal 2008. Oggi i prodotti sono venduti con il marchio 3M PELTOR.",
-        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom e ComTac sono marchi di 3M Company, citati solo per identificare i prodotti. Le informazioni si basano su dati pubblici del costruttore (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Aggiornato: settembre 2026."
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom e ComTac sono marchi di 3M Company, citati solo per identificare i prodotti. Le informazioni si basano su dati pubblici del costruttore. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "3M PELTOR: orejeras, headsets y repuestos | ABCspareparts",
@@ -599,7 +567,7 @@
         "brand_faq_a5": "Depende del modelo – p. ej. HY51 para Optime I, HY54 para Optime III y HY79 para headsets FM Radio, ProTac y LiteCom. Envíenos la designación y comprobamos el kit adecuado.",
         "brand_faq_q6": "¿PELTOR es una empresa independiente o forma parte de 3M?",
         "brand_faq_a6": "PELTOR se fundó en Suecia en 1950 y forma parte de 3M desde 2008. Hoy los productos se venden con la marca 3M PELTOR.",
-        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom y ComTac son marcas de 3M Company, mencionadas solo para identificar los productos. La información se basa en datos públicos del fabricante (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Actualizado: septiembre de 2026."
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom y ComTac son marcas de 3M Company, mencionadas solo para identificar los productos. La información se basa en datos públicos del fabricante. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "3M PELTOR : coquilles antibruit, casques et pièces | ABCspareparts",
@@ -624,7 +592,7 @@
         "brand_faq_a5": "Cela dépend du modèle – p. ex. HY51 pour Optime I, HY54 pour Optime III et HY79 pour les casques FM Radio, ProTac et LiteCom. Envoyez-nous la désignation et nous vérifions le bon kit.",
         "brand_faq_q6": "PELTOR est-elle une entreprise indépendante ou fait-elle partie de 3M ?",
         "brand_faq_a6": "PELTOR a été fondée en Suède en 1950 et fait partie de 3M depuis 2008. Les produits sont aujourd'hui vendus sous la marque 3M PELTOR.",
-        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom et ComTac sont des marques de 3M Company, citées uniquement pour identifier les produits. Les informations reposent sur des données publiques du fabricant (<a href=\"https://www.3m.com/3M/en_US/p/c/ppe/communications/over-ear-headsets/b/peltor/\" target=\"_blank\" rel=\"noopener\">3m.com</a>, <a href=\"https://multimedia.3m.com/mws/media/2044446O/3m-peltor-comms-guide.pdf\" target=\"_blank\" rel=\"noopener\">3M PELTOR Comms Guide</a>). Mise à jour : septembre 2026."
+        "bx_note": "3M, PELTOR, Optime, ProTac, LiteCom et ComTac sont des marques de 3M Company, citées uniquement pour identifier les produits. Les informations reposent sur des données publiques du fabricant. Mise à jour : septembre 2026."
       }
     }
   },
@@ -736,12 +704,6 @@
             "ADATA",
             "ADATA Industrial",
             "ADATA Technology"
-          ],
-          "url": "https://industrial.adata.com/",
-          "sameAs": [
-            "https://www.adata.com/",
-            "https://industrial.adata.com/",
-            "https://en.wikipedia.org/wiki/ADATA"
           ]
         },
         {
@@ -753,15 +715,6 @@
             "@type": "Person",
             "name": "Simon Chen"
           },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "New Taipei City",
-            "addressCountry": "TW"
-          },
-          "url": "https://www.adata.com/",
-          "sameAs": [
-            "https://en.wikipedia.org/wiki/ADATA"
-          ],
           "brand": {
             "@id": "https://abcspareparts.eu/marche/a-data.html#brand"
           }
@@ -850,7 +803,7 @@
         "brand_faq_a5": "Laut Hersteller verwenden ADATA Industrial-Produkte industrietaugliche NAND-Flash-Bausteine, Controller und Power-ICs, die für −40 °C bis 85 °C validiert sind, und bieten Funktionen wie Power Loss Protection, Conformal Coating und eine fixierte Stückliste. Für Maschinen und Industrie-PCs empfehlen wir daher die Industrial-Varianten.",
         "brand_faq_q6": "Kann eine A-DATA SSD durch ein Modell eines anderen Herstellers ersetzt werden?",
         "brand_faq_a6": "Technisch oft ja, sofern Formfaktor, Interface, Kapazität, Temperaturbereich und – bei Steuerungen – Boot-Image bzw. Freigabe des Maschinenherstellers passen. Wir prüfen die Eckdaten und weisen darauf hin, wenn ein identisches Teil erforderlich ist.",
-        "adata_note": "A-DATA, ADATA und XPG sind Marken der ADATA Technology Co., Ltd. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Technik basieren auf öffentlichen Herstellerinformationen (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Stand: September 2026."
+        "adata_note": "A-DATA, ADATA und XPG sind Marken der ADATA Technology Co., Ltd. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Technik basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "A-DATA Industrial SSD, DRAM & Memory Cards – Spare Parts | ABCspareparts",
@@ -875,7 +828,7 @@
         "brand_faq_a5": "According to the manufacturer, ADATA Industrial products use industrial-grade NAND flash, controllers and power ICs validated for −40 °C to 85 °C, and offer features such as power loss protection, conformal coating and a fixed BOM. For machines and industrial PCs we therefore recommend the industrial versions.",
         "brand_faq_q6": "Can an A-DATA SSD be replaced by another manufacturer's model?",
         "brand_faq_a6": "Technically often yes, provided form factor, interface, capacity, temperature range and – for controllers – the boot image or machine builder approval match. We check the key data and tell you when an identical part is required.",
-        "adata_note": "A-DATA, ADATA and XPG are trademarks of ADATA Technology Co., Ltd. They are mentioned solely to identify products. Product family and technical information is based on public manufacturer information (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Last updated: September 2026."
+        "adata_note": "A-DATA, ADATA and XPG are trademarks of ADATA Technology Co., Ltd. They are mentioned solely to identify products. Product family and technical information is based on publicly available manufacturer information. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi A-DATA Industrial: SSD, DRAM e schede di memoria | ABCspareparts",
@@ -900,7 +853,7 @@
         "brand_faq_a5": "Secondo il costruttore, i prodotti ADATA Industrial utilizzano NAND flash, controller e power IC di grado industriale validati da −40 °C a 85 °C e offrono funzioni come power loss protection, conformal coating e distinta base fissa. Per macchine e PC industriali consigliamo quindi le versioni Industrial.",
         "brand_faq_q6": "Un SSD A-DATA può essere sostituito con un modello di un altro costruttore?",
         "brand_faq_a6": "Tecnicamente spesso sì, purché coincidano form factor, interfaccia, capacità, range di temperatura e – per i controllori – immagine di boot o approvazione del costruttore della macchina. Verifichiamo i dati chiave e segnaliamo quando serve un ricambio identico.",
-        "adata_note": "A-DATA, ADATA e XPG sono marchi di ADATA Technology Co., Ltd. e sono citati solo per identificare i prodotti. Le informazioni su famiglie di prodotti e tecnologia si basano su dati pubblici del costruttore (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Aggiornato: settembre 2026."
+        "adata_note": "A-DATA, ADATA e XPG sono marchi di ADATA Technology Co., Ltd. e sono citati solo per identificare i prodotti. Le informazioni su famiglie di prodotti e tecnologia si basano su dati pubblici del costruttore. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos A-DATA Industrial: SSD, DRAM y tarjetas de memoria | ABCspareparts",
@@ -925,7 +878,7 @@
         "brand_faq_a5": "Según el fabricante, los productos ADATA Industrial utilizan NAND flash, controladores y circuitos de alimentación de grado industrial validados de −40 °C a 85 °C, y ofrecen funciones como power loss protection, conformal coating y BOM fija. Para máquinas y PC industriales recomendamos, por tanto, las versiones Industrial.",
         "brand_faq_q6": "¿Se puede sustituir un SSD A-DATA por un modelo de otro fabricante?",
         "brand_faq_a6": "Técnicamente a menudo sí, siempre que coincidan formato, interfaz, capacidad, rango de temperatura y – en controladores – la imagen de arranque o la homologación del fabricante de la máquina. Comprobamos los datos clave y le avisamos cuando se requiere una pieza idéntica.",
-        "adata_note": "A-DATA, ADATA y XPG son marcas de ADATA Technology Co., Ltd. y se mencionan solo para identificar los productos. La información sobre familias de productos y tecnología se basa en datos públicos del fabricante (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Actualizado: septiembre de 2026."
+        "adata_note": "A-DATA, ADATA y XPG son marcas de ADATA Technology Co., Ltd. y se mencionan solo para identificar los productos. La información sobre familias de productos y tecnología se basa en datos públicos del fabricante. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces A-DATA Industrial : SSD, DRAM et cartes mémoire | ABCspareparts",
@@ -950,7 +903,7 @@
         "brand_faq_a5": "Selon le fabricant, les produits ADATA Industrial utilisent de la NAND flash, des contrôleurs et des circuits d'alimentation de qualité industrielle validés de −40 °C à 85 °C, et offrent des fonctions comme la power loss protection, le conformal coating et une nomenclature figée. Pour les machines et PC industriels, nous recommandons donc les versions Industrial.",
         "brand_faq_q6": "Un SSD A-DATA peut-il être remplacé par le modèle d'un autre fabricant ?",
         "brand_faq_a6": "Techniquement souvent oui, à condition que le format, l'interface, la capacité, la plage de température et – pour les automates – l'image de démarrage ou l'homologation du constructeur de la machine correspondent. Nous vérifions les données clés et vous signalons lorsqu'une pièce identique est nécessaire.",
-        "adata_note": "A-DATA, ADATA et XPG sont des marques d'ADATA Technology Co., Ltd., citées uniquement pour identifier les produits. Les informations sur les familles de produits et la technologie reposent sur des données publiques du fabricant (<a href=\"https://industrial.adata.com/en/\" target=\"_blank\" rel=\"noopener\">industrial.adata.com</a>). Mise à jour : septembre 2026."
+        "adata_note": "A-DATA, ADATA et XPG sont des marques d'ADATA Technology Co., Ltd., citées uniquement pour identifier les produits. Les informations sur les familles de produits et la technologie reposent sur des données publiques du fabricant. Mise à jour : septembre 2026."
       }
     }
   },
@@ -1062,11 +1015,6 @@
             "APO ELMOS",
             "A.P.O.-ELMOS",
             "APO-ELMOS"
-          ],
-          "url": "https://www.apoelmos.com/",
-          "sameAs": [
-            "https://www.apoelmos.com/",
-            "https://www.apoelmos.cz/"
           ]
         },
         {
@@ -1076,18 +1024,7 @@
             "@id": "https://abcspareparts.eu/marche/a-p-o-elmos.html#brand"
           },
           "name": "A.P.O. - ELMOS v.o.s.",
-          "foundingDate": "1991",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Pražská 90",
-            "postalCode": "509 01",
-            "addressLocality": "Nová Paka",
-            "addressCountry": "CZ"
-          },
-          "url": "https://www.apoelmos.com/",
-          "sameAs": [
-            "https://www.apoelmos.cz/"
-          ]
+          "foundingDate": "1991"
         },
         {
           "@type": "Service",
@@ -1165,7 +1102,7 @@
         "brand_faq_a5": "Laut Hersteller vor allem Schalttafelgeräte wie Panelmeter (z. B. AP 02, AP 11), Regler (z. B. AP 21, MRS 01, APOSYS 20) und Anzeigen sowie Widerstandsthermometer (STPt, STNi, TK), Messumformer und Feuchtefühler. Zudem liefert das Unternehmen Instrumentierung von über 100 anderen Herstellern.",
         "brand_faq_q6": "Kann ein A.P.O. - ELMOS Panelmeter durch ein Gerät eines anderen Herstellers ersetzt werden?",
         "brand_faq_a6": "Oft ja, wenn Schalttafelausschnitt, Eingangssignal, Anzahl und Art der Ausgänge sowie Versorgungsspannung übereinstimmen. Wir vergleichen die Eckdaten und weisen darauf hin, wenn Verdrahtung oder Parametrierung angepasst werden müssen.",
-        "bx_note": "A.P.O. - ELMOS ist ein Name bzw. eine Marke der A.P.O. - ELMOS v.o.s. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Unternehmen und Produkten basieren auf öffentlichen Herstellerinformationen (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Stand: September 2026."
+        "bx_note": "A.P.O. - ELMOS ist ein Name bzw. eine Marke der A.P.O. - ELMOS v.o.s. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Unternehmen und Produkten basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "A.P.O. - ELMOS Panel Meters, Controllers & Temperature Sensors – Spare Parts | ABCspareparts",
@@ -1190,7 +1127,7 @@
         "brand_faq_a5": "According to the manufacturer, mainly panel devices such as panel meters (e.g. AP 02, AP 11), controllers (e.g. AP 21, MRS 01, APOSYS 20) and displays, plus resistance thermometers (STPt, STNi, TK), transmitters and humidity sensors. The company also supplies instrumentation from more than 100 other manufacturers.",
         "brand_faq_q6": "Can an A.P.O. - ELMOS panel meter be replaced by another manufacturer's device?",
         "brand_faq_a6": "Often yes, if panel cut-out, input signal, number and type of outputs and supply voltage match. We compare the key data and tell you when wiring or parameters need to be adapted.",
-        "bx_note": "A.P.O. - ELMOS is a name or trademark of A.P.O. - ELMOS v.o.s., mentioned solely to identify products. Company and product information is based on public manufacturer information (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Last updated: September 2026."
+        "bx_note": "A.P.O. - ELMOS is a name or trademark of A.P.O. - ELMOS v.o.s., mentioned solely to identify products. Company and product information is based on publicly available manufacturer information. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi A.P.O. - ELMOS: indicatori da pannello, regolatori e sonde | ABCspareparts",
@@ -1215,7 +1152,7 @@
         "brand_faq_a5": "Secondo il costruttore soprattutto strumenti da pannello come indicatori (es. AP 02, AP 11), regolatori (es. AP 21, MRS 01, APOSYS 20) e display, oltre a termoresistenze (STPt, STNi, TK), trasmettitori e sensori di umidità. L'azienda fornisce anche strumentazione di oltre 100 altri produttori.",
         "brand_faq_q6": "Un indicatore A.P.O. - ELMOS può essere sostituito con uno strumento di un altro costruttore?",
         "brand_faq_a6": "Spesso sì, se coincidono foratura, segnale d'ingresso, numero e tipo di uscite e tensione di alimentazione. Confrontiamo i dati chiave e segnaliamo quando occorre adattare cablaggio o parametri.",
-        "bx_note": "A.P.O. - ELMOS è un nome o marchio di A.P.O. - ELMOS v.o.s., citato solo per identificare i prodotti. Le informazioni su azienda e prodotti si basano su dati pubblici del costruttore (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Aggiornato: settembre 2026."
+        "bx_note": "A.P.O. - ELMOS è un nome o marchio di A.P.O. - ELMOS v.o.s., citato solo per identificare i prodotti. Le informazioni su azienda e prodotti si basano su dati pubblici del costruttore. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos A.P.O. - ELMOS: indicadores de panel, reguladores y sondas | ABCspareparts",
@@ -1240,7 +1177,7 @@
         "brand_faq_a5": "Según el fabricante, principalmente equipos de panel como indicadores (p. ej. AP 02, AP 11), reguladores (p. ej. AP 21, MRS 01, APOSYS 20) y displays, además de termorresistencias (STPt, STNi, TK), transmisores y sensores de humedad. La empresa también suministra instrumentación de más de 100 fabricantes.",
         "brand_faq_q6": "¿Se puede sustituir un indicador A.P.O. - ELMOS por un equipo de otro fabricante?",
         "brand_faq_a6": "A menudo sí, si coinciden el recorte de panel, la señal de entrada, el número y tipo de salidas y la tensión de alimentación. Comparamos los datos clave y le avisamos cuando haya que adaptar cableado o parámetros.",
-        "bx_note": "A.P.O. - ELMOS es un nombre o marca de A.P.O. - ELMOS v.o.s., mencionado solo para identificar los productos. La información sobre la empresa y los productos se basa en datos públicos del fabricante (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Actualizado: septiembre de 2026."
+        "bx_note": "A.P.O. - ELMOS es un nombre o marca de A.P.O. - ELMOS v.o.s., mencionado solo para identificar los productos. La información sobre la empresa y los productos se basa en datos públicos del fabricante. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces A.P.O. - ELMOS : afficheurs de tableau, régulateurs et sondes | ABCspareparts",
@@ -1265,7 +1202,7 @@
         "brand_faq_a5": "Selon le fabricant, principalement des appareils de tableau comme les afficheurs (p. ex. AP 02, AP 11), les régulateurs (p. ex. AP 21, MRS 01, APOSYS 20) et les indicateurs, ainsi que des sondes à résistance (STPt, STNi, TK), des transmetteurs et des sondes d'humidité. L'entreprise fournit aussi l'instrumentation de plus de 100 autres fabricants.",
         "brand_faq_q6": "Un afficheur A.P.O. - ELMOS peut-il être remplacé par l'appareil d'un autre fabricant ?",
         "brand_faq_a6": "Souvent oui, si la découpe, le signal d'entrée, le nombre et le type de sorties et la tension d'alimentation correspondent. Nous comparons les données clés et vous signalons lorsque le câblage ou les paramètres doivent être adaptés.",
-        "bx_note": "A.P.O. - ELMOS est un nom ou une marque d'A.P.O. - ELMOS v.o.s., cité uniquement pour identifier les produits. Les informations sur l'entreprise et les produits reposent sur des données publiques du fabricant (<a href=\"https://www.apoelmos.com/\" target=\"_blank\" rel=\"noopener\">apoelmos.com</a>). Mise à jour : septembre 2026."
+        "bx_note": "A.P.O. - ELMOS est un nom ou une marque d'A.P.O. - ELMOS v.o.s., cité uniquement pour identifier les produits. Les informations sur l'entreprise et les produits reposent sur des données publiques du fabricant. Mise à jour : septembre 2026."
       }
     }
   },
@@ -1368,11 +1305,7 @@
         {
           "@type": "Brand",
           "@id": "https://abcspareparts.eu/marche/aaeon.html#brand",
-          "name": "AAEON",
-          "url": "https://www.aaeon.com/",
-          "sameAs": [
-            "https://www.aaeon.com/en/about/company-profile"
-          ]
+          "name": "AAEON"
         },
         {
           "@type": "Organization",
@@ -1381,12 +1314,7 @@
             "@id": "https://abcspareparts.eu/marche/aaeon.html#brand"
           },
           "name": "AAEON Technology Inc.",
-          "foundingDate": "1992",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "TW"
-          },
-          "url": "https://www.aaeon.com/"
+          "foundingDate": "1992"
         },
         {
           "@type": "Service",
@@ -1464,7 +1392,7 @@
         "brand_faq_a5": "Laut Hersteller Industrie-Mainboards und -Systeme, Industriedisplays, robuste Tablets, PC/104-, PICMG- und COM-Module, Embedded-Einplatinencomputer, Embedded-Controller und Netzwerk-Appliances.",
         "brand_faq_q6": "Gehört AAEON zu ASUS?",
         "brand_faq_a6": "Ja. AAEON wurde 1992 gegründet und ist seit 2011 Teil der ASUS-Gruppe.",
-        "bx_note": "AAEON ist ein Name bzw. eine Marke der AAEON Technology Inc.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://www.aaeon.com/en/about/company-profile\" target=\"_blank\" rel=\"noopener\">aaeon.com</a>). Stand: September 2026."
+        "bx_note": "AAEON ist ein Name bzw. eine Marke der AAEON Technology Inc.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "AAEON Industrial PCs, Motherboards & Embedded Boards – Spare Parts | ABCspareparts",
@@ -1489,7 +1417,7 @@
         "brand_faq_a5": "According to the manufacturer: industrial motherboards and systems, industrial displays, rugged tablets, PC/104, PICMG and COM modules, embedded single-board computers, embedded controllers and network appliances.",
         "brand_faq_q6": "Is AAEON part of ASUS?",
         "brand_faq_a6": "Yes. AAEON was founded in 1992 and has been part of the ASUS group since 2011.",
-        "bx_note": "AAEON is a name or trademark of AAEON Technology Inc., mentioned solely to identify products. Information is based on public sources (<a href=\"https://www.aaeon.com/en/about/company-profile\" target=\"_blank\" rel=\"noopener\">aaeon.com</a>). Last updated: September 2026."
+        "bx_note": "AAEON is a name or trademark of AAEON Technology Inc., mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi AAEON: PC industriali, schede madri e schede embedded | ABCspareparts",
@@ -1514,7 +1442,7 @@
         "brand_faq_a5": "Secondo il costruttore: schede madri e sistemi industriali, display industriali, tablet rugged, moduli PC/104, PICMG e COM, computer embedded a scheda singola, controller embedded e appliance di rete.",
         "brand_faq_q6": "AAEON fa parte di ASUS?",
         "brand_faq_a6": "Sì. AAEON è stata fondata nel 1992 e fa parte del gruppo ASUS dal 2011.",
-        "bx_note": "AAEON è un nome o marchio di AAEON Technology Inc., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://www.aaeon.com/en/about/company-profile\" target=\"_blank\" rel=\"noopener\">aaeon.com</a>). Aggiornato: settembre 2026."
+        "bx_note": "AAEON è un nome o marchio di AAEON Technology Inc., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos AAEON: PC industriales, placas base y placas embedded | ABCspareparts",
@@ -1539,7 +1467,7 @@
         "brand_faq_a5": "Según el fabricante: placas base y sistemas industriales, pantallas industriales, tabletas robustas, módulos PC/104, PICMG y COM, ordenadores embedded de placa única, controladores embedded y appliances de red.",
         "brand_faq_q6": "¿AAEON pertenece a ASUS?",
         "brand_faq_a6": "Sí. AAEON se fundó en 1992 y forma parte del grupo ASUS desde 2011.",
-        "bx_note": "AAEON es un nombre o marca de AAEON Technology Inc., mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://www.aaeon.com/en/about/company-profile\" target=\"_blank\" rel=\"noopener\">aaeon.com</a>). Actualizado: septiembre de 2026."
+        "bx_note": "AAEON es un nombre o marca de AAEON Technology Inc., mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces AAEON : PC industriels, cartes mères et cartes embarquées | ABCspareparts",
@@ -1564,7 +1492,7 @@
         "brand_faq_a5": "Selon le fabricant : cartes mères et systèmes industriels, écrans industriels, tablettes durcies, modules PC/104, PICMG et COM, ordinateurs embarqués monocarte, contrôleurs embarqués et appliances réseau.",
         "brand_faq_q6": "AAEON fait-elle partie d'ASUS ?",
         "brand_faq_a6": "Oui. AAEON a été fondée en 1992 et fait partie du groupe ASUS depuis 2011.",
-        "bx_note": "AAEON est un nom ou une marque de AAEON Technology Inc., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://www.aaeon.com/en/about/company-profile\" target=\"_blank\" rel=\"noopener\">aaeon.com</a>). Mise à jour : septembre 2026."
+        "bx_note": "AAEON est un nom ou une marque de AAEON Technology Inc., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -1675,8 +1603,7 @@
           "name": "AALBORG",
           "alternateName": [
             "Aalborg Instruments"
-          ],
-          "url": "https://www.aalborg.com/"
+          ]
         },
         {
           "@type": "Organization",
@@ -1685,15 +1612,7 @@
             "@id": "https://abcspareparts.eu/marche/aalborg.html#brand"
           },
           "name": "Aalborg Instruments & Controls, Inc.",
-          "foundingDate": "1972",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "20 Corporate Drive",
-            "postalCode": "10962",
-            "addressLocality": "Orangeburg, New York",
-            "addressCountry": "US"
-          },
-          "url": "https://www.aalborg.com/"
+          "foundingDate": "1972"
         },
         {
           "@type": "Service",
@@ -1767,7 +1686,7 @@
         "brand_faq_a5": "Bekannt sind vor allem die Massendurchflussregler GFC, die Massendurchflussmesser GFM und die Schwebekörper-Durchflussmesser wie Model P, dazu Nadelventile und PTFE-Durchflussmesser.",
         "brand_faq_q6": "Kann ein Massendurchflussregler für ein anderes Gas verwendet werden?",
         "brand_faq_a6": "Nur eingeschränkt: Die Kalibrierung gilt für ein bestimmtes Gas. Für andere Gase sind Umrechnungsfaktoren oder eine Neukalibrierung nötig. Nennen Sie uns Gas und Messbereich, dann prüfen wir das passende Gerät.",
-        "bx_note": "AALBORG ist ein Name bzw. eine Marke der Aalborg Instruments & Controls, Inc.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://www.aalborg.com/\" target=\"_blank\" rel=\"noopener\">aalborg.com</a>, <a href=\"https://labscievents.pittcon.org/event/pittcon-2025/exhibitor/RXhoaWJpdG9yXzIwNTc1MTA=\" target=\"_blank\" rel=\"noopener\">Pittcon</a>). Stand: September 2026."
+        "bx_note": "AALBORG ist ein Name bzw. eine Marke der Aalborg Instruments & Controls, Inc.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "AALBORG Mass Flow Controllers & Rotameters – Spare Parts | ABCspareparts",
@@ -1792,7 +1711,7 @@
         "brand_faq_a5": "Best known are the GFC mass flow controllers, GFM mass flow meters and variable area flow meters such as Model P, plus needle valves and PTFE flow meters.",
         "brand_faq_q6": "Can a mass flow controller be used for a different gas?",
         "brand_faq_a6": "Only to a limited extent: the calibration applies to a specific gas. Other gases require conversion factors or recalibration. Tell us the gas and range and we will check the right device.",
-        "bx_note": "AALBORG is a name or trademark of Aalborg Instruments & Controls, Inc., mentioned solely to identify products. Information is based on public sources (<a href=\"https://www.aalborg.com/\" target=\"_blank\" rel=\"noopener\">aalborg.com</a>, <a href=\"https://labscievents.pittcon.org/event/pittcon-2025/exhibitor/RXhoaWJpdG9yXzIwNTc1MTA=\" target=\"_blank\" rel=\"noopener\">Pittcon</a>). Last updated: September 2026."
+        "bx_note": "AALBORG is a name or trademark of Aalborg Instruments & Controls, Inc., mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi AALBORG: regolatori di portata massica e rotametri | ABCspareparts",
@@ -1817,7 +1736,7 @@
         "brand_faq_a5": "Le più note sono i regolatori di portata massica GFC, i misuratori GFM e i flussimetri ad area variabile come il Model P, oltre a valvole a spillo e flussimetri in PTFE.",
         "brand_faq_q6": "Un regolatore di portata massica può essere usato per un altro gas?",
         "brand_faq_a6": "Solo in parte: la taratura vale per un gas specifico. Per altri gas servono fattori di conversione o una nuova taratura. Ci indichi gas e campo e verifichiamo lo strumento adatto.",
-        "bx_note": "AALBORG è un nome o marchio di Aalborg Instruments & Controls, Inc., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://www.aalborg.com/\" target=\"_blank\" rel=\"noopener\">aalborg.com</a>, <a href=\"https://labscievents.pittcon.org/event/pittcon-2025/exhibitor/RXhoaWJpdG9yXzIwNTc1MTA=\" target=\"_blank\" rel=\"noopener\">Pittcon</a>). Aggiornato: settembre 2026."
+        "bx_note": "AALBORG è un nome o marchio di Aalborg Instruments & Controls, Inc., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos AALBORG: controladores de caudal másico y rotámetros | ABCspareparts",
@@ -1842,7 +1761,7 @@
         "brand_faq_a5": "Las más conocidas son los controladores de caudal másico GFC, los caudalímetros másicos GFM y los caudalímetros de área variable como el Model P, además de válvulas de aguja y caudalímetros de PTFE.",
         "brand_faq_q6": "¿Puede usarse un controlador de caudal másico con otro gas?",
         "brand_faq_a6": "Solo de forma limitada: la calibración es válida para un gas concreto. Otros gases requieren factores de conversión o recalibración. Indíquenos gas y rango y comprobamos el equipo adecuado.",
-        "bx_note": "AALBORG es un nombre o marca de Aalborg Instruments & Controls, Inc., mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://www.aalborg.com/\" target=\"_blank\" rel=\"noopener\">aalborg.com</a>, <a href=\"https://labscievents.pittcon.org/event/pittcon-2025/exhibitor/RXhoaWJpdG9yXzIwNTc1MTA=\" target=\"_blank\" rel=\"noopener\">Pittcon</a>). Actualizado: septiembre de 2026."
+        "bx_note": "AALBORG es un nombre o marca de Aalborg Instruments & Controls, Inc., mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces AALBORG : régulateurs de débit massique et rotamètres | ABCspareparts",
@@ -1867,7 +1786,7 @@
         "brand_faq_a5": "Les plus connues sont les régulateurs de débit massique GFC, les débitmètres massiques GFM et les débitmètres à section variable comme le Model P, ainsi que des vannes à pointeau et des débitmètres en PTFE.",
         "brand_faq_q6": "Un régulateur de débit massique peut-il servir pour un autre gaz ?",
         "brand_faq_a6": "De façon limitée : l'étalonnage vaut pour un gaz donné. D'autres gaz nécessitent des facteurs de conversion ou un réétalonnage. Indiquez-nous le gaz et la plage et nous vérifions l'appareil adapté.",
-        "bx_note": "AALBORG est un nom ou une marque de Aalborg Instruments & Controls, Inc., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://www.aalborg.com/\" target=\"_blank\" rel=\"noopener\">aalborg.com</a>, <a href=\"https://labscievents.pittcon.org/event/pittcon-2025/exhibitor/RXhoaWJpdG9yXzIwNTc1MTA=\" target=\"_blank\" rel=\"noopener\">Pittcon</a>). Mise à jour : septembre 2026."
+        "bx_note": "AALBORG est un nom ou une marque de Aalborg Instruments & Controls, Inc., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -1976,9 +1895,6 @@
           "alternateName": [
             "AB Electronic",
             "AB ELEKTRONIK"
-          ],
-          "sameAs": [
-            "https://de.wikipedia.org/wiki/AB_Elektronik"
           ]
         },
         {
@@ -1988,15 +1904,7 @@
             "@id": "https://abcspareparts.eu/marche/ab-electronic.html#brand"
           },
           "name": "KYOCERA AVX Components (Werne) GmbH",
-          "foundingDate": "1967",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Werne",
-            "addressCountry": "DE"
-          },
-          "sameAs": [
-            "https://de.wikipedia.org/wiki/AB_Elektronik"
-          ]
+          "foundingDate": "1967"
         },
         {
           "@type": "Service",
@@ -2070,7 +1978,7 @@
         "brand_faq_a5": "Das Werk in Werne gehört seit 2017 zu AVX und heißt seit dem 1. Oktober 2021 KYOCERA AVX Components (Werne) GmbH.",
         "brand_faq_q6": "Liefern Sie auch Teile mit TT electronics- oder AVX-Kennzeichnung?",
         "brand_faq_a6": "Ja. Je nach Baujahr tragen Teile aus Werne unterschiedliche Firmennamen. Senden Sie uns alle Nummern vom Etikett, dann suchen wir das passende Teil.",
-        "bx_note": "AB ELEKTRONIK ist ein Name bzw. eine Marke der KYOCERA AVX Components (Werne) GmbH. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://de.wikipedia.org/wiki/AB_Elektronik\" target=\"_blank\" rel=\"noopener\">Wikipedia: AB Elektronik</a>). Stand: September 2026."
+        "bx_note": "AB ELEKTRONIK ist ein Name bzw. eine Marke der KYOCERA AVX Components (Werne) GmbH. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "AB Elektronik Sensors & Potentiometers – Spare Parts | ABCspareparts",
@@ -2095,7 +2003,7 @@
         "brand_faq_a5": "The Werne plant has belonged to AVX since 2017 and has been named KYOCERA AVX Components (Werne) GmbH since 1 October 2021.",
         "brand_faq_q6": "Do you also supply parts marked TT electronics or AVX?",
         "brand_faq_a6": "Yes. Depending on the year of manufacture, parts from Werne carry different company names. Send us all numbers from the label and we will find the right part.",
-        "bx_note": "AB ELEKTRONIK is a name or trademark of KYOCERA AVX Components (Werne) GmbH, mentioned solely to identify products. Information is based on public sources (<a href=\"https://de.wikipedia.org/wiki/AB_Elektronik\" target=\"_blank\" rel=\"noopener\">Wikipedia: AB Elektronik</a>). Last updated: September 2026."
+        "bx_note": "AB ELEKTRONIK is a name or trademark of KYOCERA AVX Components (Werne) GmbH, mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi AB Elektronik: sensori e potenziometri | ABCspareparts",
@@ -2120,7 +2028,7 @@
         "brand_faq_a5": "Lo stabilimento di Werne appartiene ad AVX dal 2017 e dal 1° ottobre 2021 si chiama KYOCERA AVX Components (Werne) GmbH.",
         "brand_faq_q6": "Fornite anche pezzi marcati TT electronics o AVX?",
         "brand_faq_a6": "Sì. A seconda dell'anno di produzione i pezzi di Werne riportano ragioni sociali diverse. Ci invii tutti i codici dell'etichetta e troviamo il pezzo giusto.",
-        "bx_note": "AB ELEKTRONIK è un nome o marchio di KYOCERA AVX Components (Werne) GmbH, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://de.wikipedia.org/wiki/AB_Elektronik\" target=\"_blank\" rel=\"noopener\">Wikipedia: AB Elektronik</a>). Aggiornato: settembre 2026."
+        "bx_note": "AB ELEKTRONIK è un nome o marchio di KYOCERA AVX Components (Werne) GmbH, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos AB Elektronik: sensores y potenciómetros | ABCspareparts",
@@ -2145,7 +2053,7 @@
         "brand_faq_a5": "La planta de Werne pertenece a AVX desde 2017 y desde el 1 de octubre de 2021 se llama KYOCERA AVX Components (Werne) GmbH.",
         "brand_faq_q6": "¿Suministran también piezas marcadas TT electronics o AVX?",
         "brand_faq_a6": "Sí. Según el año de fabricación, las piezas de Werne llevan distintas denominaciones. Envíenos todas las referencias de la etiqueta y buscamos la pieza correcta.",
-        "bx_note": "AB ELEKTRONIK es un nombre o marca de KYOCERA AVX Components (Werne) GmbH, mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://de.wikipedia.org/wiki/AB_Elektronik\" target=\"_blank\" rel=\"noopener\">Wikipedia: AB Elektronik</a>). Actualizado: septiembre de 2026."
+        "bx_note": "AB ELEKTRONIK es un nombre o marca de KYOCERA AVX Components (Werne) GmbH, mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces AB Elektronik : capteurs et potentiomètres | ABCspareparts",
@@ -2170,7 +2078,7 @@
         "brand_faq_a5": "Le site de Werne appartient à AVX depuis 2017 et s'appelle KYOCERA AVX Components (Werne) GmbH depuis le 1er octobre 2021.",
         "brand_faq_q6": "Fournissez-vous aussi des pièces marquées TT electronics ou AVX ?",
         "brand_faq_a6": "Oui. Selon l'année de fabrication, les pièces de Werne portent des raisons sociales différentes. Envoyez-nous toutes les références de l'étiquette et nous trouvons la bonne pièce.",
-        "bx_note": "AB ELEKTRONIK est un nom ou une marque de KYOCERA AVX Components (Werne) GmbH, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://de.wikipedia.org/wiki/AB_Elektronik\" target=\"_blank\" rel=\"noopener\">Wikipedia: AB Elektronik</a>). Mise à jour : septembre 2026."
+        "bx_note": "AB ELEKTRONIK est un nom ou une marque de KYOCERA AVX Components (Werne) GmbH, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -2278,8 +2186,7 @@
           "name": "AB Trasmissioni",
           "alternateName": [
             "AB Balboni"
-          ],
-          "url": "https://www.abtrasmissioni.it/"
+          ]
         },
         {
           "@type": "Organization",
@@ -2288,15 +2195,7 @@
             "@id": "https://abcspareparts.eu/marche/ab-trasmissioni.html#brand"
           },
           "name": "AB Trasmissioni S.r.l.",
-          "foundingDate": "1975",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Via del Curato 35",
-            "postalCode": "44042",
-            "addressLocality": "Cento (FE)",
-            "addressCountry": "IT"
-          },
-          "url": "https://www.abtrasmissioni.it/"
+          "foundingDate": "1975"
         },
         {
           "@type": "Service",
@@ -2374,7 +2273,7 @@
         "brand_faq_a5": "Vor allem zur Verbindung von Verbrennungsmotoren mit Pumpen, Generatoren und Kompressoren – etwa in Bewässerung, Brandschutz, Stromaggregaten und Bahntechnik.",
         "brand_faq_q6": "Was gehört noch zum Programm?",
         "brand_faq_a6": "Heizungen, Hub-, Dreh- und Haltemagnete, Elektrozylinder, Abstellmagnete für Dieselmotoren sowie seit der Übernahme von Eleberg 2014 Messwandler und Messinstrumente.",
-        "bx_note": "AB TRASMISSIONI ist ein Name bzw. eine Marke der AB Trasmissioni S.r.l.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://www.abtrasmissioni.it/pdf/download/company-profile-AB-Trasmissioni-2026-ENG.pdf\" target=\"_blank\" rel=\"noopener\">AB Trasmissioni Company Profile</a>, <a href=\"https://www.abtrasmissioni.it/en/index.php\" target=\"_blank\" rel=\"noopener\">abtrasmissioni.it</a>). Stand: September 2026."
+        "bx_note": "AB TRASMISSIONI ist ein Name bzw. eine Marke der AB Trasmissioni S.r.l.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "AB Trasmissioni Couplings, Solenoids & Heaters – Spare Parts | ABCspareparts",
@@ -2399,7 +2298,7 @@
         "brand_faq_a5": "Mainly to connect combustion engines to pumps, generators and compressors – for example in irrigation, firefighting, generator sets and railways.",
         "brand_faq_q6": "What else is in the range?",
         "brand_faq_a6": "Heaters, linear, rotary and holding solenoids, electric cylinders, diesel engine stop solenoids and, since the acquisition of Eleberg in 2014, measurement transformers and instruments.",
-        "bx_note": "AB TRASMISSIONI is a name or trademark of AB Trasmissioni S.r.l., mentioned solely to identify products. Information is based on public sources (<a href=\"https://www.abtrasmissioni.it/pdf/download/company-profile-AB-Trasmissioni-2026-ENG.pdf\" target=\"_blank\" rel=\"noopener\">AB Trasmissioni Company Profile</a>, <a href=\"https://www.abtrasmissioni.it/en/index.php\" target=\"_blank\" rel=\"noopener\">abtrasmissioni.it</a>). Last updated: September 2026."
+        "bx_note": "AB TRASMISSIONI is a name or trademark of AB Trasmissioni S.r.l., mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi AB Trasmissioni: giunti, elettromagneti e riscaldatori | ABCspareparts",
@@ -2424,7 +2323,7 @@
         "brand_faq_a5": "Soprattutto a collegare motori endotermici a pompe, generatori e compressori – ad esempio in irrigazione, antincendio, gruppi elettrogeni e ferroviario.",
         "brand_faq_q6": "Cos'altro fa parte della gamma?",
         "brand_faq_a6": "Riscaldatori, elettromagneti lineari, rotativi e di tenuta, cilindri elettrici, magneti di arresto per motori diesel e, dopo l'acquisizione di Eleberg nel 2014, trasformatori e strumenti di misura.",
-        "bx_note": "AB TRASMISSIONI è un nome o marchio di AB Trasmissioni S.r.l., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://www.abtrasmissioni.it/pdf/download/company-profile-AB-Trasmissioni-2026-ENG.pdf\" target=\"_blank\" rel=\"noopener\">AB Trasmissioni Company Profile</a>, <a href=\"https://www.abtrasmissioni.it/en/index.php\" target=\"_blank\" rel=\"noopener\">abtrasmissioni.it</a>). Aggiornato: settembre 2026."
+        "bx_note": "AB TRASMISSIONI è un nome o marchio di AB Trasmissioni S.r.l., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos AB Trasmissioni: acoplamientos, electroimanes y calentadores | ABCspareparts",
@@ -2449,7 +2348,7 @@
         "brand_faq_a5": "Sobre todo para unir motores de combustión con bombas, generadores y compresores – por ejemplo en riego, contra incendios, grupos electrógenos y ferrocarril.",
         "brand_faq_q6": "¿Qué más incluye la gama?",
         "brand_faq_a6": "Calentadores, electroimanes lineales, rotativos y de retención, cilindros eléctricos, electroimanes de parada para motores diésel y, desde la compra de Eleberg en 2014, transformadores e instrumentos de medida.",
-        "bx_note": "AB TRASMISSIONI es un nombre o marca de AB Trasmissioni S.r.l., mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://www.abtrasmissioni.it/pdf/download/company-profile-AB-Trasmissioni-2026-ENG.pdf\" target=\"_blank\" rel=\"noopener\">AB Trasmissioni Company Profile</a>, <a href=\"https://www.abtrasmissioni.it/en/index.php\" target=\"_blank\" rel=\"noopener\">abtrasmissioni.it</a>). Actualizado: septiembre de 2026."
+        "bx_note": "AB TRASMISSIONI es un nombre o marca de AB Trasmissioni S.r.l., mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces AB Trasmissioni : accouplements, électroaimants et réchauffeurs | ABCspareparts",
@@ -2474,7 +2373,7 @@
         "brand_faq_a5": "Principalement à relier des moteurs thermiques à des pompes, générateurs et compresseurs – par exemple en irrigation, lutte incendie, groupes électrogènes et ferroviaire.",
         "brand_faq_q6": "Que comprend encore la gamme ?",
         "brand_faq_a6": "Réchauffeurs, électroaimants linéaires, rotatifs et de maintien, vérins électriques, électroaimants d'arrêt pour moteurs diesel et, depuis le rachat d'Eleberg en 2014, transformateurs et instruments de mesure.",
-        "bx_note": "AB TRASMISSIONI est un nom ou une marque de AB Trasmissioni S.r.l., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://www.abtrasmissioni.it/pdf/download/company-profile-AB-Trasmissioni-2026-ENG.pdf\" target=\"_blank\" rel=\"noopener\">AB Trasmissioni Company Profile</a>, <a href=\"https://www.abtrasmissioni.it/en/index.php\" target=\"_blank\" rel=\"noopener\">abtrasmissioni.it</a>). Mise à jour : septembre 2026."
+        "bx_note": "AB TRASMISSIONI est un nom ou une marque de AB Trasmissioni S.r.l., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -2582,8 +2481,7 @@
           "name": "ABB SACE",
           "alternateName": [
             "SACE"
-          ],
-          "url": "https://new.abb.com/low-voltage/products"
+          ]
         },
         {
           "@type": "Organization",
@@ -2592,13 +2490,7 @@
             "@id": "https://abcspareparts.eu/marche/abb-sace.html#brand"
           },
           "name": "ABB SACE",
-          "foundingDate": "1934-07-07",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Bergamo",
-            "addressCountry": "IT"
-          },
-          "url": "https://new.abb.com/"
+          "foundingDate": "1934-07-07"
         },
         {
           "@type": "Service",
@@ -2668,7 +2560,7 @@
         "brand_faq_a5": "Wir beschaffen die offenen Leistungsschalter SACE Emax 2, die Kompaktleistungsschalter Tmax XT und die Vorgängerserie Tmax T sowie Ekip Auslöser, Motorantriebe, Auslösespulen und Hilfskontakte.",
         "brand_faq_q6": "Welche Angaben brauchen Sie für ein Emax- oder Tmax-Ersatzteil?",
         "brand_faq_a6": "Am besten die ABB-Bestellnummer (z. B. 1SDA…) vom Typenschild, dazu Baugröße, Bemessungsstrom, Polzahl, Einbauart und bei Zubehör die Steuerspannung.",
-        "bx_note": "ABB SACE ist ein Name bzw. eine Marke der ABB S.p.A. – SACE. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://new.abb.com/news/detail/117541/buon-compleanno-sace-abb-marks-90-years-of-innovation\" target=\"_blank\" rel=\"noopener\">ABB News: 90 Jahre SACE</a>, <a href=\"https://new.abb.com/low-voltage/products\" target=\"_blank\" rel=\"noopener\">ABB Niederspannungsprodukte</a>, <a href=\"https://library.e.abb.com/public/79d3bb96befa784cc1257ac5003a3882/1SDC007400G0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB SACE Emax 2 Katalog</a>). Stand: September 2026."
+        "bx_note": "ABB SACE ist ein Name bzw. eine Marke der ABB S.p.A. – SACE. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "ABB SACE Emax 2 & Tmax Circuit Breakers – Spare Parts | ABCspareparts",
@@ -2693,7 +2585,7 @@
         "brand_faq_a5": "We source SACE Emax 2 air circuit breakers, Tmax XT moulded case breakers and the previous Tmax T series, plus Ekip trip units, motor operators, releases and auxiliary contacts.",
         "brand_faq_q6": "What details do you need for an Emax or Tmax spare part?",
         "brand_faq_a6": "Ideally the ABB order code (e.g. 1SDA…) from the nameplate, plus frame size, rated current, poles, version and, for accessories, the control voltage.",
-        "bx_note": "ABB SACE is a name or trademark of ABB S.p.A. – SACE, mentioned solely to identify products. Information is based on public sources (<a href=\"https://new.abb.com/news/detail/117541/buon-compleanno-sace-abb-marks-90-years-of-innovation\" target=\"_blank\" rel=\"noopener\">ABB News: 90 Jahre SACE</a>, <a href=\"https://new.abb.com/low-voltage/products\" target=\"_blank\" rel=\"noopener\">ABB Niederspannungsprodukte</a>, <a href=\"https://library.e.abb.com/public/79d3bb96befa784cc1257ac5003a3882/1SDC007400G0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB SACE Emax 2 Katalog</a>). Last updated: September 2026."
+        "bx_note": "ABB SACE is a name or trademark of ABB S.p.A. – SACE, mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi ABB SACE: interruttori Emax 2 e Tmax | ABCspareparts",
@@ -2718,7 +2610,7 @@
         "brand_faq_a5": "Forniamo gli interruttori aperti SACE Emax 2, gli scatolati Tmax XT e la serie precedente Tmax T, oltre a sganciatori Ekip, comandi a motore, bobine e contatti ausiliari.",
         "brand_faq_q6": "Quali dati servono per un ricambio Emax o Tmax?",
         "brand_faq_a6": "Idealmente il codice ABB (es. 1SDA…) dalla targa, più taglia, corrente nominale, numero di poli, esecuzione e, per gli accessori, la tensione di comando.",
-        "bx_note": "ABB SACE è un nome o marchio di ABB S.p.A. – SACE, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://new.abb.com/news/detail/117541/buon-compleanno-sace-abb-marks-90-years-of-innovation\" target=\"_blank\" rel=\"noopener\">ABB News: 90 Jahre SACE</a>, <a href=\"https://new.abb.com/low-voltage/products\" target=\"_blank\" rel=\"noopener\">ABB Niederspannungsprodukte</a>, <a href=\"https://library.e.abb.com/public/79d3bb96befa784cc1257ac5003a3882/1SDC007400G0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB SACE Emax 2 Katalog</a>). Aggiornato: settembre 2026."
+        "bx_note": "ABB SACE è un nome o marchio di ABB S.p.A. – SACE, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos ABB SACE: interruptores Emax 2 y Tmax | ABCspareparts",
@@ -2743,7 +2635,7 @@
         "brand_faq_a5": "Suministramos interruptores abiertos SACE Emax 2, de caja moldeada Tmax XT y la serie anterior Tmax T, además de relés Ekip, mandos motorizados, bobinas y contactos auxiliares.",
         "brand_faq_q6": "¿Qué datos necesitan para un repuesto Emax o Tmax?",
         "brand_faq_a6": "Idealmente el código ABB (p. ej. 1SDA…) de la placa, además de tamaño, corriente nominal, polos, ejecución y, en accesorios, la tensión de mando.",
-        "bx_note": "ABB SACE es un nombre o marca de ABB S.p.A. – SACE, mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://new.abb.com/news/detail/117541/buon-compleanno-sace-abb-marks-90-years-of-innovation\" target=\"_blank\" rel=\"noopener\">ABB News: 90 Jahre SACE</a>, <a href=\"https://new.abb.com/low-voltage/products\" target=\"_blank\" rel=\"noopener\">ABB Niederspannungsprodukte</a>, <a href=\"https://library.e.abb.com/public/79d3bb96befa784cc1257ac5003a3882/1SDC007400G0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB SACE Emax 2 Katalog</a>). Actualizado: septiembre de 2026."
+        "bx_note": "ABB SACE es un nombre o marca de ABB S.p.A. – SACE, mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces ABB SACE : disjoncteurs Emax 2 et Tmax | ABCspareparts",
@@ -2768,7 +2660,7 @@
         "brand_faq_a5": "Nous fournissons les disjoncteurs ouverts SACE Emax 2, les boîtiers moulés Tmax XT et la série précédente Tmax T, ainsi que déclencheurs Ekip, commandes motorisées, bobines et contacts auxiliaires.",
         "brand_faq_q6": "Quelles informations faut-il pour une pièce Emax ou Tmax ?",
         "brand_faq_a6": "Idéalement la référence ABB (p. ex. 1SDA…) de la plaque, plus taille, courant assigné, nombre de pôles, version et, pour les accessoires, la tension de commande.",
-        "bx_note": "ABB SACE est un nom ou une marque de ABB S.p.A. – SACE, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://new.abb.com/news/detail/117541/buon-compleanno-sace-abb-marks-90-years-of-innovation\" target=\"_blank\" rel=\"noopener\">ABB News: 90 Jahre SACE</a>, <a href=\"https://new.abb.com/low-voltage/products\" target=\"_blank\" rel=\"noopener\">ABB Niederspannungsprodukte</a>, <a href=\"https://library.e.abb.com/public/79d3bb96befa784cc1257ac5003a3882/1SDC007400G0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB SACE Emax 2 Katalog</a>). Mise à jour : septembre 2026."
+        "bx_note": "ABB SACE est un nom ou une marque de ABB S.p.A. – SACE, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -2878,8 +2770,7 @@
           "alternateName": [
             "Stotz-Kontakt",
             "Stotz"
-          ],
-          "url": "https://new.abb.com/de/ueber-uns/gesellschaften/abb-stotz-kontakt/geschichte"
+          ]
         },
         {
           "@type": "Organization",
@@ -2888,15 +2779,7 @@
             "@id": "https://abcspareparts.eu/marche/abb-stotz-kontakt.html#brand"
           },
           "name": "ABB STOTZ-KONTAKT GmbH",
-          "foundingDate": "1891",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Eppelheimer Straße 82",
-            "postalCode": "69123",
-            "addressLocality": "Heidelberg",
-            "addressCountry": "DE"
-          },
-          "url": "https://new.abb.com/de"
+          "foundingDate": "1891"
         },
         {
           "@type": "Service",
@@ -2970,7 +2853,7 @@
         "brand_faq_a5": "Laut ABB wurde der erste Leitungsschutzschalter 1923 bei Stotz-Kontakt in Mannheim entwickelt. Heute gehört das Unternehmen zu ABB und hat seinen Sitz in Heidelberg.",
         "brand_faq_q6": "Bekommen Sie noch alte Stotz-Leitungsschutzschalter?",
         "brand_faq_a6": "Wir suchen Restbestände älterer Typen wie S 11, S 111 oder S201-K4. Ist ein Gerät nicht mehr erhältlich, nennen wir einen aktuellen ABB-Typ mit passenden Daten.",
-        "bx_note": "ABB STOTZ-KONTAKT ist ein Name bzw. eine Marke der ABB STOTZ-KONTAKT GmbH. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://new.abb.com/de/ueber-uns/gesellschaften/abb-stotz-kontakt/geschichte\" target=\"_blank\" rel=\"noopener\">ABB Stotz-Kontakt Geschichte</a>, <a href=\"https://new.abb.com/low-voltage/news/news-archive/one-billion-mcb\" target=\"_blank\" rel=\"noopener\">ABB: eine Milliarde MCB</a>, <a href=\"https://library.e.abb.com/public/412cfeff372046408c183afc81a5d9da/2CDC001099L0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB Firmenbroschüre</a>). Stand: September 2026."
+        "bx_note": "ABB STOTZ-KONTAKT ist ein Name bzw. eine Marke der ABB STOTZ-KONTAKT GmbH. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "ABB Stotz-Kontakt MCBs & DIN-Rail Devices – Spare Parts | ABCspareparts",
@@ -2995,7 +2878,7 @@
         "brand_faq_a5": "According to ABB, the first miniature circuit breaker was developed at Stotz-Kontakt in Mannheim in 1923. Today the company belongs to ABB and is based in Heidelberg.",
         "brand_faq_q6": "Can you still get old Stotz MCBs?",
         "brand_faq_a6": "We look for remaining stock of older types such as S 11, S 111 or S201-K4. If a device is no longer available, we name a current ABB type with matching data.",
-        "bx_note": "ABB STOTZ-KONTAKT is a name or trademark of ABB STOTZ-KONTAKT GmbH, mentioned solely to identify products. Information is based on public sources (<a href=\"https://new.abb.com/de/ueber-uns/gesellschaften/abb-stotz-kontakt/geschichte\" target=\"_blank\" rel=\"noopener\">ABB Stotz-Kontakt Geschichte</a>, <a href=\"https://new.abb.com/low-voltage/news/news-archive/one-billion-mcb\" target=\"_blank\" rel=\"noopener\">ABB: eine Milliarde MCB</a>, <a href=\"https://library.e.abb.com/public/412cfeff372046408c183afc81a5d9da/2CDC001099L0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB Firmenbroschüre</a>). Last updated: September 2026."
+        "bx_note": "ABB STOTZ-KONTAKT is a name or trademark of ABB STOTZ-KONTAKT GmbH, mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi ABB Stotz-Kontakt: magnetotermici e apparecchi modulari | ABCspareparts",
@@ -3020,7 +2903,7 @@
         "brand_faq_a5": "Secondo ABB il primo interruttore magnetotermico fu sviluppato da Stotz-Kontakt a Mannheim nel 1923. Oggi l'azienda fa parte di ABB e ha sede a Heidelberg.",
         "brand_faq_q6": "Trovate ancora vecchi magnetotermici Stotz?",
         "brand_faq_a6": "Cerchiamo giacenze di tipi vecchi come S 11, S 111 o S201-K4. Se un apparecchio non è più disponibile indichiamo un tipo ABB attuale con dati equivalenti.",
-        "bx_note": "ABB STOTZ-KONTAKT è un nome o marchio di ABB STOTZ-KONTAKT GmbH, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://new.abb.com/de/ueber-uns/gesellschaften/abb-stotz-kontakt/geschichte\" target=\"_blank\" rel=\"noopener\">ABB Stotz-Kontakt Geschichte</a>, <a href=\"https://new.abb.com/low-voltage/news/news-archive/one-billion-mcb\" target=\"_blank\" rel=\"noopener\">ABB: eine Milliarde MCB</a>, <a href=\"https://library.e.abb.com/public/412cfeff372046408c183afc81a5d9da/2CDC001099L0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB Firmenbroschüre</a>). Aggiornato: settembre 2026."
+        "bx_note": "ABB STOTZ-KONTAKT è un nome o marchio di ABB STOTZ-KONTAKT GmbH, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos ABB Stotz-Kontakt: magnetotérmicos y aparatos modulares | ABCspareparts",
@@ -3045,7 +2928,7 @@
         "brand_faq_a5": "Según ABB, el primer interruptor magnetotérmico se desarrolló en Stotz-Kontakt en Mannheim en 1923. Hoy la empresa pertenece a ABB y tiene su sede en Heidelberg.",
         "brand_faq_q6": "¿Consiguen todavía magnetotérmicos Stotz antiguos?",
         "brand_faq_a6": "Buscamos existencias de tipos antiguos como S 11, S 111 o S201-K4. Si un aparato ya no está disponible, indicamos un tipo ABB actual con datos equivalentes.",
-        "bx_note": "ABB STOTZ-KONTAKT es un nombre o marca de ABB STOTZ-KONTAKT GmbH, mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://new.abb.com/de/ueber-uns/gesellschaften/abb-stotz-kontakt/geschichte\" target=\"_blank\" rel=\"noopener\">ABB Stotz-Kontakt Geschichte</a>, <a href=\"https://new.abb.com/low-voltage/news/news-archive/one-billion-mcb\" target=\"_blank\" rel=\"noopener\">ABB: eine Milliarde MCB</a>, <a href=\"https://library.e.abb.com/public/412cfeff372046408c183afc81a5d9da/2CDC001099L0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB Firmenbroschüre</a>). Actualizado: septiembre de 2026."
+        "bx_note": "ABB STOTZ-KONTAKT es un nombre o marca de ABB STOTZ-KONTAKT GmbH, mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces ABB Stotz-Kontakt : disjoncteurs modulaires et appareillage | ABCspareparts",
@@ -3070,7 +2953,7 @@
         "brand_faq_a5": "Selon ABB, le premier disjoncteur modulaire a été développé chez Stotz-Kontakt à Mannheim en 1923. L'entreprise appartient aujourd'hui à ABB et siège à Heidelberg.",
         "brand_faq_q6": "Trouvez-vous encore d'anciens disjoncteurs Stotz ?",
         "brand_faq_a6": "Nous cherchons des stocks d'anciens types comme S 11, S 111 ou S201-K4. Si un appareil n'est plus disponible, nous proposons un type ABB actuel aux caractéristiques équivalentes.",
-        "bx_note": "ABB STOTZ-KONTAKT est un nom ou une marque de ABB STOTZ-KONTAKT GmbH, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://new.abb.com/de/ueber-uns/gesellschaften/abb-stotz-kontakt/geschichte\" target=\"_blank\" rel=\"noopener\">ABB Stotz-Kontakt Geschichte</a>, <a href=\"https://new.abb.com/low-voltage/news/news-archive/one-billion-mcb\" target=\"_blank\" rel=\"noopener\">ABB: eine Milliarde MCB</a>, <a href=\"https://library.e.abb.com/public/412cfeff372046408c183afc81a5d9da/2CDC001099L0201.pdf\" target=\"_blank\" rel=\"noopener\">ABB Firmenbroschüre</a>). Mise à jour : septembre 2026."
+        "bx_note": "ABB STOTZ-KONTAKT est un nom ou une marque de ABB STOTZ-KONTAKT GmbH, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -3179,8 +3062,7 @@
           "alternateName": [
             "ABB Striebel & John",
             "Striebel und John"
-          ],
-          "url": "https://www.striebelundjohn.com/"
+          ]
         },
         {
           "@type": "Organization",
@@ -3189,15 +3071,7 @@
             "@id": "https://abcspareparts.eu/marche/abb-striebel-plus-john.html#brand"
           },
           "name": "ABB AG – STRIEBEL & JOHN",
-          "foundingDate": "1958",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Am Fuchsgraben 2-3",
-            "postalCode": "77880",
-            "addressLocality": "Sasbach",
-            "addressCountry": "DE"
-          },
-          "url": "https://www.striebelundjohn.com/"
+          "foundingDate": "1958"
         },
         {
           "@type": "Service",
@@ -3275,7 +3149,7 @@
         "brand_faq_a5": "ComfortLine ist die Zählerschrank-Serie von ABB Striebel &amp; John. Laut ABB wurden seit 2020 über eine Million ComfortLine-Schränke gefertigt.",
         "brand_faq_q6": "Liefern Sie auch Einbauteile für bestehende Striebel & John Schränke?",
         "brand_faq_a6": "Ja. Nennen Sie uns Schranktyp oder Bestellnummer, Feldzahl und Baugröße, dann suchen wir passende Einbausätze, Abdeckungen, Türen und Zubehör.",
-        "bx_note": "ABB STRIEBEL & JOHN ist ein Name bzw. eine Marke der ABB AG – STRIEBEL & JOHN. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://www.striebelundjohn.com/\" target=\"_blank\" rel=\"noopener\">striebelundjohn.com</a>, <a href=\"https://new.abb.com/news/de/detail/133873/unternehmerische-weitsicht-zahlt-sich-aus-ueber-eine-million-comfortline-schraenke-gefertigt\" target=\"_blank\" rel=\"noopener\">ABB News ComfortLine</a>, <a href=\"https://www.wlw.de/de/firma/abb-ag-striebel-john-355682\" target=\"_blank\" rel=\"noopener\">wlw.de</a>). Stand: September 2026."
+        "bx_note": "ABB STRIEBEL & JOHN ist ein Name bzw. eine Marke der ABB AG – STRIEBEL & JOHN. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "ABB Striebel & John Meter Cabinets, Distribution Boards & Parts | ABCspareparts",
@@ -3300,7 +3174,7 @@
         "brand_faq_a5": "ComfortLine is the meter cabinet series from ABB Striebel &amp; John. According to ABB, more than one million ComfortLine cabinets have been made since 2020.",
         "brand_faq_q6": "Do you also supply built-in parts for existing Striebel & John cabinets?",
         "brand_faq_a6": "Yes. Send us the cabinet type or order code, number of fields and size, and we will look for suitable kits, covers, doors and accessories.",
-        "bx_note": "ABB STRIEBEL & JOHN is a name or trademark of ABB AG – STRIEBEL & JOHN, mentioned solely to identify products. Information is based on public sources (<a href=\"https://www.striebelundjohn.com/\" target=\"_blank\" rel=\"noopener\">striebelundjohn.com</a>, <a href=\"https://new.abb.com/news/de/detail/133873/unternehmerische-weitsicht-zahlt-sich-aus-ueber-eine-million-comfortline-schraenke-gefertigt\" target=\"_blank\" rel=\"noopener\">ABB News ComfortLine</a>, <a href=\"https://www.wlw.de/de/firma/abb-ag-striebel-john-355682\" target=\"_blank\" rel=\"noopener\">wlw.de</a>). Last updated: September 2026."
+        "bx_note": "ABB STRIEBEL & JOHN is a name or trademark of ABB AG – STRIEBEL & JOHN, mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi ABB Striebel & John: armadi contatori e quadri | ABCspareparts",
@@ -3325,7 +3199,7 @@
         "brand_faq_a5": "ComfortLine è la serie di armadi contatori di ABB Striebel &amp; John. Secondo ABB dal 2020 ne sono stati prodotti oltre un milione.",
         "brand_faq_q6": "Fornite componenti per armadi Striebel & John esistenti?",
         "brand_faq_a6": "Sì. Ci indichi tipo di armadio o codice, numero di campi e dimensioni e cerchiamo kit, coperture, porte e accessori adatti.",
-        "bx_note": "ABB STRIEBEL & JOHN è un nome o marchio di ABB AG – STRIEBEL & JOHN, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://www.striebelundjohn.com/\" target=\"_blank\" rel=\"noopener\">striebelundjohn.com</a>, <a href=\"https://new.abb.com/news/de/detail/133873/unternehmerische-weitsicht-zahlt-sich-aus-ueber-eine-million-comfortline-schraenke-gefertigt\" target=\"_blank\" rel=\"noopener\">ABB News ComfortLine</a>, <a href=\"https://www.wlw.de/de/firma/abb-ag-striebel-john-355682\" target=\"_blank\" rel=\"noopener\">wlw.de</a>). Aggiornato: settembre 2026."
+        "bx_note": "ABB STRIEBEL & JOHN è un nome o marchio di ABB AG – STRIEBEL & JOHN, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos ABB Striebel & John: armarios de contadores y cuadros | ABCspareparts",
@@ -3350,7 +3224,7 @@
         "brand_faq_a5": "ComfortLine es la serie de armarios de contadores de ABB Striebel &amp; John. Según ABB se han fabricado más de un millón desde 2020.",
         "brand_faq_q6": "¿Suministran piezas para armarios Striebel & John existentes?",
         "brand_faq_a6": "Sí. Indíquenos el tipo de armario o código, número de campos y tamaño, y buscamos kits, tapas, puertas y accesorios adecuados.",
-        "bx_note": "ABB STRIEBEL & JOHN es un nombre o marca de ABB AG – STRIEBEL & JOHN, mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://www.striebelundjohn.com/\" target=\"_blank\" rel=\"noopener\">striebelundjohn.com</a>, <a href=\"https://new.abb.com/news/de/detail/133873/unternehmerische-weitsicht-zahlt-sich-aus-ueber-eine-million-comfortline-schraenke-gefertigt\" target=\"_blank\" rel=\"noopener\">ABB News ComfortLine</a>, <a href=\"https://www.wlw.de/de/firma/abb-ag-striebel-john-355682\" target=\"_blank\" rel=\"noopener\">wlw.de</a>). Actualizado: septiembre de 2026."
+        "bx_note": "ABB STRIEBEL & JOHN es un nombre o marca de ABB AG – STRIEBEL & JOHN, mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces ABB Striebel & John : armoires de comptage et tableaux | ABCspareparts",
@@ -3375,7 +3249,7 @@
         "brand_faq_a5": "ComfortLine est la série d'armoires de comptage d'ABB Striebel &amp; John. Selon ABB, plus d'un million ont été produites depuis 2020.",
         "brand_faq_q6": "Fournissez-vous des pièces pour armoires Striebel & John existantes ?",
         "brand_faq_a6": "Oui. Indiquez-nous le type d'armoire ou la référence, le nombre de champs et la taille, et nous cherchons kits, capots, portes et accessoires adaptés.",
-        "bx_note": "ABB STRIEBEL & JOHN est un nom ou une marque de ABB AG – STRIEBEL & JOHN, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://www.striebelundjohn.com/\" target=\"_blank\" rel=\"noopener\">striebelundjohn.com</a>, <a href=\"https://new.abb.com/news/de/detail/133873/unternehmerische-weitsicht-zahlt-sich-aus-ueber-eine-million-comfortline-schraenke-gefertigt\" target=\"_blank\" rel=\"noopener\">ABB News ComfortLine</a>, <a href=\"https://www.wlw.de/de/firma/abb-ag-striebel-john-355682\" target=\"_blank\" rel=\"noopener\">wlw.de</a>). Mise à jour : septembre 2026."
+        "bx_note": "ABB STRIEBEL & JOHN est un nom ou une marque de ABB AG – STRIEBEL & JOHN, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -3485,10 +3359,6 @@
           "alternateName": [
             "ABBA Linear",
             "ABBA Linear Tech"
-          ],
-          "url": "https://www.abbalinear.com/",
-          "sameAs": [
-            "https://www.linkedin.com/company/abbalineartech"
           ]
         },
         {
@@ -3498,15 +3368,7 @@
             "@id": "https://abcspareparts.eu/marche/abba.html#brand"
           },
           "name": "ABBA Linear Tech Co., Ltd.",
-          "foundingDate": "1999",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "No.123, Sec. 1, Yuemei Rd., Zhongli Dist.",
-            "addressLocality": "Taoyuan City",
-            "postalCode": "320",
-            "addressCountry": "TW"
-          },
-          "url": "https://www.abbalinear.com/"
+          "foundingDate": "1999"
         },
         {
           "@type": "Service",
@@ -3580,7 +3442,7 @@
         "brand_faq_a5": "ABBA gehörte zum Motion-Technologies-Bereich, der 2019 als Ewellix eigenständig wurde. Seit Januar 2023 ist ABBA Teil der Schaeffler-Gruppe.",
         "brand_faq_q6": "Sind ABBA Linearführungen mit anderen Marken austauschbar?",
         "brand_faq_a6": "Manche Baugrößen ähneln anderen Herstellern, Wagen und Schienen sind aber nicht automatisch kombinierbar. Wir empfehlen, Wagen und Schiene als Satz zu tauschen oder die Maße vorher zu prüfen.",
-        "bx_note": "ABBA ist ein Name bzw. eine Marke der ABBA Linear Tech Co., Ltd.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://www.abbalinear.com/en-ww/about/about.php\" target=\"_blank\" rel=\"noopener\">abbalinear.com</a>, <a href=\"https://www.abbalinear.com/en-ww/technology/faq.php\" target=\"_blank\" rel=\"noopener\">ABBA FAQ</a>, <a href=\"https://www.schaeffler.com/en/media/press-releases/press-releases-detail.jsp?id=87843777\" target=\"_blank\" rel=\"noopener\">Schaeffler Pressemitteilung</a>). Stand: September 2026."
+        "bx_note": "ABBA ist ein Name bzw. eine Marke der ABBA Linear Tech Co., Ltd.. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "ABBA Linear Guides BR, BC, BM & Ball Screws – Spare Parts | ABCspareparts",
@@ -3605,7 +3467,7 @@
         "brand_faq_a5": "ABBA belonged to the Motion Technologies unit that became independent as Ewellix in 2019. Since January 2023 ABBA has been part of the Schaeffler Group.",
         "brand_faq_q6": "Are ABBA linear guides interchangeable with other brands?",
         "brand_faq_a6": "Some sizes are similar to other makers, but blocks and rails are not automatically compatible. We recommend replacing block and rail as a set or checking dimensions first.",
-        "bx_note": "ABBA is a name or trademark of ABBA Linear Tech Co., Ltd., mentioned solely to identify products. Information is based on public sources (<a href=\"https://www.abbalinear.com/en-ww/about/about.php\" target=\"_blank\" rel=\"noopener\">abbalinear.com</a>, <a href=\"https://www.abbalinear.com/en-ww/technology/faq.php\" target=\"_blank\" rel=\"noopener\">ABBA FAQ</a>, <a href=\"https://www.schaeffler.com/en/media/press-releases/press-releases-detail.jsp?id=87843777\" target=\"_blank\" rel=\"noopener\">Schaeffler Pressemitteilung</a>). Last updated: September 2026."
+        "bx_note": "ABBA is a name or trademark of ABBA Linear Tech Co., Ltd., mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi ABBA: guide lineari BR, BC, BM e viti a ricircolo | ABCspareparts",
@@ -3630,7 +3492,7 @@
         "brand_faq_a5": "ABBA faceva parte della divisione Motion Technologies, diventata indipendente come Ewellix nel 2019. Da gennaio 2023 ABBA fa parte del gruppo Schaeffler.",
         "brand_faq_q6": "Le guide ABBA sono intercambiabili con altre marche?",
         "brand_faq_a6": "Alcune taglie sono simili ad altri costruttori, ma pattini e rotaie non sono automaticamente compatibili. Consigliamo di sostituire pattino e rotaia insieme o verificare prima le misure.",
-        "bx_note": "ABBA è un nome o marchio di ABBA Linear Tech Co., Ltd., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://www.abbalinear.com/en-ww/about/about.php\" target=\"_blank\" rel=\"noopener\">abbalinear.com</a>, <a href=\"https://www.abbalinear.com/en-ww/technology/faq.php\" target=\"_blank\" rel=\"noopener\">ABBA FAQ</a>, <a href=\"https://www.schaeffler.com/en/media/press-releases/press-releases-detail.jsp?id=87843777\" target=\"_blank\" rel=\"noopener\">Schaeffler Pressemitteilung</a>). Aggiornato: settembre 2026."
+        "bx_note": "ABBA è un nome o marchio di ABBA Linear Tech Co., Ltd., citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos ABBA: guías lineales BR, BC, BM y husillos de bolas | ABCspareparts",
@@ -3655,7 +3517,7 @@
         "brand_faq_a5": "ABBA pertenecía a la división Motion Technologies, independiente como Ewellix desde 2019. Desde enero de 2023 ABBA forma parte del grupo Schaeffler.",
         "brand_faq_q6": "¿Las guías ABBA son intercambiables con otras marcas?",
         "brand_faq_a6": "Algunos tamaños se parecen a otros fabricantes, pero patines y carriles no son automáticamente compatibles. Recomendamos cambiar patín y carril juntos o comprobar antes las medidas.",
-        "bx_note": "ABBA es un nombre o marca de ABBA Linear Tech Co., Ltd., mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://www.abbalinear.com/en-ww/about/about.php\" target=\"_blank\" rel=\"noopener\">abbalinear.com</a>, <a href=\"https://www.abbalinear.com/en-ww/technology/faq.php\" target=\"_blank\" rel=\"noopener\">ABBA FAQ</a>, <a href=\"https://www.schaeffler.com/en/media/press-releases/press-releases-detail.jsp?id=87843777\" target=\"_blank\" rel=\"noopener\">Schaeffler Pressemitteilung</a>). Actualizado: septiembre de 2026."
+        "bx_note": "ABBA es un nombre o marca de ABBA Linear Tech Co., Ltd., mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces ABBA : guidages linéaires BR, BC, BM et vis à billes | ABCspareparts",
@@ -3680,7 +3542,7 @@
         "brand_faq_a5": "ABBA faisait partie de la division Motion Technologies, devenue indépendante sous le nom Ewellix en 2019. Depuis janvier 2023, ABBA fait partie du groupe Schaeffler.",
         "brand_faq_q6": "Les guidages ABBA sont-ils interchangeables avec d'autres marques ?",
         "brand_faq_a6": "Certaines tailles ressemblent à d'autres fabricants, mais patins et rails ne sont pas automatiquement compatibles. Nous conseillons de remplacer patin et rail ensemble ou de vérifier les cotes avant.",
-        "bx_note": "ABBA est un nom ou une marque de ABBA Linear Tech Co., Ltd., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://www.abbalinear.com/en-ww/about/about.php\" target=\"_blank\" rel=\"noopener\">abbalinear.com</a>, <a href=\"https://www.abbalinear.com/en-ww/technology/faq.php\" target=\"_blank\" rel=\"noopener\">ABBA FAQ</a>, <a href=\"https://www.schaeffler.com/en/media/press-releases/press-releases-detail.jsp?id=87843777\" target=\"_blank\" rel=\"noopener\">Schaeffler Pressemitteilung</a>). Mise à jour : septembre 2026."
+        "bx_note": "ABBA est un nom ou une marque de ABBA Linear Tech Co., Ltd., cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -3787,8 +3649,7 @@
           "alternateName": [
             "ABEL Pumps",
             "ABEL Pump Technology"
-          ],
-          "url": "https://abelpumps.com/"
+          ]
         },
         {
           "@type": "Organization",
@@ -3797,13 +3658,7 @@
             "@id": "https://abcspareparts.eu/marche/abel.html#brand"
           },
           "name": "ABEL GmbH",
-          "foundingDate": "1947",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Büchen",
-            "addressCountry": "DE"
-          },
-          "url": "https://abelpumps.com/"
+          "foundingDate": "1947"
         },
         {
           "@type": "Service",
@@ -3881,7 +3736,7 @@
         "brand_faq_a5": "Unter anderem die Kolbenmembranpumpen HM, HMT und HMQ, die Feststoffpumpen SH, die Kompaktpumpen CM, die Plungerpumpen HP und HPT sowie die mechanisch angetriebenen Membranpumpen EM.",
         "brand_faq_q6": "Wem gehört ABEL?",
         "brand_faq_a6": "ABEL ist seit März 2021 Teil der IDEX Corporation. Der Hauptsitz liegt in Büchen bei Hamburg.",
-        "bx_note": "ABEL ist ein Name bzw. eine Marke der ABEL GmbH. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://abelpumps.com/en/about-abel/\" target=\"_blank\" rel=\"noopener\">abelpumps.com</a>, <a href=\"http://www.abelpump.com/products-en\" target=\"_blank\" rel=\"noopener\">ABEL Pumpenserien</a>, <a href=\"https://idexcorp.com/news/news-item/idex-corporation-completes-acquisition-of-abel-pumps-l-p\" target=\"_blank\" rel=\"noopener\">IDEX</a>). Stand: September 2026."
+        "bx_note": "ABEL ist ein Name bzw. eine Marke der ABEL GmbH. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "ABEL Piston Diaphragm, Solids & Plunger Pumps – Spare Parts | ABCspareparts",
@@ -3906,7 +3761,7 @@
         "brand_faq_a5": "Among others, the HM, HMT and HMQ piston diaphragm pumps, SH solids handling pumps, CM compact pumps, HP and HPT plunger pumps and the mechanically driven EM diaphragm pumps.",
         "brand_faq_q6": "Who owns ABEL?",
         "brand_faq_a6": "ABEL has been part of IDEX Corporation since March 2021. Its headquarters are in Büchen near Hamburg.",
-        "bx_note": "ABEL is a name or trademark of ABEL GmbH, mentioned solely to identify products. Information is based on public sources (<a href=\"https://abelpumps.com/en/about-abel/\" target=\"_blank\" rel=\"noopener\">abelpumps.com</a>, <a href=\"http://www.abelpump.com/products-en\" target=\"_blank\" rel=\"noopener\">ABEL Pumpenserien</a>, <a href=\"https://idexcorp.com/news/news-item/idex-corporation-completes-acquisition-of-abel-pumps-l-p\" target=\"_blank\" rel=\"noopener\">IDEX</a>). Last updated: September 2026."
+        "bx_note": "ABEL is a name or trademark of ABEL GmbH, mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi ABEL: pompe a pistone-membrana, per solidi e a pistoni | ABCspareparts",
@@ -3931,7 +3786,7 @@
         "brand_faq_a5": "Tra le altre le pompe a pistone-membrana HM, HMT e HMQ, le pompe per solidi SH, le compatte CM, le pompe a pistoni HP e HPT e le pompe a membrana meccaniche EM.",
         "brand_faq_q6": "A chi appartiene ABEL?",
         "brand_faq_a6": "ABEL fa parte di IDEX Corporation da marzo 2021. La sede è a Büchen, vicino ad Amburgo.",
-        "bx_note": "ABEL è un nome o marchio di ABEL GmbH, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://abelpumps.com/en/about-abel/\" target=\"_blank\" rel=\"noopener\">abelpumps.com</a>, <a href=\"http://www.abelpump.com/products-en\" target=\"_blank\" rel=\"noopener\">ABEL Pumpenserien</a>, <a href=\"https://idexcorp.com/news/news-item/idex-corporation-completes-acquisition-of-abel-pumps-l-p\" target=\"_blank\" rel=\"noopener\">IDEX</a>). Aggiornato: settembre 2026."
+        "bx_note": "ABEL è un nome o marchio di ABEL GmbH, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos ABEL: bombas de pistón-membrana, para sólidos y de émbolo | ABCspareparts",
@@ -3956,7 +3811,7 @@
         "brand_faq_a5": "Entre otras las bombas de pistón-membrana HM, HMT y HMQ, las bombas para sólidos SH, las compactas CM, las bombas de émbolo HP y HPT y las bombas de membrana mecánicas EM.",
         "brand_faq_q6": "¿A quién pertenece ABEL?",
         "brand_faq_a6": "ABEL forma parte de IDEX Corporation desde marzo de 2021. Su sede está en Büchen, cerca de Hamburgo.",
-        "bx_note": "ABEL es un nombre o marca de ABEL GmbH, mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://abelpumps.com/en/about-abel/\" target=\"_blank\" rel=\"noopener\">abelpumps.com</a>, <a href=\"http://www.abelpump.com/products-en\" target=\"_blank\" rel=\"noopener\">ABEL Pumpenserien</a>, <a href=\"https://idexcorp.com/news/news-item/idex-corporation-completes-acquisition-of-abel-pumps-l-p\" target=\"_blank\" rel=\"noopener\">IDEX</a>). Actualizado: septiembre de 2026."
+        "bx_note": "ABEL es un nombre o marca de ABEL GmbH, mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces ABEL : pompes à piston-membrane, à solides et à pistons | ABCspareparts",
@@ -3981,7 +3836,7 @@
         "brand_faq_a5": "Notamment les pompes à piston-membrane HM, HMT et HMQ, les pompes à solides SH, les compactes CM, les pompes à pistons HP et HPT et les pompes à membrane mécaniques EM.",
         "brand_faq_q6": "À qui appartient ABEL ?",
         "brand_faq_a6": "ABEL fait partie d'IDEX Corporation depuis mars 2021. Son siège est à Büchen, près de Hambourg.",
-        "bx_note": "ABEL est un nom ou une marque de ABEL GmbH, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://abelpumps.com/en/about-abel/\" target=\"_blank\" rel=\"noopener\">abelpumps.com</a>, <a href=\"http://www.abelpump.com/products-en\" target=\"_blank\" rel=\"noopener\">ABEL Pumpenserien</a>, <a href=\"https://idexcorp.com/news/news-item/idex-corporation-completes-acquisition-of-abel-pumps-l-p\" target=\"_blank\" rel=\"noopener\">IDEX</a>). Mise à jour : septembre 2026."
+        "bx_note": "ABEL est un nom ou une marque de ABEL GmbH, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -4087,8 +3942,7 @@
           "alternateName": [
             "Binzel",
             "Alexander Binzel"
-          ],
-          "url": "https://www.binzel-abicor.com/"
+          ]
         },
         {
           "@type": "Organization",
@@ -4097,13 +3951,7 @@
             "@id": "https://abcspareparts.eu/marche/abicor-binzel.html#brand"
           },
           "name": "Alexander Binzel Schweisstechnik GmbH & Co. KG",
-          "foundingDate": "1945",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Buseck",
-            "addressCountry": "DE"
-          },
-          "url": "https://www.binzel-abicor.com/"
+          "foundingDate": "1945"
         },
         {
           "@type": "Service",
@@ -4177,7 +4025,7 @@
         "brand_faq_a5": "Schutzgas-Schweiß- und Schneidbrenner für MIG/MAG, WIG und Plasma, Brenner für das Roboterschweißen sowie das passende Zubehör und Verschleißteile.",
         "brand_faq_q6": "Welche Angaben brauchen Sie für Stromdüsen und Gasdüsen?",
         "brand_faq_a6": "Brennertyp, Drahtdurchmesser, Gewinde (M6 oder M8), Werkstoff (E-Cu oder CuCrZr) und am besten die Binzel-Artikelnummer, z. B. 140.0059.",
-        "bx_note": "ABICOR BINZEL ist ein Name bzw. eine Marke der Alexander Binzel Schweisstechnik GmbH & Co. KG. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlichen Informationen (<a href=\"https://www.binzel-abicor.com/DE/eng/company/about-us/abicor-binzel-buseck/about-us-13955/\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL Über uns</a>, <a href=\"https://www.binzel-abicor.com/uploads/Content/Germany/PDF-Files/PDF_Files_Download/Brochures/MIG_MAG/PRO_M307_GB_MB_EVO_PRO_WEB.pdf\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL MB EVO PRO Broschüre</a>). Stand: September 2026."
+        "bx_note": "ABICOR BINZEL ist ein Name bzw. eine Marke der Alexander Binzel Schweisstechnik GmbH & Co. KG. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: September 2026."
       },
       "en": {
         "meta_title": "ABICOR BINZEL Welding Torches, Contact Tips & Wear Parts | ABCspareparts",
@@ -4202,7 +4050,7 @@
         "brand_faq_a5": "Gas-shielded welding and cutting torches for MIG/MAG, TIG and plasma, torches for robotic welding and the matching accessories and wear parts.",
         "brand_faq_q6": "What details do you need for contact tips and gas nozzles?",
         "brand_faq_a6": "Torch type, wire diameter, thread (M6 or M8), material (E-Cu or CuCrZr) and ideally the Binzel part number, e.g. 140.0059.",
-        "bx_note": "ABICOR BINZEL is a name or trademark of Alexander Binzel Schweisstechnik GmbH & Co. KG, mentioned solely to identify products. Information is based on public sources (<a href=\"https://www.binzel-abicor.com/DE/eng/company/about-us/abicor-binzel-buseck/about-us-13955/\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL Über uns</a>, <a href=\"https://www.binzel-abicor.com/uploads/Content/Germany/PDF-Files/PDF_Files_Download/Brochures/MIG_MAG/PRO_M307_GB_MB_EVO_PRO_WEB.pdf\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL MB EVO PRO Broschüre</a>). Last updated: September 2026."
+        "bx_note": "ABICOR BINZEL is a name or trademark of Alexander Binzel Schweisstechnik GmbH & Co. KG, mentioned solely to identify products. Information is based on publicly available sources. Last updated: September 2026."
       },
       "it": {
         "meta_title": "Ricambi ABICOR BINZEL: torce di saldatura, punte e parti d'usura | ABCspareparts",
@@ -4227,7 +4075,7 @@
         "brand_faq_a5": "Torce di saldatura e taglio in gas protettivo per MIG/MAG, TIG e plasma, torce per saldatura robotizzata e i relativi accessori e parti d'usura.",
         "brand_faq_q6": "Quali dati servono per punte e ugelli?",
         "brand_faq_a6": "Tipo di torcia, diametro filo, filettatura (M6 o M8), materiale (E-Cu o CuCrZr) e idealmente il codice Binzel, es. 140.0059.",
-        "bx_note": "ABICOR BINZEL è un nome o marchio di Alexander Binzel Schweisstechnik GmbH & Co. KG, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche (<a href=\"https://www.binzel-abicor.com/DE/eng/company/about-us/abicor-binzel-buseck/about-us-13955/\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL Über uns</a>, <a href=\"https://www.binzel-abicor.com/uploads/Content/Germany/PDF-Files/PDF_Files_Download/Brochures/MIG_MAG/PRO_M307_GB_MB_EVO_PRO_WEB.pdf\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL MB EVO PRO Broschüre</a>). Aggiornato: settembre 2026."
+        "bx_note": "ABICOR BINZEL è un nome o marchio di Alexander Binzel Schweisstechnik GmbH & Co. KG, citato solo per identificare i prodotti. Le informazioni si basano su fonti pubbliche. Aggiornato: settembre 2026."
       },
       "es": {
         "meta_title": "Repuestos ABICOR BINZEL: antorchas de soldadura, tubos de contacto | ABCspareparts",
@@ -4252,7 +4100,7 @@
         "brand_faq_a5": "Antorchas de soldadura y corte con gas protector para MIG/MAG, TIG y plasma, antorchas para soldadura robotizada y los accesorios y piezas de desgaste correspondientes.",
         "brand_faq_q6": "¿Qué datos necesitan para tubos de contacto y toberas?",
         "brand_faq_a6": "Tipo de antorcha, diámetro de hilo, rosca (M6 o M8), material (E-Cu o CuCrZr) e idealmente la referencia Binzel, p. ej. 140.0059.",
-        "bx_note": "ABICOR BINZEL es un nombre o marca de Alexander Binzel Schweisstechnik GmbH & Co. KG, mencionado solo para identificar los productos. La información se basa en fuentes públicas (<a href=\"https://www.binzel-abicor.com/DE/eng/company/about-us/abicor-binzel-buseck/about-us-13955/\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL Über uns</a>, <a href=\"https://www.binzel-abicor.com/uploads/Content/Germany/PDF-Files/PDF_Files_Download/Brochures/MIG_MAG/PRO_M307_GB_MB_EVO_PRO_WEB.pdf\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL MB EVO PRO Broschüre</a>). Actualizado: septiembre de 2026."
+        "bx_note": "ABICOR BINZEL es un nombre o marca de Alexander Binzel Schweisstechnik GmbH & Co. KG, mencionado solo para identificar los productos. La información se basa en fuentes públicas. Actualizado: septiembre de 2026."
       },
       "fr": {
         "meta_title": "Pièces ABICOR BINZEL : torches de soudage, tubes contact et pièces d'usure | ABCspareparts",
@@ -4277,7 +4125,7 @@
         "brand_faq_a5": "Des torches de soudage et de coupage sous gaz pour MIG/MAG, TIG et plasma, des torches pour le soudage robotisé ainsi que les accessoires et pièces d'usure correspondants.",
         "brand_faq_q6": "Quelles informations faut-il pour tubes contact et buses ?",
         "brand_faq_a6": "Type de torche, diamètre de fil, filetage (M6 ou M8), matériau (E-Cu ou CuCrZr) et idéalement la référence Binzel, p. ex. 140.0059.",
-        "bx_note": "ABICOR BINZEL est un nom ou une marque de Alexander Binzel Schweisstechnik GmbH & Co. KG, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques (<a href=\"https://www.binzel-abicor.com/DE/eng/company/about-us/abicor-binzel-buseck/about-us-13955/\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL Über uns</a>, <a href=\"https://www.binzel-abicor.com/uploads/Content/Germany/PDF-Files/PDF_Files_Download/Brochures/MIG_MAG/PRO_M307_GB_MB_EVO_PRO_WEB.pdf\" target=\"_blank\" rel=\"noopener\">ABICOR BINZEL MB EVO PRO Broschüre</a>). Mise à jour : septembre 2026."
+        "bx_note": "ABICOR BINZEL est un nom ou une marque de Alexander Binzel Schweisstechnik GmbH & Co. KG, cité uniquement pour identifier les produits. Les informations reposent sur des sources publiques. Mise à jour : septembre 2026."
       }
     }
   },
@@ -11436,7 +11284,7 @@
       }
     }
   },
-  "ipf": {
+  "ipf-electronic": {
     "intro": "",
     "products": [],
     "applications": [],
@@ -11519,35 +11367,35 @@
       "name_from": "meta_title",
       "date_modified": true,
       "about": {
-        "@id": "https://abcspareparts.eu/marche/ipf.html#brand"
+        "@id": "https://abcspareparts.eu/marche/ipf-electronic.html#brand"
       },
       "mentions": {
-        "@id": "https://abcspareparts.eu/marche/ipf.html#manufacturer"
+        "@id": "https://abcspareparts.eu/marche/ipf-electronic.html#manufacturer"
       },
       "extra": [
         {
           "@type": "Brand",
-          "@id": "https://abcspareparts.eu/marche/ipf.html#brand",
+          "@id": "https://abcspareparts.eu/marche/ipf-electronic.html#brand",
           "name": "ipf electronic"
         },
         {
           "@type": "Organization",
-          "@id": "https://abcspareparts.eu/marche/ipf.html#manufacturer",
+          "@id": "https://abcspareparts.eu/marche/ipf-electronic.html#manufacturer",
           "brand": {
-            "@id": "https://abcspareparts.eu/marche/ipf.html#brand"
+            "@id": "https://abcspareparts.eu/marche/ipf-electronic.html#brand"
           },
           "name": "Deutscher Sensorhersteller"
         },
         {
           "@type": "Service",
-          "@id": "https://abcspareparts.eu/marche/ipf.html#service",
+          "@id": "https://abcspareparts.eu/marche/ipf-electronic.html#service",
           "name": "Beschaffung von ipf electronic Ersatzteilen",
           "serviceType": "MRO-Ersatzteilbeschaffung",
           "provider": {
             "@id": "https://abcspareparts.eu/#organization"
           },
           "brand": {
-            "@id": "https://abcspareparts.eu/marche/ipf.html#brand"
+            "@id": "https://abcspareparts.eu/marche/ipf-electronic.html#brand"
           },
           "areaServed": {
             "@type": "Place",
@@ -16396,6 +16244,255 @@
       }
     }
   },
+  "siemens": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "schneider-electric",
+      "abb",
+      "omron",
+      "mitsubishi-electric"
+    ],
+    "related_labels": {},
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/siemens.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/siemens.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/siemens.html#brand",
+          "name": "Siemens"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/siemens.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/siemens.html#brand"
+          },
+          "name": "Deutscher Automatisierungs- und Elektrotechnik-Konzern"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/siemens.html#service",
+          "name": "Beschaffung von Siemens Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/siemens.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "Siemens SPS, Antriebe, Schaltgeräte, Sensoren, HMI und Industrieautomation – Ersatzteile | ABCspareparts",
+        "meta_description": "Siemens Ersatzteile beschaffen. Attraktive Konditionen. Typ senden – Angebot oft in 24 h.",
+        "brand_h1": "Siemens – Ersatzteile und Komponenten",
+        "brand_intro": "ABCspareparts beschafft Siemens Ersatzteile für Industrie und Instandhaltung in ganz Europa. Für viele Siemens Ersatzteile können wir attraktive Konditionen anbieten. Senden Sie uns Typ, Artikelnummer und Menge – wir antworten in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit des Originalteils und, wo technisch sinnvoll, kompatible Alternativen oder Nachfolgemodelle. Diese Seite ersetzt keine Live-Bestandsliste: Nutzen Sie bitte die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "bx_about_title": "Über Siemens",
+        "bx_about_text": "<p>Deutscher Automatisierungs- und Elektrotechnik-Konzern</p>",
+        "bx_products_title": "Siemens Produkte, die wir beschaffen",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Sps, antriebe, schaltgeräte, sensoren, hmi und industrieautomation</li><li>Ersatz- und Verschleißteile</li>",
+        "bx_tech_title": "Worauf es bei Siemens Ersatzteilen ankommt",
+        "bx_tech_list": "<li><strong>Vollständige Typnummer:</strong> Genaue Artikelnummer vom Typenschild erleichtert die Zuordnung.</li><li><strong>Technische Daten:</strong> Spannung, Schaltleistung, Abmessungen oder Anschlussart angeben.</li><li><strong>Einsatzort:</strong> Anlage oder Maschine nennen, in der das Teil verbaut ist.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Maschinen- und Anlagenbau</li><li>Instandhaltung und MRO</li><li>Industrieautomation</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihr Angebot",
+        "bx_request_list": "<li>Vollständige Typ- oder Artikelnummer vom Typenschild (ein Foto hilft)</li><li>Technische Eckdaten wie Spannung, Größe oder Leistung</li><li>Anlage oder Maschine, in der das Teil verbaut ist</li><li>Menge und gewünschter Liefertermin</li><li>Nur Original oder kompatible Alternative möglich</li>",
+        "brand_faq_q4": "Beschafft ABCspareparts auch ältere oder nicht mehr gelistete Siemens Teile?",
+        "brand_faq_a4": "Ja. Wir fragen beim Hersteller sowie bei Distributoren und Brokern in Europa nach. Ist das Original nicht mehr erhältlich, schlagen wir nach Rücksprache ein Nachfolgemodell oder eine kompatible Alternative vor.",
+        "brand_faq_q5": "Was sind typische Siemens Produkte?",
+        "brand_faq_a5": "Sps, antriebe, schaltgeräte, sensoren, hmi und industrieautomation.",
+        "brand_faq_q6": "Wer stellt Siemens her?",
+        "brand_faq_a6": "Deutscher Automatisierungs- und Elektrotechnik-Konzern",
+        "bx_note": "Siemens ist ein Name bzw. eine Marke von Deutscher Automatisierungs- und Elektrotechnik-Konzern. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "Siemens PLCs, drives, switchgear, sensors, HMI and industrial automation – Spare Parts | ABCspareparts",
+        "meta_description": "Siemens spare parts sourcing. Competitive prices. Send type – quote often in 24 h.",
+        "brand_h1": "Siemens – spare parts and components",
+        "brand_intro": "ABCspareparts sources Siemens spare parts for industry and maintenance across Europe. We can offer competitive pricing on many Siemens spare parts. Send us the type, part number and quantity – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability of the original part and, where technically appropriate, compatible alternatives or successor models. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "bx_about_title": "About Siemens",
+        "bx_about_text": "<p>Deutscher Automatisierungs- und Elektrotechnik-Konzern</p>",
+        "bx_products_title": "Siemens products we source",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Plcs, drives, switchgear, sensors, hmi and industrial automation</li><li>Spare and wear parts</li>",
+        "bx_tech_title": "What matters with Siemens spare parts",
+        "bx_tech_list": "<li><strong>Full type number:</strong> Exact part number from the rating plate helps identification.</li><li><strong>Technical data:</strong> state voltage, rating, dimensions or connection type.</li><li><strong>Application:</strong> name the plant or machine the part is installed in.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Machinery and plant engineering</li><li>Maintenance and MRO</li><li>Industrial automation</li>",
+        "bx_request_title": "This information speeds up your quote",
+        "bx_request_list": "<li>Full type or part number from the rating plate (a photo helps)</li><li>Key technical data such as voltage, size or rating</li><li>Plant or machine the part is installed in</li><li>Quantity and required delivery date</li><li>Original only, or compatible alternative acceptable</li>",
+        "brand_faq_q4": "Does ABCspareparts also source older or no longer listed Siemens parts?",
+        "brand_faq_a4": "Yes. We check with the manufacturer as well as distributors and brokers in Europe. If the original is no longer available, we propose – after consultation – a successor model or compatible alternative.",
+        "brand_faq_q5": "What are typical Siemens products?",
+        "brand_faq_a5": "Plcs, drives, switchgear, sensors, hmi and industrial automation.",
+        "brand_faq_q6": "Who makes Siemens?",
+        "brand_faq_a6": "Deutscher Automatisierungs- und Elektrotechnik-Konzern",
+        "bx_note": "Siemens is a name or trademark of Deutscher Automatisierungs- und Elektrotechnik-Konzern, mentioned solely to identify products. Information is based on publicly available sources. Last updated: October 2026."
+      },
+      "it": {
+        "meta_title": "Siemens ricambi | ABCspareparts",
+        "meta_description": "Ricambi Siemens. Prezzi competitivi. Invii tipo – preventivo spesso entro 24 h.",
+        "brand_h1": "Siemens – ricambi e componenti",
+        "brand_intro": "ABCspareparts fornisce ricambi Siemens per industria e manutenzione in tutta Europa. Ci invii tipo, codice e quantità – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità del ricambio originale e, se tecnicamente adatto, alternative compatibili o modelli successori. Questa pagina non sostituisce un elenco live: usi la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "bx_about_title": "Chi è Siemens",
+        "bx_about_text": "<p>Deutscher Automatisierungs- und Elektrotechnik-Konzern</p>",
+        "bx_products_title": "Prodotti Siemens che forniamo",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Componenti industriali</li><li>Ricambi e parti di usura</li>",
+        "bx_tech_title": "Cosa conta nei ricambi Siemens",
+        "bx_tech_list": "<li><strong>Codice completo:</strong> Numero articolo preciso dalla targhetta.</li><li><strong>Dati tecnici:</strong> tensione, dimensioni, tipo di collegamento.</li><li><strong>Applicazione:</strong> impianto o macchina in cui è montato.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Costruzione macchine</li><li>Manutenzione</li><li>Automazione industriale</li>",
+        "bx_request_title": "Questi dati accelerano il preventivo",
+        "bx_request_list": "<li>Codice completo dalla targhetta (una foto aiuta)</li><li>Dati tecnici chiave</li><li>Impianto o macchina</li><li>Quantità e data di consegna</li><li>Solo originale o alternativa ammessa</li>",
+        "brand_faq_q4": "ABCspareparts fornisce anche ricambi Siemens datati?",
+        "brand_faq_a4": "Sì. Verifichiamo presso il costruttore e distributori in Europa.",
+        "brand_faq_q5": "Quali prodotti Siemens tipici?",
+        "brand_faq_a5": "Componenti industriali.",
+        "brand_faq_q6": "Chi produce Siemens?",
+        "brand_faq_a6": "Deutscher Automatisierungs- und Elektrotechnik-Konzern",
+        "bx_note": "Siemens è un marchio di Deutscher Automatisierungs- und Elektrotechnik-Konzern, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Siemens repuestos | ABCspareparts",
+        "meta_description": "Repuestos Siemens. Precios competitivos. Envíe tipo – oferta a menudo en 24 h.",
+        "brand_h1": "Siemens – repuestos y componentes",
+        "brand_intro": "ABCspareparts suministra repuestos Siemens para industria y mantenimiento en toda Europa. Envíenos el tipo, código y cantidad – normalmente respondemos en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad del repuesto original y, cuando es técnicamente adecuado, alternativas compatibles o modelos sucesores. Esta página no es un listado en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "bx_about_title": "Sobre Siemens",
+        "bx_about_text": "<p>Deutscher Automatisierungs- und Elektrotechnik-Konzern</p>",
+        "bx_products_title": "Productos Siemens que suministramos",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Componentes industriales</li><li>Repuestos y piezas de desgaste</li>",
+        "bx_tech_title": "Lo que importa en los repuestos Siemens",
+        "bx_tech_list": "<li><strong>Código completo:</strong> Número de artículo preciso de la placa.</li><li><strong>Datos técnicos:</strong> tensión, dimensiones, tipo de conexión.</li><li><strong>Aplicación:</strong> instalación o máquina donde está montado.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Construcción de máquinas</li><li>Mantenimiento</li><li>Automatización industrial</li>",
+        "bx_request_title": "Estos datos aceleran su oferta",
+        "bx_request_list": "<li>Código completo de la placa (una foto ayuda)</li><li>Datos técnicos clave</li><li>Instalación o máquina</li><li>Cantidad y fecha de entrega</li><li>Solo original o alternativa aceptada</li>",
+        "brand_faq_q4": "¿ABCspareparts también suministra repuestos Siemens antiguos?",
+        "brand_faq_a4": "Sí. Consultamos al fabricante y distribuidores en Europa.",
+        "brand_faq_q5": "¿Qué productos Siemens típicos?",
+        "brand_faq_a5": "Componentes industriales.",
+        "brand_faq_q6": "¿Quién fabrica Siemens?",
+        "brand_faq_a6": "Deutscher Automatisierungs- und Elektrotechnik-Konzern",
+        "bx_note": "Siemens es una marca de Deutscher Automatisierungs- und Elektrotechnik-Konzern, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Siemens pièces | ABCspareparts",
+        "meta_description": "Pièces Siemens. Prix compétitifs. Envoyez type – devis souvent sous 24 h.",
+        "brand_h1": "Siemens – pièces et composants",
+        "brand_intro": "ABCspareparts fournit pièces Siemens pour industrie et maintenance dans toute l'Europe. Envoyez-nous le type, la référence et la quantité – nous répondons généralement sous 24 heures.",
+        "brand_intro_p2": "Nous vérifions la disponibilité de la pièce d'origine et, lorsque c'est techniquement pertinent, des alternatives compatibles ou des modèles successeurs. Cette page ne remplace pas une liste en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "bx_about_title": "À propos de Siemens",
+        "bx_about_text": "<p>Deutscher Automatisierungs- und Elektrotechnik-Konzern</p>",
+        "bx_products_title": "Produits Siemens que nous fournissons",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Composants industriels</li><li>Pièces de rechange et d'usure</li>",
+        "bx_tech_title": "Ce qui compte pour les pièces Siemens",
+        "bx_tech_list": "<li><strong>Code complet :</strong> Numéro d'article précis de la plaque.</li><li><strong>Données techniques :</strong> tension, dimensions, type de connexion.</li><li><strong>Application :</strong> installation ou machine où la pièce est montée.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Construction de machines</li><li>Maintenance</li><li>Automatisation industrielle</li>",
+        "bx_request_title": "Ces informations accélèrent votre devis",
+        "bx_request_list": "<li>Code complet de la plaque (une photo aide)</li><li>Données techniques clés</li><li>Installation ou machine</li><li>Quantité et date de livraison</li><li>Original uniquement ou alternative acceptée</li>",
+        "brand_faq_q4": "ABCspareparts fournit-il aussi des pièces Siemens anciennes ?",
+        "brand_faq_a4": "Oui. Nous interrogeons le fabricant et des distributeurs en Europe.",
+        "brand_faq_q5": "Quels produits Siemens typiques ?",
+        "brand_faq_a5": "Composants industriels.",
+        "brand_faq_q6": "Qui fabrique Siemens ?",
+        "brand_faq_a6": "Deutscher Automatisierungs- und Elektrotechnik-Konzern",
+        "bx_note": "Siemens est une marque de Deutscher Automatisierungs- und Elektrotechnik-Konzern, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : octobre 2026."
+      }
+    }
+  },
   "siko": {
     "intro": "",
     "products": [],
@@ -16641,6 +16738,255 @@
         "brand_faq_q6": "Qui fabrique Siko ?",
         "brand_faq_a6": "Deutscher Positionssensor-Hersteller",
         "bx_note": "Siko est une marque de Deutscher Positionssensor-Hersteller, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : octobre 2026."
+      }
+    }
+  },
+  "smc": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "festo",
+      "aventics",
+      "parker",
+      "imi-norgren"
+    ],
+    "related_labels": {},
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/smc.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/smc.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/smc.html#brand",
+          "name": "SMC"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/smc.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/smc.html#brand"
+          },
+          "name": "Japanischer Pneumatikhersteller"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/smc.html#service",
+          "name": "Beschaffung von SMC Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/smc.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "SMC Pneumatikzylinder, Ventile, Luftaufbereitung, Greifer und Pneumatikkomponenten – Ersatzteile | ABCspareparts",
+        "meta_description": "SMC Ersatzteile beschaffen. Attraktive Konditionen. Typ senden – Angebot oft in 24 h.",
+        "brand_h1": "SMC – Ersatzteile und Komponenten",
+        "brand_intro": "ABCspareparts beschafft SMC Ersatzteile für Industrie und Instandhaltung in ganz Europa. Für viele SMC Ersatzteile können wir attraktive Konditionen anbieten. Senden Sie uns Typ, Artikelnummer und Menge – wir antworten in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit des Originalteils und, wo technisch sinnvoll, kompatible Alternativen oder Nachfolgemodelle. Diese Seite ersetzt keine Live-Bestandsliste: Nutzen Sie bitte die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "bx_about_title": "Über SMC",
+        "bx_about_text": "<p>Japanischer Pneumatikhersteller</p>",
+        "bx_products_title": "SMC Produkte, die wir beschaffen",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Pneumatikzylinder, ventile, luftaufbereitung, greifer und pneumatikkomponenten</li><li>Ersatz- und Verschleißteile</li>",
+        "bx_tech_title": "Worauf es bei SMC Ersatzteilen ankommt",
+        "bx_tech_list": "<li><strong>Vollständige Typnummer:</strong> Genaue Artikelnummer vom Typenschild erleichtert die Zuordnung.</li><li><strong>Technische Daten:</strong> Spannung, Schaltleistung, Abmessungen oder Anschlussart angeben.</li><li><strong>Einsatzort:</strong> Anlage oder Maschine nennen, in der das Teil verbaut ist.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Maschinen- und Anlagenbau</li><li>Instandhaltung und MRO</li><li>Industrieautomation</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihr Angebot",
+        "bx_request_list": "<li>Vollständige Typ- oder Artikelnummer vom Typenschild (ein Foto hilft)</li><li>Technische Eckdaten wie Spannung, Größe oder Leistung</li><li>Anlage oder Maschine, in der das Teil verbaut ist</li><li>Menge und gewünschter Liefertermin</li><li>Nur Original oder kompatible Alternative möglich</li>",
+        "brand_faq_q4": "Beschafft ABCspareparts auch ältere oder nicht mehr gelistete SMC Teile?",
+        "brand_faq_a4": "Ja. Wir fragen beim Hersteller sowie bei Distributoren und Brokern in Europa nach. Ist das Original nicht mehr erhältlich, schlagen wir nach Rücksprache ein Nachfolgemodell oder eine kompatible Alternative vor.",
+        "brand_faq_q5": "Was sind typische SMC Produkte?",
+        "brand_faq_a5": "Pneumatikzylinder, ventile, luftaufbereitung, greifer und pneumatikkomponenten.",
+        "brand_faq_q6": "Wer stellt SMC her?",
+        "brand_faq_a6": "Japanischer Pneumatikhersteller",
+        "bx_note": "SMC ist ein Name bzw. eine Marke von Japanischer Pneumatikhersteller. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Informationen. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "SMC pneumatic cylinders, valves, air preparation, grippers and pneumatic components – Spare Parts | ABCspareparts",
+        "meta_description": "SMC spare parts sourcing. Competitive prices. Send type – quote often in 24 h.",
+        "brand_h1": "SMC – spare parts and components",
+        "brand_intro": "ABCspareparts sources SMC spare parts for industry and maintenance across Europe. We can offer competitive pricing on many SMC spare parts. Send us the type, part number and quantity – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability of the original part and, where technically appropriate, compatible alternatives or successor models. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "bx_about_title": "About SMC",
+        "bx_about_text": "<p>Japanischer Pneumatikhersteller</p>",
+        "bx_products_title": "SMC products we source",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Pneumatic cylinders, valves, air preparation, grippers and pneumatic components</li><li>Spare and wear parts</li>",
+        "bx_tech_title": "What matters with SMC spare parts",
+        "bx_tech_list": "<li><strong>Full type number:</strong> Exact part number from the rating plate helps identification.</li><li><strong>Technical data:</strong> state voltage, rating, dimensions or connection type.</li><li><strong>Application:</strong> name the plant or machine the part is installed in.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Machinery and plant engineering</li><li>Maintenance and MRO</li><li>Industrial automation</li>",
+        "bx_request_title": "This information speeds up your quote",
+        "bx_request_list": "<li>Full type or part number from the rating plate (a photo helps)</li><li>Key technical data such as voltage, size or rating</li><li>Plant or machine the part is installed in</li><li>Quantity and required delivery date</li><li>Original only, or compatible alternative acceptable</li>",
+        "brand_faq_q4": "Does ABCspareparts also source older or no longer listed SMC parts?",
+        "brand_faq_a4": "Yes. We check with the manufacturer as well as distributors and brokers in Europe. If the original is no longer available, we propose – after consultation – a successor model or compatible alternative.",
+        "brand_faq_q5": "What are typical SMC products?",
+        "brand_faq_a5": "Pneumatic cylinders, valves, air preparation, grippers and pneumatic components.",
+        "brand_faq_q6": "Who makes SMC?",
+        "brand_faq_a6": "Japanischer Pneumatikhersteller",
+        "bx_note": "SMC is a name or trademark of Japanischer Pneumatikhersteller, mentioned solely to identify products. Information is based on publicly available sources. Last updated: October 2026."
+      },
+      "it": {
+        "meta_title": "SMC ricambi | ABCspareparts",
+        "meta_description": "Ricambi SMC. Prezzi competitivi. Invii tipo – preventivo spesso entro 24 h.",
+        "brand_h1": "SMC – ricambi e componenti",
+        "brand_intro": "ABCspareparts fornisce ricambi SMC per industria e manutenzione in tutta Europa. Ci invii tipo, codice e quantità – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità del ricambio originale e, se tecnicamente adatto, alternative compatibili o modelli successori. Questa pagina non sostituisce un elenco live: usi la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "bx_about_title": "Chi è SMC",
+        "bx_about_text": "<p>Japanischer Pneumatikhersteller</p>",
+        "bx_products_title": "Prodotti SMC che forniamo",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Componenti industriali</li><li>Ricambi e parti di usura</li>",
+        "bx_tech_title": "Cosa conta nei ricambi SMC",
+        "bx_tech_list": "<li><strong>Codice completo:</strong> Numero articolo preciso dalla targhetta.</li><li><strong>Dati tecnici:</strong> tensione, dimensioni, tipo di collegamento.</li><li><strong>Applicazione:</strong> impianto o macchina in cui è montato.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Costruzione macchine</li><li>Manutenzione</li><li>Automazione industriale</li>",
+        "bx_request_title": "Questi dati accelerano il preventivo",
+        "bx_request_list": "<li>Codice completo dalla targhetta (una foto aiuta)</li><li>Dati tecnici chiave</li><li>Impianto o macchina</li><li>Quantità e data di consegna</li><li>Solo originale o alternativa ammessa</li>",
+        "brand_faq_q4": "ABCspareparts fornisce anche ricambi SMC datati?",
+        "brand_faq_a4": "Sì. Verifichiamo presso il costruttore e distributori in Europa.",
+        "brand_faq_q5": "Quali prodotti SMC tipici?",
+        "brand_faq_a5": "Componenti industriali.",
+        "brand_faq_q6": "Chi produce SMC?",
+        "brand_faq_a6": "Japanischer Pneumatikhersteller",
+        "bx_note": "SMC è un marchio di Japanischer Pneumatikhersteller, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: ottobre 2026."
+      },
+      "es": {
+        "meta_title": "SMC repuestos | ABCspareparts",
+        "meta_description": "Repuestos SMC. Precios competitivos. Envíe tipo – oferta a menudo en 24 h.",
+        "brand_h1": "SMC – repuestos y componentes",
+        "brand_intro": "ABCspareparts suministra repuestos SMC para industria y mantenimiento en toda Europa. Envíenos el tipo, código y cantidad – normalmente respondemos en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad del repuesto original y, cuando es técnicamente adecuado, alternativas compatibles o modelos sucesores. Esta página no es un listado en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "bx_about_title": "Sobre SMC",
+        "bx_about_text": "<p>Japanischer Pneumatikhersteller</p>",
+        "bx_products_title": "Productos SMC que suministramos",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Componentes industriales</li><li>Repuestos y piezas de desgaste</li>",
+        "bx_tech_title": "Lo que importa en los repuestos SMC",
+        "bx_tech_list": "<li><strong>Código completo:</strong> Número de artículo preciso de la placa.</li><li><strong>Datos técnicos:</strong> tensión, dimensiones, tipo de conexión.</li><li><strong>Aplicación:</strong> instalación o máquina donde está montado.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Construcción de máquinas</li><li>Mantenimiento</li><li>Automatización industrial</li>",
+        "bx_request_title": "Estos datos aceleran su oferta",
+        "bx_request_list": "<li>Código completo de la placa (una foto ayuda)</li><li>Datos técnicos clave</li><li>Instalación o máquina</li><li>Cantidad y fecha de entrega</li><li>Solo original o alternativa aceptada</li>",
+        "brand_faq_q4": "¿ABCspareparts también suministra repuestos SMC antiguos?",
+        "brand_faq_a4": "Sí. Consultamos al fabricante y distribuidores en Europa.",
+        "brand_faq_q5": "¿Qué productos SMC típicos?",
+        "brand_faq_a5": "Componentes industriales.",
+        "brand_faq_q6": "¿Quién fabrica SMC?",
+        "brand_faq_a6": "Japanischer Pneumatikhersteller",
+        "bx_note": "SMC es una marca de Japanischer Pneumatikhersteller, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "SMC pièces | ABCspareparts",
+        "meta_description": "Pièces SMC. Prix compétitifs. Envoyez type – devis souvent sous 24 h.",
+        "brand_h1": "SMC – pièces et composants",
+        "brand_intro": "ABCspareparts fournit pièces SMC pour industrie et maintenance dans toute l'Europe. Envoyez-nous le type, la référence et la quantité – nous répondons généralement sous 24 heures.",
+        "brand_intro_p2": "Nous vérifions la disponibilité de la pièce d'origine et, lorsque c'est techniquement pertinent, des alternatives compatibles ou des modèles successeurs. Cette page ne remplace pas une liste en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "bx_about_title": "À propos de SMC",
+        "bx_about_text": "<p>Japanischer Pneumatikhersteller</p>",
+        "bx_products_title": "Produits SMC que nous fournissons",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Composants industriels</li><li>Pièces de rechange et d'usure</li>",
+        "bx_tech_title": "Ce qui compte pour les pièces SMC",
+        "bx_tech_list": "<li><strong>Code complet :</strong> Numéro d'article précis de la plaque.</li><li><strong>Données techniques :</strong> tension, dimensions, type de connexion.</li><li><strong>Application :</strong> installation ou machine où la pièce est montée.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Construction de machines</li><li>Maintenance</li><li>Automatisation industrielle</li>",
+        "bx_request_title": "Ces informations accélèrent votre devis",
+        "bx_request_list": "<li>Code complet de la plaque (une photo aide)</li><li>Données techniques clés</li><li>Installation ou machine</li><li>Quantité et date de livraison</li><li>Original uniquement ou alternative acceptée</li>",
+        "brand_faq_q4": "ABCspareparts fournit-il aussi des pièces SMC anciennes ?",
+        "brand_faq_a4": "Oui. Nous interrogeons le fabricant et des distributeurs en Europe.",
+        "brand_faq_q5": "Quels produits SMC typiques ?",
+        "brand_faq_a5": "Composants industriels.",
+        "brand_faq_q6": "Qui fabrique SMC ?",
+        "brand_faq_a6": "Japanischer Pneumatikhersteller",
+        "bx_note": "SMC est une marque de Japanischer Pneumatikhersteller, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : octobre 2026."
       }
     }
   },

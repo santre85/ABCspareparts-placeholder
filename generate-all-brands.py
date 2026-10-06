@@ -511,7 +511,7 @@ brands_to_add = {
         'price_competitive': True,
         'related': ['festo', 'smc', 'parker']
     },
-    'ipf': {
+    'ipf-electronic': {
         'display': 'ipf electronic',
         'desc_de': 'optoelektronische Sensoren, induktive Sensoren, Abstandssensoren und Sicherheitstechnik',
         'desc_en': 'photoelectric sensors, inductive sensors, distance sensors and safety technology',
@@ -744,6 +744,24 @@ brands_to_add = {
         'uncertain': False,
         'price_competitive': True,
         'related': ['siemens', 'mitsubishi-electric', 'schneider-electric']
+    },
+    'siemens': {
+        'display': 'Siemens',
+        'desc_de': 'SPS, Antriebe, Schaltgeräte, Sensoren, HMI und Industrieautomation',
+        'desc_en': 'PLCs, drives, switchgear, sensors, HMI and industrial automation',
+        'company': 'Deutscher Automatisierungs- und Elektrotechnik-Konzern',
+        'uncertain': False,
+        'price_competitive': True,
+        'related': ['schneider-electric', 'abb', 'omron', 'mitsubishi-electric']
+    },
+    'smc': {
+        'display': 'SMC',
+        'desc_de': 'Pneumatikzylinder, Ventile, Luftaufbereitung, Greifer und Pneumatikkomponenten',
+        'desc_en': 'pneumatic cylinders, valves, air preparation, grippers and pneumatic components',
+        'company': 'Japanischer Pneumatikhersteller',
+        'uncertain': False,
+        'price_competitive': True,
+        'related': ['festo', 'aventics', 'parker', 'imi-norgren']
     }
 }
 
