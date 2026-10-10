@@ -18196,5 +18196,1151 @@
         "piovan_note": "PIOVAN est une marque de Piovan S.p.A., Vénétie, Italie. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur sources publiques. Mise à jour : octobre 2026."
       }
     }
+  },
+  "titgemeyer": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "titgemeyer-about",
+        "className": "brand-info",
+        "titleKey": "titgemeyer_about_title",
+        "bodyKey": "titgemeyer_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "titgemeyer-products",
+            "className": "brand-info",
+            "titleKey": "titgemeyer_products_title",
+            "listKey": "titgemeyer_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "titgemeyer-apps",
+            "className": "brand-info",
+            "titleKey": "titgemeyer_apps_title",
+            "listKey": "titgemeyer_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "titgemeyer-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "titgemeyer_parts_id_title",
+        "introKey": "titgemeyer_parts_id_intro",
+        "listKey": "titgemeyer_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [],
+    "related_labels": {},
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "titgemeyer_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "TITGEMEYER"
+      },
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "TITGEMEYER Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "TITGEMEYER Ersatzteile: Teilenummer senden – Angebot oft in 24 h. Beschaffung in Europa.",
+        "brand_h1": "TITGEMEYER – Ersatzteile",
+        "brand_intro": "ABCspareparts beschafft TITGEMEYER Ersatzteile. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Für TITGEMEYER prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.",
+        "titgemeyer_about_title": "Über TITGEMEYER",
+        "titgemeyer_about_text": "<p>Informationen basierend auf öffentlich verfügbaren Quellen. Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland.</p>",
+        "titgemeyer_products_title": "Typische TITGEMEYER Produktfamilien",
+        "titgemeyer_products_list": "<li>Blindniete (POP®, Standardniete, Zugdorn-Niete für Metall, Kunststoff, Composite)</li><li>Blindnietmuttern (RIV-TI®, RIV-TI® Plus für Leichtbau, RIV-TI® Flex für weiche Werkstoffe, Tubtara®, Jack Nut®)</li><li>Setzwerkzeuge (akkubetrieben, pneumatisch, handhydraulisch für Niete und Nietmuttern)</li><li>Lockbolt-Systeme (hochfeste Verbindungen für Stahl, Aluminium)</li><li>Starlock®-Schnellbefestiger (Push-on-Fastener für Wellen und Achsen)</li><li>Sicherungsringe und Sprengringe</li><li>Kleb- und Dichtstoffe für strukturelle Verbindungen</li><li>Automatisierungslösungen (Setzautomaten für Serienfertigung, Industrie 4.0-Integration)</li>",
+        "titgemeyer_apps_title": "Typische Einsatzbereiche",
+        "titgemeyer_apps_list": "<li>Automobilbau (Karosserie, Fahrwerk, Interieur mit Nietmuttern und Blindnieten)</li><li>Nutzfahrzeuge und Schienenfahrzeuge</li><li>Luft- und Raumfahrt (Composite-Bauteile mit RIV-TI® Plus)</li><li>Blechbearbeitung und Metallverarbeitung</li><li>Leichtbau und Kunststoffbauteile (EPDM-gedämpfte Nietmuttern)</li><li>Elektro- und Schaltschrank-Montage</li><li>Transport- und Mobilitätstechnik</li>",
+        "titgemeyer_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "titgemeyer_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "titgemeyer_parts_id_list": "<li>Teilenummer vom Etikett oder Typenschild (alphanumerisch, z. B. RIV-TI® M8)</li><li>Foto des defekten Befestigungselements oder Setzwerkzeugs</li><li>Angabe: Material (Stahl, Edelstahl, Aluminium), Gewindegröße, Kopfform</li><li>Bei Setzwerkzeugen: Modellbezeichnung, Seriennummer</li><li>Kurze Beschreibung des Einsatzfalls</li><li>Menge und Liefertermin</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein TITGEMEYER-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild. TITGEMEYER-Teilenummern können numerisch oder alphanumerisch sein. Ein Foto des Typenschilds hilft uns, die Nummer zu identifizieren.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte TITGEMEYER-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
+        "brand_faq_q6": "TITGEMEYER Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis.",
+        "titgemeyer_note": "TITGEMEYER ist eine Marke von Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland. Nennung dient ausschließlich der Identifikation. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "TITGEMEYER spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "TITGEMEYER spare parts: send part number – quote often within 24 h. Sourcing in Europe.",
+        "brand_h1": "TITGEMEYER – spare parts",
+        "brand_intro": "ABCspareparts sources TITGEMEYER spare parts. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "For TITGEMEYER, ABCspareparts checks availability, delivery options in Europe and – where appropriate – tested alternatives. This page is not a stock check: use the no-obligation <a href=\"#contact\">enquiry</a>.",
+        "titgemeyer_about_title": "About TITGEMEYER",
+        "titgemeyer_about_text": "<p>Information based on publicly available sources. Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland.</p>",
+        "titgemeyer_products_title": "Typical TITGEMEYER product families",
+        "titgemeyer_products_list": "<li>Blindniete (POP®, Standardniete, Zugdorn-Niete for Metall, Kunststoff, Composite)</li><li>Blindnietmuttern (RIV-TI®, RIV-TI® Plus for Leichtbau, RIV-TI® Flex for weiche Werkstoffe, Tubtara®, Jack Nut®)</li><li>Setzwerkzeuge (akkubetrieben, pneumatisch, handhydraulisch for Niete und Nietmuttern)</li><li>Lockbolt-Systeme (hochfeste Verbindungen for Stahl, Aluminium)</li><li>Starlock®-Schnellbefestiger (Push-on-Fastener for Wellen und Achsen)</li><li>Sicherungsringe und Sprengringe</li><li>Kleb- und Dichtstoffe for strukturelle Verbindungen</li><li>Automatisierungslösungen (Setzautomaten for Serienfertigung, Industrie 4.0-Integration)</li>",
+        "titgemeyer_apps_title": "Typical applications",
+        "titgemeyer_apps_list": "<li>Automobilbau (Karosserie, Fahrwerk, Interieur mit Nietmuttern and Blindnieten)</li><li>Nutzfahrzeuge and Schienenfahrzeuge</li><li>Luft- and Raumfahrt (Composite-Bauteile mit RIV-TI® Plus)</li><li>Blechbearbeitung and Metallverarbeitung</li><li>Leichtbau and Kunststoffbauteile (EPDM-gedämpfte Nietmuttern)</li><li>Elektro- and Schaltschrank-Montage</li><li>Transport- and Mobilitätstechnik</li>",
+        "titgemeyer_parts_id_title": "How to identify the correct part number",
+        "titgemeyer_parts_id_intro": "For a fast quote, send us:",
+        "titgemeyer_parts_id_list": "<li>Teilenummer from Etikett or Typenschild (alphanumerisch, z. B. RIV-TI® M8)</li><li>Foto des defekten Befestigungselements or Setzwerkzeugs</li><li>Angabe: Material (Stahl, Edelstahl, Aluminium), Gewindegröße, Kopfform</li><li>Bei Setzwerkzeugen: Modellbezeichnung, Seriennummer</li><li>Kurze Beschreibung des Einsatzfalls</li><li>Menge und Liefertermin</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my TITGEMEYER equipment?",
+        "brand_faq_a4": "The part number is on a label on the component or nameplate. TITGEMEYER part numbers can be numeric or alphanumeric. A photo helps us identify the number.",
+        "brand_faq_q5": "Does ABCspareparts source spare parts for older or discontinued TITGEMEYER systems?",
+        "brand_faq_a5": "Yes. We search distributors and brokers across Europe for remaining stock. If the original is unavailable, we propose compatible alternatives.",
+        "brand_faq_q6": "TITGEMEYER spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the form or email. We check availability, lead time and price.",
+        "titgemeyer_note": "TITGEMEYER is a trademark of Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland. Mentioned solely to identify products. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi TITGEMEYER per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi TITGEMEYER: invii il codice – preventivo spesso in 24 h.",
+        "brand_h1": "TITGEMEYER – ricambi",
+        "brand_intro": "ABCspareparts fornisce ricambi TITGEMEYER. Invii il numero – rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Per TITGEMEYER, ABCspareparts verifica disponibilità, opzioni di consegna in Europa e alternative testate. Utilizzi la <a href=\"#contact\">richiesta</a> non vincolante.",
+        "titgemeyer_about_title": "Su TITGEMEYER",
+        "titgemeyer_about_text": "<p>Informazioni basate su fonti pubbliche. Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland.</p>",
+        "titgemeyer_products_title": "Famiglie di prodotti TITGEMEYER",
+        "titgemeyer_products_list": "<li>Blindniete (POP®, Standardniete, Zugdorn-Niete für Metall, Kunststoff, Composite)</li><li>Blindnietmuttern (RIV-TI®, RIV-TI® Plus für Leichtbau, RIV-TI® Flex für weiche Werkstoffe, Tubtara®, Jack Nut®)</li><li>Setzwerkzeuge (akkubetrieben, pneumatisch, handhydraulisch für Niete und Nietmuttern)</li><li>Lockbolt-Systeme (hochfeste Verbindungen für Stahl, Aluminium)</li><li>Starlock®-Schnellbefestiger (Push-on-Fastener für Wellen und Achsen)</li><li>Sicherungsringe und Sprengringe</li><li>Kleb- und Dichtstoffe für strukturelle Verbindungen</li><li>Automatisierungslösungen (Setzautomaten für Serienfertigung, Industrie 4.0-Integration)</li>",
+        "titgemeyer_apps_title": "Applicazioni tipiche",
+        "titgemeyer_apps_list": "<li>Automobilbau (Karosserie, Fahrwerk, Interieur mit Nietmuttern und Blindnieten)</li><li>Nutzfahrzeuge und Schienenfahrzeuge</li><li>Luft- und Raumfahrt (Composite-Bauteile mit RIV-TI® Plus)</li><li>Blechbearbeitung und Metallverarbeitung</li><li>Leichtbau und Kunststoffbauteile (EPDM-gedämpfte Nietmuttern)</li><li>Elektro- und Schaltschrank-Montage</li><li>Transport- und Mobilitätstechnik</li>",
+        "titgemeyer_parts_id_title": "Come identificare il numero corretto",
+        "titgemeyer_parts_id_intro": "Per un preventivo rapido:",
+        "titgemeyer_parts_id_list": "<li>Teilenummer vom Etikett oder Typenschild (alphanumerisch, z. B. RIV-TI® M8)</li><li>Foto des defekten Befestigungselements oder Setzwerkzeugs</li><li>Angabe: Material (Stahl, Edelstahl, Aluminium), Gewindegröße, Kopfform</li><li>Bei Setzwerkzeugen: Modellbezeichnung, Seriennummer</li><li>Kurze Beschreibung des Einsatzfalls</li><li>Menge und Liefertermin</li>",
+        "brand_faq_q4": "Come identifico il numero per TITGEMEYER?",
+        "brand_faq_a4": "Il numero si trova su etichetta o targhetta. I numeri TITGEMEYER possono essere numerici o alfanumerici.",
+        "brand_faq_q5": "ABCspareparts fornisce ricambi per sistemi TITGEMEYER vecchi?",
+        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in Europa. Proponiamo alternative compatibili se l'originale non è disponibile.",
+        "brand_faq_q6": "Ricambi TITGEMEYER per numero?",
+        "brand_faq_a6": "Sì. Invii il numero tramite modulo o email. Verifichiamo disponibilità e prezzo.",
+        "titgemeyer_note": "TITGEMEYER è un marchio di Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland. Citato per identificare i prodotti. Ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios TITGEMEYER por número – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios TITGEMEYER: envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "TITGEMEYER – recambios",
+        "brand_intro": "ABCspareparts suministra recambios TITGEMEYER. Envíe el número – respondemos en 24 horas.",
+        "brand_intro_p2": "Para TITGEMEYER, ABCspareparts verifica disponibilidad, opciones en Europa y alternativas probadas. Utilice la <a href=\"#contact\">consulta</a> sin compromiso.",
+        "titgemeyer_about_title": "Sobre TITGEMEYER",
+        "titgemeyer_about_text": "<p>Información basada en fuentes públicas. Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland.</p>",
+        "titgemeyer_products_title": "Familias de productos TITGEMEYER",
+        "titgemeyer_products_list": "<li>Blindniete (POP®, Standardniete, Zugdorn-Niete für Metall, Kunststoff, Composite)</li><li>Blindnietmuttern (RIV-TI®, RIV-TI® Plus für Leichtbau, RIV-TI® Flex für weiche Werkstoffe, Tubtara®, Jack Nut®)</li><li>Setzwerkzeuge (akkubetrieben, pneumatisch, handhydraulisch für Niete und Nietmuttern)</li><li>Lockbolt-Systeme (hochfeste Verbindungen für Stahl, Aluminium)</li><li>Starlock®-Schnellbefestiger (Push-on-Fastener für Wellen und Achsen)</li><li>Sicherungsringe und Sprengringe</li><li>Kleb- und Dichtstoffe für strukturelle Verbindungen</li><li>Automatisierungslösungen (Setzautomaten für Serienfertigung, Industrie 4.0-Integration)</li>",
+        "titgemeyer_apps_title": "Aplicaciones típicas",
+        "titgemeyer_apps_list": "<li>Automobilbau (Karosserie, Fahrwerk, Interieur mit Nietmuttern und Blindnieten)</li><li>Nutzfahrzeuge und Schienenfahrzeuge</li><li>Luft- und Raumfahrt (Composite-Bauteile mit RIV-TI® Plus)</li><li>Blechbearbeitung und Metallverarbeitung</li><li>Leichtbau und Kunststoffbauteile (EPDM-gedämpfte Nietmuttern)</li><li>Elektro- und Schaltschrank-Montage</li><li>Transport- und Mobilitätstechnik</li>",
+        "titgemeyer_parts_id_title": "Cómo identificar el número correcto",
+        "titgemeyer_parts_id_intro": "Para un presupuesto rápido:",
+        "titgemeyer_parts_id_list": "<li>Teilenummer vom Etikett oder Typenschild (alphanumerisch, z. B. RIV-TI® M8)</li><li>Foto des defekten Befestigungselements oder Setzwerkzeugs</li><li>Angabe: Material (Stahl, Edelstahl, Aluminium), Gewindegröße, Kopfform</li><li>Bei Setzwerkzeugen: Modellbezeichnung, Seriennummer</li><li>Kurze Beschreibung des Einsatzfalls</li><li>Menge und Liefertermin</li>",
+        "brand_faq_q4": "¿Cómo identifico el número para TITGEMEYER?",
+        "brand_faq_a4": "El número está en etiqueta o placa. Los números TITGEMEYER pueden ser numéricos o alfanuméricos.",
+        "brand_faq_q5": "¿ABCspareparts suministra recambios para sistemas TITGEMEYER antiguos?",
+        "brand_faq_a5": "Sí. Buscamos en distribuidores e intermediarios en Europa. Proponemos alternativas compatibles si el original no está disponible.",
+        "brand_faq_q6": "¿Recambios TITGEMEYER por número?",
+        "brand_faq_a6": "Sí. Envíe el número por formulario o email. Verificamos disponibilidad y precio.",
+        "titgemeyer_note": "TITGEMEYER es una marca de Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland. Mencionada para identificar productos. Octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces TITGEMEYER par numéro – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces TITGEMEYER : envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "TITGEMEYER – pièces",
+        "brand_intro": "ABCspareparts fournit des pièces TITGEMEYER. Envoyez le numéro – réponse sous 24 h.",
+        "brand_intro_p2": "Pour TITGEMEYER, ABCspareparts vérifie disponibilité, options en Europe et alternatives testées. Utilisez la <a href=\"#contact\">demande</a> sans engagement.",
+        "titgemeyer_about_title": "À propos de TITGEMEYER",
+        "titgemeyer_about_text": "<p>Informations basées sur sources publiques. Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland.</p>",
+        "titgemeyer_products_title": "Familles de produits TITGEMEYER",
+        "titgemeyer_products_list": "<li>Blindniete (POP®, Standardniete, Zugdorn-Niete für Metall, Kunststoff, Composite)</li><li>Blindnietmuttern (RIV-TI®, RIV-TI® Plus für Leichtbau, RIV-TI® Flex für weiche Werkstoffe, Tubtara®, Jack Nut®)</li><li>Setzwerkzeuge (akkubetrieben, pneumatisch, handhydraulisch für Niete und Nietmuttern)</li><li>Lockbolt-Systeme (hochfeste Verbindungen für Stahl, Aluminium)</li><li>Starlock®-Schnellbefestiger (Push-on-Fastener für Wellen und Achsen)</li><li>Sicherungsringe und Sprengringe</li><li>Kleb- und Dichtstoffe für strukturelle Verbindungen</li><li>Automatisierungslösungen (Setzautomaten für Serienfertigung, Industrie 4.0-Integration)</li>",
+        "titgemeyer_apps_title": "Applications typiques",
+        "titgemeyer_apps_list": "<li>Automobilbau (Karosserie, Fahrwerk, Interieur mit Nietmuttern und Blindnieten)</li><li>Nutzfahrzeuge und Schienenfahrzeuge</li><li>Luft- und Raumfahrt (Composite-Bauteile mit RIV-TI® Plus)</li><li>Blechbearbeitung und Metallverarbeitung</li><li>Leichtbau und Kunststoffbauteile (EPDM-gedämpfte Nietmuttern)</li><li>Elektro- und Schaltschrank-Montage</li><li>Transport- und Mobilitätstechnik</li>",
+        "titgemeyer_parts_id_title": "Comment identifier le bon numéro",
+        "titgemeyer_parts_id_intro": "Pour un devis rapide :",
+        "titgemeyer_parts_id_list": "<li>Teilenummer vom Etikett oder Typenschild (alphanumerisch, z. B. RIV-TI® M8)</li><li>Foto des defekten Befestigungselements oder Setzwerkzeugs</li><li>Angabe: Material (Stahl, Edelstahl, Aluminium), Gewindegröße, Kopfform</li><li>Bei Setzwerkzeugen: Modellbezeichnung, Seriennummer</li><li>Kurze Beschreibung des Einsatzfalls</li><li>Menge und Liefertermin</li>",
+        "brand_faq_q4": "Comment identifier le numéro pour TITGEMEYER ?",
+        "brand_faq_a4": "Le numéro se trouve sur étiquette ou plaque. Les numéros TITGEMEYER peuvent être numériques ou alphanumériques.",
+        "brand_faq_q5": "ABCspareparts fournit-il des pièces pour systèmes TITGEMEYER anciens ?",
+        "brand_faq_a5": "Oui. Nous cherchons chez distributeurs et courtiers en Europe. Nous proposons alternatives compatibles si l'original n'est plus disponible.",
+        "brand_faq_q6": "Pièces TITGEMEYER par numéro ?",
+        "brand_faq_a6": "Oui. Envoyez le numéro par formulaire ou email. Nous vérifions disponibilité et prix.",
+        "titgemeyer_note": "TITGEMEYER est une marque de Titgemeyer GmbH & Co. KG, Osnabrück, Deutschland. Citée pour identifier les produits. Octobre 2026."
+      }
+    }
+  },
+  "wittmann": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "wittmann-about",
+        "className": "brand-info",
+        "titleKey": "wittmann_about_title",
+        "bodyKey": "wittmann_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "wittmann-products",
+            "className": "brand-info",
+            "titleKey": "wittmann_products_title",
+            "listKey": "wittmann_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "wittmann-apps",
+            "className": "brand-info",
+            "titleKey": "wittmann_apps_title",
+            "listKey": "wittmann_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "wittmann-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "wittmann_parts_id_title",
+        "introKey": "wittmann_parts_id_intro",
+        "listKey": "wittmann_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [
+      "piovan"
+    ],
+    "related_labels": {
+      "piovan": "PIOVAN"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "wittmann_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "WITTMANN"
+      },
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "WITTMANN Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "WITTMANN Ersatzteile: Teilenummer senden – Angebot oft in 24 h. Beschaffung in Europa.",
+        "brand_h1": "WITTMANN – Ersatzteile",
+        "brand_intro": "ABCspareparts beschafft WITTMANN Ersatzteile. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Für WITTMANN prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.",
+        "wittmann_about_title": "Über WITTMANN",
+        "wittmann_about_text": "<p>Informationen basierend auf öffentlich verfügbaren Quellen. WITTMANN Holding GmbH, Wien, Österreich.</p>",
+        "wittmann_products_title": "Typische WITTMANN Produktfamilien",
+        "wittmann_products_list": "<li>Spritzgussroboter (Primus für Pick-and-Place bis 900 t, W9/WX mit fester und beweglicher Entformachse, Sonic für Hochgeschwindigkeit <1 s Formöffnungszeit, W828 Linear für Standardautomatisierung)</li><li>Robotersteuerung R9 TeachBox (kapazitiver Touch-Screen, 3D-Live-Animation, Kraft-Überwachung, IMM-Integration)</li><li>Temperiergeräte (Wasser- und Öltemperierung für Werkzeuge, Präzisions-Regelung)</li><li>Materialtrockner (Trockenlufttrocknerfür technische Kunststoffe, Entfeuchtung, Hotair)</li><li>Dosier- und Mischgeräte (gravimetrisch, volumetrisch, Masterbatch-Zugabe)</li><li>Fördersysteme (zentral, dezentral, Vakuumförderung)</li><li>Recycling- und Mahlgut-Aufbereitung</li><li>WITTMANN 4.0 / Unilog (Zellenintegration, OPC UA, MES-Kopplung, Plug & Produce)</li>",
+        "wittmann_apps_title": "Typische Einsatzbereiche",
+        "wittmann_apps_list": "<li>Spritzguss für Automotive (Innenraum, Elektronik, Strukturteile)</li><li>Verpackung (Dünnwand, IML In-Mould-Labeling mit Sonic)</li><li>Medizintechnik (Reinraum, präzise Handhabung)</li><li>Elektrotechnik und Haushaltswaren</li><li>Technische Kunststoffe (PA, PC, PET mit Trocknung)</li><li>Automation für Spritzgussmaschinen 20–900 t Schließkraft</li>",
+        "wittmann_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "wittmann_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "wittmann_parts_id_list": "<li>Teilenummer vom Roboter-Typenschild oder Steuerung (alphanumerisch)</li><li>Seriennummer der Maschine (z. B. Primus 16, W9 Pro)</li><li>Foto des defekten Bauteils (Greifer, Vakuumerzeuger, Sensor, Steuermodul)</li><li>Angabe: Welcher Roboter, welche Achse, welches Modul?</li><li>Menge und Dringlichkeit</li><li>Angabe: Original oder kompatibles Ersatzteil?</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein WITTMANN-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild. WITTMANN-Teilenummern können numerisch oder alphanumerisch sein. Ein Foto des Typenschilds hilft uns, die Nummer zu identifizieren.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte WITTMANN-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
+        "brand_faq_q6": "WITTMANN Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis.",
+        "wittmann_note": "WITTMANN ist eine Marke von WITTMANN Holding GmbH, Wien, Österreich. Nennung dient ausschließlich der Identifikation. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "WITTMANN spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "WITTMANN spare parts: send part number – quote often within 24 h. Sourcing in Europe.",
+        "brand_h1": "WITTMANN – spare parts",
+        "brand_intro": "ABCspareparts sources WITTMANN spare parts. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "For WITTMANN, ABCspareparts checks availability, delivery options in Europe and – where appropriate – tested alternatives. This page is not a stock check: use the no-obligation <a href=\"#contact\">enquiry</a>.",
+        "wittmann_about_title": "About WITTMANN",
+        "wittmann_about_text": "<p>Information based on publicly available sources. WITTMANN Holding GmbH, Wien, Österreich.</p>",
+        "wittmann_products_title": "Typical WITTMANN product families",
+        "wittmann_products_list": "<li>Spritzgussroboter (Primus for Pick-and-Place up to 900 t, W9/WX with fester und beweglicher Entformachse, Sonic for Hochgeschwindigkeit <1 s Formöffnungszeit, W828 Linear for Standardautomatisierung)</li><li>Robotersteuerung R9 TeachBox (kapazitiver Touch-Screen, 3D-Live-Animation, Kraft-Überwachung, IMM-Integration)</li><li>Temperiergeräte (Wasser- und Öltemperierung for Werkzeuge, Präzisions-Regelung)</li><li>Materialtrockner (Trockenlufttrocknerfor technische Kunststoffe, Entfeuchtung, Hotair)</li><li>Dosier- und Mischgeräte (gravimetrisch, volumetrisch, Masterbatch-Zugabe)</li><li>Fördersysteme (zentral, dezentral, Vakuumförderung)</li><li>Recycling- und Mahlgut-Aufbereitung</li><li>WITTMANN 4.0 / Unilog (Zellenintegration, OPC UA, MES-Kopplung, Plug & Produce)</li>",
+        "wittmann_apps_title": "Typical applications",
+        "wittmann_apps_list": "<li>Spritzguss for Automotive (Innenraum, Elektronik, Strukturteile)</li><li>Verpackung (Dünnwand, IML In-Mould-Labeling mit Sonic)</li><li>Medizintechnik (Reinraum, präzise Handhabung)</li><li>Elektrotechnik and Haushaltswaren</li><li>Technische Kunststoffe (PA, PC, PET mit Trocknung)</li><li>Automation for Spritzgussmaschinen 20–900 t Schließkraft</li>",
+        "wittmann_parts_id_title": "How to identify the correct part number",
+        "wittmann_parts_id_intro": "For a fast quote, send us:",
+        "wittmann_parts_id_list": "<li>Teilenummer from Roboter-Typenschild or Steuerung (alphanumerisch)</li><li>Seriennummer der Maschine (z. B. Primus 16, W9 Pro)</li><li>Foto des defekten Bauteils (Greifer, Vakuumerzeuger, Sensor, Steuermodul)</li><li>Angabe: Welcher Roboter, welche Achse, welches Modul?</li><li>Menge und Dringlichkeit</li><li>Angabe: Original or kompatibles Ersatzteil?</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my WITTMANN equipment?",
+        "brand_faq_a4": "The part number is on a label on the component or nameplate. WITTMANN part numbers can be numeric or alphanumeric. A photo helps us identify the number.",
+        "brand_faq_q5": "Does ABCspareparts source spare parts for older or discontinued WITTMANN systems?",
+        "brand_faq_a5": "Yes. We search distributors and brokers across Europe for remaining stock. If the original is unavailable, we propose compatible alternatives.",
+        "brand_faq_q6": "WITTMANN spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the form or email. We check availability, lead time and price.",
+        "wittmann_note": "WITTMANN is a trademark of WITTMANN Holding GmbH, Wien, Österreich. Mentioned solely to identify products. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi WITTMANN per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi WITTMANN: invii il codice – preventivo spesso in 24 h.",
+        "brand_h1": "WITTMANN – ricambi",
+        "brand_intro": "ABCspareparts fornisce ricambi WITTMANN. Invii il numero – rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Per WITTMANN, ABCspareparts verifica disponibilità, opzioni di consegna in Europa e alternative testate. Utilizzi la <a href=\"#contact\">richiesta</a> non vincolante.",
+        "wittmann_about_title": "Su WITTMANN",
+        "wittmann_about_text": "<p>Informazioni basate su fonti pubbliche. WITTMANN Holding GmbH, Wien, Österreich.</p>",
+        "wittmann_products_title": "Famiglie di prodotti WITTMANN",
+        "wittmann_products_list": "<li>Spritzgussroboter (Primus für Pick-and-Place bis 900 t, W9/WX mit fester und beweglicher Entformachse, Sonic für Hochgeschwindigkeit <1 s Formöffnungszeit, W828 Linear für Standardautomatisierung)</li><li>Robotersteuerung R9 TeachBox (kapazitiver Touch-Screen, 3D-Live-Animation, Kraft-Überwachung, IMM-Integration)</li><li>Temperiergeräte (Wasser- und Öltemperierung für Werkzeuge, Präzisions-Regelung)</li><li>Materialtrockner (Trockenlufttrocknerfür technische Kunststoffe, Entfeuchtung, Hotair)</li><li>Dosier- und Mischgeräte (gravimetrisch, volumetrisch, Masterbatch-Zugabe)</li><li>Fördersysteme (zentral, dezentral, Vakuumförderung)</li><li>Recycling- und Mahlgut-Aufbereitung</li><li>WITTMANN 4.0 / Unilog (Zellenintegration, OPC UA, MES-Kopplung, Plug & Produce)</li>",
+        "wittmann_apps_title": "Applicazioni tipiche",
+        "wittmann_apps_list": "<li>Spritzguss für Automotive (Innenraum, Elektronik, Strukturteile)</li><li>Verpackung (Dünnwand, IML In-Mould-Labeling mit Sonic)</li><li>Medizintechnik (Reinraum, präzise Handhabung)</li><li>Elektrotechnik und Haushaltswaren</li><li>Technische Kunststoffe (PA, PC, PET mit Trocknung)</li><li>Automation für Spritzgussmaschinen 20–900 t Schließkraft</li>",
+        "wittmann_parts_id_title": "Come identificare il numero corretto",
+        "wittmann_parts_id_intro": "Per un preventivo rapido:",
+        "wittmann_parts_id_list": "<li>Teilenummer vom Roboter-Typenschild oder Steuerung (alphanumerisch)</li><li>Seriennummer der Maschine (z. B. Primus 16, W9 Pro)</li><li>Foto des defekten Bauteils (Greifer, Vakuumerzeuger, Sensor, Steuermodul)</li><li>Angabe: Welcher Roboter, welche Achse, welches Modul?</li><li>Menge und Dringlichkeit</li><li>Angabe: Original oder kompatibles Ersatzteil?</li>",
+        "brand_faq_q4": "Come identifico il numero per WITTMANN?",
+        "brand_faq_a4": "Il numero si trova su etichetta o targhetta. I numeri WITTMANN possono essere numerici o alfanumerici.",
+        "brand_faq_q5": "ABCspareparts fornisce ricambi per sistemi WITTMANN vecchi?",
+        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in Europa. Proponiamo alternative compatibili se l'originale non è disponibile.",
+        "brand_faq_q6": "Ricambi WITTMANN per numero?",
+        "brand_faq_a6": "Sì. Invii il numero tramite modulo o email. Verifichiamo disponibilità e prezzo.",
+        "wittmann_note": "WITTMANN è un marchio di WITTMANN Holding GmbH, Wien, Österreich. Citato per identificare i prodotti. Ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios WITTMANN por número – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios WITTMANN: envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "WITTMANN – recambios",
+        "brand_intro": "ABCspareparts suministra recambios WITTMANN. Envíe el número – respondemos en 24 horas.",
+        "brand_intro_p2": "Para WITTMANN, ABCspareparts verifica disponibilidad, opciones en Europa y alternativas probadas. Utilice la <a href=\"#contact\">consulta</a> sin compromiso.",
+        "wittmann_about_title": "Sobre WITTMANN",
+        "wittmann_about_text": "<p>Información basada en fuentes públicas. WITTMANN Holding GmbH, Wien, Österreich.</p>",
+        "wittmann_products_title": "Familias de productos WITTMANN",
+        "wittmann_products_list": "<li>Spritzgussroboter (Primus für Pick-and-Place bis 900 t, W9/WX mit fester und beweglicher Entformachse, Sonic für Hochgeschwindigkeit <1 s Formöffnungszeit, W828 Linear für Standardautomatisierung)</li><li>Robotersteuerung R9 TeachBox (kapazitiver Touch-Screen, 3D-Live-Animation, Kraft-Überwachung, IMM-Integration)</li><li>Temperiergeräte (Wasser- und Öltemperierung für Werkzeuge, Präzisions-Regelung)</li><li>Materialtrockner (Trockenlufttrocknerfür technische Kunststoffe, Entfeuchtung, Hotair)</li><li>Dosier- und Mischgeräte (gravimetrisch, volumetrisch, Masterbatch-Zugabe)</li><li>Fördersysteme (zentral, dezentral, Vakuumförderung)</li><li>Recycling- und Mahlgut-Aufbereitung</li><li>WITTMANN 4.0 / Unilog (Zellenintegration, OPC UA, MES-Kopplung, Plug & Produce)</li>",
+        "wittmann_apps_title": "Aplicaciones típicas",
+        "wittmann_apps_list": "<li>Spritzguss für Automotive (Innenraum, Elektronik, Strukturteile)</li><li>Verpackung (Dünnwand, IML In-Mould-Labeling mit Sonic)</li><li>Medizintechnik (Reinraum, präzise Handhabung)</li><li>Elektrotechnik und Haushaltswaren</li><li>Technische Kunststoffe (PA, PC, PET mit Trocknung)</li><li>Automation für Spritzgussmaschinen 20–900 t Schließkraft</li>",
+        "wittmann_parts_id_title": "Cómo identificar el número correcto",
+        "wittmann_parts_id_intro": "Para un presupuesto rápido:",
+        "wittmann_parts_id_list": "<li>Teilenummer vom Roboter-Typenschild oder Steuerung (alphanumerisch)</li><li>Seriennummer der Maschine (z. B. Primus 16, W9 Pro)</li><li>Foto des defekten Bauteils (Greifer, Vakuumerzeuger, Sensor, Steuermodul)</li><li>Angabe: Welcher Roboter, welche Achse, welches Modul?</li><li>Menge und Dringlichkeit</li><li>Angabe: Original oder kompatibles Ersatzteil?</li>",
+        "brand_faq_q4": "¿Cómo identifico el número para WITTMANN?",
+        "brand_faq_a4": "El número está en etiqueta o placa. Los números WITTMANN pueden ser numéricos o alfanuméricos.",
+        "brand_faq_q5": "¿ABCspareparts suministra recambios para sistemas WITTMANN antiguos?",
+        "brand_faq_a5": "Sí. Buscamos en distribuidores e intermediarios en Europa. Proponemos alternativas compatibles si el original no está disponible.",
+        "brand_faq_q6": "¿Recambios WITTMANN por número?",
+        "brand_faq_a6": "Sí. Envíe el número por formulario o email. Verificamos disponibilidad y precio.",
+        "wittmann_note": "WITTMANN es una marca de WITTMANN Holding GmbH, Wien, Österreich. Mencionada para identificar productos. Octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces WITTMANN par numéro – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces WITTMANN : envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "WITTMANN – pièces",
+        "brand_intro": "ABCspareparts fournit des pièces WITTMANN. Envoyez le numéro – réponse sous 24 h.",
+        "brand_intro_p2": "Pour WITTMANN, ABCspareparts vérifie disponibilité, options en Europe et alternatives testées. Utilisez la <a href=\"#contact\">demande</a> sans engagement.",
+        "wittmann_about_title": "À propos de WITTMANN",
+        "wittmann_about_text": "<p>Informations basées sur sources publiques. WITTMANN Holding GmbH, Wien, Österreich.</p>",
+        "wittmann_products_title": "Familles de produits WITTMANN",
+        "wittmann_products_list": "<li>Spritzgussroboter (Primus für Pick-and-Place bis 900 t, W9/WX mit fester und beweglicher Entformachse, Sonic für Hochgeschwindigkeit <1 s Formöffnungszeit, W828 Linear für Standardautomatisierung)</li><li>Robotersteuerung R9 TeachBox (kapazitiver Touch-Screen, 3D-Live-Animation, Kraft-Überwachung, IMM-Integration)</li><li>Temperiergeräte (Wasser- und Öltemperierung für Werkzeuge, Präzisions-Regelung)</li><li>Materialtrockner (Trockenlufttrocknerfür technische Kunststoffe, Entfeuchtung, Hotair)</li><li>Dosier- und Mischgeräte (gravimetrisch, volumetrisch, Masterbatch-Zugabe)</li><li>Fördersysteme (zentral, dezentral, Vakuumförderung)</li><li>Recycling- und Mahlgut-Aufbereitung</li><li>WITTMANN 4.0 / Unilog (Zellenintegration, OPC UA, MES-Kopplung, Plug & Produce)</li>",
+        "wittmann_apps_title": "Applications typiques",
+        "wittmann_apps_list": "<li>Spritzguss für Automotive (Innenraum, Elektronik, Strukturteile)</li><li>Verpackung (Dünnwand, IML In-Mould-Labeling mit Sonic)</li><li>Medizintechnik (Reinraum, präzise Handhabung)</li><li>Elektrotechnik und Haushaltswaren</li><li>Technische Kunststoffe (PA, PC, PET mit Trocknung)</li><li>Automation für Spritzgussmaschinen 20–900 t Schließkraft</li>",
+        "wittmann_parts_id_title": "Comment identifier le bon numéro",
+        "wittmann_parts_id_intro": "Pour un devis rapide :",
+        "wittmann_parts_id_list": "<li>Teilenummer vom Roboter-Typenschild oder Steuerung (alphanumerisch)</li><li>Seriennummer der Maschine (z. B. Primus 16, W9 Pro)</li><li>Foto des defekten Bauteils (Greifer, Vakuumerzeuger, Sensor, Steuermodul)</li><li>Angabe: Welcher Roboter, welche Achse, welches Modul?</li><li>Menge und Dringlichkeit</li><li>Angabe: Original oder kompatibles Ersatzteil?</li>",
+        "brand_faq_q4": "Comment identifier le numéro pour WITTMANN ?",
+        "brand_faq_a4": "Le numéro se trouve sur étiquette ou plaque. Les numéros WITTMANN peuvent être numériques ou alphanumériques.",
+        "brand_faq_q5": "ABCspareparts fournit-il des pièces pour systèmes WITTMANN anciens ?",
+        "brand_faq_a5": "Oui. Nous cherchons chez distributeurs et courtiers en Europe. Nous proposons alternatives compatibles si l'original n'est plus disponible.",
+        "brand_faq_q6": "Pièces WITTMANN par numéro ?",
+        "brand_faq_a6": "Oui. Envoyez le numéro par formulaire ou email. Nous vérifions disponibilité et prix.",
+        "wittmann_note": "WITTMANN est une marque de WITTMANN Holding GmbH, Wien, Österreich. Citée pour identifier les produits. Octobre 2026."
+      }
+    }
+  },
+  "sodick": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "sodick-about",
+        "className": "brand-info",
+        "titleKey": "sodick_about_title",
+        "bodyKey": "sodick_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "sodick-products",
+            "className": "brand-info",
+            "titleKey": "sodick_products_title",
+            "listKey": "sodick_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "sodick-apps",
+            "className": "brand-info",
+            "titleKey": "sodick_apps_title",
+            "listKey": "sodick_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "sodick-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "sodick_parts_id_title",
+        "introKey": "sodick_parts_id_intro",
+        "listKey": "sodick_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [
+      "mitsubishi-electric"
+    ],
+    "related_labels": {
+      "mitsubishi-electric": "MITSUBISHI ELECTRIC"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "sodick_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "SODICK"
+      },
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "SODICK Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "SODICK Ersatzteile: Teilenummer senden – Angebot oft in 24 h. Beschaffung in Europa.",
+        "brand_h1": "SODICK – Ersatzteile",
+        "brand_intro": "ABCspareparts beschafft SODICK Ersatzteile. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Für SODICK prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.",
+        "sodick_about_title": "Über SODICK",
+        "sodick_about_text": "<p>Informationen basierend auf öffentlich verfügbaren Quellen. Sodick Co., Ltd., Yokohama, Japan.</p>",
+        "sodick_products_title": "Typische SODICK Produktfamilien",
+        "sodick_products_list": "<li>Drahterodiermaschinen (AL-Serie für Präzision mit i-Groove Drahtumlauf, VN-Serie Entry mit Linearmotor, AQ/AP/AX für Ultrapräzision, große Baugrößen für Automotive-Werkzeuge)</li><li>Senkerodiermaschinen (AL100G+ für Gigacast-Formen bis 5.000 kg Werkstück, AL40G/AL60G mit 3-Seiten-Automatik, Linearmotor XYZ)</li><li>Automatische Drahtfädelung (FJ-AWT für schwimmende/getauchte Paletten)</li><li>LN Pro AI (KI-gestützte Programmierung für Anfänger und Experten)</li><li>Automationssysteme (ERC80 Palettensystem, Knickarmroboter für Werkstück-/Elektrodenwechsel)</li><li>Linearmotor-Antriebe (selbst entwickelt, XY UV-Achsen, thermische Kompensation)</li><li>Ecoシステム (Inverter-Servicetank-Pumpe für Energieeinsparung)</li>",
+        "sodick_apps_title": "Typische Einsatzbereiche",
+        "sodick_apps_list": "<li>Werkzeug- und Formenbau (Spritzguss-Formen, Stanzwerkzeuge, Automotive-Großformen)</li><li>Präzisions-Bearbeitung (Medizintechnik, Uhrenindustrie, Feinmechanik)</li><li>Luft- und Raumfahrt (Titane, Inconel)</li><li>Automotive-Produktion (Gigacast-Formen, E-Mobility-Gehäuse)</li><li>Elektronikindustrie (Steckverbinder-Stempel, Leiterplatten-Werkzeuge)</li><li>Stahl- und Hartmetall-Bearbeitung</li>",
+        "sodick_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "sodick_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "sodick_parts_id_list": "<li>Teilenummer vom Typenschild oder Display (alphanumerisch, z. B. AL400P-12345)</li><li>Seriennummer der Maschine</li><li>Foto des defekten Bauteils (Linearmotor, Drahtführung, Servicetank-Pumpe, Elektrode)</li><li>Angabe: Drahterodieren oder Senkerodieren, Modell, Achse</li><li>Fehlerbeschreibung und Diagnose-Code (falls vorhanden)</li><li>Menge und Lieferfrist</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein SODICK-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild. SODICK-Teilenummern können numerisch oder alphanumerisch sein. Ein Foto des Typenschilds hilft uns, die Nummer zu identifizieren.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte SODICK-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
+        "brand_faq_q6": "SODICK Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis.",
+        "sodick_note": "SODICK ist eine Marke von Sodick Co., Ltd., Yokohama, Japan. Nennung dient ausschließlich der Identifikation. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "SODICK spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "SODICK spare parts: send part number – quote often within 24 h. Sourcing in Europe.",
+        "brand_h1": "SODICK – spare parts",
+        "brand_intro": "ABCspareparts sources SODICK spare parts. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "For SODICK, ABCspareparts checks availability, delivery options in Europe and – where appropriate – tested alternatives. This page is not a stock check: use the no-obligation <a href=\"#contact\">enquiry</a>.",
+        "sodick_about_title": "About SODICK",
+        "sodick_about_text": "<p>Information based on publicly available sources. Sodick Co., Ltd., Yokohama, Japan.</p>",
+        "sodick_products_title": "Typical SODICK product families",
+        "sodick_products_list": "<li>Drahterodiermaschinen (AL-Serie for Präzision with i-Groove Drahtumlauf, VN-Serie Entry with Linearmotor, AQ/AP/AX for Ultrapräzision, große Baugrößen for Automotive-Werkzeuge)</li><li>Senkerodiermaschinen (AL100G+ for Gigacast-Formen up to 5.000 kg Werkstück, AL40G/AL60G with 3-Seiten-Automatik, Linearmotor XYZ)</li><li>Automatische Drahtfädelung (FJ-AWT for schwimmende/getauchte Paletten)</li><li>LN Pro AI (KI-gestützte Programmierung for Anfänger und Experten)</li><li>Automationssysteme (ERC80 Palettensystem, Knickarmroboter for Werkstück-/Elektrodenwechsel)</li><li>Linearmotor-Antriebe (selbst entwickelt, XY UV-Achsen, thermische Kompensation)</li><li>Ecoシステム (Inverter-Servicetank-Pumpe for Energieeinsparung)</li>",
+        "sodick_apps_title": "Typical applications",
+        "sodick_apps_list": "<li>Werkzeug- and Formenbau (Spritzguss-Formen, Stanzwerkzeuge, Automotive-Großformen)</li><li>Präzisions-Bearbeitung (Medizintechnik, Uhrenindustrie, Feinmechanik)</li><li>Luft- and Raumfahrt (Titane, Inconel)</li><li>Automotive-Produktion (Gigacast-Formen, E-Mobility-Gehäuse)</li><li>Elektronikindustrie (Steckverbinder-Stempel, Leiterplatten-Werkzeuge)</li><li>Stahl- and Hartmetall-Bearbeitung</li>",
+        "sodick_parts_id_title": "How to identify the correct part number",
+        "sodick_parts_id_intro": "For a fast quote, send us:",
+        "sodick_parts_id_list": "<li>Teilenummer from Typenschild or Display (alphanumerisch, z. B. AL400P-12345)</li><li>Seriennummer der Maschine</li><li>Foto des defekten Bauteils (Linearmotor, Drahtführung, Servicetank-Pumpe, Elektrode)</li><li>Angabe: Drahterodieren or Senkerodieren, Modell, Achse</li><li>Fehlerbeschreibung und Diagnose-Code (falls vorhanden)</li><li>Menge und Lieferfrist</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my SODICK equipment?",
+        "brand_faq_a4": "The part number is on a label on the component or nameplate. SODICK part numbers can be numeric or alphanumeric. A photo helps us identify the number.",
+        "brand_faq_q5": "Does ABCspareparts source spare parts for older or discontinued SODICK systems?",
+        "brand_faq_a5": "Yes. We search distributors and brokers across Europe for remaining stock. If the original is unavailable, we propose compatible alternatives.",
+        "brand_faq_q6": "SODICK spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the form or email. We check availability, lead time and price.",
+        "sodick_note": "SODICK is a trademark of Sodick Co., Ltd., Yokohama, Japan. Mentioned solely to identify products. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi SODICK per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi SODICK: invii il codice – preventivo spesso in 24 h.",
+        "brand_h1": "SODICK – ricambi",
+        "brand_intro": "ABCspareparts fornisce ricambi SODICK. Invii il numero – rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Per SODICK, ABCspareparts verifica disponibilità, opzioni di consegna in Europa e alternative testate. Utilizzi la <a href=\"#contact\">richiesta</a> non vincolante.",
+        "sodick_about_title": "Su SODICK",
+        "sodick_about_text": "<p>Informazioni basate su fonti pubbliche. Sodick Co., Ltd., Yokohama, Japan.</p>",
+        "sodick_products_title": "Famiglie di prodotti SODICK",
+        "sodick_products_list": "<li>Drahterodiermaschinen (AL-Serie für Präzision mit i-Groove Drahtumlauf, VN-Serie Entry mit Linearmotor, AQ/AP/AX für Ultrapräzision, große Baugrößen für Automotive-Werkzeuge)</li><li>Senkerodiermaschinen (AL100G+ für Gigacast-Formen bis 5.000 kg Werkstück, AL40G/AL60G mit 3-Seiten-Automatik, Linearmotor XYZ)</li><li>Automatische Drahtfädelung (FJ-AWT für schwimmende/getauchte Paletten)</li><li>LN Pro AI (KI-gestützte Programmierung für Anfänger und Experten)</li><li>Automationssysteme (ERC80 Palettensystem, Knickarmroboter für Werkstück-/Elektrodenwechsel)</li><li>Linearmotor-Antriebe (selbst entwickelt, XY UV-Achsen, thermische Kompensation)</li><li>Ecoシステム (Inverter-Servicetank-Pumpe für Energieeinsparung)</li>",
+        "sodick_apps_title": "Applicazioni tipiche",
+        "sodick_apps_list": "<li>Werkzeug- und Formenbau (Spritzguss-Formen, Stanzwerkzeuge, Automotive-Großformen)</li><li>Präzisions-Bearbeitung (Medizintechnik, Uhrenindustrie, Feinmechanik)</li><li>Luft- und Raumfahrt (Titane, Inconel)</li><li>Automotive-Produktion (Gigacast-Formen, E-Mobility-Gehäuse)</li><li>Elektronikindustrie (Steckverbinder-Stempel, Leiterplatten-Werkzeuge)</li><li>Stahl- und Hartmetall-Bearbeitung</li>",
+        "sodick_parts_id_title": "Come identificare il numero corretto",
+        "sodick_parts_id_intro": "Per un preventivo rapido:",
+        "sodick_parts_id_list": "<li>Teilenummer vom Typenschild oder Display (alphanumerisch, z. B. AL400P-12345)</li><li>Seriennummer der Maschine</li><li>Foto des defekten Bauteils (Linearmotor, Drahtführung, Servicetank-Pumpe, Elektrode)</li><li>Angabe: Drahterodieren oder Senkerodieren, Modell, Achse</li><li>Fehlerbeschreibung und Diagnose-Code (falls vorhanden)</li><li>Menge und Lieferfrist</li>",
+        "brand_faq_q4": "Come identifico il numero per SODICK?",
+        "brand_faq_a4": "Il numero si trova su etichetta o targhetta. I numeri SODICK possono essere numerici o alfanumerici.",
+        "brand_faq_q5": "ABCspareparts fornisce ricambi per sistemi SODICK vecchi?",
+        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in Europa. Proponiamo alternative compatibili se l'originale non è disponibile.",
+        "brand_faq_q6": "Ricambi SODICK per numero?",
+        "brand_faq_a6": "Sì. Invii il numero tramite modulo o email. Verifichiamo disponibilità e prezzo.",
+        "sodick_note": "SODICK è un marchio di Sodick Co., Ltd., Yokohama, Japan. Citato per identificare i prodotti. Ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios SODICK por número – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios SODICK: envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "SODICK – recambios",
+        "brand_intro": "ABCspareparts suministra recambios SODICK. Envíe el número – respondemos en 24 horas.",
+        "brand_intro_p2": "Para SODICK, ABCspareparts verifica disponibilidad, opciones en Europa y alternativas probadas. Utilice la <a href=\"#contact\">consulta</a> sin compromiso.",
+        "sodick_about_title": "Sobre SODICK",
+        "sodick_about_text": "<p>Información basada en fuentes públicas. Sodick Co., Ltd., Yokohama, Japan.</p>",
+        "sodick_products_title": "Familias de productos SODICK",
+        "sodick_products_list": "<li>Drahterodiermaschinen (AL-Serie für Präzision mit i-Groove Drahtumlauf, VN-Serie Entry mit Linearmotor, AQ/AP/AX für Ultrapräzision, große Baugrößen für Automotive-Werkzeuge)</li><li>Senkerodiermaschinen (AL100G+ für Gigacast-Formen bis 5.000 kg Werkstück, AL40G/AL60G mit 3-Seiten-Automatik, Linearmotor XYZ)</li><li>Automatische Drahtfädelung (FJ-AWT für schwimmende/getauchte Paletten)</li><li>LN Pro AI (KI-gestützte Programmierung für Anfänger und Experten)</li><li>Automationssysteme (ERC80 Palettensystem, Knickarmroboter für Werkstück-/Elektrodenwechsel)</li><li>Linearmotor-Antriebe (selbst entwickelt, XY UV-Achsen, thermische Kompensation)</li><li>Ecoシステム (Inverter-Servicetank-Pumpe für Energieeinsparung)</li>",
+        "sodick_apps_title": "Aplicaciones típicas",
+        "sodick_apps_list": "<li>Werkzeug- und Formenbau (Spritzguss-Formen, Stanzwerkzeuge, Automotive-Großformen)</li><li>Präzisions-Bearbeitung (Medizintechnik, Uhrenindustrie, Feinmechanik)</li><li>Luft- und Raumfahrt (Titane, Inconel)</li><li>Automotive-Produktion (Gigacast-Formen, E-Mobility-Gehäuse)</li><li>Elektronikindustrie (Steckverbinder-Stempel, Leiterplatten-Werkzeuge)</li><li>Stahl- und Hartmetall-Bearbeitung</li>",
+        "sodick_parts_id_title": "Cómo identificar el número correcto",
+        "sodick_parts_id_intro": "Para un presupuesto rápido:",
+        "sodick_parts_id_list": "<li>Teilenummer vom Typenschild oder Display (alphanumerisch, z. B. AL400P-12345)</li><li>Seriennummer der Maschine</li><li>Foto des defekten Bauteils (Linearmotor, Drahtführung, Servicetank-Pumpe, Elektrode)</li><li>Angabe: Drahterodieren oder Senkerodieren, Modell, Achse</li><li>Fehlerbeschreibung und Diagnose-Code (falls vorhanden)</li><li>Menge und Lieferfrist</li>",
+        "brand_faq_q4": "¿Cómo identifico el número para SODICK?",
+        "brand_faq_a4": "El número está en etiqueta o placa. Los números SODICK pueden ser numéricos o alfanuméricos.",
+        "brand_faq_q5": "¿ABCspareparts suministra recambios para sistemas SODICK antiguos?",
+        "brand_faq_a5": "Sí. Buscamos en distribuidores e intermediarios en Europa. Proponemos alternativas compatibles si el original no está disponible.",
+        "brand_faq_q6": "¿Recambios SODICK por número?",
+        "brand_faq_a6": "Sí. Envíe el número por formulario o email. Verificamos disponibilidad y precio.",
+        "sodick_note": "SODICK es una marca de Sodick Co., Ltd., Yokohama, Japan. Mencionada para identificar productos. Octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces SODICK par numéro – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces SODICK : envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "SODICK – pièces",
+        "brand_intro": "ABCspareparts fournit des pièces SODICK. Envoyez le numéro – réponse sous 24 h.",
+        "brand_intro_p2": "Pour SODICK, ABCspareparts vérifie disponibilité, options en Europe et alternatives testées. Utilisez la <a href=\"#contact\">demande</a> sans engagement.",
+        "sodick_about_title": "À propos de SODICK",
+        "sodick_about_text": "<p>Informations basées sur sources publiques. Sodick Co., Ltd., Yokohama, Japan.</p>",
+        "sodick_products_title": "Familles de produits SODICK",
+        "sodick_products_list": "<li>Drahterodiermaschinen (AL-Serie für Präzision mit i-Groove Drahtumlauf, VN-Serie Entry mit Linearmotor, AQ/AP/AX für Ultrapräzision, große Baugrößen für Automotive-Werkzeuge)</li><li>Senkerodiermaschinen (AL100G+ für Gigacast-Formen bis 5.000 kg Werkstück, AL40G/AL60G mit 3-Seiten-Automatik, Linearmotor XYZ)</li><li>Automatische Drahtfädelung (FJ-AWT für schwimmende/getauchte Paletten)</li><li>LN Pro AI (KI-gestützte Programmierung für Anfänger und Experten)</li><li>Automationssysteme (ERC80 Palettensystem, Knickarmroboter für Werkstück-/Elektrodenwechsel)</li><li>Linearmotor-Antriebe (selbst entwickelt, XY UV-Achsen, thermische Kompensation)</li><li>Ecoシステム (Inverter-Servicetank-Pumpe für Energieeinsparung)</li>",
+        "sodick_apps_title": "Applications typiques",
+        "sodick_apps_list": "<li>Werkzeug- und Formenbau (Spritzguss-Formen, Stanzwerkzeuge, Automotive-Großformen)</li><li>Präzisions-Bearbeitung (Medizintechnik, Uhrenindustrie, Feinmechanik)</li><li>Luft- und Raumfahrt (Titane, Inconel)</li><li>Automotive-Produktion (Gigacast-Formen, E-Mobility-Gehäuse)</li><li>Elektronikindustrie (Steckverbinder-Stempel, Leiterplatten-Werkzeuge)</li><li>Stahl- und Hartmetall-Bearbeitung</li>",
+        "sodick_parts_id_title": "Comment identifier le bon numéro",
+        "sodick_parts_id_intro": "Pour un devis rapide :",
+        "sodick_parts_id_list": "<li>Teilenummer vom Typenschild oder Display (alphanumerisch, z. B. AL400P-12345)</li><li>Seriennummer der Maschine</li><li>Foto des defekten Bauteils (Linearmotor, Drahtführung, Servicetank-Pumpe, Elektrode)</li><li>Angabe: Drahterodieren oder Senkerodieren, Modell, Achse</li><li>Fehlerbeschreibung und Diagnose-Code (falls vorhanden)</li><li>Menge und Lieferfrist</li>",
+        "brand_faq_q4": "Comment identifier le numéro pour SODICK ?",
+        "brand_faq_a4": "Le numéro se trouve sur étiquette ou plaque. Les numéros SODICK peuvent être numériques ou alphanumériques.",
+        "brand_faq_q5": "ABCspareparts fournit-il des pièces pour systèmes SODICK anciens ?",
+        "brand_faq_a5": "Oui. Nous cherchons chez distributeurs et courtiers en Europe. Nous proposons alternatives compatibles si l'original n'est plus disponible.",
+        "brand_faq_q6": "Pièces SODICK par numéro ?",
+        "brand_faq_a6": "Oui. Envoyez le numéro par formulaire ou email. Nous vérifions disponibilité et prix.",
+        "sodick_note": "SODICK est une marque de Sodick Co., Ltd., Yokohama, Japan. Citée pour identifier les produits. Octobre 2026."
+      }
+    }
+  },
+  "molex": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "molex-about",
+        "className": "brand-info",
+        "titleKey": "molex_about_title",
+        "bodyKey": "molex_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "molex-products",
+            "className": "brand-info",
+            "titleKey": "molex_products_title",
+            "listKey": "molex_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "molex-apps",
+            "className": "brand-info",
+            "titleKey": "molex_apps_title",
+            "listKey": "molex_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "molex-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "molex_parts_id_title",
+        "introKey": "molex_parts_id_intro",
+        "listKey": "molex_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [
+      "phoenix-contact"
+    ],
+    "related_labels": {
+      "phoenix-contact": "PHOENIX CONTACT"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "molex_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "MOLEX"
+      },
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "MOLEX Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "MOLEX Ersatzteile: Teilenummer senden – Angebot oft in 24 h. Beschaffung in Europa.",
+        "brand_h1": "MOLEX – Ersatzteile",
+        "brand_intro": "ABCspareparts beschafft MOLEX Ersatzteile. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Für MOLEX prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.",
+        "molex_about_title": "Über MOLEX",
+        "molex_about_text": "<p>Informationen basierend auf öffentlich verfügbaren Quellen. Molex, Koch Industries, USA.</p>",
+        "molex_products_title": "Typische MOLEX Produktfamilien",
+        "molex_products_list": "<li>Automotive-Steckverbinder (MX150 bis 22 A / 60 V Mid-Voltage, MXP120 für Safety/Body/Powertrain bis 13 A, MX-DaSH Hybrid Power+Signal+Data)</li><li>Industrie-Steckverbinder (M12 CAT5e Ethernet IP67, M8 Nano-Change, BradPower bis 30 A, Quick-Change, CRC für Robotik bis 15 A)</li><li>MX150L Industrial Sealed (bis 40 A für Marine, Off-Road, Commercial Vehicles; IP67, nicht USCAR)</li><li>Kabelkonfektionen und Crimpwerkzeuge (FineAdjust Crimp-Pressen, Handwerkzeuge)</li><li>Mate-sealed und TPA/CPA-Systeme (Terminal Position Assurance, Connector Position Assurance)</li><li>Hochgeschwindigkeits-Daten (Ethernet, CAN, LIN für Automotive und Industrie)</li>",
+        "molex_apps_title": "Typische Einsatzbereiche",
+        "molex_apps_list": "<li>Automotive (E-Mobility 48 V, Beleuchtung, Airbag/SRS, Body-Control, Powertrain, Ladestationen)</li><li>Nutzfahrzeuge und Off-Road (Baumaschinen, Landmaschinen, Marine)</li><li>Industrieautomation (Sensoren, Aktoren, Feldbus, Robotik)</li><li>Maschinenbau (IP67 Harsh-Duty, Vibrationsresistenz, Temperaturbereich bis 125 °C)</li><li>Energieverteilung (BradPower für Stromversorgung)</li><li>Medizintechnik und Bahntechnik</li>",
+        "molex_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "molex_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "molex_parts_id_list": "<li>Teilenummer vom Steckverbinder-Gehäuse oder Crimp-Kontakt (alphanumerisch)</li><li>Foto des Steckverbinders (Gehäuse, Polung, Kontaktzahl)</li><li>Angabe: MX150, MXP120, M12, etc., Polzahl, Crimp oder Löt</li><li>Anwendung: Automotive (USCAR?), Industrie, Off-Road</li><li>Menge, Liefertermin</li><li>Angabe: Mit oder ohne vorkonfektionierte Leitung?</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein MOLEX-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild. MOLEX-Teilenummern können numerisch oder alphanumerisch sein. Ein Foto des Typenschilds hilft uns, die Nummer zu identifizieren.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte MOLEX-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
+        "brand_faq_q6": "MOLEX Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis.",
+        "molex_note": "MOLEX ist eine Marke von Molex, Koch Industries, USA. Nennung dient ausschließlich der Identifikation. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "MOLEX spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "MOLEX spare parts: send part number – quote often within 24 h. Sourcing in Europe.",
+        "brand_h1": "MOLEX – spare parts",
+        "brand_intro": "ABCspareparts sources MOLEX spare parts. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "For MOLEX, ABCspareparts checks availability, delivery options in Europe and – where appropriate – tested alternatives. This page is not a stock check: use the no-obligation <a href=\"#contact\">enquiry</a>.",
+        "molex_about_title": "About MOLEX",
+        "molex_about_text": "<p>Information based on publicly available sources. Molex, Koch Industries, USA.</p>",
+        "molex_products_title": "Typical MOLEX product families",
+        "molex_products_list": "<li>Automotive-Steckverbinder (MX150 up to 22 A / 60 V Mid-Voltage, MXP120 for Safety/Body/Powertrain up to 13 A, MX-DaSH Hybrid Power+Signal+Data)</li><li>Industrie-Steckverbinder (M12 CAT5e Ethernet IP67, M8 Nano-Change, BradPower up to 30 A, Quick-Change, CRC for Robotik up to 15 A)</li><li>MX150L Industrial Sealed (up to 40 A for Marine, Off-Road, Commercial Vehicles; IP67, nicht USCAR)</li><li>Kabelkonfektionen und Crimpwerkzeuge (FineAdjust Crimp-Pressen, Handwerkzeuge)</li><li>Mate-sealed und TPA/CPA-Systeme (Terminal Position Assurance, Connector Position Assurance)</li><li>Hochgeschwindigkeits-Daten (Ethernet, CAN, LIN for Automotive und Industrie)</li>",
+        "molex_apps_title": "Typical applications",
+        "molex_apps_list": "<li>Automotive (E-Mobility 48 V, Beleuchtung, Airbag/SRS, Body-Control, Powertrain, Ladestationen)</li><li>Nutzfahrzeuge and Off-Road (Baumaschinen, Landmaschinen, Marine)</li><li>Industrieautomation (Sensoren, Aktoren, Feldbus, Robotik)</li><li>Maschinenbau (IP67 Harsh-Duty, Vibrationsresistenz, Temperaturbereich up to 125 °C)</li><li>Energieverteilung (BradPower for Stromversorgung)</li><li>Medizintechnik and Bahntechnik</li>",
+        "molex_parts_id_title": "How to identify the correct part number",
+        "molex_parts_id_intro": "For a fast quote, send us:",
+        "molex_parts_id_list": "<li>Teilenummer from Steckverbinder-Gehäuse or Crimp-Kontakt (alphanumerisch)</li><li>Foto des Steckverbinders (Gehäuse, Polung, Kontaktzahl)</li><li>Angabe: MX150, MXP120, M12, etc., Polzahl, Crimp or Löt</li><li>Anwendung: Automotive (USCAR?), Industrie, Off-Road</li><li>Menge, Liefertermin</li><li>Angabe: Mit or ohne vorkonfektionierte Leitung?</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my MOLEX equipment?",
+        "brand_faq_a4": "The part number is on a label on the component or nameplate. MOLEX part numbers can be numeric or alphanumeric. A photo helps us identify the number.",
+        "brand_faq_q5": "Does ABCspareparts source spare parts for older or discontinued MOLEX systems?",
+        "brand_faq_a5": "Yes. We search distributors and brokers across Europe for remaining stock. If the original is unavailable, we propose compatible alternatives.",
+        "brand_faq_q6": "MOLEX spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the form or email. We check availability, lead time and price.",
+        "molex_note": "MOLEX is a trademark of Molex, Koch Industries, USA. Mentioned solely to identify products. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi MOLEX per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi MOLEX: invii il codice – preventivo spesso in 24 h.",
+        "brand_h1": "MOLEX – ricambi",
+        "brand_intro": "ABCspareparts fornisce ricambi MOLEX. Invii il numero – rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Per MOLEX, ABCspareparts verifica disponibilità, opzioni di consegna in Europa e alternative testate. Utilizzi la <a href=\"#contact\">richiesta</a> non vincolante.",
+        "molex_about_title": "Su MOLEX",
+        "molex_about_text": "<p>Informazioni basate su fonti pubbliche. Molex, Koch Industries, USA.</p>",
+        "molex_products_title": "Famiglie di prodotti MOLEX",
+        "molex_products_list": "<li>Automotive-Steckverbinder (MX150 bis 22 A / 60 V Mid-Voltage, MXP120 für Safety/Body/Powertrain bis 13 A, MX-DaSH Hybrid Power+Signal+Data)</li><li>Industrie-Steckverbinder (M12 CAT5e Ethernet IP67, M8 Nano-Change, BradPower bis 30 A, Quick-Change, CRC für Robotik bis 15 A)</li><li>MX150L Industrial Sealed (bis 40 A für Marine, Off-Road, Commercial Vehicles; IP67, nicht USCAR)</li><li>Kabelkonfektionen und Crimpwerkzeuge (FineAdjust Crimp-Pressen, Handwerkzeuge)</li><li>Mate-sealed und TPA/CPA-Systeme (Terminal Position Assurance, Connector Position Assurance)</li><li>Hochgeschwindigkeits-Daten (Ethernet, CAN, LIN für Automotive und Industrie)</li>",
+        "molex_apps_title": "Applicazioni tipiche",
+        "molex_apps_list": "<li>Automotive (E-Mobility 48 V, Beleuchtung, Airbag/SRS, Body-Control, Powertrain, Ladestationen)</li><li>Nutzfahrzeuge und Off-Road (Baumaschinen, Landmaschinen, Marine)</li><li>Industrieautomation (Sensoren, Aktoren, Feldbus, Robotik)</li><li>Maschinenbau (IP67 Harsh-Duty, Vibrationsresistenz, Temperaturbereich bis 125 °C)</li><li>Energieverteilung (BradPower für Stromversorgung)</li><li>Medizintechnik und Bahntechnik</li>",
+        "molex_parts_id_title": "Come identificare il numero corretto",
+        "molex_parts_id_intro": "Per un preventivo rapido:",
+        "molex_parts_id_list": "<li>Teilenummer vom Steckverbinder-Gehäuse oder Crimp-Kontakt (alphanumerisch)</li><li>Foto des Steckverbinders (Gehäuse, Polung, Kontaktzahl)</li><li>Angabe: MX150, MXP120, M12, etc., Polzahl, Crimp oder Löt</li><li>Anwendung: Automotive (USCAR?), Industrie, Off-Road</li><li>Menge, Liefertermin</li><li>Angabe: Mit oder ohne vorkonfektionierte Leitung?</li>",
+        "brand_faq_q4": "Come identifico il numero per MOLEX?",
+        "brand_faq_a4": "Il numero si trova su etichetta o targhetta. I numeri MOLEX possono essere numerici o alfanumerici.",
+        "brand_faq_q5": "ABCspareparts fornisce ricambi per sistemi MOLEX vecchi?",
+        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in Europa. Proponiamo alternative compatibili se l'originale non è disponibile.",
+        "brand_faq_q6": "Ricambi MOLEX per numero?",
+        "brand_faq_a6": "Sì. Invii il numero tramite modulo o email. Verifichiamo disponibilità e prezzo.",
+        "molex_note": "MOLEX è un marchio di Molex, Koch Industries, USA. Citato per identificare i prodotti. Ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios MOLEX por número – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios MOLEX: envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "MOLEX – recambios",
+        "brand_intro": "ABCspareparts suministra recambios MOLEX. Envíe el número – respondemos en 24 horas.",
+        "brand_intro_p2": "Para MOLEX, ABCspareparts verifica disponibilidad, opciones en Europa y alternativas probadas. Utilice la <a href=\"#contact\">consulta</a> sin compromiso.",
+        "molex_about_title": "Sobre MOLEX",
+        "molex_about_text": "<p>Información basada en fuentes públicas. Molex, Koch Industries, USA.</p>",
+        "molex_products_title": "Familias de productos MOLEX",
+        "molex_products_list": "<li>Automotive-Steckverbinder (MX150 bis 22 A / 60 V Mid-Voltage, MXP120 für Safety/Body/Powertrain bis 13 A, MX-DaSH Hybrid Power+Signal+Data)</li><li>Industrie-Steckverbinder (M12 CAT5e Ethernet IP67, M8 Nano-Change, BradPower bis 30 A, Quick-Change, CRC für Robotik bis 15 A)</li><li>MX150L Industrial Sealed (bis 40 A für Marine, Off-Road, Commercial Vehicles; IP67, nicht USCAR)</li><li>Kabelkonfektionen und Crimpwerkzeuge (FineAdjust Crimp-Pressen, Handwerkzeuge)</li><li>Mate-sealed und TPA/CPA-Systeme (Terminal Position Assurance, Connector Position Assurance)</li><li>Hochgeschwindigkeits-Daten (Ethernet, CAN, LIN für Automotive und Industrie)</li>",
+        "molex_apps_title": "Aplicaciones típicas",
+        "molex_apps_list": "<li>Automotive (E-Mobility 48 V, Beleuchtung, Airbag/SRS, Body-Control, Powertrain, Ladestationen)</li><li>Nutzfahrzeuge und Off-Road (Baumaschinen, Landmaschinen, Marine)</li><li>Industrieautomation (Sensoren, Aktoren, Feldbus, Robotik)</li><li>Maschinenbau (IP67 Harsh-Duty, Vibrationsresistenz, Temperaturbereich bis 125 °C)</li><li>Energieverteilung (BradPower für Stromversorgung)</li><li>Medizintechnik und Bahntechnik</li>",
+        "molex_parts_id_title": "Cómo identificar el número correcto",
+        "molex_parts_id_intro": "Para un presupuesto rápido:",
+        "molex_parts_id_list": "<li>Teilenummer vom Steckverbinder-Gehäuse oder Crimp-Kontakt (alphanumerisch)</li><li>Foto des Steckverbinders (Gehäuse, Polung, Kontaktzahl)</li><li>Angabe: MX150, MXP120, M12, etc., Polzahl, Crimp oder Löt</li><li>Anwendung: Automotive (USCAR?), Industrie, Off-Road</li><li>Menge, Liefertermin</li><li>Angabe: Mit oder ohne vorkonfektionierte Leitung?</li>",
+        "brand_faq_q4": "¿Cómo identifico el número para MOLEX?",
+        "brand_faq_a4": "El número está en etiqueta o placa. Los números MOLEX pueden ser numéricos o alfanuméricos.",
+        "brand_faq_q5": "¿ABCspareparts suministra recambios para sistemas MOLEX antiguos?",
+        "brand_faq_a5": "Sí. Buscamos en distribuidores e intermediarios en Europa. Proponemos alternativas compatibles si el original no está disponible.",
+        "brand_faq_q6": "¿Recambios MOLEX por número?",
+        "brand_faq_a6": "Sí. Envíe el número por formulario o email. Verificamos disponibilidad y precio.",
+        "molex_note": "MOLEX es una marca de Molex, Koch Industries, USA. Mencionada para identificar productos. Octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces MOLEX par numéro – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces MOLEX : envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "MOLEX – pièces",
+        "brand_intro": "ABCspareparts fournit des pièces MOLEX. Envoyez le numéro – réponse sous 24 h.",
+        "brand_intro_p2": "Pour MOLEX, ABCspareparts vérifie disponibilité, options en Europe et alternatives testées. Utilisez la <a href=\"#contact\">demande</a> sans engagement.",
+        "molex_about_title": "À propos de MOLEX",
+        "molex_about_text": "<p>Informations basées sur sources publiques. Molex, Koch Industries, USA.</p>",
+        "molex_products_title": "Familles de produits MOLEX",
+        "molex_products_list": "<li>Automotive-Steckverbinder (MX150 bis 22 A / 60 V Mid-Voltage, MXP120 für Safety/Body/Powertrain bis 13 A, MX-DaSH Hybrid Power+Signal+Data)</li><li>Industrie-Steckverbinder (M12 CAT5e Ethernet IP67, M8 Nano-Change, BradPower bis 30 A, Quick-Change, CRC für Robotik bis 15 A)</li><li>MX150L Industrial Sealed (bis 40 A für Marine, Off-Road, Commercial Vehicles; IP67, nicht USCAR)</li><li>Kabelkonfektionen und Crimpwerkzeuge (FineAdjust Crimp-Pressen, Handwerkzeuge)</li><li>Mate-sealed und TPA/CPA-Systeme (Terminal Position Assurance, Connector Position Assurance)</li><li>Hochgeschwindigkeits-Daten (Ethernet, CAN, LIN für Automotive und Industrie)</li>",
+        "molex_apps_title": "Applications typiques",
+        "molex_apps_list": "<li>Automotive (E-Mobility 48 V, Beleuchtung, Airbag/SRS, Body-Control, Powertrain, Ladestationen)</li><li>Nutzfahrzeuge und Off-Road (Baumaschinen, Landmaschinen, Marine)</li><li>Industrieautomation (Sensoren, Aktoren, Feldbus, Robotik)</li><li>Maschinenbau (IP67 Harsh-Duty, Vibrationsresistenz, Temperaturbereich bis 125 °C)</li><li>Energieverteilung (BradPower für Stromversorgung)</li><li>Medizintechnik und Bahntechnik</li>",
+        "molex_parts_id_title": "Comment identifier le bon numéro",
+        "molex_parts_id_intro": "Pour un devis rapide :",
+        "molex_parts_id_list": "<li>Teilenummer vom Steckverbinder-Gehäuse oder Crimp-Kontakt (alphanumerisch)</li><li>Foto des Steckverbinders (Gehäuse, Polung, Kontaktzahl)</li><li>Angabe: MX150, MXP120, M12, etc., Polzahl, Crimp oder Löt</li><li>Anwendung: Automotive (USCAR?), Industrie, Off-Road</li><li>Menge, Liefertermin</li><li>Angabe: Mit oder ohne vorkonfektionierte Leitung?</li>",
+        "brand_faq_q4": "Comment identifier le numéro pour MOLEX ?",
+        "brand_faq_a4": "Le numéro se trouve sur étiquette ou plaque. Les numéros MOLEX peuvent être numériques ou alphanumériques.",
+        "brand_faq_q5": "ABCspareparts fournit-il des pièces pour systèmes MOLEX anciens ?",
+        "brand_faq_a5": "Oui. Nous cherchons chez distributeurs et courtiers en Europe. Nous proposons alternatives compatibles si l'original n'est plus disponible.",
+        "brand_faq_q6": "Pièces MOLEX par numéro ?",
+        "brand_faq_a6": "Oui. Envoyez le numéro par formulaire ou email. Nous vérifions disponibilité et prix.",
+        "molex_note": "MOLEX est une marque de Molex, Koch Industries, USA. Citée pour identifier les produits. Octobre 2026."
+      }
+    }
+  },
+  "deublin": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "deublin-about",
+        "className": "brand-info",
+        "titleKey": "deublin_about_title",
+        "bodyKey": "deublin_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "deublin-products",
+            "className": "brand-info",
+            "titleKey": "deublin_products_title",
+            "listKey": "deublin_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "deublin-apps",
+            "className": "brand-info",
+            "titleKey": "deublin_apps_title",
+            "listKey": "deublin_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "deublin-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "deublin_parts_id_title",
+        "introKey": "deublin_parts_id_intro",
+        "listKey": "deublin_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [],
+    "related_labels": {},
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "deublin_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "DEUBLIN"
+      },
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "DEUBLIN Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "DEUBLIN Ersatzteile: Teilenummer senden – Angebot oft in 24 h. Beschaffung in Europa.",
+        "brand_h1": "DEUBLIN – Ersatzteile",
+        "brand_intro": "ABCspareparts beschafft DEUBLIN Ersatzteile. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Für DEUBLIN prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.",
+        "deublin_about_title": "Über DEUBLIN",
+        "deublin_about_text": "<p>Informationen basierend auf öffentlich verfügbaren Quellen. Deublin Company, Illinois, USA.</p>",
+        "deublin_products_title": "Typische DEUBLIN Produktfamilien",
+        "deublin_products_list": "<li>Kühlmitteldrehdurchführungen (Bore-Mounted bis 24.000 U/min und 150 bar, Rotor-Mounted Pop-Off® für Transfermaschinen, AutoSense® für MMS/Luft/Trocken, Closed Seal Compact <35 mm für EDM)</li><li>Dampfdurchführungen (Typ C selbsttragend bis 10 bar für Papiermaschinen, CMS50 für Wellpappe mit Doppel-Gleitringdichtung, FG-Serie für Yankee-Trockner)</li><li>Siphons für Kondensatabfuhr (DeltaSINT stehend, EcoSINT/RotoSINT rotierend, SRS-Ellenbogen)</li><li>Mehrkanal-Durchführungen (Wasser, Öl, Hydraulik, Vakuum kombiniert)</li><li>Balanced Mechanical Seals (Siliziumkarbid, optisch geläppt, mikroglatt)</li><li>H-Serie für Papier/Textil/Kunststoff (Duo-Flow mit Sichtglas für Kondensatüberwachung)</li>",
+        "deublin_apps_title": "Typische Einsatzbereiche",
+        "deublin_apps_list": "<li>Werkzeugmaschinen (CNC-Bearbeitungszentren, Automotive-Transferlinien, Spindel-Kühlmittelzufuhr bis 24.000 U/min)</li><li>Papier- und Zellstoffindustrie (Trocknerzylinder, Kalander, Yankee-Trockner, Kondensatabfuhr)</li><li>Wellpappen-Herstellung (Hochdruck-Dampf, CMS50 Gleitringdichtung)</li><li>Stahlindustrie (Strangguss-Walzen, kontinuierliches Gießen)</li><li>Gummi- und Kunststoff-Kalandrierung (Heizung/Kühlung rotierender Walzen)</li><li>Textil (Dampfzylinder, Färberei-Trockner)</li>",
+        "deublin_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "deublin_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "deublin_parts_id_list": "<li>Teilenummer vom Durchführungsgehäuse oder Rotor (alphanumerisch)</li><li>Seriennummer der Maschine (Spindel, Walze, Zylinder)</li><li>Foto der Drehdurchführung und Montagestelle</li><li>Angabe: Kühlmittel, Dampf, Hydraulik? Druck, Drehzahl, Temperatur?</li><li>Einbauart: Bore-Mounted, Rotor-Mounted, selbsttragend?</li><li>Menge, Dringlichkeit (Stillstand?)</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein DEUBLIN-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild. DEUBLIN-Teilenummern können numerisch oder alphanumerisch sein. Ein Foto des Typenschilds hilft uns, die Nummer zu identifizieren.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte DEUBLIN-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
+        "brand_faq_q6": "DEUBLIN Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis.",
+        "deublin_note": "DEUBLIN ist eine Marke von Deublin Company, Illinois, USA. Nennung dient ausschließlich der Identifikation. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "DEUBLIN spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "DEUBLIN spare parts: send part number – quote often within 24 h. Sourcing in Europe.",
+        "brand_h1": "DEUBLIN – spare parts",
+        "brand_intro": "ABCspareparts sources DEUBLIN spare parts. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "For DEUBLIN, ABCspareparts checks availability, delivery options in Europe and – where appropriate – tested alternatives. This page is not a stock check: use the no-obligation <a href=\"#contact\">enquiry</a>.",
+        "deublin_about_title": "About DEUBLIN",
+        "deublin_about_text": "<p>Information based on publicly available sources. Deublin Company, Illinois, USA.</p>",
+        "deublin_products_title": "Typical DEUBLIN product families",
+        "deublin_products_list": "<li>Kühlmitteldrehdurchführungen (Bore-Mounted up to 24.000 U/min und 150 bar, Rotor-Mounted Pop-Off® for Transfermaschinen, AutoSense® for MMS/Luft/Trocken, Closed Seal Compact <35 mm for EDM)</li><li>Dampfdurchführungen (Typ C selbsttragend up to 10 bar for Papiermaschinen, CMS50 for Wellpappe with Doppel-Gleitringdichtung, FG-Serie for Yankee-Trockner)</li><li>Siphons for Kondensatabfuhr (DeltaSINT stehend, EcoSINT/RotoSINT rotierend, SRS-Ellenbogen)</li><li>Mehrkanal-Durchführungen (Wasser, Öl, Hydraulik, Vakuum kombiniert)</li><li>Balanced Mechanical Seals (Siliziumkarbid, optisch geläppt, mikroglatt)</li><li>H-Serie for Papier/Textil/Kunststoff (Duo-Flow with Sichtglas for Kondensatüberwachung)</li>",
+        "deublin_apps_title": "Typical applications",
+        "deublin_apps_list": "<li>Werkzeugmaschinen (CNC-Bearbeitungszentren, Automotive-Transferlinien, Spindel-Kühlmittelzufuhr up to 24.000 U/min)</li><li>Papier- and Zellstoffindustrie (Trocknerzylinder, Kalander, Yankee-Trockner, Kondensatabfuhr)</li><li>Wellpappen-Herstellung (Hochdruck-Dampf, CMS50 Gleitringdichtung)</li><li>Stahlindustrie (Strangguss-Walzen, kontinuierliches Gießen)</li><li>Gummi- and Kunststoff-Kalandrierung (Heizung/Kühlung rotierender Walzen)</li><li>Textil (Dampfzylinder, Färberei-Trockner)</li>",
+        "deublin_parts_id_title": "How to identify the correct part number",
+        "deublin_parts_id_intro": "For a fast quote, send us:",
+        "deublin_parts_id_list": "<li>Teilenummer from Durchführungsgehäuse or Rotor (alphanumerisch)</li><li>Seriennummer der Maschine (Spindel, Walze, Zylinder)</li><li>Foto der Drehdurchführung und Montagestelle</li><li>Angabe: Kühlmittel, Dampf, Hydraulik? Druck, Drehzahl, Temperatur?</li><li>Einbauart: Bore-Mounted, Rotor-Mounted, selbsttragend?</li><li>Menge, Dringlichkeit (Stillstand?)</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my DEUBLIN equipment?",
+        "brand_faq_a4": "The part number is on a label on the component or nameplate. DEUBLIN part numbers can be numeric or alphanumeric. A photo helps us identify the number.",
+        "brand_faq_q5": "Does ABCspareparts source spare parts for older or discontinued DEUBLIN systems?",
+        "brand_faq_a5": "Yes. We search distributors and brokers across Europe for remaining stock. If the original is unavailable, we propose compatible alternatives.",
+        "brand_faq_q6": "DEUBLIN spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the form or email. We check availability, lead time and price.",
+        "deublin_note": "DEUBLIN is a trademark of Deublin Company, Illinois, USA. Mentioned solely to identify products. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi DEUBLIN per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi DEUBLIN: invii il codice – preventivo spesso in 24 h.",
+        "brand_h1": "DEUBLIN – ricambi",
+        "brand_intro": "ABCspareparts fornisce ricambi DEUBLIN. Invii il numero – rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Per DEUBLIN, ABCspareparts verifica disponibilità, opzioni di consegna in Europa e alternative testate. Utilizzi la <a href=\"#contact\">richiesta</a> non vincolante.",
+        "deublin_about_title": "Su DEUBLIN",
+        "deublin_about_text": "<p>Informazioni basate su fonti pubbliche. Deublin Company, Illinois, USA.</p>",
+        "deublin_products_title": "Famiglie di prodotti DEUBLIN",
+        "deublin_products_list": "<li>Kühlmitteldrehdurchführungen (Bore-Mounted bis 24.000 U/min und 150 bar, Rotor-Mounted Pop-Off® für Transfermaschinen, AutoSense® für MMS/Luft/Trocken, Closed Seal Compact <35 mm für EDM)</li><li>Dampfdurchführungen (Typ C selbsttragend bis 10 bar für Papiermaschinen, CMS50 für Wellpappe mit Doppel-Gleitringdichtung, FG-Serie für Yankee-Trockner)</li><li>Siphons für Kondensatabfuhr (DeltaSINT stehend, EcoSINT/RotoSINT rotierend, SRS-Ellenbogen)</li><li>Mehrkanal-Durchführungen (Wasser, Öl, Hydraulik, Vakuum kombiniert)</li><li>Balanced Mechanical Seals (Siliziumkarbid, optisch geläppt, mikroglatt)</li><li>H-Serie für Papier/Textil/Kunststoff (Duo-Flow mit Sichtglas für Kondensatüberwachung)</li>",
+        "deublin_apps_title": "Applicazioni tipiche",
+        "deublin_apps_list": "<li>Werkzeugmaschinen (CNC-Bearbeitungszentren, Automotive-Transferlinien, Spindel-Kühlmittelzufuhr bis 24.000 U/min)</li><li>Papier- und Zellstoffindustrie (Trocknerzylinder, Kalander, Yankee-Trockner, Kondensatabfuhr)</li><li>Wellpappen-Herstellung (Hochdruck-Dampf, CMS50 Gleitringdichtung)</li><li>Stahlindustrie (Strangguss-Walzen, kontinuierliches Gießen)</li><li>Gummi- und Kunststoff-Kalandrierung (Heizung/Kühlung rotierender Walzen)</li><li>Textil (Dampfzylinder, Färberei-Trockner)</li>",
+        "deublin_parts_id_title": "Come identificare il numero corretto",
+        "deublin_parts_id_intro": "Per un preventivo rapido:",
+        "deublin_parts_id_list": "<li>Teilenummer vom Durchführungsgehäuse oder Rotor (alphanumerisch)</li><li>Seriennummer der Maschine (Spindel, Walze, Zylinder)</li><li>Foto der Drehdurchführung und Montagestelle</li><li>Angabe: Kühlmittel, Dampf, Hydraulik? Druck, Drehzahl, Temperatur?</li><li>Einbauart: Bore-Mounted, Rotor-Mounted, selbsttragend?</li><li>Menge, Dringlichkeit (Stillstand?)</li>",
+        "brand_faq_q4": "Come identifico il numero per DEUBLIN?",
+        "brand_faq_a4": "Il numero si trova su etichetta o targhetta. I numeri DEUBLIN possono essere numerici o alfanumerici.",
+        "brand_faq_q5": "ABCspareparts fornisce ricambi per sistemi DEUBLIN vecchi?",
+        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in Europa. Proponiamo alternative compatibili se l'originale non è disponibile.",
+        "brand_faq_q6": "Ricambi DEUBLIN per numero?",
+        "brand_faq_a6": "Sì. Invii il numero tramite modulo o email. Verifichiamo disponibilità e prezzo.",
+        "deublin_note": "DEUBLIN è un marchio di Deublin Company, Illinois, USA. Citato per identificare i prodotti. Ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios DEUBLIN por número – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios DEUBLIN: envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "DEUBLIN – recambios",
+        "brand_intro": "ABCspareparts suministra recambios DEUBLIN. Envíe el número – respondemos en 24 horas.",
+        "brand_intro_p2": "Para DEUBLIN, ABCspareparts verifica disponibilidad, opciones en Europa y alternativas probadas. Utilice la <a href=\"#contact\">consulta</a> sin compromiso.",
+        "deublin_about_title": "Sobre DEUBLIN",
+        "deublin_about_text": "<p>Información basada en fuentes públicas. Deublin Company, Illinois, USA.</p>",
+        "deublin_products_title": "Familias de productos DEUBLIN",
+        "deublin_products_list": "<li>Kühlmitteldrehdurchführungen (Bore-Mounted bis 24.000 U/min und 150 bar, Rotor-Mounted Pop-Off® für Transfermaschinen, AutoSense® für MMS/Luft/Trocken, Closed Seal Compact <35 mm für EDM)</li><li>Dampfdurchführungen (Typ C selbsttragend bis 10 bar für Papiermaschinen, CMS50 für Wellpappe mit Doppel-Gleitringdichtung, FG-Serie für Yankee-Trockner)</li><li>Siphons für Kondensatabfuhr (DeltaSINT stehend, EcoSINT/RotoSINT rotierend, SRS-Ellenbogen)</li><li>Mehrkanal-Durchführungen (Wasser, Öl, Hydraulik, Vakuum kombiniert)</li><li>Balanced Mechanical Seals (Siliziumkarbid, optisch geläppt, mikroglatt)</li><li>H-Serie für Papier/Textil/Kunststoff (Duo-Flow mit Sichtglas für Kondensatüberwachung)</li>",
+        "deublin_apps_title": "Aplicaciones típicas",
+        "deublin_apps_list": "<li>Werkzeugmaschinen (CNC-Bearbeitungszentren, Automotive-Transferlinien, Spindel-Kühlmittelzufuhr bis 24.000 U/min)</li><li>Papier- und Zellstoffindustrie (Trocknerzylinder, Kalander, Yankee-Trockner, Kondensatabfuhr)</li><li>Wellpappen-Herstellung (Hochdruck-Dampf, CMS50 Gleitringdichtung)</li><li>Stahlindustrie (Strangguss-Walzen, kontinuierliches Gießen)</li><li>Gummi- und Kunststoff-Kalandrierung (Heizung/Kühlung rotierender Walzen)</li><li>Textil (Dampfzylinder, Färberei-Trockner)</li>",
+        "deublin_parts_id_title": "Cómo identificar el número correcto",
+        "deublin_parts_id_intro": "Para un presupuesto rápido:",
+        "deublin_parts_id_list": "<li>Teilenummer vom Durchführungsgehäuse oder Rotor (alphanumerisch)</li><li>Seriennummer der Maschine (Spindel, Walze, Zylinder)</li><li>Foto der Drehdurchführung und Montagestelle</li><li>Angabe: Kühlmittel, Dampf, Hydraulik? Druck, Drehzahl, Temperatur?</li><li>Einbauart: Bore-Mounted, Rotor-Mounted, selbsttragend?</li><li>Menge, Dringlichkeit (Stillstand?)</li>",
+        "brand_faq_q4": "¿Cómo identifico el número para DEUBLIN?",
+        "brand_faq_a4": "El número está en etiqueta o placa. Los números DEUBLIN pueden ser numéricos o alfanuméricos.",
+        "brand_faq_q5": "¿ABCspareparts suministra recambios para sistemas DEUBLIN antiguos?",
+        "brand_faq_a5": "Sí. Buscamos en distribuidores e intermediarios en Europa. Proponemos alternativas compatibles si el original no está disponible.",
+        "brand_faq_q6": "¿Recambios DEUBLIN por número?",
+        "brand_faq_a6": "Sí. Envíe el número por formulario o email. Verificamos disponibilidad y precio.",
+        "deublin_note": "DEUBLIN es una marca de Deublin Company, Illinois, USA. Mencionada para identificar productos. Octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces DEUBLIN par numéro – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces DEUBLIN : envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "DEUBLIN – pièces",
+        "brand_intro": "ABCspareparts fournit des pièces DEUBLIN. Envoyez le numéro – réponse sous 24 h.",
+        "brand_intro_p2": "Pour DEUBLIN, ABCspareparts vérifie disponibilité, options en Europe et alternatives testées. Utilisez la <a href=\"#contact\">demande</a> sans engagement.",
+        "deublin_about_title": "À propos de DEUBLIN",
+        "deublin_about_text": "<p>Informations basées sur sources publiques. Deublin Company, Illinois, USA.</p>",
+        "deublin_products_title": "Familles de produits DEUBLIN",
+        "deublin_products_list": "<li>Kühlmitteldrehdurchführungen (Bore-Mounted bis 24.000 U/min und 150 bar, Rotor-Mounted Pop-Off® für Transfermaschinen, AutoSense® für MMS/Luft/Trocken, Closed Seal Compact <35 mm für EDM)</li><li>Dampfdurchführungen (Typ C selbsttragend bis 10 bar für Papiermaschinen, CMS50 für Wellpappe mit Doppel-Gleitringdichtung, FG-Serie für Yankee-Trockner)</li><li>Siphons für Kondensatabfuhr (DeltaSINT stehend, EcoSINT/RotoSINT rotierend, SRS-Ellenbogen)</li><li>Mehrkanal-Durchführungen (Wasser, Öl, Hydraulik, Vakuum kombiniert)</li><li>Balanced Mechanical Seals (Siliziumkarbid, optisch geläppt, mikroglatt)</li><li>H-Serie für Papier/Textil/Kunststoff (Duo-Flow mit Sichtglas für Kondensatüberwachung)</li>",
+        "deublin_apps_title": "Applications typiques",
+        "deublin_apps_list": "<li>Werkzeugmaschinen (CNC-Bearbeitungszentren, Automotive-Transferlinien, Spindel-Kühlmittelzufuhr bis 24.000 U/min)</li><li>Papier- und Zellstoffindustrie (Trocknerzylinder, Kalander, Yankee-Trockner, Kondensatabfuhr)</li><li>Wellpappen-Herstellung (Hochdruck-Dampf, CMS50 Gleitringdichtung)</li><li>Stahlindustrie (Strangguss-Walzen, kontinuierliches Gießen)</li><li>Gummi- und Kunststoff-Kalandrierung (Heizung/Kühlung rotierender Walzen)</li><li>Textil (Dampfzylinder, Färberei-Trockner)</li>",
+        "deublin_parts_id_title": "Comment identifier le bon numéro",
+        "deublin_parts_id_intro": "Pour un devis rapide :",
+        "deublin_parts_id_list": "<li>Teilenummer vom Durchführungsgehäuse oder Rotor (alphanumerisch)</li><li>Seriennummer der Maschine (Spindel, Walze, Zylinder)</li><li>Foto der Drehdurchführung und Montagestelle</li><li>Angabe: Kühlmittel, Dampf, Hydraulik? Druck, Drehzahl, Temperatur?</li><li>Einbauart: Bore-Mounted, Rotor-Mounted, selbsttragend?</li><li>Menge, Dringlichkeit (Stillstand?)</li>",
+        "brand_faq_q4": "Comment identifier le numéro pour DEUBLIN ?",
+        "brand_faq_a4": "Le numéro se trouve sur étiquette ou plaque. Les numéros DEUBLIN peuvent être numériques ou alphanumériques.",
+        "brand_faq_q5": "ABCspareparts fournit-il des pièces pour systèmes DEUBLIN anciens ?",
+        "brand_faq_a5": "Oui. Nous cherchons chez distributeurs et courtiers en Europe. Nous proposons alternatives compatibles si l'original n'est plus disponible.",
+        "brand_faq_q6": "Pièces DEUBLIN par numéro ?",
+        "brand_faq_a6": "Oui. Envoyez le numéro par formulaire ou email. Nous vérifions disponibilité et prix.",
+        "deublin_note": "DEUBLIN est une marque de Deublin Company, Illinois, USA. Citée pour identifier les produits. Octobre 2026."
+      }
+    }
+  },
+  "elumatec": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "elumatec-about",
+        "className": "brand-info",
+        "titleKey": "elumatec_about_title",
+        "bodyKey": "elumatec_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "elumatec-products",
+            "className": "brand-info",
+            "titleKey": "elumatec_products_title",
+            "listKey": "elumatec_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "elumatec-apps",
+            "className": "brand-info",
+            "titleKey": "elumatec_apps_title",
+            "listKey": "elumatec_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "elumatec-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "elumatec_parts_id_title",
+        "introKey": "elumatec_parts_id_intro",
+        "listKey": "elumatec_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [],
+    "related_labels": {},
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "elumatec_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "ELUMATEC"
+      },
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "ELUMATEC Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "ELUMATEC Ersatzteile: Teilenummer senden – Angebot oft in 24 h. Beschaffung in Europa.",
+        "brand_h1": "ELUMATEC – Ersatzteile",
+        "brand_intro": "ABCspareparts beschafft ELUMATEC Ersatzteile. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Für ELUMATEC prüft ABCspareparts Verfügbarkeit, Liefermöglichkeiten in Europa und – wo sinnvoll – geprüfte Alternativen zu Originalteilen. Diese Seite ersetzt keinen Lager- oder Echtzeit-Abgleich: nutzen Sie die unverbindliche <a href=\"#contact\">Anfrage</a>, damit wir mit Teilenummern und Menge kalkulieren können.",
+        "elumatec_about_title": "Über ELUMATEC",
+        "elumatec_about_text": "<p>Informationen basierend auf öffentlich verfügbaren Quellen. elumatec AG, Mühlacker, Deutschland.</p>",
+        "elumatec_products_title": "Typische ELUMATEC Produktfamilien",
+        "elumatec_products_list": "<li>Automatik-Sägen (Doppelgehrungssägen, Einfachgehrung, Tischsägen für Aluminium/PVC, Sägeblatt 280–650 mm)</li><li>CNC-Bearbeitungszentren (Portalbauweise SBZ 155 bis 1.000×370 mm Profil, 5-Achsen, Kabinenbauweise SBZ 122/125 für geschlossene Bearbeitung)</li><li>Profilfräsen, Bohren, Nuten, Sägen (in einem Zyklus, 6-seitige Bearbeitung optional)</li><li>Werkzeugmagazine (16 Standard + 10 Spezialwerkzeuge, Sägeblätter 200/550 mm, Winkelköpfe)</li><li>Längenautomatik und Barcode-Scanner</li><li>eluCloud-Integration (Industrie 4.0, MES-Kopplung)</li><li>Montageeinrichtungen, Rollenbahnen, Transportwagen, Verglasungsgeräte</li>",
+        "elumatec_apps_title": "Typische Einsatzbereiche",
+        "elumatec_apps_list": "<li>Fenster-, Türen- und Fassadenbau (Aluminium-Profile, CNC-Bearbeitung für Ecklager, Verriegelungen, Drainage)</li><li>Leichtmetall-Konstruktion (Industrie- und Metallbau, Schiebetüren, Trennwände)</li><li>PVC-Profilbearbeitung (Kunststoff-Fenster, gemischte Materialien)</li><li>Dünnblechverarbeitung (Stahlprofile für Trockenbau, Ständerwerk)</li><li>Serienfertigung mit Optimierung (Verschnittreduzierung, PC-Steuerung für Schnittdaten-Import)</li><li>Automatisierte Produktionslinien (Be-/Entlademagazine, Shuttle-Betrieb)</li>",
+        "elumatec_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "elumatec_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "elumatec_parts_id_list": "<li>Teilenummer vom Typenschild der Maschine (z. B. SBZ 155, SBZ 122/70)</li><li>Seriennummer (oft auf Schaltschrank oder Hauptspindel)</li><li>Foto des defekten Bauteils (Sägeblatt-Spanneinrichtung, Fräsmotor, Linearführung, Werkzeugwechsler)</li><li>Angabe: Automatik-Säge oder CNC-Zentrum, Portal oder Kabine?</li><li>Fehlerbeschreibung und betroffene Achse (X/Y/Z)</li><li>Menge, Liefertermin</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein ELUMATEC-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild. ELUMATEC-Teilenummern können numerisch oder alphanumerisch sein. Ein Foto des Typenschilds hilft uns, die Nummer zu identifizieren.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte ELUMATEC-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
+        "brand_faq_q6": "ELUMATEC Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis.",
+        "elumatec_note": "ELUMATEC ist eine Marke von elumatec AG, Mühlacker, Deutschland. Nennung dient ausschließlich der Identifikation. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "ELUMATEC spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "ELUMATEC spare parts: send part number – quote often within 24 h. Sourcing in Europe.",
+        "brand_h1": "ELUMATEC – spare parts",
+        "brand_intro": "ABCspareparts sources ELUMATEC spare parts. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "For ELUMATEC, ABCspareparts checks availability, delivery options in Europe and – where appropriate – tested alternatives. This page is not a stock check: use the no-obligation <a href=\"#contact\">enquiry</a>.",
+        "elumatec_about_title": "About ELUMATEC",
+        "elumatec_about_text": "<p>Information based on publicly available sources. elumatec AG, Mühlacker, Deutschland.</p>",
+        "elumatec_products_title": "Typical ELUMATEC product families",
+        "elumatec_products_list": "<li>Automatik-Sägen (Doppelgehrungssägen, Einfachgehrung, Tischsägen for Aluminium/PVC, Sägeblatt 280–650 mm)</li><li>CNC-Bearbeitungszentren (Portalbauweise SBZ 155 up to 1.000×370 mm Profil, 5-Achsen, Kabinenbauweise SBZ 122/125 for geschlossene Bearbeitung)</li><li>Profilfräsen, Bohren, Nuten, Sägen (in einem Zyklus, 6-seitige Bearbeitung optional)</li><li>Werkzeugmagazine (16 Standard + 10 Spezialwerkzeuge, Sägeblätter 200/550 mm, Winkelköpfe)</li><li>Längenautomatik und Barcode-Scanner</li><li>eluCloud-Integration (Industrie 4.0, MES-Kopplung)</li><li>Montageeinrichtungen, Rollenbahnen, Transportwagen, Verglasungsgeräte</li>",
+        "elumatec_apps_title": "Typical applications",
+        "elumatec_apps_list": "<li>Fenster-, Türen- and Fassadenbau (Aluminium-Profile, CNC-Bearbeitung for Ecklager, Verriegelungen, Drainage)</li><li>Leichtmetall-Konstruktion (Industrie- and Metallbau, Schiebetüren, Trennwände)</li><li>PVC-Profilbearbeitung (Kunststoff-Fenster, gemischte Materialien)</li><li>Dünnblechverarbeitung (Stahlprofile for Trockenbau, Ständerwerk)</li><li>Serienfertigung mit Optimierung (Verschnittreduzierung, PC-Steuerung for Schnittdaten-Import)</li><li>Automatisierte Produktionslinien (Be-/Entlademagazine, Shuttle-Betrieb)</li>",
+        "elumatec_parts_id_title": "How to identify the correct part number",
+        "elumatec_parts_id_intro": "For a fast quote, send us:",
+        "elumatec_parts_id_list": "<li>Teilenummer from Typenschild der Maschine (z. B. SBZ 155, SBZ 122/70)</li><li>Seriennummer (oft auf Schaltschrank or Hauptspindel)</li><li>Foto des defekten Bauteils (Sägeblatt-Spanneinrichtung, Fräsmotor, Linearführung, Werkzeugwechsler)</li><li>Angabe: Automatik-Säge or CNC-Zentrum, Portal or Kabine?</li><li>Fehlerbeschreibung und betroffene Achse (X/Y/Z)</li><li>Menge, Liefertermin</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my ELUMATEC equipment?",
+        "brand_faq_a4": "The part number is on a label on the component or nameplate. ELUMATEC part numbers can be numeric or alphanumeric. A photo helps us identify the number.",
+        "brand_faq_q5": "Does ABCspareparts source spare parts for older or discontinued ELUMATEC systems?",
+        "brand_faq_a5": "Yes. We search distributors and brokers across Europe for remaining stock. If the original is unavailable, we propose compatible alternatives.",
+        "brand_faq_q6": "ELUMATEC spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the form or email. We check availability, lead time and price.",
+        "elumatec_note": "ELUMATEC is a trademark of elumatec AG, Mühlacker, Deutschland. Mentioned solely to identify products. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi ELUMATEC per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi ELUMATEC: invii il codice – preventivo spesso in 24 h.",
+        "brand_h1": "ELUMATEC – ricambi",
+        "brand_intro": "ABCspareparts fornisce ricambi ELUMATEC. Invii il numero – rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Per ELUMATEC, ABCspareparts verifica disponibilità, opzioni di consegna in Europa e alternative testate. Utilizzi la <a href=\"#contact\">richiesta</a> non vincolante.",
+        "elumatec_about_title": "Su ELUMATEC",
+        "elumatec_about_text": "<p>Informazioni basate su fonti pubbliche. elumatec AG, Mühlacker, Deutschland.</p>",
+        "elumatec_products_title": "Famiglie di prodotti ELUMATEC",
+        "elumatec_products_list": "<li>Automatik-Sägen (Doppelgehrungssägen, Einfachgehrung, Tischsägen für Aluminium/PVC, Sägeblatt 280–650 mm)</li><li>CNC-Bearbeitungszentren (Portalbauweise SBZ 155 bis 1.000×370 mm Profil, 5-Achsen, Kabinenbauweise SBZ 122/125 für geschlossene Bearbeitung)</li><li>Profilfräsen, Bohren, Nuten, Sägen (in einem Zyklus, 6-seitige Bearbeitung optional)</li><li>Werkzeugmagazine (16 Standard + 10 Spezialwerkzeuge, Sägeblätter 200/550 mm, Winkelköpfe)</li><li>Längenautomatik und Barcode-Scanner</li><li>eluCloud-Integration (Industrie 4.0, MES-Kopplung)</li><li>Montageeinrichtungen, Rollenbahnen, Transportwagen, Verglasungsgeräte</li>",
+        "elumatec_apps_title": "Applicazioni tipiche",
+        "elumatec_apps_list": "<li>Fenster-, Türen- und Fassadenbau (Aluminium-Profile, CNC-Bearbeitung für Ecklager, Verriegelungen, Drainage)</li><li>Leichtmetall-Konstruktion (Industrie- und Metallbau, Schiebetüren, Trennwände)</li><li>PVC-Profilbearbeitung (Kunststoff-Fenster, gemischte Materialien)</li><li>Dünnblechverarbeitung (Stahlprofile für Trockenbau, Ständerwerk)</li><li>Serienfertigung mit Optimierung (Verschnittreduzierung, PC-Steuerung für Schnittdaten-Import)</li><li>Automatisierte Produktionslinien (Be-/Entlademagazine, Shuttle-Betrieb)</li>",
+        "elumatec_parts_id_title": "Come identificare il numero corretto",
+        "elumatec_parts_id_intro": "Per un preventivo rapido:",
+        "elumatec_parts_id_list": "<li>Teilenummer vom Typenschild der Maschine (z. B. SBZ 155, SBZ 122/70)</li><li>Seriennummer (oft auf Schaltschrank oder Hauptspindel)</li><li>Foto des defekten Bauteils (Sägeblatt-Spanneinrichtung, Fräsmotor, Linearführung, Werkzeugwechsler)</li><li>Angabe: Automatik-Säge oder CNC-Zentrum, Portal oder Kabine?</li><li>Fehlerbeschreibung und betroffene Achse (X/Y/Z)</li><li>Menge, Liefertermin</li>",
+        "brand_faq_q4": "Come identifico il numero per ELUMATEC?",
+        "brand_faq_a4": "Il numero si trova su etichetta o targhetta. I numeri ELUMATEC possono essere numerici o alfanumerici.",
+        "brand_faq_q5": "ABCspareparts fornisce ricambi per sistemi ELUMATEC vecchi?",
+        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in Europa. Proponiamo alternative compatibili se l'originale non è disponibile.",
+        "brand_faq_q6": "Ricambi ELUMATEC per numero?",
+        "brand_faq_a6": "Sì. Invii il numero tramite modulo o email. Verifichiamo disponibilità e prezzo.",
+        "elumatec_note": "ELUMATEC è un marchio di elumatec AG, Mühlacker, Deutschland. Citato per identificare i prodotti. Ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios ELUMATEC por número – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios ELUMATEC: envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "ELUMATEC – recambios",
+        "brand_intro": "ABCspareparts suministra recambios ELUMATEC. Envíe el número – respondemos en 24 horas.",
+        "brand_intro_p2": "Para ELUMATEC, ABCspareparts verifica disponibilidad, opciones en Europa y alternativas probadas. Utilice la <a href=\"#contact\">consulta</a> sin compromiso.",
+        "elumatec_about_title": "Sobre ELUMATEC",
+        "elumatec_about_text": "<p>Información basada en fuentes públicas. elumatec AG, Mühlacker, Deutschland.</p>",
+        "elumatec_products_title": "Familias de productos ELUMATEC",
+        "elumatec_products_list": "<li>Automatik-Sägen (Doppelgehrungssägen, Einfachgehrung, Tischsägen für Aluminium/PVC, Sägeblatt 280–650 mm)</li><li>CNC-Bearbeitungszentren (Portalbauweise SBZ 155 bis 1.000×370 mm Profil, 5-Achsen, Kabinenbauweise SBZ 122/125 für geschlossene Bearbeitung)</li><li>Profilfräsen, Bohren, Nuten, Sägen (in einem Zyklus, 6-seitige Bearbeitung optional)</li><li>Werkzeugmagazine (16 Standard + 10 Spezialwerkzeuge, Sägeblätter 200/550 mm, Winkelköpfe)</li><li>Längenautomatik und Barcode-Scanner</li><li>eluCloud-Integration (Industrie 4.0, MES-Kopplung)</li><li>Montageeinrichtungen, Rollenbahnen, Transportwagen, Verglasungsgeräte</li>",
+        "elumatec_apps_title": "Aplicaciones típicas",
+        "elumatec_apps_list": "<li>Fenster-, Türen- und Fassadenbau (Aluminium-Profile, CNC-Bearbeitung für Ecklager, Verriegelungen, Drainage)</li><li>Leichtmetall-Konstruktion (Industrie- und Metallbau, Schiebetüren, Trennwände)</li><li>PVC-Profilbearbeitung (Kunststoff-Fenster, gemischte Materialien)</li><li>Dünnblechverarbeitung (Stahlprofile für Trockenbau, Ständerwerk)</li><li>Serienfertigung mit Optimierung (Verschnittreduzierung, PC-Steuerung für Schnittdaten-Import)</li><li>Automatisierte Produktionslinien (Be-/Entlademagazine, Shuttle-Betrieb)</li>",
+        "elumatec_parts_id_title": "Cómo identificar el número correcto",
+        "elumatec_parts_id_intro": "Para un presupuesto rápido:",
+        "elumatec_parts_id_list": "<li>Teilenummer vom Typenschild der Maschine (z. B. SBZ 155, SBZ 122/70)</li><li>Seriennummer (oft auf Schaltschrank oder Hauptspindel)</li><li>Foto des defekten Bauteils (Sägeblatt-Spanneinrichtung, Fräsmotor, Linearführung, Werkzeugwechsler)</li><li>Angabe: Automatik-Säge oder CNC-Zentrum, Portal oder Kabine?</li><li>Fehlerbeschreibung und betroffene Achse (X/Y/Z)</li><li>Menge, Liefertermin</li>",
+        "brand_faq_q4": "¿Cómo identifico el número para ELUMATEC?",
+        "brand_faq_a4": "El número está en etiqueta o placa. Los números ELUMATEC pueden ser numéricos o alfanuméricos.",
+        "brand_faq_q5": "¿ABCspareparts suministra recambios para sistemas ELUMATEC antiguos?",
+        "brand_faq_a5": "Sí. Buscamos en distribuidores e intermediarios en Europa. Proponemos alternativas compatibles si el original no está disponible.",
+        "brand_faq_q6": "¿Recambios ELUMATEC por número?",
+        "brand_faq_a6": "Sí. Envíe el número por formulario o email. Verificamos disponibilidad y precio.",
+        "elumatec_note": "ELUMATEC es una marca de elumatec AG, Mühlacker, Deutschland. Mencionada para identificar productos. Octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces ELUMATEC par numéro – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces ELUMATEC : envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "ELUMATEC – pièces",
+        "brand_intro": "ABCspareparts fournit des pièces ELUMATEC. Envoyez le numéro – réponse sous 24 h.",
+        "brand_intro_p2": "Pour ELUMATEC, ABCspareparts vérifie disponibilité, options en Europe et alternatives testées. Utilisez la <a href=\"#contact\">demande</a> sans engagement.",
+        "elumatec_about_title": "À propos de ELUMATEC",
+        "elumatec_about_text": "<p>Informations basées sur sources publiques. elumatec AG, Mühlacker, Deutschland.</p>",
+        "elumatec_products_title": "Familles de produits ELUMATEC",
+        "elumatec_products_list": "<li>Automatik-Sägen (Doppelgehrungssägen, Einfachgehrung, Tischsägen für Aluminium/PVC, Sägeblatt 280–650 mm)</li><li>CNC-Bearbeitungszentren (Portalbauweise SBZ 155 bis 1.000×370 mm Profil, 5-Achsen, Kabinenbauweise SBZ 122/125 für geschlossene Bearbeitung)</li><li>Profilfräsen, Bohren, Nuten, Sägen (in einem Zyklus, 6-seitige Bearbeitung optional)</li><li>Werkzeugmagazine (16 Standard + 10 Spezialwerkzeuge, Sägeblätter 200/550 mm, Winkelköpfe)</li><li>Längenautomatik und Barcode-Scanner</li><li>eluCloud-Integration (Industrie 4.0, MES-Kopplung)</li><li>Montageeinrichtungen, Rollenbahnen, Transportwagen, Verglasungsgeräte</li>",
+        "elumatec_apps_title": "Applications typiques",
+        "elumatec_apps_list": "<li>Fenster-, Türen- und Fassadenbau (Aluminium-Profile, CNC-Bearbeitung für Ecklager, Verriegelungen, Drainage)</li><li>Leichtmetall-Konstruktion (Industrie- und Metallbau, Schiebetüren, Trennwände)</li><li>PVC-Profilbearbeitung (Kunststoff-Fenster, gemischte Materialien)</li><li>Dünnblechverarbeitung (Stahlprofile für Trockenbau, Ständerwerk)</li><li>Serienfertigung mit Optimierung (Verschnittreduzierung, PC-Steuerung für Schnittdaten-Import)</li><li>Automatisierte Produktionslinien (Be-/Entlademagazine, Shuttle-Betrieb)</li>",
+        "elumatec_parts_id_title": "Comment identifier le bon numéro",
+        "elumatec_parts_id_intro": "Pour un devis rapide :",
+        "elumatec_parts_id_list": "<li>Teilenummer vom Typenschild der Maschine (z. B. SBZ 155, SBZ 122/70)</li><li>Seriennummer (oft auf Schaltschrank oder Hauptspindel)</li><li>Foto des defekten Bauteils (Sägeblatt-Spanneinrichtung, Fräsmotor, Linearführung, Werkzeugwechsler)</li><li>Angabe: Automatik-Säge oder CNC-Zentrum, Portal oder Kabine?</li><li>Fehlerbeschreibung und betroffene Achse (X/Y/Z)</li><li>Menge, Liefertermin</li>",
+        "brand_faq_q4": "Comment identifier le numéro pour ELUMATEC ?",
+        "brand_faq_a4": "Le numéro se trouve sur étiquette ou plaque. Les numéros ELUMATEC peuvent être numériques ou alphanumériques.",
+        "brand_faq_q5": "ABCspareparts fournit-il des pièces pour systèmes ELUMATEC anciens ?",
+        "brand_faq_a5": "Oui. Nous cherchons chez distributeurs et courtiers en Europe. Nous proposons alternatives compatibles si l'original n'est plus disponible.",
+        "brand_faq_q6": "Pièces ELUMATEC par numéro ?",
+        "brand_faq_a6": "Oui. Envoyez le numéro par formulaire ou email. Nous vérifions disponibilité et prix.",
+        "elumatec_note": "ELUMATEC est une marque de elumatec AG, Mühlacker, Deutschland. Citée pour identifier les produits. Octobre 2026."
+      }
+    }
   }
 }
