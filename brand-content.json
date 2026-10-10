@@ -17980,5 +17980,147 @@
         "bx_note": "Yaskawa est une marque de Japanischer Robotik- und Motion-Control-Hersteller, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : octobre 2026."
       }
     }
+  },
+  "piovan": {
+    "intro": "PIOVAN entwickelt und produziert Hilfsgeräte für die Kunststoffverarbeitung: Trockner, Dosier- und Mischtechnik, Materialförderung, Temperiergeräte und Kühlung. ABCspareparts beschafft Originalersatzteile und kompatible Alternativen für PIOVAN-Anlagen – Ventile, Sensoren, Filter, Heizungen, Steuerungskomponenten – für Spritzguss, Extrusion und Compounding in ganz Europa.",
+    "products": [
+      "Trockner (Trockenlufttrocknerfür Kunststoffgranulat, z. B. HoPerDry, Dehumidifier)",
+      "Dosier- und Mischsysteme (gravimetrisch und volumetrisch, z. B. Quantum, Micro Dosing)",
+      "Materialfördersysteme (zentral und dezentral, Vakuum, z. B. Easylink, Winitrol)",
+      "Temperiergeräte und Kühlung (Wasser- und Öltemperierung, Kühlwassersätze, z. B. TACT, TTS, Chiller)",
+      "Granulat-Management (Silo, Laden, Big-Bag-Handling)",
+      "Recycling- und Mahlgut-Aufbereitung",
+      "Steuerungen und Software (z. B. Winfactory 4.0, PiovanGroup HMI)"
+    ],
+    "applications": [
+      "Spritzguss (Werkzeugtemperierung, Granulat-Trocknung, Dosierung von Additiven und Farbmasterbatch)",
+      "Extrusion (Rohr-, Profil-, Folienextrusion mit Trockner und Zentralförderung)",
+      "Blasformen und Thermoformen",
+      "Compounding und Masterbatch-Herstellung",
+      "Technische Kunststoffe (PA, PC, PET, TPU) mit Heißluft- oder Trockenlufttrocknern",
+      "Medizintechnik und Food-Contact-Anwendungen (Reinraum, FDA-konforme Materialführung)"
+    ],
+    "faq": [
+      {
+        "q": "Wie identifiziere ich die richtige Teilenummer für mein PIOVAN-Gerät?",
+        "a": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder in der technischen Dokumentation. Oft beginnen Piovan-Teilenummern mit einem Buchstabencode. Ein Foto des Typenschilds und der defekten Komponente (z. B. Ventil, Sensor, Heizung) hilft uns, die Nummer zu identifizieren und die Verfügbarkeit zu prüfen."
+      },
+      {
+        "q": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte PIOVAN-Anlagen?",
+        "a": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor – z. B. Ersatzventile, Sensoren oder Filter mit denselben technischen Spezifikationen."
+      },
+      {
+        "q": "PIOVAN Ersatzteile nach Teilenummer?",
+        "a": "Ja. Senden Sie uns die Teilenummer (z. B. für Ventile, Sensoren, Heizungen, Filter) über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis für das Originalteil oder – wenn gewünscht – kompatible Alternativen."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "section",
+        "id": "piovan-parts-id",
+        "className": "brand-info",
+        "titleKey": "piovan_parts_id_title",
+        "introKey": "piovan_parts_id_intro",
+        "listKey": "piovan_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [
+      "moretto",
+      "wittmann",
+      "engel",
+      "arburg"
+    ],
+    "related_labels": {
+      "moretto": "MORETTO",
+      "wittmann": "WITTMANN",
+      "engel": "ENGEL",
+      "arburg": "ARBURG"
+    },
+    "faq_after": [],
+    "faq_note_key": "piovan_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "PIOVAN"
+      },
+      "mentions": [
+        {
+          "@type": "Product",
+          "name": "PIOVAN Trockner",
+          "category": "Trockenlufttrocknerfür Kunststoffgranulat"
+        },
+        {
+          "@type": "Product",
+          "name": "PIOVAN Dosiersysteme",
+          "category": "Dosier- und Mischtechnik"
+        },
+        {
+          "@type": "Product",
+          "name": "PIOVAN Materialfördersysteme",
+          "category": "Vakuumförderung"
+        },
+        {
+          "@type": "Product",
+          "name": "PIOVAN Temperiergeräte",
+          "category": "Werkzeugtemperierung und Kühlung"
+        }
+      ],
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "PIOVAN Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "PIOVAN Ersatzteile für Trockner, Dosierung, Förderung, Temperierung: Ventile, Sensoren, Filter, Heizungen. Teilenummer (auch Englisch) senden – Angebot oft in 24 h.",
+        "brand_h1": "PIOVAN – Ersatzteile für Kunststoff-Hilfsgeräte (Trockner, Dosierung, Förderung)",
+        "brand_intro": "ABCspareparts beschafft PIOVAN Ersatzteile – Ventile, Sensoren, Filter, Heizungen, Steuerungskomponenten – für Trockner, Dosier- und Fördersysteme, Temperiergeräte und Kühlung. Senden Sie die Teilenummer (auch auf Englisch, z. B. 'piovan rpa 2400 parts', 'part no. 4092008') – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "piovan_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "piovan_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "piovan_parts_id_list": "<li>Teilenummer vom Etikett (oft alphanumerisch, z. B. 4092008, ETP12HT0513, RPA2400-xyz)</li><li>Foto des Typenschilds der Maschine (Modell, Seriennummer)</li><li>Foto der defekten Komponente (Ventil, Sensor, Filter, Heizung)</li><li>Kurze Beschreibung: Was ist defekt? (z. B. Ventil undicht, Sensor defekt, Filter verstopft)</li><li>Menge und gewünschter Liefertermin</li><li>Angabe, ob nur Originalteil zulässig oder kompatible Alternative möglich</li>",
+        "piovan_note": "PIOVAN ist eine Marke der Piovan S.p.A., Venetien, Italien. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Einsatzbereichen basieren auf öffentlich zugänglichen Informationen. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "PIOVAN spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "PIOVAN spare parts for dryers, dosing, conveying, temperature control: valves, sensors, filters, heaters. Send part number (DE/EN) – quote often within 24 h.",
+        "brand_h1": "PIOVAN – spare parts for plastics auxiliary equipment (dryers, dosing, conveying)",
+        "brand_intro": "ABCspareparts sources PIOVAN spare parts – valves, sensors, filters, heaters, control components – for dryers, dosing and conveying systems, temperature controllers and chillers. Send the part number (German or English, e.g. 'piovan rpa 2400 parts', 'part no. 4092008') – we usually reply within 24 hours.",
+        "piovan_parts_id_title": "How to identify the correct part number",
+        "piovan_parts_id_intro": "For a fast quote, send us:",
+        "piovan_parts_id_list": "<li>Part number from the label (often alphanumeric, e.g. 4092008, ETP12HT0513, RPA2400-xyz)</li><li>Photo of the machine nameplate (model, serial number)</li><li>Photo of the faulty component (valve, sensor, filter, heater)</li><li>Brief description: what is defective? (e.g. valve leaking, sensor faulty, filter clogged)</li><li>Quantity and required delivery date</li><li>Whether only the original part is acceptable or a compatible alternative is OK</li>",
+        "piovan_note": "PIOVAN is a trademark of Piovan S.p.A., Veneto, Italy. Mentioned solely to identify the products. Product family and application information is based on publicly available sources. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi PIOVAN per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi PIOVAN per essiccatori, dosatori, trasporto, termoregolazione: valvole, sensori, filtri, riscaldatori. Invii il codice (DE/EN) – preventivo spesso in 24 h.",
+        "brand_h1": "PIOVAN – ricambi per apparecchiature ausiliarie plastica (essiccatori, dosaggio, trasporto)",
+        "brand_intro": "ABCspareparts fornisce ricambi PIOVAN – valvole, sensori, filtri, riscaldatori, componenti di controllo – per essiccatori, sistemi di dosaggio e trasporto, termoregolatori e refrigeratori. Invii il numero di parte (tedesco o inglese, es. 'piovan rpa 2400 parts', 'part no. 4092008') – di solito rispondiamo entro 24 ore.",
+        "piovan_parts_id_title": "Come identificare il numero di parte corretto",
+        "piovan_parts_id_intro": "Per un preventivo rapido, ci invii:",
+        "piovan_parts_id_list": "<li>Numero di parte dall'etichetta (spesso alfanumerico, es. 4092008, ETP12HT0513, RPA2400-xyz)</li><li>Foto della targhetta della macchina (modello, numero di serie)</li><li>Foto del componente difettoso (valvola, sensore, filtro, riscaldatore)</li><li>Breve descrizione: cos'è difettoso? (es. valvola che perde, sensore guasto, filtro intasato)</li><li>Quantità e data di consegna richiesta</li><li>Se è accettabile solo il ricambio originale o anche un'alternativa compatibile</li>",
+        "piovan_note": "PIOVAN è un marchio di Piovan S.p.A., Veneto, Italia. Citato esclusivamente per identificare i prodotti. Informazioni su famiglie di prodotti e applicazioni basate su fonti pubbliche. Aggiornamento: ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios PIOVAN por número de pieza – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios PIOVAN para secadores, dosificación, transporte, termorregulación: válvulas, sensores, filtros, calentadores. Envíe el número (DE/EN) – presupuesto a menudo en 24 h.",
+        "brand_h1": "PIOVAN – recambios para equipos auxiliares plásticos (secadores, dosificación, transporte)",
+        "brand_intro": "ABCspareparts suministra recambios PIOVAN – válvulas, sensores, filtros, calentadores, componentes de control – para secadores, sistemas de dosificación y transporte, termorreguladores y enfriadores. Envíe el número de pieza (alemán o inglés, ej. 'piovan rpa 2400 parts', 'part no. 4092008') – solemos responder en 24 horas.",
+        "piovan_parts_id_title": "Cómo identificar el número de pieza correcto",
+        "piovan_parts_id_intro": "Para un presupuesto rápido, envíenos:",
+        "piovan_parts_id_list": "<li>Número de pieza de la etiqueta (a menudo alfanumérico, ej. 4092008, ETP12HT0513, RPA2400-xyz)</li><li>Foto de la placa de la máquina (modelo, número de serie)</li><li>Foto del componente defectuoso (válvula, sensor, filtro, calentador)</li><li>Breve descripción: ¿qué está defectuoso? (ej. válvula con fugas, sensor averiado, filtro obstruido)</li><li>Cantidad y fecha de entrega requerida</li><li>Si solo se acepta la pieza original o también una alternativa compatible</li>",
+        "piovan_note": "PIOVAN es una marca de Piovan S.p.A., Véneto, Italia. Mencionada únicamente para identificar los productos. Información sobre familias de productos y aplicaciones basada en fuentes públicas. Actualización: octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces PIOVAN par numéro de pièce – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces PIOVAN pour sécheurs, dosage, convoyage, thermorégulation : vannes, capteurs, filtres, chauffages. Envoyez le numéro (DE/EN) – devis souvent sous 24 h.",
+        "brand_h1": "PIOVAN – pièces pour équipements auxiliaires plastiques (sécheurs, dosage, convoyage)",
+        "brand_intro": "ABCspareparts fournit des pièces PIOVAN – vannes, capteurs, filtres, chauffages, composants de contrôle – pour sécheurs, systèmes de dosage et de convoyage, thermorégulateurs et refroidisseurs. Envoyez le numéro de pièce (allemand ou anglais, ex. 'piovan rpa 2400 parts', 'part no. 4092008') – réponse en général sous 24 h.",
+        "piovan_parts_id_title": "Comment identifier le bon numéro de pièce",
+        "piovan_parts_id_intro": "Pour un devis rapide, envoyez-nous :",
+        "piovan_parts_id_list": "<li>Numéro de pièce de l'étiquette (souvent alphanumérique, ex. 4092008, ETP12HT0513, RPA2400-xyz)</li><li>Photo de la plaque signalétique de la machine (modèle, numéro de série)</li><li>Photo du composant défectueux (vanne, capteur, filtre, chauffage)</li><li>Brève description : qu'est-ce qui est défectueux ? (ex. vanne qui fuit, capteur en panne, filtre bouché)</li><li>Quantité et date de livraison souhaitée</li><li>Si seule la pièce d'origine est acceptable ou si une alternative compatible convient</li>",
+        "piovan_note": "PIOVAN est une marque de Piovan S.p.A., Vénétie, Italie. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur sources publiques. Mise à jour : octobre 2026."
+      }
+    }
   }
 }

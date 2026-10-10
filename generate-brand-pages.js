@@ -326,7 +326,16 @@ function buildTranslations(brand) {
       quote_modal_title: 'Unverbindliche Anfrage',
       quote_modal_close: 'Schließen',
       quote_modal_part_label: 'Teilenummer',
-      quote_iframe_title: 'Anfrageformular'
+      quote_iframe_title: 'Anfrageformular',
+      quick_box_title: 'Teilenummer gesucht? Schnellanfrage',
+      quick_box_intro: 'Senden Sie uns Ihre Teilenummer direkt – per Formular, WhatsApp oder E-Mail:',
+      quick_box_part_label: 'Teilenummer',
+      quick_box_part_placeholder: 'z. B. 4092008, ETP12HT0513',
+      quick_box_qty_label: 'Menge (optional)',
+      quick_box_qty_placeholder: '1',
+      quick_box_form_button: 'Formular öffnen',
+      quick_box_whatsapp_button: 'WhatsApp',
+      quick_box_email_button: 'E-Mail'
     },
     en: {
       meta_title: highlightPricing
@@ -380,7 +389,16 @@ function buildTranslations(brand) {
       quote_modal_title: 'No-obligation enquiry',
       quote_modal_close: 'Close',
       quote_modal_part_label: 'Part number',
-      quote_iframe_title: 'Request form'
+      quote_iframe_title: 'Request form',
+      quick_box_title: 'Looking for a part number? Quick request',
+      quick_box_intro: 'Send us your part number directly – via form, WhatsApp or email:',
+      quick_box_part_label: 'Part number',
+      quick_box_part_placeholder: 'e.g. 4092008, ETP12HT0513',
+      quick_box_qty_label: 'Quantity (optional)',
+      quick_box_qty_placeholder: '1',
+      quick_box_form_button: 'Open form',
+      quick_box_whatsapp_button: 'WhatsApp',
+      quick_box_email_button: 'Email'
     },
     it: {
       meta_title: highlightPricing
@@ -434,7 +452,16 @@ function buildTranslations(brand) {
       quote_modal_title: 'Richiesta senza impegno',
       quote_modal_close: 'Chiudi',
       quote_modal_part_label: 'Codice articolo',
-      quote_iframe_title: 'Modulo richiesta'
+      quote_iframe_title: 'Modulo richiesta',
+      quick_box_title: 'Cerca un codice articolo? Richiesta rapida',
+      quick_box_intro: 'Ci invii il codice direttamente – tramite modulo, WhatsApp o e-mail:',
+      quick_box_part_label: 'Codice articolo',
+      quick_box_part_placeholder: 'es. 4092008, ETP12HT0513',
+      quick_box_qty_label: 'Quantità (opzionale)',
+      quick_box_qty_placeholder: '1',
+      quick_box_form_button: 'Apri modulo',
+      quick_box_whatsapp_button: 'WhatsApp',
+      quick_box_email_button: 'E-mail'
     },
     es: {
       meta_title: highlightPricing
@@ -488,7 +515,16 @@ function buildTranslations(brand) {
       quote_modal_title: 'Solicitud sin compromiso',
       quote_modal_close: 'Cerrar',
       quote_modal_part_label: 'Referencia',
-      quote_iframe_title: 'Formulario de solicitud'
+      quote_iframe_title: 'Formulario de solicitud',
+      quick_box_title: '¿Busca una referencia? Solicitud rápida',
+      quick_box_intro: 'Envíenos su referencia directamente – por formulario, WhatsApp o email:',
+      quick_box_part_label: 'Referencia',
+      quick_box_part_placeholder: 'ej. 4092008, ETP12HT0513',
+      quick_box_qty_label: 'Cantidad (opcional)',
+      quick_box_qty_placeholder: '1',
+      quick_box_form_button: 'Abrir formulario',
+      quick_box_whatsapp_button: 'WhatsApp',
+      quick_box_email_button: 'Email'
     },
     fr: {
       meta_title: highlightPricing
@@ -542,7 +578,16 @@ function buildTranslations(brand) {
       quote_modal_title: 'Demande sans engagement',
       quote_modal_close: 'Fermer',
       quote_modal_part_label: 'Référence',
-      quote_iframe_title: 'Formulaire de demande'
+      quote_iframe_title: 'Formulaire de demande',
+      quick_box_title: 'Vous cherchez une référence ? Demande rapide',
+      quick_box_intro: 'Envoyez-nous votre référence directement – par formulaire, WhatsApp ou email :',
+      quick_box_part_label: 'Référence',
+      quick_box_part_placeholder: 'ex. 4092008, ETP12HT0513',
+      quick_box_qty_label: 'Quantité (facultatif)',
+      quick_box_qty_placeholder: '1',
+      quick_box_form_button: 'Ouvrir le formulaire',
+      quick_box_whatsapp_button: 'WhatsApp',
+      quick_box_email_button: 'Email'
     }
   }));
 }
@@ -748,6 +793,30 @@ function buildQuoteModalHtml() {
       </div>
     </div>
   </div>`;
+}
+
+function buildQuickBoxHtml(brand) {
+  return `
+      <section class="quick-box" id="quick-box" aria-labelledby="quick-box-heading">
+        <h2 id="quick-box-heading" data-i18n="quick_box_title">Teilenummer gesucht? Schnellanfrage</h2>
+        <p class="quick-box-intro" data-i18n="quick_box_intro">Senden Sie uns Ihre Teilenummer direkt – per Formular, WhatsApp oder E-Mail:</p>
+        <form class="quick-box-form" id="quickBoxForm" onsubmit="return false;">
+          <div class="quick-box-input-group">
+            <label for="quickBoxPart" data-i18n="quick_box_part_label">Teilenummer</label>
+            <input type="text" id="quickBoxPart" class="quick-box-input" data-i18n-placeholder="quick_box_part_placeholder" placeholder="z. B. 4092008, ETP12HT0513" required>
+          </div>
+          <div class="quick-box-input-group">
+            <label for="quickBoxQty" data-i18n="quick_box_qty_label">Menge (optional)</label>
+            <input type="number" id="quickBoxQty" class="quick-box-input" data-i18n-placeholder="quick_box_qty_placeholder" placeholder="1" min="1">
+          </div>
+          <div class="quick-box-buttons">
+            <button type="button" class="quick-box-btn quick-box-btn-form" data-action="form" data-i18n="quick_box_form_button">Formular öffnen</button>
+            <button type="button" class="quick-box-btn quick-box-btn-whatsapp" data-action="whatsapp" data-i18n="quick_box_whatsapp_button">WhatsApp</button>
+            <button type="button" class="quick-box-btn quick-box-btn-email" data-action="email" data-i18n="quick_box_email_button">E-Mail</button>
+          </div>
+        </form>
+      </section>
+`;
 }
 
 function buildSuppliedPartsHtml(brandParts, brandSlug, mvpIndex) {
@@ -1090,6 +1159,26 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex,
     .brand-form-hint { max-width: none; margin: 0 0 1rem; color: #555; font-size: 0.98rem; text-align: left; }
     .brand-email-alt { max-width: none; margin: 0 0 2rem; text-align: left; font-size: 0.95rem; color: #444; }
     .brand-email-alt a { color: #1e3a5f; font-weight: 600; }
+    .quick-box { margin: 0 0 2.5rem; padding: 1.5rem 1.3rem; border: 2px solid #e67e22; border-radius: 12px; background: linear-gradient(135deg, #fff8f0 0%, #fff 100%); box-shadow: 0 4px 12px rgba(230, 126, 34, 0.1); }
+    .quick-box h2 { font-size: 1.3rem; color: #1e3a5f; margin: 0 0 0.5rem; }
+    .quick-box-intro { font-size: 0.95rem; color: #555; margin: 0 0 1.2rem; }
+    .quick-box-form { display: flex; flex-direction: column; gap: 1rem; }
+    .quick-box-input-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .quick-box-input-group label { font-size: 0.9rem; font-weight: 600; color: #1e3a5f; }
+    .quick-box-input { padding: 0.65rem 0.85rem; border: 1px solid #c5d4e3; border-radius: 8px; font-size: 1rem; }
+    .quick-box-input:focus { outline: 2px solid #e67e22; border-color: #e67e22; }
+    .quick-box-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+    .quick-box-btn { flex: 1; min-width: 140px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .quick-box-btn-form { background: #e67e22; color: #fff; }
+    .quick-box-btn-form:hover { background: #d35400; transform: translateY(-1px); box-shadow: 0 4px 8px rgba(230, 126, 34, 0.3); }
+    .quick-box-btn-whatsapp { background: #25D366; color: #fff; }
+    .quick-box-btn-whatsapp:hover { background: #1ea952; transform: translateY(-1px); box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3); }
+    .quick-box-btn-email { background: #1e3a5f; color: #fff; }
+    .quick-box-btn-email:hover { background: #152d47; transform: translateY(-1px); box-shadow: 0 4px 8px rgba(30, 58, 95, 0.3); }
+    @media (max-width: 640px) {
+      .quick-box-buttons { flex-direction: column; }
+      .quick-box-btn { min-width: 100%; }
+    }
     .brand-success-story { margin: 0 0 2rem; padding: 1.2rem 1.15rem; border: 1px solid #dce8f4; border-radius: 10px; background: #fff8f0; }
     .brand-success-story h2 { font-size: 1.2rem; color: #1e3a5f; margin-bottom: 0.45rem; }
     .brand-success-story p { font-size: 0.92rem; color: #445; line-height: 1.55; margin: 0; }
@@ -1178,6 +1267,7 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
     <div class="container">
       <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
       <p class="brand-email-alt" data-i18n="brand_email_alt">${d.brand_email_alt}</p>
+${buildQuickBoxHtml(brand)}
 ${suppliedPartsHtml}
 ${brandContentListsHtml}${brandContentBlocksHtml}      <section class="related-brands" aria-label="Related brands">
         <h2 data-i18n="related_title">${escapeHtml(d.related_title)}</h2>
@@ -1341,12 +1431,75 @@ ${buildFooterHtml('../')}
     if (loadBtn) {
       loadBtn.addEventListener('click', function() {
         loadContactIframe(SELECTED_PART || getUrlPart());
+        trackClick('load-form');
       });
       loadBtn.addEventListener('mouseover', function() {
         this.style.background = '#d35400';
       });
       loadBtn.addEventListener('mouseout', function() {
         this.style.background = '#e67e22';
+      });
+    }
+    
+    function trackClick(action) {
+      try {
+        if (typeof window.silktideConsentManager === 'undefined') return;
+        var consent = window.silktideConsentManager.getInstance().getConsent();
+        if (!consent || !consent.analytics) return;
+        var key = 'abc_clicks_' + location.pathname.replace(/[^a-z0-9]/gi, '_');
+        var data = {};
+        try {
+          var stored = localStorage.getItem(key);
+          if (stored) data = JSON.parse(stored);
+        } catch (e) {}
+        data[action] = (data[action] || 0) + 1;
+        data._last = new Date().toISOString();
+        try {
+          localStorage.setItem(key, JSON.stringify(data));
+        } catch (e) {}
+      } catch (err) {}
+    }
+    
+    function initQuickBox() {
+      var form = document.getElementById('quickBoxForm');
+      if (!form) return;
+      var partInput = document.getElementById('quickBoxPart');
+      var qtyInput = document.getElementById('quickBoxQty');
+      var buttons = form.querySelectorAll('.quick-box-btn');
+      
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var action = btn.getAttribute('data-action');
+          var part = (partInput.value || '').trim();
+          if (!part) {
+            partInput.focus();
+            return;
+          }
+          var qty = (qtyInput.value || '').trim();
+          var langSel = document.getElementById('languageSelect');
+          var lang = langSel ? langSel.value : 'de';
+          
+          trackClick('quick-box-' + action);
+          
+          if (action === 'form') {
+            SELECTED_PART = part;
+            var iframePlaceholder = document.getElementById('iframePlaceholder');
+            var iframe = document.getElementById('contactFormIframe');
+            if (iframe && iframePlaceholder) {
+              iframe.src = buildIframeSrc(lang, part + (qty ? ' Qty: ' + qty : ''));
+              iframe.style.display = 'block';
+              iframePlaceholder.style.display = 'none';
+            }
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+          } else if (action === 'whatsapp') {
+            var msg = encodeURIComponent('Anfrage ' + BRAND + ' Ersatzteil\\nTeilenummer: ' + part + (qty ? '\\nMenge: ' + qty : ''));
+            window.open('https://wa.me/4915222466077?text=' + msg, '_blank', 'noopener');
+          } else if (action === 'email') {
+            var subject = encodeURIComponent('Anfrage ' + BRAND + ' Ersatzteile');
+            var body = encodeURIComponent('Teilenummer: ' + part + (qty ? '\\nMenge: ' + qty : '') + '\\n\\nBitte senden Sie mir ein Angebot.');
+            window.location.href = 'mailto:info@abcspareparts.eu?subject=' + subject + '&body=' + body;
+          }
+        });
       });
     }
 ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal');
@@ -1542,6 +1695,18 @@ ${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden')
       }` : ''}
     }
 
+    function initContactTracking() {
+      document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
+        link.addEventListener('click', function() { trackClick('whatsapp'); });
+      });
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+        link.addEventListener('click', function() { trackClick('email'); });
+      });
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+        link.addEventListener('click', function() { trackClick('phone'); });
+      });
+    }
+    
     document.addEventListener('DOMContentLoaded', function () {
       var raw = getCurrentLang();
       var lang = ['de', 'en', 'it', 'es', 'fr'].indexOf(raw) !== -1 ? raw : 'de';
@@ -1550,6 +1715,8 @@ ${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden')
       var initialPart = getUrlPart();
       if (initialPart) SELECTED_PART = initialPart;
       changeLanguage(lang);
+      initQuickBox();
+      initContactTracking();
 ${hasSuppliedParts ? `      initPartQuoteButtons();
       initPartsSearch();
       initListinoSearch();
