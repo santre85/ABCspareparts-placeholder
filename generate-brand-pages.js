@@ -330,7 +330,7 @@ function buildTranslations(brand) {
       quick_box_title: 'Teilenummer gesucht? Schnellanfrage',
       quick_box_intro: 'Senden Sie uns Ihre Teilenummer direkt – per Formular, WhatsApp oder E-Mail:',
       quick_box_part_label: 'Teilenummer',
-      quick_box_part_placeholder: 'z. B. 4092008, ETP12HT0513',
+      quick_box_part_placeholder: 'Teilenummer vom Typenschild',
       quick_box_qty_label: 'Menge (optional)',
       quick_box_qty_placeholder: '1',
       quick_box_form_button: 'Formular öffnen',
@@ -393,7 +393,7 @@ function buildTranslations(brand) {
       quick_box_title: 'Looking for a part number? Quick request',
       quick_box_intro: 'Send us your part number directly – via form, WhatsApp or email:',
       quick_box_part_label: 'Part number',
-      quick_box_part_placeholder: 'e.g. 4092008, ETP12HT0513',
+      quick_box_part_placeholder: 'Part number from nameplate',
       quick_box_qty_label: 'Quantity (optional)',
       quick_box_qty_placeholder: '1',
       quick_box_form_button: 'Open form',
@@ -456,7 +456,7 @@ function buildTranslations(brand) {
       quick_box_title: 'Cerca un codice articolo? Richiesta rapida',
       quick_box_intro: 'Ci invii il codice direttamente – tramite modulo, WhatsApp o e-mail:',
       quick_box_part_label: 'Codice articolo',
-      quick_box_part_placeholder: 'es. 4092008, ETP12HT0513',
+      quick_box_part_placeholder: 'Codice dalla targhetta',
       quick_box_qty_label: 'Quantità (opzionale)',
       quick_box_qty_placeholder: '1',
       quick_box_form_button: 'Apri modulo',
@@ -519,7 +519,7 @@ function buildTranslations(brand) {
       quick_box_title: '¿Busca una referencia? Solicitud rápida',
       quick_box_intro: 'Envíenos su referencia directamente – por formulario, WhatsApp o email:',
       quick_box_part_label: 'Referencia',
-      quick_box_part_placeholder: 'ej. 4092008, ETP12HT0513',
+      quick_box_part_placeholder: 'Referencia de la placa',
       quick_box_qty_label: 'Cantidad (opcional)',
       quick_box_qty_placeholder: '1',
       quick_box_form_button: 'Abrir formulario',
@@ -582,7 +582,7 @@ function buildTranslations(brand) {
       quick_box_title: 'Vous cherchez une référence ? Demande rapide',
       quick_box_intro: 'Envoyez-nous votre référence directement – par formulaire, WhatsApp ou email :',
       quick_box_part_label: 'Référence',
-      quick_box_part_placeholder: 'ex. 4092008, ETP12HT0513',
+      quick_box_part_placeholder: 'Référence de la plaque',
       quick_box_qty_label: 'Quantité (facultatif)',
       quick_box_qty_placeholder: '1',
       quick_box_form_button: 'Ouvrir le formulaire',
@@ -1159,14 +1159,14 @@ function buildHtml(brand, slug, translations, relatedRows, brandParts, mvpIndex,
     .brand-form-hint { max-width: none; margin: 0 0 1rem; color: #555; font-size: 0.98rem; text-align: left; }
     .brand-email-alt { max-width: none; margin: 0 0 2rem; text-align: left; font-size: 0.95rem; color: #444; }
     .brand-email-alt a { color: #1e3a5f; font-weight: 600; }
-    .quick-box { margin: 0 0 2.5rem; padding: 1.5rem 1.3rem; border: 2px solid #e67e22; border-radius: 12px; background: linear-gradient(135deg, #fff8f0 0%, #fff 100%); box-shadow: 0 4px 12px rgba(230, 126, 34, 0.1); }
-    .quick-box h2 { font-size: 1.3rem; color: #1e3a5f; margin: 0 0 0.5rem; }
-    .quick-box-intro { font-size: 0.95rem; color: #555; margin: 0 0 1.2rem; }
+    .quick-box { margin: 1.5rem 0 1rem; padding: 1.5rem 1.3rem; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+    .quick-box h2 { font-size: 1.25rem; color: #fff; margin: 0 0 0.5rem; }
+    .quick-box-intro { font-size: 0.95rem; color: rgba(255, 255, 255, 0.95); margin: 0 0 1.2rem; }
     .quick-box-form { display: flex; flex-direction: column; gap: 1rem; }
     .quick-box-input-group { display: flex; flex-direction: column; gap: 0.35rem; }
-    .quick-box-input-group label { font-size: 0.9rem; font-weight: 600; color: #1e3a5f; }
-    .quick-box-input { padding: 0.65rem 0.85rem; border: 1px solid #c5d4e3; border-radius: 8px; font-size: 1rem; }
-    .quick-box-input:focus { outline: 2px solid #e67e22; border-color: #e67e22; }
+    .quick-box-input-group label { font-size: 0.9rem; font-weight: 600; color: #fff; }
+    .quick-box-input { padding: 0.65rem 0.85rem; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 8px; font-size: 1rem; background: rgba(255, 255, 255, 0.95); }
+    .quick-box-input:focus { outline: 2px solid #e67e22; border-color: #e67e22; background: #fff; }
     .quick-box-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
     .quick-box-btn { flex: 1; min-width: 140px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
     .quick-box-btn-form { background: #e67e22; color: #fff; }
@@ -1256,7 +1256,7 @@ ${brandRichCss}  </style>
     <div class="container">
       <nav class="breadcrumb" data-i18n="brand_breadcrumb" aria-label="Breadcrumb">${d.brand_breadcrumb}</nav>
       <h1 data-i18n="brand_h1">${d.brand_h1}</h1>
-      <p class="lead" data-i18n="brand_intro">${d.brand_intro}</p>
+${buildQuickBoxHtml(brand)}      <p class="lead" data-i18n="brand_intro">${d.brand_intro}</p>
       <p class="lead lead-extra" data-i18n="brand_intro_p2">${d.brand_intro_p2}</p>
 ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top_extra">${escapeHtml(d.brand_top_extra)}</p>
 ` : ''}${brandContentIntroHtml}    </div>
@@ -1267,7 +1267,7 @@ ${d.brand_top_extra ? `      <p class="lead lead-top-brand" data-i18n="brand_top
     <div class="container">
       <p class="brand-form-hint" data-i18n="brand_form_hint">${d.brand_form_hint}</p>
       <p class="brand-email-alt" data-i18n="brand_email_alt">${d.brand_email_alt}</p>
-${buildQuickBoxHtml(brand)}
+
 ${suppliedPartsHtml}
 ${brandContentListsHtml}${brandContentBlocksHtml}      <section class="related-brands" aria-label="Related brands">
         <h2 data-i18n="related_title">${escapeHtml(d.related_title)}</h2>
@@ -1431,7 +1431,6 @@ ${buildFooterHtml('../')}
     if (loadBtn) {
       loadBtn.addEventListener('click', function() {
         loadContactIframe(SELECTED_PART || getUrlPart());
-        trackClick('load-form');
       });
       loadBtn.addEventListener('mouseover', function() {
         this.style.background = '#d35400';
@@ -1439,25 +1438,6 @@ ${buildFooterHtml('../')}
       loadBtn.addEventListener('mouseout', function() {
         this.style.background = '#e67e22';
       });
-    }
-    
-    function trackClick(action) {
-      try {
-        if (typeof window.silktideConsentManager === 'undefined') return;
-        var consent = window.silktideConsentManager.getInstance().getConsent();
-        if (!consent || !consent.analytics) return;
-        var key = 'abc_clicks_' + location.pathname.replace(/[^a-z0-9]/gi, '_');
-        var data = {};
-        try {
-          var stored = localStorage.getItem(key);
-          if (stored) data = JSON.parse(stored);
-        } catch (e) {}
-        data[action] = (data[action] || 0) + 1;
-        data._last = new Date().toISOString();
-        try {
-          localStorage.setItem(key, JSON.stringify(data));
-        } catch (e) {}
-      } catch (err) {}
     }
     
     function initQuickBox() {
@@ -1478,8 +1458,6 @@ ${buildFooterHtml('../')}
           var qty = (qtyInput.value || '').trim();
           var langSel = document.getElementById('languageSelect');
           var lang = langSel ? langSel.value : 'de';
-          
-          trackClick('quick-box-' + action);
           
           if (action === 'form') {
             SELECTED_PART = part;
@@ -1695,18 +1673,6 @@ ${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden')
       }` : ''}
     }
 
-    function initContactTracking() {
-      document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
-        link.addEventListener('click', function() { trackClick('whatsapp'); });
-      });
-      document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
-        link.addEventListener('click', function() { trackClick('email'); });
-      });
-      document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
-        link.addEventListener('click', function() { trackClick('phone'); });
-      });
-    }
-    
     document.addEventListener('DOMContentLoaded', function () {
       var raw = getCurrentLang();
       var lang = ['de', 'en', 'it', 'es', 'fr'].indexOf(raw) !== -1 ? raw : 'de';
@@ -1716,7 +1682,6 @@ ${hasSuppliedParts ? `      if (quoteModal && !quoteModal.hasAttribute('hidden')
       if (initialPart) SELECTED_PART = initialPart;
       changeLanguage(lang);
       initQuickBox();
-      initContactTracking();
 ${hasSuppliedParts ? `      initPartQuoteButtons();
       initPartsSearch();
       initListinoSearch();
