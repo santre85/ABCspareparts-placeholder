@@ -1,12 +1,33 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
-  "generated": "2026-09-17",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands)",
+  "generated": "2026-10-16",
   "listini_files": 301648,
   "brands": [
     {
       "brand": "ABB",
       "brand_slug": "abb",
-      "parts": [],
+      "parts": [
+        {
+          "part_number": "1SDA038324R0001",
+          "description": "Getriebemotor für ABB-SACE Leistungsschalter, M/1 mit (1) (11) M/2 ,220-250 V DC; 0,85 ... 1,1 Un; 500 W, 200 W"
+        },
+        {
+          "part_number": "1SDA074152R1",
+          "description": "EKIP COM PROFIBUS E1.2..E6.2"
+        },
+        {
+          "part_number": "1SDA074166R1",
+          "description": "EKIP COM ACTUATOR"
+        },
+        {
+          "part_number": "560PSR00",
+          "description": "Power Supply Unit"
+        },
+        {
+          "part_number": "XPCSG-17BG",
+          "description": "Wellrohr"
+        }
+      ],
       "listino": {
         "file": "listini-data/abb.json",
         "count": 127792,
@@ -47,12 +68,94 @@
       }
     },
     {
+      "brand": "Alfamatic",
+      "brand_slug": "alfamatic",
+      "parts": [
+        {
+          "part_number": "AX09 165/10",
+          "description": "PNEUMO-HYDRAULIC CYLINDER"
+        }
+      ]
+    },
+    {
+      "brand": "Allen Bradley",
+      "brand_slug": "allen-bradley",
+      "parts": [
+        {
+          "part_number": "150-F43NBD",
+          "description": "Allen Bradley 150-F43NBDAllen Bradley · Drive SMC Flex Alen Bradley 150-F43NBD B · 150-F43NBD"
+        },
+        {
+          "part_number": "1734-MB",
+          "description": "Allen Bradley 1734-MBAllen Bradley · Teminal Base Point I/O Allen Br 1734-MB · 1734-MB"
+        },
+        {
+          "part_number": "1734-OE2C",
+          "description": "Allen Bradley 1734-OE2CAllen Bradley · Analogue Output 4-2mA Allen B 1734-OE2C · 1734-OE2C"
+        },
+        {
+          "part_number": "1756-EN2T",
+          "description": "Allen Bradley 1756-EN2TAllen Bradley · Module Bridge Ethernet I/PAB 1756-EN2T/C · 1756-EN2T"
+        },
+        {
+          "part_number": "1794-IB16",
+          "description": "Allen Bradley 1794-IB16Allen Bradley · Flex 16 Point Digital Input Module · 1794-IB16"
+        },
+        {
+          "part_number": "20AC030A0AYNANC0",
+          "description": "Allen Bradley 20AC030A0AYNANC0Allen Bradley · PowerFlex 70 AC Drive 30 A at 15 kW 20A · 20AC030A0AYNANC0"
+        },
+        {
+          "part_number": "25B-D4P0N104",
+          "description": "Allen Bradley 25B-D4P0N104Allen Bradley · Drive Frequency 1.5KW Powerflex 525 · 25B-D4P0N104"
+        },
+        {
+          "part_number": "2711P-T6C20D8",
+          "description": "Allen Bradley 2711P-T6C20D8Allen Bradley · Panel View 600 Color Allen 2711P-T6C20D8 · 2711P-T6C20D8"
+        }
+      ]
+    },
+    {
+      "brand": "Alwitco",
+      "brand_slug": "alwitco",
+      "parts": [
+        {
+          "part_number": "2DEPFE000216",
+          "description": "216 PFD - FILTERNDE ELEMENT"
+        }
+      ]
+    },
+    {
+      "brand": "Anton Paar",
+      "brand_slug": "anton-paar",
+      "parts": [
+        {
+          "part_number": "104453",
+          "description": "Schraubkappe HVT (montiert)"
+        }
+      ]
+    },
+    {
       "brand": "ATLAS COPCO",
       "brand_slug": "atlas-copco",
       "parts": [
         {
+          "part_number": "2906 0565 00",
+          "description": "Elemento separatore per compressore Atlas Copco GA 132W"
+        },
+        {
           "part_number": "80701.000507",
           "description": "BALL JOINT ASSEMBLY"
+        }
+      ]
+    },
+    {
+      "brand": "ATR",
+      "brand_slug": "atr",
+      "parts": [
+        {
+          "part_number": "VM321-10 (EX. VM221-10 )",
+          "description": "Effektivwert-Messverstärker (rms/DC-Wandler)"
         }
       ]
     },
@@ -69,6 +172,26 @@
           "part_number": "V-530/BH500",
           "description": "Smoke Detector ** Replacement for 116-BHH-500** Please check that the socket installed on board have been produced afte…",
           "case_slug": "autronica-smoke-detectors-v430-v530"
+        }
+      ]
+    },
+    {
+      "brand": "Aventics",
+      "brand_slug": "aventics",
+      "parts": [
+        {
+          "part_number": "V581-5/2AR-I2-2CNA-AA-A-C",
+          "description": "Aventics V581-5/2AR-I2-2CNA-AA-A-C"
+        }
+      ]
+    },
+    {
+      "brand": "Baelz",
+      "brand_slug": "baelz",
+      "parts": [
+        {
+          "part_number": "Best.-Nr. D-VENTIL",
+          "description": "Ventil, komplett montiert ohne Druckluft Weg A-AB geschlossen"
         }
       ]
     },
@@ -96,8 +219,226 @@
       "brand_slug": "baumer",
       "parts": [
         {
+          "part_number": "EN580C.ML-BN12.HH2PB.21160.H",
+          "description": "Absoluter Drehgeber"
+        },
+        {
+          "part_number": "EN580C.ML-BN12.HH2PB.21160.H-11262807",
+          "description": "Absoluter Drehgeber EN580C"
+        },
+        {
           "part_number": "EN580C.ML-SC10.HH2C1.21160.H-11267453",
           "description": "Absoluter Drehgeber EN580C (successor of GXMMW.0205P32)"
+        }
+      ]
+    },
+    {
+      "brand": "Biesse",
+      "brand_slug": "biesse",
+      "parts": [
+        {
+          "part_number": "091604600",
+          "description": "Zylinder für Saugerkugel"
+        },
+        {
+          "part_number": "0916A0017",
+          "description": "FEDERZYLINDER FÜR SAUGTELLER - BREITE 80 mm"
+        },
+        {
+          "part_number": "1614A0037",
+          "description": "Saugerplatte 160x80x24mm"
+        },
+        {
+          "part_number": "1614A0039",
+          "description": "Saugerplatte 160x152x24mm"
+        },
+        {
+          "part_number": "280106300",
+          "description": "DRUCKFEDER FÜR VAKUUMTELLER"
+        },
+        {
+          "part_number": "292101300",
+          "description": "Kugel D. 13 MM IN NYLON"
+        },
+        {
+          "part_number": "311001700",
+          "description": "DICHTRING OR 2068"
+        },
+        {
+          "part_number": "311002000",
+          "description": "RING"
+        },
+        {
+          "part_number": "311003900",
+          "description": "O-RING 15.88 x 2.62 - OR 121"
+        },
+        {
+          "part_number": "6420A0119",
+          "description": "Wartungseinheit"
+        }
+      ]
+    },
+    {
+      "brand": "BOSCH REXROTH",
+      "brand_slug": "bosch-rexroth",
+      "parts": [
+        {
+          "part_number": "1020418303011000",
+          "description": "Ventilblock"
+        },
+        {
+          "part_number": "5776960900-AGZ",
+          "description": "5/2-Wegemagnetventil 148x55x30 577 696"
+        },
+        {
+          "part_number": "AZPF-11-008RCB20MB",
+          "description": "PumpRefurbished12 months warranty"
+        },
+        {
+          "part_number": "R030567904",
+          "description": "Electromechanical Cylinder size EMC-063"
+        },
+        {
+          "part_number": "R414005407‑AGZ 5/2‑Weg",
+          "description": "Magnetspule‑Ventil gross"
+        },
+        {
+          "part_number": "R902431327",
+          "description": "Pump"
+        }
+      ]
+    },
+    {
+      "brand": "BÜRKERT",
+      "brand_slug": "burkert",
+      "parts": [
+        {
+          "part_number": "20093082",
+          "description": "BÜRKERT 20093082Ventilmembran DN25"
+        },
+        {
+          "part_number": "688424",
+          "description": "BÜRKERT 688424Ventilmembran DN25"
+        },
+        {
+          "part_number": "693163",
+          "description": "BÜRKERT 693163Ventilmembran DN15"
+        },
+        {
+          "part_number": "693176",
+          "description": "BÜRKERT 693176Ventilmembran DN15"
+        },
+        {
+          "part_number": "693178",
+          "description": "BÜRKERT 693178Ventilmembran DN25"
+        },
+        {
+          "part_number": "693180",
+          "description": "BÜRKERT 693180Ventilmembran DN40"
+        },
+        {
+          "part_number": "693181",
+          "description": "BÜRKERT 693181Ventilmembran DN50"
+        }
+      ]
+    },
+    {
+      "brand": "CAREL",
+      "brand_slug": "carel",
+      "parts": [
+        {
+          "part_number": "IRDRV10000",
+          "description": "DISCONTINUED BY MANUFACTURERTEMPERATURE CONTROLSINGLE RELAY OUTPUTIR / BUZZPT10024/230 VDIN RAILFACTORY WARRANTY MAY NO…"
+        },
+        {
+          "part_number": "UCHBP000X0200",
+          "description": "Microchiller Fronttafeleinbau 24Vac/dc mit NFC und Bluetooth, MCH2 kompatibel Carel Kaltwassersatzregler"
+        },
+        {
+          "part_number": "UCHCONP010",
+          "description": "Steckverbinder- und Kabelbausatz für µChiller/µRack Fronttafeleinbau MOLEX/Free, 100 cm Kabel Carel Zubehör"
+        }
+      ]
+    },
+    {
+      "brand": "CIEMME",
+      "brand_slug": "ciemme",
+      "parts": [
+        {
+          "part_number": "974400110000",
+          "description": "Deckeldichtung für K10 - EPDM- Durchmesser - 200 mmZolltarifnummer : 40169300"
+        }
+      ]
+    },
+    {
+      "brand": "CISCO",
+      "brand_slug": "cisco",
+      "parts": [
+        {
+          "part_number": "ABC04016",
+          "description": "Cornetta per Cisco SPA504G (Serie SPA 500)"
+        }
+      ]
+    },
+    {
+      "brand": "Cognex",
+      "brand_slug": "cognex",
+      "parts": [
+        {
+          "part_number": "DataMan 300 – 10.3mm Liquid Lens Kit",
+          "description": "Liquid lens kit"
+        },
+        {
+          "part_number": "DMR-363X-1000",
+          "description": "DataMatrix reader, fixed mount with PowerGrid"
+        }
+      ]
+    },
+    {
+      "brand": "DESOUTTER",
+      "brand_slug": "desoutter",
+      "parts": [
+        {
+          "part_number": "6155680335",
+          "description": "torque sensor"
+        }
+      ]
+    },
+    {
+      "brand": "DNH",
+      "brand_slug": "dnh",
+      "parts": [
+        {
+          "part_number": "DH30",
+          "description": "DNH Horn without driver 345mm for DST100 RAL7035"
+        },
+        {
+          "part_number": "DST100",
+          "description": "DNH Driver unit ALU 100W 100V IP67 RAL7035"
+        }
+      ]
+    },
+    {
+      "brand": "DUNKERMOTOREN",
+      "brand_slug": "dunkermotoren",
+      "parts": [
+        {
+          "part_number": "BG 75x50",
+          "description": "DC-Motor 40V 3500rpm 12A"
+        }
+      ]
+    },
+    {
+      "brand": "Euchner",
+      "brand_slug": "euchner",
+      "parts": [
+        {
+          "part_number": "N01R-550-M (C081 R-C-V)",
+          "description": "Limit switch, 1 plunger"
+        },
+        {
+          "part_number": "SN02R08-552-M (C082R-C-V)",
+          "description": "Limit switch, 2 plungers, 8 mm spacing"
         }
       ]
     },
@@ -124,12 +465,154 @@
       ]
     },
     {
+      "brand": "Festo",
+      "brand_slug": "festo",
+      "parts": [
+        {
+          "part_number": "552937",
+          "description": "DPA-100-16-CRVZS20"
+        },
+        {
+          "part_number": "752722",
+          "description": "DSBF-C-50- -"
+        },
+        {
+          "part_number": "DSM-32-270-P-FW-A-B",
+          "description": "Schwenkantrieb"
+        },
+        {
+          "part_number": "MSOEB-3-24V DC",
+          "description": "Magnetspule"
+        }
+      ]
+    },
+    {
+      "brand": "FLEXLINK",
+      "brand_slug": "flexlink",
+      "parts": [
+        {
+          "part_number": "3904431",
+          "description": "Transmissionsabdeckung"
+        },
+        {
+          "part_number": "5056817",
+          "description": "Ersatzteil-Kit für Rutschkupplung"
+        },
+        {
+          "part_number": "5111584",
+          "description": "Ersatzteil-Kit Einlaufgleitstück XL"
+        },
+        {
+          "part_number": "5111590",
+          "description": "Antriebsrad XL"
+        },
+        {
+          "part_number": "5111591",
+          "description": "Ersatzteil-Kit Führungen (XLER)"
+        },
+        {
+          "part_number": "XLCR 25",
+          "description": "Gleitschiene HDPE, (schwarz), Länge 25 m"
+        }
+      ]
+    },
+    {
+      "brand": "Fuji Electric",
+      "brand_slug": "fuji-electric",
+      "parts": [
+        {
+          "part_number": "NP1X1606-W",
+          "description": "16-point Digital Input Module"
+        }
+      ]
+    },
+    {
+      "brand": "GENERIC",
+      "brand_slug": "generic",
+      "parts": [
+        {
+          "part_number": "6027.051",
+          "description": "RUBBER HOSE FOR HYDROCARBONS T19B 16 BAR Ø51 X 65 MM 40 M"
+        }
+      ]
+    },
+    {
+      "brand": "GHR",
+      "brand_slug": "ghr",
+      "parts": [
+        {
+          "part_number": "D166- L- G- 43- NNL2000   (Ex. Type D166/L/21)",
+          "description": "DOM Pressure RegulatorMedium: GasTemperature: max. 80°Cp1 Inlet: max. 100 barp2 Outlet: 0.5–100 bar, adjustableSeat: 9…"
+        },
+        {
+          "part_number": "Repair kit for DOM pressure regulator Type:  D166- L- G- 43- NNL2000",
+          "description": "Repair kit for DOM pressure regulator Type: D166- L- G- 43- NNL2000 (new version)"
+        },
+        {
+          "part_number": "Repair kit for DOM pressure regulator Type:  D166/L/21",
+          "description": "Repair kit for DOM pressure regulatorType: D166/L/21 (old version)"
+        }
+      ]
+    },
+    {
+      "brand": "Grundfos",
+      "brand_slug": "grundfos",
+      "parts": [
+        {
+          "part_number": "97851334",
+          "description": "POMPA GRUNDFOS TP 40-120/2AFABQQE-DX1 0,37KW Q=11,4m³/h H=7,4m"
+        },
+        {
+          "part_number": "98122409",
+          "description": "POMPA GRUNDFOS TP 40-60/2AFABQQE-CX1 0,25KW Q=10,4m³/h H=4,6m"
+        },
+        {
+          "part_number": "SEV.65.65.40.2.51D",
+          "description": "GRUNDFOS AbwasserpumpeFreistromlaufradSEV.65.65.40.2.51D 10m KabelNachfolgemodell zu 96047733Typ: SEV.65.65.40.2.51DTec…"
+        }
+      ]
+    },
+    {
       "brand": "Harmsco",
       "brand_slug": "harmsco",
       "parts": [
         {
           "part_number": "Guarnizione coperchio 550 e11",
           "description": "Guarnizione EPDM/HIF7/24-HUR-BB-HP rif. HARMSCO 550-E"
+        }
+      ]
+    },
+    {
+      "brand": "Harting",
+      "brand_slug": "harting",
+      "parts": [
+        {
+          "part_number": "09 14 006 0371",
+          "description": "Gelenkrahmen Han 6B; 2 Module 09 14 006* Size/dimension: 51,2X34,4X36,3"
+        },
+        {
+          "part_number": "09 33 000 6XXX",
+          "description": "Kontaktstift 4,5x25 Kupfer 09 33 000 61* Size/dimension: 4,5X25 Werkstoff: PA"
+        }
+      ]
+    },
+    {
+      "brand": "Hartmann",
+      "brand_slug": "hartmann",
+      "parts": [
+        {
+          "part_number": "700009B",
+          "description": "Bandmesser (18 St.) 176''/4470,4 x 12 x 0,45 mm, Welle 12 mm"
+        }
+      ]
+    },
+    {
+      "brand": "HAUSER",
+      "brand_slug": "hauser",
+      "parts": [
+        {
+          "part_number": "2146305",
+          "description": "EX19 Collet Set for 45 S Grinding Motor, suitable for speeds from 9,000 to 45,000 rpm; collet diameters: 3, 4, 5, 6, 8…"
         }
       ]
     },
@@ -186,6 +669,16 @@
       ]
     },
     {
+      "brand": "HERRMANN",
+      "brand_slug": "herrmann",
+      "parts": [
+        {
+          "part_number": "215009",
+          "description": "HSG V2 ultrasonic hand-held welding machine with plastic housing"
+        }
+      ]
+    },
+    {
       "brand": "Hi-Force Hydraulics",
       "brand_slug": "hi-force-hydraulics",
       "parts": [
@@ -200,12 +693,22 @@
       ]
     },
     {
+      "brand": "Hoyer Motors",
+      "brand_slug": "hoyer-motors",
+      "parts": [
+        {
+          "part_number": "HMC3 250M-2 B3 55kW IE3@50 400/690@50 RAL9005",
+          "description": "Motor"
+        }
+      ]
+    },
+    {
       "brand": "Hübner Elektromaschinen AG",
       "brand_slug": "hubner-elektromaschinen-ag",
       "parts": [
         {
           "part_number": "GT9.06L/420k",
-          "description": "Hübner Analog-Tacho Longlife DC GT9.06L/420K — 20 V bei 1000/min, Ø 17 mm Konuswelle 1:10, passend Siemens 1HU",
+          "description": "Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…",
           "case_slug": "hubner-tachogenerator-gt906l-420k"
         }
       ]
@@ -222,9 +725,140 @@
       ]
     },
     {
+      "brand": "Hydac",
+      "brand_slug": "hydac",
+      "parts": [
+        {
+          "part_number": "2103421",
+          "description": "UEBERG-ST FPU G3-W21,8x1/14 (BAUGR)"
+        },
+        {
+          "part_number": "2108819",
+          "description": "ADAPTER FPU A6-G3/4A BOLENZ (BAUGR)"
+        },
+        {
+          "part_number": "2110629",
+          "description": "ADAPTER FPU A7-G1/4 QHP (BAUGR)"
+        },
+        {
+          "part_number": "2114310",
+          "description": "FPU-1-350/100F2,5A3"
+        },
+        {
+          "part_number": "2116149",
+          "description": "FPU-1-350/400A3 (ohne Schlauch)"
+        },
+        {
+          "part_number": "2117669",
+          "description": "Seal kit for FPU-1"
+        },
+        {
+          "part_number": "2124524",
+          "description": "ADAPTER FPU A8-G 3/4LEDUC (BAUGR)*"
+        },
+        {
+          "part_number": "2128638",
+          "description": "ADAPTER FPU A9-VG8 GREER (BAUGR)*"
+        },
+        {
+          "part_number": "2128849",
+          "description": "ADAPTER FPU A10-7/8-14-UNF HYDAC (BAUGR)"
+        },
+        {
+          "part_number": "236376",
+          "description": "UEBERG-ST FPU G2-G5/8-ISO228 (BAUGR)"
+        },
+        {
+          "part_number": "236515",
+          "description": "charging hose F W24,32x1/14 (4,0m)"
+        },
+        {
+          "part_number": "291531",
+          "description": "ADAPTER FPU A5-M8x1 LEDUC (BAUGR)"
+        },
+        {
+          "part_number": "291533",
+          "description": "ADAPTER FPU A3-7/8-14UNF HYDAC"
+        },
+        {
+          "part_number": "291536",
+          "description": "ADAPTER FPU A4-7/8-14UNF OLAER (BAUGR)"
+        },
+        {
+          "part_number": "3018210",
+          "description": "ADAPTER FPU A11-M16x2 Hydac (BAUGR)"
+        },
+        {
+          "part_number": "3019418",
+          "description": "charging hose FM M30x1,5 (4,0m)"
+        },
+        {
+          "part_number": "3019420",
+          "description": "charging hose FW W30x2 (4,0m)"
+        },
+        {
+          "part_number": "3203185",
+          "description": "ADAPTER FPU A12-M16x2 MINIMESS (BAUGR)"
+        },
+        {
+          "part_number": "3269153",
+          "description": "Seal kit for FPU adapter"
+        },
+        {
+          "part_number": "361619",
+          "description": "ADAPTER FPU A1-M16x1,5 MINIMESS (BAUGR)"
+        },
+        {
+          "part_number": "373405",
+          "description": "charging hose F W24,32x1/14 (10,0m)"
+        },
+        {
+          "part_number": "3911267",
+          "description": "ADAPTER FPU A13 5/8-18UNF HYDAC (BAUGR)"
+        },
+        {
+          "part_number": "606765",
+          "description": "pressure gauge HN60-01-A 63/ 100/G 1/4B"
+        },
+        {
+          "part_number": "606766",
+          "description": "pressure gauge HN60-01-A 63/ 160/G 1/4B"
+        },
+        {
+          "part_number": "608034",
+          "description": "pressure gauge HN60-01-A 63/ 600/G 1/4B"
+        },
+        {
+          "part_number": "635139",
+          "description": "Pressure gauge 0-10bar"
+        },
+        {
+          "part_number": "635141",
+          "description": "Pressure gauge 0-100bar"
+        },
+        {
+          "part_number": "635142",
+          "description": "Pressure gauge 0-250bar"
+        },
+        {
+          "part_number": "635143",
+          "description": "Pressure gauge 0-400bar"
+        }
+      ]
+    },
+    {
       "brand": "IFM",
       "brand_slug": "ifm",
-      "parts": [],
+      "parts": [
+        {
+          "part_number": "123",
+          "description": "ifm electronic O6G500/OG5PGFAKG/US Lichtschranke/Distanzsensor"
+        },
+        {
+          "part_number": "IG0337",
+          "description": "Induktiver Sensor IGA2005-ABOA/SL/LS-100AK/RT"
+        }
+      ],
       "listino": {
         "file": "listini-data/ifm.json",
         "count": 14787,
@@ -265,6 +899,192 @@
       }
     },
     {
+      "brand": "IMI NORGREN",
+      "brand_slug": "imi-norgren",
+      "parts": [
+        {
+          "part_number": "QM/1525/75/27",
+          "description": "Rückkopplung"
+        },
+        {
+          "part_number": "QM/1525/75/29",
+          "description": "CYLINDER ACCESSORY/REPLACEMENT PART"
+        },
+        {
+          "part_number": "SPC/141548",
+          "description": "Entkuppelzylinder 50/Hub=80mm EW P-Zyli*"
+        },
+        {
+          "part_number": "SPC/171502",
+          "description": "Zylinder SPC/171502"
+        }
+      ]
+    },
+    {
+      "brand": "Impa",
+      "brand_slug": "impa",
+      "parts": [
+        {
+          "part_number": "732658",
+          "description": "STAINLESS STEEL THREATED REDUCING NIPPLES / SIZE: 3/4X1/2"
+        },
+        {
+          "part_number": "750551",
+          "description": "MARINE BRONZE 20 KGF/CM2 GLOBE VALVE F-7388 / SIZE: M20X1.5"
+        }
+      ]
+    },
+    {
+      "brand": "Indramat",
+      "brand_slug": "indramat",
+      "parts": [
+        {
+          "part_number": "ID268508, DKC11.3-040-7-FW R911279433 (Refurbished)",
+          "description": "Servoregler"
+        }
+      ]
+    },
+    {
+      "brand": "INGETEAM",
+      "brand_slug": "ingeteam",
+      "parts": [
+        {
+          "part_number": "AAX0052",
+          "description": "RS485 communication board"
+        }
+      ]
+    },
+    {
+      "brand": "Ixys",
+      "brand_slug": "ixys",
+      "parts": [
+        {
+          "part_number": "VHF28-12IO5",
+          "description": "Bridge rectifier: half-controlled"
+        }
+      ]
+    },
+    {
+      "brand": "KEPCO",
+      "brand_slug": "kepco",
+      "parts": [
+        {
+          "part_number": "127-0354",
+          "description": "Circuit Breaker"
+        }
+      ]
+    },
+    {
+      "brand": "Keyence",
+      "brand_slug": "keyence",
+      "parts": [
+        {
+          "part_number": "GL-R80H",
+          "description": "Safety Light Curtain (Set: transmitter and receiver)"
+        },
+        {
+          "part_number": "HR-B1",
+          "description": "BATTERY MODEL HR-B1 FOR BARCODE READER KEYENCE HR-100B"
+        },
+        {
+          "part_number": "IV3-G120",
+          "description": "Vision Sensor IV3 Series – Compact Model Sensor Amplifier"
+        },
+        {
+          "part_number": "IV3-G600CA",
+          "description": "Vision Sensor IV3 Series – Compact Sensor Head, Wide Field of View, Colour AF Type"
+        },
+        {
+          "part_number": "IV4-G120",
+          "description": "compact AI vision sensor amplifier"
+        },
+        {
+          "part_number": "LR-W50",
+          "description": "self-contained full-spectrum sensor"
+        },
+        {
+          "part_number": "OP-88242",
+          "description": "Desiccant cartridge for Keyence 3-axis UV laser marker (spare drying agent for MD-U series heads)."
+        },
+        {
+          "part_number": "OP-88679",
+          "description": "M12 connector, A-coded, 12-pin, female connector to open cable ends."
+        },
+        {
+          "part_number": "PZ-51",
+          "description": "compact through-beam photoelectric sensor"
+        },
+        {
+          "part_number": "SR-X100",
+          "description": "AI-Powered 1D/2D Code Reader – Standard Model (1.4 MP)"
+        },
+        {
+          "part_number": "SZ-VH1X",
+          "description": "TESTA SCANNER KEYENCE SZ-VH1X PER MODELLI CON TELECAMERA"
+        }
+      ]
+    },
+    {
+      "brand": "Keysight",
+      "brand_slug": "keysight",
+      "parts": [
+        {
+          "part_number": "53200-49300",
+          "description": "Window - RF"
+        }
+      ]
+    },
+    {
+      "brand": "KLASCHKA",
+      "brand_slug": "klaschka",
+      "parts": [
+        {
+          "part_number": "132206",
+          "description": "Induktive SensorenBuntmetall Näherungsschalter IBD-40fv114b20-12S1B Ursprungsland: Germany Zolltarifnummer: 85480090 Ge…"
+        },
+        {
+          "part_number": "139719-020 , Type: JSM1 2V4gyy/LN 4x0,25u5,0 OG 2m",
+          "description": "M12 Winkelsteckdose"
+        }
+      ]
+    },
+    {
+      "brand": "Kockum Sonics",
+      "brand_slug": "kockum-sonics",
+      "parts": [
+        {
+          "part_number": "24530291",
+          "description": "Piston Rod Complete MT150 /MTX150 (21768054)"
+        },
+        {
+          "part_number": "24800287",
+          "description": "Electrotyfon MTX 150/130 + TK80 440V 60HzPiston Rod Complete MT150/MTX150 (21768054) is included"
+        },
+        {
+          "part_number": "24800703",
+          "description": "Motor set MTX 440V"
+        }
+      ]
+    },
+    {
+      "brand": "Koino",
+      "brand_slug": "koino",
+      "parts": [
+        {
+          "part_number": "KH-3046ER-11-R",
+          "description": "30mm EMS button switch"
+        },
+        {
+          "part_number": "KH-513DL-24V-G",
+          "description": "30mm 1NO 1NC Push button switch"
+        },
+        {
+          "part_number": "KH-513DL-24V-Y",
+          "description": "30mm 1NO 1NC Push button switch"
+        }
+      ]
+    },
+    {
       "brand": "Konecranes",
       "brand_slug": "konecranes",
       "parts": [
@@ -297,6 +1117,10 @@
         {
           "part_number": "279383",
           "description": "1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…"
+        },
+        {
+          "part_number": "8.F5863.1234.G221",
+          "description": "1 =Klemmflansch, ø 58 mm, IP65 2 =ø10mmx20mm 3 =SSI, BiSS + 2048 ppr SinCos / 5 V DC 4 =M23-Stecker radial, 12-polig G=…"
         }
       ]
     },
@@ -307,6 +1131,30 @@
         {
           "part_number": "76.147.92.00",
           "description": "Elettrovalvola"
+        },
+        {
+          "part_number": "761479100",
+          "description": "5/2 ELECTRICAL VALVE"
+        }
+      ]
+    },
+    {
+      "brand": "Kunpeng",
+      "brand_slug": "kunpeng",
+      "parts": [
+        {
+          "part_number": "KP22580HA2BL-C",
+          "description": "Hochleistungs-Axiallüfter für industrielle Anwendungen.Technische Daten:Spannung: 220V AC (50/60Hz)Leistung: 42W / 52WN…"
+        }
+      ]
+    },
+    {
+      "brand": "LEG",
+      "brand_slug": "leg",
+      "parts": [
+        {
+          "part_number": "EM1-1-1",
+          "description": "Effektivwertmesser mit Grenzwertschalter 1w,Versorgung 24VDCEingang: 0...10VACAusgang: 0...10VDCStat. commodity no.: 85…"
         }
       ]
     },
@@ -334,9 +1182,53 @@
       "brand_slug": "m-and-s-armaturen",
       "parts": [
         {
+          "part_number": "03052-2001010",
+          "description": "M&S Armaturen 03052-2001010"
+        },
+        {
+          "part_number": "03052-2002010",
+          "description": "M&S Armaturen 03052-2002010"
+        },
+        {
+          "part_number": "03052-2003010",
+          "description": "M&S Armaturen 03052-2003010"
+        },
+        {
+          "part_number": "56040-0250700",
+          "description": "M&S Armaturen 56040-0250700"
+        },
+        {
+          "part_number": "56040-0650700",
+          "description": "M&S Armaturen 56040-0650700"
+        },
+        {
+          "part_number": "56040-1000700",
+          "description": "M&S Armaturen 56040-1000700"
+        },
+        {
           "part_number": "57600-1000300",
           "description": "Dichtung, Typ Classic Werkstoff: EPDMfür ScheibenventilDN100",
           "case_slug": "ms-armaturen-gasket-57600-1000300-dn100"
+        },
+        {
+          "part_number": "57680-0250300",
+          "description": "M&S Armaturen 57680-0250300"
+        },
+        {
+          "part_number": "57680-0650300",
+          "description": "M&S Armaturen 57680-0650300"
+        },
+        {
+          "part_number": "57680-1000300",
+          "description": "M&S Armaturen 57680-1000300"
+        },
+        {
+          "part_number": "576800500300",
+          "description": "Dichtung Nr. 676 Efür ScheibenventilDN 50"
+        },
+        {
+          "part_number": "578-104011000",
+          "description": "Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1\"-4\" Nr. GL678TBJ1 Zolltarif-Nr. 84123100"
         }
       ]
     },
@@ -348,6 +1240,16 @@
           "part_number": "MMS50C",
           "description": "Hydraulic Motor",
           "case_slug": "ms-hydraulic-motor-mms50c-yacht"
+        }
+      ]
+    },
+    {
+      "brand": "Mellor Electric",
+      "brand_slug": "mellor-electric",
+      "parts": [
+        {
+          "part_number": "MREL119040212213",
+          "description": "BRUSHLESS,DC MOTOR,24VDC,2346RPMP/N: DCB2106"
         }
       ]
     },
@@ -370,6 +1272,26 @@
         {
           "part_number": "51119999",
           "description": "Keramiksensor FRS 5+ (DSC 1/3)"
+        }
+      ]
+    },
+    {
+      "brand": "Mori Seiki",
+      "brand_slug": "mori-seiki",
+      "parts": [
+        {
+          "part_number": "RIBSTAR BELT 15PK2008",
+          "description": "Mori Seiki RIBSTAR BELT 15PK2008"
+        }
+      ]
+    },
+    {
+      "brand": "MOTOR POWER COMPANY",
+      "brand_slug": "motor-power-company",
+      "parts": [
+        {
+          "part_number": "T.115.SR.7.R.L.17.501.A.16.116",
+          "description": "Servomotor"
         }
       ]
     },
@@ -436,12 +1358,366 @@
       ]
     },
     {
+      "brand": "Müller Martini",
+      "brand_slug": "muller-martini",
+      "parts": [
+        {
+          "part_number": "0031.5754",
+          "description": "Zylinderstift 6M6X32-ISO8734AUrsprungsland: TW Zolltarifnummer: 73182900 Gewicht: 0,035 KG1:1 Ersatz: das Material 0881…"
+        },
+        {
+          "part_number": "0040.0598",
+          "description": "DruckschlauchUrsprungsland: IT Zolltarifnummer: 39173100 Gewicht: 0,004 KG"
+        },
+        {
+          "part_number": "0306.1115.4",
+          "description": "AnschlagUrsprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,302 KG"
+        },
+        {
+          "part_number": "0306.1116.4",
+          "description": "AnschlagUrsprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,292 KG"
+        },
+        {
+          "part_number": "0881.0006.4",
+          "description": "Hebel FL40/11,9Ursprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,116 KG"
+        },
+        {
+          "part_number": "0881.0125.3",
+          "description": "Umbiegeflügel FL15/1,9X13,64Ursprungsland: CH Zolltarifnummer: 73269000 Gewicht: 0,008 KG"
+        },
+        {
+          "part_number": "0881.4015.3",
+          "description": "Pliers with a CLAMP HEAD"
+        },
+        {
+          "part_number": "0890.1422.4",
+          "description": "Blattfeder BD25/0.8X137Ursprungsland: CH Zolltarifnummer: 73201000 Gewicht: 0,021 KG"
+        },
+        {
+          "part_number": "0890.1527.3",
+          "description": "BürsteUrsprungsland: CH Zolltarifnummer: 96035000 Gewicht: 0,26 KG"
+        },
+        {
+          "part_number": "1522.3212.4",
+          "description": "Solenoid Valve"
+        }
+      ]
+    },
+    {
       "brand": "NINGBO HONGBO WEITE MOTOR CO.,LTD",
       "brand_slug": "ningbo-hongbo-weite-motor-co-ltd",
       "parts": [
         {
           "part_number": "HB18065HA2B",
           "description": "Lüfter"
+        }
+      ]
+    },
+    {
+      "brand": "Norgren",
+      "brand_slug": "norgren",
+      "parts": [
+        {
+          "part_number": "8020865",
+          "description": "SOLENOID VALVE 3/2-WAY-600PSI"
+        }
+      ]
+    },
+    {
+      "brand": "NOVEXX",
+      "brand_slug": "novexx",
+      "parts": [
+        {
+          "part_number": "A101972",
+          "description": "Label Sensor without Cable"
+        },
+        {
+          "part_number": "A101974",
+          "description": "Label Sensor (with Cable)"
+        }
+      ]
+    },
+    {
+      "brand": "PALAZZANI",
+      "brand_slug": "palazzani",
+      "parts": [
+        {
+          "part_number": "0014140082",
+          "description": "AIR FILTER"
+        },
+        {
+          "part_number": "0014140085",
+          "description": "AIR FILTER CARTRIDGE"
+        },
+        {
+          "part_number": "0050120247",
+          "description": "OIL FILTER CARTRIDGE"
+        },
+        {
+          "part_number": "0053070049",
+          "description": "FUEL FILTER CARTRIDGE"
+        },
+        {
+          "part_number": "0053070050",
+          "description": "ENGINE OIL FILTER"
+        }
+      ]
+    },
+    {
+      "brand": "Pepperl+Fuchs",
+      "brand_slug": "pepperl-plus-fuchs",
+      "parts": [
+        {
+          "part_number": "NJ2-11-SN-G",
+          "description": "NJ2-11-SN-G"
+        }
+      ]
+    },
+    {
+      "brand": "Pflitsch",
+      "brand_slug": "pflitsch",
+      "parts": [
+        {
+          "part_number": "M16x1,5/8,0-5,0",
+          "description": "Winkelkabelverschraubung M16x1,5/8,0-5,*"
+        }
+      ]
+    },
+    {
+      "brand": "Phoenix Contact",
+      "brand_slug": "phoenix-contact",
+      "parts": [
+        {
+          "part_number": "1046805",
+          "description": "Phoenix Contact 1046805QUINT4-PS/24DC/24DC/20/SC (1046805)PHOENIX CONTACT · CONVERTER,PHOE-CON,1046805,18TO32VDC · QUIN…"
+        },
+        {
+          "part_number": "1085256",
+          "description": "FL SWITCH 1000"
+        },
+        {
+          "part_number": "2295554",
+          "description": "PLC-V8/FLK14/OUT"
+        },
+        {
+          "part_number": "2296058",
+          "description": "PLC-V8/D15S/OUT"
+        },
+        {
+          "part_number": "2310222",
+          "description": "Phoenix Contact 2310222UM-2KS50/32-MR/21/ADV151/SO179 (2310222)PHOENIX CONTACT · RELAY,PHOE-CON,UM2KS50/32MR/21/AD+,24V…"
+        },
+        {
+          "part_number": "2310235",
+          "description": "Phoenix Contact 2310235UM-2KS50/32-MR/21/ADV551/SO179 (2310235)PHOENIX CONTACT · MODULE,RELAY,PHOE-CON,UM2KS50/32M+,24V…"
+        },
+        {
+          "part_number": "2311111",
+          "description": "Phoenix Contact 2311111UM-KS50/32-MR/21/ADV151/SO207 (2311111)PHOENIX CONTACT · COMPACT RELAY BOARD,PHOE-CON,UM-KS50/32…"
+        },
+        {
+          "part_number": "2311373",
+          "description": "Phoenix Contact 2311373UM-2KS50/DO32REL/CS/SO180 (2311373)PHOENIX CONTACT · RELAY MODULE,PHOE-CON,UM-2KS50/DO32REL/+ ·…"
+        },
+        {
+          "part_number": "2320092",
+          "description": "Phoenix Contact 2320092QUINT-PS/24DC/24DC/10 (2320092)PHOENIX CONTACT · CONVERTER,PHOE-CON,QUINT-PS/24DC/24DC/10 · QUIN…"
+        },
+        {
+          "part_number": "2320102",
+          "description": "Phoenix Contact 2320102QUINT-PS/24DC/24DC/20 (2320102)PHOENIX CONTACT · SIGNAL,CONVERTER,PHOE-CON,QUINTPS24DC24+ · QUIN…"
+        },
+        {
+          "part_number": "2320115",
+          "description": "Phoenix Contact 2320115QUINT-PS/24DC/12DC/8 (2320115)PHOENIX CONTACT · CONVERTER,PHOENIX,QUINTPS24DC12DC8,24VDC · QUINT…"
+        },
+        {
+          "part_number": "2320157",
+          "description": "Phoenix Contact 2320157QUINT-DIODE/12-24DC/2X20/1X40 (2320157)PHOENIX CONTACT · MODULE,DIODE,PHOE-CON,QUINTDIODE122+,40…"
+        },
+        {
+          "part_number": "2320186",
+          "description": "QUINT-PS/24DC/24DC/20/CO"
+        },
+        {
+          "part_number": "2700356",
+          "description": "PCR-PS20-1NO-1NC-24DC-SC"
+        },
+        {
+          "part_number": "2708274",
+          "description": "Phoenix Contact 2708274PSI-MOS-PROFIB/FO 850 E (2708274)PHOENIX CONTACT · CONVERTER,PSIMOSPROFIBFO850E,PHOE-CON · PSI-M…"
+        },
+        {
+          "part_number": "2744416",
+          "description": "Phoenix Contact 2744416PSM-ME-RS232/RS485-P (2744416)PHOENIX CONTACT · CONVERTER,INTFC,PHOE-CON,PSMMERS232RS48+ · PSM-M…"
+        },
+        {
+          "part_number": "2866242",
+          "description": "Phoenix Contact 2866242QUINT-DC-UPS/24DC/40 (2866242)PHOENIX CONTACT · POSU,24VDC,42A,2866242,PHOE-CON · QUINT-DC-UPS/2…"
+        },
+        {
+          "part_number": "2866310",
+          "description": "Phoenix Contact 2866310TRIO-PS/1AC/24DC/5 (2866310)PHOENIX CONTACT · POWER SUPPLY,PHOE-CON,2866310,24VDC,5A · TRIO-PS/1…"
+        },
+        {
+          "part_number": "2866352",
+          "description": "Phoenix Contact 2866352QUINT-BAT/24DC/ 7.2AH (2866352)PHOENIX CONTACT · BATTERY,24VDC,7.2AHR,2866352,PHOE-CON · QUINT-B…"
+        },
+        {
+          "part_number": "2866747",
+          "description": "QUINT-PS/1AC/24DC/3.5"
+        },
+        {
+          "part_number": "2866750",
+          "description": "QUINT-PS/1AC/24DC/5"
+        },
+        {
+          "part_number": "2866763",
+          "description": "Phoenix Contact 2866763QUINT-PS/1AC/24DC/10 (2866763)PHOENIX CONTACT · POWER SUPPLY,PHOE-CON,QUINT-PS/1AC24DC10 · QUINT…"
+        },
+        {
+          "part_number": "2866776",
+          "description": "Phoenix Contact 2866776QUINT-PS/1AC/24DC/20 (2866776)PHOENIX CONTACT · POWER SUPPLY,PHOE-CON,QUINT-PS/1AC24DC20 · QUINT…"
+        },
+        {
+          "part_number": "2891020",
+          "description": "Phoenix Contact 2891020FL SWITCH SFN 8TX-24VAC (2891020)PHOENIX CONTACT · ETHERNET SWITCH,2891020,HONEYWLL · FL SWITCH…"
+        },
+        {
+          "part_number": "2900067",
+          "description": "UM-D37SUB/M/HC3/AIO/MT"
+        },
+        {
+          "part_number": "2900068",
+          "description": "UM-D37SUB/M/HC3/16DO/MR/MT"
+        },
+        {
+          "part_number": "2902854",
+          "description": "Phoenix Contact 2902854FL MC EF 1300 MM ST (2902854)PHOENIX CONTACT · CONVERTER,MEDIA,PHOE-CON,2902854 · FL MC EF 1300…"
+        },
+        {
+          "part_number": "2902991",
+          "description": "UNO-PS/1AC/24DC/ 30W"
+        },
+        {
+          "part_number": "2903158",
+          "description": "Phoenix Contact 2903158TRIO-PC-2G/1AC/12DC/10 (2903158)PHOENIX CONTACT · POWER SUPPLY,PHOENIX,2903158,10A,120W · TRIO-P…"
+        },
+        {
+          "part_number": "2903670",
+          "description": "REL-IR/LDP- 24DC/4X21AU"
+        },
+        {
+          "part_number": "2904598",
+          "description": "Phoenix Contact 2904598QUINT4-PS/1AC/24DC/2.5/SC (2904598)PHOENIX CONTACT · POWER SUPPLY,PHOENIX,2904598,2.5A,24VDC · Q…"
+        },
+        {
+          "part_number": "2904601",
+          "description": "QUINT-PS/24DC/24DC/20/CO"
+        },
+        {
+          "part_number": "2904602",
+          "description": "QUINT4-PS/1AC/24DC/20"
+        },
+        {
+          "part_number": "2904603",
+          "description": "QUINT4-PS/1AC/24DC/40"
+        },
+        {
+          "part_number": "2905489",
+          "description": "Phoenix Contact 2905489UNO-DIODE/5-24DC/2X10/1X20 (2905489)PHOENIX CONTACT · REDUND. MODULE,PHOE-CON,UNO-DIODE/5-24D+ ·…"
+        },
+        {
+          "part_number": "2907719",
+          "description": "Phoenix Contact 2907719QUINT4-DIODE/12-24DC/2X20/1X40 (2907719)PHOENIX CONTACT · DIODE,QUINT,PHOENIX,2907719,12TO24VDC…"
+        },
+        {
+          "part_number": "2938581",
+          "description": "Phoenix Contact 2938581QUINT-PS-100-240AC/24DC/5 (2938581)PHOENIX CONTACT · POWER SUPPLY UNIT,PHOE-CON,2938581,24VDC ·…"
+        },
+        {
+          "part_number": "2938879",
+          "description": "Phoenix Contact 2938879QUINT-PS-100-240AC/24DC/40 (2938879)PHOENIX CONTACT · POWER SUPPLY,PHOE-CON,QUINTPS100240AC24+ ·…"
+        },
+        {
+          "part_number": "2961105",
+          "description": "REL-MR- 24DC/21"
+        },
+        {
+          "part_number": "2962599",
+          "description": "Phoenix Contact 2962599PHOENIX CONTACT · TERMINAL BOARD,PHOE-CON,UM 45-FLK34 · UM 45-FLK34 (2962599)"
+        },
+        {
+          "part_number": "2962793",
+          "description": "Phoenix Contact 2962793UM 45-D25SUB/S (2962793)PHOENIX CONTACT · TERMINAL BOARD,PHOE-CON,UM 45-D25SUB/S · UM 45-D25SUB/…"
+        },
+        {
+          "part_number": "2962803",
+          "description": "UM 45-D37SUB/S"
+        },
+        {
+          "part_number": "2962816",
+          "description": "Phoenix Contact 2962816UM 45-D50SUB/S (2962816)PHOENIX CONTACT · TERMINAL BOARD,PHOE-CON,UM 45-D50SUB/S · UM 45-D50SUB/…"
+        },
+        {
+          "part_number": "2966016",
+          "description": "PLC-BSC-24DC/21"
+        },
+        {
+          "part_number": "2966029",
+          "description": "PLC-BSC-24UC/21"
+        },
+        {
+          "part_number": "2967015",
+          "description": "PLC-BSC-24DC/21-21"
+        },
+        {
+          "part_number": "2968357",
+          "description": "UM 45-FLK50/AB-1756"
+        },
+        {
+          "part_number": "2968360",
+          "description": "UM 45-2FLK14/AB-1756"
+        },
+        {
+          "part_number": "2976158",
+          "description": "UMK- EC56/FRONT 2,5V/L"
+        },
+        {
+          "part_number": "2976161",
+          "description": "UMK- EC56/FRONT 2,5V/R"
+        },
+        {
+          "part_number": "2981020",
+          "description": "PSR-SCP- 24DC/ESP4/2X1/1X2"
+        }
+      ]
+    },
+    {
+      "brand": "Pizzato",
+      "brand_slug": "pizzato",
+      "parts": [
+        {
+          "part_number": "BNAC3EA01",
+          "description": "3-button IO-Link control station"
+        },
+        {
+          "part_number": "CS ME-03XU24",
+          "description": "Expansion module"
+        }
+      ]
+    },
+    {
+      "brand": "PMA",
+      "brand_slug": "pma",
+      "parts": [
+        {
+          "part_number": "Sechskantmutter MM-SW19/M16x1,5 2,8 Ms *",
+          "description": "Size/dimension: SW19/M16X1,5 2,8 Werkstoff: Ms GalNi"
+        },
+        {
+          "part_number": "Wellrohr XPCSG-NW17-21,2/15,2 PA XPCSG-*",
+          "description": "Size/dimension: NW17-21,2/15,2 Werkstoff: PA"
         }
       ]
     },
@@ -460,6 +1736,20 @@
       ]
     },
     {
+      "brand": "Qualitrol",
+      "brand_slug": "qualitrol",
+      "parts": [
+        {
+          "part_number": "AKM345-00430540",
+          "description": "(Replace: AKM345-00230846)Oil Temperature / Winding Temperature Indicator AKM345Oil sump temperature indicator, Gen3, s…"
+        },
+        {
+          "part_number": "AKM345-00430857",
+          "description": "AKM345-00230847 Obsolete/replaced by: AKM345-00430857Oil Temperature / Winding Temperature Indicator AKM345Winding temp…"
+        }
+      ]
+    },
+    {
       "brand": "Radio Energie",
       "brand_slug": "radio-energie",
       "parts": [
@@ -467,6 +1757,30 @@
           "part_number": "TTN0507RE.0",
           "description": "RE.O110 1CB 0.007 CA",
           "case_slug": "radio-energie-tachogenerator-ttn0507re0"
+        }
+      ]
+    },
+    {
+      "brand": "RAEL",
+      "brand_slug": "rael",
+      "parts": [
+        {
+          "part_number": "RAEL-MIA-71A-0.37kW-Ex-B3",
+          "description": "Three-phase asynchronous motor - Exe - RAEL IE2Type MIA 71 A2, Size 710.37 kW, 230/400 V, 50 Hz, Insulated Class F3000…"
+        },
+        {
+          "part_number": "RAEL-MIA-90L4-1.1kW-Ex-B3",
+          "description": "Three-phase asynchronous motor - Exe - RAEL IE3Type MIA 90L 4, size 90L1.10 kW, 230/400 V, 50 Hz, insulated class1500 r…"
+        }
+      ]
+    },
+    {
+      "brand": "Rafi",
+      "brand_slug": "rafi",
+      "parts": [
+        {
+          "part_number": "1.69507.105/1502",
+          "description": "INDICATOR, BRAND RAFI, 24V, GREEN"
         }
       ]
     },
@@ -485,9 +1799,149 @@
       "brand_slug": "rexroth",
       "parts": [
         {
+          "part_number": "1PV2V5‑22/08REC‑1MC70A1",
+          "description": "Pump"
+        },
+        {
           "part_number": "A10VSO28DFR1/31L-PPA12N",
           "description": "A10VSO28DFR1/31L-PPA12N",
           "case_slug": "rexroth-pump-a10vso28dfr1-ppa12n"
+        },
+        {
+          "part_number": "MDK041B-144-GP0-KN",
+          "description": "Servoantrieb"
+        }
+      ]
+    },
+    {
+      "brand": "Rittal",
+      "brand_slug": "rittal",
+      "parts": [
+        {
+          "part_number": "SK 3305500",
+          "description": "TopTherm wall-mounted cooling unit Blue e 0.3 - 4 kW"
+        }
+      ]
+    },
+    {
+      "brand": "Rockwell",
+      "brand_slug": "rockwell",
+      "parts": [
+        {
+          "part_number": "1734-AENT",
+          "description": "Ethernet Adapter"
+        },
+        {
+          "part_number": "1734-EP24DC",
+          "description": "EXTENDED POWER MODULE"
+        },
+        {
+          "part_number": "1734-IB4",
+          "description": "Input Module"
+        },
+        {
+          "part_number": "1734-OB4E",
+          "description": "Output Module"
+        },
+        {
+          "part_number": "1734-OV2V",
+          "description": "ANALOG OUTPUT MODULE"
+        },
+        {
+          "part_number": "1734-TBS",
+          "description": "PLUG TYPE TERMINAL"
+        },
+        {
+          "part_number": "1747-L552",
+          "description": "Processor"
+        },
+        {
+          "part_number": "1747-L552 (NEW)",
+          "description": "Processor"
+        },
+        {
+          "part_number": "175-EN2T",
+          "description": "Interface"
+        },
+        {
+          "part_number": "1756-DNB",
+          "description": "Device-net"
+        },
+        {
+          "part_number": "1756-ENBT",
+          "description": "Interface"
+        },
+        {
+          "part_number": "1756-ENBT (NEW)",
+          "description": "Interface Ethernet/IP"
+        },
+        {
+          "part_number": "1756-L61",
+          "description": "Processor"
+        },
+        {
+          "part_number": "1756-L61 (NEW)",
+          "description": "Processor"
+        },
+        {
+          "part_number": "1756-M16SE",
+          "description": "16 Axis Servo Module"
+        },
+        {
+          "part_number": "1756-M8SE",
+          "description": "8 Axis Servo Module"
+        },
+        {
+          "part_number": "1756-PA72",
+          "description": "POWER MODULE"
+        },
+        {
+          "part_number": "1784-CF64",
+          "description": "MEMORY CARD"
+        },
+        {
+          "part_number": "2094-BC04-M03-S",
+          "description": "SERVO DRIVE"
+        },
+        {
+          "part_number": "2094-BC07-M05-S",
+          "description": "Servo Drive"
+        },
+        {
+          "part_number": "2094-BM02-S",
+          "description": "SERVO DRIVE"
+        },
+        {
+          "part_number": "22B-D012N104",
+          "description": "AC DRIVE"
+        },
+        {
+          "part_number": "22B-D017N104",
+          "description": "AC DRIVE"
+        },
+        {
+          "part_number": "22B-D024N104",
+          "description": "AC DRIVE"
+        },
+        {
+          "part_number": "22B-D6P0N104",
+          "description": "AC DRIVE"
+        },
+        {
+          "part_number": "2711P-T12C4D1",
+          "description": "HMI, PANEL VIEW PLUS"
+        },
+        {
+          "part_number": "2711PT10C4D2",
+          "description": "Panelview Plus"
+        },
+        {
+          "part_number": "MPL-B4560F-SJ22AA",
+          "description": "SERVO MOTOR"
+        },
+        {
+          "part_number": "MPL-B540D-SJ24AA",
+          "description": "SERVO MOTOR"
         }
       ]
     },
@@ -499,6 +1953,26 @@
           "part_number": "HBZ 500160/100/100",
           "description": "HBZ 500160/100/100",
           "case_slug": "roemheld-cylinder-hbz-500160-100-100"
+        }
+      ]
+    },
+    {
+      "brand": "ROSS",
+      "brand_slug": "ross",
+      "parts": [
+        {
+          "part_number": "D2171B6012W-2 ( EX. D2171B6012)",
+          "description": "G1PL 2/2-WAY VALVE N.G.SOLENOID-OPERATED 24 VDCPart Number: 84812090Country of Origin: US"
+        }
+      ]
+    },
+    {
+      "brand": "Rotork",
+      "brand_slug": "rotork",
+      "parts": [
+        {
+          "part_number": "ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)",
+          "description": "Endlagenrückmeldung wie folgt: / Limit switch box as follows: SK = Gehäuse aus Aluminiumdruckguss / Die-cast aluminium…"
         }
       ]
     },
@@ -615,13 +2089,167 @@
       ]
     },
     {
+      "brand": "SEW Eurodrive",
+      "brand_slug": "sew-eurodrive",
+      "parts": [
+        {
+          "part_number": "28229150",
+          "description": "TASTIERINO SEW DBG 60B-10 PER MOVIDRIVE MDX TIPO B"
+        },
+        {
+          "part_number": "8253854",
+          "description": "Raddrizzatore SEW BGE 1.5"
+        },
+        {
+          "part_number": "8277311",
+          "description": "INVERTER SEW MOVIDRIVE MDX61B0008-5A3-4-0T 0,75KW 400V"
+        },
+        {
+          "part_number": "8670455",
+          "description": "BOBINA FRENO SEW BMG2 380V MONOFASE"
+        },
+        {
+          "part_number": "8752370",
+          "description": "Bobina freno SEW BMG8 380V monofase"
+        }
+      ]
+    },
+    {
+      "brand": "Sick",
+      "brand_slug": "sick",
+      "parts": [
+        {
+          "part_number": "1050920",
+          "description": "SENSORE POSIZIONAMENTO SICK MPS-096TSNUO"
+        },
+        {
+          "part_number": "1211479",
+          "description": "DETEC4 CORE C4C-EA12010A10000Barriera SICK ricevitore mm 1200"
+        },
+        {
+          "part_number": "1211499 / 18483347",
+          "description": "DETEC4 CORE C4C-SA10530A10000Barriera SICK emettitore mm 1050, Portata 0–10 m"
+        },
+        {
+          "part_number": "1211500 / 18481699",
+          "description": "DETEC4 CORE C4C-EA10530A10000Barriera SICK ricevitore mm 1050 ,Portata 0–10 m"
+        },
+        {
+          "part_number": "2027180",
+          "description": "FRONTALINO RICAMBIO RADAR SICK 3000"
+        }
+      ]
+    },
+    {
+      "brand": "SIDEL",
+      "brand_slug": "sidel",
+      "parts": [
+        {
+          "part_number": "01123995101",
+          "description": "SIDEL 01123995101RAMP"
+        },
+        {
+          "part_number": "01123995301",
+          "description": "SIDEL 01123995301RAMP"
+        },
+        {
+          "part_number": "01124344702",
+          "description": "SIDEL 01124344702Skid support"
+        },
+        {
+          "part_number": "29A5048437",
+          "description": "Rubber-coated roller"
+        },
+        {
+          "part_number": "39A5033826",
+          "description": "Rubber-coated roller"
+        }
+      ]
+    },
+    {
       "brand": "Siemens",
       "brand_slug": "siemens",
       "parts": [
         {
+          "part_number": "1FT7105-5AF71-1NL2",
+          "description": "Motor"
+        },
+        {
+          "part_number": "1LE1523-1CB29-0KB4-Z",
+          "description": "Motor{M1Y:380VD_50HZ_10HP} {M1Y:440VD_60HZ_10HP}-1:1 replacement for UD1808/2056935-001-002"
+        },
+        {
+          "part_number": "1LE1523-1CB29-0KB4-Z  F50+F70+H20+M11+M1Y+Q02+R12+R50+Y99",
+          "description": "1LE1523-1CB29-0KB4-ZF50+F70+H20+M11+M1Y+Q02+R12+R50+Y99Y99:spezielles MotordesignM1Y: 50Hz 380VD S3/50% 7.5kW, 60Hz 440…"
+        },
+        {
+          "part_number": "1PH7912-1AB14-0AA0",
+          "description": "Replacement Fan"
+        },
+        {
+          "part_number": "3SU1052-2BC40-0AA0",
+          "description": "Siemens 3SU1052-2BC40-0AA0"
+        },
+        {
+          "part_number": "3SU1052-2BL10-0AA0",
+          "description": "Siemens 3SU1052-2BL10-0AA0"
+        },
+        {
+          "part_number": "3SU1400-1AA10-1BA0",
+          "description": "Siemens 3SU1400-1AA10-1BA0"
+        },
+        {
+          "part_number": "3SU1550-0AA10-0AA0",
+          "description": "Siemens 3SU1550-0AA10-0AA0"
+        },
+        {
+          "part_number": "6AU1435­0AA0­0AA1",
+          "description": "Simotion D435"
+        },
+        {
+          "part_number": "6AV2 124-0MC01-0AX0",
+          "description": "SIMATIC HMI TP1200 Comfort Panel"
+        },
+        {
           "part_number": "6AV2124-0MC010-AX0",
           "description": "SIMATIC HMI TP1200 COMFORT",
           "case_slug": "siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0"
+        },
+        {
+          "part_number": "6AV3688-3CD13-0AX0",
+          "description": "Pushbutton Panel"
+        },
+        {
+          "part_number": "6AV3688-3CD13-0AX0 (NEW)",
+          "description": "Pushbutton Panel"
+        },
+        {
+          "part_number": "6AV3688-3ED13-0AX0",
+          "description": "Pushbutton Panel"
+        },
+        {
+          "part_number": "6AV3688-3ED13-0AX0 (NEW, ORIGINAL PACKAGE)",
+          "description": "Pushbutton Panel"
+        },
+        {
+          "part_number": "6AV6642-0BA01-1AX0",
+          "description": "Simatic Panel"
+        },
+        {
+          "part_number": "6ES7318-3EL01-0AB0",
+          "description": "SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP"
+        },
+        {
+          "part_number": "6SL3055-0AA00-5BA1",
+          "description": "Sensor Module"
+        },
+        {
+          "part_number": "6SL3055-0AA00-5CA1",
+          "description": "Sensor Module"
+        },
+        {
+          "part_number": "6SL3210-1PE34-8AL0",
+          "description": "SINAMICS G120/S120 POWER MODULE PM240-2 FSG C2 WITH BUILT IN BRAKING CHOPPER 3AC380-480V+10/-10% 47-63Hz OUTPUT HIGH OV…"
         }
       ],
       "listino": {
@@ -664,6 +2292,66 @@
       }
     },
     {
+      "brand": "SJL",
+      "brand_slug": "sjl",
+      "parts": [
+        {
+          "part_number": "WA5-220S12E2",
+          "description": "Power supply"
+        }
+      ]
+    },
+    {
+      "brand": "SKF",
+      "brand_slug": "skf",
+      "parts": [
+        {
+          "part_number": "F4BC-20M-CPSS-DFH-ECB-504",
+          "description": "Kugellager"
+        },
+        {
+          "part_number": "SKF_W_6204-2RS1_UP311",
+          "description": "Kugellager"
+        }
+      ]
+    },
+    {
+      "brand": "SMC",
+      "brand_slug": "smc",
+      "parts": [
+        {
+          "part_number": "BA7-040",
+          "description": "Auto‑switch mounting bracket, tie‑rod mounting, for CA2‑Z / MB‑Z cylinders, suitable for D‑A9 and D‑M9 auto switches, s…"
+        },
+        {
+          "part_number": "D-M9P",
+          "description": "Solid state auto switch, direct mounting style for pneumatic cylinders, PNP output, 3‑wire type, in‑line cable entry, p…"
+        },
+        {
+          "part_number": "NAFM3000-N03",
+          "description": "Mist Separator"
+        },
+        {
+          "part_number": "NVHS3000-N03",
+          "description": "Shut-offValve"
+        },
+        {
+          "part_number": "ZSM1-121L",
+          "description": "Diaphragm type vacuum switch, ZSM1‑121 series, reed contact type, connection R 1/8, max. operating pressure 0.5 MPa, re…"
+        }
+      ]
+    },
+    {
+      "brand": "Sontay",
+      "brand_slug": "sontay",
+      "parts": [
+        {
+          "part_number": "PA-DPS-88",
+          "description": "Pressure Transmitter"
+        }
+      ]
+    },
+    {
       "brand": "Spectrex INC.",
       "brand_slug": "spectrex-inc",
       "parts": [
@@ -674,12 +2362,32 @@
       ]
     },
     {
+      "brand": "Speeder Motion Line",
+      "brand_slug": "speeder-motion-line",
+      "parts": [
+        {
+          "part_number": "MB082GA310",
+          "description": "SERVODRIVE"
+        }
+      ]
+    },
+    {
       "brand": "Steute",
       "brand_slug": "steute",
       "parts": [
         {
           "part_number": "1188542",
           "description": "Ex solenoid interlockEx STM 295 1Ö1S/1Ö1S-A/90°Article no.: 1188542 (old article no.: 95353310)"
+        }
+      ]
+    },
+    {
+      "brand": "Sulzer",
+      "brand_slug": "sulzer",
+      "parts": [
+        {
+          "part_number": "XFP150G CB1.3",
+          "description": "Girante / Laufrad"
         }
       ]
     },
@@ -756,6 +2464,10 @@
       "brand_slug": "termet",
       "parts": [
         {
+          "part_number": "Maintenance kit for EcoCondens-35",
+          "description": "1.Ionisation electrode Z1780.04.04.002.Electrode gasket Z1780.04.00.203. Ignition electrode Z1780.04.03.004. Gasket ele…"
+        },
+        {
           "part_number": "Z0720.04.00.10",
           "description": "Dichtung Frontklappe",
           "case_slug": "termet-kit-ecocondens-35"
@@ -788,9 +2500,41 @@
       ]
     },
     {
+      "brand": "TESLA",
+      "brand_slug": "tesla",
+      "parts": [
+        {
+          "part_number": "1420113-00-B",
+          "description": "HALFSHAFT ASSY, FR, LEFT HAND"
+        },
+        {
+          "part_number": "1420119-00-B",
+          "description": "HALFSHAFT ASSY, FR, RIGHT HAND"
+        }
+      ]
+    },
+    {
+      "brand": "Thermo Fisher",
+      "brand_slug": "thermo-fisher",
+      "parts": [
+        {
+          "part_number": "326299G06-AVL",
+          "description": "HPLRF P/S SERVICE KIT, 230V FUSE"
+        },
+        {
+          "part_number": "326301H01-AVL",
+          "description": "PCB, DISPLAY, REFRIG"
+        }
+      ]
+    },
+    {
       "brand": "TOKHEIM",
       "brand_slug": "tokheim",
       "parts": [
+        {
+          "part_number": "902254",
+          "description": "WWC LON-IFSF/COM ECHELON"
+        },
         {
           "part_number": "941828",
           "description": "LCD Anzeige Quantium / WWC mit LED Hintergrundbeleuchtung"
@@ -798,6 +2542,76 @@
         {
           "part_number": "947944-004",
           "description": "TQC LCD Display"
+        }
+      ]
+    },
+    {
+      "brand": "TRELLEBORG",
+      "brand_slug": "trelleborg",
+      "parts": [
+        {
+          "part_number": "3DIC08172 (Turcon-Variseal PVC100197-Z80S)",
+          "description": "Turcon Variseal spring-energized seal"
+        }
+      ]
+    },
+    {
+      "brand": "Turck",
+      "brand_slug": "turck",
+      "parts": [
+        {
+          "part_number": "WKB 3T-*/S90",
+          "description": "Steckverbinder 1/2\" 5,3MM 2000MM PUR Ar*"
+        }
+      ]
+    },
+    {
+      "brand": "TWK",
+      "brand_slug": "twk",
+      "parts": [
+        {
+          "part_number": "IW120/24-0,5-KF-S-KH-A17",
+          "description": "Inductive linear transducer"
+        }
+      ]
+    },
+    {
+      "brand": "Weidmüller",
+      "brand_slug": "weidmuller",
+      "parts": [
+        {
+          "part_number": "8714260000",
+          "description": "FBCON SS DP PCG 1WAY"
+        }
+      ]
+    },
+    {
+      "brand": "Wenglor",
+      "brand_slug": "wenglor",
+      "parts": [
+        {
+          "part_number": "85365019",
+          "description": "SENSORE DISTANZA LASER TOF WENGLOR P1PY131"
+        }
+      ]
+    },
+    {
+      "brand": "Wilkerson",
+      "brand_slug": "wilkerson",
+      "parts": [
+        {
+          "part_number": "R18-C4-F000B",
+          "description": "Druckregler m. Selbstentlastung1/2\"BSP-Gewinde, 0,4 - 8,6 bar"
+        }
+      ]
+    },
+    {
+      "brand": "Ziegler",
+      "brand_slug": "ziegler",
+      "parts": [
+        {
+          "part_number": "12-104491",
+          "description": "Kunststoffzinken PickUp"
         }
       ]
     },
