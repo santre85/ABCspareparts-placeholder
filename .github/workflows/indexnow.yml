@@ -151,13 +151,12 @@ jobs:
             echo ""
             echo "📤 Submitting batch ${batch_num} (${batch_count} URLs)..."
             
-            # Build JSON payload using jq
-            json_payload=$(jq -n \
+            # Build JSON payload using jq (pipe to avoid argument list length issues)
+            json_payload=$(cat "$batch_file" | jq -R . | jq -s \
               --arg host "abcspareparts.eu" \
               --arg key "$INDEXNOW_KEY" \
               --arg loc "$KEY_LOCATION" \
-              --argjson urls "$(cat "$batch_file" | jq -R . | jq -s .)" \
-              '{host:$host,key:$key,keyLocation:$loc,urlList:$urls}')
+              '{host:$host,key:$key,keyLocation:$loc,urlList:.}')
             
             # Submit to IndexNow
             http_code=$(curl -s -o /tmp/indexnow_response.txt -w "%{http_code}" \
