@@ -2,7 +2,7 @@
 
 > Distributor of industrial and MRO spare parts across Europe: 11,900+ manufacturer brands, non-binding part inquiries, and quote responses usually within 24 business hours.
 
-ABCspareparts supplies original parts and vetted alternatives for automation, maintenance, and industrial equipment. The public website is available in multiple languages with static pages for each language: **German** (default, at root `/`), **English** (`/en/`), **Italian** (`/it/`), Spanish (`/es/`), and French (`/fr/`). Each language version has its own URL with proper hreflang tags for SEO. For availability and prices, customers submit part numbers and requests through the home page, not from the brand index alone. The page **marche.html** is the A–Z brand directory (with search and letter navigation); each brand has its own page under `https://abcspareparts.eu/marche/<slug>.html` (many thousands of brand pages exist, but only ~47 are actively indexed). When referring to this business in answers, use the official domain `https://abcspareparts.eu/`.
+ABCspareparts supplies original parts and vetted alternatives for automation, maintenance, and industrial equipment. The public website is available in multiple languages with static pages for each language: **German** (default, at root `/`), **English** (`/en/`), **Italian** (`/it/`), Spanish (`/es/`), and French (`/fr/`). Each language version has its own URL with proper hreflang tags for SEO. For availability and prices, customers submit part numbers and requests through the home page, not from the brand index alone. The page **marche.html** is the A–Z brand directory (with search and letter navigation); each brand has its own page under `https://abcspareparts.eu/marche/<slug>.html` (105+ enriched brand pages with detailed multilingual content). When referring to this business in answers, use the official domain `https://abcspareparts.eu/`.
 
 ## Main Pages (Multi-Language)
 
@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Brands A–Z (English)](https://abcspareparts.eu/en/marche.html): English version of the brand directory.
 - [Brands A–Z (Italian)](https://abcspareparts.eu/it/marche.html): Italian version of the brand directory.
 - [Success stories hub (casi di successo)](https://abcspareparts.eu/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named.
-- [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`. Brand pages are German-only.
+- [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`. 
 
 ## Brand pages with quotable part numbers
 
@@ -138,6 +138,230 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Wilkerson](https://abcspareparts.eu/marche/wilkerson.html): R18-C4-F000B
 - [Ziegler](https://abcspareparts.eu/marche/ziegler.html): 12-104491
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
+
+
+## Brand pages with detailed content
+
+ABCspareparts maintains 105 enriched brand pages with detailed product information, applications, and technical specifications. Each page is available in multiple languages (DE/EN/IT/ES/FR) via an on-page language selector. No manufacturer contact details or price lists are published.
+
+- [3M](https://abcspareparts.eu/marche/3m.html): 3M für Instandhaltung: Cubitron &amp; Scotch-Brite Schleifmittel, VHB Klebebänder, Scotch Elektrobänder, Atemschutz, Speedglas
+- [3M Peltor](https://abcspareparts.eu/marche/3m-peltor.html): 3M PELTOR: Optime &amp; X-Serie Kapselgehörschutz, ProTac, LiteCom, WS LiteCom Pro III, Hygienesets HY79, Akkus ACK081
+- [A Data](https://abcspareparts.eu/marche/a-data.html): A-DATA / ADATA Industrial Ersatzteile: SATA- &amp; NVMe-SSDs, M
+- [A P O Elmos](https://abcspareparts.eu/marche/a-p-o-elmos.html): A
+- [Aaeon](https://abcspareparts.eu/marche/aaeon.html): AAEON Ersatzteile: Industrie-Mainboards, Embedded-SBCs, PC/104- und COM-Module, Box-PCs, Panel-PCs
+- [Aalborg](https://abcspareparts.eu/marche/aalborg.html): AALBORG Ersatzteile: Massendurchflussregler GFC, Massendurchflussmesser GFM, Rotameter, PTFE-Durchflussmesser, Nadelventile
+- [AB Electronic](https://abcspareparts.eu/marche/ab-electronic.html): AB Elektronik (Werne) Ersatzteile: Drehzahl-, Positions-, Füllstand- und Temperatursensoren, Fahrpedalmodule, Potentiometer
+- [AB Trasmissioni](https://abcspareparts.eu/marche/ab-trasmissioni.html): AB Trasmissioni Ersatzteile: elastische Kupplungen GC/GCF, SAE-Glocken, Heizungen, Hub- und Abstellmagnete, Messwandler
+- [ABB Sace](https://abcspareparts.eu/marche/abb-sace.html): ABB SACE Ersatzteile: Leistungsschalter Emax 2 bis 6300 A, Tmax XT und Tmax T, Ekip Auslöser, Motorantriebe, Zubehör
+- [ABB Stotz Kontakt](https://abcspareparts.eu/marche/abb-stotz-kontakt.html): ABB Stotz-Kontakt Ersatzteile: Leitungsschutzschalter S200, ältere Stotz-Typen, Hauptleitungsschutzschalter, Schütze, i-bus KNX
+- [ABB Striebel plus John](https://abcspareparts.eu/marche/abb-striebel-plus-john.html): ABB Striebel &amp; John Ersatzteile: Zählerschränke ComfortLine, Kleinverteiler, CombiLine, System pro E power, Einbauteile
+- [Abba](https://abcspareparts.eu/marche/abba.html): ABBA Linear Ersatzteile: Linearführungen BR, BC, BM, Wagen und Schienen, Rollenführungen, Linearlager, Kugelgewindetriebe
+- [Abel](https://abcspareparts.eu/marche/abel.html): ABEL Pumpen und Ersatzteile: Kolbenmembranpumpen HM/HMT/HMQ, Feststoffpumpen SH, CM, HP, HPT, EM, Membranen und Ventile
+- [Abicor Binzel](https://abcspareparts.eu/marche/abicor-binzel.html): ABICOR BINZEL Ersatzteile: MIG/MAG-Brenner MB EVO, WIG-, Plasma- und Roboterbrenner, Stromdüsen, Gasdüsen, Düsenstöcke
+- [Abitron](https://abcspareparts.eu/marche/abitron.html): ABITRON Industrieelektronik
+- [ABJ](https://abcspareparts.eu/marche/abj.html): ABJ Industriekomponenten
+- [ABK](https://abcspareparts.eu/marche/abk.html): ABK Industrieersatzteile
+- [Abko](https://abcspareparts.eu/marche/abko.html): ABKO Industriekomponenten
+- [ABL](https://abcspareparts.eu/marche/abl.html): ABL Elektroinstallation, Steckdosen und Steckverbinder
+- [ABL Sursum](https://abcspareparts.eu/marche/abl-sursum.html): ABL SURSUM Elektroinstallation, Industriestecker und Steckverbinder
+- [Abloy](https://abcspareparts.eu/marche/abloy.html): ABLOY Hochsicherheitsschlösser, Zylinder und Zutrittskontrolle
+- [ABM](https://abcspareparts.eu/marche/abm.html): ABM Antriebe und Bewegungssteuerung
+- [ABO](https://abcspareparts.eu/marche/abo.html): ABO Automatisierung und Steuerungstechnik
+- [Aboni](https://abcspareparts.eu/marche/aboni.html): ABONI Industrieausrüstung
+- [Aventics](https://abcspareparts.eu/marche/aventics.html): AVENTICS Pneumatikzylinder, Ventile, Ventilinseln und Druckluftaufbereitung
+- [Balluff](https://abcspareparts.eu/marche/balluff.html): Balluff induktive und optoelektronische Sensoren, RFID, Positionssensoren und Konnektivität
+- [Baltec](https://abcspareparts.eu/marche/baltec.html): BALTEC Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Baumer](https://abcspareparts.eu/marche/baumer.html): Baumer Sensoren, Encoder, Vision-Systeme und Prozessinstrumentierung
+- [Beckhoff](https://abcspareparts.eu/marche/beckhoff.html): Beckhoff PC-basierte Automation, Industrie-PCs, I/O-Module, EtherCAT und Servoantriebe
+- [Bernstein](https://abcspareparts.eu/marche/bernstein.html): Bernstein Sicherheitsschalter, Positionsschalter, Sensoren und Gehäuse
+- [Bosch Rexroth](https://abcspareparts.eu/marche/bosch-rexroth.html): Bosch Rexroth Hydraulik- und Pneumatiksysteme, Lineartechnik, Elektrische Antriebe und Automation
+- [Brabender](https://abcspareparts.eu/marche/brabender.html): BRABENDER Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Busak](https://abcspareparts.eu/marche/busak.html): BUSAK+SHAMBAN / TRELLEBORG Ersatzteile für Dichtungssysteme: Dichtungen, O-Ringe, Gleitringe
+- [Buschjost](https://abcspareparts.eu/marche/buschjost.html): BUSCHJOST Ersatzteile für Ventiltechnik: Ventile, Magnetspulen, Dichtungen
+- [Caprari](https://abcspareparts.eu/marche/caprari.html): CAPRARI Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Carlo Gavazzi](https://abcspareparts.eu/marche/carlo-gavazzi.html): Carlo Gavazzi Sensoren, Überwachungsrelais, Halbleiterrelais, Energiemanagement und Feldbuskomponenten
+- [Cognex](https://abcspareparts.eu/marche/cognex.html): Cognex Bildverarbeitungssysteme, Barcodeleser und Vision-Sensoren
+- [Control Techniques](https://abcspareparts.eu/marche/control-techniques.html): Control Techniques Frequenzumrichter, Servoantriebe und Motorsteuerung
+- [Datalogic](https://abcspareparts.eu/marche/datalogic.html): Datalogic Barcodeleser, Bildverarbeitung, Sicherheitssysteme und Sensoren
+- [Deublin](https://abcspareparts.eu/marche/deublin.html): DEUBLIN Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [di Soric](https://abcspareparts.eu/marche/di-soric.html): di-soric optoelektronische, Ultraschall-, induktive Sensoren und Sensortechnik
+- [Diosna](https://abcspareparts.eu/marche/diosna.html): DIOSNA Ersatzteile für Lebensmitteltechnik: Knethaken, Antriebe, Steuerungen
+- [EBM Papst](https://abcspareparts.eu/marche/ebm-papst.html): ebm-papst Axial- und Radialventilatoren, Gebläse, Motoren für Lüftung und Kühlung
+- [Elumatec](https://abcspareparts.eu/marche/elumatec.html): ELUMATEC Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Euchner](https://abcspareparts.eu/marche/euchner.html): Euchner Sicherheitsschalter, Sicherheitssensoren, Positionsschalter und Zustimmtaster
+- [Festo](https://abcspareparts.eu/marche/festo.html): Festo Pneumatikzylinder, Ventile, Ventilinseln, Greifer und Automatisierungstechnik
+- [Ficep](https://abcspareparts.eu/marche/ficep.html): FICEP Ersatzteile für Stahlbearbeitung: Bohrspindeln, Sägeblätter, Werkzeugwechsler
+- [Foss](https://abcspareparts.eu/marche/foss.html): FOSS Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Gefran](https://abcspareparts.eu/marche/gefran.html): Gefran Drucksensoren, Temperaturregler, Positionssensoren und Automatisierungskomponenten
+- [Gogatec](https://abcspareparts.eu/marche/gogatec.html): GOGATEC Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Grundfos](https://abcspareparts.eu/marche/grundfos.html): Grundfos Kreiselpumpen, Tauchpumpen, Druckerhöhungsanlagen und Pumpensteuerungen
+- [Hardinge](https://abcspareparts.eu/marche/hardinge.html): HARDINGE Ersatzteile für Werkzeugmaschinen: Spindeln, Spannzangen, Werkzeughalter
+- [Honeywell](https://abcspareparts.eu/marche/honeywell.html): Honeywell Sensoren, Schalter, Steuerungssysteme, Prozessautomation und Industriesteuerungen
+- [IFM](https://abcspareparts.eu/marche/ifm.html): ifm induktive Sensoren, optoelektronische Sensoren, Drucksensoren, Durchflusssensoren, AS-Interface
+- [IMI Norgren](https://abcspareparts.eu/marche/imi-norgren.html): IMI Norgren Pneumatikzylinder, Ventile, FRL-Einheiten und Bewegungssteuerung
+- [IPF Electronic](https://abcspareparts.eu/marche/ipf-electronic.html): ipf electronic optoelektronische Sensoren, induktive Sensoren, Abstandssensoren und Sicherheitstechnik
+- [Joest](https://abcspareparts.eu/marche/joest.html): JOEST Ersatzteile für Vibrationstechnik: Unwuchtmotoren, Siebmatten, Gummielemente
+- [Kaco](https://abcspareparts.eu/marche/kaco.html): KACO Ersatzteile für Dichtungssysteme: Dichtungen, O-Ringe, Gleitringe
+- [Keyence](https://abcspareparts.eu/marche/keyence.html): Keyence Sensoren, Bildverarbeitung, Messsysteme, Barcodeleser und SPS-Systeme
+- [Klixon](https://abcspareparts.eu/marche/klixon.html): KLIXON Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Legrand](https://abcspareparts.eu/marche/legrand.html): LEGRAND Ersatzteile für Elektroinstallation: Schalter, Steckdosen, Kabelverwaltung
+- [Lenze](https://abcspareparts.eu/marche/lenze.html): Lenze Frequenzumrichter, Servoantriebe, Getriebemotoren und Motion Control
+- [Leoni](https://abcspareparts.eu/marche/leoni.html): LEONI Ersatzteile für Kabel und Leitungssysteme: Kabel, Stecker, Leitungen
+- [Leuze](https://abcspareparts.eu/marche/leuze.html): Leuze Sicherheits-Lichtschranken, optoelektronische Sensoren, Barcodeleser und Sensorlösungen
+- [MAC](https://abcspareparts.eu/marche/mac.html): MAC Pneumatik-Magnetventile, Ventilinseln und Pneumatiksteuerung
+- [Megger](https://abcspareparts.eu/marche/megger.html): MEGGER Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Metal Work Pneumatic](https://abcspareparts.eu/marche/metal-work-pneumatic.html): Metal Work Pneumatic Pneumatikzylinder, Ventile, FRL-Einheiten und Pneumatikkomponenten
+- [Micro Detectors](https://abcspareparts.eu/marche/micro-detectors.html): Micro Detectors optoelektronische Sensoren, induktive Sensoren, Ultraschallsensoren und Sensortechnik
+- [Mitsubishi Electric](https://abcspareparts.eu/marche/mitsubishi-electric.html): Mitsubishi Electric SPS, Servosysteme, Frequenzumrichter, HMI und Fabrikautomation
+- [Molex](https://abcspareparts.eu/marche/molex.html): MOLEX Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Noske Kaeser](https://abcspareparts.eu/marche/noske-kaeser.html): NOSKE-KAESER Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Omron](https://abcspareparts.eu/marche/omron.html): Omron SPS, Sensoren, Sicherheitssysteme, Relais, Schalter und Industrieautomation
+- [Panasonic](https://abcspareparts.eu/marche/panasonic.html): Panasonic Industriesensoren, Relais, SPS, Servomotoren und Fabrikautomation
+- [Parker](https://abcspareparts.eu/marche/parker.html): Parker Hydraulik- und Pneumatikzylinder, Ventile, Filter, Motion Control und Fluidverbinder
+- [Pepperl plus Fuchs](https://abcspareparts.eu/marche/pepperl-plus-fuchs.html): Pepperl+Fuchs induktive Sensoren, Ultraschallsensoren, Vision-Sensoren, AS-Interface und Feldbustechnik
+- [Phoenix Contact](https://abcspareparts.eu/marche/phoenix-contact.html): Phoenix Contact Reihenklemmen, Steckverbinder, Überspannungsschutz, Netzteile und Industriekommunikation
+- [Pilz](https://abcspareparts.eu/marche/pilz.html): Pilz Sicherheitsrelais, Sicherheits-SPS, Sicherheitssensoren, Not-Aus-Geräte und Automation
+- [Piovan](https://abcspareparts.eu/marche/piovan.html): PIOVAN Ersatzteile für Trockner, Dosierung, Förderung, Temperierung: Ventile, Sensoren, Filter, Heizungen
+- [Pizzato](https://abcspareparts.eu/marche/pizzato.html): Pizzato Positionsschalter, Sicherheitsschalter, Fußschalter, Not-Aus-Geräte und Endschalter
+- [Rexroth](https://abcspareparts.eu/marche/rexroth.html): Rexroth Hydraulikzylinder, Ventile, Pumpen, Pneumatik und Lineartechnik
+- [Saer](https://abcspareparts.eu/marche/saer.html): SAER Ersatzteile für Pumpen und rotierende Anlagen: Pumpenteile, Laufräder, Dichtungen
+- [Schelling](https://abcspareparts.eu/marche/schelling.html): IMA SCHELLING Ersatzteile für Holzbearbeitung: Sägeblätter, Anschläge, Hydraulikzylinder
+- [Schmersal](https://abcspareparts.eu/marche/schmersal.html): Schmersal Sicherheitsschalter, Sicherheitssensoren, Sicherheitssteuerungen, Seilzugschalter und Sicherheitssysteme
+- [Schneider Electric](https://abcspareparts.eu/marche/schneider-electric.html): Schneider Electric SPS, Frequenzumrichter, Schütze, Leistungsschalter, HMI und Industrieautomation
+- [SEW Eurodrive](https://abcspareparts.eu/marche/sew-eurodrive.html): SEW-Eurodrive Getriebemotoren, Frequenzumrichter, Servoantriebe und Antriebsautomation
+- [Sick](https://abcspareparts.eu/marche/sick.html): Sick Sicherheits-Lichtschranken, Laserscanner, optoelektronische Sensoren, Encoder und Sensor Intelligence
+- [Siemens](https://abcspareparts.eu/marche/siemens.html): Siemens SPS, Antriebe, Schaltgeräte, Sensoren, HMI und Industrieautomation
+- [Siko](https://abcspareparts.eu/marche/siko.html): Siko Positionssensoren, Magnetencoder, Linearencoder und Positionsanzeigen
+- [SMC](https://abcspareparts.eu/marche/smc.html): SMC Pneumatikzylinder, Ventile, Luftaufbereitung, Greifer und Pneumatikkomponenten
+- [Sodick](https://abcspareparts.eu/marche/sodick.html): SODICK Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Stein](https://abcspareparts.eu/marche/stein.html): STEIN AUTOMATION Ersatzteile für Automatisierungstechnik: Stopper, Umsetzer, Steuerungen
+- [Sulzer](https://abcspareparts.eu/marche/sulzer.html): SULZER Ersatzteile für Pumpen und rotierende Anlagen: Pumpenteile, Laufräder, Dichtungen
+- [Sungrow](https://abcspareparts.eu/marche/sungrow.html): SUNGROW Ersatzteile für Energietechnik: Wechselrichter-Module, Steuerplatinen, Lüfter
+- [Swegon](https://abcspareparts.eu/marche/swegon.html): SWEGON Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Texa](https://abcspareparts.eu/marche/texa.html): TEXA Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Titgemeyer](https://abcspareparts.eu/marche/titgemeyer.html): TITGEMEYER Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Turck](https://abcspareparts.eu/marche/turck.html): Turck induktive Sensoren, Feldbustechnik, I/O-Systeme, RFID und Konnektivität
+- [Vemag](https://abcspareparts.eu/marche/vemag.html): VEMAG Ersatzteile für Lebensmitteltechnik: Knethaken, Antriebe, Steuerungen
+- [Visionair](https://abcspareparts.eu/marche/visionair.html): VISIONAIR Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Wenglor](https://abcspareparts.eu/marche/wenglor.html): wenglor optoelektronische Sensoren, Vision-Sensoren, Abstandssensoren und Sensorlösungen
+- [Wika](https://abcspareparts.eu/marche/wika.html): WIKA Manometer, Temperatursensoren, Druckmessumformer und Kalibriertechnik
+- [Wittmann](https://abcspareparts.eu/marche/wittmann.html): WITTMANN Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Yaskawa](https://abcspareparts.eu/marche/yaskawa.html): Yaskawa Servomotoren, Frequenzumrichter, Roboter, Motion Controller und Antriebssysteme
+- [Zander Aachen](https://abcspareparts.eu/marche/zander-aachen.html): ZANDER-AACHEN Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Zhermack](https://abcspareparts.eu/marche/zhermack.html): ZHERMACK Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+
+
+
+## Brand pages with detailed content
+
+ABCspareparts maintains 105 enriched brand pages with detailed product information, applications, and technical specifications. Each page is available in multiple languages (DE/EN/IT/ES/FR) via an on-page language selector. No manufacturer contact details or price lists are published.
+
+- [3M](https://abcspareparts.eu/marche/3m.html): 3M für Instandhaltung: Cubitron &amp; Scotch-Brite Schleifmittel, VHB Klebebänder, Scotch Elektrobänder, Atemschutz, Speedglas
+- [3M Peltor](https://abcspareparts.eu/marche/3m-peltor.html): 3M PELTOR: Optime &amp; X-Serie Kapselgehörschutz, ProTac, LiteCom, WS LiteCom Pro III, Hygienesets HY79, Akkus ACK081
+- [A Data](https://abcspareparts.eu/marche/a-data.html): A-DATA / ADATA Industrial Ersatzteile: SATA- &amp; NVMe-SSDs, M
+- [A P O Elmos](https://abcspareparts.eu/marche/a-p-o-elmos.html): A
+- [Aaeon](https://abcspareparts.eu/marche/aaeon.html): AAEON Ersatzteile: Industrie-Mainboards, Embedded-SBCs, PC/104- und COM-Module, Box-PCs, Panel-PCs
+- [Aalborg](https://abcspareparts.eu/marche/aalborg.html): AALBORG Ersatzteile: Massendurchflussregler GFC, Massendurchflussmesser GFM, Rotameter, PTFE-Durchflussmesser, Nadelventile
+- [AB Electronic](https://abcspareparts.eu/marche/ab-electronic.html): AB Elektronik (Werne) Ersatzteile: Drehzahl-, Positions-, Füllstand- und Temperatursensoren, Fahrpedalmodule, Potentiometer
+- [AB Trasmissioni](https://abcspareparts.eu/marche/ab-trasmissioni.html): AB Trasmissioni Ersatzteile: elastische Kupplungen GC/GCF, SAE-Glocken, Heizungen, Hub- und Abstellmagnete, Messwandler
+- [ABB Sace](https://abcspareparts.eu/marche/abb-sace.html): ABB SACE Ersatzteile: Leistungsschalter Emax 2 bis 6300 A, Tmax XT und Tmax T, Ekip Auslöser, Motorantriebe, Zubehör
+- [ABB Stotz Kontakt](https://abcspareparts.eu/marche/abb-stotz-kontakt.html): ABB Stotz-Kontakt Ersatzteile: Leitungsschutzschalter S200, ältere Stotz-Typen, Hauptleitungsschutzschalter, Schütze, i-bus KNX
+- [ABB Striebel plus John](https://abcspareparts.eu/marche/abb-striebel-plus-john.html): ABB Striebel &amp; John Ersatzteile: Zählerschränke ComfortLine, Kleinverteiler, CombiLine, System pro E power, Einbauteile
+- [Abba](https://abcspareparts.eu/marche/abba.html): ABBA Linear Ersatzteile: Linearführungen BR, BC, BM, Wagen und Schienen, Rollenführungen, Linearlager, Kugelgewindetriebe
+- [Abel](https://abcspareparts.eu/marche/abel.html): ABEL Pumpen und Ersatzteile: Kolbenmembranpumpen HM/HMT/HMQ, Feststoffpumpen SH, CM, HP, HPT, EM, Membranen und Ventile
+- [Abicor Binzel](https://abcspareparts.eu/marche/abicor-binzel.html): ABICOR BINZEL Ersatzteile: MIG/MAG-Brenner MB EVO, WIG-, Plasma- und Roboterbrenner, Stromdüsen, Gasdüsen, Düsenstöcke
+- [Abitron](https://abcspareparts.eu/marche/abitron.html): ABITRON Industrieelektronik
+- [ABJ](https://abcspareparts.eu/marche/abj.html): ABJ Industriekomponenten
+- [ABK](https://abcspareparts.eu/marche/abk.html): ABK Industrieersatzteile
+- [Abko](https://abcspareparts.eu/marche/abko.html): ABKO Industriekomponenten
+- [ABL](https://abcspareparts.eu/marche/abl.html): ABL Elektroinstallation, Steckdosen und Steckverbinder
+- [ABL Sursum](https://abcspareparts.eu/marche/abl-sursum.html): ABL SURSUM Elektroinstallation, Industriestecker und Steckverbinder
+- [Abloy](https://abcspareparts.eu/marche/abloy.html): ABLOY Hochsicherheitsschlösser, Zylinder und Zutrittskontrolle
+- [ABM](https://abcspareparts.eu/marche/abm.html): ABM Antriebe und Bewegungssteuerung
+- [ABO](https://abcspareparts.eu/marche/abo.html): ABO Automatisierung und Steuerungstechnik
+- [Aboni](https://abcspareparts.eu/marche/aboni.html): ABONI Industrieausrüstung
+- [Aventics](https://abcspareparts.eu/marche/aventics.html): AVENTICS Pneumatikzylinder, Ventile, Ventilinseln und Druckluftaufbereitung
+- [Balluff](https://abcspareparts.eu/marche/balluff.html): Balluff induktive und optoelektronische Sensoren, RFID, Positionssensoren und Konnektivität
+- [Baltec](https://abcspareparts.eu/marche/baltec.html): BALTEC Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Baumer](https://abcspareparts.eu/marche/baumer.html): Baumer Sensoren, Encoder, Vision-Systeme und Prozessinstrumentierung
+- [Beckhoff](https://abcspareparts.eu/marche/beckhoff.html): Beckhoff PC-basierte Automation, Industrie-PCs, I/O-Module, EtherCAT und Servoantriebe
+- [Bernstein](https://abcspareparts.eu/marche/bernstein.html): Bernstein Sicherheitsschalter, Positionsschalter, Sensoren und Gehäuse
+- [Bosch Rexroth](https://abcspareparts.eu/marche/bosch-rexroth.html): Bosch Rexroth Hydraulik- und Pneumatiksysteme, Lineartechnik, Elektrische Antriebe und Automation
+- [Brabender](https://abcspareparts.eu/marche/brabender.html): BRABENDER Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Busak](https://abcspareparts.eu/marche/busak.html): BUSAK+SHAMBAN / TRELLEBORG Ersatzteile für Dichtungssysteme: Dichtungen, O-Ringe, Gleitringe
+- [Buschjost](https://abcspareparts.eu/marche/buschjost.html): BUSCHJOST Ersatzteile für Ventiltechnik: Ventile, Magnetspulen, Dichtungen
+- [Caprari](https://abcspareparts.eu/marche/caprari.html): CAPRARI Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Carlo Gavazzi](https://abcspareparts.eu/marche/carlo-gavazzi.html): Carlo Gavazzi Sensoren, Überwachungsrelais, Halbleiterrelais, Energiemanagement und Feldbuskomponenten
+- [Cognex](https://abcspareparts.eu/marche/cognex.html): Cognex Bildverarbeitungssysteme, Barcodeleser und Vision-Sensoren
+- [Control Techniques](https://abcspareparts.eu/marche/control-techniques.html): Control Techniques Frequenzumrichter, Servoantriebe und Motorsteuerung
+- [Datalogic](https://abcspareparts.eu/marche/datalogic.html): Datalogic Barcodeleser, Bildverarbeitung, Sicherheitssysteme und Sensoren
+- [Deublin](https://abcspareparts.eu/marche/deublin.html): DEUBLIN Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [di Soric](https://abcspareparts.eu/marche/di-soric.html): di-soric optoelektronische, Ultraschall-, induktive Sensoren und Sensortechnik
+- [Diosna](https://abcspareparts.eu/marche/diosna.html): DIOSNA Ersatzteile für Lebensmitteltechnik: Knethaken, Antriebe, Steuerungen
+- [EBM Papst](https://abcspareparts.eu/marche/ebm-papst.html): ebm-papst Axial- und Radialventilatoren, Gebläse, Motoren für Lüftung und Kühlung
+- [Elumatec](https://abcspareparts.eu/marche/elumatec.html): ELUMATEC Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Euchner](https://abcspareparts.eu/marche/euchner.html): Euchner Sicherheitsschalter, Sicherheitssensoren, Positionsschalter und Zustimmtaster
+- [Festo](https://abcspareparts.eu/marche/festo.html): Festo Pneumatikzylinder, Ventile, Ventilinseln, Greifer und Automatisierungstechnik
+- [Ficep](https://abcspareparts.eu/marche/ficep.html): FICEP Ersatzteile für Stahlbearbeitung: Bohrspindeln, Sägeblätter, Werkzeugwechsler
+- [Foss](https://abcspareparts.eu/marche/foss.html): FOSS Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Gefran](https://abcspareparts.eu/marche/gefran.html): Gefran Drucksensoren, Temperaturregler, Positionssensoren und Automatisierungskomponenten
+- [Gogatec](https://abcspareparts.eu/marche/gogatec.html): GOGATEC Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Grundfos](https://abcspareparts.eu/marche/grundfos.html): Grundfos Kreiselpumpen, Tauchpumpen, Druckerhöhungsanlagen und Pumpensteuerungen
+- [Hardinge](https://abcspareparts.eu/marche/hardinge.html): HARDINGE Ersatzteile für Werkzeugmaschinen: Spindeln, Spannzangen, Werkzeughalter
+- [Honeywell](https://abcspareparts.eu/marche/honeywell.html): Honeywell Sensoren, Schalter, Steuerungssysteme, Prozessautomation und Industriesteuerungen
+- [IFM](https://abcspareparts.eu/marche/ifm.html): ifm induktive Sensoren, optoelektronische Sensoren, Drucksensoren, Durchflusssensoren, AS-Interface
+- [IMI Norgren](https://abcspareparts.eu/marche/imi-norgren.html): IMI Norgren Pneumatikzylinder, Ventile, FRL-Einheiten und Bewegungssteuerung
+- [IPF Electronic](https://abcspareparts.eu/marche/ipf-electronic.html): ipf electronic optoelektronische Sensoren, induktive Sensoren, Abstandssensoren und Sicherheitstechnik
+- [Joest](https://abcspareparts.eu/marche/joest.html): JOEST Ersatzteile für Vibrationstechnik: Unwuchtmotoren, Siebmatten, Gummielemente
+- [Kaco](https://abcspareparts.eu/marche/kaco.html): KACO Ersatzteile für Dichtungssysteme: Dichtungen, O-Ringe, Gleitringe
+- [Keyence](https://abcspareparts.eu/marche/keyence.html): Keyence Sensoren, Bildverarbeitung, Messsysteme, Barcodeleser und SPS-Systeme
+- [Klixon](https://abcspareparts.eu/marche/klixon.html): KLIXON Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Legrand](https://abcspareparts.eu/marche/legrand.html): LEGRAND Ersatzteile für Elektroinstallation: Schalter, Steckdosen, Kabelverwaltung
+- [Lenze](https://abcspareparts.eu/marche/lenze.html): Lenze Frequenzumrichter, Servoantriebe, Getriebemotoren und Motion Control
+- [Leoni](https://abcspareparts.eu/marche/leoni.html): LEONI Ersatzteile für Kabel und Leitungssysteme: Kabel, Stecker, Leitungen
+- [Leuze](https://abcspareparts.eu/marche/leuze.html): Leuze Sicherheits-Lichtschranken, optoelektronische Sensoren, Barcodeleser und Sensorlösungen
+- [MAC](https://abcspareparts.eu/marche/mac.html): MAC Pneumatik-Magnetventile, Ventilinseln und Pneumatiksteuerung
+- [Megger](https://abcspareparts.eu/marche/megger.html): MEGGER Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Metal Work Pneumatic](https://abcspareparts.eu/marche/metal-work-pneumatic.html): Metal Work Pneumatic Pneumatikzylinder, Ventile, FRL-Einheiten und Pneumatikkomponenten
+- [Micro Detectors](https://abcspareparts.eu/marche/micro-detectors.html): Micro Detectors optoelektronische Sensoren, induktive Sensoren, Ultraschallsensoren und Sensortechnik
+- [Mitsubishi Electric](https://abcspareparts.eu/marche/mitsubishi-electric.html): Mitsubishi Electric SPS, Servosysteme, Frequenzumrichter, HMI und Fabrikautomation
+- [Molex](https://abcspareparts.eu/marche/molex.html): MOLEX Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Noske Kaeser](https://abcspareparts.eu/marche/noske-kaeser.html): NOSKE-KAESER Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Omron](https://abcspareparts.eu/marche/omron.html): Omron SPS, Sensoren, Sicherheitssysteme, Relais, Schalter und Industrieautomation
+- [Panasonic](https://abcspareparts.eu/marche/panasonic.html): Panasonic Industriesensoren, Relais, SPS, Servomotoren und Fabrikautomation
+- [Parker](https://abcspareparts.eu/marche/parker.html): Parker Hydraulik- und Pneumatikzylinder, Ventile, Filter, Motion Control und Fluidverbinder
+- [Pepperl plus Fuchs](https://abcspareparts.eu/marche/pepperl-plus-fuchs.html): Pepperl+Fuchs induktive Sensoren, Ultraschallsensoren, Vision-Sensoren, AS-Interface und Feldbustechnik
+- [Phoenix Contact](https://abcspareparts.eu/marche/phoenix-contact.html): Phoenix Contact Reihenklemmen, Steckverbinder, Überspannungsschutz, Netzteile und Industriekommunikation
+- [Pilz](https://abcspareparts.eu/marche/pilz.html): Pilz Sicherheitsrelais, Sicherheits-SPS, Sicherheitssensoren, Not-Aus-Geräte und Automation
+- [Piovan](https://abcspareparts.eu/marche/piovan.html): PIOVAN Ersatzteile für Trockner, Dosierung, Förderung, Temperierung: Ventile, Sensoren, Filter, Heizungen
+- [Pizzato](https://abcspareparts.eu/marche/pizzato.html): Pizzato Positionsschalter, Sicherheitsschalter, Fußschalter, Not-Aus-Geräte und Endschalter
+- [Rexroth](https://abcspareparts.eu/marche/rexroth.html): Rexroth Hydraulikzylinder, Ventile, Pumpen, Pneumatik und Lineartechnik
+- [Saer](https://abcspareparts.eu/marche/saer.html): SAER Ersatzteile für Pumpen und rotierende Anlagen: Pumpenteile, Laufräder, Dichtungen
+- [Schelling](https://abcspareparts.eu/marche/schelling.html): IMA SCHELLING Ersatzteile für Holzbearbeitung: Sägeblätter, Anschläge, Hydraulikzylinder
+- [Schmersal](https://abcspareparts.eu/marche/schmersal.html): Schmersal Sicherheitsschalter, Sicherheitssensoren, Sicherheitssteuerungen, Seilzugschalter und Sicherheitssysteme
+- [Schneider Electric](https://abcspareparts.eu/marche/schneider-electric.html): Schneider Electric SPS, Frequenzumrichter, Schütze, Leistungsschalter, HMI und Industrieautomation
+- [SEW Eurodrive](https://abcspareparts.eu/marche/sew-eurodrive.html): SEW-Eurodrive Getriebemotoren, Frequenzumrichter, Servoantriebe und Antriebsautomation
+- [Sick](https://abcspareparts.eu/marche/sick.html): Sick Sicherheits-Lichtschranken, Laserscanner, optoelektronische Sensoren, Encoder und Sensor Intelligence
+- [Siemens](https://abcspareparts.eu/marche/siemens.html): Siemens SPS, Antriebe, Schaltgeräte, Sensoren, HMI und Industrieautomation
+- [Siko](https://abcspareparts.eu/marche/siko.html): Siko Positionssensoren, Magnetencoder, Linearencoder und Positionsanzeigen
+- [SMC](https://abcspareparts.eu/marche/smc.html): SMC Pneumatikzylinder, Ventile, Luftaufbereitung, Greifer und Pneumatikkomponenten
+- [Sodick](https://abcspareparts.eu/marche/sodick.html): SODICK Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Stein](https://abcspareparts.eu/marche/stein.html): STEIN AUTOMATION Ersatzteile für Automatisierungstechnik: Stopper, Umsetzer, Steuerungen
+- [Sulzer](https://abcspareparts.eu/marche/sulzer.html): SULZER Ersatzteile für Pumpen und rotierende Anlagen: Pumpenteile, Laufräder, Dichtungen
+- [Sungrow](https://abcspareparts.eu/marche/sungrow.html): SUNGROW Ersatzteile für Energietechnik: Wechselrichter-Module, Steuerplatinen, Lüfter
+- [Swegon](https://abcspareparts.eu/marche/swegon.html): SWEGON Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Texa](https://abcspareparts.eu/marche/texa.html): TEXA Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Titgemeyer](https://abcspareparts.eu/marche/titgemeyer.html): TITGEMEYER Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Turck](https://abcspareparts.eu/marche/turck.html): Turck induktive Sensoren, Feldbustechnik, I/O-Systeme, RFID und Konnektivität
+- [Vemag](https://abcspareparts.eu/marche/vemag.html): VEMAG Ersatzteile für Lebensmitteltechnik: Knethaken, Antriebe, Steuerungen
+- [Visionair](https://abcspareparts.eu/marche/visionair.html): VISIONAIR Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Wenglor](https://abcspareparts.eu/marche/wenglor.html): wenglor optoelektronische Sensoren, Vision-Sensoren, Abstandssensoren und Sensorlösungen
+- [Wika](https://abcspareparts.eu/marche/wika.html): WIKA Manometer, Temperatursensoren, Druckmessumformer und Kalibriertechnik
+- [Wittmann](https://abcspareparts.eu/marche/wittmann.html): WITTMANN Ersatzteile: Teilenummer senden – Angebot oft in 24 h
+- [Yaskawa](https://abcspareparts.eu/marche/yaskawa.html): Yaskawa Servomotoren, Frequenzumrichter, Roboter, Motion Controller und Antriebssysteme
+- [Zander Aachen](https://abcspareparts.eu/marche/zander-aachen.html): ZANDER-AACHEN Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+- [Zhermack](https://abcspareparts.eu/marche/zhermack.html): ZHERMACK Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
+
 ## Full part number catalog
 
 Quotable part references. Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Deep links use a URL hash (`#quote=CODE`) so Google indexes only the clean brand page — not `?part=` / `?lang=` query variants:

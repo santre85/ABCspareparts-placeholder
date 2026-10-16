@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const BASE_URL = 'https://abcspareparts.eu';
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -145,7 +146,79 @@ ${urls}</urlset>`;
   console.log('✓ Created sitemap-legal.xml');
 }
 
+function getLastCommitDate(filePath) {
+  try {
+    const result = execSync(
+      `git log -1 --format=%ci -- "${filePath}" 2>/dev/null`,
+      { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }
+    ).trim();
+    
+    if (result) {
+      return result.split(' ')[0];
+    }
+  } catch (err) {
+    // File not tracked or error
+  }
+  
+  if (fs.existsSync(filePath)) {
+    const stat = fs.statSync(filePath);
+    return stat.mtime.toISOString().slice(0, 10);
+  }
+  
+  return null;
+}
+
+function updateBrandsSitemap() {
+  const brandContent = JSON.parse(fs.readFileSync('brand-content.json', 'utf8'));
+  const brandSlugs = Object.keys(brandContent).sort();
+  
+  const entries = [];
+  
+  for (const slug of brandSlugs) {
+    const filePath = `marche/${slug}.html`;
+    const lastmod = getLastCommitDate(filePath);
+    
+    if (lastmod) {
+      entries.push({
+        slug,
+        url: `${BASE_URL}/marche/${slug}.html`,
+        lastmod
+      });
+    }
+  }
+  
+  const xmlHeader = `---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  
+  const xmlFooter = `</urlset>`;
+  
+  const xmlEntries = entries.map(entry => `  <url>
+    <loc>${entry.url}</loc>
+    <lastmod>${entry.lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`).join('\n');
+  
+  const sitemap = `${xmlHeader}\n${xmlEntries}\n${xmlFooter}`;
+  
+  fs.writeFileSync('sitemap-brands.xml', sitemap, 'utf8');
+  console.log(`✓ Updated sitemap-brands.xml (${entries.length} brands)`);
+}
+
+function getFileLastMod(filePath) {
+  const lastmod = getLastCommitDate(filePath);
+  return lastmod || TODAY;
+}
+
 function updateSitemapIndex() {
+  const brandsLastmod = getFileLastMod('sitemap-brands.xml');
+  const partsLastmod = getFileLastMod('sitemap-parts.xml');
+  const brandPartsLastmod = getFileLastMod('sitemap-brand-parts.xml');
+  const casesLastmod = getFileLastMod('sitemap-cases.xml');
+  
   const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
@@ -158,19 +231,19 @@ function updateSitemapIndex() {
   </sitemap>
   <sitemap>
     <loc>${BASE_URL}/sitemap-brands.xml</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${brandsLastmod}</lastmod>
   </sitemap>
   <sitemap>
     <loc>${BASE_URL}/sitemap-parts.xml</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${partsLastmod}</lastmod>
   </sitemap>
   <sitemap>
     <loc>${BASE_URL}/sitemap-brand-parts.xml</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${brandPartsLastmod}</lastmod>
   </sitemap>
   <sitemap>
     <loc>${BASE_URL}/sitemap-cases.xml</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${casesLastmod}</lastmod>
   </sitemap>
 </sitemapindex>`;
   
@@ -181,5 +254,6 @@ function updateSitemapIndex() {
 console.log('📄 Updating sitemaps with language alternates...\n');
 updateMainSitemap();
 createLegalSitemap();
+updateBrandsSitemap();
 updateSitemapIndex();
 console.log('\n✅ Sitemaps updated successfully!');
