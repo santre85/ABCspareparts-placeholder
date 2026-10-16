@@ -22,15 +22,6 @@ const MAX_DESC_LEN = 120;
 
 /**
  * Manual overrides for brand name normalization
- * 
- * Unmatched brands requiring brand-slugs.json entries:
- * - ABC (ambiguous, multiple ABC brands exist)
- * - Scheuerle (6 items)
- * - BROVIND (2 items)
- * - Gorter (2 items)
- * - SEPATRON (2 items)
- * - MADATEC (2 items)
- * - Omec, Steimel, AUO, Römheld, Matrix Elektronik, Walterscheid, Intercable tools, KPM, Wayne (1 each)
  */
 const BRAND_OVERRIDES = {
   'PHOENIX CONTACT': 'Phoenix contact',
@@ -38,11 +29,28 @@ const BRAND_OVERRIDES = {
   'MULLER MARTINI': 'Müller Martini',
   'Muller Martini': 'Müller Martini',
   'Mueller Martini': 'Müller Martini',
-  // Map unmatched brands to existing slugs
+  // Previously unmatched brands (PR #79)
   'HERBORNER PUMPEN': 'HERBORNER',
   'Hi force': 'Hi-Force Hydraulics',
   'ATLAS COPCO SCA': 'ATLAS COPCO',
-  'AMPLIDAN - DNH': 'DNH'
+  'AMPLIDAN - DNH': 'DNH',
+  // New brand pages created for ERP integration
+  'Scheuerle': 'Scheuerle',
+  'BROVIND': 'BROVIND',
+  'Gorter': 'Gorter',
+  'SEPATRON': 'SEPATRON',
+  'MADATEC': 'MADATEC',
+  'Omec': 'Omec',
+  'Steimel': 'Steimel',
+  'AUO': 'AUO',
+  'Römheld': 'Römheld',
+  'Matrix Elektronik': 'Matrix Elektronik',
+  'Walterscheid': 'Walterscheid',
+  'NEWHAVEN': 'NEWHAVEN DISPLAY',
+  'Intercable tools': 'Intercable tools',
+  'KPM': 'KPM',
+  'Wayne': 'Wayne'
+  // ABC - skipped as ambiguous (multiple ABC brands exist)
 };
 
 function normalizeKey(value) {
