@@ -238,11 +238,25 @@
         </ul>
         
       </section>
+      <section class="related-brands" aria-label="Typische Produkte und Teilenummern">
+        <h2>Typische Produkte und Teilenummern</h2>
+        <ul>
+          <li>Hydraulic cylinders</li>
+          <li>Clamping technology</li>
+        </ul>
+      </section>
+      <section class="related-brands" aria-label="Einsatzbereiche">
+        <h2>Einsatzbereiche</h2>
+        <ul>
+          <li>Machine tools</li>
+          <li>Hydraulic systems</li>
+        </ul>
+      </section>
       <section class="related-brands" aria-label="Related brands">
         <h2 data-i18n="related_title">Ähnliche Marken</h2>
         <p data-i18n="related_intro">Weitere Hersteller für industrielle Ersatzteile und MRO:</p>
         <ul>
-          <li><a href="../marche/novexx.html">NOVEXX</a></li><li><a href="../marche/palazzani.html">PALAZZANI</a></li><li><a href="../marche/pepperl-plus-fuchs.html">Pepperl+Fuchs</a></li><li><a href="../marche/pflitsch.html">Pflitsch</a></li><li><a href="../marche/phoenix-contact.html">Phoenix Contact</a></li><li><a href="../marche/pizzato.html">Pizzato</a></li>
+          <li><a href="../marche/hydac.html">Hydac</a></li><li><a href="../marche/rexroth.html">Rexroth</a></li><li><a href="../marche/parker.html">Parker</a></li>
         </ul>
       </section>
       <section class="brand-faq" id="marken-faq" aria-labelledby="brand-faq-heading">
@@ -361,8 +375,13 @@
       var l = p.get('lang');
       return l && ['de', 'en', 'it', 'es', 'fr'].indexOf(l) !== -1 ? l : null;
     }
+    function getPageLang() {
+      // Use the page's <html lang="..."> attribute as the default
+      var htmlLang = document.documentElement.lang;
+      return htmlLang && ['de', 'en', 'it', 'es', 'fr'].indexOf(htmlLang) !== -1 ? htmlLang : null;
+    }
     function getCurrentLang() {
-      return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de';
+      return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || getPageLang() || (navigator.language && navigator.language.split('-')[0]) || 'de';
     }
     function updateLinksWithLang(lang) {
       // Language stays in localStorage — do not append ?lang= (GSC alternate noise).

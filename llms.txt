@@ -17,7 +17,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-119 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302065 part references.
+133 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302088 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -26,6 +26,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Anton Paar](https://abcspareparts.eu/marche/anton-paar.html): 104453
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 2906 0565 00, 80701.000507
 - [ATR](https://abcspareparts.eu/marche/atr.html): VM321-10 (EX. VM221-10 )
+- [AUO](https://abcspareparts.eu/marche/auo.html): G121SN01 V.4
 - [Autronica](https://abcspareparts.eu/marche/autronica.html): V-430/BH200, V-530/BH500
 - [Aventics](https://abcspareparts.eu/marche/aventics.html): V581-5/2AR-I2-2CNA-AA-A-C
 - [Baelz](https://abcspareparts.eu/marche/baelz.html): Best.-Nr. D-VENTIL
@@ -33,6 +34,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Baumer](https://abcspareparts.eu/marche/baumer.html): EN580C.ML-BN12.HH2PB.21160.H, EN580C.ML-BN12.HH2PB.21160.H-11262807, EN580C.ML-SC10.HH2C1.21160.H-11267453
 - [Biesse](https://abcspareparts.eu/marche/biesse.html): 091604600, 0916A0017, 1614A0037, 1614A0039 (+6 more)
 - [BOSCH REXROTH](https://abcspareparts.eu/marche/bosch-rexroth.html): 1020418303011000, 5776960900-AGZ, AZPF-11-008RCB20MB, R030567904 (+2 more)
+- [BROVIND](https://abcspareparts.eu/marche/brovind.html): 30ME_CO_F_ 3P_3MT, AL55 230/50 DC
 - [BÜRKERT](https://abcspareparts.eu/marche/burkert.html): 20093082, 688424, 693163, 693176 (+3 more)
 - [CAREL](https://abcspareparts.eu/marche/carel.html): IRDRV10000, UCHBP000X0200, UCHCONP010
 - [CIEMME](https://abcspareparts.eu/marche/ciemme.html): 974400110000
@@ -48,6 +50,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Fuji Electric](https://abcspareparts.eu/marche/fuji-electric.html): NP1X1606-W
 - [GENERIC](https://abcspareparts.eu/marche/generic.html): 6027.051
 - [GHR](https://abcspareparts.eu/marche/ghr.html): D166- L- G- 43- NNL2000   (Ex. Type D166/L/21), Repair kit for DOM pressure regulator Type:  D166- L- G- 43- NNL2000, Repair kit for DOM pressure regulator Type:  D166/L/21
+- [Gorter](https://abcspareparts.eu/marche/gorter.html): 939401S115080, SOFT PART SET
 - [Grundfos](https://abcspareparts.eu/marche/grundfos.html): 97851334, 98122409, SEV.65.65.40.2.51D
 - [Harmsco](https://abcspareparts.eu/marche/harmsco.html): Guarnizione coperchio 550 e11
 - [Harting](https://abcspareparts.eu/marche/harting.html): 09 14 006 0371, 09 33 000 6XXX
@@ -66,6 +69,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Impa](https://abcspareparts.eu/marche/impa.html): 732658, 750551
 - [Indramat](https://abcspareparts.eu/marche/indramat.html): ID268508, DKC11.3-040-7-FW R911279433 (Refurbished)
 - [INGETEAM](https://abcspareparts.eu/marche/ingeteam.html): AAX0052
+- [Intercable tools](https://abcspareparts.eu/marche/intercable-tools.html): Presskopf PP520
 - [Ixys](https://abcspareparts.eu/marche/ixys.html): VHF28-12IO5
 - [KEPCO](https://abcspareparts.eu/marche/kepco.html): 127-0354
 - [Keyence](https://abcspareparts.eu/marche/keyence.html): GL-R80H, HR-B1, IV3-G120, IV3-G600CA (+7 more)
@@ -74,6 +78,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Kockum Sonics](https://abcspareparts.eu/marche/kockum-sonics.html): 24530291, 24800287, 24800703
 - [Koino](https://abcspareparts.eu/marche/koino.html): KH-3046ER-11-R, KH-513DL-24V-G, KH-513DL-24V-Y
 - [Konecranes](https://abcspareparts.eu/marche/konecranes.html): 52294077, 52302509, 52302518, 52589491 (+1 more)
+- [KPM](https://abcspareparts.eu/marche/kpm.html): TA000330
 - [Kübler](https://abcspareparts.eu/marche/kubler.html): 279383, 8.F5863.1234.G221
 - [Kuhnke](https://abcspareparts.eu/marche/kuhnke.html): 76.147.92.00, 761479100
 - [Kunpeng](https://abcspareparts.eu/marche/kunpeng.html): KP22580HA2BL-C
@@ -81,15 +86,19 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Leuze](https://abcspareparts.eu/marche/leuze.html): 53800105, 53800117, RSL410-M
 - [M&S Armaturen](https://abcspareparts.eu/marche/m-and-s-armaturen.html): 03052-2001010, 03052-2002010, 03052-2003010, 56040-0250700 (+8 more)
 - [M+S Hydraulic](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html): MMS50C
+- [MADATEC](https://abcspareparts.eu/marche/madatec.html): B-SC9291, V947
+- [Matrix Elektronik](https://abcspareparts.eu/marche/matrix-elektronik.html): IRS-U-4A
 - [Mellor Electric](https://abcspareparts.eu/marche/mellor-electric.html): MREL119040212213
 - [Mettler Toledo](https://abcspareparts.eu/marche/mettler-toledo.html): 119106, 119171, 51119547, 51119999
 - [Mori Seiki](https://abcspareparts.eu/marche/mori-seiki.html): RIBSTAR BELT 15PK2008
 - [MOTOR POWER COMPANY](https://abcspareparts.eu/marche/motor-power-company.html): T.115.SR.7.R.L.17.501.A.16.116
 - [MST](https://abcspareparts.eu/marche/mst.html): 135859, 149826, 2485C041, 3175P003 (+10 more)
 - [Müller Martini](https://abcspareparts.eu/marche/muller-martini.html): 0031.5754, 0040.0598, 0306.1115.4, 0306.1116.4 (+6 more)
+- [NEWHAVEN DISPLAY](https://abcspareparts.eu/marche/newhaven-display.html): NHD-0220JZ-FL-GBW
 - [NINGBO HONGBO WEITE MOTOR CO.,LTD](https://abcspareparts.eu/marche/ningbo-hongbo-weite-motor-co-ltd.html): HB18065HA2B
 - [Norgren](https://abcspareparts.eu/marche/norgren.html): 8020865
 - [NOVEXX](https://abcspareparts.eu/marche/novexx.html): A101972, A101974
+- [Omec](https://abcspareparts.eu/marche/omec.html): AA34222022T001-C
 - [PALAZZANI](https://abcspareparts.eu/marche/palazzani.html): 0014140082, 0014140085, 0050120247, 0053070049 (+1 more)
 - [Pepperl+Fuchs](https://abcspareparts.eu/marche/pepperl-plus-fuchs.html): NJ2-11-SN-G
 - [Pflitsch](https://abcspareparts.eu/marche/pflitsch.html): M16x1,5/8,0-5,0
@@ -108,9 +117,11 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Roemheld](https://abcspareparts.eu/marche/roemheld.html): HBZ 500160/100/100
 - [ROSS](https://abcspareparts.eu/marche/ross.html): D2171B6012W-2 ( EX. D2171B6012)
 - [Rotork](https://abcspareparts.eu/marche/rotork.html): ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)
+- [Scheuerle](https://abcspareparts.eu/marche/scheuerle.html): 60112067, 60112071, 60112075, 60112076 (+2 more)
 - [SCHNEIDER](https://abcspareparts.eu/marche/schneider.html): 9001A9, 9007AA1, 9422A1, 9070FB2B (+737 listino codes, search on page)
 - [Schneider Electric](https://abcspareparts.eu/marche/schneider-electric.html): LC1D066M7, NSYS04, LVS01005, LV841940 (+60738 listino codes, search on page)
 - [Schunk](https://abcspareparts.eu/marche/schunk.html): LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058, PGN-plus 64-2-AS / 371093 (+1 more)
+- [SEPATRON](https://abcspareparts.eu/marche/sepatron.html): AD1015, AD1035
 - [SEW Eurodrive](https://abcspareparts.eu/marche/sew-eurodrive.html): 28229150, 8253854, 8277311, 8670455 (+1 more)
 - [Sick](https://abcspareparts.eu/marche/sick.html): 1050920, 1211479, 1211499 / 18483347, 1211500 / 18481699 (+1 more)
 - [SIDEL](https://abcspareparts.eu/marche/sidel.html): 01123995101, 01123995301, 01124344702, 29A5048437 (+1 more)
@@ -121,6 +132,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Sontay](https://abcspareparts.eu/marche/sontay.html): PA-DPS-88
 - [Spectrex INC.](https://abcspareparts.eu/marche/spectrex-inc.html): UF IR3 Flame Detector, SS316, ATEX, 3/4"
 - [Speeder Motion Line](https://abcspareparts.eu/marche/speeder-motion-line.html): MB082GA310
+- [Steimel](https://abcspareparts.eu/marche/steimel.html): ASF3-25RD-200240L
 - [Steute](https://abcspareparts.eu/marche/steute.html): 1188542
 - [Sulzer](https://abcspareparts.eu/marche/sulzer.html): XFP150G CB1.3
 - [SYM BANG](https://abcspareparts.eu/marche/sym-bang.html): A18065V2HBT-S
@@ -133,13 +145,13 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [TRELLEBORG](https://abcspareparts.eu/marche/trelleborg.html): 3DIC08172 (Turcon-Variseal PVC100197-Z80S)
 - [Turck](https://abcspareparts.eu/marche/turck.html): WKB 3T-*/S90
 - [TWK](https://abcspareparts.eu/marche/twk.html): IW120/24-0,5-KF-S-KH-A17
+- [Walterscheid](https://abcspareparts.eu/marche/walterscheid.html): KU25-3DP
+- [Wayne](https://abcspareparts.eu/marche/wayne.html): WM008766
 - [Weidmüller](https://abcspareparts.eu/marche/weidmuller.html): 8714260000
 - [Wenglor](https://abcspareparts.eu/marche/wenglor.html): 85365019
 - [Wilkerson](https://abcspareparts.eu/marche/wilkerson.html): R18-C4-F000B
 - [Ziegler](https://abcspareparts.eu/marche/ziegler.html): 12-104491
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
-
-
 ## Brand pages with detailed content
 
 ABCspareparts maintains 105 enriched brand pages with detailed product information, applications, and technical specifications. Each page is available in multiple languages (DE/EN/IT/ES/FR) via an on-page language selector. No manufacturer contact details or price lists are published.
@@ -410,6 +422,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [ATLAS COPCO 2906 0565 00](https://abcspareparts.eu/marche/atlas-copco.html#quote=2906%200565%2000) — Elemento separatore per compressore Atlas Copco GA 132W
 - [ATLAS COPCO 80701.000507](https://abcspareparts.eu/marche/atlas-copco.html#quote=80701.000507) — BALL JOINT ASSEMBLY
 - [ATR VM321-10 (EX. VM221-10 )](https://abcspareparts.eu/marche/atr.html#quote=VM321-10%20(EX.%20VM221-10%20)) — Effektivwert-Messverstärker (rms/DC-Wandler)
+- [AUO G121SN01 V.4](https://abcspareparts.eu/marche/auo.html#quote=G121SN01%20V.4) — LCD MATRIX
 - [Autronica V-430/BH200](https://abcspareparts.eu/marche/autronica.html#quote=V-430%2FBH200) — Smoke Detector** Replacement for 116-BHH-200** Please check that the socket installed on board have been produced after…
 - [Autronica V-530/BH500](https://abcspareparts.eu/marche/autronica.html#quote=V-530%2FBH500) — Smoke Detector ** Replacement for 116-BHH-500** Please check that the socket installed on board have been produced afte…
 - [Aventics V581-5/2AR-I2-2CNA-AA-A-C](https://abcspareparts.eu/marche/aventics.html#quote=V581-5%2F2AR-I2-2CNA-AA-A-C) — Aventics V581-5/2AR-I2-2CNA-AA-A-C
@@ -436,6 +449,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [BOSCH REXROTH R030567904](https://abcspareparts.eu/marche/bosch-rexroth.html#quote=R030567904) — Electromechanical Cylinder size EMC-063
 - [BOSCH REXROTH R414005407‑AGZ 5/2‑Weg](https://abcspareparts.eu/marche/bosch-rexroth.html#quote=R414005407%E2%80%91AGZ%205%2F2%E2%80%91Weg) — Magnetspule‑Ventil gross
 - [BOSCH REXROTH R902431327](https://abcspareparts.eu/marche/bosch-rexroth.html#quote=R902431327) — Pump
+- [BROVIND 30ME_CO_F_ 3P_3MT](https://abcspareparts.eu/marche/brovind.html#quote=30ME_CO_F_%203P_3MT) — FEMALE CONN. 3POLES 3MT
+- [BROVIND AL55 230/50 DC](https://abcspareparts.eu/marche/brovind.html#quote=AL55%20230%2F50%20DC) — LINEARE VIBR. AL55 230 50 DC
 - [BÜRKERT 20093082](https://abcspareparts.eu/marche/burkert.html#quote=20093082) — BÜRKERT 20093082Ventilmembran DN25
 - [BÜRKERT 688424](https://abcspareparts.eu/marche/burkert.html#quote=688424) — BÜRKERT 688424Ventilmembran DN25
 - [BÜRKERT 693163](https://abcspareparts.eu/marche/burkert.html#quote=693163) — BÜRKERT 693163Ventilmembran DN15
@@ -475,6 +490,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [GHR D166- L- G- 43- NNL2000   (Ex. Type D166/L/21)](https://abcspareparts.eu/marche/ghr.html#quote=D166-%20L-%20G-%2043-%20NNL2000%20%20%20(Ex.%20Type%20D166%2FL%2F21)) — DOM Pressure RegulatorMedium: GasTemperature: max. 80°Cp1 Inlet: max. 100 barp2 Outlet: 0.5–100 bar, adjustableSeat: 9…
 - [GHR Repair kit for DOM pressure regulator Type:  D166- L- G- 43- NNL2000](https://abcspareparts.eu/marche/ghr.html#quote=Repair%20kit%20for%20DOM%20pressure%20regulator%20Type%3A%20%20D166-%20L-%20G-%2043-%20NNL2000) — Repair kit for DOM pressure regulator Type: D166- L- G- 43- NNL2000 (new version)
 - [GHR Repair kit for DOM pressure regulator Type:  D166/L/21](https://abcspareparts.eu/marche/ghr.html#quote=Repair%20kit%20for%20DOM%20pressure%20regulator%20Type%3A%20%20D166%2FL%2F21) — Repair kit for DOM pressure regulatorType: D166/L/21 (old version)
+- [Gorter 939401S115080](https://abcspareparts.eu/marche/gorter.html#quote=939401S115080) — Pilot Spare KITP095-HPS/MPSPart-No. 939401S115080For REGULATING VALVE ASSY : MODEL: R100S SIZE: 8" / 600#S/No: 20080259…
+- [Gorter SOFT PART SET](https://abcspareparts.eu/marche/gorter.html#quote=SOFT%20PART%20SET) — For REGULATING VALVE ASSY: MODEL: R100S SIZE: 8" / 600#S/No: 2008025922,DESIGN PR: 70 BAR,For HRSG SF FUEL GAS PRESSURE…
 - [Grundfos 97851334](https://abcspareparts.eu/marche/grundfos.html#quote=97851334) — POMPA GRUNDFOS TP 40-120/2AFABQQE-DX1 0,37KW Q=11,4m³/h H=7,4m
 - [Grundfos 98122409](https://abcspareparts.eu/marche/grundfos.html#quote=98122409) — POMPA GRUNDFOS TP 40-60/2AFABQQE-CX1 0,25KW Q=10,4m³/h H=4,6m
 - [Grundfos SEV.65.65.40.2.51D](https://abcspareparts.eu/marche/grundfos.html#quote=SEV.65.65.40.2.51D) — GRUNDFOS AbwasserpumpeFreistromlaufradSEV.65.65.40.2.51D 10m KabelNachfolgemodell zu 96047733Typ: SEV.65.65.40.2.51DTec…
@@ -563,6 +580,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Impa 750551](https://abcspareparts.eu/marche/impa.html#quote=750551) — MARINE BRONZE 20 KGF/CM2 GLOBE VALVE F-7388 / SIZE: M20X1.5
 - [Indramat ID268508, DKC11.3-040-7-FW R911279433 (Refurbished)](https://abcspareparts.eu/marche/indramat.html#quote=ID268508%2C%20DKC11.3-040-7-FW%20R911279433%20(Refurbished)) — Servoregler
 - [INGETEAM AAX0052](https://abcspareparts.eu/marche/ingeteam.html#quote=AAX0052) — RS485 communication board
+- [Intercable tools Presskopf PP520](https://abcspareparts.eu/marche/intercable-tools.html#quote=Presskopf%20PP520)
 - [Ixys VHF28-12IO5](https://abcspareparts.eu/marche/ixys.html#quote=VHF28-12IO5) — Bridge rectifier: half-controlled
 - [KEPCO 127-0354](https://abcspareparts.eu/marche/kepco.html#quote=127-0354) — Circuit Breaker
 - [Keyence GL-R80H](https://abcspareparts.eu/marche/keyence.html#quote=GL-R80H) — Safety Light Curtain (Set: transmitter and receiver)
@@ -590,6 +608,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Konecranes 52302518](https://abcspareparts.eu/marche/konecranes.html#quote=52302518) — set of idler wheels
 - [Konecranes 52589491](https://abcspareparts.eu/marche/konecranes.html#quote=52589491) — set of covers
 - [Konecranes 53024331](https://abcspareparts.eu/marche/konecranes.html#quote=53024331) — End Plate
+- [KPM TA000330](https://abcspareparts.eu/marche/kpm.html#quote=TA000330) — Hydraulic Splitter
 - [Kübler 279383](https://abcspareparts.eu/marche/kubler.html#quote=279383) — 1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…
 - [Kübler 8.F5863.1234.G221](https://abcspareparts.eu/marche/kubler.html#quote=8.F5863.1234.G221) — 1 =Klemmflansch, ø 58 mm, IP65 2 =ø10mmx20mm 3 =SSI, BiSS + 2048 ppr SinCos / 5 V DC 4 =M23-Stecker radial, 12-polig G=…
 - [Kuhnke 76.147.92.00](https://abcspareparts.eu/marche/kuhnke.html#quote=76.147.92.00) — Elettrovalvola
@@ -612,6 +631,9 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [M&S Armaturen 576800500300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=576800500300) — Dichtung Nr. 676 Efür ScheibenventilDN 50
 - [M&S Armaturen 578-104011000](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=578-104011000) — Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1"-4" Nr. GL678TBJ1 Zolltarif-Nr. 84123100
 - [M+S Hydraulic MMS50C](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html#quote=MMS50C) — Hydraulic Motor
+- [MADATEC B-SC9291](https://abcspareparts.eu/marche/madatec.html#quote=B-SC9291) — RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5…
+- [MADATEC V947](https://abcspareparts.eu/marche/madatec.html#quote=V947) — 1.5ML AMBER 9MM SCREW VIAL W/WRITE- ON SPOT,11.6*32MM, 7.0 TYPE GLASS ( 100 PCS PACK) -EQUIV.AGILENT 5182-0516
+- [Matrix Elektronik IRS-U-4A](https://abcspareparts.eu/marche/matrix-elektronik.html#quote=IRS-U-4A) — Sensore 20/28 VDC, uscita 0/10 VDC, cavo 3 m, distanza 400 mm
 - [Mellor Electric MREL119040212213](https://abcspareparts.eu/marche/mellor-electric.html#quote=MREL119040212213) — BRUSHLESS,DC MOTOR,24VDC,2346RPMP/N: DCB2106
 - [Mettler Toledo 119106](https://abcspareparts.eu/marche/mettler-toledo.html#quote=119106) — Heizelement DSC
 - [Mettler Toledo 119171](https://abcspareparts.eu/marche/mettler-toledo.html#quote=119171) — PT100 Sensor DSC820/821E
@@ -643,10 +665,12 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Müller Martini 0890.1422.4](https://abcspareparts.eu/marche/muller-martini.html#quote=0890.1422.4) — Blattfeder BD25/0.8X137Ursprungsland: CH Zolltarifnummer: 73201000 Gewicht: 0,021 KG
 - [Müller Martini 0890.1527.3](https://abcspareparts.eu/marche/muller-martini.html#quote=0890.1527.3) — BürsteUrsprungsland: CH Zolltarifnummer: 96035000 Gewicht: 0,26 KG
 - [Müller Martini 1522.3212.4](https://abcspareparts.eu/marche/muller-martini.html#quote=1522.3212.4) — Solenoid Valve
+- [NEWHAVEN DISPLAY NHD-0220JZ-FL-GBW](https://abcspareparts.eu/marche/newhaven-display.html#quote=NHD-0220JZ-FL-GBW) — LCD/LED Display
 - [NINGBO HONGBO WEITE MOTOR CO.,LTD HB18065HA2B](https://abcspareparts.eu/marche/ningbo-hongbo-weite-motor-co-ltd.html#quote=HB18065HA2B) — Lüfter
 - [Norgren 8020865](https://abcspareparts.eu/marche/norgren.html#quote=8020865) — SOLENOID VALVE 3/2-WAY-600PSI
 - [NOVEXX A101972](https://abcspareparts.eu/marche/novexx.html#quote=A101972) — Label Sensor without Cable
 - [NOVEXX A101974](https://abcspareparts.eu/marche/novexx.html#quote=A101974) — Label Sensor (with Cable)
+- [Omec AA34222022T001-C](https://abcspareparts.eu/marche/omec.html#quote=AA34222022T001-C) — OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC150°C / Shaft 24j6 / 165x130j6x200 / Ral 7031 / Fixed with circ…
 - [PALAZZANI 0014140082](https://abcspareparts.eu/marche/palazzani.html#quote=0014140082) — AIR FILTER
 - [PALAZZANI 0014140085](https://abcspareparts.eu/marche/palazzani.html#quote=0014140085) — AIR FILTER CARTRIDGE
 - [PALAZZANI 0050120247](https://abcspareparts.eu/marche/palazzani.html#quote=0050120247) — OIL FILTER CARTRIDGE
@@ -754,6 +778,12 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Roemheld HBZ 500160/100/100](https://abcspareparts.eu/marche/roemheld.html#quote=HBZ%20500160%2F100%2F100)
 - [ROSS D2171B6012W-2 ( EX. D2171B6012)](https://abcspareparts.eu/marche/ross.html#quote=D2171B6012W-2%20(%20EX.%20D2171B6012)) — G1PL 2/2-WAY VALVE N.G.SOLENOID-OPERATED 24 VDCPart Number: 84812090Country of Origin: US
 - [Rotork ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)](https://abcspareparts.eu/marche/rotork.html#quote=ELR.SO.SK70200-20X23E3%20(ex%3A%20SK70220-20X21A3)) — Endlagenrückmeldung wie folgt: / Limit switch box as follows: SK = Gehäuse aus Aluminiumdruckguss / Die-cast aluminium…
+- [Scheuerle 60112067](https://abcspareparts.eu/marche/scheuerle.html#quote=60112067) — HIGH PRESSURE HOSE
+- [Scheuerle 60112071](https://abcspareparts.eu/marche/scheuerle.html#quote=60112071) — HIGH PRESSURE HOSE
+- [Scheuerle 60112075](https://abcspareparts.eu/marche/scheuerle.html#quote=60112075) — HIGH PRESSURE HOSE
+- [Scheuerle 60112076](https://abcspareparts.eu/marche/scheuerle.html#quote=60112076) — HIGH PRESSURE HOSE
+- [Scheuerle 60112081](https://abcspareparts.eu/marche/scheuerle.html#quote=60112081) — HIGH PRESSURE HOSE
+- [Scheuerle 60112084](https://abcspareparts.eu/marche/scheuerle.html#quote=60112084) — HIGH PRESSURE HOSE
 - [SCHNEIDER listino](https://abcspareparts.eu/marche/schneider.html) — 737 codes searchable on page (no prices); try searching prefixes like 9001, 9007, 9422, 9070, 9080, 9012
 - [SCHNEIDER 9001A9](https://abcspareparts.eu/marche/schneider.html#quote=9001A9) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER 9007AA1](https://abcspareparts.eu/marche/schneider.html#quote=9007AA1) — sample code from manufacturer list (request quote, no price shown)
@@ -809,6 +839,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Schunk LM 50-H75 / 314058](https://abcspareparts.eu/marche/schunk.html#quote=LM%2050-H75%20%2F%20314058) — Universal Linear Axis
 - [Schunk PGN-plus 64-2-AS / 371093](https://abcspareparts.eu/marche/schunk.html#quote=PGN-plus%2064-2-AS%20%2F%20371093) — Universal Gripper
 - [Schunk RM 200-W90-1 / 313007](https://abcspareparts.eu/marche/schunk.html#quote=RM%20200-W90-1%20%2F%20313007) — Universal Swivel Unit
+- [SEPATRON AD1015](https://abcspareparts.eu/marche/sepatron.html#quote=AD1015) — ADAMAS C18 CLASSIC 1.8µm - 100mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959758-902
+- [SEPATRON AD1035](https://abcspareparts.eu/marche/sepatron.html#quote=AD1035) — ADAMAS C18 CLASSIC 1.8µm - 150mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959759-902
 - [SEW Eurodrive 28229150](https://abcspareparts.eu/marche/sew-eurodrive.html#quote=28229150) — TASTIERINO SEW DBG 60B-10 PER MOVIDRIVE MDX TIPO B
 - [SEW Eurodrive 8253854](https://abcspareparts.eu/marche/sew-eurodrive.html#quote=8253854) — Raddrizzatore SEW BGE 1.5
 - [SEW Eurodrive 8277311](https://abcspareparts.eu/marche/sew-eurodrive.html#quote=8277311) — INVERTER SEW MOVIDRIVE MDX61B0008-5A3-4-0T 0,75KW 400V
@@ -880,6 +912,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Sontay PA-DPS-88](https://abcspareparts.eu/marche/sontay.html#quote=PA-DPS-88) — Pressure Transmitter
 - [Spectrex INC. UF IR3 Flame Detector, SS316, ATEX, 3/4"](https://abcspareparts.eu/marche/spectrex-inc.html#quote=UF%20IR3%20Flame%20Detector%2C%20SS316%2C%20ATEX%2C%203%2F4%22) — Spectrex SharpEye Ultra Fast triple IR, universal wiring; relays, analog, 0-20mA, HART, RS-485 Modbus, -60 to +85 deg C…
 - [Speeder Motion Line MB082GA310](https://abcspareparts.eu/marche/speeder-motion-line.html#quote=MB082GA310) — SERVODRIVE
+- [Steimel ASF3-25RD-200240L](https://abcspareparts.eu/marche/steimel.html#quote=ASF3-25RD-200240L) — Pump unit
 - [Steute 1188542](https://abcspareparts.eu/marche/steute.html#quote=1188542) — Ex solenoid interlockEx STM 295 1Ö1S/1Ö1S-A/90°Article no.: 1188542 (old article no.: 95353310)
 - [Sulzer XFP150G CB1.3](https://abcspareparts.eu/marche/sulzer.html#quote=XFP150G%20CB1.3) — Girante / Laufrad
 - [SYM BANG A18065V2HBT-S](https://abcspareparts.eu/marche/sym-bang.html#quote=A18065V2HBT-S) — Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W
@@ -927,6 +960,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [TRELLEBORG 3DIC08172 (Turcon-Variseal PVC100197-Z80S)](https://abcspareparts.eu/marche/trelleborg.html#quote=3DIC08172%20(Turcon-Variseal%20PVC100197-Z80S)) — Turcon Variseal spring-energized seal
 - [Turck WKB 3T-*/S90](https://abcspareparts.eu/marche/turck.html#quote=WKB%203T-*%2FS90) — Steckverbinder 1/2" 5,3MM 2000MM PUR Ar*
 - [TWK IW120/24-0,5-KF-S-KH-A17](https://abcspareparts.eu/marche/twk.html#quote=IW120%2F24-0%2C5-KF-S-KH-A17) — Inductive linear transducer
+- [Walterscheid KU25-3DP](https://abcspareparts.eu/marche/walterscheid.html#quote=KU25-3DP) — Kupplung
+- [Wayne WM008766](https://abcspareparts.eu/marche/wayne.html#quote=WM008766) — IGEM ISFS LON Board
 - [Weidmüller 8714260000](https://abcspareparts.eu/marche/weidmuller.html#quote=8714260000) — FBCON SS DP PCG 1WAY
 - [Wenglor 85365019](https://abcspareparts.eu/marche/wenglor.html#quote=85365019) — SENSORE DISTANZA LASER TOF WENGLOR P1PY131
 - [Wilkerson R18-C4-F000B](https://abcspareparts.eu/marche/wilkerson.html#quote=R18-C4-F000B) — Druckregler m. Selbstentlastung1/2"BSP-Gewinde, 0,4 - 8,6 bar
@@ -953,7 +988,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 119 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 133 high-priority brand URLs
 - [Other unique-content brand pages](https://abcspareparts.eu/sitemap-brands.xml) — curated copy, not the thin 12k template set
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
