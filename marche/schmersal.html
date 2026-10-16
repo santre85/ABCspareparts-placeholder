@@ -355,8 +355,13 @@
       var l = p.get('lang');
       return l && ['de', 'en', 'it', 'es', 'fr'].indexOf(l) !== -1 ? l : null;
     }
+    function getPageLang() {
+      // Use the page's <html lang="..."> attribute as the default
+      var htmlLang = document.documentElement.lang;
+      return htmlLang && ['de', 'en', 'it', 'es', 'fr'].indexOf(htmlLang) !== -1 ? htmlLang : null;
+    }
     function getCurrentLang() {
-      return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || (navigator.language && navigator.language.split('-')[0]) || 'de';
+      return getLangFromUrl() || (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || getPageLang() || (navigator.language && navigator.language.split('-')[0]) || 'de';
     }
     function updateLinksWithLang(lang) {
       // Language stays in localStorage — do not append ?lang= (GSC alternate noise).
