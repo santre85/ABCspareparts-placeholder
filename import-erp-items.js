@@ -22,13 +22,27 @@ const MAX_DESC_LEN = 120;
 
 /**
  * Manual overrides for brand name normalization
+ * 
+ * Unmatched brands requiring brand-slugs.json entries:
+ * - ABC (ambiguous, multiple ABC brands exist)
+ * - Scheuerle (6 items)
+ * - BROVIND (2 items)
+ * - Gorter (2 items)
+ * - SEPATRON (2 items)
+ * - MADATEC (2 items)
+ * - Omec, Steimel, AUO, Römheld, Matrix Elektronik, Walterscheid, Intercable tools, KPM, Wayne (1 each)
  */
 const BRAND_OVERRIDES = {
   'PHOENIX CONTACT': 'Phoenix contact',
   'Phoenix Contact': 'Phoenix contact',
   'MULLER MARTINI': 'Müller Martini',
   'Muller Martini': 'Müller Martini',
-  'Mueller Martini': 'Müller Martini'
+  'Mueller Martini': 'Müller Martini',
+  // Map unmatched brands to existing slugs
+  'HERBORNER PUMPEN': 'HERBORNER',
+  'Hi force': 'Hi-Force Hydraulics',
+  'ATLAS COPCO SCA': 'ATLAS COPCO',
+  'AMPLIDAN - DNH': 'DNH'
 };
 
 function normalizeKey(value) {

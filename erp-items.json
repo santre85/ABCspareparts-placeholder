@@ -104,6 +104,10 @@
         {
           "part_number": "2906 0565 00",
           "description": "Elemento separatore per compressore Atlas Copco GA 132W"
+        },
+        {
+          "part_number": "80701.000507",
+          "description": "BALL JOINT ASSEMBLY"
         }
       ]
     },
@@ -360,6 +364,20 @@
       ]
     },
     {
+      "brand": "DNH",
+      "brand_slug": "dnh",
+      "parts": [
+        {
+          "part_number": "DH30",
+          "description": "DNH Horn without driver 345mm for DST100 RAL7035"
+        },
+        {
+          "part_number": "DST100",
+          "description": "DNH Driver unit ALU 100W 100V IP67 RAL7035"
+        }
+      ]
+    },
+    {
       "brand": "DUNKERMOTOREN",
       "brand_slug": "dunkermotoren",
       "parts": [
@@ -576,12 +594,60 @@
       ]
     },
     {
+      "brand": "HERBORNER",
+      "brand_slug": "herborner",
+      "parts": [
+        {
+          "part_number": "2A.0B.A2.6B",
+          "description": "Mechanical seal elastomer bellow D24mmItem 433"
+        },
+        {
+          "part_number": "3D.1L.30.01",
+          "description": "Bearing 6205-2Z-N-C3Item 320.1"
+        },
+        {
+          "part_number": "3E.3F.30.00",
+          "description": "Anti-friction bearing 3306-C3Item 320.2"
+        },
+        {
+          "part_number": "97.10.08.00",
+          "description": "Shaft with rotor WR07-VFor motor VEM 100L2Item 819"
+        },
+        {
+          "part_number": "97.18.03.00",
+          "description": "Shaft seal ring B30x55x7-FK, item 423(labyrinth disc)"
+        },
+        {
+          "part_number": "LT.0D.11.00",
+          "description": "Impeller LT-HK/50A-1-120, item 230Material: GG-25"
+        },
+        {
+          "part_number": "RM.03.2D.00",
+          "description": "Impeller nut H50/131S-GD-M12Item 922"
+        }
+      ]
+    },
+    {
       "brand": "HERRMANN",
       "brand_slug": "herrmann",
       "parts": [
         {
           "part_number": "215009",
           "description": "HSG V2 ultrasonic hand-held welding machine with plastic housing"
+        }
+      ]
+    },
+    {
+      "brand": "Hi-Force Hydraulics",
+      "brand_slug": "hi-force-hydraulics",
+      "parts": [
+        {
+          "part_number": "HPR-2H",
+          "description": "Hi-Force Model no.: HPR-2H, 50 tonnes pin and bush replacement tool kit incorporating Hi-Force HHA504 lightweight, alum…"
+        },
+        {
+          "part_number": "PKC50",
+          "description": "Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing puller…"
         }
       ]
     },
