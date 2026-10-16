@@ -17,7 +17,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-39 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 301732 part references.
+40 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 301761 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 80701.000507
@@ -31,6 +31,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Hi-Force Hydraulics](https://abcspareparts.eu/marche/hi-force-hydraulics.html): HPR-2H, PKC50
 - [Hübner Elektromaschinen AG](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html): GT9.06L/420k
 - [HUMPHREY](https://abcspareparts.eu/marche/humphrey.html): 41024VDC
+- [Hydac](https://abcspareparts.eu/marche/hydac.html): 2103421, 2108819, 2110629, 2114310 (+25 more)
 - [IFM](https://abcspareparts.eu/marche/ifm.html): EVC001, EVC100, EVC200, EVC500 (+14787 listino codes, search on page)
 - [Konecranes](https://abcspareparts.eu/marche/konecranes.html): 52294077, 52302509, 52302518, 52589491 (+1 more)
 - [Kübler](https://abcspareparts.eu/marche/kubler.html): 279383
@@ -111,8 +112,37 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [HERBORNER RM.03.2D.00](https://abcspareparts.eu/marche/herborner.html#quote=RM.03.2D.00) — Impeller nut H50/131S-GD-M12Item 922
 - [Hi-Force Hydraulics HPR-2H](https://abcspareparts.eu/marche/hi-force-hydraulics.html#quote=HPR-2H) — Hi-Force Model no.: HPR-2H, 50 tonnes pin and bush replacement tool kit incorporating Hi-Force HHA504 lightweight, alum…
 - [Hi-Force Hydraulics PKC50](https://abcspareparts.eu/marche/hi-force-hydraulics.html#quote=PKC50) — Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing puller…
-- [Hübner Elektromaschinen AG GT9.06L/420k](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html#quote=GT9.06L%2F420k) — Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…
+- [Hübner Elektromaschinen AG GT9.06L/420k](https://abcspareparts.eu/marche/hubner-elektromaschinen-ag.html#quote=GT9.06L%2F420k) — Hübner Analog-Tacho Longlife DC GT9.06L/420K — 20 V bei 1000/min, Ø 17 mm Konuswelle 1:10, passend Siemens 1HU
 - [HUMPHREY 41024VDC](https://abcspareparts.eu/marche/humphrey.html#quote=41024VDC)
+- [Hydac 2103421](https://abcspareparts.eu/marche/hydac.html#quote=2103421) — UEBERG-ST FPU G3-W21,8x1/14 (BAUGR)
+- [Hydac 2108819](https://abcspareparts.eu/marche/hydac.html#quote=2108819) — ADAPTER FPU A6-G3/4A BOLENZ (BAUGR)
+- [Hydac 2110629](https://abcspareparts.eu/marche/hydac.html#quote=2110629) — ADAPTER FPU A7-G1/4 QHP (BAUGR)
+- [Hydac 2114310](https://abcspareparts.eu/marche/hydac.html#quote=2114310) — FPU-1-350/100F2,5A3
+- [Hydac 2116149](https://abcspareparts.eu/marche/hydac.html#quote=2116149) — FPU-1-350/400A3 (ohne Schlauch)
+- [Hydac 2117669](https://abcspareparts.eu/marche/hydac.html#quote=2117669) — Seal kit for FPU-1
+- [Hydac 2124524](https://abcspareparts.eu/marche/hydac.html#quote=2124524) — ADAPTER FPU A8-G 3/4LEDUC (BAUGR)*
+- [Hydac 2128638](https://abcspareparts.eu/marche/hydac.html#quote=2128638) — ADAPTER FPU A9-VG8 GREER (BAUGR)*
+- [Hydac 2128849](https://abcspareparts.eu/marche/hydac.html#quote=2128849) — ADAPTER FPU A10-7/8-14-UNF HYDAC (BAUGR)
+- [Hydac 236376](https://abcspareparts.eu/marche/hydac.html#quote=236376) — UEBERG-ST FPU G2-G5/8-ISO228 (BAUGR)
+- [Hydac 236515](https://abcspareparts.eu/marche/hydac.html#quote=236515) — charging hose F W24,32x1/14 (4,0m)
+- [Hydac 291531](https://abcspareparts.eu/marche/hydac.html#quote=291531) — ADAPTER FPU A5-M8x1 LEDUC (BAUGR)
+- [Hydac 291533](https://abcspareparts.eu/marche/hydac.html#quote=291533) — ADAPTER FPU A3-7/8-14UNF HYDAC
+- [Hydac 291536](https://abcspareparts.eu/marche/hydac.html#quote=291536) — ADAPTER FPU A4-7/8-14UNF OLAER (BAUGR)
+- [Hydac 3018210](https://abcspareparts.eu/marche/hydac.html#quote=3018210) — ADAPTER FPU A11-M16x2 Hydac (BAUGR)
+- [Hydac 3019418](https://abcspareparts.eu/marche/hydac.html#quote=3019418) — charging hose FM M30x1,5 (4,0m)
+- [Hydac 3019420](https://abcspareparts.eu/marche/hydac.html#quote=3019420) — charging hose FW W30x2 (4,0m)
+- [Hydac 3203185](https://abcspareparts.eu/marche/hydac.html#quote=3203185) — ADAPTER FPU A12-M16x2 MINIMESS (BAUGR)
+- [Hydac 3269153](https://abcspareparts.eu/marche/hydac.html#quote=3269153) — Seal kit for FPU adapter
+- [Hydac 361619](https://abcspareparts.eu/marche/hydac.html#quote=361619) — ADAPTER FPU A1-M16x1,5 MINIMESS (BAUGR)
+- [Hydac 373405](https://abcspareparts.eu/marche/hydac.html#quote=373405) — charging hose F W24,32x1/14 (10,0m)
+- [Hydac 3911267](https://abcspareparts.eu/marche/hydac.html#quote=3911267) — ADAPTER FPU A13 5/8-18UNF HYDAC (BAUGR)
+- [Hydac 606765](https://abcspareparts.eu/marche/hydac.html#quote=606765) — pressure gauge HN60-01-A 63/ 100/G 1/4B
+- [Hydac 606766](https://abcspareparts.eu/marche/hydac.html#quote=606766) — pressure gauge HN60-01-A 63/ 160/G 1/4B
+- [Hydac 608034](https://abcspareparts.eu/marche/hydac.html#quote=608034) — pressure gauge HN60-01-A 63/ 600/G 1/4B
+- [Hydac 635139](https://abcspareparts.eu/marche/hydac.html#quote=635139) — Pressure gauge 0-10bar
+- [Hydac 635141](https://abcspareparts.eu/marche/hydac.html#quote=635141) — Pressure gauge 0-100bar
+- [Hydac 635142](https://abcspareparts.eu/marche/hydac.html#quote=635142) — Pressure gauge 0-250bar
+- [Hydac 635143](https://abcspareparts.eu/marche/hydac.html#quote=635143) — Pressure gauge 0-400bar
 - [IFM listino](https://abcspareparts.eu/marche/ifm.html) — 14787 codes searchable on page (no prices); try searching prefixes like EVC0, EVC1, EVC2, EVC5, EVC8, EVCA
 - [IFM EVC001](https://abcspareparts.eu/marche/ifm.html#quote=EVC001) — sample code from manufacturer list (request quote, no price shown)
 - [IFM EVC100](https://abcspareparts.eu/marche/ifm.html#quote=EVC100) — sample code from manufacturer list (request quote, no price shown)
@@ -316,7 +346,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 39 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 40 high-priority brand URLs
 - [Other unique-content brand pages](https://abcspareparts.eu/sitemap-brands.xml) — curated copy, not the thin 12k template set
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs

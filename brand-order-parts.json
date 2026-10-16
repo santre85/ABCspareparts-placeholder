@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/",
-  "generated": "2026-09-17",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac)",
+  "generated": "2026-10-16",
   "listini_files": 301648,
   "brands": [
     {
@@ -218,6 +218,128 @@
           "part_number": "41024VDC",
           "description": "41024VDC",
           "case_slug": "humphrey-valve-41024vdc"
+        }
+      ]
+    },
+    {
+      "brand": "Hydac",
+      "brand_slug": "hydac",
+      "parts": [
+        {
+          "part_number": "2103421",
+          "description": "UEBERG-ST FPU G3-W21,8x1/14 (BAUGR)"
+        },
+        {
+          "part_number": "2108819",
+          "description": "ADAPTER FPU A6-G3/4A BOLENZ (BAUGR)"
+        },
+        {
+          "part_number": "2110629",
+          "description": "ADAPTER FPU A7-G1/4 QHP (BAUGR)"
+        },
+        {
+          "part_number": "2114310",
+          "description": "FPU-1-350/100F2,5A3"
+        },
+        {
+          "part_number": "2116149",
+          "description": "FPU-1-350/400A3 (ohne Schlauch)"
+        },
+        {
+          "part_number": "2117669",
+          "description": "Seal kit for FPU-1"
+        },
+        {
+          "part_number": "2124524",
+          "description": "ADAPTER FPU A8-G 3/4LEDUC (BAUGR)*"
+        },
+        {
+          "part_number": "2128638",
+          "description": "ADAPTER FPU A9-VG8 GREER (BAUGR)*"
+        },
+        {
+          "part_number": "2128849",
+          "description": "ADAPTER FPU A10-7/8-14-UNF HYDAC (BAUGR)"
+        },
+        {
+          "part_number": "236376",
+          "description": "UEBERG-ST FPU G2-G5/8-ISO228 (BAUGR)"
+        },
+        {
+          "part_number": "236515",
+          "description": "charging hose F W24,32x1/14 (4,0m)"
+        },
+        {
+          "part_number": "291531",
+          "description": "ADAPTER FPU A5-M8x1 LEDUC (BAUGR)"
+        },
+        {
+          "part_number": "291533",
+          "description": "ADAPTER FPU A3-7/8-14UNF HYDAC"
+        },
+        {
+          "part_number": "291536",
+          "description": "ADAPTER FPU A4-7/8-14UNF OLAER (BAUGR)"
+        },
+        {
+          "part_number": "3018210",
+          "description": "ADAPTER FPU A11-M16x2 Hydac (BAUGR)"
+        },
+        {
+          "part_number": "3019418",
+          "description": "charging hose FM M30x1,5 (4,0m)"
+        },
+        {
+          "part_number": "3019420",
+          "description": "charging hose FW W30x2 (4,0m)"
+        },
+        {
+          "part_number": "3203185",
+          "description": "ADAPTER FPU A12-M16x2 MINIMESS (BAUGR)"
+        },
+        {
+          "part_number": "3269153",
+          "description": "Seal kit for FPU adapter"
+        },
+        {
+          "part_number": "361619",
+          "description": "ADAPTER FPU A1-M16x1,5 MINIMESS (BAUGR)"
+        },
+        {
+          "part_number": "373405",
+          "description": "charging hose F W24,32x1/14 (10,0m)"
+        },
+        {
+          "part_number": "3911267",
+          "description": "ADAPTER FPU A13 5/8-18UNF HYDAC (BAUGR)"
+        },
+        {
+          "part_number": "606765",
+          "description": "pressure gauge HN60-01-A 63/ 100/G 1/4B"
+        },
+        {
+          "part_number": "606766",
+          "description": "pressure gauge HN60-01-A 63/ 160/G 1/4B"
+        },
+        {
+          "part_number": "608034",
+          "description": "pressure gauge HN60-01-A 63/ 600/G 1/4B"
+        },
+        {
+          "part_number": "635139",
+          "description": "Pressure gauge 0-10bar"
+        },
+        {
+          "part_number": "635141",
+          "description": "Pressure gauge 0-100bar"
+        },
+        {
+          "part_number": "635142",
+          "description": "Pressure gauge 0-250bar"
+        },
+        {
+          "part_number": "635143",
+          "description": "Pressure gauge 0-400bar"
         }
       ]
     },
