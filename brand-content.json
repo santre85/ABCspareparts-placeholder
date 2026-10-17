@@ -19529,16 +19529,16 @@
       }
     ],
     "related_slugs": [
-      "schmidt",
-      "bucher",
-      "hako",
-      "tennant"
+      "bomford",
+      "rousseau",
+      "ferri",
+      "seppi"
     ],
     "related_labels": {
-      "schmidt": "Schmidt",
-      "bucher": "Bucher",
-      "hako": "Hako",
-      "tennant": "Tennant"
+      "bomford": "Bomford",
+      "rousseau": "Rousseau",
+      "ferri": "Ferri",
+      "seppi": "Seppi"
     },
     "faq_after": [
       {
@@ -19564,16 +19564,16 @@
       },
       "mentions": [
         {
-          "name": "MULAG Kehrmaschine",
-          "category": "Straßenreinigung"
-        },
-        {
-          "name": "MULAG Winterdienstfahrzeug",
-          "category": "Schneeräumung"
-        },
-        {
           "name": "MULAG Mähgerät",
-          "category": "Straßenunterhalt"
+          "category": "Böschungsmäher"
+        },
+        {
+          "name": "MULAG Mulcher",
+          "category": "Vegetationspflege"
+        },
+        {
+          "name": "MULAG Flughafenfahrzeug",
+          "category": "Airport Ground Support"
         }
       ],
       "extra": []
@@ -19581,18 +19581,18 @@
     "i18n": {
       "de": {
         "meta_title": "MULAG Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
-        "meta_description": "MULAG Ersatzteile für Kommunaltechnik und Spezialfahrzeuge: Komponenten und Verschleißteile. Teilenummer senden – Angebot oft in 24 h.",
-        "brand_h1": "MULAG – Ersatzteile für Kommunaltechnik und Spezialfahrzeuge",
+        "meta_description": "MULAG Ersatzteile für Mäh- und Vegetationspflege, Flughafentechnik: Komponenten und Verschleißteile. Teilenummer senden – Angebot oft in 24 h.",
+        "brand_h1": "MULAG – Ersatzteile für Mäh- und Vegetationspflege, Flughafentechnik",
         "brand_intro": "ABCspareparts beschafft MULAG Ersatzteile – Komponenten, Verschleißteile, Anbaugeräte. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
         "mulag_about_title": "Über MULAG",
-        "mulag_about_text": "<p>MULAG ist ein Hersteller von Spezialfahrzeugen und Kommunaltechnik: Kehrmaschinen, Winterdienstfahrzeuge, Mähgeräte und Reinigungssysteme für Straßen, Flughäfen und Industrie.</p>",
+        "mulag_about_text": "<p>MULAG ist ein Hersteller von Anbaugeräten und Spezialfahrzeugen für Mäh- und Vegetationspflege sowie Flughafentechnik. Das Sortiment umfasst Mähgeräte, Mulcher, Böschungsmäher und Fahrzeuge für die Grünpflege an Flughäfen, Straßen und Industriegelände.</p>",
         "mulag_products_title": "Typische MULAG Produktfamilien",
-        "mulag_products_list": "<li>Kehrmaschinen (kompakt, selbstfahrend, LKW-montiert)</li><li>Winterdienstfahrzeuge (Schneepflüge, Streufahrzeuge)</li><li>Mähgeräte und Mulcher (Straßen, Böschungen)</li><li>Hochdruck-Reinigungssysteme</li><li>Saugwagen und Entwässerungstechnik</li><li>Hydraulik- und Antriebssysteme</li><li>Anbaugeräte und Wechselsysteme</li>",
+        "mulag_products_list": "<li>Mähgeräte und Ausleger-Mähsysteme (Straßen, Böschungen)</li><li>Mulcher und Schlegelmäher (Vegetation, Grünpflege)</li><li>Böschungsmäher und Geländemäher</li><li>Flughafenfahrzeuge (Grünpflege auf Vorfeldern und Rollbahnen)</li><li>Trägerfahrzeuge und Anbausysteme</li><li>Hydraulik- und Antriebskomponenten</li><li>Mechanische Verbindungen (Kugelgelenke, Lagerungen)</li>",
         "mulag_apps_title": "Typische Einsatzbereiche",
-        "mulag_apps_list": "<li>Straßenreinigung und Winterdienst (Städte, Kommunen)</li><li>Flughäfen (Rollbahn-Reinigung, Schneeräumung)</li><li>Autobahnen und Landstraßen</li><li>Industriegelände und Logistikzentren</li><li>Parks, Sport- und Freizeitanlagen</li><li>Straßenunterhalt und Grünpflege</li>",
+        "mulag_apps_list": "<li>Flughäfen (Grünpflege auf Vorfeldern, Rollbahnen, Sicherheitszonen)</li><li>Straßenunterhalt (Böschungen, Mittelstreifen, Bankette)</li><li>Autobahnen und Landstraßen</li><li>Industriegelände und Logistikzentren</li><li>Bahnanlagen und Gleisbegleitgrün</li><li>Kommunale Grünpflege und Parks</li>",
         "mulag_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
         "mulag_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
-        "mulag_parts_id_list": "<li>Teilenummer vom Typenschild oder aus dem Ersatzteilkatalog</li><li>Foto des Typenschilds (Fahrzeugmodell, Seriennummer)</li><li>Foto des defekten Teils (z. B. Kehrwalze, Hydraulikpumpe, Filter)</li><li>Fahrzeugtyp (z. B. Kehrmaschine, Winterdienstfahrzeug)</li><li>Kurzbeschreibung: Was ist defekt?</li><li>Gewünschte Lieferfrist</li>",
+        "mulag_parts_id_list": "<li>Teilenummer vom Typenschild oder aus dem Ersatzteilkatalog</li><li>Foto des Typenschilds (Fahrzeug- oder Mähgeräte-Modell, Seriennummer)</li><li>Foto des defekten Teils (z. B. Kugelgelenk, Hydraulikzylinder, Messer)</li><li>Fahrzeug- oder Gerätetyp</li><li>Kurzbeschreibung: Was ist defekt?</li><li>Gewünschte Lieferfrist</li>",
         "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein MULAG-Gerät?",
         "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild der Maschine bzw. in der technischen Dokumentation. Ein Foto des Typenschilds und der Komponente hilft uns, die Nummer zu identifizieren und die Verfügbarkeit zu prüfen.",
         "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte MULAG-Anlagen?",
@@ -19603,18 +19603,18 @@
       },
       "en": {
         "meta_title": "MULAG spare parts by part number – quote within 24h | ABCspareparts",
-        "meta_description": "MULAG spare parts for Kommunaltechnik und Spezialfahrzeuge: components and wear parts. Send part number – quote often within 24 h.",
-        "brand_h1": "MULAG – spare parts for Kommunaltechnik und Spezialfahrzeuge",
+        "meta_description": "MULAG spare parts for Mäh- und Vegetationspflege, Flughafentechnik: components and wear parts. Send part number – quote often within 24 h.",
+        "brand_h1": "MULAG – spare parts for Mäh- und Vegetationspflege, Flughafentechnik",
         "brand_intro": "ABCspareparts sources MULAG spare parts – components, wear parts, attachments. Send the part number – we usually reply within 24 hours.",
         "mulag_about_title": "About MULAG",
-        "mulag_about_text": "<p>MULAG is a manufacturer of special vehicles and municipal technology: sweepers, winter maintenance vehicles, mowing equipment and cleaning systems for roads, airports and industry.</p>",
+        "mulag_about_text": "<p>MULAG is a manufacturer of attachments and special vehicles for mowing and vegetation maintenance as well as airport technology. The range includes mowers, mulchers, slope mowers and vehicles for landscaping at airports, roads and industrial sites.</p>",
         "mulag_products_title": "Typical MULAG product families",
-        "mulag_products_list": "<li>Sweepers (compact, self-propelled, truck-mounted)</li><li>Winter maintenance vehicles (snow plows, spreading vehicles)</li><li>Mowing equipment and mulchers (roads, embankments)</li><li>High-pressure cleaning systems</li><li>Suction trucks and drainage technology</li><li>Hydraulic and drive systems</li><li>Attachments and quick-change systems</li>",
+        "mulag_products_list": "<li>Mowing equipment and boom mowing systems (roads, embankments)</li><li>Mulchers and flail mowers (vegetation, landscaping)</li><li>Slope mowers and terrain mowers</li><li>Airport vehicles (landscaping on aprons and runways)</li><li>Carrier vehicles and attachment systems</li><li>Hydraulic and drive components</li><li>Mechanical connections (ball joints, bearings)</li>",
         "mulag_apps_title": "Typical applications",
-        "mulag_apps_list": "<li>Street cleaning and winter maintenance (cities, municipalities)</li><li>Airports (runway cleaning, snow removal)</li><li>Highways and country roads</li><li>Industrial sites and logistics centers</li><li>Parks, sports and leisure facilities</li><li>Road maintenance and landscaping</li>",
+        "mulag_apps_list": "<li>Airports (landscaping on aprons, runways, safety zones)</li><li>Road maintenance (embankments, medians, verges)</li><li>Highways and country roads</li><li>Industrial sites and logistics centers</li><li>Railway facilities and lineside vegetation</li><li>Municipal landscaping and parks</li>",
         "mulag_parts_id_title": "How to identify the correct part number",
         "mulag_parts_id_intro": "For a fast quote, send us:",
-        "mulag_parts_id_list": "<li>Part number from nameplate or spare parts catalog</li><li>Photo of nameplate (vehicle model, serial number)</li><li>Photo of defective part (e.g. sweeping roller, hydraulic pump, filter)</li><li>Vehicle type (e.g. sweeper, winter maintenance vehicle)</li><li>Brief description: what is defective?</li><li>Required delivery time</li>",
+        "mulag_parts_id_list": "<li>Part number from nameplate or spare parts catalog</li><li>Photo of nameplate (vehicle or mower model, serial number)</li><li>Photo of defective part (e.g. ball joint, hydraulic cylinder, blade)</li><li>Vehicle or equipment type</li><li>Brief description: what is defective?</li><li>Required delivery time</li>",
         "brand_faq_q4": "How do I identify the correct part number for my MULAG equipment?",
         "brand_faq_a4": "The part number is usually on a label on the component or on the machine nameplate, or in the technical documentation. A photo of the nameplate and component helps us identify the number and check availability.",
         "brand_faq_q5": "Does ABCspareparts also source spare parts for older or discontinued MULAG systems?",
@@ -19625,18 +19625,18 @@
       },
       "it": {
         "meta_title": "Ricambi MULAG per numero di parte – preventivo in 24h | ABCspareparts",
-        "meta_description": "Ricambi MULAG per Kommunaltechnik und Spezialfahrzeuge: componenti e parti di usura. Invii il codice – preventivo spesso in 24 h.",
-        "brand_h1": "MULAG – ricambi per Kommunaltechnik und Spezialfahrzeuge",
+        "meta_description": "Ricambi MULAG per Mäh- und Vegetationspflege, Flughafentechnik: componenti e parti di usura. Invii il codice – preventivo spesso in 24 h.",
+        "brand_h1": "MULAG – ricambi per Mäh- und Vegetationspflege, Flughafentechnik",
         "brand_intro": "ABCspareparts fornisce ricambi MULAG – componenti, parti di usura, accessori. Invii il numero di parte – di solito rispondiamo entro 24 ore.",
         "mulag_about_title": "Su MULAG",
-        "mulag_about_text": "<p>MULAG è un produttore di veicoli speciali e tecnologia comunale: spazzatrici, veicoli per manutenzione invernale, attrezzature per falciatura e sistemi di pulizia per strade, aeroporti e industria.</p>",
+        "mulag_about_text": "<p>MULAG è un produttore di attrezzature e veicoli speciali per falciatura e manutenzione della vegetazione e tecnologia aeroportuale. La gamma comprende falciatrici, trincia, falciatrici per scarpate e veicoli per la cura del verde in aeroporti, strade e siti industriali.</p>",
         "mulag_products_title": "Famiglie di prodotti MULAG tipici",
-        "mulag_products_list": "<li>Spazzatrici (compatte, semoventi, montate su camion)</li><li>Veicoli per manutenzione invernale (spazzaneve, spargisale)</li><li>Attrezzature per falciatura e trincia (strade, scarpate)</li><li>Sistemi di pulizia ad alta pressione</li><li>Autospurgo e tecnologia di drenaggio</li><li>Sistemi idraulici e di azionamento</li><li>Attrezzature e sistemi di cambio rapido</li>",
+        "mulag_products_list": "<li>Attrezzature per falciatura e sistemi di falciatura a braccio (strade, scarpate)</li><li>Trincia e trincia a flagelli (vegetazione, cura del verde)</li><li>Falciatrici per scarpate e terreni</li><li>Veicoli aeroportuali (cura del verde su piazzali e piste)</li><li>Veicoli portanti e sistemi di attacco</li><li>Componenti idraulici e di azionamento</li><li>Connessioni meccaniche (giunti sferici, cuscinetti)</li>",
         "mulag_apps_title": "Applicazioni tipiche",
-        "mulag_apps_list": "<li>Pulizia stradale e manutenzione invernale (città, comuni)</li><li>Aeroporti (pulizia piste, sgombero neve)</li><li>Autostrade e strade statali</li><li>Siti industriali e centri logistici</li><li>Parchi, impianti sportivi e ricreativi</li><li>Manutenzione stradale e cura del verde</li>",
+        "mulag_apps_list": "<li>Aeroporti (cura del verde su piazzali, piste, zone di sicurezza)</li><li>Manutenzione stradale (scarpate, spartitraffico, margini)</li><li>Autostrade e strade statali</li><li>Siti industriali e centri logistici</li><li>Impianti ferroviari e vegetazione lungo i binari</li><li>Cura del verde comunale e parchi</li>",
         "mulag_parts_id_title": "Come identificare il numero di parte corretto",
         "mulag_parts_id_intro": "Per un preventivo rapido, ci invii:",
-        "mulag_parts_id_list": "<li>Numero di parte dalla targhetta o dal catalogo ricambi</li><li>Foto della targhetta (modello veicolo, numero di serie)</li><li>Foto del componente difettoso (es. rullo spazzante, pompa idraulica, filtro)</li><li>Tipo di veicolo (es. spazzatrice, veicolo per manutenzione invernale)</li><li>Breve descrizione: cosa è difettoso?</li><li>Tempo di consegna richiesto</li>",
+        "mulag_parts_id_list": "<li>Numero di parte dalla targhetta o dal catalogo ricambi</li><li>Foto della targhetta (modello veicolo o falciatrice, numero di serie)</li><li>Foto del componente difettoso (es. giunto sferico, cilindro idraulico, lama)</li><li>Tipo di veicolo o attrezzatura</li><li>Breve descrizione: cosa è difettoso?</li><li>Tempo di consegna richiesto</li>",
         "brand_faq_q4": "Come identifico il numero di parte corretto per la mia apparecchiatura MULAG?",
         "brand_faq_a4": "Il numero di parte si trova solitamente su un'etichetta sul componente o sulla targhetta della macchina, o nella documentazione tecnica. Una foto della targhetta e del componente ci aiuta a identificare il numero e verificare la disponibilità.",
         "brand_faq_q5": "ABCspareparts fornisce anche ricambi per sistemi MULAG più vecchi o fuori produzione?",
@@ -19647,18 +19647,18 @@
       },
       "es": {
         "meta_title": "Recambios MULAG por número de pieza – presupuesto en 24h | ABCspareparts",
-        "meta_description": "Recambios MULAG para Kommunaltechnik und Spezialfahrzeuge: componentes y piezas de desgaste. Envíe el número – presupuesto a menudo en 24 h.",
-        "brand_h1": "MULAG – recambios para Kommunaltechnik und Spezialfahrzeuge",
+        "meta_description": "Recambios MULAG para Mäh- und Vegetationspflege, Flughafentechnik: componentes y piezas de desgaste. Envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "MULAG – recambios para Mäh- und Vegetationspflege, Flughafentechnik",
         "brand_intro": "ABCspareparts suministra recambios MULAG – componentes, piezas de desgaste, accesorios. Envíe el número de pieza – solemos responder en 24 horas.",
         "mulag_about_title": "Sobre MULAG",
-        "mulag_about_text": "<p>MULAG es un fabricante de vehículos especiales y tecnología municipal: barredoras, vehículos de mantenimiento invernal, equipos de corte y sistemas de limpieza para carreteras, aeropuertos e industria.</p>",
+        "mulag_about_text": "<p>MULAG es un fabricante de equipos y vehículos especiales para corte y mantenimiento de vegetación y tecnología aeroportuaria. La gama incluye cortadoras, trituradoras, cortadoras de taludes y vehículos para paisajismo en aeropuertos, carreteras e instalaciones industriales.</p>",
         "mulag_products_title": "Familias de productos MULAG típicos",
-        "mulag_products_list": "<li>Barredoras (compactas, autopropulsadas, montadas en camión)</li><li>Vehículos de mantenimiento invernal (quitanieves, esparcidores)</li><li>Equipos de corte y trituradoras (carreteras, taludes)</li><li>Sistemas de limpieza de alta presión</li><li>Camiones de succión y tecnología de drenaje</li><li>Sistemas hidráulicos y de accionamiento</li><li>Accesorios y sistemas de cambio rápido</li>",
+        "mulag_products_list": "<li>Equipos de corte y sistemas de corte con brazo (carreteras, taludes)</li><li>Trituradoras y cortadoras de cadenas (vegetación, paisajismo)</li><li>Cortadoras de taludes y terrenos</li><li>Vehículos aeroportuarios (paisajismo en plataformas y pistas)</li><li>Vehículos portadores y sistemas de montaje</li><li>Componentes hidráulicos y de accionamiento</li><li>Conexiones mecánicas (rótulas, rodamientos)</li>",
         "mulag_apps_title": "Aplicaciones típicas",
-        "mulag_apps_list": "<li>Limpieza de calles y mantenimiento invernal (ciudades, municipios)</li><li>Aeropuertos (limpieza de pistas, remoción de nieve)</li><li>Autopistas y carreteras</li><li>Sitios industriales y centros logísticos</li><li>Parques, instalaciones deportivas y recreativas</li><li>Mantenimiento de carreteras y paisajismo</li>",
+        "mulag_apps_list": "<li>Aeropuertos (paisajismo en plataformas, pistas, zonas de seguridad)</li><li>Mantenimiento de carreteras (taludes, medianas, bordes)</li><li>Autopistas y carreteras</li><li>Sitios industriales y centros logísticos</li><li>Instalaciones ferroviarias y vegetación junto a vías</li><li>Paisajismo municipal y parques</li>",
         "mulag_parts_id_title": "Cómo identificar el número de pieza correcto",
         "mulag_parts_id_intro": "Para un presupuesto rápido, envíenos:",
-        "mulag_parts_id_list": "<li>Número de pieza de la placa o catálogo de repuestos</li><li>Foto de la placa (modelo de vehículo, número de serie)</li><li>Foto de la pieza defectuosa (p. ej. rodillo de barrido, bomba hidráulica, filtro)</li><li>Tipo de vehículo (p. ej. barredora, vehículo de mantenimiento invernal)</li><li>Breve descripción: ¿qué está defectuoso?</li><li>Plazo de entrega requerido</li>",
+        "mulag_parts_id_list": "<li>Número de pieza de la placa o catálogo de repuestos</li><li>Foto de la placa (modelo de vehículo o cortadora, número de serie)</li><li>Foto de la pieza defectuosa (p. ej. rótula, cilindro hidráulico, cuchilla)</li><li>Tipo de vehículo o equipo</li><li>Breve descripción: ¿qué está defectuoso?</li><li>Plazo de entrega requerido</li>",
         "brand_faq_q4": "¿Cómo identifico el número de pieza correcto para mi equipo MULAG?",
         "brand_faq_a4": "El número de pieza suele estar en una etiqueta en el componente o en la placa de la máquina, o en la documentación técnica. Una foto de la placa y del componente nos ayuda a identificar el número y verificar la disponibilidad.",
         "brand_faq_q5": "¿ABCspareparts también suministra recambios para sistemas MULAG antiguos o descontinuados?",
@@ -19669,18 +19669,18 @@
       },
       "fr": {
         "meta_title": "Pièces MULAG par numéro de pièce – devis sous 24h | ABCspareparts",
-        "meta_description": "Pièces MULAG pour Kommunaltechnik und Spezialfahrzeuge: composants et pièces d'usure. Envoyez le numéro – devis souvent sous 24 h.",
-        "brand_h1": "MULAG – pièces pour Kommunaltechnik und Spezialfahrzeuge",
+        "meta_description": "Pièces MULAG pour Mäh- und Vegetationspflege, Flughafentechnik: composants et pièces d'usure. Envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "MULAG – pièces pour Mäh- und Vegetationspflege, Flughafentechnik",
         "brand_intro": "ABCspareparts fournit des pièces MULAG – composants, pièces d'usure, accessoires. Envoyez le numéro de pièce – réponse en général sous 24 h.",
         "mulag_about_title": "À propos de MULAG",
-        "mulag_about_text": "<p>MULAG est un fabricant de véhicules spéciaux et de technologie municipale : balayeuses, véhicules d'entretien hivernal, équipements de fauchage et systèmes de nettoyage pour routes, aéroports et industrie.</p>",
+        "mulag_about_text": "<p>MULAG est un fabricant d'équipements et de véhicules spéciaux pour le fauchage et l'entretien de la végétation ainsi que la technologie aéroportuaire. La gamme comprend des faucheuses, des broyeurs, des faucheuses de talus et des véhicules pour l'entretien des espaces verts dans les aéroports, les routes et les sites industriels.</p>",
         "mulag_products_title": "Familles de produits MULAG typiques",
-        "mulag_products_list": "<li>Balayeuses (compactes, automotrices, montées sur camion)</li><li>Véhicules d'entretien hivernal (chasse-neige, véhicules de salage)</li><li>Équipements de fauchage et broyeurs (routes, talus)</li><li>Systèmes de nettoyage haute pression</li><li>Camions aspirateurs et technologie de drainage</li><li>Systèmes hydrauliques et d'entraînement</li><li>Accessoires et systèmes de changement rapide</li>",
+        "mulag_products_list": "<li>Équipements de fauchage et systèmes de fauchage à bras (routes, talus)</li><li>Broyeurs et faucheuses à fléaux (végétation, entretien des espaces verts)</li><li>Faucheuses de talus et de terrain</li><li>Véhicules aéroportuaires (entretien des espaces verts sur aires de trafic et pistes)</li><li>Véhicules porteurs et systèmes d'attelage</li><li>Composants hydrauliques et d'entraînement</li><li>Connexions mécaniques (rotules, roulements)</li>",
         "mulag_apps_title": "Applications typiques",
-        "mulag_apps_list": "<li>Nettoyage de rue et entretien hivernal (villes, municipalités)</li><li>Aéroports (nettoyage de piste, déneigement)</li><li>Autoroutes et routes nationales</li><li>Sites industriels et centres logistiques</li><li>Parcs, installations sportives et de loisirs</li><li>Entretien des routes et aménagement paysager</li>",
+        "mulag_apps_list": "<li>Aéroports (entretien des espaces verts sur aires de trafic, pistes, zones de sécurité)</li><li>Entretien des routes (talus, terre-pleins, accotements)</li><li>Autoroutes et routes nationales</li><li>Sites industriels et centres logistiques</li><li>Installations ferroviaires et végétation le long des voies</li><li>Entretien des espaces verts municipaux et parcs</li>",
         "mulag_parts_id_title": "Comment identifier le bon numéro de pièce",
         "mulag_parts_id_intro": "Pour un devis rapide, envoyez-nous :",
-        "mulag_parts_id_list": "<li>Numéro de pièce de la plaque signalétique ou du catalogue de pièces de rechange</li><li>Photo de la plaque signalétique (modèle de véhicule, numéro de série)</li><li>Photo de la pièce défectueuse (p. ex. rouleau de balayage, pompe hydraulique, filtre)</li><li>Type de véhicule (p. ex. balayeuse, véhicule d'entretien hivernal)</li><li>Brève description : qu'est-ce qui est défectueux ?</li><li>Délai de livraison souhaité</li>",
+        "mulag_parts_id_list": "<li>Numéro de pièce de la plaque signalétique ou du catalogue de pièces de rechange</li><li>Photo de la plaque signalétique (modèle de véhicule ou de faucheuse, numéro de série)</li><li>Photo de la pièce défectueuse (p. ex. rotule, cylindre hydraulique, lame)</li><li>Type de véhicule ou d'équipement</li><li>Brève description : qu'est-ce qui est défectueux ?</li><li>Délai de livraison souhaité</li>",
         "brand_faq_q4": "Comment identifier le bon numéro de pièce pour mon équipement MULAG ?",
         "brand_faq_a4": "Le numéro de pièce se trouve généralement sur une étiquette sur le composant ou sur la plaque signalétique de la machine, ou dans la documentation technique. Une photo de la plaque et du composant nous aide à identifier le numéro et vérifier la disponibilité.",
         "brand_faq_q5": "ABCspareparts fournit-il également des pièces pour les systèmes MULAG anciens ou abandonnés ?",
@@ -29803,214 +29803,6 @@
         "brand_faq_q6": "Pièces Sidel par numéro de pièce ?",
         "brand_faq_a6": "Oui. Envoyez-nous le numéro de pièce via le formulaire de demande ou par e-mail. Nous vérifions la disponibilité, le délai de livraison et le prix pour la pièce d'origine ou – si souhaité – des alternatives compatibles.",
         "sidel_note": "Sidel est une marque. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur sources publiques. Mise à jour : octobre 2026."
-      }
-    }
-  },
-  "fagor": {
-    "intro": "",
-    "products": [],
-    "applications": [],
-    "faq": [],
-    "blocks": [
-      {
-        "type": "info",
-        "id": "fagor-about",
-        "className": "brand-info",
-        "titleKey": "fagor_about_title",
-        "bodyKey": "fagor_about_text"
-      },
-      {
-        "type": "grid",
-        "className": "brand-info-grid",
-        "items": [
-          {
-            "type": "info",
-            "id": "fagor-products",
-            "className": "brand-info",
-            "titleKey": "fagor_products_title",
-            "listKey": "fagor_products_list",
-            "listClass": "brand-list"
-          },
-          {
-            "type": "info",
-            "id": "fagor-apps",
-            "className": "brand-info",
-            "titleKey": "fagor_apps_title",
-            "listKey": "fagor_apps_list",
-            "listClass": "brand-list brand-list-compact"
-          }
-        ]
-      },
-      {
-        "type": "info",
-        "id": "fagor-parts-id",
-        "className": "brand-info brand-info-accent",
-        "titleKey": "fagor_parts_id_title",
-        "introKey": "fagor_parts_id_intro",
-        "listKey": "fagor_parts_id_list",
-        "listClass": "brand-list brand-list-check"
-      }
-    ],
-    "related_slugs": [
-      "hobart",
-      "winterhalter",
-      "electrolux",
-      "rational"
-    ],
-    "related_labels": {
-      "hobart": "Hobart",
-      "winterhalter": "Winterhalter",
-      "electrolux": "Electrolux",
-      "rational": "Rational"
-    },
-    "faq_after": [
-      {
-        "q": "brand_faq_q4",
-        "a": "brand_faq_a4"
-      },
-      {
-        "q": "brand_faq_q5",
-        "a": "brand_faq_a5"
-      },
-      {
-        "q": "brand_faq_q6",
-        "a": "brand_faq_a6"
-      }
-    ],
-    "faq_note_key": "fagor_note",
-    "schema": {
-      "name_from": "meta_title",
-      "date_modified": true,
-      "about": {
-        "@type": "Brand",
-        "name": "FAGOR"
-      },
-      "mentions": [
-        {
-          "name": "FAGOR Geschirrspüler",
-          "category": "Gewerbliche Spültechnik"
-        },
-        {
-          "name": "FAGOR CNC-Steuerung",
-          "category": "Werkzeugmaschinen-Steuerung"
-        },
-        {
-          "name": "FAGOR Kochgeräte",
-          "category": "Gastronomiegeräte"
-        }
-      ],
-      "extra": []
-    },
-    "i18n": {
-      "de": {
-        "meta_title": "FAGOR Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
-        "meta_description": "FAGOR Ersatzteile für Haushalts- und Gewerbegeräte, Industrieautomation: Komponenten und Verschleißteile. Teilenummer senden – Angebot oft in 24 h.",
-        "brand_h1": "FAGOR – Ersatzteile für Haushalts- und Gewerbegeräte, Industrieautomation",
-        "brand_intro": "ABCspareparts beschafft FAGOR Ersatzteile – Komponenten, Verschleißteile, Anbaugeräte. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
-        "fagor_about_title": "Über FAGOR",
-        "fagor_about_text": "<p>FAGOR ist ein Hersteller von Haushaltsgeräten, gewerblichen Küchengeräten und Industrieautomation. Das Sortiment umfasst Küchengroßgeräte, Geschirrspüler, Kochgeräte, CNC-Steuerungen und Messsysteme.</p>",
-        "fagor_products_title": "Typische FAGOR Produktfamilien",
-        "fagor_products_list": "<li>Gewerbliche Geschirrspüler (Durchschub, Hauben, Untertisch)</li><li>Kochgeräte (Herde, Öfen, Fritteusen, Grills)</li><li>Kühl- und Tiefkühltechnik für Gastronomie</li><li>Spülmaschinen und Waschmaschinen für Haushalt</li><li>CNC-Steuerungen für Werkzeugmaschinen</li><li>Digitale Messsysteme und Positionssensoren</li><li>Antriebe und Encoder</li>",
-        "fagor_apps_title": "Typische Einsatzbereiche",
-        "fagor_apps_list": "<li>Hotels, Restaurants, Großküchen</li><li>Krankenhäuser und Pflegeeinrichtungen</li><li>Catering und Kantinen</li><li>Haushaltsanwendungen</li><li>Werkzeugmaschinen und CNC-Fräsen</li><li>Automatisierung und Robotik</li>",
-        "fagor_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
-        "fagor_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
-        "fagor_parts_id_list": "<li>Teilenummer vom Typenschild oder Ersatzteilkatalog</li><li>Foto des Typenschilds (Modell, Seriennummer)</li><li>Foto des defekten Teils (z. B. Heizelement, Pumpe, Ventil, Sensor)</li><li>Gerätetyp (z. B. Geschirrspüler, CNC-Steuerung)</li><li>Kurzbeschreibung: Was ist defekt?</li><li>Gewünschte Lieferfrist</li>",
-        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein FAGOR-Gerät?",
-        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild der Maschine bzw. in der technischen Dokumentation. Ein Foto des Typenschilds und der Komponente hilft uns, die Nummer zu identifizieren und die Verfügbarkeit zu prüfen.",
-        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte FAGOR-Anlagen?",
-        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
-        "brand_faq_q6": "FAGOR Ersatzteile nach Teilenummer?",
-        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis für das Originalteil oder – wenn gewünscht – kompatible Alternativen.",
-        "fagor_note": "FAGOR ist eine Marke. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Einsatzbereichen basieren auf öffentlich zugänglichen Informationen. Stand: Oktober 2026."
-      },
-      "en": {
-        "meta_title": "FAGOR spare parts by part number – quote within 24h | ABCspareparts",
-        "meta_description": "FAGOR spare parts for Haushalts- und Gewerbegeräte, Industrieautomation: components and wear parts. Send part number – quote often within 24 h.",
-        "brand_h1": "FAGOR – spare parts for Haushalts- und Gewerbegeräte, Industrieautomation",
-        "brand_intro": "ABCspareparts sources FAGOR spare parts – components, wear parts, attachments. Send the part number – we usually reply within 24 hours.",
-        "fagor_about_title": "About FAGOR",
-        "fagor_about_text": "<p>FAGOR is a manufacturer of household appliances, commercial kitchen equipment and industrial automation. The range includes major kitchen appliances, dishwashers, cooking appliances, CNC controls and measuring systems.</p>",
-        "fagor_products_title": "Typical FAGOR product families",
-        "fagor_products_list": "<li>Commercial dishwashers (conveyor, hood, undercounter)</li><li>Cooking appliances (stoves, ovens, fryers, grills)</li><li>Refrigeration and freezing technology for gastronomy</li><li>Dishwashers and washing machines for households</li><li>CNC controls for machine tools</li><li>Digital measuring systems and position sensors</li><li>Drives and encoders</li>",
-        "fagor_apps_title": "Typical applications",
-        "fagor_apps_list": "<li>Hotels, restaurants, commercial kitchens</li><li>Hospitals and care facilities</li><li>Catering and canteens</li><li>Household applications</li><li>Machine tools and CNC milling</li><li>Automation and robotics</li>",
-        "fagor_parts_id_title": "How to identify the correct part number",
-        "fagor_parts_id_intro": "For a fast quote, send us:",
-        "fagor_parts_id_list": "<li>Part number from nameplate or spare parts catalog</li><li>Photo of nameplate (model, serial number)</li><li>Photo of defective part (e.g. heating element, pump, valve, sensor)</li><li>Equipment type (e.g. dishwasher, CNC control)</li><li>Brief description: what is defective?</li><li>Required delivery time</li>",
-        "brand_faq_q4": "How do I identify the correct part number for my FAGOR equipment?",
-        "brand_faq_a4": "The part number is usually on a label on the component or on the machine nameplate, or in the technical documentation. A photo of the nameplate and component helps us identify the number and check availability.",
-        "brand_faq_q5": "Does ABCspareparts also source spare parts for older or discontinued FAGOR systems?",
-        "brand_faq_a5": "Yes. We search distributors and the broker market across Europe for remaining stock. If the original part is no longer available, we propose – after consultation – compatible alternatives.",
-        "brand_faq_q6": "FAGOR spare parts by part number?",
-        "brand_faq_a6": "Yes. Send us the part number via the request form or by email. We check availability, lead time and price for the original part or – if desired – compatible alternatives.",
-        "fagor_note": "FAGOR is a trademark. Mentioned solely to identify the products. Product family and application information is based on publicly available sources. As of October 2026."
-      },
-      "it": {
-        "meta_title": "Ricambi FAGOR per numero di parte – preventivo in 24h | ABCspareparts",
-        "meta_description": "Ricambi FAGOR per Haushalts- und Gewerbegeräte, Industrieautomation: componenti e parti di usura. Invii il codice – preventivo spesso in 24 h.",
-        "brand_h1": "FAGOR – ricambi per Haushalts- und Gewerbegeräte, Industrieautomation",
-        "brand_intro": "ABCspareparts fornisce ricambi FAGOR – componenti, parti di usura, accessori. Invii il numero di parte – di solito rispondiamo entro 24 ore.",
-        "fagor_about_title": "Su FAGOR",
-        "fagor_about_text": "<p>FAGOR è un produttore di elettrodomestici, attrezzature per cucine commerciali e automazione industriale. La gamma comprende grandi elettrodomestici da cucina, lavastoviglie, apparecchi di cottura, controlli CNC e sistemi di misura.</p>",
-        "fagor_products_title": "Famiglie di prodotti FAGOR tipici",
-        "fagor_products_list": "<li>Lavastoviglie commerciali (a trasporto, a cappotta, sottobanco)</li><li>Apparecchi di cottura (fornelli, forni, friggitri ci, griglie)</li><li>Tecnologia di refrigerazione e congelamento per gastronomia</li><li>Lavastoviglie e lavatrici per uso domestico</li><li>Controlli CNC per macchine utensili</li><li>Sistemi di misura digitali e sensori di posizione</li><li>Azionamenti e encoder</li>",
-        "fagor_apps_title": "Applicazioni tipiche",
-        "fagor_apps_list": "<li>Hotel, ristoranti, cucine commerciali</li><li>Ospedali e strutture di assistenza</li><li>Catering e mense</li><li>Applicazioni domestiche</li><li>Macchine utensili e fresatrici CNC</li><li>Automazione e robotica</li>",
-        "fagor_parts_id_title": "Come identificare il numero di parte corretto",
-        "fagor_parts_id_intro": "Per un preventivo rapido, ci invii:",
-        "fagor_parts_id_list": "<li>Numero di parte dalla targhetta o dal catalogo ricambi</li><li>Foto della targhetta (modello, numero di serie)</li><li>Foto del componente difettoso (es. resistenza, pompa, valvola, sensore)</li><li>Tipo di apparecchio (es. lavastoviglie, controllo CNC)</li><li>Breve descrizione: cosa è difettoso?</li><li>Tempo di consegna richiesto</li>",
-        "brand_faq_q4": "Come identifico il numero di parte corretto per la mia apparecchiatura FAGOR?",
-        "brand_faq_a4": "Il numero di parte si trova solitamente su un'etichetta sul componente o sulla targhetta della macchina, o nella documentazione tecnica. Una foto della targhetta e del componente ci aiuta a identificare il numero e verificare la disponibilità.",
-        "brand_faq_q5": "ABCspareparts fornisce anche ricambi per sistemi FAGOR più vecchi o fuori produzione?",
-        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in tutta Europa per scorte residue. Se il ricambio originale non è più disponibile, proponiamo – dopo consultazione – alternative compatibili.",
-        "brand_faq_q6": "Ricambi FAGOR per numero di parte?",
-        "brand_faq_a6": "Sì. Ci invii il numero di parte tramite il modulo di richiesta o per email. Verifichiamo disponibilità, tempo di consegna e prezzo per il ricambio originale o – se desiderato – alternative compatibili.",
-        "fagor_note": "FAGOR è un marchio. Citato esclusivamente per identificare i prodotti. Informazioni su famiglie di prodotti e applicazioni basate su fonti pubbliche. Aggiornamento: ottobre 2026."
-      },
-      "es": {
-        "meta_title": "Recambios FAGOR por número de pieza – presupuesto en 24h | ABCspareparts",
-        "meta_description": "Recambios FAGOR para Haushalts- und Gewerbegeräte, Industrieautomation: componentes y piezas de desgaste. Envíe el número – presupuesto a menudo en 24 h.",
-        "brand_h1": "FAGOR – recambios para Haushalts- und Gewerbegeräte, Industrieautomation",
-        "brand_intro": "ABCspareparts suministra recambios FAGOR – componentes, piezas de desgaste, accesorios. Envíe el número de pieza – solemos responder en 24 horas.",
-        "fagor_about_title": "Sobre FAGOR",
-        "fagor_about_text": "<p>FAGOR es un fabricante de electrodomésticos, equipos de cocina comerciales y automatización industrial. La gama incluye electrodomésticos de cocina, lavavajillas, aparatos de cocción, controles CNC y sistemas de medición.</p>",
-        "fagor_products_title": "Familias de productos FAGOR típicos",
-        "fagor_products_list": "<li>Lavavajillas comerciales (de arrastre, de campana, bajo mostrador)</li><li>Aparatos de cocción (cocinas, hornos, freidoras, parrillas)</li><li>Tecnología de refrigeración y congelación para gastronomía</li><li>Lavavajillas y lavadoras para hogares</li><li>Controles CNC para máquinas herramienta</li><li>Sistemas de medición digitales y sensores de posición</li><li>Accionamientos y encoders</li>",
-        "fagor_apps_title": "Aplicaciones típicas",
-        "fagor_apps_list": "<li>Hoteles, restaurantes, cocinas comerciales</li><li>Hospitales e instalaciones de cuidado</li><li>Catering y comedores</li><li>Aplicaciones domésticas</li><li>Máquinas herramienta y fresadoras CNC</li><li>Automatización y robótica</li>",
-        "fagor_parts_id_title": "Cómo identificar el número de pieza correcto",
-        "fagor_parts_id_intro": "Para un presupuesto rápido, envíenos:",
-        "fagor_parts_id_list": "<li>Número de pieza de la placa o catálogo de repuestos</li><li>Foto de la placa (modelo, número de serie)</li><li>Foto de la pieza defectuosa (p. ej. elemento calefactor, bomba, válvula, sensor)</li><li>Tipo de equipo (p. ej. lavavajillas, control CNC)</li><li>Breve descripción: ¿qué está defectuoso?</li><li>Plazo de entrega requerido</li>",
-        "brand_faq_q4": "¿Cómo identifico el número de pieza correcto para mi equipo FAGOR?",
-        "brand_faq_a4": "El número de pieza suele estar en una etiqueta en el componente o en la placa de la máquina, o en la documentación técnica. Una foto de la placa y del componente nos ayuda a identificar el número y verificar la disponibilidad.",
-        "brand_faq_q5": "¿ABCspareparts también suministra recambios para sistemas FAGOR antiguos o descontinuados?",
-        "brand_faq_a5": "Sí. Buscamos en distribuidores y el mercado de intermediarios en toda Europa para existencias restantes. Si la pieza original ya no está disponible, proponemos – tras consulta – alternativas compatibles.",
-        "brand_faq_q6": "¿Recambios FAGOR por número de pieza?",
-        "brand_faq_a6": "Sí. Envíenos el número de pieza a través del formulario de solicitud o por correo electrónico. Verificamos disponibilidad, tiempo de entrega y precio para la pieza original o – si se desea – alternativas compatibles.",
-        "fagor_note": "FAGOR es una marca. Mencionada únicamente para identificar los productos. Información sobre familias de productos y aplicaciones basada en fuentes públicas. Actualización: octubre de 2026."
-      },
-      "fr": {
-        "meta_title": "Pièces FAGOR par numéro de pièce – devis sous 24h | ABCspareparts",
-        "meta_description": "Pièces FAGOR pour Haushalts- und Gewerbegeräte, Industrieautomation: composants et pièces d'usure. Envoyez le numéro – devis souvent sous 24 h.",
-        "brand_h1": "FAGOR – pièces pour Haushalts- und Gewerbegeräte, Industrieautomation",
-        "brand_intro": "ABCspareparts fournit des pièces FAGOR – composants, pièces d'usure, accessoires. Envoyez le numéro de pièce – réponse en général sous 24 h.",
-        "fagor_about_title": "À propos de FAGOR",
-        "fagor_about_text": "<p>FAGOR est un fabricant d'appareils électroménagers, d'équipements de cuisine commerciaux et d'automatisation industrielle. La gamme comprend les gros appareils de cuisine, lave-vaisselle, appareils de cuisson, commandes CNC et systèmes de mesure.</p>",
-        "fagor_products_title": "Familles de produits FAGOR typiques",
-        "fagor_products_list": "<li>Lave-vaisselle commerciaux (à convoyeur, à capot, sous comptoir)</li><li>Appareils de cuisson (cuisinières, fours, friteuses, grils)</li><li>Technologie de réfrigération et de congélation pour la gastronomie</li><li>Lave-vaisselle et machines à laver pour les ménages</li><li>Commandes CNC pour machines-outils</li><li>Systèmes de mesure numériques et capteurs de position</li><li>Entraînements et encodeurs</li>",
-        "fagor_apps_title": "Applications typiques",
-        "fagor_apps_list": "<li>Hôtels, restaurants, cuisines commerciales</li><li>Hôpitaux et établissements de soins</li><li>Restauration et cantines</li><li>Applications domestiques</li><li>Machines-outils et fraiseuses CNC</li><li>Automatisation et robotique</li>",
-        "fagor_parts_id_title": "Comment identifier le bon numéro de pièce",
-        "fagor_parts_id_intro": "Pour un devis rapide, envoyez-nous :",
-        "fagor_parts_id_list": "<li>Numéro de pièce de la plaque signalétique ou du catalogue de pièces de rechange</li><li>Photo de la plaque signalétique (modèle, numéro de série)</li><li>Photo de la pièce défectueuse (p. ex. élément chauffant, pompe, vanne, capteur)</li><li>Type d'équipement (p. ex. lave-vaisselle, commande CNC)</li><li>Brève description : qu'est-ce qui est défectueux ?</li><li>Délai de livraison souhaité</li>",
-        "brand_faq_q4": "Comment identifier le bon numéro de pièce pour mon équipement FAGOR ?",
-        "brand_faq_a4": "Le numéro de pièce se trouve généralement sur une étiquette sur le composant ou sur la plaque signalétique de la machine, ou dans la documentation technique. Une photo de la plaque et du composant nous aide à identifier le numéro et vérifier la disponibilité.",
-        "brand_faq_q5": "ABCspareparts fournit-il également des pièces pour les systèmes FAGOR anciens ou abandonnés ?",
-        "brand_faq_a5": "Oui. Nous recherchons chez les distributeurs et sur le marché des courtiers dans toute l'Europe pour les stocks restants. Si la pièce d'origine n'est plus disponible, nous proposons – après consultation – des alternatives compatibles.",
-        "brand_faq_q6": "Pièces FAGOR par numéro de pièce ?",
-        "brand_faq_a6": "Oui. Envoyez-nous le numéro de pièce via le formulaire de demande ou par e-mail. Nous vérifions la disponibilité, le délai de livraison et le prix pour la pièce d'origine ou – si souhaité – des alternatives compatibles.",
-        "fagor_note": "FAGOR est une marque. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur sources publiques. Mise à jour : octobre 2026."
       }
     }
   },
