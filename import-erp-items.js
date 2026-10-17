@@ -49,7 +49,11 @@ const BRAND_OVERRIDES = {
   'NEWHAVEN': 'NEWHAVEN DISPLAY',
   'Intercable tools': 'Intercable tools',
   'KPM': 'KPM',
-  'Wayne': 'Wayne'
+  'Wayne': 'Wayne',
+  // New brand pages for October 2026 ERP update
+  'MULAG': 'MULAG',
+  'SIGLOCH': 'SIGLOCH',
+  'Mtu': 'MTU'
   // ABC - skipped as ambiguous (multiple ABC brands exist)
 };
 

@@ -1,6 +1,6 @@
 {
-  "source": "erp-priced-items_fd4d.tsv",
-  "imported": "2026-10-16",
+  "source": "erp-priced-items_f4c1.tsv",
+  "imported": "2026-10-17",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -118,16 +118,6 @@
         {
           "part_number": "VM321-10 (EX. VM221-10 )",
           "description": "Effektivwert-Messverstärker (rms/DC-Wandler)"
-        }
-      ]
-    },
-    {
-      "brand": "AUO",
-      "brand_slug": "auo",
-      "parts": [
-        {
-          "part_number": "G121SN01 V.4",
-          "description": "LCD MATRIX"
         }
       ]
     },
@@ -274,20 +264,6 @@
         {
           "part_number": "R902431327",
           "description": "Pump"
-        }
-      ]
-    },
-    {
-      "brand": "BROVIND",
-      "brand_slug": "brovind",
-      "parts": [
-        {
-          "part_number": "30ME_CO_F_ 3P_3MT",
-          "description": "FEMALE CONN. 3POLES 3MT"
-        },
-        {
-          "part_number": "AL55 230/50 DC",
-          "description": "LINEARE VIBR. AL55 230 50 DC"
         }
       ]
     },
@@ -534,20 +510,6 @@
         {
           "part_number": "Repair kit for DOM pressure regulator Type:  D166/L/21",
           "description": "Repair kit for DOM pressure regulatorType: D166/L/21 (old version)"
-        }
-      ]
-    },
-    {
-      "brand": "Gorter",
-      "brand_slug": "gorter",
-      "parts": [
-        {
-          "part_number": "939401S115080",
-          "description": "Pilot Spare KITP095-HPS/MPSPart-No. 939401S115080For REGULATING VALVE ASSY : MODEL: R100S SIZE: 8\" / 600#S/No: 20080259…"
-        },
-        {
-          "part_number": "SOFT PART SET",
-          "description": "For REGULATING VALVE ASSY: MODEL: R100S SIZE: 8\" / 600#S/No: 2008025922,DESIGN PR: 70 BAR,For HRSG SF FUEL GAS PRESSURE…"
         }
       ]
     },
@@ -800,6 +762,10 @@
           "description": "Seal kit for FPU adapter"
         },
         {
+          "part_number": "361605",
+          "description": "ADAPTER FPU A2-5/8-18UNF OLAER (BAUGR)"
+        },
+        {
           "part_number": "361619",
           "description": "ADAPTER FPU A1-M16x1,5 MINIMESS (BAUGR)"
         },
@@ -908,16 +874,6 @@
         {
           "part_number": "AAX0052",
           "description": "RS485 communication board"
-        }
-      ]
-    },
-    {
-      "brand": "Intercable tools",
-      "brand_slug": "intercable-tools",
-      "parts": [
-        {
-          "part_number": "Presskopf PP520",
-          "description": "Presskopf PP520"
         }
       ]
     },
@@ -1052,6 +1008,20 @@
       ]
     },
     {
+      "brand": "Kolbus",
+      "brand_slug": "kolbus",
+      "parts": [
+        {
+          "part_number": "00017135",
+          "description": "Linear Bearing"
+        },
+        {
+          "part_number": "00017143",
+          "description": "Guide"
+        }
+      ]
+    },
+    {
       "brand": "Konecranes",
       "brand_slug": "konecranes",
       "parts": [
@@ -1074,16 +1044,6 @@
         {
           "part_number": "53024331",
           "description": "End Plate"
-        }
-      ]
-    },
-    {
-      "brand": "KPM",
-      "brand_slug": "kpm",
-      "parts": [
-        {
-          "part_number": "TA000330",
-          "description": "Hydraulic Splitter"
         }
       ]
     },
@@ -1214,30 +1174,6 @@
       ]
     },
     {
-      "brand": "MADATEC",
-      "brand_slug": "madatec",
-      "parts": [
-        {
-          "part_number": "B-SC9291",
-          "description": "RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5…"
-        },
-        {
-          "part_number": "V947",
-          "description": "1.5ML AMBER 9MM SCREW VIAL W/WRITE- ON SPOT,11.6*32MM, 7.0 TYPE GLASS ( 100 PCS PACK) -EQUIV.AGILENT 5182-0516"
-        }
-      ]
-    },
-    {
-      "brand": "Matrix Elektronik",
-      "brand_slug": "matrix-elektronik",
-      "parts": [
-        {
-          "part_number": "IRS-U-4A",
-          "description": "Sensore 20/28 VDC, uscita 0/10 VDC, cavo 3 m, distanza 400 mm"
-        }
-      ]
-    },
-    {
       "brand": "Mellor Electric",
       "brand_slug": "mellor-electric",
       "parts": [
@@ -1352,6 +1288,46 @@
       ]
     },
     {
+      "brand": "MTU",
+      "brand_slug": "mtu",
+      "parts": [
+        {
+          "part_number": "5240160321",
+          "description": "Valve cover gasket"
+        },
+        {
+          "part_number": "700429037000",
+          "description": "O-Ring for various MTU engines"
+        },
+        {
+          "part_number": "700429044001",
+          "description": "O-Ring for various MTU engines"
+        },
+        {
+          "part_number": "X52404500059",
+          "description": "Spark plug"
+        }
+      ]
+    },
+    {
+      "brand": "MULAG",
+      "brand_slug": "mulag",
+      "parts": [
+        {
+          "part_number": "102735",
+          "description": "MULAG 102735 Kugelgelenk"
+        },
+        {
+          "part_number": "102736",
+          "description": "MULAG 102736 Kugelgelenk"
+        },
+        {
+          "part_number": "A110193",
+          "description": "MULAG 111767 Kugelgelenk"
+        }
+      ]
+    },
+    {
       "brand": "Müller Martini",
       "brand_slug": "muller-martini",
       "parts": [
@@ -1398,16 +1374,6 @@
       ]
     },
     {
-      "brand": "NEWHAVEN DISPLAY",
-      "brand_slug": "newhaven-display",
-      "parts": [
-        {
-          "part_number": "NHD-0220JZ-FL-GBW",
-          "description": "LCD/LED Display"
-        }
-      ]
-    },
-    {
       "brand": "Norgren",
       "brand_slug": "norgren",
       "parts": [
@@ -1428,16 +1394,6 @@
         {
           "part_number": "A101974",
           "description": "Label Sensor (with Cable)"
-        }
-      ]
-    },
-    {
-      "brand": "Omec",
-      "brand_slug": "omec",
-      "parts": [
-        {
-          "part_number": "AA34222022T001-C",
-          "description": "OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC150°C / Shaft 24j6 / 165x130j6x200 / Ral 7031 / Fixed with circ…"
         }
       ]
     },
@@ -1754,6 +1710,16 @@
       ]
     },
     {
+      "brand": "Radio energie",
+      "brand_slug": "radio-energie",
+      "parts": [
+        {
+          "part_number": "TTN0507",
+          "description": "RE.0 110 Gleichstrom-Tachogenerator/en, RE.O110 1CB 0.007 CA, 7V/1000 Umin, Flansch B14, Welle 4,75x14mm, Klemmen, temp…"
+        }
+      ]
+    },
+    {
       "brand": "RAEL",
       "brand_slug": "rael",
       "parts": [
@@ -1938,16 +1904,6 @@
       ]
     },
     {
-      "brand": "Römheld",
-      "brand_slug": "roemheld",
-      "parts": [
-        {
-          "part_number": "HBZ 500160/100/100",
-          "description": "Zylinder"
-        }
-      ]
-    },
-    {
       "brand": "ROSS",
       "brand_slug": "ross",
       "parts": [
@@ -1964,36 +1920,6 @@
         {
           "part_number": "ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)",
           "description": "Endlagenrückmeldung wie folgt: / Limit switch box as follows: SK = Gehäuse aus Aluminiumdruckguss / Die-cast aluminium…"
-        }
-      ]
-    },
-    {
-      "brand": "Scheuerle",
-      "brand_slug": "scheuerle",
-      "parts": [
-        {
-          "part_number": "60112067",
-          "description": "HIGH PRESSURE HOSE"
-        },
-        {
-          "part_number": "60112071",
-          "description": "HIGH PRESSURE HOSE"
-        },
-        {
-          "part_number": "60112075",
-          "description": "HIGH PRESSURE HOSE"
-        },
-        {
-          "part_number": "60112076",
-          "description": "HIGH PRESSURE HOSE"
-        },
-        {
-          "part_number": "60112081",
-          "description": "HIGH PRESSURE HOSE"
-        },
-        {
-          "part_number": "60112084",
-          "description": "HIGH PRESSURE HOSE"
         }
       ]
     },
@@ -2020,20 +1946,6 @@
         {
           "part_number": "RM 200-W90-1 / 313007",
           "description": "Universal Swivel Unit"
-        }
-      ]
-    },
-    {
-      "brand": "SEPATRON",
-      "brand_slug": "sepatron",
-      "parts": [
-        {
-          "part_number": "AD1015",
-          "description": "ADAMAS C18 CLASSIC 1.8µm - 100mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959758-902"
-        },
-        {
-          "part_number": "AD1035",
-          "description": "ADAMAS C18 CLASSIC 1.8µm - 150mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959759-902"
         }
       ]
     },
@@ -2184,6 +2096,10 @@
           "description": "Simatic Panel"
         },
         {
+          "part_number": "6AV6642-0BA01-1AX1 (NEW)",
+          "description": "6AV6642-0BA01-1AX1 (NEW)"
+        },
+        {
           "part_number": "6ES7318-3EL01-0AB0",
           "description": "SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP"
         },
@@ -2192,12 +2108,46 @@
           "description": "Sensor Module"
         },
         {
+          "part_number": "6SL3055-0AA00-5BA3 (NEW)",
+          "description": "6SL3055-0AA00-5BA3 (NEW)"
+        },
+        {
           "part_number": "6SL3055-0AA00-5CA1",
+          "description": "Sensor Module"
+        },
+        {
+          "part_number": "6SL3055-0AA00-5CA2 (NEW)",
           "description": "Sensor Module"
         },
         {
           "part_number": "6SL3210-1PE34-8AL0",
           "description": "SINAMICS G120/S120 POWER MODULE PM240-2 FSG C2 WITH BUILT IN BRAKING CHOPPER 3AC380-480V+10/-10% 47-63Hz OUTPUT HIGH OV…"
+        }
+      ]
+    },
+    {
+      "brand": "SIGLOCH",
+      "brand_slug": "sigloch",
+      "parts": [
+        {
+          "part_number": "14523168",
+          "description": "Umlenkrolle"
+        },
+        {
+          "part_number": "14523240",
+          "description": "Umlenkrolle"
+        },
+        {
+          "part_number": "14523254",
+          "description": "Laufrolle"
+        },
+        {
+          "part_number": "14523293",
+          "description": "Umlenkrolle"
+        },
+        {
+          "part_number": "14615210",
+          "description": "Laufrolle"
         }
       ]
     },
@@ -2282,16 +2232,6 @@
       ]
     },
     {
-      "brand": "Steimel",
-      "brand_slug": "steimel",
-      "parts": [
-        {
-          "part_number": "ASF3-25RD-200240L",
-          "description": "Pump unit"
-        }
-      ]
-    },
-    {
       "brand": "Steute",
       "brand_slug": "steute",
       "parts": [
@@ -2370,6 +2310,68 @@
       ]
     },
     {
+      "brand": "TLD",
+      "brand_slug": "tld",
+      "parts": [
+        {
+          "part_number": "1093813",
+          "description": "TLD 1093813"
+        },
+        {
+          "part_number": "1128899",
+          "description": "TLD 1128899"
+        },
+        {
+          "part_number": "5300022-126",
+          "description": "TLD 5300022-126"
+        },
+        {
+          "part_number": "5300022-242",
+          "description": "TLD 5300022-242"
+        },
+        {
+          "part_number": "5300026-062",
+          "description": "TLD 5300026-062"
+        },
+        {
+          "part_number": "5400051-004",
+          "description": "TLD 5400051-004"
+        },
+        {
+          "part_number": "5400051-020",
+          "description": "TLD 5400051-020"
+        },
+        {
+          "part_number": "5400051-021",
+          "description": "TLD 5400051-021"
+        },
+        {
+          "part_number": "5400051-023",
+          "description": "TLD 5400051-023"
+        },
+        {
+          "part_number": "5400051-034",
+          "description": "TLD 5400051-034"
+        },
+        {
+          "part_number": "5800346",
+          "description": "TLD 5800346"
+        },
+        {
+          "part_number": "5933216-081",
+          "description": "TLD 5933216-081"
+        },
+        {
+          "part_number": "7333444",
+          "description": "TLD 7333444"
+        },
+        {
+          "part_number": "7633018",
+          "description": "TLD 7633018"
+        }
+      ]
+    },
+    {
       "brand": "TOKHEIM",
       "brand_slug": "tokheim",
       "parts": [
@@ -2414,26 +2416,6 @@
         {
           "part_number": "IW120/24-0,5-KF-S-KH-A17",
           "description": "Inductive linear transducer"
-        }
-      ]
-    },
-    {
-      "brand": "Walterscheid",
-      "brand_slug": "walterscheid",
-      "parts": [
-        {
-          "part_number": "KU25-3DP",
-          "description": "Kupplung"
-        }
-      ]
-    },
-    {
-      "brand": "Wayne",
-      "brand_slug": "wayne",
-      "parts": [
-        {
-          "part_number": "WM008766",
-          "description": "IGEM ISFS LON Board"
         }
       ]
     },
