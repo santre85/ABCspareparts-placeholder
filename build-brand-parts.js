@@ -456,6 +456,17 @@ function writeSitemapIndex(options = {}) {
   ];
   if (includeParts) entries.push('sitemap-parts.xml');
 
+  // Full Siemens listino shards (path-based /parts/siemens/*, not legacy ?part=).
+  const siemensShards = fs
+    .readdirSync(ROOT)
+    .filter((name) => /^sitemap-siemens-parts-\d+\.xml$/i.test(name))
+    .sort((a, b) => {
+      const na = Number((a.match(/(\d+)\.xml$/i) || [])[1] || 0);
+      const nb = Number((b.match(/(\d+)\.xml$/i) || [])[1] || 0);
+      return na - nb;
+    });
+  entries.push(...siemensShards);
+
   let body = '';
   for (const file of entries) {
     if (file !== 'sitemap.xml' && !fs.existsSync(path.join(ROOT, file))) continue;
@@ -473,7 +484,7 @@ ${body}</sitemapindex>
 `;
   fs.writeFileSync(path.join(ROOT, 'sitemap-index.xml'), xml, 'utf8');
   touchMainSitemap();
-  updateJekyllConfig([]);
+  updateJekyllConfig(siemensShards);
 }
 
 /**

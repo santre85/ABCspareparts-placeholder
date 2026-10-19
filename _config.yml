@@ -19,6 +19,9 @@ include:
   - _redirects
   - seo-config.js
   # BEGIN listino-sitemaps
+  - sitemap-siemens-parts-1.xml
+  - sitemap-siemens-parts-2.xml
+  - sitemap-siemens-parts-3.xml
   # END listino-sitemaps
 
 # Serve sitemap XML without Liquid wrapping (layout: none strips front matter).
@@ -48,4 +51,16 @@ defaults:
     values:
       layout: none
   # BEGIN listino-sitemap-defaults
+  - scope:
+      path: "sitemap-siemens-parts-1.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-siemens-parts-2.xml"
+    values:
+      layout: none
+  - scope:
+      path: "sitemap-siemens-parts-3.xml"
+    values:
+      layout: none
   # END listino-sitemap-defaults

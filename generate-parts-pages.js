@@ -275,17 +275,44 @@ ${body}</urlset>
   fs.writeFileSync(SITEMAP_PARTS, xml, 'utf8');
 }
 
+function loadSiemensListinoKeep() {
+  const keep = new Set();
+  const manifestPath = path.join(ROOT, 'parts-siemens-listino-manifest.json');
+  // Keep entire Siemens tree when full listino has been published (katalog + serie + pages).
+  if (fs.existsSync(path.join(PARTS_DIR, 'siemens', 'katalog.html'))) {
+    keep.add('__KEEP_SIEMENS_TREE__');
+  }
+  if (fs.existsSync(manifestPath)) {
+    try {
+      const man = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+      for (const f of man.sitemap_files || []) keep.add(f);
+    } catch {
+      /* ignore */
+    }
+  }
+  return keep;
+}
+
 function cleanStaleParts(keepPaths) {
   if (!fs.existsSync(PARTS_DIR)) return;
   const keep = new Set(keepPaths.map((p) => path.join(ROOT, p)));
+  const extra = loadSiemensListinoKeep();
+  const keepSiemensTree = extra.has('__KEEP_SIEMENS_TREE__');
   function walk(dir) {
     for (const name of fs.readdirSync(dir)) {
       const full = path.join(dir, name);
       const st = fs.statSync(full);
       if (st.isDirectory()) {
+        // Do not prune published Siemens listino tree (serie hubs + compact pages).
+        if (keepSiemensTree && path.resolve(full) === path.resolve(path.join(PARTS_DIR, 'siemens'))) {
+          continue;
+        }
         walk(full);
         if (!fs.readdirSync(full).length) fs.rmdirSync(full);
       } else if (name.endsWith('.html') && !keep.has(full)) {
+        if (keepSiemensTree && full.includes(`${path.sep}parts${path.sep}siemens${path.sep}`)) {
+          continue;
+        }
         fs.unlinkSync(full);
       }
     }

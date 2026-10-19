@@ -74,8 +74,9 @@ if (!si.includes('/sitemap-brand-parts.xml')) throw new Error('sitemap-index.xml
 if (si.includes('/sitemap-part-codes.xml')) {
   throw new Error('sitemap-index.xml must not reference sitemap-part-codes.xml (?part= URLs)');
 }
-if (/sitemap-parts-/.test(si)) {
-  throw new Error('sitemap-index.xml must not reference sitemap-parts-*.xml listino shards');
+// Legacy thin ?part= shards used names like sitemap-parts-abb-1.xml (not sitemap-siemens-parts-N).
+if (/\/sitemap-parts-[a-z0-9-]+(?:-\d+)?\.xml/.test(si)) {
+  throw new Error('sitemap-index.xml must not reference legacy sitemap-parts-* listino shards');
 }
 // Path-based MVP /parts/ sitemap is allowed only as sitemap-parts.xml (no query strings).
 if (si.includes('/sitemap-parts.xml')) {
