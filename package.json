@@ -10,6 +10,7 @@
     "build:casi": "node generate-case-pages.js",
     "build:parts": "node generate-parts-pages.js",
     "build:parts:publish": "node generate-parts-pages.js --publish-sitemap",
+    "expand:siemens-parts": "node expand-siemens-parts-batch.js",
     "verify:parts": "node verify-parts-mvp.js",
     "verify": "node verify-build.js && node verify-parts-mvp.js"
   },

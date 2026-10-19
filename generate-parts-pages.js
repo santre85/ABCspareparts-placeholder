@@ -36,15 +36,19 @@ function loadMvp() {
   }
   const data = JSON.parse(fs.readFileSync(MVP_PATH, 'utf8'));
   const parts = data.parts || [];
-  if (parts.length < 50 || parts.length > 100) {
-    throw new Error(`MVP part count ${parts.length} outside 50–100 policy window`);
+  if (parts.length < 50 || parts.length > 200) {
+    throw new Error(`MVP part count ${parts.length} outside 50–200 policy window`);
   }
   return data;
 }
 
+function displayCode(code) {
+  return String(code || '').replace(/\s+/g, ' ').trim();
+}
+
 function uniqueTitle(part) {
   const brand = part.brand;
-  const code = part.part_number;
+  const code = displayCode(part.part_number);
   let shortDesc = String(part.description || '')
     .replace(/\*+/g, ' ')
     .replace(/\s+/g, ' ')
@@ -56,7 +60,7 @@ function uniqueTitle(part) {
     .replace(/\s+/g, ' ')
     .trim();
   shortDesc = shortDesc.slice(0, 48).trim();
-  if (shortDesc && shortDesc.toLowerCase() !== String(code).toLowerCase()) {
+  if (shortDesc && shortDesc.toLowerCase() !== code.toLowerCase()) {
     return `${brand} ${code} – ${shortDesc} | ABCspareparts`;
   }
   return `${brand} ${code} Ersatzteil anfragen | ABCspareparts`;
@@ -64,7 +68,7 @@ function uniqueTitle(part) {
 
 function uniqueDescription(part) {
   const brand = part.brand;
-  const code = part.part_number;
+  const code = displayCode(part.part_number);
   const desc = String(part.description || '').replace(/\*+/g, ' ').replace(/\s+/g, ' ').trim();
   const base = desc
     ? `${brand} Teilenummer ${code}: ${desc}. Unverbindliche Anfrage bei ABCspareparts – keine Preise auf der Seite.`
@@ -74,14 +78,14 @@ function uniqueDescription(part) {
 
 function uniqueH1(part) {
   const brand = part.brand;
-  const code = part.part_number;
+  const code = displayCode(part.part_number);
   let desc = String(part.description || '').replace(/\*+/g, ' ').replace(/\s+/g, ' ').trim();
   desc = desc
     .replace(new RegExp(`^${brand}\\s+`, 'i'), '')
     .replace(new RegExp(String(code).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'ig'), ' ')
     .replace(/\s+/g, ' ')
     .trim();
-  if (desc && desc.toLowerCase() !== String(code).toLowerCase()) {
+  if (desc && desc.toLowerCase() !== code.toLowerCase()) {
     const short = desc.length > 70 ? `${desc.slice(0, 67).trim()}…` : desc;
     return `${brand} ${code} – ${short}`;
   }
@@ -160,7 +164,12 @@ function buildPageHtml(part) {
     ? `<p class="part-case">Verwandte Erfolgsgeschichte: <a href="../../casi/${escapeAttr(part.case_slug)}.html">${escapeHtml(part.case_slug)}</a></p>`
     : '';
 
-  const reasons = (part.selection_reasons || []).join(', ');
+  const reasons = part.selection_reasons || [];
+  const fromListino =
+    reasons.includes('listino_preview_sample') || reasons.includes('listino_series_seed');
+  const bodyCopy = fromListino
+    ? `<p>ABCspareparts führt die Siemens-Referenz <strong>${escapeHtml(part.part_number)}</strong> als Katalogcode zur unverbindlichen Anfrage. Diese Seite zeigt Stammdaten aus dem Herstellerlistino (ohne Preise) — Verfügbarkeit und Konditionen prüfen wir nach Ihrer Anfrage.</p>`
+    : `<p>ABCspareparts prüft für <strong>${escapeHtml(part.brand)}</strong> die Referenz <strong>${escapeHtml(part.part_number)}</strong> auf Beschaffbarkeit und Lieferoptionen in Europa. Diese Seite enthält nur verifizierte Stammdaten aus realen Anfragen/Lieferungen — keine erfundenen Preise oder Verfügbarkeiten.</p>`;
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -232,7 +241,7 @@ ${FOOTER_CSS}
         <dt>Beschreibung</dt>
         <dd class="plain">${escapeHtml(descPlain)}</dd>
       </dl>
-      <p>ABCspareparts prüft für <strong>${escapeHtml(part.brand)}</strong> die Referenz <strong>${escapeHtml(part.part_number)}</strong> auf Beschaffbarkeit und Lieferoptionen in Europa. Diese Seite enthält nur verifizierte Stammdaten aus realen Anfragen/Lieferungen — keine erfundenen Preise oder Verfügbarkeiten.</p>
+      ${bodyCopy}
       ${caseBlock}
       <div class="cta-row">
         <a class="cta-primary" href="../../marche/${escapeAttr(part.brand_slug)}.html#quote=${encodeURIComponent(part.part_number)}">Angebot anfragen</a>

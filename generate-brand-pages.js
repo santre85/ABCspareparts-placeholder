@@ -322,6 +322,8 @@ function buildTranslations(brand) {
       brand_parts_type_more: 'Bitte mindestens 3 Zeichen eingeben…',
       brand_parts_case: 'Erfolgsgeschichte',
       brand_parts_detail: 'Teileseite',
+      brand_parts_indexable_title: 'Indexierte Teileseiten',
+      brand_parts_indexable_intro: 'Eigene URLs für ausgewählte Markencodes — auffindbar für Suche und KI.',
       brand_parts_quote: 'Angebot anfragen',
       quote_modal_title: 'Unverbindliche Anfrage',
       quote_modal_close: 'Schließen',
@@ -385,6 +387,8 @@ function buildTranslations(brand) {
       brand_parts_type_more: 'Please type at least 3 characters…',
       brand_parts_case: 'Success story',
       brand_parts_detail: 'Part page',
+      brand_parts_indexable_title: 'Indexed part pages',
+      brand_parts_indexable_intro: 'Dedicated URLs for selected brand codes — discoverable by search engines and AI.',
       brand_parts_quote: 'Request quote',
       quote_modal_title: 'No-obligation enquiry',
       quote_modal_close: 'Close',
@@ -448,6 +452,8 @@ function buildTranslations(brand) {
       brand_parts_type_more: 'Digiti almeno 3 caratteri…',
       brand_parts_case: 'Caso di successo',
       brand_parts_detail: 'Scheda codice',
+      brand_parts_indexable_title: 'Pagine codice indicizzate',
+      brand_parts_indexable_intro: 'URL dedicate per codici selezionati — trovabili da motori di ricerca e AI.',
       brand_parts_quote: 'Richiedi preventivo',
       quote_modal_title: 'Richiesta senza impegno',
       quote_modal_close: 'Chiudi',
@@ -511,6 +517,8 @@ function buildTranslations(brand) {
       brand_parts_type_more: 'Escriba al menos 3 caracteres…',
       brand_parts_case: 'Caso de éxito',
       brand_parts_detail: 'Ficha del código',
+      brand_parts_indexable_title: 'Fichas de código indexadas',
+      brand_parts_indexable_intro: 'URL dedicadas para códigos seleccionados — localizables por buscadores e IA.',
       brand_parts_quote: 'Solicitar presupuesto',
       quote_modal_title: 'Solicitud sin compromiso',
       quote_modal_close: 'Cerrar',
@@ -574,6 +582,8 @@ function buildTranslations(brand) {
       brand_parts_type_more: 'Saisissez au moins 3 caractères…',
       brand_parts_case: 'Histoire de réussite',
       brand_parts_detail: 'Fiche référence',
+      brand_parts_indexable_title: 'Pages référence indexées',
+      brand_parts_indexable_intro: 'URL dédiées pour des références sélectionnées — trouvables par les moteurs et l’IA.',
       brand_parts_quote: 'Demander un devis',
       quote_modal_title: 'Demande sans engagement',
       quote_modal_close: 'Fermer',
@@ -873,7 +883,42 @@ function buildSuppliedPartsHtml(brandParts, brandSlug, mvpIndex) {
             .map((code) => {
               const pn = escapeHtml(code);
               const pnAttr = escapeAttr(code);
-              return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button></li>`;
+              const mvp = mvpIndex && brandSlug
+                ? mvpIndex.get(`${brandSlug}|${String(code).toLowerCase()}`)
+                : null;
+              const partPageLink = mvp
+                ? `<a class="part-case-link" href="../parts/${escapeAttr(mvp.brand_slug)}/${escapeAttr(mvp.part_slug)}.html" data-i18n="brand_parts_detail">Teileseite</a>`
+                : '';
+              return `<li><button type="button" class="part-quote-btn" data-part="${pnAttr}" title="${pnAttr}">${pn}</button>${partPageLink}</li>`;
+            })
+            .join('\n          ')}
+        </ul>
+      </div>`
+    : '';
+
+  const mvpForBrand = [];
+  if (mvpIndex && brandSlug) {
+    for (const part of mvpIndex.values()) {
+      if (part.brand_slug === brandSlug) mvpForBrand.push(part);
+    }
+    mvpForBrand.sort((a, b) =>
+      String(a.part_number).localeCompare(String(b.part_number), undefined, { sensitivity: 'base' })
+    );
+  }
+  const indexablePartsHtml = mvpForBrand.length
+    ? `<div class="listino-sample" id="indexablePartPages">
+        <h3 class="parts-sample-title" data-i18n="brand_parts_indexable_title">Indexierte Teileseiten</h3>
+        <p class="parts-intro parts-sample-intro" data-i18n="brand_parts_indexable_intro">Eigene URLs für ausgewählte Markencodes — auffindbar für Suche und KI.</p>
+        <ul class="brand-parts-list parts-compact-list" id="indexablePartPagesList">
+          ${mvpForBrand
+            .map((part) => {
+              const pn = escapeHtml(part.part_number);
+              const href = `../parts/${escapeAttr(part.brand_slug)}/${escapeAttr(part.part_slug)}.html`;
+              const desc =
+                part.description && part.description !== part.part_number
+                  ? ` <span class="part-desc">${escapeHtml(part.description)}</span>`
+                  : '';
+              return `<li><a class="part-case-link" href="${href}">${pn}</a>${desc}</li>`;
             })
             .join('\n          ')}
         </ul>
@@ -928,6 +973,7 @@ function buildSuppliedPartsHtml(brandParts, brandSlug, mvpIndex) {
         <p class="parts-intro" data-i18n="brand_parts_intro">Codes zur Anfrage. Keine Preise auf der Seite.</p>
         ${inlineList}
         ${listinoHtml}
+        ${indexablePartsHtml}
       </section>`;
 }
 

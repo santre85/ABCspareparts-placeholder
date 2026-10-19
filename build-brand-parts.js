@@ -325,8 +325,28 @@ function escapeXml(value) {
     .replace(/"/g, '&quot;');
 }
 
-/** Hash deep-link (not a separate Google URL). Prefer over ?part= for llms.txt. */
+/** Prefer dedicated /parts/ pages when curated in parts-mvp.json; else brand hash deep-link. */
+function loadMvpPartUrlIndex() {
+  try {
+    const mvpPath = path.join(ROOT, 'parts-mvp.json');
+    if (!fs.existsSync(mvpPath)) return new Map();
+    const data = JSON.parse(fs.readFileSync(mvpPath, 'utf8'));
+    const map = new Map();
+    for (const part of data.parts || []) {
+      if (!part.brand_slug || !part.part_number || !part.path) continue;
+      map.set(`${part.brand_slug}|${String(part.part_number).toLowerCase()}`, `${BASE}/${part.path}`);
+    }
+    return map;
+  } catch {
+    return new Map();
+  }
+}
+
+const MVP_PART_URLS = loadMvpPartUrlIndex();
+
 function partPageUrl(brandSlug, partNumber) {
+  const dedicated = MVP_PART_URLS.get(`${brandSlug}|${String(partNumber).toLowerCase()}`);
+  if (dedicated) return dedicated;
   return `${BASE}/marche/${brandSlug}.html#quote=${encodeURIComponent(partNumber)}`;
 }
 

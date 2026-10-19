@@ -56,6 +56,7 @@ Se il file ha più di 200 codici:
 - il `.xlsx` resta locale (gitignore); in git vanno il JSON e la pagina marca
 - `npm run build:brand-parts` aggiorna **sempre** anche `sitemap-index.xml`, `sitemap.xml` (lastmod) e `robots.txt`
 - i codici listino **non** vengono più pubblicati come URL `?part=` in sitemap Google (solo ricerca sulla pagina marca + sample HTML); così si evita crawl budget sprecato su duplicati thin
+- per rendere **selezionati** codici trovabili da Google/AI: pagine curate `/parts/{slug}/{codice}.html` via `parts-mvp.json` (batch Siemens: `node expand-siemens-parts-batch.js` → `npm run build:parts:publish` → `node generate-brand-pages.js --only=siemens`). Non pubblicare l’intero listino in un colpo.
 
 La rebuild senza il file Excel riusa `listini-data/{slug}.json` già pubblicato.
 
