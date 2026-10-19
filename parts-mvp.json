@@ -1286,7 +1286,7 @@
       "brand_slug": "siemens",
       "part_number": "1PH7912-1AB14-0AA0",
       "part_slug": "1ph7912-1ab14-0aa0",
-      "description": "Replacement fan kit for 1PH7/PL6 motors. Spare-part replacement fan kit for Siemens 1PH7/PL6 spindle motors. Airflow can be DE to NDE or NDE to DE; kit includes a supplementary throttle plate for 60 Hz operation.",
+      "description": "Spare-part replacement fan kit for Siemens 1PH7/PL6 spindle motors. Airflow can be DE to NDE or NDE to DE; kit includes a supplementary throttle plate for 60 Hz operation.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1387,7 +1387,7 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB02",
       "part_slug": "3rt2015-1ab02",
-      "description": "SIRIUS 3RT2 power contactor S00, 7 A / 3 kW, 1 NC, 24 V AC. SIRIUS 3RT2 power contactor, size S00, for motor switching. It has three main NO poles, one integrated NC auxiliary contact, a 24 V AC coil, and screw terminals.",
+      "description": "SIRIUS 3RT2 power contactor, size S00, for motor switching. It has three main NO poles, one integrated NC auxiliary contact, a 24 V AC coil, and screw terminals.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
@@ -1589,7 +1589,7 @@
       "brand_slug": "siemens",
       "part_number": "3SU1400-1AA10-1BA0",
       "part_slug": "3su1400-1aa10-1ba0",
-      "description": "SIRIUS ACT contact module, 1 NO, screw terminal. SIRIUS ACT contact module with one normally open contact and screw terminals for front-plate mounting. Modular accessory for SIRIUS ACT 3SU1 actuators and indicators.",
+      "description": "SIRIUS ACT contact module with one normally open contact and screw terminals for front-plate mounting. Modular accessory for SIRIUS ACT 3SU1 actuators and indicators.",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
@@ -1606,7 +1606,7 @@
       "brand_slug": "siemens",
       "part_number": "3SU1550-0AA10-0AA0",
       "part_slug": "3su1550-0aa10-0aa0",
-      "description": "SIRIUS ACT universal 3-way holder. SIRIUS ACT universal 3-way holder for plastic or metal modules used with 22 mm front-mounted actuators and indicators. Provides front-plate mounting support for contact/LED modules.",
+      "description": "SIRIUS ACT universal 3-way holder for plastic or metal modules used with 22 mm front-mounted actuators and indicators. Provides front-plate mounting support for contact/LED modules.",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
@@ -1806,7 +1806,7 @@
       "brand_slug": "siemens",
       "part_number": "6AU1435­0AA0­0AA1",
       "part_slug": "6au14350aa00aa1",
-      "description": "SIMOTION D435 drive-based control unit. SIMOTION D435 drive-based multi-axis motion control unit with standard performance class. Interfaces: DRIVE-CLiQ, PROFIBUS, Industrial Ethernet, USB, digital I/O, and an option slot.",
+      "description": "SIMOTION D435 drive-based multi-axis motion control unit with standard performance class. Interfaces: DRIVE-CLiQ, PROFIBUS, Industrial Ethernet, USB, digital I/O, and an option slot.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1823,7 +1823,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV2 124-0MC01-0AX0",
       "part_slug": "6av2-124-0mc01-0ax0",
-      "description": "SIMATIC HMI TP1200 Comfort Panel. SIMATIC HMI TP1200 Comfort touch panel with a 12.1-inch widescreen TFT display (16 million colors). PROFINET and MPI/PROFIBUS DP interfaces, 12 MB configuration memory; configurable from WinCC Comfort V11.",
+      "description": "SIMATIC HMI TP1200 Comfort touch panel with a 12.1-inch widescreen TFT display (16 million colors). PROFINET and MPI/PROFIBUS DP interfaces, 12 MB configuration memory; configurable from WinCC Comfort V11.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1840,7 +1840,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV2124-0MC010-AX0",
       "part_slug": "6av2124-0mc010-ax0",
-      "description": "SIMATIC HMI TP1200 Comfort Panel. SIMATIC HMI TP1200 Comfort touch panel with a 12.1-inch widescreen TFT display (16 million colors). PROFINET and MPI/PROFIBUS DP interfaces, 12 MB configuration memory; configurable from WinCC Comfort V11.",
+      "description": "SIMATIC HMI TP1200 Comfort touch panel with a 12.1-inch widescreen TFT display (16 million colors). PROFINET and MPI/PROFIBUS DP interfaces, 12 MB configuration memory; configurable from WinCC Comfort V11.",
       "case_slug": "siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0",
       "component_type": "hmi_panel",
       "selection_reasons": [
@@ -1858,7 +1858,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3CD13-0AX0",
       "part_slug": "6av3688-3cd13-0ax0",
-      "description": "SIMATIC HMI PP17-I push-button panel. SIMATIC HMI PP17-I push-button panel with 16 short-stroke keys and 16 surface LEDs. Includes 16 digital inputs and 16 digital outputs; communicates via PROFIBUS DP/MPI.",
+      "description": "SIMATIC HMI PP17-I push-button panel with 16 short-stroke keys and 16 surface LEDs. Includes 16 digital inputs and 16 digital outputs; communicates via PROFIBUS DP/MPI.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1875,7 +1875,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3CD13-0AX0 (NEW)",
       "part_slug": "6av3688-3cd13-0ax0-new",
-      "description": "SIMATIC HMI PP17-I push-button panel (variant/packaging). SIMATIC HMI PP17-I push-button panel with 16 short-stroke keys and 16 surface LEDs. Includes 16 digital inputs and 16 digital outputs; communicates via PROFIBUS DP/MPI.",
+      "description": "SIMATIC HMI PP17-I push-button panel with 16 short-stroke keys and 16 surface LEDs. Includes 16 digital inputs and 16 digital outputs; communicates via PROFIBUS DP/MPI.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1892,7 +1892,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3ED13-0AX0",
       "part_slug": "6av3688-3ed13-0ax0",
-      "description": "SIMATIC HMI PP17-II push-button panel. SIMATIC HMI PP17-II push-button panel spare part with 32 short-stroke keys and 32 surface LEDs. Provides 16 DI and 16 DO terminals and PROFIBUS DP/MPI communication.",
+      "description": "SIMATIC HMI PP17-II push-button panel spare part with 32 short-stroke keys and 32 surface LEDs. Provides 16 DI and 16 DO terminals and PROFIBUS DP/MPI communication.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1909,7 +1909,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3ED13-0AX0 (NEW, ORIGINAL PACKAGE)",
       "part_slug": "6av3688-3ed13-0ax0-new-original-package",
-      "description": "SIMATIC HMI PP17-II push-button panel (variant/packaging). SIMATIC HMI PP17-II push-button panel spare part with 32 short-stroke keys and 32 surface LEDs. Provides 16 DI and 16 DO terminals and PROFIBUS DP/MPI communication.",
+      "description": "SIMATIC HMI PP17-II push-button panel spare part with 32 short-stroke keys and 32 surface LEDs. Provides 16 DI and 16 DO terminals and PROFIBUS DP/MPI communication.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1926,7 +1926,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV6642-0BA01-1AX0",
       "part_slug": "6av6642-0ba01-1ax0",
-      "description": "SIMATIC TP177B PN/DP touch panel. SIMATIC TP177B PN/DP touch panel spare part with a 5.7-inch STN color display. Supports MPI/PROFIBUS DP, Ethernet, USB, and MM-card storage; configured with WinCC flexible 2005 or higher.",
+      "description": "SIMATIC TP177B PN/DP touch panel spare part with a 5.7-inch STN color display. Supports MPI/PROFIBUS DP, Ethernet, USB, and MM-card storage; configured with WinCC flexible 2005 or higher.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -1943,7 +1943,7 @@
       "brand_slug": "siemens",
       "part_number": "6AV6642-0BA01-1AX1 (NEW)",
       "part_slug": "6av6642-0ba01-1ax1-new",
-      "description": "SIMATIC TP177B 6\" PN/DP touch panel (variant/packaging). SIMATIC TP177B 6\" PN/DP color touch panel spare part with STN 256-color display. Interfaces include MPI/PROFIBUS DP, RS485/RS422, USB, Ethernet 10/100, printer, and MMC slot; WinCC flexible 2005 or later.",
+      "description": "SIMATIC TP177B 6\" PN/DP color touch panel spare part with STN 256-color display. Interfaces include MPI/PROFIBUS DP, RS485/RS422, USB, Ethernet 10/100, printer, and MMC slot; WinCC flexible 2005 or later.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
@@ -2075,7 +2075,7 @@
       "brand_slug": "siemens",
       "part_number": "6ES7318-3EL01-0AB0",
       "part_slug": "6es7318-3el01-0ab0",
-      "description": "SIMATIC S7-300 CPU 319-3 PN/DP. SIMATIC S7-300 CPU 319-3 PN/DP central processing unit with 2 MB work memory. Interfaces: MPI/DP 12 Mbit/s, second DP master/slave, and Ethernet PROFINET with 2-port switch; Micro Memory Card required.",
+      "description": "SIMATIC S7-300 CPU 319-3 PN/DP central processing unit with 2 MB work memory. Interfaces: MPI/DP 12 Mbit/s, second DP master/slave, and Ethernet PROFINET with 2-port switch; Micro Memory Card required.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
@@ -2126,7 +2126,7 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE23-6DA1",
       "part_slug": "6sl3000-0be23-6da1",
-      "description": "SINAMICS S120 basic line filter, 36/40 kW. SINAMICS S120 basic line filter suitable for 36 kW Smart Line Module, 36 kW Active Line Module, and 40 kW Basic Line Module. Input 3PH 380–480 V, 50/60 Hz; rated current 74 A.",
+      "description": "SINAMICS S120 basic line filter suitable for 36 kW Smart Line Module, 36 kW Active Line Module, and 40 kW Basic Line Module. Input 3PH 380–480 V, 50/60 Hz; rated current 74 A.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
@@ -2274,7 +2274,7 @@
       "brand_slug": "siemens",
       "part_number": "6SL3055-0AA00-5CA2 (NEW)",
       "part_slug": "6sl3055-0aa00-5ca2-new",
-      "description": "SINAMICS SMC30 sensor module (current) (variant/packaging). SINAMICS SMC30 Sensor Module Cabinet-Mounted for TTL/HTL incremental encoders and SSI encoders with or without incremental signals. Connects to the Control Unit via DRIVE-CLiQ; supplied without DRIVE-CLiQ cable.",
+      "description": "SINAMICS SMC30 Sensor Module Cabinet-Mounted for TTL/HTL incremental encoders and SSI encoders with or without incremental signals. Connects to the Control Unit via DRIVE-CLiQ; supplied without DRIVE-CLiQ cable.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
@@ -2291,7 +2291,7 @@
       "brand_slug": "siemens",
       "part_number": "6SL3210-1PE34-8AL0",
       "part_slug": "6sl3210-1pe34-8al0",
-      "description": "SINAMICS PM240-2 Power Module FSG, 200/250 kW. SINAMICS PM240-2 Power Module, frame size FSG, with integrated Class C2 line filter and braking chopper. Rated 250 kW low-overload / 200 kW high-overload at 3 AC 380–480 V; supplied without Control Unit or operator panel.",
+      "description": "SINAMICS PM240-2 Power Module, frame size FSG, with integrated Class C2 line filter and braking chopper. Rated 250 kW low-overload / 200 kW high-overload at 3 AC 380–480 V; supplied without Control Unit or operator panel.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [

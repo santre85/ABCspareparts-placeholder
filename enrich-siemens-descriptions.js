@@ -20,7 +20,15 @@ function main() {
     if (p.brand_slug !== 'siemens') continue;
     const d = lookupPartDescription(p.part_number);
     if (!d) continue;
-    const next = (d.title && d.en ? `${d.title}. ${d.en}` : d.en || d.title || '').slice(0, 500);
+    let next;
+    if (d.en && d.title && d.en.toLowerCase().includes(String(d.title).toLowerCase().slice(0, 24))) {
+      next = d.en;
+    } else if (d.title && d.en) {
+      next = `${d.title}. ${d.en}`;
+    } else {
+      next = d.en || d.title || '';
+    }
+    next = next.slice(0, 500);
     if (!next || next === p.description) continue;
     p.description = next;
     if (!Array.isArray(p.selection_reasons)) p.selection_reasons = [];
