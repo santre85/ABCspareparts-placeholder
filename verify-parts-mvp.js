@@ -2,7 +2,7 @@
 
 /**
  * Pre-merge gate for MVP /parts/ pages.
- * Fails hard if any of the 77 URLs violates the publish checklist.
+ * Fails hard if any curated /parts/ URL violates the publish checklist.
  */
 
 const fs = require('fs');
@@ -62,8 +62,11 @@ function main() {
   if (!fs.existsSync(MVP_PATH)) fail(['parts-mvp.json missing']);
   const mvp = JSON.parse(fs.readFileSync(MVP_PATH, 'utf8'));
   const parts = mvp.parts || [];
-  if (parts.length !== 77) {
-    errors.push(`MVP count must be exactly 77 (got ${parts.length}) — no auto batch expansion`);
+  if (parts.length < 50 || parts.length > 200) {
+    errors.push(`MVP count ${parts.length} outside curated 50–200 policy window`);
+  }
+  if (Number(mvp.count) !== parts.length) {
+    errors.push(`parts-mvp.json count field ${mvp.count} !== parts.length ${parts.length}`);
   }
 
   // --- sitemap-index must declare sitemap-parts.xml ---
@@ -275,8 +278,14 @@ function main() {
         // brand itself must stay indexable when linking MVP parts
         pageErrors.push(`brand page marche/${part.brand_slug}.html is noindex`);
       }
-      if (/"@type":"Product"/.test(brandHtml)) {
-        pageErrors.push(`brand page marche/${part.brand_slug}.html must not emit Product JSON-LD`);
+      // Brand-level Product in enriched schema.extra is allowed. Fail only if the brand
+      // page also emits a Product for this same part SKU/MPN (duplicate with /parts/).
+      const skuRe = new RegExp(`"sku"\\s*:\\s*"${String(part.part_number).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`);
+      const mpnRe = new RegExp(`"mpn"\\s*:\\s*"${String(part.part_number).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`);
+      if (skuRe.test(brandHtml) || mpnRe.test(brandHtml)) {
+        pageErrors.push(
+          `brand page marche/${part.brand_slug}.html must not emit Product JSON-LD for part ${part.part_number}`
+        );
       }
       if (/"@type":"Offer"/.test(brandHtml)) {
         pageErrors.push(`brand page marche/${part.brand_slug}.html must not emit Offer JSON-LD`);

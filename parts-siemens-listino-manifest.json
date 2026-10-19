@@ -1,0 +1,218 @@
+{
+  "generated": "2026-10-19",
+  "brand": "Siemens",
+  "brand_slug": "siemens",
+  "listino_count": 91293,
+  "pages_written": 91231,
+  "skipped_mvp_overlap": 62,
+  "series_count": 1025,
+  "hub_urls": 1123,
+  "sitemap_files": [
+    "sitemap-siemens-parts-1.xml",
+    "sitemap-siemens-parts-2.xml",
+    "sitemap-siemens-parts-3.xml"
+  ],
+  "series": [
+    {
+      "prefix": "3SU1",
+      "count": 10040
+    },
+    {
+      "prefix": "1FK7",
+      "count": 4043
+    },
+    {
+      "prefix": "3RT2",
+      "count": 3148
+    },
+    {
+      "prefix": "6ES7",
+      "count": 2585
+    },
+    {
+      "prefix": "6SL3",
+      "count": 2467
+    },
+    {
+      "prefix": "3VA6",
+      "count": 2216
+    },
+    {
+      "prefix": "1FY2",
+      "count": 2181
+    },
+    {
+      "prefix": "8MF1",
+      "count": 2114
+    },
+    {
+      "prefix": "3VA5",
+      "count": 2024
+    },
+    {
+      "prefix": "3VA2",
+      "count": 1950
+    },
+    {
+      "prefix": "6FC5",
+      "count": 1809
+    },
+    {
+      "prefix": "A5E0",
+      "count": 1425
+    },
+    {
+      "prefix": "3VA1",
+      "count": 1340
+    },
+    {
+      "prefix": "3VA9",
+      "count": 1331
+    },
+    {
+      "prefix": "3RA2",
+      "count": 1225
+    },
+    {
+      "prefix": "EWN",
+      "count": 1224
+    },
+    {
+      "prefix": "1FW6",
+      "count": 1192
+    },
+    {
+      "prefix": "1FK2",
+      "count": 1184
+    },
+    {
+      "prefix": "3RV2",
+      "count": 1117
+    },
+    {
+      "prefix": "6AV2",
+      "count": 979
+    },
+    {
+      "prefix": "6AV6",
+      "count": 970
+    },
+    {
+      "prefix": "3RT1",
+      "count": 853
+    },
+    {
+      "prefix": "3RW5",
+      "count": 818
+    },
+    {
+      "prefix": "BVP",
+      "count": 806
+    },
+    {
+      "prefix": "3SE5",
+      "count": 785
+    },
+    {
+      "prefix": "3RH2",
+      "count": 698
+    },
+    {
+      "prefix": "6GK6",
+      "count": 673
+    },
+    {
+      "prefix": "8PQ2",
+      "count": 665
+    },
+    {
+      "prefix": "1FL2",
+      "count": 660
+    },
+    {
+      "prefix": "US2",
+      "count": 636
+    },
+    {
+      "prefix": "6XV1",
+      "count": 601
+    },
+    {
+      "prefix": "8GK9",
+      "count": 559
+    },
+    {
+      "prefix": "6AG1",
+      "count": 524
+    },
+    {
+      "prefix": "S552",
+      "count": 520
+    },
+    {
+      "prefix": "A5E3",
+      "count": 516
+    },
+    {
+      "prefix": "6GK5",
+      "count": 492
+    },
+    {
+      "prefix": "FDK",
+      "count": 458
+    },
+    {
+      "prefix": "5SY4",
+      "count": 457
+    },
+    {
+      "prefix": "1FN3",
+      "count": 456
+    },
+    {
+      "prefix": "3VA4",
+      "count": 454
+    },
+    {
+      "prefix": "3WA9",
+      "count": 425
+    },
+    {
+      "prefix": "5SU1",
+      "count": 421
+    },
+    {
+      "prefix": "3RK1",
+      "count": 409
+    },
+    {
+      "prefix": "6GK1",
+      "count": 404
+    },
+    {
+      "prefix": "8GK1",
+      "count": 404
+    },
+    {
+      "prefix": "7MH7",
+      "count": 397
+    },
+    {
+      "prefix": "3RF2",
+      "count": 395
+    },
+    {
+      "prefix": "S557",
+      "count": 390
+    },
+    {
+      "prefix": "6GT2",
+      "count": 374
+    },
+    {
+      "prefix": "3NP1",
+      "count": 360
+    }
+  ],
+  "note": "Full Siemens listino indexable /parts/ pages. MVP overlaps kept as richer pages."
+}
