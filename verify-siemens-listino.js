@@ -67,24 +67,27 @@ if (!fs.existsSync(descStorePath)) {
   // Listino-only pages (not MVP overlap) should embed partDesc from online research.
   const candidates = [
     '3su1000-0aa20-0aa0',
+    '3su1000-0aa30-0aa0',
     '3rt2015-1ad01',
+    '3rt2015-1ad02',
     '6es7131-6bf01-2aa0',
     '1fk7032-2af21-1bg1',
-    '6sl3000-0be21-6aa0'
+    '6sl3000-0be21-6aa0',
+    '8mf1000-2ab01'
   ];
-  let foundEnriched = false;
+  let foundEnriched = 0;
   for (const slug of candidates) {
     const f = path.join(ROOT, 'parts/siemens', `${slug}.html`);
     if (!fs.existsSync(f)) continue;
     const html = fs.readFileSync(f, 'utf8');
-    if (/partDesc/.test(html) && /Produktbeschreibung|Product description|red flat|42 V|DI 8/i.test(html)) {
-      foundEnriched = true;
-      break;
+    if (/partDesc/.test(html) && /Produktbeschreibung|Product description/i.test(html)) {
+      foundEnriched += 1;
     }
   }
-  if (!foundEnriched) {
-    fail('expected at least one listino page with online partDesc payload');
+  if (foundEnriched < 2) {
+    fail(`expected >=2 listino pages with online partDesc payload, got ${foundEnriched}`);
   }
+  if (n < 100) fail(`siemens-part-descriptions.json expected >=100 after batch2, got ${n}`);
 }
 
 const brand = fs.readFileSync(path.join(ROOT, 'marche/siemens.html'), 'utf8');

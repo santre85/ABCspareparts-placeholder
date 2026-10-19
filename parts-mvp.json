@@ -1122,12 +1122,13 @@
       "brand_slug": "siemens",
       "part_number": "1FK7032-2AF21-1BA2",
       "part_slug": "1fk7032-2af21-1ba2",
-      "description": "SIMOTICS S-1FK7 Servomotor (Serie 1FK7)",
+      "description": "SIMOTICS S-1FK7-CT servomotor 0.31 kW, IP65. SIMOTICS S 1FK7-CT servo motor, PN 0.31 kW, UDC 300 V, M0 1.2 Nm, NN 3000 rpm, naturally cooled IM B5, shaft with feather key, absolute single-turn 24-bit DRIVE-CLiQ encoder (AS24DQI), without holding brake, IP65 (DE flange IP67).",
       "case_slug": null,
       "component_type": "servo_motor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fk7032-2af21-1ba2.html",
@@ -1138,12 +1139,13 @@
       "brand_slug": "siemens",
       "part_number": "1FK7032-2AF21-1BB0",
       "part_slug": "1fk7032-2af21-1bb0",
-      "description": "SIMOTICS S-1FK7 Servomotor (Serie 1FK7)",
+      "description": "SIMOTICS S-1FK7-CT servomotor 0.31 kW with brake, IP64. SIMOTICS S 1FK7-CT servo motor, PN 0.31 kW, UDC 300 V, M0 1.2 Nm, NN 3000 rpm, naturally cooled IM B5, shaft with feather key, absolute single-turn 24-bit DRIVE-CLiQ encoder (AS24DQI), with holding brake, IP64.",
       "case_slug": null,
       "component_type": "servo_motor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fk7032-2af21-1bb0.html",
@@ -1154,12 +1156,13 @@
       "brand_slug": "siemens",
       "part_number": "1FK7032-2AF21-1BB1",
       "part_slug": "1fk7032-2af21-1bb1",
-      "description": "SIMOTICS S-1FK7 Servomotor (Serie 1FK7)",
+      "description": "SIMOTICS S-1FK7-CT servomotor 0.31 kW with brake, IP65. SIMOTICS S 1FK7-CT servo motor, PN 0.31 kW, UDC 300 V, M0 1.2 Nm, NN 3000 rpm, naturally cooled IM B5, shaft with feather key, absolute single-turn 24-bit DRIVE-CLiQ encoder (AS24DQI), with holding brake, IP65.",
       "case_slug": null,
       "component_type": "servo_motor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fk7032-2af21-1bb1.html",
@@ -1170,12 +1173,13 @@
       "brand_slug": "siemens",
       "part_number": "1FK7032-2AF21-1BB2",
       "part_slug": "1fk7032-2af21-1bb2",
-      "description": "SIMOTICS S-1FK7 Servomotor (Serie 1FK7)",
+      "description": "SIMOTICS S-1FK7-CT servomotor 0.31 kW with brake, IP65/IP67. SIMOTICS S 1FK7-CT servo motor, PN 0.31 kW, UDC 300 V, M0 1.2 Nm, NN 3000 rpm, naturally cooled IM B5, shaft with feather key, absolute single-turn 24-bit DRIVE-CLiQ encoder (AS24DQI), with holding brake, IP65 with DE flange IP67.",
       "case_slug": null,
       "component_type": "servo_motor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fk7032-2af21-1bb2.html",
@@ -1354,12 +1358,13 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB01-2AA0",
       "part_slug": "3rt2015-1ab01-2aa0",
-      "description": "SIRIUS Schütz (Serie 3RT2)",
+      "description": "SIRIUS 3RT2 contactor S00, 7 A / 3 kW, suspended mount. SIRIUS 3RT2 three-pole power contactor, size S00, AC-3 7 A / 3 kW at 400 V, with 1 NO auxiliary contact and 24 V AC 50/60 Hz coil. Screw terminals; specified for suspended mounting position.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3rt2015-1ab01-2aa0.html",
@@ -1370,7 +1375,7 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB01-ZW97",
       "part_slug": "3rt2015-1ab01-zw97",
-      "description": "SIRIUS 3RT2 power contactor S00, 7 A / 3 kW, 24 V AC. SIRIUS power contactor, AC-3 3 kW/400 V, 3-pole size S00, screw terminals, with 1 NO auxiliary contact. Control supply voltage AC 24 V, 50/60 Hz; rated operational current AC-3 7 A at 400 V.",
+      "description": "SIRIUS 3RT2 power contactor S00, 7 A / 3 kW, 24 V AC (packaging/variant). SIRIUS power contactor, AC-3 3 kW/400 V, 3-pole size S00, screw terminals, with 1 NO auxiliary contact. Control supply voltage AC 24 V, 50/60 Hz; rated operational current AC-3 7 A at 400 V.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
@@ -1404,12 +1409,13 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB02-1AA0",
       "part_slug": "3rt2015-1ab02-1aa0",
-      "description": "SIRIUS Schütz (Serie 3RT2)",
+      "description": "SIRIUS 3RT2 contactor S00, 7 A / 3 kW, 1 NC, upright. SIRIUS 3RT2 three-pole power contactor, size S00, AC-3 7 A / 3 kW at 400 V, with 1 NC auxiliary contact and 24 V AC 50/60 Hz coil. Screw terminals; specified for upright mounting position.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3rt2015-1ab02-1aa0.html",
@@ -1725,12 +1731,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA6110-0HM41-0AA0",
       "part_slug": "3va6110-0hm41-0aa0",
-      "description": "3VA Kompaktleistungsschalter (Serie 3VA6)",
+      "description": "SENTRON 3VA6 UL MCCB 4P 100 A ETU330 LIG. SENTRON 3VA6 UL Frame 150 molded-case circuit breaker, breaking capacity class E 200 kA at 480 V, 4-pole, line protection ETU330 LIG, In=100 A. Overload Ir 40–100 A, instantaneous Ii 1.5–12×In, adjustable neutral protection, ground-fault Ig 0.2–1×In, without connection.",
       "case_slug": null,
       "component_type": "circuit_breaker",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va6110-0hm41-0aa0.html",
@@ -1741,12 +1748,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA6110-0HN31-0AA0",
       "part_slug": "3va6110-0hn31-0aa0",
-      "description": "3VA Kompaktleistungsschalter (Serie 3VA6)",
+      "description": "SENTRON 3VA6 UL MCCB 3P 100 A ETU350 LSI. SENTRON 3VA6 UL Frame 150 molded-case circuit breaker, breaking capacity class E 200 kA at 480 V, 3-pole, line protection ETU350 LSI, In=100 A. Overload Ir 40–100 A, short-circuit Isd 1.5–10×Ir, Ii 12×In, without connection.",
       "case_slug": null,
       "component_type": "circuit_breaker",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va6110-0hn31-0aa0.html",
@@ -1757,12 +1765,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA6110-0HN41-0AA0",
       "part_slug": "3va6110-0hn41-0aa0",
-      "description": "3VA Kompaktleistungsschalter (Serie 3VA6)",
+      "description": "SENTRON 3VA6 UL MCCB 4P 100 A ETU350 LSI. SENTRON 3VA6 UL Frame 150 molded-case circuit breaker, breaking capacity class E 200 kA at 480 V, 4-pole, line protection ETU350 LSI, In=100 A. Overload Ir 40–100 A, short-circuit Isd 1.5–10×Ir, Ii 12×In, adjustable neutral protection, without connection.",
       "case_slug": null,
       "component_type": "circuit_breaker",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va6110-0hn41-0aa0.html",
@@ -1773,12 +1782,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA6110-0KQ31-0AA0",
       "part_slug": "3va6110-0kq31-0aa0",
-      "description": "3VA Kompaktleistungsschalter (Serie 3VA6)",
+      "description": "SENTRON 3VA6 UL MCCB 3P 100 A ETU860 LSIG. SENTRON 3VA6 UL Frame 150 molded-case circuit breaker, breaking capacity class E 200 kA at 480 V, 3-pole, line protection ETU860 LSIG, In=100 A. Overload Ir 40–100 A, short-circuit and ground-fault protection, without connection; communication/measurement capable ETU.",
       "case_slug": null,
       "component_type": "circuit_breaker",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va6110-0kq31-0aa0.html",
@@ -2011,12 +2021,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7131-6BF00-2AA0",
       "part_slug": "6es7131-6bf00-2aa0",
-      "description": "SIMATIC S7 Baugruppe/Komponente (Serie 6ES7)",
+      "description": "SIMATIC ET 200SP DI 8x24VDC Basic (pack of 10). SIMATIC ET 200SP digital input module DI 8x 24 V DC Basic, packing unit of 10 pieces. Fits BU type A0, color code CC01, with module diagnostics.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7131-6bf00-2aa0.html",
@@ -2027,12 +2038,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7131-6BF00-2CA0",
       "part_slug": "6es7131-6bf00-2ca0",
-      "description": "SIMATIC S7 Baugruppe/Komponente (Serie 6ES7)",
+      "description": "SIMATIC ET 200SP DI 8x24VDC HF (pack of 10). SIMATIC ET 200SP digital input module DI 8x 24 V DC High Feature, IEC 61131 type 3 sink/PNP input, packing unit of 10. Fits BU type A0, color code CC01, with channel diagnostics.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7131-6bf00-2ca0.html",
@@ -2043,12 +2055,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7131-6BF01-0AA0",
       "part_slug": "6es7131-6bf01-0aa0",
-      "description": "SIMATIC S7 Baugruppe/Komponente (Serie 6ES7)",
+      "description": "SIMATIC ET 200SP DI 8x24VDC Basic. SIMATIC ET 200SP digital input module DI 8x 24 V DC Basic (BA), sink/PNP, packing unit 1. Fits BU type A0, color code CC01, configurable input delay 0.05–20 ms, module diagnostics for supply voltage.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7131-6bf01-0aa0.html",
@@ -2059,12 +2072,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7131-6BF01-0BA0",
       "part_slug": "6es7131-6bf01-0ba0",
-      "description": "SIMATIC S7 Baugruppe/Komponente (Serie 6ES7)",
+      "description": "SIMATIC ET 200SP DI 8x24VDC Standard. SIMATIC ET 200SP digital input module DI 8x 24 V DC Standard, IEC 61131 type 3 sink/PNP input, packing unit 1. Fits BU type A0, color code CC01, input delay 0.05–20 ms, module diagnostics for sensor-supply short circuit, wire break, and supply voltage.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7131-6bf01-0ba0.html",
@@ -2143,12 +2157,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE25-5DA0",
       "part_slug": "6sl3000-0be25-5da0",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS basic line filter for 55 kW Active Line Modules, input 3AC 380–480 V, 50/60 Hz. Used with SINAMICS/SIMODRIVE 611 drive lineups to limit conducted emissions.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3000-0be25-5da0.html",
@@ -2159,12 +2174,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE28-0DA0",
       "part_slug": "6sl3000-0be28-0da0",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS basic line filter matched to 80 kW Active Line Modules, input 3-phase 380–480 V, 50/60 Hz. Installed on the line side to reduce conducted EMI for SINAMICS drive systems.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3000-0be28-0da0.html",
@@ -2175,12 +2191,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE31-2DA0",
       "part_slug": "6sl3000-0be31-2da0",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS basic line filter for 100 kW Basic Line Modules and 120 kW Active Line Modules, input 3PH 380–480 V, 50/60 Hz. EMC line filter accessory for SINAMICS booksize power units.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3000-0be31-2da0.html",
@@ -2191,12 +2208,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE32-5AA0",
       "part_slug": "6sl3000-0be32-5aa0",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS/MICROMASTER PX line filter with 3AC 380–480 V, 50/60 Hz input and 250 A rating. Used as an EMC mains filter for corresponding SINAMICS drive power ranges.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3000-0be32-5aa0.html",

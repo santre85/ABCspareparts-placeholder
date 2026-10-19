@@ -1113,6 +1113,8 @@ ABCspareparts maintains 142 enriched brand pages with detailed product informati
 
 - [Siemens brand page](https://abcspareparts.eu/marche/siemens.html) — ERP quotable codes + on-page listino search
 
+- [Siemens brand page](https://abcspareparts.eu/marche/siemens.html) — ERP quotable codes + on-page listino search
+
 
 Quotable part references. Large manufacturer listini publish a crawlable sample list on the brand page plus on-page search for the full catalog (codes only, no prices). Deep links use a URL hash (`#quote=CODE`) so Google indexes only the clean brand page — not `?part=` / `?lang=` query variants:
 
