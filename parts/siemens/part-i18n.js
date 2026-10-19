@@ -2,6 +2,17 @@
 window.ABC_SIEMENS_PART_I18N = {
   ui: {
     de: {
+      nav_home: 'Home',
+      footer_brands: 'Marken',
+      footer_cases: 'Erfolgsgeschichten',
+      footer_contact: 'Kontakt',
+      footer_imprint: 'Impressum',
+      footer_privacy: 'Datenschutz',
+      footer_terms: 'AGB',
+      footer_shipping: 'Versand',
+      footer_cookies: 'Cookies',
+      footer_linkedin: 'LinkedIn',
+      footer_rights: 'Alle Rechte vorbehalten.',
       brand_label: 'Hersteller',
       series_label: 'Serie',
       part_label: 'Teilenummer',
@@ -16,6 +27,17 @@ window.ABC_SIEMENS_PART_I18N = {
         ' Verfügbarkeit und Konditionen prüfen wir nach Ihrer Anfrage — keine Preise auf der Seite.'
     },
     en: {
+      nav_home: 'Home',
+      footer_brands: 'Brands',
+      footer_cases: 'Success stories',
+      footer_contact: 'Contact',
+      footer_imprint: 'Imprint',
+      footer_privacy: 'Privacy',
+      footer_terms: 'Terms',
+      footer_shipping: 'Shipping',
+      footer_cookies: 'Cookies',
+      footer_linkedin: 'LinkedIn',
+      footer_rights: 'All rights reserved.',
       brand_label: 'Manufacturer',
       series_label: 'Series',
       part_label: 'Part number',
@@ -30,6 +52,17 @@ window.ABC_SIEMENS_PART_I18N = {
         ' We confirm availability and terms after your enquiry — no prices are shown on this page.'
     },
     it: {
+      nav_home: 'Home',
+      footer_brands: 'Marche',
+      footer_cases: 'Casi di successo',
+      footer_contact: 'Contatti',
+      footer_imprint: 'Impressum',
+      footer_privacy: 'Privacy',
+      footer_terms: 'Condizioni',
+      footer_shipping: 'Spedizione',
+      footer_cookies: 'Cookie',
+      footer_linkedin: 'LinkedIn',
+      footer_rights: 'Tutti i diritti riservati.',
       brand_label: 'Produttore',
       series_label: 'Serie',
       part_label: 'Codice articolo',
@@ -44,6 +77,17 @@ window.ABC_SIEMENS_PART_I18N = {
         ' Disponibilità e condizioni dopo la richiesta — nessun prezzo in pagina.'
     },
     es: {
+      nav_home: 'Home',
+      footer_brands: 'Marcas',
+      footer_cases: 'Casos de éxito',
+      footer_contact: 'Contacto',
+      footer_imprint: 'Aviso legal',
+      footer_privacy: 'Privacidad',
+      footer_terms: 'Términos',
+      footer_shipping: 'Envío',
+      footer_cookies: 'Cookies',
+      footer_linkedin: 'LinkedIn',
+      footer_rights: 'Todos los derechos reservados.',
       brand_label: 'Fabricante',
       series_label: 'Serie',
       part_label: 'Referencia',
@@ -58,6 +102,17 @@ window.ABC_SIEMENS_PART_I18N = {
         ' Disponibilidad y condiciones tras su solicitud — sin precios en la página.'
     },
     fr: {
+      nav_home: 'Home',
+      footer_brands: 'Marques',
+      footer_cases: 'Histoires de réussite',
+      footer_contact: 'Contact',
+      footer_imprint: 'Mentions légales',
+      footer_privacy: 'Confidentialité',
+      footer_terms: 'CGV',
+      footer_shipping: 'Livraison',
+      footer_cookies: 'Cookies',
+      footer_linkedin: 'LinkedIn',
+      footer_rights: 'Tous droits réservés.',
       brand_label: 'Fabricant',
       series_label: 'Série',
       part_label: 'Référence',
@@ -307,19 +362,13 @@ window.ABC_SIEMENS_PART_I18N = {
     if (tEl) tEl.textContent = title;
     var dEl = document.getElementById('pageDescription');
     if (dEl) dEl.setAttribute('content', meta.slice(0, 158));
-    var map = {
+    var map = Object.assign({}, ui, {
       h1: h1,
       lead: lead,
-      brand_label: ui.brand_label,
-      series_label: ui.series_label,
-      part_label: ui.part_label,
-      cta: ui.cta,
-      brand_cta: ui.brand_cta,
-      series_cta: ui.series_cta_prefix + ctx.prefix,
-      catalog: ui.catalog,
-      nav_catalog: ui.nav_catalog
-    };
+      series_cta: ui.series_cta_prefix + ctx.prefix
+    });
     Object.keys(map).forEach(function (k) {
+      if (k.indexOf('body_') === 0 || k === 'series_cta_prefix') return;
       document.querySelectorAll('[data-i18n="' + k + '"]').forEach(function (el) {
         el.textContent = map[k];
       });
@@ -327,6 +376,8 @@ window.ABC_SIEMENS_PART_I18N = {
     document.querySelectorAll('[data-i18n-html="body"]').forEach(function (el) {
       el.innerHTML = body;
     });
+    var sel = document.getElementById('languageSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
     document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
     });
@@ -336,6 +387,12 @@ window.ABC_SIEMENS_PART_I18N = {
   },
   boot: function (ctx) {
     var self = this;
+    var sel = document.getElementById('languageSelect');
+    if (sel) {
+      sel.addEventListener('change', function () {
+        self.apply(sel.value, ctx);
+      });
+    }
     document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         self.apply(btn.getAttribute('data-set-lang'), ctx);

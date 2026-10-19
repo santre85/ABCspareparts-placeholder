@@ -41,8 +41,15 @@ for (const slug of sampleSlugs) {
   if (!/index,\s*follow/i.test(html)) fail(`${slug}: missing index,follow`);
   if (/\?part=/.test(html)) fail(`${slug}: contains ?part=`);
   if (!html.includes('"@type":"Product"')) fail(`${slug}: missing Product JSON-LD`);
-  if (!html.includes('data-set-lang=')) fail(`${slug}: missing language switcher`);
+  if (!html.includes('id="languageSelect"') && !html.includes('data-set-lang=')) {
+    fail(`${slug}: missing language switcher`);
+  }
   if (!html.includes('part-i18n.js')) fail(`${slug}: missing shared i18n script`);
+  if (!html.includes('class="legal-header"')) fail(`${slug}: missing site legal-header`);
+  if (!html.includes('class="footer"')) fail(`${slug}: missing site footer`);
+  if (!html.includes('ABCspareparts') || !html.includes('class="logo"')) {
+    fail(`${slug}: missing logo header`);
+  }
   if (!/data-i18n="lead"|data-i18n="h1"/.test(html)) fail(`${slug}: missing i18n content hooks`);
   if (!html.includes('Serie') && !html.includes('series_label')) fail(`${slug}: missing series context`);
 }
