@@ -216,6 +216,6 @@
   ],
   "note": "Full Siemens listino indexable /parts/ pages with DE/EN/IT/ES/FR UI + series-specific descriptions. Per-code online descriptions from siemens-part-descriptions.json when available. MVP overlaps kept as richer pages.",
   "i18n": true,
-  "online_descriptions_applied": 29,
-  "online_descriptions_store": 69
+  "online_descriptions_applied": 176,
+  "online_descriptions_store": 257
 }
