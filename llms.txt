@@ -17,7 +17,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-138 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302121 part references.
+138 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302126 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -93,7 +93,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Mettler Toledo](https://abcspareparts.eu/marche/mettler-toledo.html): 119106, 119171, 51119547, 51119999
 - [Mori Seiki](https://abcspareparts.eu/marche/mori-seiki.html): RIBSTAR BELT 15PK2008
 - [MOTOR POWER COMPANY](https://abcspareparts.eu/marche/motor-power-company.html): T.115.SR.7.R.L.17.501.A.16.116
-- [MST](https://abcspareparts.eu/marche/mst.html): 135859, 149826, 2485C041, 3175P003 (+10 more)
+- [MST](https://abcspareparts.eu/marche/mst.html): 028603, 135859, 149826, 2485C041 (+15 more)
 - [MTU](https://abcspareparts.eu/marche/mtu.html): 5240160321, 700429037000, 700429044001, X52404500059
 - [MULAG](https://abcspareparts.eu/marche/mulag.html): 102735, 102736, A110193
 - [Müller Martini](https://abcspareparts.eu/marche/muller-martini.html): 0031.5754, 0040.0598, 0306.1115.4, 0306.1116.4 (+6 more)
@@ -1386,6 +1386,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Mettler Toledo 51119999](https://abcspareparts.eu/parts/mettler-toledo/51119999.html) — Keramiksensor FRS 5+ (DSC 1/3)
 - [Mori Seiki RIBSTAR BELT 15PK2008](https://abcspareparts.eu/marche/mori-seiki.html#quote=RIBSTAR%20BELT%2015PK2008) — Mori Seiki RIBSTAR BELT 15PK2008
 - [MOTOR POWER COMPANY T.115.SR.7.R.L.17.501.A.16.116](https://abcspareparts.eu/marche/motor-power-company.html#quote=T.115.SR.7.R.L.17.501.A.16.116) — Servomotor
+<<<<<<< HEAD
 - [MST 135859](https://abcspareparts.eu/parts/mst/135859.html) — O-RING
 - [MST 149826](https://abcspareparts.eu/parts/mst/149826.html) — BRAKE REPAIR KIT
 - [MST 2485C041](https://abcspareparts.eu/parts/mst/2485c041.html) — TERMOSTAT
@@ -1400,6 +1401,27 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [MST 54218106](https://abcspareparts.eu/parts/mst/54218106.html) — SPIDER
 - [MST 5421897](https://abcspareparts.eu/parts/mst/5421897.html) — BOLT
 - [MST 5421899](https://abcspareparts.eu/parts/mst/5421899.html) — BEARING STRAP
+=======
+- [MST 028603](https://abcspareparts.eu/marche/mst.html#quote=028603) — O-Ring
+- [MST 135859](https://abcspareparts.eu/marche/mst.html#quote=135859) — O-RING
+- [MST 149826](https://abcspareparts.eu/marche/mst.html#quote=149826) — BRAKE REPAIR KIT
+- [MST 2485C041](https://abcspareparts.eu/marche/mst.html#quote=2485C041) — TERMOSTAT
+- [MST 3175P003](https://abcspareparts.eu/marche/mst.html#quote=3175P003) — Spring
+- [MST 40701](https://abcspareparts.eu/marche/mst.html#quote=40701) — FILTER, OIL
+- [MST 46221](https://abcspareparts.eu/marche/mst.html#quote=46221) — SPIDER
+- [MST 49944](https://abcspareparts.eu/marche/mst.html#quote=49944) — SEAL KIT
+- [MST 54204201](https://abcspareparts.eu/marche/mst.html#quote=54204201) — NUT
+- [MST 54204202](https://abcspareparts.eu/marche/mst.html#quote=54204202) — TOOTH, PLAIN
+- [MST 5421114](https://abcspareparts.eu/marche/mst.html#quote=5421114) — SIDECUTTER
+- [MST 54211213](https://abcspareparts.eu/marche/mst.html#quote=54211213) — BOLT
+- [MST 5421449-A](https://abcspareparts.eu/marche/mst.html#quote=5421449-A) — Arm , Wiper
+- [MST 5421449-B](https://abcspareparts.eu/marche/mst.html#quote=5421449-B) — Wiper
+- [MST 54218106](https://abcspareparts.eu/marche/mst.html#quote=54218106) — SPIDER
+- [MST 5421897](https://abcspareparts.eu/marche/mst.html#quote=5421897) — BOLT
+- [MST 5421899](https://abcspareparts.eu/marche/mst.html#quote=5421899) — BEARING STRAP
+- [MST 5423412](https://abcspareparts.eu/marche/mst.html#quote=5423412) — Expansion Tank
+- [MST 5423413](https://abcspareparts.eu/marche/mst.html#quote=5423413) — Cap, Tank
+>>>>>>> 7f96d29c01 (Add 5 new MST codes from ERPNext export (Oct 19, 2026))
 - [MTU 5240160321](https://abcspareparts.eu/marche/mtu.html#quote=5240160321) — Valve cover gasket
 - [MTU 700429037000](https://abcspareparts.eu/marche/mtu.html#quote=700429037000) — O-Ring for various MTU engines
 - [MTU 700429044001](https://abcspareparts.eu/marche/mtu.html#quote=700429044001) — O-Ring for various MTU engines

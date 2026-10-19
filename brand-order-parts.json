@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch)",
-  "generated": "2026-10-17",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst)",
+  "generated": "2026-10-19",
   "listini_files": 301648,
   "brands": [
     {
@@ -1400,6 +1400,10 @@
       "brand_slug": "mst",
       "parts": [
         {
+          "part_number": "028603",
+          "description": "O-Ring"
+        },
+        {
           "part_number": "135859",
           "description": "O-RING"
         },
@@ -1444,6 +1448,14 @@
           "description": "BOLT"
         },
         {
+          "part_number": "5421449-A",
+          "description": "Arm , Wiper"
+        },
+        {
+          "part_number": "5421449-B",
+          "description": "Wiper"
+        },
+        {
           "part_number": "54218106",
           "description": "SPIDER"
         },
@@ -1454,6 +1466,14 @@
         {
           "part_number": "5421899",
           "description": "BEARING STRAP"
+        },
+        {
+          "part_number": "5423412",
+          "description": "Expansion Tank"
+        },
+        {
+          "part_number": "5423413",
+          "description": "Cap, Tank"
         }
       ]
     },
