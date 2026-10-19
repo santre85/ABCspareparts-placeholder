@@ -1190,12 +1190,13 @@
       "brand_slug": "siemens",
       "part_number": "1FK7032-2AF21-1BG0",
       "part_slug": "1fk7032-2af21-1bg0",
-      "description": "SIMOTICS S-1FK7 Servomotor (Serie 1FK7)",
+      "description": "SIMOTICS S-1FK7-CT servomotor 0.31 kW, plain shaft, IP64. SIMOTICS S-1FK7 compact synchronous servo motor, PN 0.31 kW, IM B5 flange, plain shaft, AS24DQI 24-bit single-turn absolute encoder with DRIVE-CLiQ, without holding brake, IP64.",
       "case_slug": null,
       "component_type": "servo_motor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fk7032-2af21-1bg0.html",
@@ -1426,12 +1427,13 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB02-2AA0",
       "part_slug": "3rt2015-1ab02-2aa0",
-      "description": "SIRIUS Schütz (Serie 3RT2)",
+      "description": "SIRIUS 3RT2 contactor S00 7 A, 1 NC, suspended. SIRIUS 3RT2 size S00 three-pole power contactor, 7 A / 3 kW at 400 V AC-3, 24 V AC coil, one NC auxiliary contact, screw terminals, suspended mounting.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3rt2015-1ab02-2aa0.html",
@@ -2225,12 +2227,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE33-1AA0",
       "part_slug": "6sl3000-0be33-1aa0",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS line filter 400 A. SINAMICS three-phase line filter for 380-480 V, 50/60 Hz, rated 400 A, used as a line-side EMC filter with SINAMICS S120 chassis Active Line Modules.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3000-0be33-1aa0.html",
