@@ -28,7 +28,8 @@ if ((man.pages_written || 0) < 50000) {
 const katalog = path.join(ROOT, 'parts/siemens/katalog.html');
 if (!fs.existsSync(katalog)) fail('parts/siemens/katalog.html missing');
 
-const sampleSlugs = ['3su1000-0aa10-0aa0', '1fk7032-2af21-1ba0', '6es7131-4bd01-0aa0'];
+// Prefer listino-only pages (MVP overlaps keep the richer non-listino template).
+const sampleSlugs = ['1fe1041-6wu10-4bw2', '1fe1041-6wu30-8bw2', '1fe1042-6wn10-4bw2'];
 for (const slug of sampleSlugs) {
   const f = path.join(ROOT, 'parts/siemens', `${slug}.html`);
   if (!fs.existsSync(f)) {
@@ -40,6 +41,20 @@ for (const slug of sampleSlugs) {
   if (!/index,\s*follow/i.test(html)) fail(`${slug}: missing index,follow`);
   if (/\?part=/.test(html)) fail(`${slug}: contains ?part=`);
   if (!html.includes('"@type":"Product"')) fail(`${slug}: missing Product JSON-LD`);
+  if (!html.includes('id="languageSelect"') && !html.includes('data-set-lang=')) {
+    fail(`${slug}: missing language switcher`);
+  }
+  if (!html.includes('part-i18n.js')) fail(`${slug}: missing shared i18n script`);
+  if (!html.includes('class="legal-header"')) fail(`${slug}: missing site legal-header`);
+  if (!html.includes('class="footer"')) fail(`${slug}: missing site footer`);
+  if (!html.includes('ABCspareparts') || !html.includes('class="logo"')) {
+    fail(`${slug}: missing logo header`);
+  }
+  if (!/data-i18n="lead"|data-i18n="h1"/.test(html)) fail(`${slug}: missing i18n content hooks`);
+  if (!html.includes('Serie') && !html.includes('series_label')) fail(`${slug}: missing series context`);
+}
+if (!fs.existsSync(path.join(ROOT, 'parts/siemens/part-i18n.js'))) {
+  fail('parts/siemens/part-i18n.js missing');
 }
 
 const brand = fs.readFileSync(path.join(ROOT, 'marche/siemens.html'), 'utf8');

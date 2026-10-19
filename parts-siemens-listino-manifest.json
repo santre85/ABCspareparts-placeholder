@@ -214,5 +214,6 @@
       "count": 360
     }
   ],
-  "note": "Full Siemens listino indexable /parts/ pages. MVP overlaps kept as richer pages."
+  "note": "Full Siemens listino indexable /parts/ pages with DE/EN/IT/ES/FR UI + series-specific descriptions. MVP overlaps kept as richer pages.",
+  "i18n": true
 }
