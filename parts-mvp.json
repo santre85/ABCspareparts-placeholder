@@ -1088,12 +1088,13 @@
       "brand_slug": "siemens",
       "part_number": "1FK7032-2AF21-1BA0",
       "part_slug": "1fk7032-2af21-1ba0",
-      "description": "SIMOTICS S-1FK7 Servomotor (Serie 1FK7)",
+      "description": "SIMOTICS S-1FK7 synchronous servomotor, 0.31 kW. SIMOTICS S synchronous motor 1FK7-CT, PN=0.31 kW, UDC=300 V, M0=1.2 Nm (100K), NN=3000 rpm, naturally cooled, IM B5 (IM V1, IM V3). Absolute encoder single-turn 24-bit with DRIVE-CLiQ (AS24DQI); shaft with feather key; without holding brake; IP64.",
       "case_slug": null,
       "component_type": "servo_motor",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fk7032-2af21-1ba0.html",
@@ -1104,12 +1105,13 @@
       "brand_slug": "siemens",
       "part_number": "1FK7032-2AF21-1BA1",
       "part_slug": "1fk7032-2af21-1ba1",
-      "description": "SIMOTICS S-1FK7 Servomotor (Serie 1FK7)",
+      "description": "SIMOTICS S-1FK7 synchronous servomotor, 0.31 kW, IP65. SIMOTICS S synchronous motor 1FK7-CT, PN=0.31 kW, UDC=300 V, M0=1.2 Nm (100K), NN=3000 rpm, naturally cooled, IM B5 (IM V1, IM V3). Absolute encoder single-turn 24-bit with DRIVE-CLiQ (AS24DQI); shaft with feather key; without holding brake; degree of protection IP65 (vs IP64 on -1BA0).",
       "case_slug": null,
       "component_type": "servo_motor",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fk7032-2af21-1ba1.html",
@@ -1200,12 +1202,13 @@
       "brand_slug": "siemens",
       "part_number": "1FT7105-5AF71-1NL2",
       "part_slug": "1ft7105-5af71-1nl2",
-      "description": "Motor",
+      "description": "SIMOTICS S-1FT7 synchronous motor, ~8.8 kW with brake. SIMOTICS S 1FT7 permanent-magnet synchronous servo motor, naturally cooled, with conventional flange and holding brake. Incremental SIN/COS 1 Vpp encoder (2048 S/R) and KTY temperature sensing; M0≈50 Nm, Nn=3000 rpm, Pn≈8.80 kW.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1ft7105-5af71-1nl2.html",
@@ -1216,12 +1219,13 @@
       "brand_slug": "siemens",
       "part_number": "1FY2030-0RA01-0BA0",
       "part_slug": "1fy2030-0ra01-0ba0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SIMOTICS NRB040 planetary gearbox i=3, plain shaft (AH20). Siemens spare-part planetary gearbox NRB040, ratio i=3, plain shaft at output, for motor AH20 via sealing washer and motor shaft D=8 mm.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fy2030-0ra01-0ba0.html",
@@ -1232,12 +1236,13 @@
       "brand_slug": "siemens",
       "part_number": "1FY2030-0RA01-1AA0",
       "part_slug": "1fy2030-0ra01-1aa0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SIMOTICS NRB040 planetary gearbox i=3, keyed (1FK2/1FT2). Siemens spare-part planetary gearbox NRB040, ratio i=3, with feather key at output for motor with centering flange N=30 mm, bolt circle M=46 mm and shaft D=8 mm × L=25 mm (1FK2x02 / 1FT2x02).",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1fy2030-0ra01-1aa0.html",
@@ -1248,12 +1253,13 @@
       "brand_slug": "siemens",
       "part_number": "1LE1523-1CB29-0KB4-Z",
       "part_slug": "1le1523-1cb29-0kb4-z",
-      "description": "Motor{M1Y:380VD_50HZ_10HP} {M1Y:440VD_60HZ_10HP}-1:1 replacement for UD1808/2056935-001-002",
+      "description": "SIMOTICS SD 1LE15 LV motor 7.5 kW, special (-Z). SIMOTICS SD Eagle Line cast-iron low-voltage squirrel-cage motor in the 1LE1523 Basic Line. Frame 132M, 4-pole, 7.5 kW at 50 Hz; IM B14 flange with PTC; -Z indicates configured special options.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1le1523-1cb29-0kb4-z.html",
@@ -1280,12 +1286,13 @@
       "brand_slug": "siemens",
       "part_number": "1PH7912-1AB14-0AA0",
       "part_slug": "1ph7912-1ab14-0aa0",
-      "description": "Replacement Fan",
+      "description": "Spare-part replacement fan kit for Siemens 1PH7/PL6 spindle motors. Airflow can be DE to NDE or NDE to DE; kit includes a supplementary throttle plate for 60 Hz operation.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/1ph7912-1ab14-0aa0.html",
@@ -1296,12 +1303,13 @@
       "brand_slug": "siemens",
       "part_number": "3RA2110-0BA15-1AP0",
       "part_slug": "3ra2110-0ba15-1ap0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SIRIUS 3RA2 fuseless DOL load feeder S00. SIRIUS load feeder fuseless, direct-on-line starting 400 V AC, size S00, adjustable 0.14…0.20 A, control supply 230 V AC, screw terminal for DIN-rail mounting. Type of coordination 2, Iq=50 kA; includes contactor 3RT2015-1AP01 and circuit-breaker 3RV2011-0BA10.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3ra2110-0ba15-1ap0.html",
@@ -1312,12 +1320,13 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB01",
       "part_slug": "3rt2015-1ab01",
-      "description": "SIRIUS Schütz (Serie 3RT2)",
+      "description": "SIRIUS 3RT2 power contactor S00, 7 A / 3 kW, 24 V AC. SIRIUS power contactor, AC-3 3 kW/400 V, 3-pole size S00, screw terminals, with 1 NO auxiliary contact. Control supply voltage AC 24 V, 50/60 Hz; rated operational current AC-3 7 A at 400 V.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3rt2015-1ab01.html",
@@ -1328,12 +1337,13 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB01-1AA0",
       "part_slug": "3rt2015-1ab01-1aa0",
-      "description": "SIRIUS Schütz (Serie 3RT2)",
+      "description": "SIRIUS 3RT2 contactor S00, 7 A / 3 kW, upright mount. SIRIUS power contactor AC-3 7 A, 3 kW/400 V, 1 NO auxiliary, 24 V AC 50/60 Hz, 3-pole size S00, screw terminal, upright mounting position. Same electrical ratings family as 3RT2015-1AB01 with specified upright mounting orientation.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3rt2015-1ab01-1aa0.html",
@@ -1360,12 +1370,13 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB01-ZW97",
       "part_slug": "3rt2015-1ab01-zw97",
-      "description": "SIRIUS Schütz (Serie 3RT2)",
+      "description": "SIRIUS 3RT2 power contactor S00, 7 A / 3 kW, 24 V AC. SIRIUS power contactor, AC-3 3 kW/400 V, 3-pole size S00, screw terminals, with 1 NO auxiliary contact. Control supply voltage AC 24 V, 50/60 Hz; rated operational current AC-3 7 A at 400 V.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3rt2015-1ab01-zw97.html",
@@ -1376,12 +1387,13 @@
       "brand_slug": "siemens",
       "part_number": "3RT2015-1AB02",
       "part_slug": "3rt2015-1ab02",
-      "description": "SIRIUS Schütz (Serie 3RT2)",
+      "description": "SIRIUS 3RT2 power contactor, size S00, for motor switching. It has three main NO poles, one integrated NC auxiliary contact, a 24 V AC coil, and screw terminals.",
       "case_slug": null,
       "component_type": "contactor",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3rt2015-1ab02.html",
@@ -1424,12 +1436,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1000-0AA10-0AA0",
       "part_slug": "3su1000-0aa10-0aa0",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT pushbutton head, 22 mm, black, flat, latching. SIRIUS ACT 22 mm round plastic pushbutton (actuating element), black flat button with latching push-to-unlatch operation and black plastic front ring. Non-illuminated; optional contact module; mounting diameter 22.3 mm; IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1000-0aa10-0aa0.html",
@@ -1440,12 +1453,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1000-0AA10-0AA0-ZX90",
       "part_slug": "3su1000-0aa10-0aa0-zx90",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT pushbutton head, black latching (100-unit pack). Same SIRIUS ACT 22 mm black flat latching pushbutton as 3SU1000-0AA10-0AA0; -ZX90 / Z=X90 denotes 100-unit multi-pack packaging. Product itself is unchanged: round plastic, push-to-unlatch, black front ring, IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1000-0aa10-0aa0-zx90.html",
@@ -1456,12 +1470,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1000-0AA10-0AA0-ZY10",
       "part_slug": "3su1000-0aa10-0aa0-zy10",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT pushbutton head, 22 mm, black, flat, latching (variant/packaging). SIRIUS ACT 22 mm round plastic pushbutton (actuating element), black flat button with latching push-to-unlatch operation and black plastic front ring. Non-illuminated; optional contact module; mounting diameter 22.3 mm; IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1000-0aa10-0aa0-zy10.html",
@@ -1472,12 +1487,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1000-0AA10-0AA0-ZY11",
       "part_slug": "3su1000-0aa10-0aa0-zy11",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT pushbutton head, 22 mm, black, flat, latching (variant/packaging). SIRIUS ACT 22 mm round plastic pushbutton (actuating element), black flat button with latching push-to-unlatch operation and black plastic front ring. Non-illuminated; optional contact module; mounting diameter 22.3 mm; IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1000-0aa10-0aa0-zy11.html",
@@ -1488,12 +1504,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1000-0AA10-0AA0-ZY12",
       "part_slug": "3su1000-0aa10-0aa0-zy12",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT pushbutton head, 22 mm, black, flat, latching (variant/packaging). SIRIUS ACT 22 mm round plastic pushbutton (actuating element), black flat button with latching push-to-unlatch operation and black plastic front ring. Non-illuminated; optional contact module; mounting diameter 22.3 mm; IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1000-0aa10-0aa0-zy12.html",
@@ -1504,12 +1521,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1000-0AA10-0AA0-ZY13",
       "part_slug": "3su1000-0aa10-0aa0-zy13",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT pushbutton head, 22 mm, black, flat, latching (variant/packaging). SIRIUS ACT 22 mm round plastic pushbutton (actuating element), black flat button with latching push-to-unlatch operation and black plastic front ring. Non-illuminated; optional contact module; mounting diameter 22.3 mm; IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1000-0aa10-0aa0-zy13.html",
@@ -1520,12 +1538,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1000-0AA10-0AA0-ZY15",
       "part_slug": "3su1000-0aa10-0aa0-zy15",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT pushbutton head, 22 mm, black, flat, latching (variant/packaging). SIRIUS ACT 22 mm round plastic pushbutton (actuating element), black flat button with latching push-to-unlatch operation and black plastic front ring. Non-illuminated; optional contact module; mounting diameter 22.3 mm; IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1000-0aa10-0aa0-zy15.html",
@@ -1536,12 +1555,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1052-2BC40-0AA0",
       "part_slug": "3su1052-2bc40-0aa0",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT selector switch head, green, 2-pos momentary. SIRIUS ACT 22 mm round shiny-metal selector-switch head with green short handle, two positions, 45° momentary operation. Illuminable; contact/LED modules ordered separately; mounting diameter 22.3 mm; IP66/IP67/IP69(IP69K).",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1052-2bc40-0aa0.html",
@@ -1552,12 +1572,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1052-2BL10-0AA0",
       "part_slug": "3su1052-2bl10-0aa0",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT selector switch head, black, 3-pos latching. SIRIUS ACT 22 mm illuminable selector-switch head with short black handle, three latching positions I-O-II, and a shiny metal front ring. Designed for front-plate mounting in the SIRIUS ACT metal shiny actuator family.",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1052-2bl10-0aa0.html",
@@ -1568,12 +1589,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1400-1AA10-1BA0",
       "part_slug": "3su1400-1aa10-1ba0",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT contact module with one normally open contact and screw terminals for front-plate mounting. Modular accessory for SIRIUS ACT 3SU1 actuators and indicators.",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1400-1aa10-1ba0.html",
@@ -1584,12 +1606,13 @@
       "brand_slug": "siemens",
       "part_number": "3SU1550-0AA10-0AA0",
       "part_slug": "3su1550-0aa10-0aa0",
-      "description": "SIRIUS ACT Befehls- und Meldegerät (Serie 3SU1)",
+      "description": "SIRIUS ACT universal 3-way holder for plastic or metal modules used with 22 mm front-mounted actuators and indicators. Provides front-plate mounting support for contact/LED modules.",
       "case_slug": null,
       "component_type": "command_signaling",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3su1550-0aa10-0aa0.html",
@@ -1600,12 +1623,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA1010-2ED32-0AA0",
       "part_slug": "3va1010-2ed32-0aa0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SENTRON 3VA1 IEC MCCB, 3P 100 A TM210 FTFM. SENTRON circuit breaker 3VA1 IEC Frame 100, breaking capacity class B Icu=16 kA @ 415 V, 3-pole, line protection TM210 FTFM, In=100 A. Overload Ir=100 A fixed; short-circuit Ii=10×In; nut keeper kit / busbar connection.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va1010-2ed32-0aa0.html",
@@ -1616,12 +1640,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA2010-5HL32-0AA0",
       "part_slug": "3va2010-5hl32-0aa0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SENTRON 3VA2 IEC MCCB, 3P 100 A ETU320 LI. SENTRON molded-case circuit breaker 3VA2 IEC Frame 100, breaking capacity class M Icu=55 kA @ 415 V, 3-pole, line protection ETU320 LI, In=100 A. Overload Ir=40…100 A, short-circuit Ii=1.5…12×In; nut keeper kit connections.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va2010-5hl32-0aa0.html",
@@ -1632,12 +1657,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA5102-1MH31-0AA0",
       "part_slug": "3va5102-1mh31-0aa0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SENTRON 3VA5 UL MCCB/MCP, 3P 2 A TM120M. SENTRON circuit breaker 3VA5 UL Frame 125, 3-pole, starter protection TM120M (I only), In=2 A, without overload protection. Short-circuit protection Ii=5…12×In; without connection; motor circuit protector style.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va5102-1mh31-0aa0.html",
@@ -1648,12 +1674,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA6110-0HL31-0AA0",
       "part_slug": "3va6110-0hl31-0aa0",
-      "description": "3VA Kompaktleistungsschalter (Serie 3VA6)",
+      "description": "SENTRON 3VA6 UL MCCB, 3P 100 A ETU320 LI. SENTRON molded-case circuit breaker 3VA6 UL Frame 150, breaking capacity class E 200 kA @ 480 V, 3-pole, system/line protection ETU320 LI, In=100 A. Overload Ir=40…100 A, short-circuit Ii=1.5…12×In; without connection.",
       "case_slug": null,
       "component_type": "circuit_breaker",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va6110-0hl31-0aa0.html",
@@ -1664,12 +1691,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA6110-0HL41-0AA0",
       "part_slug": "3va6110-0hl41-0aa0",
-      "description": "3VA Kompaktleistungsschalter (Serie 3VA6)",
+      "description": "SENTRON 3VA6 UL MCCB, 4P 100 A ETU320 LI. SENTRON circuit breaker 3VA6 UL Frame 150, breaking capacity class E 200 kA @ 480 V, 4-pole, line protection ETU320 LI, In=100 A. Overload Ir=40…100 A, short-circuit Ii=1.5…12×In, neutral protection adjustable OFF/50%/100%; without connection.",
       "case_slug": null,
       "component_type": "circuit_breaker",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va6110-0hl41-0aa0.html",
@@ -1680,12 +1708,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA6110-0HM31-0AA0",
       "part_slug": "3va6110-0hm31-0aa0",
-      "description": "3VA Kompaktleistungsschalter (Serie 3VA6)",
+      "description": "SENTRON 3VA6 UL MCCB, 3P 100 A ETU330 LIG. SENTRON 3VA6 UL molded-case circuit breaker, Frame 150, 3-pole, In=100 A, with ETU330 LIG electronic trip unit. Breaking capacity class E is 200 kA at 480 V; supplied without main connections.",
       "case_slug": null,
       "component_type": "circuit_breaker",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va6110-0hm31-0aa0.html",
@@ -1760,12 +1789,13 @@
       "brand_slug": "siemens",
       "part_number": "3VA9007-0NA10",
       "part_slug": "3va9007-0na10",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SENTRON 3VA external N-current transformer. SENTRON external N-conductor current transformer accessory for 3VA2 molded-case circuit breakers up to In=150 A (frames 25/40/63/100 A). Enables neutral-conductor protection when used with the breaker N-CT interface.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/3va9007-0na10.html",
@@ -1776,12 +1806,13 @@
       "brand_slug": "siemens",
       "part_number": "6AU1435­0AA0­0AA1",
       "part_slug": "6au14350aa00aa1",
-      "description": "Simotion D435",
+      "description": "SIMOTION D435 drive-based multi-axis motion control unit with standard performance class. Interfaces: DRIVE-CLiQ, PROFIBUS, Industrial Ethernet, USB, digital I/O, and an option slot.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6au14350aa00aa1.html",
@@ -1792,12 +1823,13 @@
       "brand_slug": "siemens",
       "part_number": "6AV2 124-0MC01-0AX0",
       "part_slug": "6av2-124-0mc01-0ax0",
-      "description": "SIMATIC HMI TP1200 Comfort Panel",
+      "description": "SIMATIC HMI TP1200 Comfort touch panel with a 12.1-inch widescreen TFT display (16 million colors). PROFINET and MPI/PROFIBUS DP interfaces, 12 MB configuration memory; configurable from WinCC Comfort V11.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av2-124-0mc01-0ax0.html",
@@ -1808,13 +1840,14 @@
       "brand_slug": "siemens",
       "part_number": "6AV2124-0MC010-AX0",
       "part_slug": "6av2124-0mc010-ax0",
-      "description": "SIMATIC HMI TP1200 COMFORT",
+      "description": "SIMATIC HMI TP1200 Comfort touch panel with a 12.1-inch widescreen TFT display (16 million colors). PROFINET and MPI/PROFIBUS DP interfaces, 12 MB configuration memory; configurable from WinCC Comfort V11.",
       "case_slug": "siemens-hmi-tp1200-comfort-6av2124-0mc010-ax0",
       "component_type": "hmi_panel",
       "selection_reasons": [
         "rfq_order_history",
         "unique_description",
-        "success_case"
+        "success_case",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av2124-0mc010-ax0.html",
@@ -1825,12 +1858,13 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3CD13-0AX0",
       "part_slug": "6av3688-3cd13-0ax0",
-      "description": "Pushbutton Panel",
+      "description": "SIMATIC HMI PP17-I push-button panel with 16 short-stroke keys and 16 surface LEDs. Includes 16 digital inputs and 16 digital outputs; communicates via PROFIBUS DP/MPI.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av3688-3cd13-0ax0.html",
@@ -1841,12 +1875,13 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3CD13-0AX0 (NEW)",
       "part_slug": "6av3688-3cd13-0ax0-new",
-      "description": "Pushbutton Panel",
+      "description": "SIMATIC HMI PP17-I push-button panel with 16 short-stroke keys and 16 surface LEDs. Includes 16 digital inputs and 16 digital outputs; communicates via PROFIBUS DP/MPI.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av3688-3cd13-0ax0-new.html",
@@ -1857,12 +1892,13 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3ED13-0AX0",
       "part_slug": "6av3688-3ed13-0ax0",
-      "description": "Pushbutton Panel",
+      "description": "SIMATIC HMI PP17-II push-button panel spare part with 32 short-stroke keys and 32 surface LEDs. Provides 16 DI and 16 DO terminals and PROFIBUS DP/MPI communication.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av3688-3ed13-0ax0.html",
@@ -1873,12 +1909,13 @@
       "brand_slug": "siemens",
       "part_number": "6AV3688-3ED13-0AX0 (NEW, ORIGINAL PACKAGE)",
       "part_slug": "6av3688-3ed13-0ax0-new-original-package",
-      "description": "Pushbutton Panel",
+      "description": "SIMATIC HMI PP17-II push-button panel spare part with 32 short-stroke keys and 32 surface LEDs. Provides 16 DI and 16 DO terminals and PROFIBUS DP/MPI communication.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av3688-3ed13-0ax0-new-original-package.html",
@@ -1889,12 +1926,13 @@
       "brand_slug": "siemens",
       "part_number": "6AV6642-0BA01-1AX0",
       "part_slug": "6av6642-0ba01-1ax0",
-      "description": "Simatic Panel",
+      "description": "SIMATIC TP177B PN/DP touch panel spare part with a 5.7-inch STN color display. Supports MPI/PROFIBUS DP, Ethernet, USB, and MM-card storage; configured with WinCC flexible 2005 or higher.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av6642-0ba01-1ax0.html",
@@ -1905,12 +1943,13 @@
       "brand_slug": "siemens",
       "part_number": "6AV6642-0BA01-1AX1 (NEW)",
       "part_slug": "6av6642-0ba01-1ax1-new",
-      "description": "Industrieersatzteil Siemens – Anfrage ohne Preisangabe",
+      "description": "SIMATIC TP177B 6\" PN/DP color touch panel spare part with STN 256-color display. Interfaces include MPI/PROFIBUS DP, RS485/RS422, USB, Ethernet 10/100, printer, and MMC slot; WinCC flexible 2005 or later.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6av6642-0ba01-1ax1-new.html",
@@ -1921,12 +1960,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7131-4BD01-0AA0",
       "part_slug": "6es7131-4bd01-0aa0",
-      "description": "SIMATIC S7 Baugruppe/Komponente (Serie 6ES7)",
+      "description": "SIMATIC ET 200S 4DI DC24V ST electronic module. SIMATIC DP electronic module for ET 200S: 4 digital inputs standard 24 V DC, 15 mm width. IEC 61131 Type 1 inputs with per-channel status LEDs; supports 2-wire sensors.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7131-4bd01-0aa0.html",
@@ -1937,12 +1977,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7131-6BF00-0CA0",
       "part_slug": "6es7131-6bf00-0ca0",
-      "description": "SIMATIC S7 Baugruppe/Komponente (Serie 6ES7)",
+      "description": "SIMATIC ET 200SP DI 8x24VDC HF. SIMATIC ET 200SP digital input module DI 8×24 V DC High Feature, IEC 61131 Type 3 sink/PNP inputs, packing unit 1. For BU type A0, color code CC01; parameterizable input delay 0.05…20 ms with channel diagnostics.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7131-6bf00-0ca0.html",
@@ -1953,12 +1994,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7131-6BF00-0DA0",
       "part_slug": "6es7131-6bf00-0da0",
-      "description": "SIMATIC S7 Baugruppe/Komponente (Serie 6ES7)",
+      "description": "SIMATIC ET 200SP DI 8x24VDC High Speed. SIMATIC ET 200SP high-speed digital input module with eight 24 V DC sink (PNP) inputs. Operating modes include standard DI, oversampling, and up to four 32-bit counters; mounts on BU type A0.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "listino_series_seed",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7131-6bf00-0da0.html",
@@ -2033,12 +2075,13 @@
       "brand_slug": "siemens",
       "part_number": "6ES7318-3EL01-0AB0",
       "part_slug": "6es7318-3el01-0ab0",
-      "description": "SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP",
+      "description": "SIMATIC S7-300 CPU 319-3 PN/DP central processing unit with 2 MB work memory. Interfaces: MPI/DP 12 Mbit/s, second DP master/slave, and Ethernet PROFINET with 2-port switch; Micro Memory Card required.",
       "case_slug": null,
       "component_type": "plc_module",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6es7318-3el01-0ab0.html",
@@ -2049,12 +2092,13 @@
       "brand_slug": "siemens",
       "part_number": "6FC5088-0SP14-4AA1",
       "part_slug": "6fc5088-0sp14-4aa1",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SINUMERIK Product Partner compatibility test (service). Siemens Product Partner compatibility test of a product in program module SINUMERIK SYSTEMS. Catalog/service article for partner product testing in the SINUMERIK software module, not a field hardware component.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6fc5088-0sp14-4aa1.html",
@@ -2065,12 +2109,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE21-6DA0",
       "part_slug": "6sl3000-0be21-6da0",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS/SIMODRIVE 611 basic line filter, 16/20 kW. SINAMICS / SIMODRIVE 611 basic line filter for 16 kW Active Line Module, 16 kW Smart Line Module, 20 kW Basic Line Module, and SINAMICS S120 Combi. Input 3AC 380–480 V, 50/60 Hz; rated current typically 36 A.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3000-0be21-6da0.html",
@@ -2081,12 +2126,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3000-0BE23-6DA1",
       "part_slug": "6sl3000-0be23-6da1",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS S120 basic line filter suitable for 36 kW Smart Line Module, 36 kW Active Line Module, and 40 kW Basic Line Module. Input 3PH 380–480 V, 50/60 Hz; rated current 74 A.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3000-0be23-6da1.html",
@@ -2177,12 +2223,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3055-0AA00-5BA1",
       "part_slug": "6sl3055-0aa00-5ba1",
-      "description": "Sensor Module",
+      "description": "SINAMICS SMC20 sensor module. SINAMICS SMC20 cabinet-mounted sensor module for evaluating sin/cos 1 Vpp incremental and EnDat absolute encoder signals. Supplied without a DRIVE-CLiQ cable; successor article is 6SL3055-0AA00-5BA3.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3055-0aa00-5ba1.html",
@@ -2193,12 +2240,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3055-0AA00-5BA3 (NEW)",
       "part_slug": "6sl3055-0aa00-5ba3-new",
-      "description": "SINAMICS Antriebskomponente (Serie 6SL3)",
+      "description": "SINAMICS SMC20 sensor module (current) (variant/packaging). SINAMICS S120 SMC20 Sensor Module Cabinet-Mounted for motors and external encoders without native DRIVE-CLiQ. Evaluates sin/cos 1 Vpp, EnDat 2.1, and compatible SSI signals; communicates with the Control Unit via DRIVE-CLiQ.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3055-0aa00-5ba3-new.html",
@@ -2209,12 +2257,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3055-0AA00-5CA1",
       "part_slug": "6sl3055-0aa00-5ca1",
-      "description": "Sensor Module",
+      "description": "SINAMICS SMC30 sensor module. SINAMICS SMC30 cabinet-mounted sensor module for TTL/HTL incremental encoders or SSI combination encoders with incremental tracks. Supplied without DRIVE-CLiQ cable; successor is 6SL3055-0AA00-5CA2.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3055-0aa00-5ca1.html",
@@ -2225,12 +2274,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3055-0AA00-5CA2 (NEW)",
       "part_slug": "6sl3055-0aa00-5ca2-new",
-      "description": "Sensor Module",
+      "description": "SINAMICS SMC30 Sensor Module Cabinet-Mounted for TTL/HTL incremental encoders and SSI encoders with or without incremental signals. Connects to the Control Unit via DRIVE-CLiQ; supplied without DRIVE-CLiQ cable.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3055-0aa00-5ca2-new.html",
@@ -2241,12 +2291,13 @@
       "brand_slug": "siemens",
       "part_number": "6SL3210-1PE34-8AL0",
       "part_slug": "6sl3210-1pe34-8al0",
-      "description": "SINAMICS G120/S120 POWER MODULE PM240-2 FSG C2 WITH BUILT IN BRAKING CHOPPER 3AC380-480V+10/-10% 47-63Hz OUTPUT HIGH OV…",
+      "description": "SINAMICS PM240-2 Power Module, frame size FSG, with integrated Class C2 line filter and braking chopper. Rated 250 kW low-overload / 200 kW high-overload at 3 AC 380–480 V; supplied without Control Unit or operator panel.",
       "case_slug": null,
       "component_type": "drive",
       "selection_reasons": [
         "rfq_order_history",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/6sl3210-1pe34-8al0.html",
@@ -2257,12 +2308,13 @@
       "brand_slug": "siemens",
       "part_number": "8MF1000-2AA02-0",
       "part_slug": "8mf1000-2aa02-0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SIVACON mounting plate 1000×1000 mm, zinc-plated. SIVACON mounting plate for system cubicles, quick assembly with screws, height 1000 mm, width 1000 mm, zinc-plated surface. Non-ventilated, non-EMC-specific design; net weight 16.5 kg.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/8mf1000-2aa02-0.html",
@@ -2273,12 +2325,13 @@
       "brand_slug": "siemens",
       "part_number": "8MF1000-2AA12-0",
       "part_slug": "8mf1000-2aa12-0",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "SIVACON mounting plate 1000×1000 mm, perforated. SIVACON mounting plate, quick assembly with screws, perforated, height 1000 mm, width 1000 mm, zinc-plated. Same size class as 8MF1000-2AA02-0 with perforated plate design; net weight 16.5 kg.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/8mf1000-2aa12-0.html",
@@ -2289,12 +2342,13 @@
       "brand_slug": "siemens",
       "part_number": "A5E00016674",
       "part_slug": "a5e00016674",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "Siemens heater cartridge. Siemens article A5E00016674 listed as heater cartridge. Active standard product; net weight 0.036 kg; catalog PA10E / product group 4617.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/a5e00016674.html",
@@ -2305,12 +2359,13 @@
       "brand_slug": "siemens",
       "part_number": "EWN:0000995031000",
       "part_slug": "ewn-0000995031000",
-      "description": "Siemens Katalogreferenz (Listino-Beispiel)",
+      "description": "Siemens sealing washer (EWN spare). Siemens spare part identified as a sealing washer under EWN article number 0000995031000.",
       "case_slug": null,
       "component_type": null,
       "selection_reasons": [
         "listino_preview_sample",
-        "unique_description"
+        "unique_description",
+        "online_datasheet_description"
       ],
       "product_schema": true,
       "path": "parts/siemens/ewn-0000995031000.html",

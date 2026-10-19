@@ -57,6 +57,36 @@ if (!fs.existsSync(path.join(ROOT, 'parts/siemens/part-i18n.js'))) {
   fail('parts/siemens/part-i18n.js missing');
 }
 
+const descStorePath = path.join(ROOT, 'siemens-part-descriptions.json');
+if (!fs.existsSync(descStorePath)) {
+  fail('siemens-part-descriptions.json missing');
+} else {
+  const store = JSON.parse(fs.readFileSync(descStorePath, 'utf8'));
+  const n = Object.keys(store.parts || {}).length;
+  if (n < 20) fail(`siemens-part-descriptions.json too small (${n})`);
+  // Listino-only pages (not MVP overlap) should embed partDesc from online research.
+  const candidates = [
+    '3su1000-0aa20-0aa0',
+    '3rt2015-1ad01',
+    '6es7131-6bf01-2aa0',
+    '1fk7032-2af21-1bg1',
+    '6sl3000-0be21-6aa0'
+  ];
+  let foundEnriched = false;
+  for (const slug of candidates) {
+    const f = path.join(ROOT, 'parts/siemens', `${slug}.html`);
+    if (!fs.existsSync(f)) continue;
+    const html = fs.readFileSync(f, 'utf8');
+    if (/partDesc/.test(html) && /Produktbeschreibung|Product description|red flat|42 V|DI 8/i.test(html)) {
+      foundEnriched = true;
+      break;
+    }
+  }
+  if (!foundEnriched) {
+    fail('expected at least one listino page with online partDesc payload');
+  }
+}
+
 const brand = fs.readFileSync(path.join(ROOT, 'marche/siemens.html'), 'utf8');
 if (!brand.includes('siemensCatalogIndex') && !brand.includes('parts/siemens/katalog.html')) {
   fail('marche/siemens.html missing catalog hub link');

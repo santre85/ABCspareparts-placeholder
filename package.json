@@ -12,6 +12,7 @@
     "build:parts:publish": "node generate-parts-pages.js --publish-sitemap",
     "expand:siemens-parts": "node expand-siemens-parts-batch.js",
     "build:siemens-listino-parts": "node generate-siemens-listino-parts.js",
+    "enrich:siemens-descriptions": "node enrich-siemens-descriptions.js",
     "verify:parts": "node verify-parts-mvp.js",
     "verify:siemens-listino": "node verify-siemens-listino.js",
     "verify": "node verify-build.js && node verify-parts-mvp.js && node verify-siemens-listino.js"
