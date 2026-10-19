@@ -329,9 +329,14 @@ window.ABC_SIEMENS_PART_I18N = {
     var ui = this.ui[lang];
     var series = this.resolveSeries(ctx.prefix);
     var family = series.family;
-    var lead = series[lang] || series.de;
+    var pd = ctx.partDesc || null;
+    var lead = (pd && (pd[lang] || pd.en || pd.de)) || series[lang] || series.de;
+    var h1Label =
+      pd && pd.title
+        ? String(pd.title).replace(/\s+/g, ' ').trim().slice(0, 72)
+        : family;
     var title =
-      'Siemens ' + ctx.display + ' – ' + family + (lang === 'en' ? ' spare part' : '') + ' | ABCspareparts';
+      'Siemens ' + ctx.display + ' – ' + h1Label + (lang === 'en' ? ' spare part' : '') + ' | ABCspareparts';
     var meta =
       'Siemens ' +
       ctx.display +
@@ -343,7 +348,19 @@ window.ABC_SIEMENS_PART_I18N = {
       ctx.prefix +
       '): ' +
       lead;
-    var h1 = 'Siemens ' + ctx.display + ' – ' + family;
+    var h1 = 'Siemens ' + ctx.display + ' – ' + h1Label;
+    var mid =
+      pd
+        ? lang === 'de'
+          ? ' für Industrie und Instandhaltung in Europa. Produktbeschreibung: '
+          : lang === 'en'
+            ? ' for industry and maintenance across Europe. Product description: '
+            : lang === 'it'
+              ? ' per industria e manutenzione in Europa. Descrizione prodotto: '
+              : lang === 'es'
+                ? ' para industria y mantenimiento en Europa. Descripción del producto: '
+                : ' pour l’industrie et la maintenance en Europe. Description produit : '
+        : ui.body_mid;
     var body =
       ui.body_before +
       '<strong>' +
@@ -353,7 +370,7 @@ window.ABC_SIEMENS_PART_I18N = {
       ', ' +
       ctx.prefix.replace(/</g, '&lt;') +
       ')' +
-      ui.body_mid +
+      mid +
       lead.replace(/</g, '&lt;') +
       ui.body_after;
 

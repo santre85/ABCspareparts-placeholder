@@ -18,12 +18,49 @@ const ROOT = __dirname;
 const TODAY = new Date().toISOString().slice(0, 10);
 const LISTINO_PATH = path.join(ROOT, 'listini-data/siemens.json');
 const MVP_PATH = path.join(ROOT, 'parts-mvp.json');
+const DESC_PATH = path.join(ROOT, 'siemens-part-descriptions.json');
 const OUT_DIR = path.join(ROOT, 'parts/siemens');
 const SERIES_DIR = path.join(OUT_DIR, 'serie');
 const MANIFEST_PATH = path.join(ROOT, 'parts-siemens-listino-manifest.json');
 const SITEMAP_PREFIX = 'sitemap-siemens-parts';
 const SITEMAP_LIMIT = 45000;
 const HUB_PAGE_SIZE = 500;
+
+/** @type {Map<string, object>|null} */
+let PART_DESC_BY_NORM = null;
+
+function normPartKey(code) {
+  return String(code || '')
+    .normalize('NFKC')
+    .replace(/[\u00ad\u200b]/g, '')
+    .replace(/\s+/g, '')
+    .toUpperCase();
+}
+
+function loadPartDescriptions() {
+  if (PART_DESC_BY_NORM) return PART_DESC_BY_NORM;
+  PART_DESC_BY_NORM = new Map();
+  if (!fs.existsSync(DESC_PATH)) return PART_DESC_BY_NORM;
+  const data = JSON.parse(fs.readFileSync(DESC_PATH, 'utf8'));
+  for (const [key, row] of Object.entries(data.parts || {})) {
+    PART_DESC_BY_NORM.set(normPartKey(key), row);
+    if (row.code) PART_DESC_BY_NORM.set(normPartKey(row.code), row);
+  }
+  return PART_DESC_BY_NORM;
+}
+
+function lookupPartDescription(code) {
+  const map = loadPartDescriptions();
+  const direct = map.get(normPartKey(code));
+  if (direct) return direct;
+  // Strip common packaging / NEW suffixes for a second try
+  const base = String(code || '')
+    .replace(/\s*\(NEW(?:,\s*ORIGINAL PACKAGE)?\)\s*$/i, '')
+    .replace(/-(ZX|ZY|ZW)\d+$/i, '')
+    .trim();
+  if (base && base !== code) return map.get(normPartKey(base)) || null;
+  return null;
+}
 
 /** Multilingual series copy used to differentiate part pages (factual family names only). */
 const SERIES_I18N = {
@@ -280,13 +317,19 @@ function buildCompactPartHtml(code, slug) {
   const seriesHref = `serie/${seriesSlug(prefix)}.html`;
   const info = seriesInfo(prefix);
   const family = info.family;
-  const h1 = `Siemens ${display} – ${family}`;
-  const metaDescription = `Siemens ${display} (${family}, Serie ${prefix}): ${info.de} Unverbindliche Anfrage – keine Preise.`.slice(
-    0,
-    158
-  );
-  const title = `Siemens ${display} – ${family} | ABCspareparts`;
-  const bodyDe = `ABCspareparts beschafft die Siemens-Referenz <strong>${escapeHtml(display)}</strong> (${escapeHtml(family)}, Serie ${escapeHtml(prefix)}) für Industrie und Instandhaltung in Europa. Serienkontext: ${escapeHtml(info.de)} Verfügbarkeit und Konditionen prüfen wir nach Ihrer Anfrage — keine Preise auf der Seite.`;
+  const partDesc = lookupPartDescription(code);
+  const shortTitle = partDesc?.title
+    ? String(partDesc.title).replace(/\s+/g, ' ').trim().slice(0, 72)
+    : '';
+  const h1Label = shortTitle || family;
+  const h1 = `Siemens ${display} – ${h1Label}`;
+  const leadDe = partDesc?.de || partDesc?.en || info.de;
+  const metaDescription = `Siemens ${display} (${family}, Serie ${prefix}): ${leadDe} Unverbindliche Anfrage – keine Preise.`
+    .replace(/\s+/g, ' ')
+    .slice(0, 158);
+  const title = `Siemens ${display} – ${h1Label} | ABCspareparts`;
+  const leadLabel = partDesc ? 'Produktbeschreibung' : 'Serienkontext';
+  const bodyDe = `ABCspareparts beschafft die Siemens-Referenz <strong>${escapeHtml(display)}</strong> (${escapeHtml(family)}, Serie ${escapeHtml(prefix)}) für Industrie und Instandhaltung in Europa. ${leadLabel}: ${escapeHtml(leadDe)} Verfügbarkeit und Konditionen prüfen wir nach Ihrer Anfrage — keine Preise auf der Seite.`;
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -298,7 +341,21 @@ function buildCompactPartHtml(code, slug) {
     brand: { '@type': 'Brand', name: 'Siemens' },
     url: pageUrl
   };
-  const ctxJson = JSON.stringify({ display, prefix }).replace(/</g, '\\u003c');
+  if (partDesc?.source_url) {
+    ld.isRelatedTo = partDesc.source_url;
+  }
+  const ctxPayload = { display, prefix };
+  if (partDesc) {
+    ctxPayload.partDesc = {
+      title: partDesc.title || '',
+      de: partDesc.de || partDesc.en || '',
+      en: partDesc.en || partDesc.de || '',
+      it: partDesc.it || partDesc.en || partDesc.de || '',
+      es: partDesc.es || partDesc.en || partDesc.de || '',
+      fr: partDesc.fr || partDesc.en || partDesc.de || ''
+    };
+  }
+  const ctxJson = JSON.stringify(ctxPayload).replace(/</g, '\\u003c');
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -386,7 +443,7 @@ ${FOOTER_CSS}
         <a href="../../">Home</a> · <a href="../../marche.html" data-i18n="footer_brands">Marken</a> · <a href="../../marche/siemens.html">Siemens</a> · ${escapeHtml(display)}
       </nav>
       <h1 data-i18n="h1">${escapeHtml(h1)}</h1>
-      <p class="lead" data-i18n="lead">${escapeHtml(info.de)}</p>
+      <p class="lead" data-i18n="lead">${escapeHtml(leadDe)}</p>
     </div>
   </header>
 
@@ -582,6 +639,8 @@ function main() {
   const bySeries = new Map();
   let skippedMvp = 0;
   let written = 0;
+  let withOnlineDesc = 0;
+  loadPartDescriptions();
 
   for (const code of codes) {
     const norm = String(code)
@@ -608,6 +667,7 @@ function main() {
     const html = buildCompactPartHtml(code, slug);
     fs.writeFileSync(path.join(OUT_DIR, `${slug}.html`), html, 'utf8');
     written += 1;
+    if (lookupPartDescription(code)) withOnlineDesc += 1;
 
     const prefix = seriesPrefix(code);
     if (!bySeries.has(prefix)) bySeries.set(prefix, []);
@@ -666,8 +726,10 @@ function main() {
     hub_urls: hubUrls.length,
     sitemap_files: shardFiles,
     series: seriesStats.slice(0, 50),
-    note: 'Full Siemens listino indexable /parts/ pages with DE/EN/IT/ES/FR UI + series-specific descriptions. MVP overlaps kept as richer pages.',
-    i18n: true
+    note: 'Full Siemens listino indexable /parts/ pages with DE/EN/IT/ES/FR UI + series-specific descriptions. Per-code online descriptions from siemens-part-descriptions.json when available. MVP overlaps kept as richer pages.',
+    i18n: true,
+    online_descriptions_applied: withOnlineDesc,
+    online_descriptions_store: PART_DESC_BY_NORM ? PART_DESC_BY_NORM.size : 0
   };
   fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 
@@ -721,6 +783,7 @@ function main() {
 
   const sec = ((Date.now() - t0) / 1000).toFixed(1);
   console.log(`Siemens listino parts: wrote ${written} pages, skipped MVP overlap ${skippedMvp}`);
+  console.log(`Online per-code descriptions applied: ${withOnlineDesc}`);
   console.log(`Series hubs: ${hubUrls.length - 1} pages + katalog.html`);
   console.log(`Sitemaps: ${shardFiles.join(', ')}`);
   console.log(`Done in ${sec}s`);
@@ -730,4 +793,11 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { partSlug, seriesPrefix, buildCompactPartHtml };
+module.exports = {
+  partSlug,
+  seriesPrefix,
+  buildCompactPartHtml,
+  lookupPartDescription,
+  normPartKey,
+  loadPartDescriptions
+};

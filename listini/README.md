@@ -75,3 +75,16 @@ npm run build:brand-pages
 ```
 
 I codici già presenti in ordini/preventivi **non vengono duplicati**.
+
+## Siemens: descrizioni online per codice
+
+Per arricchire le pagine `/parts/siemens/{slug}.html` oltre al testo di serie, usa
+`siemens-part-descriptions.json` (descrizioni ricercate da Industry Mall / datasheet,
+senza prezzi). Il generatore le preferisce quando presenti:
+
+```bash
+npm run enrich:siemens-descriptions   # aggiorna descrizioni MVP Siemens
+npm run build:parts
+npm run build:siemens-listino-parts
+npm run verify:siemens-listino
+```
