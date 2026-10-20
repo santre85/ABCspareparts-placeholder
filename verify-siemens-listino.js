@@ -87,7 +87,7 @@ if (!fs.existsSync(descStorePath)) {
   if (foundEnriched < 2) {
     fail(`expected >=2 listino pages with online partDesc payload, got ${foundEnriched}`);
   }
-  if (n < 300) fail(`siemens-part-descriptions.json expected >=300 after batch4, got ${n}`);
+  if (n < 400) fail(`siemens-part-descriptions.json expected >=400 after batch5, got ${n}`);
 }
 
 const brand = fs.readFileSync(path.join(ROOT, 'marche/siemens.html'), 'utf8');
