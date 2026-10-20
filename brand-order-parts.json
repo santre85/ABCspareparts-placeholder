@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst)",
-  "generated": "2026-10-19",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact)",
+  "generated": "2026-10-20",
   "listini_files": 301648,
   "brands": [
     {
@@ -507,6 +507,24 @@
         {
           "part_number": "MSOEB-3-24V DC",
           "description": "Magnetspule"
+        }
+      ]
+    },
+    {
+      "brand": "Fisher",
+      "brand_slug": "fisher",
+      "parts": [
+        {
+          "part_number": "592386140",
+          "description": "22A8897X012; DICHTRING"
+        },
+        {
+          "part_number": "592386200",
+          "description": "16A5512X012; KEIL, KONISCH"
+        },
+        {
+          "part_number": "592392500",
+          "description": "1V710106242; SCHEIBE"
         }
       ]
     },
@@ -1751,7 +1769,7 @@
         },
         {
           "part_number": "2891020",
-          "description": "Phoenix Contact 2891020FL SWITCH SFN 8TX-24VAC (2891020)PHOENIX CONTACT · ETHERNET SWITCH,2891020,HONEYWLL · FL SWITCH…"
+          "description": "Phoenix Contact 2891020 FL SWITCH SFN 8TX-24VAC (2891020) PHOENIX CONTACT · ETHERNET SWITCH,2891020,HONEYWLL · FL SWITC…"
         },
         {
           "part_number": "2900067",
@@ -1763,7 +1781,7 @@
         },
         {
           "part_number": "2902854",
-          "description": "Phoenix Contact 2902854FL MC EF 1300 MM ST (2902854)PHOENIX CONTACT · CONVERTER,MEDIA,PHOE-CON,2902854 · FL MC EF 1300…"
+          "description": "Phoenix Contact 2902854 FL MC EF 1300 MM ST (2902854) PHOENIX CONTACT · CONVERTER,MEDIA,PHOE-CON,2902854 · FL MC EF 130…"
         },
         {
           "part_number": "2902991",
@@ -1799,7 +1817,7 @@
         },
         {
           "part_number": "2907719",
-          "description": "Phoenix Contact 2907719QUINT4-DIODE/12-24DC/2X20/1X40 (2907719)PHOENIX CONTACT · DIODE,QUINT,PHOENIX,2907719,12TO24VDC…"
+          "description": "Phoenix Contact 2907719 QUINT4-DIODE/12-24DC/2X20/1X40 (2907719) PHOENIX CONTACT · DIODE,QUINT,PHOENIX,2907719,12TO24VD…"
         },
         {
           "part_number": "2938581",
@@ -1815,7 +1833,7 @@
         },
         {
           "part_number": "2962599",
-          "description": "Phoenix Contact 2962599PHOENIX CONTACT · TERMINAL BOARD,PHOE-CON,UM 45-FLK34 · UM 45-FLK34 (2962599)"
+          "description": "Phoenix Contact 2962599 PHOENIX CONTACT · TERMINAL BOARD,PHOE-CON,UM 45-FLK34 · UM 45-FLK34 (2962599)"
         },
         {
           "part_number": "2962793",
@@ -1860,6 +1878,18 @@
         {
           "part_number": "2981020",
           "description": "PSR-SCP- 24DC/ESP4/2X1/1X2"
+        },
+        {
+          "part_number": "ATS-U M",
+          "description": "SEPARATOR PLATE"
+        },
+        {
+          "part_number": "D-UT 4/1P-H",
+          "description": "CONTROL TERMINAL END COVER"
+        },
+        {
+          "part_number": "UCT6R-TM 8",
+          "description": "TERMINAL BLOCK MARKER"
         }
       ]
     },
