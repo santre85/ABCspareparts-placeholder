@@ -6,6 +6,16 @@ const { assignUniqueSlugs } = require('./brand-slug.js');
 const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
 const { ICON_LINKS, collectIndexWorthySlugs } = require('./seo-config.js');
 
+/**
+ * Brands permanently excluded from generation.
+ * These brands will never be regenerated, even if they appear in source data.
+ * Match is case-insensitive against brand name and slug.
+ */
+const EXCLUDED_BRANDS = [
+  'keysight',
+  'keysight technologies'
+];
+
 const NAV_I18N = {
   de: {
     nav_home: 'Home',
@@ -1803,12 +1813,23 @@ function main() {
   const onlySlugs = parseOnlySlugs(process.argv);
   const brands = readBrandsFromIndex();
   const rows = assignUniqueSlugs(brands);
+  
+  // Filter out excluded brands
+  const filteredRows = rows.filter((r) => {
+    const brandName = (r.name || '').toLowerCase();
+    const brandSlug = (r.slug || '').toLowerCase();
+    return !EXCLUDED_BRANDS.some(excluded => {
+      const ex = excluded.toLowerCase();
+      return brandName === ex || brandSlug === ex || brandName.includes(ex) || ex.includes(brandName);
+    });
+  });
+  
   const partsBySlug = loadPartsBySlug();
   const worthySet = collectIndexWorthySlugs([...partsBySlug.keys()], TOP_BRAND_BY_SLUG);
   const mvpIndex = loadMvpPartsIndex();
   const targetRows = onlySlugs.length
-    ? rows.filter((r) => onlySlugs.includes(r.slug))
-    : rows;
+    ? filteredRows.filter((r) => onlySlugs.includes(r.slug))
+    : filteredRows;
 
   if (onlySlugs.length && !targetRows.length) {
     throw new Error(`No matching brand slugs for --only=${onlySlugs.join(',')}`);

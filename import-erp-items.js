@@ -21,6 +21,16 @@ const ROOT = __dirname;
 const MAX_DESC_LEN = 120;
 
 /**
+ * Brands permanently excluded from ERP import.
+ * These brands will never be imported, even if they appear in ERPNext data.
+ * Match is case-insensitive against brand name.
+ */
+const EXCLUDED_BRANDS = [
+  'keysight',
+  'keysight technologies'
+];
+
+/**
  * Manual overrides for brand name normalization
  */
 const BRAND_OVERRIDES = {
@@ -170,6 +180,12 @@ function groupByBrand(items, brandSlugs) {
   const unmatched = new Map();
   
   for (const item of items) {
+    // Check if brand is excluded
+    const brandLower = item.brand.toLowerCase();
+    if (EXCLUDED_BRANDS.some(ex => brandLower === ex.toLowerCase() || brandLower.includes(ex.toLowerCase()))) {
+      continue;
+    }
+    
     const resolved = resolveBrand(item.brand, brandSlugs);
     
     if (!resolved) {
