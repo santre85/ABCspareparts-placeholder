@@ -9076,13 +9076,11 @@
     "related_slugs": [
       "Tektronix",
       "Yokogawa",
-      "Keysight",
       "Hioki"
     ],
     "related_labels": {
       "Tektronix": "TEKTRONIX",
       "Yokogawa": "YOKOGAWA",
-      "Keysight": "KEYSIGHT",
       "Hioki": "HIOKI"
     },
     "faq_after": [
@@ -12917,13 +12915,11 @@
     "related_slugs": [
       "Yokogawa",
       "Tektronix",
-      "Keysight",
       "Hioki"
     ],
     "related_labels": {
       "Yokogawa": "YOKOGAWA",
       "Tektronix": "TEKTRONIX",
-      "Keysight": "KEYSIGHT",
       "Hioki": "HIOKI"
     },
     "faq_after": [

@@ -23,6 +23,16 @@ const {
 
 const ROOT = __dirname;
 
+/**
+ * Brands permanently excluded from ERP merge.
+ * These brands will never be merged, even if they appear in erp-items.json.
+ * Match is case-insensitive against brand slug.
+ */
+const EXCLUDED_BRANDS = [
+  'keysight',
+  'keysight-technologies'
+];
+
 function normalizePart(value) {
   return String(value || '')
     .trim()
@@ -133,6 +143,13 @@ function main(targetSlug) {
   if (!targetSlug) {
     console.error('Usage: node merge-erp-brand-parts.js <brand-slug>');
     console.error('Example: node merge-erp-brand-parts.js hydac');
+    process.exit(1);
+  }
+  
+  // Check if target brand is excluded
+  const targetLower = targetSlug.toLowerCase();
+  if (EXCLUDED_BRANDS.some(ex => targetLower === ex.toLowerCase() || targetLower.includes(ex.toLowerCase()))) {
+    console.error(`Error: Brand "${targetSlug}" is permanently excluded and cannot be merged.`);
     process.exit(1);
   }
   
