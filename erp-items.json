@@ -1,6 +1,6 @@
 {
-  "source": "erp-priced-items_6447.tsv",
-  "imported": "2026-10-21",
+  "source": "erp-priced-items_a1ba.tsv",
+  "imported": "2026-10-22",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -1532,6 +1532,10 @@
         {
           "part_number": "AA34222022T001-C",
           "description": "OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC150°C / Shaft 24j6 / 165x130j6x200 / Ral 7031 / Fixed with circ…"
+        },
+        {
+          "part_number": "AA34222051T001-C",
+          "description": "OMT1-IE3 90L2 2,2kW 400/690V 50Hz B3 Iso F-B / IP55 / PTC150°C / Shaft 24j6 / Ral 7031 / Fixed with circlip"
         }
       ]
     },
