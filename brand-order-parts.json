@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec)",
-  "generated": "2026-10-22",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens)",
+  "generated": "2026-10-23",
   "listini_files": 301648,
   "brands": [
     {
@@ -2461,6 +2461,14 @@
         {
           "part_number": "3SU1550-0AA10-0AA0",
           "description": "Siemens 3SU1550-0AA10-0AA0"
+        },
+        {
+          "part_number": "3WA1232-3AB03-2BL0",
+          "description": "Circuit breaker"
+        },
+        {
+          "part_number": "3WL1232-2CB64-6AJ2",
+          "description": "Circuit breaker"
         },
         {
           "part_number": "6AU1435­0AA0­0AA1",
