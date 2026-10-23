@@ -1,6 +1,6 @@
 {
-  "source": "erp-priced-items_a1ba.tsv",
-  "imported": "2026-10-22",
+  "source": "erp-priced-items_4f97.tsv",
+  "imported": "2026-10-23",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -2270,6 +2270,14 @@
         {
           "part_number": "3SU1550-0AA10-0AA0",
           "description": "Siemens 3SU1550-0AA10-0AA0"
+        },
+        {
+          "part_number": "3WA1232-3AB03-2BL0",
+          "description": "Circuit breaker"
+        },
+        {
+          "part_number": "3WL1232-2CB64-6AJ2",
+          "description": "Circuit breaker"
         },
         {
           "part_number": "6AU1435­0AA0­0AA1",
