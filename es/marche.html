@@ -322,18 +322,6 @@
 
       function normalizeForSearch(str){ return (str || '').toLowerCase().replace(/[\s\-\/\.]/g, ''); }
 
-      function slugifyPartCode(code){
-        return String(code || '')
-          .normalize('NFKD')
-          .replace(/[\u0300-\u036f]/g, '')
-          .replace(/&/g, ' and ')
-          .replace(/\+/g, ' plus ')
-          .replace(/[^a-zA-Z0-9]+/g, '-')
-          .replace(/^-+|-+$/g, '')
-          .replace(/-+/g, '-')
-          .toLowerCase();
-      }
-
       function loadSearchIndex(callback){
         if(searchIndex){ callback(searchIndex); return; }
         if(searchIndexLoading) return;
@@ -367,52 +355,16 @@
         return results;
       }
 
-      function showSearchDropdown(results, query){
+      function showSearchDropdown(results){
         if(!searchDropdown) return;
         searchDropdown.innerHTML = '';
         currentFocusIndex = -1;
         dropdownItems = [];
-        if(results.length === 0){
-          if(query && query.length >= 2){
-            var notFoundItem = document.createElement('a');
-            notFoundItem.className = 'brand-search-dropdown-item brand-search-dropdown-not-found';
-            notFoundItem.href = '/#contact?code=' + encodeURIComponent(query);
-            notFoundItem.setAttribute('role', 'option');
-            notFoundItem.setAttribute('data-index', 0);
-            var langSelect = document.getElementById('languageSelect');
-            var currentLang = langSelect ? langSelect.value : 'de';
-            var notFoundTexts = {
-              de: 'Code nicht gefunden: Anfragen',
-              en: 'Code not found: request it',
-              it: 'Codice non trovato: richiedilo',
-              es: 'Código no encontrado: solicítalo',
-              fr: 'Code non trouvé : demandez-le'
-            };
-            var textDiv = document.createElement('div');
-            textDiv.className = 'brand-search-dropdown-item-brand';
-            textDiv.textContent = notFoundTexts[currentLang] || notFoundTexts.de;
-            notFoundItem.appendChild(textDiv);
-            var codeDiv = document.createElement('div');
-            codeDiv.className = 'brand-search-dropdown-item-code';
-            codeDiv.textContent = query;
-            notFoundItem.appendChild(codeDiv);
-            searchDropdown.appendChild(notFoundItem);
-            dropdownItems.push(notFoundItem);
-            searchDropdown.classList.add('show');
-          } else {
-            searchDropdown.classList.remove('show');
-          }
-          return;
-        }
+        if(results.length === 0){ searchDropdown.classList.remove('show'); return; }
         results.forEach(function(result, idx){
           var item = document.createElement('a');
           item.className = 'brand-search-dropdown-item';
-          if(result.isPartCode){
-            var partSlug = slugifyPartCode(result.code);
-            item.href = '/parts/' + result.slug + '/' + partSlug + '.html';
-          } else {
-            item.href = '/marche/' + result.slug + '.html';
-          }
+          item.href = '/marche/' + result.slug + '.html';
           item.setAttribute('role', 'option');
           item.setAttribute('data-index', idx);
           if(result.isPartCode){
@@ -466,7 +418,7 @@
             var query = inp.value.trim();
             if(query.length >= 2){
               var results = searchParts(query);
-              showSearchDropdown(results, query);
+              showSearchDropdown(results);
             }
           });
         });
@@ -478,7 +430,7 @@
             if(query.length < 2){ hideSearchDropdown(); return; }
             loadSearchIndex(function(){
               var results = searchParts(query);
-              showSearchDropdown(results, query);
+              showSearchDropdown(results);
             });
           }, 150);
         });

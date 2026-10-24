@@ -12806,6 +12806,12 @@
       </aside>
       <div class="contact-form-wrap">
         <h3 data-i18n="contact_form_title">Online request</h3>
+        <div id="partCodeNotice" style="display: none; background: #fff8f0; border: 2px solid #e67e22; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; text-align: center;">
+          <p style="margin: 0; color: #1e3a5f; font-weight: 600; font-size: 1.05rem;">
+            <span data-i18n="request_for_code">Request for part number:</span> <code id="partCodeDisplay" style="background: #fff; padding: 0.25rem 0.5rem; border-radius: 4px; color: #e67e22; font-weight: 700;"></code>
+          </p>
+          <p style="margin: 0.5rem 0 0; color: #666; font-size: 0.9rem;" data-i18n="request_code_hint">Please include this part number in the form.</p>
+        </div>
         <div class="contact-iframe-wrap" id="iframeContainer">
           <div id="iframePlaceholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; background: linear-gradient(135deg, #f0f6fb 0%, #e8f2f9 100%); border: 2px solid #dce8f4; border-radius: 10px; text-align: center; padding: 2rem;">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" style="margin-bottom: 1rem;">
@@ -13397,6 +13403,26 @@
     }
   }
   
+  // Show part code notice if code parameter present
+  function showPartCodeNotice() {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var code = urlParams.get('code');
+      if (code) {
+        // Sanitize code (remove HTML/JS)
+        var sanitized = String(code).replace(/[<>"'&]/g, function(m) {
+          return {'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'}[m];
+        });
+        var notice = document.getElementById('partCodeNotice');
+        var display = document.getElementById('partCodeDisplay');
+        if (notice && display && sanitized) {
+          display.textContent = sanitized;
+          notice.style.display = 'block';
+        }
+      }
+    } catch(e) {}
+  }
+
   // Lazy-load iframe on button click
   function loadContactIframe() {
     var placeholder = document.getElementById('iframePlaceholder');
@@ -13405,15 +13431,6 @@
       var lang = getCurrentLang();
       var iframeSrc = iframe.getAttribute('data-src') + '?_lang=' + (lang || 'en');
       
-      // Check for ?code= parameter in URL and pass it to the iframe
-      try {
-        var urlParams = new URLSearchParams(window.location.search);
-        var code = urlParams.get('code');
-        if (code) {
-          iframeSrc += '&code=' + encodeURIComponent(code);
-        }
-      } catch(e) {}
-      
       iframe.src = iframeSrc;
       iframe.style.display = 'block';
       placeholder.style.display = 'none';
@@ -13421,6 +13438,7 @@
   }
   
   document.addEventListener('DOMContentLoaded', function() {
+    showPartCodeNotice();
     var loadBtn = document.getElementById('loadIframeBtn');
     if (loadBtn) {
       loadBtn.addEventListener('click', loadContactIframe);

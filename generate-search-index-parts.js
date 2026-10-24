@@ -216,7 +216,7 @@ function buildPageHtml(part, brandDescriptions) {
       <p>Diese Teilenummer ist in unserem Index erfasst. Senden Sie eine unverbindliche Anfrage mit Menge und Anwendung – wir prüfen Verfügbarkeit, Lieferzeit und Konditionen.</p>
 
       <div class="cta-row">
-        <a class="cta-primary" href="../../marche/${escapeAttr(part.s)}.html#quote=${encodeURIComponent(part.c)}">🔍 Jetzt Angebot anfragen</a>
+        <a class="cta-primary" href="../../?code=${encodeURIComponent(part.c)}#contact">🔍 Jetzt Angebot anfragen</a>
         <a class="cta-secondary" href="../../marche/${escapeAttr(part.s)}.html">Zur Markenseite ${escapeHtml(part.b)}</a>
       </div>
     </div>

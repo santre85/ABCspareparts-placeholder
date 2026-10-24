@@ -18,8 +18,7 @@ const MARCHE_I18N = {
     marche_search_button: "Suchen",
     marche_search_placeholder: "z. B. Siemens oder 1SDA038324R0001 …",
     marche_no_results: "Keine Marken gefunden für",
-    marche_showing_results: "Zeige {{count}} Marken für",
-    part_not_found: "Code nicht gefunden: Anfragen"
+    marche_showing_results: "Zeige {{count}} Marken für"
   },
   en: {
     page_title: "Spare Parts by Manufacturer – 11959+ Brands | ABC Spare Parts",
@@ -38,8 +37,7 @@ const MARCHE_I18N = {
     marche_search_button: "Search",
     marche_search_placeholder: "e.g. Siemens or 1SDA038324R0001 …",
     marche_no_results: "No brands found for",
-    marche_showing_results: "Showing {{count}} brands for",
-    part_not_found: "Code not found: request it"
+    marche_showing_results: "Showing {{count}} brands for"
   },
   it: {
     page_title: "Ricambi per produttore – 11959+ marche | ABC Spare Parts",
@@ -58,8 +56,7 @@ const MARCHE_I18N = {
     marche_search_button: "Cerca",
     marche_search_placeholder: "ad es. Siemens o 1SDA038324R0001 …",
     marche_no_results: "Nessuna marca trovata per",
-    marche_showing_results: "Mostra {{count}} marche per",
-    part_not_found: "Codice non trovato: richiedilo"
+    marche_showing_results: "Mostra {{count}} marche per"
   },
   es: {
     page_title: "Recambios por fabricante – 11959+ marcas | ABC Spare Parts",
@@ -78,8 +75,7 @@ const MARCHE_I18N = {
     marche_search_button: "Buscar",
     marche_search_placeholder: "p. ej. Siemens o 1SDA038324R0001 …",
     marche_no_results: "No se encontraron marcas para",
-    marche_showing_results: "Mostrando {{count}} marcas para",
-    part_not_found: "Código no encontrado: solicítalo"
+    marche_showing_results: "Mostrando {{count}} marcas para"
   },
   fr: {
     page_title: "Pièces par fabricant – 11959+ marques | ABC Spare Parts",
@@ -98,8 +94,7 @@ const MARCHE_I18N = {
     marche_search_button: "Rechercher",
     marche_search_placeholder: "par ex. Siemens ou 1SDA038324R0001 …",
     marche_no_results: "Aucune marque trouvée pour",
-    marche_showing_results: "Affichage de {{count}} marques pour",
-    part_not_found: "Code non trouvé : demandez-le"
+    marche_showing_results: "Affichage de {{count}} marques pour"
   }
 };
 
