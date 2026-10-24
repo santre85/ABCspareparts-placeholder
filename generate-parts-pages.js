@@ -245,7 +245,7 @@ ${FOOTER_CSS}
       ${bodyCopy}
       ${caseBlock}
       <div class="cta-row">
-        ${partQuoteCtaHtml(part.part_number, '../../')}
+        ${partQuoteCtaHtml(part.part_number, '../../', part.brand)}
         <a class="cta-secondary" href="../../marche/${escapeAttr(part.brand_slug)}.html">Zur Markenseite ${escapeHtml(part.brand)}</a>
       </div>
     </div>

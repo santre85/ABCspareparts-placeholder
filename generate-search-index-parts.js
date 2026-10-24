@@ -361,7 +361,7 @@ ${descriptionBlock}
       <p>ABCspareparts prüft die Referenz <strong>${escapeHtml(part.c)}</strong> auf Beschaffbarkeit und Lieferoptionen in Europa. Verfügbarkeit und Konditionen werden nach Ihrer Anfrage ermittelt.</p>
       
       <div class="cta-row">
-        ${partQuoteCtaHtml(part.c, '../../')}
+        ${partQuoteCtaHtml(part.c, '../../', part.b)}
         <a class="cta-secondary" href="../../marche/${escapeAttr(brandSlug)}.html">Zur Markenseite ${escapeHtml(part.b)}</a>
       </div>
     </div>

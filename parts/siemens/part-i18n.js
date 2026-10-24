@@ -404,7 +404,7 @@ window.ABC_SIEMENS_PART_I18N = {
     var cta = document.querySelector('a.cta-primary');
     if (cta && ctx && ctx.display) {
       var prefix = lang === 'de' ? '../../' : '../../' + lang + '/';
-      cta.setAttribute('href', prefix + '?code=' + encodeURIComponent(ctx.display) + '#contact');
+      cta.setAttribute('href', prefix + '?code=' + encodeURIComponent(ctx.display) + '&brand=Siemens#contact');
     }
   },
   boot: function (ctx) {

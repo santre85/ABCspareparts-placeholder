@@ -15,17 +15,30 @@
     return lang === 'de' ? '../../' : '../../' + lang + '/';
   }
 
+  function decodeParam(raw) {
+    try {
+      return decodeURIComponent(raw);
+    } catch (e) {
+      return raw;
+    }
+  }
+
   function codeFromAnchor(a) {
     var raw = a.getAttribute('data-part-code');
     if (raw) return raw;
     var href = a.getAttribute('href') || '';
     var m = href.match(/[?&#](?:code|quote)=([^&#]+)/);
-    if (!m) return '';
-    try {
-      return decodeURIComponent(m[1]);
-    } catch (e) {
-      return m[1];
-    }
+    return m ? decodeParam(m[1]) : '';
+  }
+
+  function brandFromAnchor(a) {
+    var raw = a.getAttribute('data-part-brand');
+    if (raw) return raw;
+    var href = a.getAttribute('href') || '';
+    var m = href.match(/[?&]brand=([^&#]+)/);
+    if (m) return decodeParam(m[1]);
+    var dd = document.querySelector('.part-meta dd.plain a');
+    return dd && dd.textContent ? dd.textContent.trim() : '';
   }
 
   function apply() {
@@ -36,7 +49,10 @@
       var a = links[i];
       var code = codeFromAnchor(a);
       if (!code) continue;
-      a.setAttribute('href', prefix + '?code=' + encodeURIComponent(code) + '#contact');
+      var href = prefix + '?code=' + encodeURIComponent(code);
+      var brand = brandFromAnchor(a);
+      if (brand) href += '&brand=' + encodeURIComponent(brand);
+      a.setAttribute('href', href + '#contact');
     }
   }
 

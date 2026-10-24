@@ -84,7 +84,7 @@ All generated part pages share the same template:
 - Breadcrumb navigation: `Home · Marken · Brand · code`
 - Part metadata block: Hersteller / Teilenummer / Beschreibung (conditional)
 - Neutral description: "ABCspareparts prüft die Referenz auf Beschaffbarkeit..."
-- Primary CTA links to the German home contact form (`../../?code=<code>#contact`) as a no-JS fallback. `part-cta-lang.js` rewrites the button on load to the visitor language (`localStorage.lang`, then `navigator.language`, default `de`): `../../`, `../../en/`, `../../it/`, `../../es/`, `../../fr/` + `?code=<urlencoded>#contact`.
+- Primary CTA links to the German home contact form (`../../?code=<code>&brand=<brand>#contact`) as a no-JS fallback. `part-cta-lang.js` rewrites the button on load to the visitor language (`localStorage.lang`, then `navigator.language`, default `de`): `../../`, `../../en/`, `../../it/`, `../../es/`, `../../fr/` + `?code=<urlencoded>&brand=<urlencoded Hersteller name>#contact`. Home pages pass `custom_part_numbers` and `custom_manufacturer` into the ERPNext iframe.
 - Complete footer with all standard links
 
 ### GitHub Actions Integration

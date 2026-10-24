@@ -170,9 +170,11 @@ function homeLangPrefix(lang) {
 }
 
 /** Static German home contact URL (no-JS fallback). Language rewrite is client-side. */
-function homeContactCodeHref(code, lang, relativeRoot) {
+function homeContactCodeHref(code, lang, relativeRoot, brand) {
   const root = relativeRoot == null ? '../../' : relativeRoot;
-  return `${root}${homeLangPrefix(lang)}?code=${encodeURIComponent(sanitizePartCode(code))}#contact`;
+  let href = `${root}${homeLangPrefix(lang)}?code=${encodeURIComponent(sanitizePartCode(code))}`;
+  if (brand) href += `&brand=${encodeURIComponent(brand)}`;
+  return `${href}#contact`;
 }
 
 function escapeAttr(s) {
@@ -182,10 +184,11 @@ function escapeAttr(s) {
     .replace(/</g, '&lt;');
 }
 
-function partQuoteCtaHtml(code, relativeRoot) {
+function partQuoteCtaHtml(code, relativeRoot, brand) {
   const root = relativeRoot == null ? '../../' : relativeRoot;
   const clean = sanitizePartCode(code);
-  return `<a class="cta-primary" id="partQuoteCta" data-part-code="${escapeAttr(clean)}" href="${homeContactCodeHref(clean, 'de', root)}">Angebot anfragen</a>`;
+  const brandAttr = brand ? ` data-part-brand="${escapeAttr(brand)}"` : '';
+  return `<a class="cta-primary" id="partQuoteCta" data-part-code="${escapeAttr(clean)}"${brandAttr} href="${homeContactCodeHref(clean, 'de', root, brand)}">Angebot anfragen</a>`;
 }
 
 function partCtaLangScriptTag(relativeRoot) {
