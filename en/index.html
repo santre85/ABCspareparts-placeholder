@@ -13540,10 +13540,11 @@
         var brandNorm = normalizeForSearch(part.b);
 
         if (codeNorm.indexOf(normalized) !== -1 || brandNorm.indexOf(normalized) !== -1) {
-          results.push({
+            results.push({
             code: part.c,
             brand: part.b,
             slug: part.s,
+            page: part.p,
             isPartCode: codeNorm.indexOf(normalized) !== -1
           });
         }
@@ -13600,7 +13601,8 @@
         item.className = 'brand-search-dropdown-item';
         
         if (result.isPartCode) {
-          var partSlug = slugifyPartCode(result.code);
+          var partSlug = result.page || slugifyPartCode(result.code);
+          if (partSlug.slice(-5) === '.html') partSlug = partSlug.slice(0, -5);
           item.href = '/parts/' + result.slug + '/' + partSlug + '.html';
         } else {
           item.href = '/marche/' + result.slug + '.html';

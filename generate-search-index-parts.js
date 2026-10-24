@@ -14,14 +14,22 @@
  * - Primary CTA links to home contact with ?code= prefilled
  * - Complete footer with all links
  * 
- * Skips existing pages to preserve curated content.
- * Excludes Keysight and unbranded items.
+ * Skips any page that already exists (on disk, in sitemap-parts.xml, or
+ * parts-mvp.json) including dotted vs dashed slug variants. Never overwrites
+ * or renames live URLs. Excludes Keysight and unbranded items.
  */
 
 const fs = require('fs');
 const path = require('path');
 const { BASE, hreflangLinks, canonicalUrl, ICON_LINKS } = require('./seo-config.js');
 const { FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
+const {
+  slugifyPartCode,
+  findExistingPartPage,
+  resolvePartPageFilename,
+  filenameStem,
+  resetCatalog
+} = require('./part-page-paths.js');
 
 const ROOT = __dirname;
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -42,19 +50,6 @@ function escapeHtml(s) {
 
 function escapeAttr(s) {
   return escapeHtml(s).replace(/'/g, '&#39;');
-}
-
-function slugifyPartCode(code) {
-  // Match verify-search-index-pages.js slugification exactly
-  return String(code || '')
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/&/g, ' and ')
-    .replace(/\+/g, ' plus ')
-    .replace(/[^a-zA-Z0-9]+/g, '-')  // Replace ANY non-alphanumeric with dash
-    .replace(/^-+|-+$/g, '')
-    .replace(/-+/g, '-')
-    .toLowerCase();
 }
 
 function loadSearchIndex() {
@@ -296,12 +291,11 @@ ${buildFooterHtml('../../')}
 `;
 }
 
-function writeSitemap(parts) {
+function writeSitemap(resolvedParts) {
   let body = '';
-  for (const part of parts) {
+  for (const { part, filename } of resolvedParts) {
     const brandSlug = part.s;
-    const partSlug = slugifyPartCode(part.c);
-    const url = canonicalUrl(`parts/${brandSlug}/${partSlug}.html`);
+    const url = canonicalUrl(`parts/${brandSlug}/${filename}`);
     body += '  <url>\n';
     body += `    <loc>${url}</loc>\n`;
     body += `    <lastmod>${TODAY}</lastmod>\n`;
@@ -333,39 +327,76 @@ function main() {
     return true;
   });
   
+  resetCatalog();
+
   let generated = 0;
   let skipped = 0;
-  
+  const resolved = [];
+
   for (const part of validParts) {
-    const brandDir = path.join(PARTS_DIR, part.s);
-    fs.mkdirSync(brandDir, { recursive: true });
-    
-    const partSlug = slugifyPartCode(part.c);
-    const targetPath = path.join(brandDir, `${partSlug}.html`);
-    
-    // Skip existing pages to preserve curated content
-    if (fs.existsSync(targetPath)) {
+    const existing = findExistingPartPage(part.s, part.c);
+    if (existing) {
       skipped++;
+      resolved.push({ part, filename: existing });
       continue;
     }
-    
+
+    const filename = `${slugifyPartCode(part.c)}.html`;
+    const brandDir = path.join(PARTS_DIR, part.s);
+    const targetPath = path.join(brandDir, filename);
+
+    if (fs.existsSync(targetPath)) {
+      skipped++;
+      resolved.push({ part, filename });
+      continue;
+    }
+
+    fs.mkdirSync(brandDir, { recursive: true });
     const description = getDescription(part, erpMap);
     const html = buildPageHtml(part, description);
-    
     fs.writeFileSync(targetPath, html, 'utf8');
     generated++;
+    resolved.push({ part, filename });
   }
-  
-  writeSitemap(validParts);
-  
+
+  stampSearchIndexPaths(resolved);
+  writeSitemap(resolved);
+
   console.log(`  ✅ Generated ${generated} new part pages`);
   console.log(`  ⊙ Skipped ${skipped} existing pages`);
   console.log(`  ✅ Updated ${SITEMAP_PATH}\n`);
   console.log('✅ Part page generation complete!\n');
-  
+
   console.log(`   Total indexed codes: ${validParts.length}`);
   console.log(`   New pages generated: ${generated}`);
   console.log(`   Existing pages kept: ${skipped}\n`);
+}
+
+function stampSearchIndexPaths(resolved) {
+  if (!fs.existsSync(SEARCH_INDEX_PATH)) return;
+  const data = JSON.parse(fs.readFileSync(SEARCH_INDEX_PATH, 'utf8'));
+  const byKey = new Map();
+  for (const { part, filename } of resolved) {
+    byKey.set(`${part.s}::${part.c}`, filenameStem(filename));
+  }
+  let stamped = 0;
+  for (const entry of data.parts || []) {
+    const stem = byKey.get(`${entry.s}::${entry.c}`);
+    if (!stem) continue;
+    if (stem !== slugifyPartCode(entry.c)) {
+      if (entry.p !== stem) {
+        entry.p = stem;
+        stamped++;
+      }
+    } else if (entry.p) {
+      delete entry.p;
+      stamped++;
+    }
+  }
+  if (stamped > 0) {
+    fs.writeFileSync(SEARCH_INDEX_PATH, JSON.stringify(data, null, 0), 'utf8');
+    console.log(`  ✓ Stamped ${stamped} existing page filenames into search-index.json`);
+  }
 }
 
 if (require.main === module) {

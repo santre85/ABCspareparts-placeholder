@@ -71,10 +71,10 @@ npm run nightly:parts
 ```
 
 This executes the complete pipeline:
-1. `generate-search-index.js` - Reads `erp-items.json` + `brand-order-parts.json`, generates `search-index.json`
-2. `generate-search-index-parts.js` - Creates `/parts/<brand>/<code>.html` for every code in search index (using shared template from `generate-parts-pages.js`)
-3. `verify-search-index-pages.js` - Verifies all indexed codes have pages
-4. Updates `sitemap-search-index-parts.xml` automatically
+1. `generate-search-index.js` - Reads `erp-items.json` + `brand-order-parts.json`, generates `search-index.json`. When a live page already exists under a different filename (e.g. `80701.000507.html`), the index stores that real stem in `p`.
+2. `generate-search-index-parts.js` - Creates `/parts/<brand>/<code>.html` **only for codes that have no page yet**. Existing files (including dotted names listed in `sitemap-parts.xml` / `parts-mvp.json`) are skipped and never overwritten or renamed.
+3. `verify-search-index-pages.js` - Verifies every search link resolves to an existing file
+4. Updates `sitemap-search-index-parts.xml` using the real filenames
 
 ### Template Consistency
 
