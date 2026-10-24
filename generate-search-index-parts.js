@@ -149,15 +149,61 @@ function uniqueTitle(part, description) {
   return `${brand} ${code} | ABCspareparts`;
 }
 
+const META_MAX = 160;
+const META_CLOSING = 'Unverbindliche Anfrage bei ABCspareparts – keine Preise auf der Seite.';
+const META_CLOSING_NODESC = 'unverbindliche Anfrage bei ABCspareparts. Verfügbarkeit und Konditionen nach Prüfung.';
+
+function truncateAtWord(text, maxLen) {
+  const t = String(text || '').replace(/\s+/g, ' ').trim();
+  if (t.length <= maxLen) return t;
+  let cut = t.slice(0, maxLen);
+  const next = t[maxLen];
+  const last = cut[cut.length - 1];
+  if ((next && /[A-Za-zÄÖÜäöüß0-9]/.test(next)) || /[A-Za-zÄÖÜäöüß0-9]/.test(last)) {
+    const sp = cut.lastIndexOf(' ');
+    if (sp > 0) cut = cut.slice(0, sp);
+  }
+  cut = cut.replace(/[.,;:–—\-]+\s*$/g, '').trim();
+  if (!cut) cut = t.slice(0, Math.max(1, maxLen - 1)).trim();
+  return `${cut}…`;
+}
+
 function uniqueDescription(part, description) {
   const brand = part.b;
-  const code = part.c;
-  
-  if (description) {
-    return `${brand} Teilenummer ${code}: ${description}. Unverbindliche Anfrage bei ABCspareparts – keine Preise auf der Seite.`.slice(0, 158);
+  const code = sanitizePartCode(part.c);
+  const desc = description ? String(description).replace(/\s+/g, ' ').trim() : '';
+
+  function fit(lead, mid, closing) {
+    if (!mid) {
+      const out = `${lead} ${closing}`;
+      return out.length <= META_MAX ? out : null;
+    }
+    const dotted = mid.endsWith('.') ? `${lead} ${mid} ${closing}` : `${lead} ${mid}. ${closing}`;
+    if (dotted.length <= META_MAX) return dotted;
+    const budget = META_MAX - lead.length - 2 - closing.length;
+    if (budget < 1) return null;
+    const body = truncateAtWord(mid, budget);
+    const out = `${lead} ${body} ${closing}`;
+    return out.length <= META_MAX ? out : null;
   }
-  
-  return `${brand} Teilenummer ${code}: unverbindliche Anfrage bei ABCspareparts. Verfügbarkeit und Konditionen nach Prüfung.`.slice(0, 158);
+
+  if (desc) {
+    return (
+      fit(`${brand} Teilenummer ${code}:`, desc, META_CLOSING) ||
+      fit(`${brand} ${code}:`, desc, META_CLOSING) ||
+      fit(`${brand} ${code}:`, '', META_CLOSING) ||
+      `${truncateAtWord(`${brand} ${code}`, META_MAX - 1 - META_CLOSING.length)} ${META_CLOSING}`
+    );
+  }
+
+  const full = `${brand} Teilenummer ${code}: ${META_CLOSING_NODESC}`;
+  if (full.length <= META_MAX) return full;
+  const alt = `${brand} ${code}: ${META_CLOSING_NODESC}`;
+  if (alt.length <= META_MAX) return alt;
+  return (
+    fit(`${brand} ${code}:`, '', META_CLOSING) ||
+    `${truncateAtWord(`${brand} ${code}`, META_MAX - 1 - META_CLOSING.length)} ${META_CLOSING}`
+  );
 }
 
 function uniqueH1(part, description) {
@@ -277,6 +323,8 @@ function buildPageHtml(part, description) {
     .part-meta dt { font-weight: 600; color: #1e3a5f; }
     .part-meta dd { margin: 0 0 0.65rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #1e3a5f; }
     .part-meta dd.plain { font-family: inherit; color: #444; }
+    .part-meta a { color: #1e3a5f; font-weight: 600; text-decoration: none; }
+    .part-meta a:hover { color: #2d5a87; text-decoration: underline; }
     .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0.5rem; }
     .cta-primary, .cta-secondary { display: inline-block; padding: 0.75rem 1.35rem; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
     .cta-primary { background: #e67e22; color: #fff !important; }

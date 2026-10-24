@@ -32,7 +32,8 @@ function loadMainPartsSet() {
   try {
     const out = execFileSync('git', ['ls-tree', '-r', '--name-only', 'origin/main', '--', 'parts'], {
       cwd: ROOT,
-      encoding: 'utf8'
+      encoding: 'utf8',
+      maxBuffer: 64 * 1024 * 1024
     });
     return new Set(out.split('\n').filter(Boolean));
   } catch {
@@ -61,6 +62,47 @@ function graphTypes(html) {
     }
   }
   return { types, hasOffers };
+}
+
+const META_CLOSING = 'Unverbindliche Anfrage bei ABCspareparts – keine Preise auf der Seite.';
+const META_CLOSING_NODESC = 'unverbindliche Anfrage bei ABCspareparts. Verfügbarkeit und Konditionen nach Prüfung.';
+
+function extractMetaDescriptions(html) {
+  const out = {};
+  const name = html.match(/<meta name="description" content="([^"]*)"/);
+  const og = html.match(/<meta property="og:description" content="([^"]*)"/);
+  const tw = html.match(/<meta name="twitter:description" content="([^"]*)"/);
+  if (name) out.meta = name[1];
+  if (og) out.og = og[1];
+  if (tw) out.twitter = tw[1];
+  return out;
+}
+
+function decodeAttr(s) {
+  return String(s || '')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&');
+}
+
+function metaDescriptionIssue(text) {
+  const t = decodeAttr(text).trim();
+  if (!t) return 'empty';
+  if (t.length > 160) return `too long (${t.length})`;
+  if (/Unverbindliche Anfrage bei ABCspareparts/.test(t) && !t.includes(META_CLOSING)) {
+    return 'closing sentence cut';
+  }
+  if (
+    /unverbindliche Anfrage bei ABCspareparts/.test(t) &&
+    !t.includes(META_CLOSING_NODESC) &&
+    !t.includes(META_CLOSING)
+  ) {
+    return 'closing sentence cut';
+  }
+  if (/[A-Za-zÄÖÜäöüß]$/.test(t)) return 'ends mid-word';
+  return null;
 }
 
 function searchLinkFilename(part) {
@@ -95,6 +137,7 @@ function verifyPages() {
   const slugMismatch = [];
   const dirtyCodes = [];
   const schemaFail = [];
+  const metaFail = [];
   const requiredTypes = ['Organization', 'WebPage', 'BreadcrumbList', 'Product'];
   const mainParts = loadMainPartsSet();
 
@@ -139,10 +182,17 @@ function verifyPages() {
           hasOffers
         });
       }
+      const metas = extractMetaDescriptions(html);
+      for (const [kind, value] of Object.entries(metas)) {
+        const issue = metaDescriptionIssue(value);
+        if (issue) {
+          metaFail.push({ path: expectedPath, kind, issue, value });
+        }
+      }
     }
   }
 
-  if (missing.length > 0 || slugMismatch.length > 0 || dirtyCodes.length > 0 || schemaFail.length > 0) {
+  if (missing.length > 0 || slugMismatch.length > 0 || dirtyCodes.length > 0 || schemaFail.length > 0 || metaFail.length > 0) {
     if (missing.length > 0) {
       console.error(`\nFAILED: ${missing.length} search links do not resolve to a file!\n`);
       for (const item of missing.slice(0, 10)) {
@@ -171,12 +221,19 @@ function verifyPages() {
         console.error(`  - ${item.path}: missing ${item.absent.join(', ') || '—'} offers=${item.hasOffers}`);
       }
     }
+    if (metaFail.length > 0) {
+      console.error(`\nFAILED: ${metaFail.length} new-page meta descriptions are too long or cut mid-word!\n`);
+      for (const item of metaFail.slice(0, 10)) {
+        console.error(`  - ${item.path} ${item.kind}: ${item.issue} — ${item.value.slice(-40)}`);
+      }
+    }
     console.error('\nRun: node generate-search-index-parts.js\n');
     process.exit(1);
   }
 
   console.log(`  All ${validParts.length} search links resolve to existing files!`);
-  console.log('  All new pages have Organization, WebPage, BreadcrumbList, Product (no offers).\n');
+  console.log('  All new pages have Organization, WebPage, BreadcrumbList, Product (no offers).');
+  console.log('  All new-page meta/og/twitter descriptions are ≤160 chars and complete.\n');
   return { total: validParts.length, missing: 0 };
 }
 
