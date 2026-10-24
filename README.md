@@ -72,6 +72,15 @@ npm install
 # Catalogo codici + sitemap listino + llms.txt
 npm run build:brand-parts
 
+# Search index (compact JSON for autocomplete)
+npm run build:search-index
+
+# Part pages for all codes in search index (~490)
+npm run build:search-index-parts
+
+# Verify all search index codes have pages
+npm run verify:search-index-pages
+
 # Una sola pagina marca (consigliato con listini grandi)
 node generate-brand-pages.js --only=abb
 
