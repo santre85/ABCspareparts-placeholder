@@ -162,6 +162,37 @@ function resetCatalog() {
   catalog = null;
 }
 
+const PAGE_LANGS = ['de', 'en', 'it', 'es', 'fr'];
+
+function homeLangPrefix(lang) {
+  const l = PAGE_LANGS.includes(lang) ? lang : 'de';
+  return l === 'de' ? '' : `${l}/`;
+}
+
+/** Static German home contact URL (no-JS fallback). Language rewrite is client-side. */
+function homeContactCodeHref(code, lang, relativeRoot) {
+  const root = relativeRoot == null ? '../../' : relativeRoot;
+  return `${root}${homeLangPrefix(lang)}?code=${encodeURIComponent(sanitizePartCode(code))}#contact`;
+}
+
+function escapeAttr(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;');
+}
+
+function partQuoteCtaHtml(code, relativeRoot) {
+  const root = relativeRoot == null ? '../../' : relativeRoot;
+  const clean = sanitizePartCode(code);
+  return `<a class="cta-primary" id="partQuoteCta" data-part-code="${escapeAttr(clean)}" href="${homeContactCodeHref(clean, 'de', root)}">Angebot anfragen</a>`;
+}
+
+function partCtaLangScriptTag(relativeRoot) {
+  const root = relativeRoot == null ? '../../' : relativeRoot;
+  return `<script src="${root}part-cta-lang.js" defer></script>`;
+}
+
 module.exports = {
   sanitizePartCode,
   isSearchablePartCode,
@@ -173,5 +204,10 @@ module.exports = {
   findExistingPartPage,
   resolvePartPageFilename,
   searchIndexPageField,
-  resetCatalog
+  resetCatalog,
+  PAGE_LANGS,
+  homeLangPrefix,
+  homeContactCodeHref,
+  partQuoteCtaHtml,
+  partCtaLangScriptTag
 };

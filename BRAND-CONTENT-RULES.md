@@ -84,7 +84,7 @@ All generated part pages share the same template:
 - Breadcrumb navigation: `Home · Marken · Brand · code`
 - Part metadata block: Hersteller / Teilenummer / Beschreibung (conditional)
 - Neutral description: "ABCspareparts prüft die Referenz auf Beschaffbarkeit..."
-- Primary CTA links to home contact form with `?code=<code>#contact`
+- Primary CTA links to the German home contact form (`../../?code=<code>#contact`) as a no-JS fallback. `part-cta-lang.js` rewrites the button on load to the visitor language (`localStorage.lang`, then `navigator.language`, default `de`): `../../`, `../../en/`, `../../it/`, `../../es/`, `../../fr/` + `?code=<urlencoded>#contact`.
 - Complete footer with all standard links
 
 ### GitHub Actions Integration

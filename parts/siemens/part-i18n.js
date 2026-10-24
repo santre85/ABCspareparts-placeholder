@@ -401,6 +401,11 @@ window.ABC_SIEMENS_PART_I18N = {
     try {
       localStorage.setItem('lang', lang);
     } catch (e) {}
+    var cta = document.querySelector('a.cta-primary');
+    if (cta && ctx && ctx.display) {
+      var prefix = lang === 'de' ? '../../' : '../../' + lang + '/';
+      cta.setAttribute('href', prefix + '?code=' + encodeURIComponent(ctx.display) + '#contact');
+    }
   },
   boot: function (ctx) {
     var self = this;
@@ -415,10 +420,14 @@ window.ABC_SIEMENS_PART_I18N = {
         self.apply(btn.getAttribute('data-set-lang'), ctx);
       });
     });
-    var initial = 'de';
+    var initial = '';
     try {
-      initial = localStorage.getItem('lang') || 'de';
+      initial = localStorage.getItem('lang') || '';
     } catch (e) {}
+    if (['de', 'en', 'it', 'es', 'fr'].indexOf(initial) === -1) {
+      var nav = String((navigator.language || navigator.userLanguage || 'de').split('-')[0] || 'de').toLowerCase();
+      initial = ['de', 'en', 'it', 'es', 'fr'].indexOf(nav) !== -1 ? nav : 'de';
+    }
     this.apply(initial, ctx);
   }
 };

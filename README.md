@@ -102,7 +102,9 @@ Import listino: metti `listini/{slug}.xlsx` (o `.csv` / `.txt`), poi `build:bran
 ## Funzionalità
 
 - Lingue DE / EN / IT / ES / FR via selettore on-page (`localStorage`); niente `?lang=` in hreflang o link interni
+- `/<lang>/marche.html` (e `/marche.html` DE): la lingua della cartella vince sempre su `localStorage`/browser e sincronizza `localStorage.lang`; il selettore naviga alle altre pagine statiche
 - Pagine marca con ricerca listino (≥3 caratteri), chip di esempio, sample SEO
+- Pagine articolo `/parts/<brand>/<code>.html`: CTA «Angebot anfragen» → home della lingua visitatore con `?code=` precompilato (`part-cta-lang.js`; fallback statico DE)
 - Click sul codice → modale form ERP (`erp.abcspareparts.eu`) precompilato
 - JSON-LD (Organization, WebPage, FAQ, BreadcrumbList, Article on case pages — **no** Product/Offer; quote-only) e `llms.txt` per discoverability
 
