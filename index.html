@@ -13349,6 +13349,8 @@
     document.querySelectorAll('a[href]').forEach(a => {
       const h = a.getAttribute('href') || '';
       if (h.startsWith('#') || h.startsWith('mailto:') || h.startsWith('tel:') || h.startsWith('https://wa.me')) return;
+      if (h.indexOf('?code=') !== -1 || h.indexOf('&code=') !== -1 || h.indexOf('?brand=') !== -1 || h.indexOf('&brand=') !== -1) return;
+      if (a.classList && (a.classList.contains('brand-search-dropdown-item') || a.classList.contains('brand-search-dropdown-not-found'))) return;
       const [path, hash] = h.split('#');
       let base = path.split('?')[0];
       if (base === 'index.html') base = '/';

@@ -201,6 +201,8 @@
       document.querySelectorAll('a[href]').forEach(function(a){
         var h = a.getAttribute('href')||'';
         if(h.indexOf('#')===0||h.indexOf('mailto:')===0||h.indexOf('tel:')===0||h.indexOf('https://wa.me')===0||h.indexOf('http://')===0||h.indexOf('https://')===0) return;
+        if(h.indexOf('?code=')!==-1||h.indexOf('&code=')!==-1||h.indexOf('?brand=')!==-1||h.indexOf('&brand=')!==-1) return;
+        if(a.classList&&(a.classList.contains('brand-search-dropdown-item')||a.classList.contains('brand-search-dropdown-not-found'))) return;
         var parts = h.split('#');
         var base = parts[0].split('?')[0];
         if(base==='index.html') base='/';
