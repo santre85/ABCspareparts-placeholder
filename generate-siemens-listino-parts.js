@@ -312,7 +312,7 @@ function loadMvpSlugSet() {
 function buildCompactPartHtml(code, slug) {
   const display = String(code).replace(/\s+/g, ' ').trim();
   const pageUrl = `${BASE}/parts/siemens/${slug}.html`;
-  const quoteUrl = `../../marche/siemens.html#quote=${encodeURIComponent(code)}`;
+  const quoteUrl = `../../?code=${encodeURIComponent(code)}&brand=Siemens#contact`;
   const prefix = seriesPrefix(code);
   const seriesHref = `serie/${seriesSlug(prefix)}.html`;
   const info = seriesInfo(prefix);

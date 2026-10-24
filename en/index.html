@@ -13342,6 +13342,8 @@
     document.querySelectorAll('a[href]').forEach(a => {
       const h = a.getAttribute('href') || '';
       if (h.startsWith('#') || h.startsWith('mailto:') || h.startsWith('tel:') || h.startsWith('https://wa.me')) return;
+      if (h.indexOf('?code=') !== -1 || h.indexOf('&code=') !== -1 || h.indexOf('?brand=') !== -1 || h.indexOf('&brand=') !== -1) return;
+      if (a.classList && (a.classList.contains('brand-search-dropdown-item') || a.classList.contains('brand-search-dropdown-not-found'))) return;
       const [path, hash] = h.split('#');
       let base = path.split('?')[0];
       if (base === 'index.html') base = '/';
@@ -13405,6 +13407,8 @@
         var sanitized = (typeof validatePartCode === 'function') ? validatePartCode(urlParams.get('code')) : urlParams.get('code');
         if (sanitized) {
           iframeSrc += '&custom_part_numbers=' + encodeURIComponent(sanitized);
+          var brandPrefill = validateBrand(urlParams.get('brand'));
+          if (brandPrefill) iframeSrc += '&custom_manufacturer=' + encodeURIComponent(brandPrefill);
         }
       } catch(e) {}
       
@@ -13412,6 +13416,14 @@
     }
   }
   
+
+  function validateBrand(brand) {
+    if (!brand) return null;
+    var cleaned = String(brand)
+      .replace(/[\u00AD\u200B\u200C\u200D\uFEFF\u2060\u00A0]/g, '')
+      .replace(/[^a-zA-Z0-9\u00C0-\u024F\s\-_.\/+()&;,]/g, '');
+    return cleaned.substring(0, 60) || null;
+  }
   function validatePartCode(code) {
     if (!code) return null;
     var cleaned = String(code)
@@ -13429,7 +13441,8 @@
         var notice = document.getElementById('partCodeNotice');
         var display = document.getElementById('partCodeDisplay');
         if (notice && display) {
-          display.textContent = sanitized;
+          var brand = validateBrand(urlParams.get('brand'));
+          display.textContent = brand ? (sanitized + ' (' + brand + ')') : sanitized;
           notice.style.display = 'block';
         }
       }
@@ -13446,16 +13459,19 @@
         var urlParams = new URLSearchParams(window.location.search);
         var sanitized = validatePartCode(urlParams.get('code'));
         if (sanitized) {
+          var brandPrefill = validateBrand(urlParams.get('brand'));
+          var labelled = brandPrefill ? (sanitized + ' (' + brandPrefill + ')') : sanitized;
           var messages = {
-            de: 'Anfrage zu Artikelnummer ' + sanitized,
-            en: 'Request for part number ' + sanitized,
-            it: 'Richiesta per codice articolo ' + sanitized,
-            es: 'Solicitud de número de pieza ' + sanitized,
-            fr: 'Demande pour référence ' + sanitized
+            de: 'Anfrage zu Artikelnummer ' + labelled,
+            en: 'Request for part number ' + labelled,
+            it: 'Richiesta per codice articolo ' + labelled,
+            es: 'Solicitud de número de pieza ' + labelled,
+            fr: 'Demande pour référence ' + labelled
           };
           var message = messages[lang] || messages.en;
           iframeSrc += '&custom_part_numbers=' + encodeURIComponent(sanitized);
           iframeSrc += '&custom_message=' + encodeURIComponent(message);
+          if (brandPrefill) iframeSrc += '&custom_manufacturer=' + encodeURIComponent(brandPrefill);
         }
       } catch(e) {}
       iframe.src = iframeSrc;

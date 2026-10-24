@@ -11,6 +11,7 @@ const path = require('path');
 const { BASE, hreflangLinks, canonicalUrl, ICON_LINKS } = require('./seo-config.js');
 const { writeSitemapIndex, touchMainSitemap } = require('./build-brand-parts.js');
 const { FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
+const { partQuoteCtaHtml, partCtaLangScriptTag } = require('./part-page-paths.js');
 
 const ROOT = __dirname;
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -244,12 +245,13 @@ ${FOOTER_CSS}
       ${bodyCopy}
       ${caseBlock}
       <div class="cta-row">
-        <a class="cta-primary" href="../../marche/${escapeAttr(part.brand_slug)}.html#quote=${encodeURIComponent(part.part_number)}">Angebot anfragen</a>
+        ${partQuoteCtaHtml(part.part_number, '../../', part.brand)}
         <a class="cta-secondary" href="../../marche/${escapeAttr(part.brand_slug)}.html">Zur Markenseite ${escapeHtml(part.brand)}</a>
       </div>
     </div>
   </main>
 ${buildFooterHtml('../../')}
+${partCtaLangScriptTag('../../')}
 </body>
 </html>
 `;

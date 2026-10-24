@@ -11,7 +11,8 @@
  * - Breadcrumb navigation
  * - Part metadata block (Hersteller / Teilenummer / Beschreibung)
  * - Neutral description (no claims about "real inquiries" unless verified)
- * - Primary CTA links to home contact with ?code= prefilled
+ * - Primary CTA links to home contact with ?code= prefilled (German static
+ *   href; part-cta-lang.js rewrites to the visitor language on load)
  * - Complete footer with all links
  * 
  * Skips any page that already exists (on disk, in sitemap-parts.xml, or
@@ -30,7 +31,9 @@ const {
   filenameStem,
   resetCatalog,
   sanitizePartCode,
-  normalizeKey
+  normalizeKey,
+  partQuoteCtaHtml,
+  partCtaLangScriptTag
 } = require('./part-page-paths.js');
 
 const ROOT = __dirname;
@@ -358,12 +361,13 @@ ${descriptionBlock}
       <p>ABCspareparts prüft die Referenz <strong>${escapeHtml(part.c)}</strong> auf Beschaffbarkeit und Lieferoptionen in Europa. Verfügbarkeit und Konditionen werden nach Ihrer Anfrage ermittelt.</p>
       
       <div class="cta-row">
-        <a class="cta-primary" href="../../?code=${encodeURIComponent(part.c)}#contact">Angebot anfragen</a>
+        ${partQuoteCtaHtml(part.c, '../../', part.b)}
         <a class="cta-secondary" href="../../marche/${escapeAttr(brandSlug)}.html">Zur Markenseite ${escapeHtml(part.b)}</a>
       </div>
     </div>
   </main>
 ${buildFooterHtml('../../')}
+${partCtaLangScriptTag('../../')}
 </body>
 </html>
 `;
