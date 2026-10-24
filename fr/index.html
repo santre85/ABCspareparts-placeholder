@@ -290,7 +290,7 @@
     <form id="homeBrandSearchForm" class="brand-search-home-form" action="marche.html" method="get" autocomplete="off">
       <label for="homeBrandSearchInput" data-i18n="brand_search_label">Rechercher une marque ou référence</label>
       <div class="brand-search-home-row">
-        <input type="search" id="homeBrandSearchInput" name="q" data-i18n- placeholder="z. B. Siemens oder 1SDA038324R0001 …" maxlength="120" enterkeyhint="search" />
+        <input type="search" id="homeBrandSearchInput" name="q" data-i18n-placeholder="brand_search_placeholder" placeholder="par ex. Siemens ou 1SDA038324R0001 …" maxlength="120" enterkeyhint="search" />
         <button type="submit" data-i18n="brand_search_button">Aller à la liste des marques</button>
       </div>
       <div id="homeBrandSearchDropdown" class="brand-search-dropdown" role="listbox" aria-label="Search results"></div>
@@ -12916,7 +12916,7 @@
       view_all_brands: "Vollständige Liste der 11959+ Marken anzeigen",
       brand_search_heading: "Marke suchen",
       brand_search_label: "Marke suchen",
-      brand_search_placeholder: "z. B. Siemens, Festo …",
+      brand_search_placeholder: "z. B. Siemens oder 1SDA038324R0001 …",
       brand_search_button: "Zur Markenliste",
       footer_imprint: "Impressum",
       footer_privacy: "Datenschutz",
@@ -13005,7 +13005,7 @@
       view_all_brands: "View full list of 11959+ brands",
       brand_search_heading: "Search brand",
       brand_search_label: "Search brand",
-      brand_search_placeholder: "e.g. Siemens, Festo …",
+      brand_search_placeholder: "e.g. Siemens or 1SDA038324R0001 …",
       brand_search_button: "Go to brand list",
       footer_imprint: "Imprint",
       footer_privacy: "Privacy",
@@ -13094,7 +13094,7 @@
       view_all_brands: "Vedi elenco completo di 11959+ marche",
       brand_search_heading: "Cerca marchio",
       brand_search_label: "Cerca marchio",
-      brand_search_placeholder: "es. Siemens, Festo …",
+      brand_search_placeholder: "ad es. Siemens o 1SDA038324R0001 …",
       brand_search_button: "Vai all’elenco marchi",
       footer_imprint: "Impressum",
       footer_privacy: "Privacy",
@@ -13183,7 +13183,7 @@
       view_all_brands: "Ver lista completa de 11959+ marcas",
       brand_search_heading: "Buscar marca",
       brand_search_label: "Buscar marca",
-      brand_search_placeholder: "ej. Siemens, Festo …",
+      brand_search_placeholder: "p. ej. Siemens o 1SDA038324R0001 …",
       brand_search_button: "Ir al listado de marcas",
       footer_imprint: "Aviso legal",
       footer_privacy: "Privacidad",
@@ -13272,7 +13272,7 @@
       view_all_brands: "Voir la liste complète des 11959+ marques",
       brand_search_heading: "Rechercher une marque",
       brand_search_label: "Rechercher une marque",
-      brand_search_placeholder: "ex. Siemens, Festo …",
+      brand_search_placeholder: "par ex. Siemens ou 1SDA038324R0001 …",
       brand_search_button: "Voir la liste des marques",
       footer_imprint: "Mentions légales",
       footer_privacy: "Confidentialité",
@@ -13315,10 +13315,20 @@
     const l = p.get('lang');
     return l && ['de','en','it','es','fr'].includes(l) ? l : null;
   }
+  function getPageLang() {
+    var htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase().split('-')[0];
+    if (['de','en','it','es','fr'].indexOf(htmlLang) !== -1) return htmlLang;
+    return null;
+  }
   function getCurrentLang() {
-    return getLangFromUrl() || 
-      (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || 
-      navigator.language.split('-')[0];
+    return getLangFromUrl() || getPageLang() ||
+      (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) ||
+      'de';
+  }
+  function homeContactCodeHref(code) {
+    var lang = getCurrentLang();
+    var prefix = lang === 'de' ? '/' : '/' + lang + '/';
+    return prefix + '?code=' + encodeURIComponent(code) + '#contact';
   }
   function updateLinksWithLang(lang) {
     try { localStorage.setItem('lang', lang); } catch (e) {}
@@ -13388,14 +13398,13 @@
   function updateFormIframeLang(langCode) {
     var iframe = document.getElementById('contactFormIframe');
     if (iframe && iframe.src) {
-      var iframeSrc = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || 'en');
+      var iframeSrc = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || getPageLang() || 'de');
       
-      // Preserve ?code= parameter if present
       try {
         var urlParams = new URLSearchParams(window.location.search);
-        var code = urlParams.get('code');
-        if (code) {
-          iframeSrc += '&code=' + encodeURIComponent(code);
+        var sanitized = (typeof validatePartCode === 'function') ? validatePartCode(urlParams.get('code')) : urlParams.get('code');
+        if (sanitized) {
+          iframeSrc += '&custom_part_numbers=' + encodeURIComponent(sanitized);
         }
       } catch(e) {}
       
@@ -13403,19 +13412,23 @@
     }
   }
   
-  // Show part code notice if code parameter present
+  function validatePartCode(code) {
+    if (!code) return null;
+    var cleaned = String(code)
+      .replace(/[\u00AD\u200B\u200C\u200D\uFEFF\u2060\u00A0]/g, '')
+      .replace(/[^a-zA-Z0-9\s\-_.\/+(),]/g, '');
+    return cleaned.substring(0, 60) || null;
+  }
+
   function showPartCodeNotice() {
     try {
       var urlParams = new URLSearchParams(window.location.search);
       var code = urlParams.get('code');
-      if (code) {
-        // Sanitize code (remove HTML/JS)
-        var sanitized = String(code).replace(/[<>"'&]/g, function(m) {
-          return {'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'}[m];
-        });
+      var sanitized = validatePartCode(code);
+      if (sanitized) {
         var notice = document.getElementById('partCodeNotice');
         var display = document.getElementById('partCodeDisplay');
-        if (notice && display && sanitized) {
+        if (notice && display) {
           display.textContent = sanitized;
           notice.style.display = 'block';
         }
@@ -13423,14 +13436,28 @@
     } catch(e) {}
   }
 
-  // Lazy-load iframe on button click
   function loadContactIframe() {
     var placeholder = document.getElementById('iframePlaceholder');
     var iframe = document.getElementById('contactFormIframe');
     if (iframe && placeholder) {
       var lang = getCurrentLang();
-      var iframeSrc = iframe.getAttribute('data-src') + '?_lang=' + (lang || 'en');
-      
+      var iframeSrc = iframe.getAttribute('data-src') + '?_lang=' + (lang || 'de');
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var sanitized = validatePartCode(urlParams.get('code'));
+        if (sanitized) {
+          var messages = {
+            de: 'Anfrage zu Artikelnummer ' + sanitized,
+            en: 'Request for part number ' + sanitized,
+            it: 'Richiesta per codice articolo ' + sanitized,
+            es: 'Solicitud de número de pieza ' + sanitized,
+            fr: 'Demande pour référence ' + sanitized
+          };
+          var message = messages[lang] || messages.en;
+          iframeSrc += '&custom_part_numbers=' + encodeURIComponent(sanitized);
+          iframeSrc += '&custom_message=' + encodeURIComponent(message);
+        }
+      } catch(e) {}
       iframe.src = iframeSrc;
       iframe.style.display = 'block';
       placeholder.style.display = 'none';
@@ -13475,6 +13502,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var langSelect = document.getElementById('languageSelect');
     langSelect.value = 'fr';
+    if (typeof changeLanguage === 'function') changeLanguage('fr');
     
     // For static language versions, navigate to the correct URL instead of translating
     langSelect.addEventListener('change', function() {
@@ -13492,7 +13520,10 @@
     var dropdownItems = [];
 
     function normalizeForSearch(str) {
-      return (str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+      return (str || '')
+        .replace(/[\u00AD\u200B\u200C\u200D\uFEFF\u2060\u00A0]/g, '')
+        .toLowerCase()
+        .replace(/[\s\-\/\.]/g, '');
     }
 
     function slugifyPartCode(code) {
@@ -13563,7 +13594,7 @@
         if (query && query.length >= 2) {
           var notFoundItem = document.createElement('a');
           notFoundItem.className = 'brand-search-dropdown-item brand-search-dropdown-not-found';
-          notFoundItem.href = '/#contact?code=' + encodeURIComponent(query);
+          notFoundItem.href = homeContactCodeHref(query);
           notFoundItem.setAttribute('role', 'option');
           notFoundItem.setAttribute('data-index', 0);
           

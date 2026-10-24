@@ -28,7 +28,9 @@ const {
   findExistingPartPage,
   resolvePartPageFilename,
   filenameStem,
-  resetCatalog
+  resetCatalog,
+  sanitizePartCode,
+  normalizeKey
 } = require('./part-page-paths.js');
 
 const ROOT = __dirname;
@@ -60,43 +62,71 @@ function loadSearchIndex() {
   return data.parts || [];
 }
 
-function loadErpItems() {
-  if (!fs.existsSync(ERP_ITEMS_PATH)) {
-    return {};
-  }
-  const data = JSON.parse(fs.readFileSync(ERP_ITEMS_PATH, 'utf8'));
+function loadDescriptionMap() {
   const map = {};
-  for (const item of data.items || []) {
-    const key = `${item.brand}::${item.code}`.toLowerCase();
-    map[key] = item;
+
+  function add(brandSlug, brandName, code, description) {
+    const cleanCode = sanitizePartCode(code);
+    const desc = String(description || '').replace(/\*+/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!cleanCode || !desc) return;
+    const keys = [
+      `${brandSlug}::${cleanCode}`.toLowerCase(),
+      `${normalizeKey(brandName)}::${normalizeKey(cleanCode)}`
+    ];
+    for (const key of keys) {
+      if (!map[key]) map[key] = desc;
+    }
   }
+
+  if (fs.existsSync(ERP_ITEMS_PATH)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(ERP_ITEMS_PATH, 'utf8'));
+      for (const brand of data.brands || []) {
+        for (const part of brand.parts || []) {
+          add(brand.brand_slug, brand.brand, part.part_number || part.code, part.description);
+        }
+      }
+    } catch {
+      /* ignore */
+    }
+  }
+
+  const mvpPath = path.join(ROOT, 'parts-mvp.json');
+  if (fs.existsSync(mvpPath)) {
+    try {
+      const mvp = JSON.parse(fs.readFileSync(mvpPath, 'utf8'));
+      for (const part of mvp.parts || []) {
+        add(part.brand_slug, part.brand, part.part_number, part.description);
+      }
+    } catch {
+      /* ignore */
+    }
+  }
+
   return map;
 }
 
-function getDescription(part, erpMap) {
-  const key = `${part.b}::${part.c}`.toLowerCase();
-  const erpItem = erpMap[key];
-  
-  if (erpItem && erpItem.description) {
-    let desc = String(erpItem.description)
-      .replace(/\*+/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-    
-    // Skip generic placeholder descriptions
-    const genericPatterns = [
-      new RegExp(`^${part.b}\\s+${part.c}$`, 'i'),
-      new RegExp(`^${part.b}\\s+${part.c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i'),
-      /^[A-Z0-9\-\s]+$/
-    ];
-    
-    const isGeneric = genericPatterns.some(pattern => pattern.test(desc)) || desc.length < 3;
-    
-    if (!isGeneric && desc.toLowerCase() !== part.c.toLowerCase()) {
-      return desc;
-    }
+function isGenericDescription(desc, brand, code) {
+  const d = String(desc || '').replace(/\s+/g, ' ').trim();
+  if (d.length < 3) return true;
+  if (d.toLowerCase() === String(code).toLowerCase()) return true;
+  const escapedBrand = String(brand).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const escapedCode = String(code).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (new RegExp(`^${escapedBrand}\\s+${escapedCode}$`, 'i').test(d)) return true;
+  if (new RegExp(`^TLD\\s+${escapedCode}$`, 'i').test(d)) return true;
+  return false;
+}
+
+function getDescription(part, descMap) {
+  const code = sanitizePartCode(part.c);
+  const keys = [
+    `${part.s}::${code}`.toLowerCase(),
+    `${normalizeKey(part.b)}::${normalizeKey(code)}`
+  ];
+  for (const key of keys) {
+    const desc = descMap[key];
+    if (desc && !isGenericDescription(desc, part.b, code)) return desc;
   }
-  
   return null;
 }
 
@@ -319,7 +349,7 @@ function main() {
   console.log('Generating part pages for search index codes...\n');
   
   const allParts = loadSearchIndex();
-  const erpMap = loadErpItems();
+  const descMap = loadDescriptionMap();
   
   const validParts = allParts.filter(p => {
     if (!p.b || !p.c || !p.s) return false;
@@ -331,6 +361,7 @@ function main() {
 
   let generated = 0;
   let skipped = 0;
+  let withDescription = 0;
   const resolved = [];
 
   for (const part of validParts) {
@@ -352,7 +383,8 @@ function main() {
     }
 
     fs.mkdirSync(brandDir, { recursive: true });
-    const description = getDescription(part, erpMap);
+    const description = getDescription(part, descMap);
+    if (description) withDescription++;
     const html = buildPageHtml(part, description);
     fs.writeFileSync(targetPath, html, 'utf8');
     generated++;
@@ -369,7 +401,8 @@ function main() {
 
   console.log(`   Total indexed codes: ${validParts.length}`);
   console.log(`   New pages generated: ${generated}`);
-  console.log(`   Existing pages kept: ${skipped}\n`);
+  console.log(`   Existing pages kept: ${skipped}`);
+  console.log(`   New pages with real Beschreibung: ${withDescription}\n`);
 }
 
 function stampSearchIndexPaths(resolved) {

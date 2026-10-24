@@ -16,8 +16,29 @@ const PARTS_DIR = path.join(ROOT, 'parts');
 const MVP_PATH = path.join(ROOT, 'parts-mvp.json');
 const SITEMAP_PARTS = path.join(ROOT, 'sitemap-parts.xml');
 
-function slugifyPartCode(code) {
+function sanitizePartCode(code) {
   return String(code || '')
+    .replace(/\u00AD/g, '-')
+    .replace(/[\u200B\u200C\u200D\uFEFF\u2060\u00A0]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Drop ERP rows where part_number is clearly a product name, not a SKU. */
+function isSearchablePartCode(code) {
+  const s = sanitizePartCode(code);
+  if (!s || s.length > 80) return false;
+  const alphaWords = s
+    .split(/[\s\u2013\u2014/,]+/)
+    .map((w) => w.replace(/[.:]+$/g, ''))
+    .filter((w) => /^[A-Za-z]{3,}$/.test(w));
+  if (alphaWords.length >= 3) return false;
+  return true;
+}
+
+function slugifyPartCode(code) {
+  return sanitizePartCode(code)
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/&/g, ' and ')
@@ -29,7 +50,7 @@ function slugifyPartCode(code) {
 }
 
 function slugifyKeepDots(code) {
-  return String(code || '')
+  return sanitizePartCode(code)
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/&/g, ' and ')
@@ -41,7 +62,7 @@ function slugifyKeepDots(code) {
 }
 
 function normalizeKey(s) {
-  return String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  return sanitizePartCode(s).toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
 function filenameStem(name) {
@@ -142,6 +163,8 @@ function resetCatalog() {
 }
 
 module.exports = {
+  sanitizePartCode,
+  isSearchablePartCode,
   slugifyPartCode,
   slugifyKeepDots,
   normalizeKey,

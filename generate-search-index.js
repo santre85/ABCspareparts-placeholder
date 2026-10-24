@@ -35,7 +35,7 @@ const EXCLUDED_BRANDS = [
   'keysight technologies'
 ];
 
-const { searchIndexPageField } = require('./part-page-paths.js');
+const { searchIndexPageField, sanitizePartCode, isSearchablePartCode } = require('./part-page-paths.js');
 
 const ROOT = __dirname;
 const OUTPUT_PATH = path.join(ROOT, 'search-index.json');
@@ -116,10 +116,13 @@ function generateSearchIndex() {
     
     // Add part codes
     for (const part of parts) {
-      const partNumber = part.part_number || part.code;
-      if (partNumber && typeof partNumber === 'string' && partNumber.trim()) {
-        brand.partCodes.add(partNumber.trim());
+      const partNumber = sanitizePartCode(part.part_number || part.code);
+      if (!partNumber) continue;
+      if (!isSearchablePartCode(partNumber)) {
+        console.log(`  ⊗ Skipping non-code part_number: ${partNumber.slice(0, 72)}`);
+        continue;
       }
+      brand.partCodes.add(partNumber);
     }
   }
   

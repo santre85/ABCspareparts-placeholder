@@ -580,7 +580,7 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/parts/siemens/1le1523-1cb29-0kb4-z-f50-plus-f70-plus-h20-plus-m11-plus-m1y-plus-q02-plus-r12-plus-r50-plus-y99.html</loc>
+    <loc>https://abcspareparts.eu/parts/siemens/1le1523-1cb29-0kb4-z-f50-f70-h20-m11-m1y-q02-r12-r50-y99.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1804,7 +1804,7 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/parts/siemens/6au1435-0aa0-0aa1.html</loc>
+    <loc>https://abcspareparts.eu/parts/siemens/6au14350aa00aa1.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2242,12 +2242,6 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/parts/cognex/dataman-300-10-3mm-liquid-lens-kit.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://abcspareparts.eu/parts/dnh/dh30.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -2482,12 +2476,6 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/parts/termet/maintenance-kit-for-ecocondens-35.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://abcspareparts.eu/parts/speeder-motion-line/mb082ga310.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -2602,12 +2590,6 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/parts/pronomic/prog-1211-controller-typ-20001a-70e-r.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://abcspareparts.eu/parts/keyence/pz-51.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -2657,18 +2639,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/parts/rael/rael-mia-90l4-1-1kw-ex-b3.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/parts/ghr/repair-kit-for-dom-pressure-regulator-type-d166-l-g-43-nnl2000.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/parts/ghr/repair-kit-for-dom-pressure-regulator-type-d166-l-21.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2729,12 +2699,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/parts/euchner/sn02r08-552-m-c082r-c-v.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/parts/gorter/soft-part-set.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2807,12 +2771,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/parts/phoenix-contact/uct6r-tm-8.html</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/parts/spectrex-inc/uf-ir3-flame-detector-ss316-atex-3-4.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
