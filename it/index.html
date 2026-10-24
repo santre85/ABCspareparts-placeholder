@@ -164,12 +164,21 @@
     .priority-brands-all a:hover { color: #e67e22; }
 
     .brand-search-strip { background: #f8f9fa; border-top: 1px solid #e9ecef; border-bottom: 1px solid #e9ecef; padding: 1.25rem 1.5rem 1.5rem; }
-    .brand-search-home-form { max-width: 640px; margin: 0 auto; }
+    .brand-search-home-form { max-width: 640px; margin: 0 auto; position: relative; }
     .brand-search-home-form label { display: block; font-weight: 600; color: #1e3a5f; margin-bottom: 0.5rem; font-size: 0.95rem; }
     .brand-search-home-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: stretch; }
     .brand-search-home-row input { flex: 1; min-width: 180px; padding: 0.65rem 0.85rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
     .brand-search-home-row button { padding: 0.65rem 1.25rem; background: #1e3a5f; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; }
     .brand-search-home-row button:hover { background: #2d5a87; }
+    .brand-search-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid #ccc; border-radius: 8px; margin-top: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-height: 320px; overflow-y: auto; z-index: 1000; }
+    .brand-search-dropdown.show { display: block; }
+    .brand-search-dropdown-item { padding: 0.7rem 1rem; border-bottom: 1px solid #e9ecef; cursor: pointer; display: flex; flex-direction: column; gap: 0.2rem; }
+    .brand-search-dropdown-item:last-child { border-bottom: none; }
+    .brand-search-dropdown-item:hover, .brand-search-dropdown-item.keyboard-focus { background: #f8f9fa; }
+    .brand-search-dropdown-item-brand { font-weight: 600; color: #1e3a5f; font-size: 0.95rem; }
+    .brand-search-dropdown-item-code { color: #666; font-size: 0.85rem; font-family: 'Courier New', monospace; }
+    .brand-search-dropdown-empty { padding: 1rem; text-align: center; color: #666; font-size: 0.9rem; }
+    @media (max-width: 640px) { .brand-search-dropdown { max-height: 240px; } }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
     /* About / Profile Section */
@@ -274,13 +283,14 @@
 
 <section class="brand-search-strip" aria-labelledby="homeBrandSearchHeading">
   <div class="container">
-    <h2 id="homeBrandSearchHeading" class="visually-hidden" data-i18n="brand_search_heading">Cerca marca</h2>
+    <h2 id="homeBrandSearchHeading" class="visually-hidden" data-i18n="brand_search_heading">Cerca marca o codice articolo</h2>
     <form id="homeBrandSearchForm" class="brand-search-home-form" action="marche.html" method="get" autocomplete="off">
-      <label for="homeBrandSearchInput" data-i18n="brand_search_label">Cerca marca</label>
+      <label for="homeBrandSearchInput" data-i18n="brand_search_label">Cerca marca o codice articolo</label>
       <div class="brand-search-home-row">
-        <input type="search" id="homeBrandSearchInput" name="q" data-i18n- maxlength="120" enterkeyhint="search" />
+        <input type="search" id="homeBrandSearchInput" name="q" data-i18n- placeholder="z. B. Siemens oder 1SDA038324R0001 …" maxlength="120" enterkeyhint="search" />
         <button type="submit" data-i18n="brand_search_button">Vai all'elenco marche</button>
       </div>
+      <div id="homeBrandSearchDropdown" class="brand-search-dropdown" role="listbox" aria-label="Search results"></div>
     </form>
   </div>
 </section>
@@ -13432,6 +13442,189 @@
     initConsentManager('it');
 
     var homeBrandForm = document.getElementById('homeBrandSearchForm');
+    var homeBrandInput = document.getElementById('homeBrandSearchInput');
+    var homeBrandDropdown = document.getElementById('homeBrandSearchDropdown');
+    var searchIndex = null;
+    var searchIndexLoading = false;
+    var currentFocusIndex = -1;
+    var dropdownItems = [];
+
+    function normalizeForSearch(str) {
+      return (str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+    }
+
+    function loadSearchIndex(callback) {
+      if (searchIndex) {
+        callback(searchIndex);
+        return;
+      }
+      if (searchIndexLoading) return;
+      searchIndexLoading = true;
+
+      fetch('/search-index.json')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          searchIndex = data;
+          searchIndexLoading = false;
+          if (callback) callback(searchIndex);
+        })
+        .catch(function(err) {
+          console.warn('Failed to load search index:', err);
+          searchIndexLoading = false;
+        });
+    }
+
+    function searchParts(query) {
+      if (!searchIndex || !query) return [];
+      var normalized = normalizeForSearch(query);
+      var results = [];
+      var MAX_RESULTS = 10;
+
+      for (var i = 0; i < searchIndex.parts.length && results.length < MAX_RESULTS; i++) {
+        var part = searchIndex.parts[i];
+        var codeNorm = normalizeForSearch(part.c);
+        var brandNorm = normalizeForSearch(part.b);
+
+        if (codeNorm.indexOf(normalized) !== -1 || brandNorm.indexOf(normalized) !== -1) {
+          results.push({
+            code: part.c,
+            brand: part.b,
+            slug: part.s,
+            isPartCode: codeNorm.indexOf(normalized) !== -1
+          });
+        }
+      }
+
+      return results;
+    }
+
+    function showDropdown(results) {
+      if (!homeBrandDropdown) return;
+      homeBrandDropdown.innerHTML = '';
+      currentFocusIndex = -1;
+      dropdownItems = [];
+
+      if (results.length === 0) {
+        homeBrandDropdown.classList.remove('show');
+        return;
+      }
+
+      results.forEach(function(result, idx) {
+        var item = document.createElement('a');
+        item.className = 'brand-search-dropdown-item';
+        item.href = '/marche/' + result.slug + '.html';
+        item.setAttribute('role', 'option');
+        item.setAttribute('data-index', idx);
+
+        if (result.isPartCode) {
+          var brandDiv = document.createElement('div');
+          brandDiv.className = 'brand-search-dropdown-item-brand';
+          brandDiv.textContent = result.brand;
+          var codeDiv = document.createElement('div');
+          codeDiv.className = 'brand-search-dropdown-item-code';
+          codeDiv.textContent = result.code;
+          item.appendChild(brandDiv);
+          item.appendChild(codeDiv);
+        } else {
+          var brandDiv = document.createElement('div');
+          brandDiv.className = 'brand-search-dropdown-item-brand';
+          brandDiv.textContent = result.brand;
+          item.appendChild(brandDiv);
+        }
+
+        item.addEventListener('mouseenter', function() {
+          clearKeyboardFocus();
+        });
+
+        homeBrandDropdown.appendChild(item);
+        dropdownItems.push(item);
+      });
+
+      homeBrandDropdown.classList.add('show');
+    }
+
+    function hideDropdown() {
+      if (homeBrandDropdown) {
+        homeBrandDropdown.classList.remove('show');
+        currentFocusIndex = -1;
+      }
+    }
+
+    function clearKeyboardFocus() {
+      dropdownItems.forEach(function(item) {
+        item.classList.remove('keyboard-focus');
+      });
+      currentFocusIndex = -1;
+    }
+
+    function setKeyboardFocus(index) {
+      clearKeyboardFocus();
+      if (index >= 0 && index < dropdownItems.length) {
+        currentFocusIndex = index;
+        dropdownItems[index].classList.add('keyboard-focus');
+        dropdownItems[index].scrollIntoView({ block: 'nearest' });
+      }
+    }
+
+    if (homeBrandInput) {
+      var inputTimeout = null;
+
+      homeBrandInput.addEventListener('focus', function() {
+        loadSearchIndex(function() {
+          var query = homeBrandInput.value.trim();
+          if (query.length >= 2) {
+            var results = searchParts(query);
+            showDropdown(results);
+          }
+        });
+      });
+
+      homeBrandInput.addEventListener('input', function() {
+        clearTimeout(inputTimeout);
+        inputTimeout = setTimeout(function() {
+          var query = homeBrandInput.value.trim();
+          if (query.length < 2) {
+            hideDropdown();
+            return;
+          }
+          loadSearchIndex(function() {
+            var results = searchParts(query);
+            showDropdown(results);
+          });
+        }, 150);
+      });
+
+      homeBrandInput.addEventListener('keydown', function(e) {
+        if (!homeBrandDropdown.classList.contains('show')) return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          var nextIndex = currentFocusIndex + 1;
+          if (nextIndex >= dropdownItems.length) nextIndex = 0;
+          setKeyboardFocus(nextIndex);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          var prevIndex = currentFocusIndex - 1;
+          if (prevIndex < 0) prevIndex = dropdownItems.length - 1;
+          setKeyboardFocus(prevIndex);
+        } else if (e.key === 'Enter') {
+          if (currentFocusIndex >= 0 && currentFocusIndex < dropdownItems.length) {
+            e.preventDefault();
+            dropdownItems[currentFocusIndex].click();
+          }
+        } else if (e.key === 'Escape') {
+          hideDropdown();
+          homeBrandInput.blur();
+        }
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!homeBrandForm.contains(e.target)) {
+          hideDropdown();
+        }
+      });
+    }
+
     if (homeBrandForm) {
       homeBrandForm.addEventListener('submit', function (e) {
         e.preventDefault();
