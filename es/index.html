@@ -172,12 +172,15 @@
     .brand-search-home-row button:hover { background: #2d5a87; }
     .brand-search-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid #ccc; border-radius: 8px; margin-top: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-height: 320px; overflow-y: auto; z-index: 1000; }
     .brand-search-dropdown.show { display: block; }
-    .brand-search-dropdown-item { padding: 0.7rem 1rem; border-bottom: 1px solid #e9ecef; cursor: pointer; display: flex; flex-direction: column; gap: 0.2rem; }
+    .brand-search-dropdown-item { padding: 0.7rem 1rem; border-bottom: 1px solid #e9ecef; cursor: pointer; display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; color: inherit; }
     .brand-search-dropdown-item:last-child { border-bottom: none; }
     .brand-search-dropdown-item:hover, .brand-search-dropdown-item.keyboard-focus { background: #f8f9fa; }
     .brand-search-dropdown-item-brand { font-weight: 600; color: #1e3a5f; font-size: 0.95rem; }
     .brand-search-dropdown-item-code { color: #666; font-size: 0.85rem; font-family: 'Courier New', monospace; }
     .brand-search-dropdown-empty { padding: 1rem; text-align: center; color: #666; font-size: 0.9rem; }
+    .brand-search-dropdown-not-found { background: #fff8f0; border-left: 3px solid #e67e22; }
+    .brand-search-dropdown-not-found:hover, .brand-search-dropdown-not-found.keyboard-focus { background: #fff3e6; }
+    .brand-search-dropdown-not-found .brand-search-dropdown-item-brand { color: #e67e22; }
     @media (max-width: 640px) { .brand-search-dropdown { max-height: 240px; } }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
@@ -287,7 +290,7 @@
     <form id="homeBrandSearchForm" class="brand-search-home-form" action="marche.html" method="get" autocomplete="off">
       <label for="homeBrandSearchInput" data-i18n="brand_search_label">Buscar marca o número de pieza</label>
       <div class="brand-search-home-row">
-        <input type="search" id="homeBrandSearchInput" name="q" data-i18n- placeholder="z. B. Siemens oder 1SDA038324R0001 …" maxlength="120" enterkeyhint="search" />
+        <input type="search" id="homeBrandSearchInput" name="q" data-i18n-placeholder="brand_search_placeholder" placeholder="p. ej. Siemens o 1SDA038324R0001 …" maxlength="120" enterkeyhint="search" />
         <button type="submit" data-i18n="brand_search_button">Ir a lista de marcas</button>
       </div>
       <div id="homeBrandSearchDropdown" class="brand-search-dropdown" role="listbox" aria-label="Search results"></div>
@@ -12803,6 +12806,12 @@
       </aside>
       <div class="contact-form-wrap">
         <h3 data-i18n="contact_form_title">Solicitud online</h3>
+        <div id="partCodeNotice" style="display: none; background: #fff8f0; border: 2px solid #e67e22; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; text-align: center;">
+          <p style="margin: 0; color: #1e3a5f; font-weight: 600; font-size: 1.05rem;">
+            <span data-i18n="request_for_code">Solicitud de número de pieza:</span> <code id="partCodeDisplay" style="background: #fff; padding: 0.25rem 0.5rem; border-radius: 4px; color: #e67e22; font-weight: 700;"></code>
+          </p>
+          <p style="margin: 0.5rem 0 0; color: #666; font-size: 0.9rem;" data-i18n="request_code_hint">Por favor incluya este número en el formulario.</p>
+        </div>
         <div class="contact-iframe-wrap" id="iframeContainer">
           <div id="iframePlaceholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; background: linear-gradient(135deg, #f0f6fb 0%, #e8f2f9 100%); border: 2px solid #dce8f4; border-radius: 10px; text-align: center; padding: 2rem;">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" style="margin-bottom: 1rem;">
@@ -12907,7 +12916,7 @@
       view_all_brands: "Vollständige Liste der 11959+ Marken anzeigen",
       brand_search_heading: "Marke suchen",
       brand_search_label: "Marke suchen",
-      brand_search_placeholder: "z. B. Siemens, Festo …",
+      brand_search_placeholder: "z. B. Siemens oder 1SDA038324R0001 …",
       brand_search_button: "Zur Markenliste",
       footer_imprint: "Impressum",
       footer_privacy: "Datenschutz",
@@ -12996,7 +13005,7 @@
       view_all_brands: "View full list of 11959+ brands",
       brand_search_heading: "Search brand",
       brand_search_label: "Search brand",
-      brand_search_placeholder: "e.g. Siemens, Festo …",
+      brand_search_placeholder: "e.g. Siemens or 1SDA038324R0001 …",
       brand_search_button: "Go to brand list",
       footer_imprint: "Imprint",
       footer_privacy: "Privacy",
@@ -13085,7 +13094,7 @@
       view_all_brands: "Vedi elenco completo di 11959+ marche",
       brand_search_heading: "Cerca marchio",
       brand_search_label: "Cerca marchio",
-      brand_search_placeholder: "es. Siemens, Festo …",
+      brand_search_placeholder: "ad es. Siemens o 1SDA038324R0001 …",
       brand_search_button: "Vai all’elenco marchi",
       footer_imprint: "Impressum",
       footer_privacy: "Privacy",
@@ -13174,7 +13183,7 @@
       view_all_brands: "Ver lista completa de 11959+ marcas",
       brand_search_heading: "Buscar marca",
       brand_search_label: "Buscar marca",
-      brand_search_placeholder: "ej. Siemens, Festo …",
+      brand_search_placeholder: "p. ej. Siemens o 1SDA038324R0001 …",
       brand_search_button: "Ir al listado de marcas",
       footer_imprint: "Aviso legal",
       footer_privacy: "Privacidad",
@@ -13263,7 +13272,7 @@
       view_all_brands: "Voir la liste complète des 11959+ marques",
       brand_search_heading: "Rechercher une marque",
       brand_search_label: "Rechercher une marque",
-      brand_search_placeholder: "ex. Siemens, Festo …",
+      brand_search_placeholder: "par ex. Siemens ou 1SDA038324R0001 …",
       brand_search_button: "Voir la liste des marques",
       footer_imprint: "Mentions légales",
       footer_privacy: "Confidentialité",
@@ -13306,10 +13315,20 @@
     const l = p.get('lang');
     return l && ['de','en','it','es','fr'].includes(l) ? l : null;
   }
+  function getPageLang() {
+    var htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase().split('-')[0];
+    if (['de','en','it','es','fr'].indexOf(htmlLang) !== -1) return htmlLang;
+    return null;
+  }
   function getCurrentLang() {
-    return getLangFromUrl() || 
-      (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || 
-      navigator.language.split('-')[0];
+    return getLangFromUrl() || getPageLang() ||
+      (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) ||
+      'de';
+  }
+  function homeContactCodeHref(code) {
+    var lang = getCurrentLang();
+    var prefix = lang === 'de' ? '/' : '/' + lang + '/';
+    return prefix + '?code=' + encodeURIComponent(code) + '#contact';
   }
   function updateLinksWithLang(lang) {
     try { localStorage.setItem('lang', lang); } catch (e) {}
@@ -13379,17 +13398,66 @@
   function updateFormIframeLang(langCode) {
     var iframe = document.getElementById('contactFormIframe');
     if (iframe && iframe.src) {
-      iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || 'en');
+      var iframeSrc = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || getPageLang() || 'de');
+      
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var sanitized = (typeof validatePartCode === 'function') ? validatePartCode(urlParams.get('code')) : urlParams.get('code');
+        if (sanitized) {
+          iframeSrc += '&custom_part_numbers=' + encodeURIComponent(sanitized);
+        }
+      } catch(e) {}
+      
+      iframe.src = iframeSrc;
     }
   }
   
-  // Lazy-load iframe on button click
+  function validatePartCode(code) {
+    if (!code) return null;
+    var cleaned = String(code)
+      .replace(/[\u00AD\u200B\u200C\u200D\uFEFF\u2060\u00A0]/g, '')
+      .replace(/[^a-zA-Z0-9\s\-_.\/+(),]/g, '');
+    return cleaned.substring(0, 60) || null;
+  }
+
+  function showPartCodeNotice() {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var code = urlParams.get('code');
+      var sanitized = validatePartCode(code);
+      if (sanitized) {
+        var notice = document.getElementById('partCodeNotice');
+        var display = document.getElementById('partCodeDisplay');
+        if (notice && display) {
+          display.textContent = sanitized;
+          notice.style.display = 'block';
+        }
+      }
+    } catch(e) {}
+  }
+
   function loadContactIframe() {
     var placeholder = document.getElementById('iframePlaceholder');
     var iframe = document.getElementById('contactFormIframe');
     if (iframe && placeholder) {
       var lang = getCurrentLang();
-      var iframeSrc = iframe.getAttribute('data-src') + '?_lang=' + (lang || 'en');
+      var iframeSrc = iframe.getAttribute('data-src') + '?_lang=' + (lang || 'de');
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var sanitized = validatePartCode(urlParams.get('code'));
+        if (sanitized) {
+          var messages = {
+            de: 'Anfrage zu Artikelnummer ' + sanitized,
+            en: 'Request for part number ' + sanitized,
+            it: 'Richiesta per codice articolo ' + sanitized,
+            es: 'Solicitud de número de pieza ' + sanitized,
+            fr: 'Demande pour référence ' + sanitized
+          };
+          var message = messages[lang] || messages.en;
+          iframeSrc += '&custom_part_numbers=' + encodeURIComponent(sanitized);
+          iframeSrc += '&custom_message=' + encodeURIComponent(message);
+        }
+      } catch(e) {}
       iframe.src = iframeSrc;
       iframe.style.display = 'block';
       placeholder.style.display = 'none';
@@ -13397,6 +13465,7 @@
   }
   
   document.addEventListener('DOMContentLoaded', function() {
+    showPartCodeNotice();
     var loadBtn = document.getElementById('loadIframeBtn');
     if (loadBtn) {
       loadBtn.addEventListener('click', loadContactIframe);
@@ -13433,6 +13502,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var langSelect = document.getElementById('languageSelect');
     langSelect.value = 'es';
+    if (typeof changeLanguage === 'function') changeLanguage('es');
     
     // For static language versions, navigate to the correct URL instead of translating
     langSelect.addEventListener('change', function() {
@@ -13450,7 +13520,22 @@
     var dropdownItems = [];
 
     function normalizeForSearch(str) {
-      return (str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+      return (str || '')
+        .replace(/[\u00AD\u200B\u200C\u200D\uFEFF\u2060\u00A0]/g, '')
+        .toLowerCase()
+        .replace(/[\s\-\/\.]/g, '');
+    }
+
+    function slugifyPartCode(code) {
+      return String(code || '')
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/&/g, ' and ')
+        .replace(/\+/g, ' plus ')
+        .replace(/[^a-zA-Z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .replace(/-+/g, '-')
+        .toLowerCase();
     }
 
     function loadSearchIndex(callback) {
@@ -13490,6 +13575,7 @@
             code: part.c,
             brand: part.b,
             slug: part.s,
+            page: part.p,
             isPartCode: codeNorm.indexOf(normalized) !== -1
           });
         }
@@ -13498,21 +13584,61 @@
       return results;
     }
 
-    function showDropdown(results) {
+    function showDropdown(results, query) {
       if (!homeBrandDropdown) return;
       homeBrandDropdown.innerHTML = '';
       currentFocusIndex = -1;
       dropdownItems = [];
 
       if (results.length === 0) {
-        homeBrandDropdown.classList.remove('show');
+        if (query && query.length >= 2) {
+          var notFoundItem = document.createElement('a');
+          notFoundItem.className = 'brand-search-dropdown-item brand-search-dropdown-not-found';
+          notFoundItem.href = homeContactCodeHref(query);
+          notFoundItem.setAttribute('role', 'option');
+          notFoundItem.setAttribute('data-index', 0);
+          
+          var langSelect = document.getElementById('languageSelect');
+          var currentLang = langSelect ? langSelect.value : 'de';
+          var notFoundTexts = {
+            de: 'Code nicht gefunden: Anfragen',
+            en: 'Code not found: request it',
+            it: 'Codice non trovato: richiedilo',
+            es: 'Código no encontrado: solicítalo',
+            fr: 'Code non trouvé : demandez-le'
+          };
+          
+          var textDiv = document.createElement('div');
+          textDiv.className = 'brand-search-dropdown-item-brand';
+          textDiv.textContent = notFoundTexts[currentLang] || notFoundTexts.de;
+          notFoundItem.appendChild(textDiv);
+          
+          var codeDiv = document.createElement('div');
+          codeDiv.className = 'brand-search-dropdown-item-code';
+          codeDiv.textContent = query;
+          notFoundItem.appendChild(codeDiv);
+          
+          homeBrandDropdown.appendChild(notFoundItem);
+          dropdownItems.push(notFoundItem);
+          homeBrandDropdown.classList.add('show');
+        } else {
+          homeBrandDropdown.classList.remove('show');
+        }
         return;
       }
 
       results.forEach(function(result, idx) {
         var item = document.createElement('a');
         item.className = 'brand-search-dropdown-item';
-        item.href = '/marche/' + result.slug + '.html';
+        
+        if (result.isPartCode) {
+          var partSlug = result.page || slugifyPartCode(result.code);
+          if (partSlug.slice(-5) === '.html') partSlug = partSlug.slice(0, -5);
+          item.href = '/parts/' + result.slug + '/' + partSlug + '.html';
+        } else {
+          item.href = '/marche/' + result.slug + '.html';
+        }
+        
         item.setAttribute('role', 'option');
         item.setAttribute('data-index', idx);
 
@@ -13574,7 +13700,7 @@
           var query = homeBrandInput.value.trim();
           if (query.length >= 2) {
             var results = searchParts(query);
-            showDropdown(results);
+            showDropdown(results, query);
           }
         });
       });
@@ -13589,7 +13715,7 @@
           }
           loadSearchIndex(function() {
             var results = searchParts(query);
-            showDropdown(results);
+            showDropdown(results, query);
           });
         }, 150);
       });

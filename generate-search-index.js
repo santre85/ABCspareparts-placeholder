@@ -23,6 +23,8 @@
  * - c: part code
  * - b: brand name
  * - s: brand slug
+ * - p: existing page filename stem, only when it differs from the dashed slug
+ *     (e.g. "80701.000507" for a live URL that keeps the dot)
  */
 
 const fs = require('fs');
@@ -32,6 +34,8 @@ const EXCLUDED_BRANDS = [
   'keysight',
   'keysight technologies'
 ];
+
+const { searchIndexPageField, sanitizePartCode, isSearchablePartCode } = require('./part-page-paths.js');
 
 const ROOT = __dirname;
 const OUTPUT_PATH = path.join(ROOT, 'search-index.json');
@@ -112,10 +116,13 @@ function generateSearchIndex() {
     
     // Add part codes
     for (const part of parts) {
-      const partNumber = part.part_number || part.code;
-      if (partNumber && typeof partNumber === 'string' && partNumber.trim()) {
-        brand.partCodes.add(partNumber.trim());
+      const partNumber = sanitizePartCode(part.part_number || part.code);
+      if (!partNumber) continue;
+      if (!isSearchablePartCode(partNumber)) {
+        console.log(`  ⊗ Skipping non-code part_number: ${partNumber.slice(0, 72)}`);
+        continue;
       }
+      brand.partCodes.add(partNumber);
     }
   }
   
@@ -127,11 +134,14 @@ function generateSearchIndex() {
   
   for (const brand of brandMap.values()) {
     for (const code of brand.partCodes) {
-      partsIndex.push({
+      const entry = {
         c: code,
         b: brand.name,
         s: brand.slug
-      });
+      };
+      const existingPage = searchIndexPageField(brand.slug, code);
+      if (existingPage) entry.p = existingPage;
+      partsIndex.push(entry);
       totalParts++;
     }
   }
