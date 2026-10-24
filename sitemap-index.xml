@@ -35,4 +35,8 @@ layout: none
     <loc>https://abcspareparts.eu/sitemap-siemens-parts-3.xml</loc>
     <lastmod>2026-10-22</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://abcspareparts.eu/sitemap-search-index-parts.xml</loc>
+    <lastmod>2026-10-24</lastmod>
+  </sitemap>
 </sitemapindex>

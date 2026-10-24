@@ -172,12 +172,15 @@
     .brand-search-home-row button:hover { background: #2d5a87; }
     .brand-search-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid #ccc; border-radius: 8px; margin-top: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-height: 320px; overflow-y: auto; z-index: 1000; }
     .brand-search-dropdown.show { display: block; }
-    .brand-search-dropdown-item { padding: 0.7rem 1rem; border-bottom: 1px solid #e9ecef; cursor: pointer; display: flex; flex-direction: column; gap: 0.2rem; }
+    .brand-search-dropdown-item { padding: 0.7rem 1rem; border-bottom: 1px solid #e9ecef; cursor: pointer; display: flex; flex-direction: column; gap: 0.2rem; text-decoration: none; color: inherit; }
     .brand-search-dropdown-item:last-child { border-bottom: none; }
     .brand-search-dropdown-item:hover, .brand-search-dropdown-item.keyboard-focus { background: #f8f9fa; }
     .brand-search-dropdown-item-brand { font-weight: 600; color: #1e3a5f; font-size: 0.95rem; }
     .brand-search-dropdown-item-code { color: #666; font-size: 0.85rem; font-family: 'Courier New', monospace; }
     .brand-search-dropdown-empty { padding: 1rem; text-align: center; color: #666; font-size: 0.9rem; }
+    .brand-search-dropdown-not-found { background: #fff8f0; border-left: 3px solid #e67e22; }
+    .brand-search-dropdown-not-found:hover, .brand-search-dropdown-not-found.keyboard-focus { background: #fff3e6; }
+    .brand-search-dropdown-not-found .brand-search-dropdown-item-brand { color: #e67e22; }
     @media (max-width: 640px) { .brand-search-dropdown { max-height: 240px; } }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
@@ -12803,6 +12806,12 @@
       </aside>
       <div class="contact-form-wrap">
         <h3 data-i18n="contact_form_title">Richiesta online</h3>
+        <div id="partCodeNotice" style="display: none; background: #fff8f0; border: 2px solid #e67e22; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; text-align: center;">
+          <p style="margin: 0; color: #1e3a5f; font-weight: 600; font-size: 1.05rem;">
+            <span data-i18n="request_for_code">Richiesta per codice articolo:</span> <code id="partCodeDisplay" style="background: #fff; padding: 0.25rem 0.5rem; border-radius: 4px; color: #e67e22; font-weight: 700;"></code>
+          </p>
+          <p style="margin: 0.5rem 0 0; color: #666; font-size: 0.9rem;" data-i18n="request_code_hint">Si prega di includere questo codice nel modulo.</p>
+        </div>
         <div class="contact-iframe-wrap" id="iframeContainer">
           <div id="iframePlaceholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; background: linear-gradient(135deg, #f0f6fb 0%, #e8f2f9 100%); border: 2px solid #dce8f4; border-radius: 10px; text-align: center; padding: 2rem;">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2" style="margin-bottom: 1rem;">
@@ -13379,10 +13388,41 @@
   function updateFormIframeLang(langCode) {
     var iframe = document.getElementById('contactFormIframe');
     if (iframe && iframe.src) {
-      iframe.src = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || 'en');
+      var iframeSrc = 'https://erp.abcspareparts.eu/lead-request/new?_lang=' + (langCode || 'en');
+      
+      // Preserve ?code= parameter if present
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var code = urlParams.get('code');
+        if (code) {
+          iframeSrc += '&code=' + encodeURIComponent(code);
+        }
+      } catch(e) {}
+      
+      iframe.src = iframeSrc;
     }
   }
   
+  // Show part code notice if code parameter present
+  function showPartCodeNotice() {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var code = urlParams.get('code');
+      if (code) {
+        // Sanitize code (remove HTML/JS)
+        var sanitized = String(code).replace(/[<>"'&]/g, function(m) {
+          return {'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'}[m];
+        });
+        var notice = document.getElementById('partCodeNotice');
+        var display = document.getElementById('partCodeDisplay');
+        if (notice && display && sanitized) {
+          display.textContent = sanitized;
+          notice.style.display = 'block';
+        }
+      }
+    } catch(e) {}
+  }
+
   // Lazy-load iframe on button click
   function loadContactIframe() {
     var placeholder = document.getElementById('iframePlaceholder');
@@ -13390,6 +13430,7 @@
     if (iframe && placeholder) {
       var lang = getCurrentLang();
       var iframeSrc = iframe.getAttribute('data-src') + '?_lang=' + (lang || 'en');
+      
       iframe.src = iframeSrc;
       iframe.style.display = 'block';
       placeholder.style.display = 'none';
@@ -13397,6 +13438,7 @@
   }
   
   document.addEventListener('DOMContentLoaded', function() {
+    showPartCodeNotice();
     var loadBtn = document.getElementById('loadIframeBtn');
     if (loadBtn) {
       loadBtn.addEventListener('click', loadContactIframe);
@@ -13453,6 +13495,18 @@
       return (str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
     }
 
+    function slugifyPartCode(code) {
+      return String(code || '')
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/&/g, ' and ')
+        .replace(/\+/g, ' plus ')
+        .replace(/[^a-zA-Z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .replace(/-+/g, '-')
+        .toLowerCase();
+    }
+
     function loadSearchIndex(callback) {
       if (searchIndex) {
         callback(searchIndex);
@@ -13498,21 +13552,60 @@
       return results;
     }
 
-    function showDropdown(results) {
+    function showDropdown(results, query) {
       if (!homeBrandDropdown) return;
       homeBrandDropdown.innerHTML = '';
       currentFocusIndex = -1;
       dropdownItems = [];
 
       if (results.length === 0) {
-        homeBrandDropdown.classList.remove('show');
+        if (query && query.length >= 2) {
+          var notFoundItem = document.createElement('a');
+          notFoundItem.className = 'brand-search-dropdown-item brand-search-dropdown-not-found';
+          notFoundItem.href = '/#contact?code=' + encodeURIComponent(query);
+          notFoundItem.setAttribute('role', 'option');
+          notFoundItem.setAttribute('data-index', 0);
+          
+          var langSelect = document.getElementById('languageSelect');
+          var currentLang = langSelect ? langSelect.value : 'de';
+          var notFoundTexts = {
+            de: 'Code nicht gefunden: Anfragen',
+            en: 'Code not found: request it',
+            it: 'Codice non trovato: richiedilo',
+            es: 'Código no encontrado: solicítalo',
+            fr: 'Code non trouvé : demandez-le'
+          };
+          
+          var textDiv = document.createElement('div');
+          textDiv.className = 'brand-search-dropdown-item-brand';
+          textDiv.textContent = notFoundTexts[currentLang] || notFoundTexts.de;
+          notFoundItem.appendChild(textDiv);
+          
+          var codeDiv = document.createElement('div');
+          codeDiv.className = 'brand-search-dropdown-item-code';
+          codeDiv.textContent = query;
+          notFoundItem.appendChild(codeDiv);
+          
+          homeBrandDropdown.appendChild(notFoundItem);
+          dropdownItems.push(notFoundItem);
+          homeBrandDropdown.classList.add('show');
+        } else {
+          homeBrandDropdown.classList.remove('show');
+        }
         return;
       }
 
       results.forEach(function(result, idx) {
         var item = document.createElement('a');
         item.className = 'brand-search-dropdown-item';
-        item.href = '/marche/' + result.slug + '.html';
+        
+        if (result.isPartCode) {
+          var partSlug = slugifyPartCode(result.code);
+          item.href = '/parts/' + result.slug + '/' + partSlug + '.html';
+        } else {
+          item.href = '/marche/' + result.slug + '.html';
+        }
+        
         item.setAttribute('role', 'option');
         item.setAttribute('data-index', idx);
 
@@ -13574,7 +13667,7 @@
           var query = homeBrandInput.value.trim();
           if (query.length >= 2) {
             var results = searchParts(query);
-            showDropdown(results);
+            showDropdown(results, query);
           }
         });
       });
@@ -13589,7 +13682,7 @@
           }
           loadSearchIndex(function() {
             var results = searchParts(query);
-            showDropdown(results);
+            showDropdown(results, query);
           });
         }, 150);
       });

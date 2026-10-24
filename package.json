@@ -8,6 +8,8 @@
     "import:listino": "node -e \"require('./import-listino').loadListiniParts()\"",
     "build:brands": "node extract-brands.js && node generate-brand-pages.js",
     "build:search-index": "node generate-search-index.js",
+    "build:search-index-parts": "node generate-search-index-parts.js",
+    "verify:search-index-pages": "node verify-search-index-pages.js",
     "build:casi": "node generate-case-pages.js",
     "build:parts": "node generate-parts-pages.js",
     "build:parts:publish": "node generate-parts-pages.js --publish-sitemap",
@@ -16,7 +18,8 @@
     "enrich:siemens-descriptions": "node enrich-siemens-descriptions.js",
     "verify:parts": "node verify-parts-mvp.js",
     "verify:siemens-listino": "node verify-siemens-listino.js",
-    "verify": "node verify-build.js && node verify-parts-mvp.js && node verify-siemens-listino.js"
+    "verify": "node verify-build.js && node verify-parts-mvp.js && node verify-siemens-listino.js",
+    "nightly:parts": "node generate-search-index.js && node generate-search-index-parts.js && node verify-search-index-pages.js && echo '✅ Nightly part pages pipeline complete'"
   },
   "dependencies": {
     "playwright": "^1.63.0",
