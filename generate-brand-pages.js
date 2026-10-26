@@ -1816,11 +1816,14 @@ function main() {
   
   // Filter out excluded brands
   const filteredRows = rows.filter((r) => {
-    const brandName = (r.name || '').toLowerCase();
+    const brandName = (r.brand || r.name || '').toLowerCase();
     const brandSlug = (r.slug || '').toLowerCase();
     return !EXCLUDED_BRANDS.some(excluded => {
       const ex = excluded.toLowerCase();
-      return brandName === ex || brandSlug === ex || brandName.includes(ex) || ex.includes(brandName);
+      if (!ex) return false;
+      return brandName === ex || brandSlug === ex ||
+        (brandName && (brandName.includes(ex) || ex.includes(brandName))) ||
+        (brandSlug && (brandSlug.includes(ex) || ex.includes(brandSlug)));
     });
   });
   
