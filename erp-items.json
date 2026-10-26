@@ -1,6 +1,6 @@
 {
-  "source": "erp-priced-items_4f97.tsv",
-  "imported": "2026-10-23",
+  "source": "erp-priced-items_4333.tsv",
+  "imported": "2026-10-26",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -1700,6 +1700,10 @@
         {
           "part_number": "2902991",
           "description": "UNO-PS/1AC/24DC/ 30W"
+        },
+        {
+          "part_number": "2903156",
+          "description": "TRIO-PS-2G/3AC/24DC/40"
         },
         {
           "part_number": "2903158",
