@@ -4,6 +4,7 @@ item_code	brand	description
 0005357533		Speed Sensor
 0014140082	PALAZZANI	AIR FILTER
 0014140085	PALAZZANI	AIR FILTER CARTRIDGE
+002045P	Viqua	UV-Max O-Ringe f. Quarzschutzrohr passend für Typ G bis J+ und PRO
 0031.5754	Müller Martini	Zylinderstift 6M6X32-ISO8734AUrsprungsland: TW Zolltarifnummer: 73182900 Gewicht: 0,035 KG1:1 Ersatz: das Material 0881.0030.4 wurde durch das Materia
 0040.0598	Müller Martini	DruckschlauchUrsprungsland: IT Zolltarifnummer: 39173100 Gewicht: 0,004 KG
 0050120247	PALAZZANI	OIL FILTER CARTRIDGE
@@ -34,12 +35,16 @@ item_code	brand	description
 1020418303011000	BOSCH REXROTH	Ventilblock
 102735	MULAG	MULAG 102735 Kugelgelenk
 102736	MULAG	MULAG 102736 Kugelgelenk
+1040855	TLD	TLD 1040855
 104453	Anton-paar	Schraubkappe HVT (montiert)
 1046805	Phoenix contact	Phoenix Contact 1046805QUINT4-PS/24DC/24DC/20/SC (1046805)PHOENIX CONTACT · CONVERTER,PHOE-CON,1046805,18TO32VDC · QUINT4-PS/24DC/24DC/20/SC (1046805)
 1050920	Sick	SENSORE POSIZIONAMENTO SICK MPS-096TSNUO
 1085256	Phoenix  Contact	FL SWITCH 1000
 1093813	TLD	TLD 1093813
+1104562		TLD 1104562
+1108388		TLD 1108388
 1128899	TLD	TLD 1128899
+1137870		TLD 1137870
 1188542	STEUTE	Ex solenoid interlockEx STM 295 1Ö1S/1Ö1S-A/90°Article no.: 1188542 (old article no.: 95353310)
 119106	METTLER TOLEDO	Heizelement DSC
 119171	METTLER TOLEDO	PT100 Sensor DSC820/821E
@@ -50,9 +55,11 @@ item_code	brand	description
 12024980	Fagor	Damper 140n (Previous part code/s #: 12029086, P630111000)
 12025076	Fagor	250n damper (Previous part code/s #: P630110000)
 12049230	Fagor	Hydraullic damper (Previous part code/s #: P680220000, 12023492, 12017724)
+1208306		TLD 1208306
 1211479	Sick	DETEC4 CORE C4C-EA12010A10000Barriera SICK ricevitore mm 1200
 1211499 / 18483347	Sick	DETEC4 CORE C4C-SA10530A10000Barriera SICK emettitore mm 1050, Portata 0–10 m
 1211500 / 18481699	Sick	DETEC4 CORE C4C-EA10530A10000Barriera SICK ricevitore mm 1050 ,Portata 0–10 m
+1214948		TLD 1214948
 123	IFM	ifm electronic O6G500/OG5PGFAKG/US Lichtschranke/Distanzsensor
 127-0354	Kepco	Circuit Breaker
 13144.04	Baldwin	RUECKSCHLAGVENTIL I.RV 0015.RGG 1/4",0.2 BAR
@@ -80,6 +87,7 @@ item_code	brand	description
 1734-OE2C	Allen Bradley	Allen Bradley 1734-OE2CAllen Bradley · Analogue Output 4-2mA Allen B 1734-OE2C · 1734-OE2C
 1734-OV2V	Rockwell	ANALOG OUTPUT MODULE
 1734-TBS	Rockwell	PLUG TYPE TERMINAL
+174126	MULAG	MULAG 174126
 1747-L552	Rockwell	Processor
 1747-L552 (NEW)	Rockwell	Processor
 175-EN2T	Rockwell	Interface
@@ -163,6 +171,7 @@ item_code	brand	description
 2900068	Phoenix contact	UM-D37SUB/M/HC3/16DO/MR/MT
 2902854	Phoenix contact	Phoenix Contact 2902854FL MC EF 1300 MM ST (2902854)PHOENIX CONTACT · CONVERTER,MEDIA,PHOE-CON,2902854 · FL MC EF 1300 MM ST (2902854)
 2902991	Phoenix  Contact	UNO-PS/1AC/24DC/ 30W
+2903156	Phoenix  Contact	TRIO-PS-2G/3AC/24DC/40
 2903158	Phoenix contact	Phoenix Contact 2903158TRIO-PC-2G/1AC/12DC/10 (2903158)PHOENIX CONTACT · POWER SUPPLY,PHOENIX,2903158,10A,120W · TRIO-PC-2G/1AC/12DC/10 (2903158)
 2903670	Phoenix contact	REL-IR/LDP- 24DC/4X21AU
 2904598	Phoenix contact	Phoenix Contact 2904598QUINT4-PS/1AC/24DC/2.5/SC (2904598)PHOENIX CONTACT · POWER SUPPLY,PHOENIX,2904598,2.5A,24VDC · QUINT4-PS/1AC/24DC/2.5/SC (29045
@@ -209,6 +218,7 @@ item_code	brand	description
 3269153	HYDAC	Seal kit for FPU adapter
 361605	HYDAC	ADAPTER FPU A2-5/8-18UNF OLAER (BAUGR)
 361619	HYDAC	ADAPTER FPU A1-M16x1,5 MINIMESS (BAUGR)
+365-8050-0097-RP	MEASUREX	PCBA Frame Controller IV(Refurb)
 373405	HYDAC	charging hose F W24,32x1/14 (10,0m)
 3904431	FLEXLINK	Transmissionsabdeckung
 3911267	HYDAC	ADAPTER FPU A13 5/8-18UNF HYDAC (BAUGR)
@@ -220,8 +230,11 @@ item_code	brand	description
 3SU1052-2BL10-0AA0	Siemens	Siemens 3SU1052-2BL10-0AA0
 3SU1400-1AA10-1BA0	Siemens	Siemens 3SU1400-1AA10-1BA0
 3SU1550-0AA10-0AA0	Siemens	Siemens 3SU1550-0AA10-0AA0
+3WA1232-3AB03-2BL0	Siemens	Circuit breaker
+3WL1232-2CB64-6AJ2	Siemens	Circuit breaker
 40701	MST	FILTER, OIL
 41024VDC	Humphrey	Valve
+42000330	PITCO	COMPUTER,K12 SINGLE MFG2
 45.877.05	Baldwin	Flow meter
 46221	MST	SPIDER
 49944	MST	SEAL KIT
@@ -272,6 +285,9 @@ item_code	brand	description
 5776960900-AGZ	BOSCH REXROTH	5/2-Wegemagnetventil 148x55x30 577 696
 578-104011000	M&S Armaturen	Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1"-4" Nr. GL678TBJ1 Zolltarif-Nr. 84123100
 5800346	TLD	TLD 5800346
+592386140	Fisher	22A8897X012; DICHTRING
+592386200	Fisher	16A5512X012; KEIL, KONISCH
+592392500	Fisher	1V710106242; SCHEIBE
 5933216-081	TLD	TLD 5933216-081
 60112067	Scheuerle	HIGH PRESSURE HOSE
 60112071	Scheuerle	HIGH PRESSURE HOSE
@@ -279,7 +295,10 @@ item_code	brand	description
 60112076	Scheuerle	HIGH PRESSURE HOSE
 60112081	Scheuerle	HIGH PRESSURE HOSE
 60112084	Scheuerle	HIGH PRESSURE HOSE
+602665	Viqua	SLEEVE BOLT FOR A, B/B4/B4-V C/C4/C4-V D/D4/D4-V/PLUS, E/E4/E4-V/PLUS
 6027.051	Generic	RUBBER HOSE FOR HYDROCARBONS T19B 16 BAR Ø51 X 65 MM 40 M
+602733	Viqua	VIQUA UV Max Quarzschutzrohr Typ E4/E4+
+602806	Viqua	VIQUA UV Max Ersatzstrahler Typ E4/E4+ frachtfrei
 606765	HYDAC	pressure gauge HN60-01-A 63/ 100/G 1/4B
 606766	HYDAC	pressure gauge HN60-01-A 63/ 160/G 1/4B
 608034	HYDAC	pressure gauge HN60-01-A 63/ 600/G 1/4B
@@ -349,14 +368,17 @@ A10VSO28DFR1/31L-PPA12N	Rexroth	Pump
 A110193	MULAG	MULAG 111767 Kugelgelenk
 A18065V2HBT-S	SYM BANG	Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W
 AA34222022T001-C	Omec	OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC150°C / Shaft 24j6 / 165x130j6x200 / Ral 7031 / Fixed with circlip
+AA34222051T001-C	Omec	OMT1-IE3 90L2 2,2kW 400/690V 50Hz B3 Iso F-B / IP55 / PTC150°C / Shaft 24j6 / Ral 7031 / Fixed with circlip
 AAX0052	Ingeteam	RS485 communication board
 ABC04016	CISCO	Cornetta per Cisco SPA504G (Serie SPA 500)
 AD1015	SEPATRON	ADAMAS C18 CLASSIC 1.8µm - 100mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959758-902
 AD1035	SEPATRON	ADAMAS C18 CLASSIC 1.8µm - 150mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959759-902
+ADS-2290RDKPL	Powasert	Motor
 AKM345-00430540	Qualitrol	(Replace: AKM345-00230846)Oil Temperature / Winding Temperature Indicator AKM345Oil sump temperature indicator, Gen3, standard temperature rangeThermo
 AKM345-00430857	Qualitrol	AKM345-00230847 Obsolete/replaced by: AKM345-00430857Oil Temperature / Winding Temperature Indicator AKM345Winding temperature indicator, Gen3, standa
 AL55 230/50 DC	BROVIND	LINEARE VIBR. AL55 230 50 DC
 ASF3-25RD-200240L	Steimel	Pump unit
+ATS-U M	Phoenix  Contact	SEPARATOR PLATE
 AX09 165/10	ALFAMATIC	PNEUMO-HYDRAULIC CYLINDER
 AZPF-11-008RCB20MB	BOSCH REXROTH	PumpRefurbished12 months warranty
 B-SC9291	MADATEC	RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5190-7021
@@ -364,9 +386,11 @@ BA7-040	SMC	Auto‑switch mounting bracket, tie‑rod mounting, for CA2‑Z / MB
 BG 75x50	DUNKERMOTOREN	DC-Motor 40V 3500rpm 12A
 BNAC3EA01	Pizzato	3-button IO-Link control station
 Best.-Nr. D-VENTIL	Baelz	Ventil, komplett montiert ohne Druckluft Weg A-AB geschlossen
+C7-20/174642	MULAG	MULAG C7-20/174642
 CK 82/098/102/25		PEVOLON Laufrolle mit Kugellager.Technische Eigenschaften Außen-Ø : 82,0 mm Breite : 98,0 mm Nabenlänge : 98,0 mmEinspannlänge : 102,0 mmLagerart : Ri
 CS ME-03XU24	Pizzato	Expansion module
 D-M9P	SMC	Solid state auto switch, direct mounting style for pneumatic cylinders, PNP output, 3‑wire type, in‑line cable entry, power supply 5–28 VDC, max. load
+D-UT 4/1P-H	Phoenix  Contact	CONTROL TERMINAL END COVER
 D166- L- G- 43- NNL2000   (Ex. Type D166/L/21)	GHR	DOM Pressure RegulatorMedium: GasTemperature: max. 80°Cp1 Inlet: max. 100 barp2 Outlet: 0.5–100 bar, adjustableSeat: 9 mmMaterial: Brass housingIntern
 D2171B6012W-2 ( EX. D2171B6012)	Ross	G1PL 2/2-WAY VALVE N.G.SOLENOID-OPERATED 24 VDCPart Number: 84812090Country of Origin: US
 DH30	AMPLIDAN - DNH	DNH Horn without driver 345mm for DST100 RAL7035
@@ -382,6 +406,7 @@ EN580C.ML-SC10.HH2C1.21160.H-11267453	Baumer	Absoluter Drehgeber EN580C (success
 F4BC-20M-CPSS-DFH-ECB-504	SKF	Kugellager
 FRACHTKOSTEN		Delivery & Packaging
 G121SN01 V.4	AUO	LCD MATRIX
+GL-676-050-V	M&S Armaturen	SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)
 GL-R80H	Keyence	Safety Light Curtain (Set: transmitter and receiver)
 GT9.06L/420k	Hübner Elektromaschinen AG	Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/minmax. Drehzahl: 9000 1/minPassen
 Guarnizione coperchio 550 e11	Harmsco	Guarnizione EPDM/HIF7/24-HUR-BB-HP rif. HARMSCO 550-E
@@ -427,6 +452,7 @@ OP-88679	Keyence	M12 connector, A-coded, 12-pin, female connector to open cable 
 PA-DPS-88	Sontay	Pressure Transmitter
 PGN-plus 64-2-AS / 371093	Schunk	Universal Gripper
 PKC50	Hi force	Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing pullers, bearing cup pullers and cros
+PT00004423	PITCO	Digital Controller, 12 Keys
 PZ-51	Keyence	compact through-beam photoelectric sensor
 Presskopf PP520	Intercable tools	Presskopf PP520
 Prog. 1211 Controller – Typ 20001A-70E R	PRONOMIC	Controller
@@ -460,6 +486,7 @@ TS5013N61	Tamagawa	68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 
 TTN0507	Radio energie	RE.0 110 Gleichstrom-Tachogenerator/en, RE.O110 1CB 0.007 CA, 7V/1000 Umin, Flansch B14, Welle 4,75x14mm, Klemmen, temp.kompensiert, IP44, Silberkohle
 UCHBP000X0200	CAREL	Microchiller Fronttafeleinbau 24Vac/dc mit NFC und Bluetooth, MCH2 kompatibel Carel Kaltwassersatzregler
 UCHCONP010	CAREL	Steckverbinder- und Kabelbausatz für µChiller/µRack Fronttafeleinbau MOLEX/Free, 100 cm Kabel Carel Zubehör
+UCT6R-TM 8	Phoenix  Contact	TERMINAL BLOCK MARKER
 UF IR3 Flame Detector, SS316, ATEX, 3/4"	Spectrex INC.	Spectrex SharpEye Ultra Fast triple IR, universal wiring; relays, analog, 0-20mA, HART, RS-485 Modbus, -60 to +85 deg C, 3/4" NPT cable entries, Stain
 V-430/BH200	Autronica	Smoke Detector** Replacement for 116-BHH-200** Please check that the socket installed on board have been produced after 2004, otherwise you need to in
 V-530/BH500	Autronica	Smoke Detector ** Replacement for 116-BHH-500** Please check that the socket installed on board have been produced after 2004, otherwise you need to i

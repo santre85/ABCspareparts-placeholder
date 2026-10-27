@@ -17,7 +17,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-138 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302138 part references.
+140 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302145 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -85,7 +85,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Kunpeng](https://abcspareparts.eu/marche/kunpeng.html): KP22580HA2BL-C
 - [LEG](https://abcspareparts.eu/marche/leg.html): EM1-1-1
 - [Leuze](https://abcspareparts.eu/marche/leuze.html): 53800105, 53800117, RSL410-M
-- [M&S Armaturen](https://abcspareparts.eu/marche/m-and-s-armaturen.html): 03052-2001010, 03052-2002010, 03052-2003010, 56040-0250700 (+8 more)
+- [M&S Armaturen](https://abcspareparts.eu/marche/m-and-s-armaturen.html): 03052-2001010, 03052-2002010, 03052-2003010, 56040-0250700 (+9 more)
 - [M+S Hydraulic](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html): MMS50C
 - [MADATEC](https://abcspareparts.eu/marche/madatec.html): B-SC9291, V947
 - [Matrix Elektronik](https://abcspareparts.eu/marche/matrix-elektronik.html): IRS-U-4A
@@ -106,6 +106,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Pepperl+Fuchs](https://abcspareparts.eu/marche/pepperl-plus-fuchs.html): NJ2-11-SN-G
 - [Pflitsch](https://abcspareparts.eu/marche/pflitsch.html): M16x1,5/8,0-5,0
 - [Phoenix Contact](https://abcspareparts.eu/marche/phoenix-contact.html): 1046805, 1085256, 2295554, 2296058 (+51 more)
+- [PITCO](https://abcspareparts.eu/marche/pitco.html): 42000330, PT00004423
 - [Pizzato](https://abcspareparts.eu/marche/pizzato.html): BNAC3EA01, CS ME-03XU24
 - [PMA](https://abcspareparts.eu/marche/pma.html): Sechskantmutter MM-SW19/M16x1,5 2,8 Ms *, Wellrohr XPCSG-NW17-21,2/15,2 PA XPCSG-*
 - [PRONOMIC](https://abcspareparts.eu/marche/pronomic.html): 220390, Prog. 1211 Controller – Typ 20001A-70E R
@@ -150,6 +151,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [TRELLEBORG](https://abcspareparts.eu/marche/trelleborg.html): 3DIC08172 (Turcon-Variseal PVC100197-Z80S)
 - [Turck](https://abcspareparts.eu/marche/turck.html): WKB 3T-*/S90
 - [TWK](https://abcspareparts.eu/marche/twk.html): IW120/24-0,5-KF-S-KH-A17
+- [Viqua](https://abcspareparts.eu/marche/viqua.html): 002045P, 602665, 602733, 602806
 - [Walterscheid](https://abcspareparts.eu/marche/walterscheid.html): KU25-3DP
 - [Wayne](https://abcspareparts.eu/marche/wayne.html): WM008766
 - [Weidmüller](https://abcspareparts.eu/marche/weidmuller.html): 8714260000
@@ -1508,6 +1510,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [M&S Armaturen 57680-1000300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=57680-1000300) — M&S Armaturen 57680-1000300
 - [M&S Armaturen 576800500300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=576800500300) — Dichtung Nr. 676 Efür ScheibenventilDN 50
 - [M&S Armaturen 578-104011000](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=578-104011000) — Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1"-4" Nr. GL678TBJ1 Zolltarif-Nr. 84123100
+- [M&S Armaturen GL-676-050-V](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=GL-676-050-V) — SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)
 - [M+S Hydraulic MMS50C](https://abcspareparts.eu/parts/m-plus-s-hydraulic/mms50c.html) — Hydraulic Motor
 - [MADATEC B-SC9291](https://abcspareparts.eu/marche/madatec.html#quote=B-SC9291) — RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5…
 - [MADATEC V947](https://abcspareparts.eu/marche/madatec.html#quote=V947) — 1.5ML AMBER 9MM SCREW VIAL W/WRITE- ON SPOT,11.6*32MM, 7.0 TYPE GLASS ( 100 PCS PACK) -EQUIV.AGILENT 5182-0516
@@ -1626,6 +1629,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Phoenix Contact ATS-U M](https://abcspareparts.eu/marche/phoenix-contact.html#quote=ATS-U%20M) — SEPARATOR PLATE
 - [Phoenix Contact D-UT 4/1P-H](https://abcspareparts.eu/marche/phoenix-contact.html#quote=D-UT%204%2F1P-H) — CONTROL TERMINAL END COVER
 - [Phoenix Contact UCT6R-TM 8](https://abcspareparts.eu/marche/phoenix-contact.html#quote=UCT6R-TM%208) — TERMINAL BLOCK MARKER
+- [PITCO 42000330](https://abcspareparts.eu/marche/pitco.html#quote=42000330) — COMPUTER,K12 SINGLE MFG2
+- [PITCO PT00004423](https://abcspareparts.eu/marche/pitco.html#quote=PT00004423) — Digital Controller, 12 Keys
 - [Pizzato BNAC3EA01](https://abcspareparts.eu/marche/pizzato.html#quote=BNAC3EA01) — 3-button IO-Link control station
 - [Pizzato CS ME-03XU24](https://abcspareparts.eu/marche/pizzato.html#quote=CS%20ME-03XU24) — Expansion module
 - [PMA Sechskantmutter MM-SW19/M16x1,5 2,8 Ms *](https://abcspareparts.eu/marche/pma.html#quote=Sechskantmutter%20MM-SW19%2FM16x1%2C5%202%2C8%20Ms%20*) — Size/dimension: SW19/M16X1,5 2,8 Werkstoff: Ms GalNi
@@ -1883,6 +1888,10 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [TRELLEBORG 3DIC08172 (Turcon-Variseal PVC100197-Z80S)](https://abcspareparts.eu/marche/trelleborg.html#quote=3DIC08172%20(Turcon-Variseal%20PVC100197-Z80S)) — Turcon Variseal spring-energized seal
 - [Turck WKB 3T-*/S90](https://abcspareparts.eu/marche/turck.html#quote=WKB%203T-*%2FS90) — Steckverbinder 1/2" 5,3MM 2000MM PUR Ar*
 - [TWK IW120/24-0,5-KF-S-KH-A17](https://abcspareparts.eu/marche/twk.html#quote=IW120%2F24-0%2C5-KF-S-KH-A17) — Inductive linear transducer
+- [Viqua 002045P](https://abcspareparts.eu/marche/viqua.html#quote=002045P) — UV-Max O-Ringe f. Quarzschutzrohr passend für Typ G bis J+ und PRO
+- [Viqua 602665](https://abcspareparts.eu/marche/viqua.html#quote=602665) — SLEEVE BOLT FOR A, B/B4/B4-V C/C4/C4-V D/D4/D4-V/PLUS, E/E4/E4-V/PLUS
+- [Viqua 602733](https://abcspareparts.eu/marche/viqua.html#quote=602733) — VIQUA UV Max Quarzschutzrohr Typ E4/E4+
+- [Viqua 602806](https://abcspareparts.eu/marche/viqua.html#quote=602806) — VIQUA UV Max Ersatzstrahler Typ E4/E4+ frachtfrei
 - [Walterscheid KU25-3DP](https://abcspareparts.eu/marche/walterscheid.html#quote=KU25-3DP) — Kupplung
 - [Wayne WM008766](https://abcspareparts.eu/marche/wayne.html#quote=WM008766) — IGEM ISFS LON Board
 - [Weidmüller 8714260000](https://abcspareparts.eu/marche/weidmuller.html#quote=8714260000) — FBCON SS DP PCG 1WAY
@@ -1911,7 +1920,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 138 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 140 high-priority brand URLs
 - [Other unique-content brand pages](https://abcspareparts.eu/sitemap-brands.xml) — curated copy, not the thin 12k template set
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs

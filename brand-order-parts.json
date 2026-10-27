@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact)",
-  "generated": "2026-10-26",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact) + erp-items.json (viqua) + erp-items.json (pitco) + erp-items.json (m-and-s-armaturen)",
+  "generated": "2026-10-27",
   "listini_files": 301648,
   "brands": [
     {
@@ -1313,6 +1313,10 @@
         {
           "part_number": "578-104011000",
           "description": "Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1\"-4\" Nr. GL678TBJ1 Zolltarif-Nr. 84123100"
+        },
+        {
+          "part_number": "GL-676-050-V",
+          "description": "SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)"
         }
       ]
     },
@@ -1906,6 +1910,20 @@
         {
           "part_number": "UCT6R-TM 8",
           "description": "TERMINAL BLOCK MARKER"
+        }
+      ]
+    },
+    {
+      "brand": "PITCO",
+      "brand_slug": "pitco",
+      "parts": [
+        {
+          "part_number": "42000330",
+          "description": "COMPUTER,K12 SINGLE MFG2"
+        },
+        {
+          "part_number": "PT00004423",
+          "description": "Digital Controller, 12 Keys"
         }
       ]
     },
@@ -2958,6 +2976,28 @@
         {
           "part_number": "IW120/24-0,5-KF-S-KH-A17",
           "description": "Inductive linear transducer"
+        }
+      ]
+    },
+    {
+      "brand": "Viqua",
+      "brand_slug": "viqua",
+      "parts": [
+        {
+          "part_number": "002045P",
+          "description": "UV-Max O-Ringe f. Quarzschutzrohr passend für Typ G bis J+ und PRO"
+        },
+        {
+          "part_number": "602665",
+          "description": "SLEEVE BOLT FOR A, B/B4/B4-V C/C4/C4-V D/D4/D4-V/PLUS, E/E4/E4-V/PLUS"
+        },
+        {
+          "part_number": "602733",
+          "description": "VIQUA UV Max Quarzschutzrohr Typ E4/E4+"
+        },
+        {
+          "part_number": "602806",
+          "description": "VIQUA UV Max Ersatzstrahler Typ E4/E4+ frachtfrei"
         }
       ]
     },
