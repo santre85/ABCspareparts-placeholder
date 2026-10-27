@@ -1,6 +1,6 @@
 {
-  "source": "erp-priced-items_4333.tsv",
-  "imported": "2026-10-26",
+  "source": "erp-priced-items.tsv",
+  "imported": "2026-10-27",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -1226,6 +1226,10 @@
         {
           "part_number": "578-104011000",
           "description": "Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1\"-4\" Nr. GL678TBJ1 Zolltarif-Nr. 84123100"
+        },
+        {
+          "part_number": "GL-676-050-V",
+          "description": "SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)"
         }
       ]
     },
@@ -1808,6 +1812,20 @@
         {
           "part_number": "UCT6R-TM 8",
           "description": "TERMINAL BLOCK MARKER"
+        }
+      ]
+    },
+    {
+      "brand": "PITCO",
+      "brand_slug": "pitco",
+      "parts": [
+        {
+          "part_number": "42000330",
+          "description": "COMPUTER,K12 SINGLE MFG2"
+        },
+        {
+          "part_number": "PT00004423",
+          "description": "Digital Controller, 12 Keys"
         }
       ]
     },
@@ -2650,6 +2668,28 @@
         {
           "part_number": "IW120/24-0,5-KF-S-KH-A17",
           "description": "Inductive linear transducer"
+        }
+      ]
+    },
+    {
+      "brand": "Viqua",
+      "brand_slug": "viqua",
+      "parts": [
+        {
+          "part_number": "002045P",
+          "description": "UV-Max O-Ringe f. Quarzschutzrohr passend für Typ G bis J+ und PRO"
+        },
+        {
+          "part_number": "602665",
+          "description": "SLEEVE BOLT FOR A, B/B4/B4-V C/C4/C4-V D/D4/D4-V/PLUS, E/E4/E4-V/PLUS"
+        },
+        {
+          "part_number": "602733",
+          "description": "VIQUA UV Max Quarzschutzrohr Typ E4/E4+"
+        },
+        {
+          "part_number": "602806",
+          "description": "VIQUA UV Max Ersatzstrahler Typ E4/E4+ frachtfrei"
         }
       ]
     },
