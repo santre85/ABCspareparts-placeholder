@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-10-27",
+  "imported": "2026-10-28",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -1268,6 +1268,16 @@
       ]
     },
     {
+      "brand": "MEASUREX",
+      "brand_slug": "measurex",
+      "parts": [
+        {
+          "part_number": "365-8050-0097-RP",
+          "description": "PCBA Frame Controller IV(Refurb)"
+        }
+      ]
+    },
+    {
       "brand": "Mellor Electric",
       "brand_slug": "mellor-electric",
       "parts": [
@@ -1854,6 +1864,16 @@
         {
           "part_number": "Wellrohr XPCSG-NW17-21,2/15,2 PA XPCSG-*",
           "description": "Size/dimension: NW17-21,2/15,2 Werkstoff: PA"
+        }
+      ]
+    },
+    {
+      "brand": "Powasert",
+      "brand_slug": "powasert",
+      "parts": [
+        {
+          "part_number": "ADS-2290RDKPL",
+          "description": "Motor"
         }
       ]
     },
