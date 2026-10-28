@@ -1106,7 +1106,7 @@ ABCspareparts maintains 142 enriched brand pages with detailed product informati
 
 ## Brand pages with detailed content
 
-ABCspareparts maintains 142 enriched brand pages with detailed product information, applications, and technical specifications. Each page is available in multiple languages (DE/EN/IT/ES/FR) via an on-page language selector. No manufacturer contact details or price lists are published.
+ABCspareparts maintains 144 enriched brand pages with detailed product information, applications, and technical specifications. Each page is available in multiple languages (DE/EN/IT/ES/FR) via an on-page language selector. No manufacturer contact details or price lists are published.
 
 - [3M](https://abcspareparts.eu/marche/3m.html): 3M für Instandhaltung: Cubitron &amp; Scotch-Brite Schleifmittel, VHB Klebebänder, Scotch Elektrobänder, Atemschutz, Speedglas
 - [3M Peltor](https://abcspareparts.eu/marche/3m-peltor.html): 3M PELTOR: Optime &amp; X-Serie Kapselgehörschutz, ProTac, LiteCom, WS LiteCom Pro III, Hygienesets HY79, Akkus ACK081
@@ -1192,6 +1192,7 @@ ABCspareparts maintains 142 enriched brand pages with detailed product informati
 - [MAC](https://abcspareparts.eu/marche/mac.html): MAC Pneumatik-Magnetventile, Ventilinseln und Pneumatiksteuerung
 - [Madatec](https://abcspareparts.eu/marche/madatec.html): MADATEC Originalteile und geprüfte Alternativen für MRO
 - [Matrix Elektronik](https://abcspareparts.eu/marche/matrix-elektronik.html): Matrix Elektronik Originalteile und geprüfte Alternativen für MRO
+- [Measurex](https://abcspareparts.eu/marche/measurex.html): MEASUREX Ersatzteile für Qualitätsmess- und Scannersysteme in der Papier- und Blattproduktion
 - [Megger](https://abcspareparts.eu/marche/megger.html): MEGGER Ersatzteile: Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden
 - [Metal Work Pneumatic](https://abcspareparts.eu/marche/metal-work-pneumatic.html): Metal Work Pneumatic Pneumatikzylinder, Ventile, FRL-Einheiten und Pneumatikkomponenten
 - [Mettler Toledo](https://abcspareparts.eu/marche/mettler-toledo.html): Mettler Toledo Ersatzteile für Waagen, Analysengeräte, Prozesssensoren: Wägezellen, Displays, Sensoren
@@ -1213,6 +1214,7 @@ ABCspareparts maintains 142 enriched brand pages with detailed product informati
 - [Pilz](https://abcspareparts.eu/marche/pilz.html): Pilz Sicherheitsrelais, Sicherheits-SPS, Sicherheitssensoren, Not-Aus-Geräte und Automation
 - [Piovan](https://abcspareparts.eu/marche/piovan.html): PIOVAN Ersatzteile für Trockner, Dosierung, Förderung, Temperierung: Ventile, Sensoren, Filter, Heizungen
 - [Pizzato](https://abcspareparts.eu/marche/pizzato.html): Pizzato Positionsschalter, Sicherheitsschalter, Fußschalter, Not-Aus-Geräte und Endschalter
+- [Powasert](https://abcspareparts.eu/marche/powasert.html): Powasert Ersatzteile für Schraubenzuführung und Schraubtechnik in der Montage
 - [Rexroth](https://abcspareparts.eu/marche/rexroth.html): Rexroth Hydraulikzylinder, Ventile, Pumpen, Pneumatik und Lineartechnik
 - [Roemheld](https://abcspareparts.eu/marche/roemheld.html): Roemheld Originalteile und geprüfte Alternativen für MRO
 - [Saer](https://abcspareparts.eu/marche/saer.html): SAER Ersatzteile für Pumpen und rotierende Anlagen: Pumpenteile, Laufräder, Dichtungen

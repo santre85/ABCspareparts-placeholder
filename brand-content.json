@@ -30009,5 +30009,431 @@
         "carel_note": "CAREL est une marque. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur sources publiques. Mise à jour : octobre 2026."
       }
     }
+  },
+  "measurex": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "measurex-about",
+        "className": "brand-info",
+        "titleKey": "measurex_about_title",
+        "bodyKey": "measurex_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "measurex-products",
+            "className": "brand-info",
+            "titleKey": "measurex_products_title",
+            "listKey": "measurex_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "measurex-apps",
+            "className": "brand-info",
+            "titleKey": "measurex_apps_title",
+            "listKey": "measurex_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "measurex-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "measurex_parts_id_title",
+        "introKey": "measurex_parts_id_intro",
+        "listKey": "measurex_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [
+      "honeywell",
+      "gefran",
+      "abb",
+      "siemens"
+    ],
+    "related_labels": {
+      "honeywell": "Honeywell",
+      "gefran": "Gefran",
+      "abb": "ABB",
+      "siemens": "Siemens"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "measurex_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "MEASUREX"
+      },
+      "mentions": [
+        {
+          "name": "MEASUREX Qualitätsscanner",
+          "category": "Bahnmesstechnik"
+        },
+        {
+          "name": "MEASUREX Feuchte- und Flächengewichtssensor",
+          "category": "Papiermessung"
+        },
+        {
+          "name": "MEASUREX Frame-Controller",
+          "category": "Scannersteuerung"
+        }
+      ],
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "MEASUREX Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "MEASUREX Ersatzteile für Qualitätsmess- und Scannersysteme in der Papier- und Blattproduktion. Teilenummer senden – Angebot oft in 24 h.",
+        "brand_h1": "MEASUREX – Ersatzteile für Qualitätsmesssysteme in der Papier- und Blattproduktion",
+        "brand_intro": "ABCspareparts beschafft MEASUREX Ersatzteile – Scanner- und Messkomponenten, Steuerungsbaugruppen, Verschleißteile – für Qualitätsmesssysteme in der Blattproduktion. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit und, wo technisch sinnvoll, kompatible Alternativen oder Nachfolgemodelle. Diese Seite ersetzt keine Live-Bestandsliste: Nutzen Sie bitte die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "measurex_about_title": "Über MEASUREX",
+        "measurex_about_text": "<p>MEASUREX steht für computergestützte Prozess- und Qualitätsregelung, vor allem in der Papierherstellung. Zum Sortiment gehörten Steuerungssysteme und scannende Sensoren zur Messung von Papiereigenschaften wie Flächengewicht, Feuchte, Dicke und Farbe. Solche Systeme kommen an Papiermaschinen und verwandten Blattprozessen zum Einsatz; spätere Generationen dieser Messtechnik finden sich in industriellen Qualitätsmess-Scannern wieder.</p>",
+        "measurex_products_title": "Typische MEASUREX Produktfamilien",
+        "measurex_products_list": "<li>Scannende Qualitätsmesssysteme für Papiermaschinen</li><li>Sensoren für Flächengewicht, Feuchte, Dicke und Farbe bzw. Weiße</li><li>Scannerrahmen und Messköpfe für Bahnprozesse</li><li>Steuerungs- und Rechnersysteme für die Blattqualität</li><li>Elektronikbaugruppen, etwa Scanner- bzw. Frame-Controller</li><li>Mechanische Scannerteile und Verschleißteile</li>",
+        "measurex_apps_title": "Typische Einsatzbereiche",
+        "measurex_apps_list": "<li>Zellstoff- und Papierproduktion</li><li>Karton und Tissue</li><li>Kunststofffolien und bahnförmige Kunststoffe</li><li>Metalle (Walzprozesse)</li><li>Gummi und Kalandrierprozesse</li><li>Vliesstoffe und Druck</li>",
+        "measurex_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "measurex_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "measurex_parts_id_list": "<li>Teilenummer vom Bauteil, Typenschild oder aus der Dokumentation</li><li>Foto des Typenschilds (Anlage, Scanner oder Steuerung)</li><li>Foto der defekten Komponente (z. B. Messkopf, Steuerplatine, Rahmenbaugruppe)</li><li>Anwendung (z. B. Papiermaschine, Folienbahn)</li><li>Kurzbeschreibung: Was ist defekt?</li><li>Menge und gewünschter Liefertermin</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein MEASUREX-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil, auf dem Typenschild der Anlage oder in der technischen Dokumentation. Ein Foto des Typenschilds und der Komponente hilft uns, die Nummer zuzuordnen und die Verfügbarkeit zu prüfen.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder nicht mehr gelistete MEASUREX-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit nach verfügbaren Beständen. Ist das angefragte Teil nicht mehr erhältlich, schlagen wir nach Rücksprache kompatible Alternativen oder Nachfolgelösungen vor.",
+        "brand_faq_q6": "MEASUREX Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Konditionen für das angefragte Teil oder – wenn gewünscht – kompatible Alternativen.",
+        "measurex_note": "MEASUREX ist eine Marke. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Einsatzbereichen basieren auf öffentlich zugänglichen Informationen. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "MEASUREX spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "MEASUREX spare parts for quality measurement and scanner systems in paper and sheet production. Send part number – quote often within 24 h.",
+        "brand_h1": "MEASUREX – spare parts for quality measurement systems in paper and sheet production",
+        "brand_intro": "ABCspareparts sources MEASUREX spare parts – scanner and measurement components, control assemblies, wear parts – for quality measurement systems in sheet production. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability and, where technically appropriate, compatible alternatives or successor models. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "measurex_about_title": "About MEASUREX",
+        "measurex_about_text": "<p>MEASUREX refers to computer-based process and quality control, mainly in papermaking. The range included control systems and scanning sensors for paper properties such as basis weight, moisture, thickness and colour. Such systems are used on paper machines and related sheet processes; later generations of this measurement technology appear in industrial quality-control scanners.</p>",
+        "measurex_products_title": "Typical MEASUREX product families",
+        "measurex_products_list": "<li>Scanning quality-control systems for paper machines</li><li>Sensors for basis weight, moisture, thickness and colour or brightness</li><li>Scanner frames and measuring heads for web processes</li><li>Control and computing systems for sheet quality</li><li>Electronic assemblies such as scanner or frame controllers</li><li>Mechanical scanner parts and wear parts</li>",
+        "measurex_apps_title": "Typical applications",
+        "measurex_apps_list": "<li>Pulp and paper production</li><li>Board and tissue</li><li>Plastic films and web-shaped plastics</li><li>Metals (rolling processes)</li><li>Rubber and calendering processes</li><li>Nonwovens and printing</li>",
+        "measurex_parts_id_title": "How to identify the correct part number",
+        "measurex_parts_id_intro": "For a fast quote, send us:",
+        "measurex_parts_id_list": "<li>Part number from the component, nameplate or documentation</li><li>Photo of the nameplate (machine, scanner or control)</li><li>Photo of the defective component (e.g. measuring head, control board, frame assembly)</li><li>Application (e.g. paper machine, film web)</li><li>Brief description: what is defective?</li><li>Quantity and required delivery date</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my MEASUREX equipment?",
+        "brand_faq_a4": "The part number is usually on a label on the component, on the machine nameplate, or in the technical documentation. A photo of the nameplate and component helps us match the number and check availability.",
+        "brand_faq_q5": "Does ABCspareparts also source spare parts for older or no longer listed MEASUREX systems?",
+        "brand_faq_a5": "Yes. We search across Europe for remaining stock. If the requested part is no longer available, we propose – after consultation – compatible alternatives or successor solutions.",
+        "brand_faq_q6": "MEASUREX spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the request form or by email. We check availability, lead time and terms for the requested part or – if desired – compatible alternatives.",
+        "measurex_note": "MEASUREX is a trademark. Mentioned solely to identify the products. Product family and application information is based on publicly available sources. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi MEASUREX per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi MEASUREX per sistemi di misura e scanner di qualità nella produzione di carta e fogli. Inviate il codice – preventivo spesso in 24 h.",
+        "brand_h1": "MEASUREX – ricambi per sistemi di misura della qualità nella produzione di carta e fogli",
+        "brand_intro": "ABCspareparts fornisce ricambi MEASUREX – componenti di scanner e misura, schede di controllo, parti di usura – per sistemi di misura della qualità nella produzione di fogli. Inviate il numero di parte – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità e, se tecnicamente adatto, alternative compatibili o modelli successori. Questa pagina non sostituisce un elenco live: usate la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "measurex_about_title": "Su MEASUREX",
+        "measurex_about_text": "<p>MEASUREX indica il controllo di processo e di qualità basato su computer, soprattutto nella produzione della carta. La gamma comprendeva sistemi di controllo e sensori a scansione per proprietà della carta come grammatura, umidità, spessore e colore. Questi sistemi si usano su macchine continue e processi di foglio affini; generazioni successive di questa tecnica di misura si ritrovano negli scanner industriali di controllo qualità.</p>",
+        "measurex_products_title": "Famiglie di prodotti MEASUREX tipici",
+        "measurex_products_list": "<li>Sistemi di misura della qualità a scansione per macchine continue</li><li>Sensori per grammatura, umidità, spessore e colore o bianchezza</li><li>Telai scanner e teste di misura per processi a nastro</li><li>Sistemi di controllo e calcolo per la qualità del foglio</li><li>Schede elettroniche, ad esempio controller dello scanner o del telaio</li><li>Parti meccaniche dello scanner e parti di usura</li>",
+        "measurex_apps_title": "Applicazioni tipiche",
+        "measurex_apps_list": "<li>Produzione di pasta e carta</li><li>Cartone e tissue</li><li>Film plastici e materie plastiche in nastro</li><li>Metalli (processi di laminazione)</li><li>Gomma e processi di calandratura</li><li>Non tessuti e stampa</li>",
+        "measurex_parts_id_title": "Come identificare il numero di parte corretto",
+        "measurex_parts_id_intro": "Per un preventivo rapido, inviateci:",
+        "measurex_parts_id_list": "<li>Numero di parte dal componente, dalla targhetta o dalla documentazione</li><li>Foto della targhetta (impianto, scanner o controllo)</li><li>Foto del componente difettoso (es. testa di misura, scheda di controllo, assieme telaio)</li><li>Applicazione (es. macchina continua, nastro di film)</li><li>Breve descrizione: cosa è difettoso?</li><li>Quantità e data di consegna richiesta</li>",
+        "brand_faq_q4": "Come identifico il numero di parte corretto per la mia apparecchiatura MEASUREX?",
+        "brand_faq_a4": "Il numero di parte si trova solitamente su un’etichetta sul componente, sulla targhetta della macchina o nella documentazione tecnica. Una foto della targhetta e del componente ci aiuta ad associare il numero e verificare la disponibilità.",
+        "brand_faq_q5": "ABCspareparts fornisce anche ricambi per sistemi MEASUREX più vecchi o non più in listino?",
+        "brand_faq_a5": "Sì. Cerchiamo scorte disponibili in tutta Europa. Se il ricambio richiesto non è più ottenibile, proponiamo – dopo consultazione – alternative compatibili o soluzioni successive.",
+        "brand_faq_q6": "Ricambi MEASUREX per numero di parte?",
+        "brand_faq_a6": "Sì. Inviateci il numero di parte tramite il modulo di richiesta o per e-mail. Verifichiamo disponibilità, tempo di consegna e condizioni per il ricambio richiesto o – se desiderato – alternative compatibili.",
+        "measurex_note": "MEASUREX è un marchio. Citato esclusivamente per identificare i prodotti. Informazioni su famiglie di prodotti e applicazioni basate su fonti pubbliche. Aggiornamento: ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios MEASUREX por número de pieza – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios MEASUREX para sistemas de medición y escáneres de calidad en la producción de papel y láminas. Envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "MEASUREX – recambios para sistemas de medición de calidad en la producción de papel y láminas",
+        "brand_intro": "ABCspareparts suministra recambios MEASUREX – componentes de escáner y medición, conjuntos de control, piezas de desgaste – para sistemas de medición de calidad en la producción de láminas. Envíe el número de pieza – solemos responder en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad y, cuando es técnicamente adecuado, alternativas compatibles o modelos sucesores. Esta página no es un listado en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "measurex_about_title": "Sobre MEASUREX",
+        "measurex_about_text": "<p>MEASUREX designa el control de proceso y de calidad asistido por ordenador, sobre todo en la fabricación de papel. La gama incluía sistemas de control y sensores de barrido para propiedades del papel como gramaje, humedad, espesor y color. Estos sistemas se usan en máquinas de papel y procesos de lámina afines; generaciones posteriores de esta técnica de medición aparecen en escáneres industriales de control de calidad.</p>",
+        "measurex_products_title": "Familias de productos MEASUREX típicos",
+        "measurex_products_list": "<li>Sistemas de control de calidad por barrido para máquinas de papel</li><li>Sensores de gramaje, humedad, espesor y color o blancura</li><li>Bastidores de escáner y cabezales de medición para procesos de banda</li><li>Sistemas de control y cálculo para la calidad de la hoja</li><li>Conjuntos electrónicos, por ejemplo controladores de escáner o de bastidor</li><li>Piezas mecánicas de escáner y piezas de desgaste</li>",
+        "measurex_apps_title": "Aplicaciones típicas",
+        "measurex_apps_list": "<li>Producción de pasta y papel</li><li>Cartón y tissue</li><li>Películas plásticas y plásticos en banda</li><li>Metales (procesos de laminación)</li><li>Caucho y procesos de calandrado</li><li>No tejidos e impresión</li>",
+        "measurex_parts_id_title": "Cómo identificar el número de pieza correcto",
+        "measurex_parts_id_intro": "Para un presupuesto rápido, envíenos:",
+        "measurex_parts_id_list": "<li>Número de pieza del componente, de la placa o de la documentación</li><li>Foto de la placa (máquina, escáner o control)</li><li>Foto del componente defectuoso (p. ej. cabezal de medición, placa de control, conjunto de bastidor)</li><li>Aplicación (p. ej. máquina de papel, banda de film)</li><li>Breve descripción: ¿qué está defectuoso?</li><li>Cantidad y fecha de entrega requerida</li>",
+        "brand_faq_q4": "¿Cómo identifico el número de pieza correcto para mi equipo MEASUREX?",
+        "brand_faq_a4": "El número de pieza suele estar en una etiqueta en el componente, en la placa de la máquina o en la documentación técnica. Una foto de la placa y del componente nos ayuda a asociar el número y comprobar la disponibilidad.",
+        "brand_faq_q5": "¿ABCspareparts también suministra recambios para sistemas MEASUREX antiguos o que ya no figuran en lista?",
+        "brand_faq_a5": "Sí. Buscamos existencias disponibles en toda Europa. Si la pieza solicitada ya no se obtiene, proponemos – tras consulta – alternativas compatibles o soluciones sucesoras.",
+        "brand_faq_q6": "¿Recambios MEASUREX por número de pieza?",
+        "brand_faq_a6": "Sí. Envíenos el número de pieza a través del formulario de solicitud o por correo electrónico. Comprobamos disponibilidad, plazo de entrega y condiciones para la pieza solicitada o – si se desea – alternativas compatibles.",
+        "measurex_note": "MEASUREX es una marca. Mencionada únicamente para identificar los productos. Información sobre familias de productos y aplicaciones basada en fuentes públicas. Actualización: octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces MEASUREX par numéro de pièce – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces MEASUREX pour systèmes de mesure et scanners qualité en production papier et feuilles. Envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "MEASUREX – pièces pour systèmes de mesure qualité en production papier et feuilles",
+        "brand_intro": "ABCspareparts fournit des pièces MEASUREX – composants de scanner et de mesure, ensembles de commande, pièces d’usure – pour systèmes de mesure qualité en production de feuilles. Envoyez le numéro de pièce – réponse en général sous 24 h.",
+        "brand_intro_p2": "Nous vérifions la disponibilité et, lorsque c’est techniquement pertinent, des alternatives compatibles ou des modèles successeurs. Cette page ne remplace pas une liste en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "measurex_about_title": "À propos de MEASUREX",
+        "measurex_about_text": "<p>MEASUREX désigne le contrôle de procédé et de qualité assisté par ordinateur, surtout dans la fabrication du papier. La gamme comprenait des systèmes de commande et des capteurs à balayage pour des propriétés du papier telles que grammage, humidité, épaisseur et couleur. Ces systèmes équipent les machines à papier et des procédés de feuille apparentés ; des générations ultérieures de cette technique de mesure se retrouvent dans les scanners industriels de contrôle qualité.</p>",
+        "measurex_products_title": "Familles de produits MEASUREX typiques",
+        "measurex_products_list": "<li>Systèmes de contrôle qualité à balayage pour machines à papier</li><li>Capteurs de grammage, d’humidité, d’épaisseur et de couleur ou de blancheur</li><li>Cadres de scanner et têtes de mesure pour procédés en bande</li><li>Systèmes de commande et de calcul pour la qualité de la feuille</li><li>Ensembles électroniques, par exemple contrôleurs de scanner ou de cadre</li><li>Pièces mécaniques de scanner et pièces d’usure</li>",
+        "measurex_apps_title": "Applications typiques",
+        "measurex_apps_list": "<li>Production de pâte et de papier</li><li>Carton et ouate (tissue)</li><li>Films plastiques et plastiques en bande</li><li>Métaux (procédés de laminage)</li><li>Caoutchouc et procédés de calandrage</li><li>Non-tissés et impression</li>",
+        "measurex_parts_id_title": "Comment identifier le bon numéro de pièce",
+        "measurex_parts_id_intro": "Pour un devis rapide, envoyez-nous :",
+        "measurex_parts_id_list": "<li>Numéro de pièce du composant, de la plaque ou de la documentation</li><li>Photo de la plaque signalétique (machine, scanner ou commande)</li><li>Photo du composant défectueux (p. ex. tête de mesure, carte de commande, ensemble de cadre)</li><li>Application (p. ex. machine à papier, bande de film)</li><li>Brève description : qu’est-ce qui est défectueux ?</li><li>Quantité et date de livraison souhaitée</li>",
+        "brand_faq_q4": "Comment identifier le bon numéro de pièce pour mon équipement MEASUREX ?",
+        "brand_faq_a4": "Le numéro de pièce se trouve généralement sur une étiquette sur le composant, sur la plaque de la machine ou dans la documentation technique. Une photo de la plaque et du composant nous aide à associer le numéro et vérifier la disponibilité.",
+        "brand_faq_q5": "ABCspareparts fournit-il également des pièces pour des systèmes MEASUREX anciens ou qui ne figurent plus en liste ?",
+        "brand_faq_a5": "Oui. Nous recherchons des stocks disponibles dans toute l’Europe. Si la pièce demandée n’est plus obtenable, nous proposons – après consultation – des alternatives compatibles ou des solutions successeurs.",
+        "brand_faq_q6": "Pièces MEASUREX par numéro de pièce ?",
+        "brand_faq_a6": "Oui. Envoyez-nous le numéro de pièce via le formulaire de demande ou par e-mail. Nous vérifions disponibilité, délai de livraison et conditions pour la pièce demandée ou – si souhaité – des alternatives compatibles.",
+        "measurex_note": "MEASUREX est une marque. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur des sources publiques. Mise à jour : octobre 2026."
+      }
+    }
+  },
+  "powasert": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "blocks": [
+      {
+        "type": "info",
+        "id": "powasert-about",
+        "className": "brand-info",
+        "titleKey": "powasert_about_title",
+        "bodyKey": "powasert_about_text"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "powasert-products",
+            "className": "brand-info",
+            "titleKey": "powasert_products_title",
+            "listKey": "powasert_products_list",
+            "listClass": "brand-list"
+          },
+          {
+            "type": "info",
+            "id": "powasert-apps",
+            "className": "brand-info",
+            "titleKey": "powasert_apps_title",
+            "listKey": "powasert_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          }
+        ]
+      },
+      {
+        "type": "info",
+        "id": "powasert-parts-id",
+        "className": "brand-info brand-info-accent",
+        "titleKey": "powasert_parts_id_title",
+        "introKey": "powasert_parts_id_intro",
+        "listKey": "powasert_parts_id_list",
+        "listClass": "brand-list brand-list-check"
+      }
+    ],
+    "related_slugs": [
+      "desoutter",
+      "atlas-copco",
+      "festo",
+      "elumatec"
+    ],
+    "related_labels": {
+      "desoutter": "Desoutter",
+      "atlas-copco": "Atlas Copco",
+      "festo": "Festo",
+      "elumatec": "Elumatec"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "powasert_note",
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@type": "Brand",
+        "name": "Powasert"
+      },
+      "mentions": [
+        {
+          "name": "Powasert Schraubenzuführgerät",
+          "category": "Schraubtechnik"
+        },
+        {
+          "name": "Powasert Vorschub-Schraubeinheit",
+          "category": "Montageautomation"
+        },
+        {
+          "name": "Powasert Einbaumotor",
+          "category": "Druckluftschrauber"
+        }
+      ],
+      "extra": []
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "Powasert Ersatzteile & Spare Parts nach Teilenummer – Angebot in 24h | ABCspareparts",
+        "meta_description": "Powasert Ersatzteile für Schraubenzuführung und Schraubtechnik in der Montage. Teilenummer senden – Angebot oft in 24 h.",
+        "brand_h1": "Powasert – Ersatzteile für Schraubenzuführung und automatische Schraubtechnik",
+        "brand_intro": "ABCspareparts beschafft Powasert Ersatzteile – Schraubenzuführungen, Schrauber, Einbaumotoren, Verschleißteile – für automatische Schraubtechnik in der Montage. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
+        "brand_intro_p2": "Wir prüfen die Verfügbarkeit und, wo technisch sinnvoll, kompatible Alternativen oder Nachfolgemodelle. Diese Seite ersetzt keine Live-Bestandsliste: Nutzen Sie bitte die unverbindliche <a href=\"#contact\">Anfrage</a>.",
+        "powasert_about_title": "Über Powasert",
+        "powasert_about_text": "<p>Powasert bezeichnet Schraubenzuführgeräte und Schraubtechnik zum Einbringen von Schrauben in Holz, Kunststoff und Metall. Das Sortiment umfasst handgeführte und stationäre Schrauber, Schraubenzuführungen, Schraubenverteiler, Vorschubeinheiten sowie Verschleißteile wie Bits, Bit-Halter, Backen und Zuführschläuche. Die Geräte werden oft an kundenspezifische Montageaufgaben angepasst.</p>",
+        "powasert_products_title": "Typische Powasert Produktfamilien",
+        "powasert_products_list": "<li>Schraubenzuführgeräte für Handschrauber und stationäre Einheiten</li><li>Handschrauber (Pistolengriff und Stabschrauber)</li><li>Stationäre Schrauber und Vorschub-Schraubeinheiten für Sondermaschinen</li><li>Schraubenverteiler</li><li>Einbaumotoren bzw. Druckluftschrauber zum Einbau in kundenspezifische Anlagen</li><li>Verschleißteile: Bits, Bit-Halter, Backen, Zuführschläuche</li><li>Federzüge und Werkzeughalter</li>",
+        "powasert_apps_title": "Typische Einsatzbereiche",
+        "powasert_apps_list": "<li>Einschrauben in Holz, Kunststoff und Metall</li><li>Fenster- und Türenfertigung (Beschlag- und Armierungsbefestigung)</li><li>Möbelindustrie</li><li>Montagearbeitsplätze</li><li>Kundenspezifische Montageanlagen</li>",
+        "powasert_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
+        "powasert_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
+        "powasert_parts_id_list": "<li>Teilenummer vom Gerät, Typenschild oder aus dem Katalog</li><li>Foto des Typenschilds (Modellbezeichnung)</li><li>Foto der defekten Komponente (z. B. Motor, Bit-Halter, Zuführschlauch, Backen)</li><li>Anwendung (z. B. Fenstermontage, Möbel, Metallbaugruppe)</li><li>Kurzbeschreibung: Was ist defekt?</li><li>Menge und gewünschter Liefertermin</li>",
+        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein Powasert-Gerät?",
+        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil, auf dem Typenschild des Geräts oder in der technischen Dokumentation. Ein Foto des Typenschilds und der Komponente hilft uns, die Nummer zuzuordnen und die Verfügbarkeit zu prüfen.",
+        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder nicht mehr gelistete Powasert-Anlagen?",
+        "brand_faq_a5": "Ja. Wir suchen europaweit nach verfügbaren Beständen. Ist das angefragte Teil nicht mehr erhältlich, schlagen wir nach Rücksprache kompatible Alternativen oder Nachfolgelösungen vor.",
+        "brand_faq_q6": "Powasert Ersatzteile nach Teilenummer?",
+        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Konditionen für das angefragte Teil oder – wenn gewünscht – kompatible Alternativen.",
+        "powasert_note": "Powasert ist eine Marke. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Einsatzbereichen basieren auf öffentlich zugänglichen Informationen. Stand: Oktober 2026."
+      },
+      "en": {
+        "meta_title": "Powasert spare parts by part number – quote within 24h | ABCspareparts",
+        "meta_description": "Powasert spare parts for screw feeding and screwdriving equipment in assembly. Send part number – quote often within 24 h.",
+        "brand_h1": "Powasert – spare parts for screw feeding and automatic screwdriving",
+        "brand_intro": "ABCspareparts sources Powasert spare parts – screw feeders, screwdrivers, built-in motors, wear parts – for automatic screwdriving in assembly. Send the part number – we usually reply within 24 hours.",
+        "brand_intro_p2": "We check availability and, where technically appropriate, compatible alternatives or successor models. This page is not a live stock list: please use the non-binding <a href=\"#contact\">request</a>.",
+        "powasert_about_title": "About Powasert",
+        "powasert_about_text": "<p>Powasert refers to screw feeders and screwdriving equipment for inserting screws into wood, plastics and metal. The range includes handheld and stationary screwdrivers, screw feeders, screw distributors, advancing units, and wear parts such as bits, bit holders, jaws and feed hoses. The equipment is often adapted to customer-specific assembly tasks.</p>",
+        "powasert_products_title": "Typical Powasert product families",
+        "powasert_products_list": "<li>Screw feeders for handheld screwdrivers and stationary units</li><li>Handheld screwdrivers (pistol grip and straight-handle)</li><li>Stationary screwdrivers and advancing units for custom machines</li><li>Screw distributors</li><li>Built-in motors or pneumatic screwdrivers for installation in customer equipment</li><li>Wear parts: bits, bit holders, jaws, screw feed hoses</li><li>Spring balancers and tool holders</li>",
+        "powasert_apps_title": "Typical applications",
+        "powasert_apps_list": "<li>Driving screws into wood, plastics and metal</li><li>Window and door manufacturing (hardware and reinforcement fastening)</li><li>Furniture industry</li><li>Assembly workstations</li><li>Custom assembly machines</li>",
+        "powasert_parts_id_title": "How to identify the correct part number",
+        "powasert_parts_id_intro": "For a fast quote, send us:",
+        "powasert_parts_id_list": "<li>Part number from the device, nameplate or catalogue</li><li>Photo of the nameplate (model designation)</li><li>Photo of the defective component (e.g. motor, bit holder, feed hose, jaws)</li><li>Application (e.g. window assembly, furniture, metal assembly)</li><li>Brief description: what is defective?</li><li>Quantity and required delivery date</li>",
+        "brand_faq_q4": "How do I identify the correct part number for my Powasert equipment?",
+        "brand_faq_a4": "The part number is usually on a label on the component, on the device nameplate, or in the technical documentation. A photo of the nameplate and component helps us match the number and check availability.",
+        "brand_faq_q5": "Does ABCspareparts also source spare parts for older or no longer listed Powasert systems?",
+        "brand_faq_a5": "Yes. We search across Europe for remaining stock. If the requested part is no longer available, we propose – after consultation – compatible alternatives or successor solutions.",
+        "brand_faq_q6": "Powasert spare parts by part number?",
+        "brand_faq_a6": "Yes. Send us the part number via the request form or by email. We check availability, lead time and terms for the requested part or – if desired – compatible alternatives.",
+        "powasert_note": "Powasert is a trademark. Mentioned solely to identify the products. Product family and application information is based on publicly available sources. As of October 2026."
+      },
+      "it": {
+        "meta_title": "Ricambi Powasert per numero di parte – preventivo in 24h | ABCspareparts",
+        "meta_description": "Ricambi Powasert per alimentazione viti e avvitatura in montaggio. Inviate il codice – preventivo spesso in 24 h.",
+        "brand_h1": "Powasert – ricambi per alimentazione viti e avvitatura automatica",
+        "brand_intro": "ABCspareparts fornisce ricambi Powasert – alimentatori di viti, avvitatori, motori da incasso, parti di usura – per avvitatura automatica in montaggio. Inviate il numero di parte – di solito rispondiamo entro 24 ore.",
+        "brand_intro_p2": "Verifichiamo la disponibilità e, se tecnicamente adatto, alternative compatibili o modelli successori. Questa pagina non sostituisce un elenco live: usate la <a href=\"#contact\">richiesta senza impegno</a>.",
+        "powasert_about_title": "Su Powasert",
+        "powasert_about_text": "<p>Powasert indica alimentatori di viti e tecnica di avvitatura per inserire viti in legno, plastica e metallo. La gamma comprende avvitatori portatili e stazionari, alimentatori, distributori di viti, unità di avanzamento e parti di usura come inserti, porta-inserti, ganasce e tubi di alimentazione. Gli apparecchi sono spesso adattati a compiti di montaggio specifici del cliente.</p>",
+        "powasert_products_title": "Famiglie di prodotti Powasert tipici",
+        "powasert_products_list": "<li>Alimentatori di viti per avvitatori portatili e unità stazionarie</li><li>Avvitatori portatili (impugnatura a pistola e avvitatori diritti)</li><li>Avvitatori stazionari e unità di avanzamento per macchine speciali</li><li>Distributori di viti</li><li>Motori da incasso o avvitatori pneumatici per l’installazione in impianti del cliente</li><li>Parti di usura: inserti, porta-inserti, ganasce, tubi di alimentazione viti</li><li>Bilanciatori a molla e portautensili</li>",
+        "powasert_apps_title": "Applicazioni tipiche",
+        "powasert_apps_list": "<li>Avvitatura in legno, plastica e metallo</li><li>Produzione di finestre e porte (fissaggio di ferramenta e armature)</li><li>Industria del mobile</li><li>Postazioni di montaggio</li><li>Impianti di montaggio su specifica del cliente</li>",
+        "powasert_parts_id_title": "Come identificare il numero di parte corretto",
+        "powasert_parts_id_intro": "Per un preventivo rapido, inviateci:",
+        "powasert_parts_id_list": "<li>Numero di parte dall’apparecchio, dalla targhetta o dal catalogo</li><li>Foto della targhetta (designazione del modello)</li><li>Foto del componente difettoso (es. motore, porta-inserti, tubo di alimentazione, ganasce)</li><li>Applicazione (es. montaggio finestre, mobili, assieme metallico)</li><li>Breve descrizione: cosa è difettoso?</li><li>Quantità e data di consegna richiesta</li>",
+        "brand_faq_q4": "Come identifico il numero di parte corretto per la mia apparecchiatura Powasert?",
+        "brand_faq_a4": "Il numero di parte si trova solitamente su un’etichetta sul componente, sulla targhetta dell’apparecchio o nella documentazione tecnica. Una foto della targhetta e del componente ci aiuta ad associare il numero e verificare la disponibilità.",
+        "brand_faq_q5": "ABCspareparts fornisce anche ricambi per sistemi Powasert più vecchi o non più in listino?",
+        "brand_faq_a5": "Sì. Cerchiamo scorte disponibili in tutta Europa. Se il ricambio richiesto non è più ottenibile, proponiamo – dopo consultazione – alternative compatibili o soluzioni successive.",
+        "brand_faq_q6": "Ricambi Powasert per numero di parte?",
+        "brand_faq_a6": "Sì. Inviateci il numero di parte tramite il modulo di richiesta o per e-mail. Verifichiamo disponibilità, tempo di consegna e condizioni per il ricambio richiesto o – se desiderato – alternative compatibili.",
+        "powasert_note": "Powasert è un marchio. Citato esclusivamente per identificare i prodotti. Informazioni su famiglie di prodotti e applicazioni basate su fonti pubbliche. Aggiornamento: ottobre 2026."
+      },
+      "es": {
+        "meta_title": "Recambios Powasert por número de pieza – presupuesto en 24h | ABCspareparts",
+        "meta_description": "Recambios Powasert para alimentación de tornillos y atornillado en montaje. Envíe el número – presupuesto a menudo en 24 h.",
+        "brand_h1": "Powasert – recambios para alimentación de tornillos y atornillado automático",
+        "brand_intro": "ABCspareparts suministra recambios Powasert – alimentadores de tornillos, atornilladores, motores de empotramiento, piezas de desgaste – para atornillado automático en montaje. Envíe el número de pieza – solemos responder en 24 horas.",
+        "brand_intro_p2": "Comprobamos la disponibilidad y, cuando es técnicamente adecuado, alternativas compatibles o modelos sucesores. Esta página no es un listado en tiempo real: utilice la <a href=\"#contact\">solicitud sin compromiso</a>.",
+        "powasert_about_title": "Sobre Powasert",
+        "powasert_about_text": "<p>Powasert designa alimentadores de tornillos y técnica de atornillado para insertar tornillos en madera, plástico y metal. La gama incluye atornilladores manuales y estacionarios, alimentadores, distribuidores de tornillos, unidades de avance y piezas de desgaste como puntas, portapuntas, mordazas y mangueras de alimentación. Los equipos suelen adaptarse a tareas de montaje específicas del cliente.</p>",
+        "powasert_products_title": "Familias de productos Powasert típicos",
+        "powasert_products_list": "<li>Alimentadores de tornillos para atornilladores manuales y unidades estacionarias</li><li>Atornilladores manuales (empuñadura de pistola y atornilladores rectos)</li><li>Atornilladores estacionarios y unidades de avance para máquinas especiales</li><li>Distribuidores de tornillos</li><li>Motores de empotramiento o atornilladores neumáticos para instalación en equipos del cliente</li><li>Piezas de desgaste: puntas, portapuntas, mordazas, mangueras de alimentación</li><li>Equilibradores de muelle y soportes de herramientas</li>",
+        "powasert_apps_title": "Aplicaciones típicas",
+        "powasert_apps_list": "<li>Atornillado en madera, plástico y metal</li><li>Fabricación de ventanas y puertas (fijación de herrajes y refuerzos)</li><li>Industria del mueble</li><li>Puestos de montaje</li><li>Instalaciones de montaje a medida del cliente</li>",
+        "powasert_parts_id_title": "Cómo identificar el número de pieza correcto",
+        "powasert_parts_id_intro": "Para un presupuesto rápido, envíenos:",
+        "powasert_parts_id_list": "<li>Número de pieza del aparato, de la placa o del catálogo</li><li>Foto de la placa (designación del modelo)</li><li>Foto del componente defectuoso (p. ej. motor, portapuntas, manguera de alimentación, mordazas)</li><li>Aplicación (p. ej. montaje de ventanas, muebles, conjunto metálico)</li><li>Breve descripción: ¿qué está defectuoso?</li><li>Cantidad y fecha de entrega requerida</li>",
+        "brand_faq_q4": "¿Cómo identifico el número de pieza correcto para mi equipo Powasert?",
+        "brand_faq_a4": "El número de pieza suele estar en una etiqueta en el componente, en la placa del aparato o en la documentación técnica. Una foto de la placa y del componente nos ayuda a asociar el número y comprobar la disponibilidad.",
+        "brand_faq_q5": "¿ABCspareparts también suministra recambios para sistemas Powasert antiguos o que ya no figuran en lista?",
+        "brand_faq_a5": "Sí. Buscamos existencias disponibles en toda Europa. Si la pieza solicitada ya no se obtiene, proponemos – tras consulta – alternativas compatibles o soluciones sucesoras.",
+        "brand_faq_q6": "¿Recambios Powasert por número de pieza?",
+        "brand_faq_a6": "Sí. Envíenos el número de pieza a través del formulario de solicitud o por correo electrónico. Comprobamos disponibilidad, plazo de entrega y condiciones para la pieza solicitada o – si se desea – alternativas compatibles.",
+        "powasert_note": "Powasert es una marca. Mencionada únicamente para identificar los productos. Información sobre familias de productos y aplicaciones basada en fuentes públicas. Actualización: octubre de 2026."
+      },
+      "fr": {
+        "meta_title": "Pièces Powasert par numéro de pièce – devis sous 24h | ABCspareparts",
+        "meta_description": "Pièces Powasert pour alimentation de vis et vissage en assemblage. Envoyez le numéro – devis souvent sous 24 h.",
+        "brand_h1": "Powasert – pièces pour alimentation de vis et vissage automatique",
+        "brand_intro": "ABCspareparts fournit des pièces Powasert – alimentateurs de vis, visseuses, moteurs encastrables, pièces d’usure – pour le vissage automatique en assemblage. Envoyez le numéro de pièce – réponse en général sous 24 h.",
+        "brand_intro_p2": "Nous vérifions la disponibilité et, lorsque c’est techniquement pertinent, des alternatives compatibles ou des modèles successeurs. Cette page ne remplace pas une liste en temps réel : utilisez la <a href=\"#contact\">demande sans engagement</a>.",
+        "powasert_about_title": "À propos de Powasert",
+        "powasert_about_text": "<p>Powasert désigne des alimentateurs de vis et une technique de vissage pour insérer des vis dans le bois, le plastique et le métal. La gamme comprend des visseuses portatives et stationnaires, des alimentateurs, des répartiteurs de vis, des unités d’avance ainsi que des pièces d’usure telles que embouts, porte-embouts, mors et tuyaux d’alimentation. Les équipements sont souvent adaptés à des tâches d’assemblage spécifiques au client.</p>",
+        "powasert_products_title": "Familles de produits Powasert typiques",
+        "powasert_products_list": "<li>Alimentateurs de vis pour visseuses portatives et unités stationnaires</li><li>Visseuses portatives (poignée pistolet et visseuses droites)</li><li>Visseuses stationnaires et unités d’avance pour machines spéciales</li><li>Répartiteurs de vis</li><li>Moteurs encastrables ou visseuses pneumatiques à monter dans des installations du client</li><li>Pièces d’usure : embouts, porte-embouts, mors, tuyaux d’alimentation de vis</li><li>Équilibreurs à ressort et supports d’outils</li>",
+        "powasert_apps_title": "Applications typiques",
+        "powasert_apps_list": "<li>Vissage dans le bois, le plastique et le métal</li><li>Fabrication de fenêtres et de portes (fixation de quincaillerie et d’armatures)</li><li>Industrie du meuble</li><li>Postes d’assemblage</li><li>Installations d’assemblage sur mesure</li>",
+        "powasert_parts_id_title": "Comment identifier le bon numéro de pièce",
+        "powasert_parts_id_intro": "Pour un devis rapide, envoyez-nous :",
+        "powasert_parts_id_list": "<li>Numéro de pièce de l’appareil, de la plaque ou du catalogue</li><li>Photo de la plaque signalétique (désignation du modèle)</li><li>Photo du composant défectueux (p. ex. moteur, porte-embouts, tuyau d’alimentation, mors)</li><li>Application (p. ex. montage de fenêtres, meubles, ensemble métallique)</li><li>Brève description : qu’est-ce qui est défectueux ?</li><li>Quantité et date de livraison souhaitée</li>",
+        "brand_faq_q4": "Comment identifier le bon numéro de pièce pour mon équipement Powasert ?",
+        "brand_faq_a4": "Le numéro de pièce se trouve généralement sur une étiquette sur le composant, sur la plaque de l’appareil ou dans la documentation technique. Une photo de la plaque et du composant nous aide à associer le numéro et vérifier la disponibilité.",
+        "brand_faq_q5": "ABCspareparts fournit-il également des pièces pour des systèmes Powasert anciens ou qui ne figurent plus en liste ?",
+        "brand_faq_a5": "Oui. Nous recherchons des stocks disponibles dans toute l’Europe. Si la pièce demandée n’est plus obtenable, nous proposons – après consultation – des alternatives compatibles ou des solutions successeurs.",
+        "brand_faq_q6": "Pièces Powasert par numéro de pièce ?",
+        "brand_faq_a6": "Oui. Envoyez-nous le numéro de pièce via le formulaire de demande ou par e-mail. Nous vérifions disponibilité, délai de livraison et conditions pour la pièce demandée ou – si souhaité – des alternatives compatibles.",
+        "powasert_note": "Powasert est une marque. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur des sources publiques. Mise à jour : octobre 2026."
+      }
+    }
   }
 }
