@@ -36,7 +36,11 @@ const EXCLUDED_BRANDS = [
   'keysight-technologies',
   'markem',
   'markem imaje',
-  'markem-imaje'
+  'markem-imaje',
+  'axiomtek / markem-imaje',
+  'axiomtek / markem imaje',
+  'axiomtek-markem-imaje',
+  'axiomtek markem imaje'
 ];
 
 const { searchIndexPageField, sanitizePartCode, isSearchablePartCode } = require('./part-page-paths.js');

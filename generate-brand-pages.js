@@ -17,7 +17,11 @@ const EXCLUDED_BRANDS = [
   'keysight-technologies',
   'markem',
   'markem imaje',
-  'markem-imaje'
+  'markem-imaje',
+  'axiomtek / markem-imaje',
+  'axiomtek / markem imaje',
+  'axiomtek-markem-imaje',
+  'axiomtek markem imaje'
 ];
 
 function normalizeExcludedKey(str) {
@@ -1831,7 +1835,8 @@ function main() {
   const rows = assignUniqueSlugs(brands);
   
   // Filter out excluded brands (exact name/slug match after normalization).
-  // Substring matching is avoided so AXIOMTEK / MARKEM-IMAJE is not treated as Markem.
+  // Substring matching is avoided so plain AXIOMTEK is not treated as the
+  // excluded combined brand AXIOMTEK / MARKEM-IMAJE (or as Markem).
   const filteredRows = rows.filter((r) => !isExcludedBrand(r.brand || r.name, r.slug));
   
   const partsBySlug = loadPartsBySlug();
