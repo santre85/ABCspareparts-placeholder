@@ -32,7 +32,11 @@ const path = require('path');
 
 const EXCLUDED_BRANDS = [
   'keysight',
-  'keysight technologies'
+  'keysight technologies',
+  'keysight-technologies',
+  'markem',
+  'markem imaje',
+  'markem-imaje'
 ];
 
 const { searchIndexPageField, sanitizePartCode, isSearchablePartCode } = require('./part-page-paths.js');

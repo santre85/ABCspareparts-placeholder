@@ -15,7 +15,14 @@ const ROOT = __dirname;
 const SEARCH_INDEX_PATH = path.join(ROOT, 'search-index.json');
 const PARTS_DIR = path.join(ROOT, 'parts');
 
-const EXCLUDED_BRANDS = ['keysight', 'keysight technologies'];
+const EXCLUDED_BRANDS = [
+  'keysight',
+  'keysight technologies',
+  'keysight-technologies',
+  'markem',
+  'markem imaje',
+  'markem-imaje'
+];
 
 function normalizeForComparison(str) {
   return (str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');

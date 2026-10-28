@@ -27,8 +27,21 @@ const MAX_DESC_LEN = 120;
  */
 const EXCLUDED_BRANDS = [
   'keysight',
-  'keysight technologies'
+  'keysight technologies',
+  'keysight-technologies',
+  'markem',
+  'markem imaje',
+  'markem-imaje'
 ];
+
+function normalizeExcludedKey(str) {
+  return String(str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+}
+
+function isExcludedBrand(brandName) {
+  const normalized = normalizeExcludedKey(brandName);
+  return EXCLUDED_BRANDS.some((ex) => normalizeExcludedKey(ex) === normalized);
+}
 
 /**
  * Manual overrides for brand name normalization
@@ -183,9 +196,9 @@ function groupByBrand(items, brandSlugs) {
   const unmatched = new Map();
   
   for (const item of items) {
-    // Check if brand is excluded
-    const brandLower = item.brand.toLowerCase();
-    if (EXCLUDED_BRANDS.some(ex => brandLower === ex.toLowerCase() || brandLower.includes(ex.toLowerCase()))) {
+    // Check if brand is excluded (exact match after normalization; does not
+    // drop AXIOMTEK / MARKEM-IMAJE when excluding Markem / Markem Imaje).
+    if (isExcludedBrand(item.brand)) {
       continue;
     }
     
