@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact) + erp-items.json (viqua) + erp-items.json (pitco) + erp-items.json (m-and-s-armaturen)",
-  "generated": "2026-10-27",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact) + erp-items.json (viqua) + erp-items.json (pitco) + erp-items.json (m-and-s-armaturen) + erp-items.json (measurex) + erp-items.json (powasert)",
+  "generated": "2026-10-28",
   "listini_files": 301648,
   "brands": [
     {
@@ -1356,6 +1356,16 @@
       ]
     },
     {
+      "brand": "MEASUREX",
+      "brand_slug": "measurex",
+      "parts": [
+        {
+          "part_number": "365-8050-0097-RP",
+          "description": "PCBA Frame Controller IV(Refurb)"
+        }
+      ]
+    },
+    {
       "brand": "Mellor Electric",
       "brand_slug": "mellor-electric",
       "parts": [
@@ -1952,6 +1962,16 @@
         {
           "part_number": "Wellrohr XPCSG-NW17-21,2/15,2 PA XPCSG-*",
           "description": "Size/dimension: NW17-21,2/15,2 Werkstoff: PA"
+        }
+      ]
+    },
+    {
+      "brand": "Powasert",
+      "brand_slug": "powasert",
+      "parts": [
+        {
+          "part_number": "ADS-2290RDKPL",
+          "description": "Motor"
         }
       ]
     },

@@ -63,7 +63,10 @@ const BRAND_OVERRIDES = {
   // New brand pages for October 2026 ERP update
   'MULAG': 'MULAG',
   'SIGLOCH': 'SIGLOCH',
-  'Mtu': 'MTU'
+  'Mtu': 'MTU',
+  // New brand pages approved 2026-10-28 (previously unmatched in PR #103)
+  'MEASUREX': 'MEASUREX',
+  'Powasert': 'Powasert'
   // ABC - skipped as ambiguous (multiple ABC brands exist)
 };
 

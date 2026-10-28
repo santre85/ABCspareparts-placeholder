@@ -17,7 +17,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-140 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302145 part references.
+142 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302147 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -89,6 +89,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [M+S Hydraulic](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html): MMS50C
 - [MADATEC](https://abcspareparts.eu/marche/madatec.html): B-SC9291, V947
 - [Matrix Elektronik](https://abcspareparts.eu/marche/matrix-elektronik.html): IRS-U-4A
+- [MEASUREX](https://abcspareparts.eu/marche/measurex.html): 365-8050-0097-RP
 - [Mellor Electric](https://abcspareparts.eu/marche/mellor-electric.html): MREL119040212213
 - [Mettler Toledo](https://abcspareparts.eu/marche/mettler-toledo.html): 119106, 119171, 51119547, 51119999
 - [Mori Seiki](https://abcspareparts.eu/marche/mori-seiki.html): RIBSTAR BELT 15PK2008
@@ -109,6 +110,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [PITCO](https://abcspareparts.eu/marche/pitco.html): 42000330, PT00004423
 - [Pizzato](https://abcspareparts.eu/marche/pizzato.html): BNAC3EA01, CS ME-03XU24
 - [PMA](https://abcspareparts.eu/marche/pma.html): Sechskantmutter MM-SW19/M16x1,5 2,8 Ms *, Wellrohr XPCSG-NW17-21,2/15,2 PA XPCSG-*
+- [Powasert](https://abcspareparts.eu/marche/powasert.html): ADS-2290RDKPL
 - [PRONOMIC](https://abcspareparts.eu/marche/pronomic.html): 220390, Prog. 1211 Controller – Typ 20001A-70E R
 - [Qualitrol](https://abcspareparts.eu/marche/qualitrol.html): AKM345-00430540, AKM345-00430857
 - [Radio Energie](https://abcspareparts.eu/marche/radio-energie.html): TTN0507, TTN0507RE.0
@@ -1515,6 +1517,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [MADATEC B-SC9291](https://abcspareparts.eu/marche/madatec.html#quote=B-SC9291) — RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5…
 - [MADATEC V947](https://abcspareparts.eu/marche/madatec.html#quote=V947) — 1.5ML AMBER 9MM SCREW VIAL W/WRITE- ON SPOT,11.6*32MM, 7.0 TYPE GLASS ( 100 PCS PACK) -EQUIV.AGILENT 5182-0516
 - [Matrix Elektronik IRS-U-4A](https://abcspareparts.eu/marche/matrix-elektronik.html#quote=IRS-U-4A) — Sensore 20/28 VDC, uscita 0/10 VDC, cavo 3 m, distanza 400 mm
+- [MEASUREX 365-8050-0097-RP](https://abcspareparts.eu/marche/measurex.html#quote=365-8050-0097-RP) — PCBA Frame Controller IV(Refurb)
 - [Mellor Electric MREL119040212213](https://abcspareparts.eu/marche/mellor-electric.html#quote=MREL119040212213) — BRUSHLESS,DC MOTOR,24VDC,2346RPMP/N: DCB2106
 - [Mettler Toledo 119106](https://abcspareparts.eu/parts/mettler-toledo/119106.html) — Heizelement DSC
 - [Mettler Toledo 119171](https://abcspareparts.eu/parts/mettler-toledo/119171.html) — PT100 Sensor DSC820/821E
@@ -1635,6 +1638,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Pizzato CS ME-03XU24](https://abcspareparts.eu/marche/pizzato.html#quote=CS%20ME-03XU24) — Expansion module
 - [PMA Sechskantmutter MM-SW19/M16x1,5 2,8 Ms *](https://abcspareparts.eu/marche/pma.html#quote=Sechskantmutter%20MM-SW19%2FM16x1%2C5%202%2C8%20Ms%20*) — Size/dimension: SW19/M16X1,5 2,8 Werkstoff: Ms GalNi
 - [PMA Wellrohr XPCSG-NW17-21,2/15,2 PA XPCSG-*](https://abcspareparts.eu/marche/pma.html#quote=Wellrohr%20XPCSG-NW17-21%2C2%2F15%2C2%20PA%20XPCSG-*) — Size/dimension: NW17-21,2/15,2 Werkstoff: PA
+- [Powasert ADS-2290RDKPL](https://abcspareparts.eu/marche/powasert.html#quote=ADS-2290RDKPL) — Motor
 - [PRONOMIC 220390](https://abcspareparts.eu/parts/pronomic/220390.html) — Charger LiftDrive
 - [PRONOMIC Prog. 1211 Controller – Typ 20001A-70E R](https://abcspareparts.eu/marche/pronomic.html#quote=Prog.%201211%20Controller%20%E2%80%93%20Typ%2020001A-70E%20R)
 - [Qualitrol AKM345-00430540](https://abcspareparts.eu/marche/qualitrol.html#quote=AKM345-00430540) — (Replace: AKM345-00230846)Oil Temperature / Winding Temperature Indicator AKM345Oil sump temperature indicator, Gen3, s…
@@ -1920,7 +1924,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 140 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 142 high-priority brand URLs
 - [Other unique-content brand pages](https://abcspareparts.eu/sitemap-brands.xml) — curated copy, not the thin 12k template set
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
