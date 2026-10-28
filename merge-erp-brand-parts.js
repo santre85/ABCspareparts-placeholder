@@ -30,8 +30,21 @@ const ROOT = __dirname;
  */
 const EXCLUDED_BRANDS = [
   'keysight',
-  'keysight-technologies'
+  'keysight-technologies',
+  'keysight technologies',
+  'markem',
+  'markem-imaje',
+  'markem imaje'
 ];
+
+function normalizeExcludedKey(str) {
+  return String(str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+}
+
+function isExcludedBrand(brandSlug) {
+  const normalized = normalizeExcludedKey(brandSlug);
+  return EXCLUDED_BRANDS.some((ex) => normalizeExcludedKey(ex) === normalized);
+}
 
 function normalizePart(value) {
   return String(value || '')
@@ -146,9 +159,8 @@ function main(targetSlug) {
     process.exit(1);
   }
   
-  // Check if target brand is excluded
-  const targetLower = targetSlug.toLowerCase();
-  if (EXCLUDED_BRANDS.some(ex => targetLower === ex.toLowerCase() || targetLower.includes(ex.toLowerCase()))) {
+  // Check if target brand is excluded (exact slug/name match after normalization).
+  if (isExcludedBrand(targetSlug)) {
     console.error(`Error: Brand "${targetSlug}" is permanently excluded and cannot be merged.`);
     process.exit(1);
   }

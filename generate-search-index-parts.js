@@ -17,7 +17,7 @@
  * 
  * Skips any page that already exists (on disk, in sitemap-parts.xml, or
  * parts-mvp.json) including dotted vs dashed slug variants. Never overwrites
- * or renames live URLs. Excludes Keysight and unbranded items.
+ * or renames live URLs. Excludes Keysight, Markem, Markem Imaje, and unbranded items.
  */
 
 const fs = require('fs');
@@ -43,7 +43,23 @@ const ERP_ITEMS_PATH = path.join(ROOT, 'erp-items.json');
 const PARTS_DIR = path.join(ROOT, 'parts');
 const SITEMAP_PATH = path.join(ROOT, 'sitemap-search-index-parts.xml');
 
-const EXCLUDED_BRANDS = new Set(['Keysight']);
+const EXCLUDED_BRANDS = [
+  'keysight',
+  'keysight technologies',
+  'keysight-technologies',
+  'markem',
+  'markem imaje',
+  'markem-imaje'
+];
+
+function normalizeExcludedKey(str) {
+  return String(str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+}
+
+function isExcludedBrand(brandName) {
+  const normalized = normalizeExcludedKey(brandName);
+  return EXCLUDED_BRANDS.some((ex) => normalizeExcludedKey(ex) === normalized);
+}
 
 function escapeHtml(s) {
   return String(s || '')
@@ -405,7 +421,7 @@ function main() {
   
   const validParts = allParts.filter(p => {
     if (!p.b || !p.c || !p.s) return false;
-    if (EXCLUDED_BRANDS.has(p.b)) return false;
+    if (isExcludedBrand(p.b) || isExcludedBrand(p.s)) return false;
     return true;
   });
   

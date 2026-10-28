@@ -13,8 +13,24 @@ const { ICON_LINKS, collectIndexWorthySlugs } = require('./seo-config.js');
  */
 const EXCLUDED_BRANDS = [
   'keysight',
-  'keysight technologies'
+  'keysight technologies',
+  'keysight-technologies',
+  'markem',
+  'markem imaje',
+  'markem-imaje'
 ];
+
+function normalizeExcludedKey(str) {
+  return String(str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+}
+
+function isExcludedBrand(brandName, brandSlug) {
+  const keys = [brandName, brandSlug].filter(Boolean).map(normalizeExcludedKey);
+  return EXCLUDED_BRANDS.some((excluded) => {
+    const ex = normalizeExcludedKey(excluded);
+    return ex && keys.some((k) => k === ex);
+  });
+}
 
 const NAV_I18N = {
   de: {
@@ -1814,18 +1830,9 @@ function main() {
   const brands = readBrandsFromIndex();
   const rows = assignUniqueSlugs(brands);
   
-  // Filter out excluded brands
-  const filteredRows = rows.filter((r) => {
-    const brandName = (r.brand || r.name || '').toLowerCase();
-    const brandSlug = (r.slug || '').toLowerCase();
-    return !EXCLUDED_BRANDS.some(excluded => {
-      const ex = excluded.toLowerCase();
-      if (!ex) return false;
-      return brandName === ex || brandSlug === ex ||
-        (brandName && (brandName.includes(ex) || ex.includes(brandName))) ||
-        (brandSlug && (brandSlug.includes(ex) || ex.includes(brandSlug)));
-    });
-  });
+  // Filter out excluded brands (exact name/slug match after normalization).
+  // Substring matching is avoided so AXIOMTEK / MARKEM-IMAJE is not treated as Markem.
+  const filteredRows = rows.filter((r) => !isExcludedBrand(r.brand || r.name, r.slug));
   
   const partsBySlug = loadPartsBySlug();
   const worthySet = collectIndexWorthySlugs([...partsBySlug.keys()], TOP_BRAND_BY_SLUG);
@@ -1853,9 +1860,11 @@ function main() {
   let n = 0;
   for (let i = 0; i < rows.length; i++) {
     const { brand, slug } = rows[i];
+    if (isExcludedBrand(brand, slug)) continue;
     if (onlySlugs.length && !onlySlugs.includes(slug)) continue;
 
-    const relatedRows = relatedRowsFor(slug, rows, i, worthySet);
+    const relatedRows = relatedRowsFor(slug, rows, i, worthySet)
+      .filter((r) => !isExcludedBrand(r.brand, r.slug));
     const translations = buildTranslations(brand);
     mergeTopBrandContent(translations, slug);
     const brandParts = partsBySlug.get(slug) || null;
@@ -1874,12 +1883,12 @@ function main() {
     if (n % 500 === 0) console.log('Written', n, '/', targetRows.length);
   }
 
-  writeSitemapBrands(rows, partsBySlug);
+  writeSitemapBrands(filteredRows, partsBySlug);
   if (!onlySlugs.length) {
     writeSitemapIndex();
     fs.writeFileSync(
       path.join(ROOT, 'brand-slugs.json'),
-      JSON.stringify(rows.reduce((acc, { brand, slug }) => {
+      JSON.stringify(filteredRows.reduce((acc, { brand, slug }) => {
         acc[brand] = slug;
         return acc;
       }, {}), null, 0),
