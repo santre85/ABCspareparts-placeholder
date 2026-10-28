@@ -34,7 +34,11 @@ const EXCLUDED_BRANDS = [
   'keysight technologies',
   'markem',
   'markem-imaje',
-  'markem imaje'
+  'markem imaje',
+  'axiomtek / markem-imaje',
+  'axiomtek / markem imaje',
+  'axiomtek-markem-imaje',
+  'axiomtek markem imaje'
 ];
 
 function normalizeExcludedKey(str) {

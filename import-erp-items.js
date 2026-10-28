@@ -31,7 +31,11 @@ const EXCLUDED_BRANDS = [
   'keysight-technologies',
   'markem',
   'markem imaje',
-  'markem-imaje'
+  'markem-imaje',
+  'axiomtek / markem-imaje',
+  'axiomtek / markem imaje',
+  'axiomtek-markem-imaje',
+  'axiomtek markem imaje'
 ];
 
 function normalizeExcludedKey(str) {
@@ -197,7 +201,7 @@ function groupByBrand(items, brandSlugs) {
   
   for (const item of items) {
     // Check if brand is excluded (exact match after normalization; does not
-    // drop AXIOMTEK / MARKEM-IMAJE when excluding Markem / Markem Imaje).
+    // drop plain AXIOMTEK when excluding AXIOMTEK / MARKEM-IMAJE or Markem).
     if (isExcludedBrand(item.brand)) {
       continue;
     }
