@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-10-28",
+  "imported": "2026-10-29",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -274,6 +274,10 @@
         {
           "part_number": "R902431327",
           "description": "Pump"
+        },
+        {
+          "part_number": "R934004367",
+          "description": "BOSCH REXROTH R934004367"
         }
       ]
     },
@@ -1014,6 +1018,16 @@
       ]
     },
     {
+      "brand": "Keystone",
+      "brand_slug": "keystone",
+      "parts": [
+        {
+          "part_number": "OPTI-0050L0PB0016-D5S00S0E600IB",
+          "description": "OptiSeal weichdichtende Absperrklappe"
+        }
+      ]
+    },
+    {
       "brand": "KLASCHKA",
       "brand_slug": "klaschka",
       "parts": [
@@ -1576,6 +1590,16 @@
         {
           "part_number": "0053070050",
           "description": "ENGINE OIL FILTER"
+        }
+      ]
+    },
+    {
+      "brand": "Parker",
+      "brand_slug": "parker",
+      "parts": [
+        {
+          "part_number": "A36LB2126",
+          "description": "Parker A36LB2126valve"
         }
       ]
     },
@@ -2760,6 +2784,16 @@
         {
           "part_number": "R18-C4-F000B",
           "description": "Druckregler m. Selbstentlastung1/2\"BSP-Gewinde, 0,4 - 8,6 bar"
+        }
+      ]
+    },
+    {
+      "brand": "ZETKAMA",
+      "brand_slug": "zetkama",
+      "parts": [
+        {
+          "part_number": "630F050G02K001",
+          "description": "ARMAK full-lift safety valve, Fig. 630, version 021, DN 50, PN 100, range 75.0–95.0 bar, GP240GH, Po = 84 bar(g)"
         }
       ]
     },
