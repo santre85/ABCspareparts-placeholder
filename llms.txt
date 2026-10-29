@@ -17,7 +17,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-142 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302147 part references.
+145 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302151 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -33,7 +33,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Baldwin](https://abcspareparts.eu/marche/baldwin.html): 13144.04, 13144.05, 45.877.05
 - [Baumer](https://abcspareparts.eu/marche/baumer.html): EN580C.ML-BN12.HH2PB.21160.H, EN580C.ML-BN12.HH2PB.21160.H-11262807, EN580C.ML-SC10.HH2C1.21160.H-11267453
 - [Biesse](https://abcspareparts.eu/marche/biesse.html): 091604600, 0916A0017, 1614A0037, 1614A0039 (+6 more)
-- [BOSCH REXROTH](https://abcspareparts.eu/marche/bosch-rexroth.html): 1020418303011000, 5776960900-AGZ, AZPF-11-008RCB20MB, R030567904 (+2 more)
+- [BOSCH REXROTH](https://abcspareparts.eu/marche/bosch-rexroth.html): 1020418303011000, 5776960900-AGZ, AZPF-11-008RCB20MB, R030567904 (+3 more)
 - [BROVIND](https://abcspareparts.eu/marche/brovind.html): 30ME_CO_F_ 3P_3MT, AL55 230/50 DC
 - [BÜRKERT](https://abcspareparts.eu/marche/burkert.html): 20093082, 688424, 693163, 693176 (+3 more)
 - [CAREL](https://abcspareparts.eu/marche/carel.html): IRDRV10000, UCHBP000X0200, UCHCONP010
@@ -74,6 +74,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Ixys](https://abcspareparts.eu/marche/ixys.html): VHF28-12IO5
 - [KEPCO](https://abcspareparts.eu/marche/kepco.html): 127-0354
 - [Keyence](https://abcspareparts.eu/marche/keyence.html): GL-R80H, HR-B1, IV3-G120, IV3-G600CA (+7 more)
+- [Keystone](https://abcspareparts.eu/marche/keystone.html): OPTI-0050L0PB0016-D5S00S0E600IB
 - [KLASCHKA](https://abcspareparts.eu/marche/klaschka.html): 132206, 139719-020 , Type: JSM1 2V4gyy/LN 4x0,25u5,0 OG 2m
 - [Kockum Sonics](https://abcspareparts.eu/marche/kockum-sonics.html): 24530291, 24800287, 24800703
 - [Koino](https://abcspareparts.eu/marche/koino.html): KH-3046ER-11-R, KH-513DL-24V-G, KH-513DL-24V-Y
@@ -104,6 +105,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [NOVEXX](https://abcspareparts.eu/marche/novexx.html): A101972, A101974
 - [Omec](https://abcspareparts.eu/marche/omec.html): AA34222022T001-C, AA34222051T001-C
 - [PALAZZANI](https://abcspareparts.eu/marche/palazzani.html): 0014140082, 0014140085, 0050120247, 0053070049 (+1 more)
+- [Parker](https://abcspareparts.eu/marche/parker.html): A36LB2126
 - [Pepperl+Fuchs](https://abcspareparts.eu/marche/pepperl-plus-fuchs.html): NJ2-11-SN-G
 - [Pflitsch](https://abcspareparts.eu/marche/pflitsch.html): M16x1,5/8,0-5,0
 - [Phoenix Contact](https://abcspareparts.eu/marche/phoenix-contact.html): 1046805, 1085256, 2295554, 2296058 (+51 more)
@@ -159,6 +161,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Weidmüller](https://abcspareparts.eu/marche/weidmuller.html): 8714260000
 - [Wenglor](https://abcspareparts.eu/marche/wenglor.html): 85365019
 - [Wilkerson](https://abcspareparts.eu/marche/wilkerson.html): R18-C4-F000B
+- [ZETKAMA](https://abcspareparts.eu/marche/zetkama.html): 630F050G02K001
 - [Ziegler](https://abcspareparts.eu/marche/ziegler.html): 12-104491
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
 ## Brand pages with detailed content
@@ -1328,6 +1331,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [BOSCH REXROTH R030567904](https://abcspareparts.eu/marche/bosch-rexroth.html#quote=R030567904) — Electromechanical Cylinder size EMC-063
 - [BOSCH REXROTH R414005407‑AGZ 5/2‑Weg](https://abcspareparts.eu/marche/bosch-rexroth.html#quote=R414005407%E2%80%91AGZ%205%2F2%E2%80%91Weg) — Magnetspule‑Ventil gross
 - [BOSCH REXROTH R902431327](https://abcspareparts.eu/marche/bosch-rexroth.html#quote=R902431327) — Pump
+- [BOSCH REXROTH R934004367](https://abcspareparts.eu/marche/bosch-rexroth.html#quote=R934004367) — BOSCH REXROTH R934004367
 - [BROVIND 30ME_CO_F_ 3P_3MT](https://abcspareparts.eu/marche/brovind.html#quote=30ME_CO_F_%203P_3MT) — FEMALE CONN. 3POLES 3MT
 - [BROVIND AL55 230/50 DC](https://abcspareparts.eu/marche/brovind.html#quote=AL55%20230%2F50%20DC) — LINEARE VIBR. AL55 230 50 DC
 - [BÜRKERT 20093082](https://abcspareparts.eu/marche/burkert.html#quote=20093082) — BÜRKERT 20093082Ventilmembran DN25
@@ -1477,6 +1481,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Keyence PZ-51](https://abcspareparts.eu/marche/keyence.html#quote=PZ-51) — compact through-beam photoelectric sensor
 - [Keyence SR-X100](https://abcspareparts.eu/marche/keyence.html#quote=SR-X100) — AI-Powered 1D/2D Code Reader – Standard Model (1.4 MP)
 - [Keyence SZ-VH1X](https://abcspareparts.eu/marche/keyence.html#quote=SZ-VH1X) — TESTA SCANNER KEYENCE SZ-VH1X PER MODELLI CON TELECAMERA
+- [Keystone OPTI-0050L0PB0016-D5S00S0E600IB](https://abcspareparts.eu/marche/keystone.html#quote=OPTI-0050L0PB0016-D5S00S0E600IB) — OptiSeal weichdichtende Absperrklappe
 - [KLASCHKA 132206](https://abcspareparts.eu/marche/klaschka.html#quote=132206) — Induktive SensorenBuntmetall Näherungsschalter IBD-40fv114b20-12S1B Ursprungsland: Germany Zolltarifnummer: 85480090 Ge…
 - [KLASCHKA 139719-020 , Type: JSM1 2V4gyy/LN 4x0,25u5,0 OG 2m](https://abcspareparts.eu/marche/klaschka.html#quote=139719-020%20%2C%20Type%3A%20JSM1%202V4gyy%2FLN%204x0%2C25u5%2C0%20OG%202m) — M12 Winkelsteckdose
 - [Kockum Sonics 24530291](https://abcspareparts.eu/marche/kockum-sonics.html#quote=24530291) — Piston Rod Complete MT150 /MTX150 (21768054)
@@ -1577,6 +1582,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [PALAZZANI 0050120247](https://abcspareparts.eu/marche/palazzani.html#quote=0050120247) — OIL FILTER CARTRIDGE
 - [PALAZZANI 0053070049](https://abcspareparts.eu/marche/palazzani.html#quote=0053070049) — FUEL FILTER CARTRIDGE
 - [PALAZZANI 0053070050](https://abcspareparts.eu/marche/palazzani.html#quote=0053070050) — ENGINE OIL FILTER
+- [Parker A36LB2126](https://abcspareparts.eu/marche/parker.html#quote=A36LB2126) — Parker A36LB2126valve
 - [Pepperl+Fuchs NJ2-11-SN-G](https://abcspareparts.eu/marche/pepperl-plus-fuchs.html#quote=NJ2-11-SN-G)
 - [Pflitsch M16x1,5/8,0-5,0](https://abcspareparts.eu/marche/pflitsch.html#quote=M16x1%2C5%2F8%2C0-5%2C0) — Winkelkabelverschraubung M16x1,5/8,0-5,*
 - [Phoenix Contact 1046805](https://abcspareparts.eu/marche/phoenix-contact.html#quote=1046805) — Phoenix Contact 1046805QUINT4-PS/24DC/24DC/20/SC (1046805)PHOENIX CONTACT · CONVERTER,PHOE-CON,1046805,18TO32VDC · QUIN…
@@ -1903,6 +1909,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Weidmüller 8714260000](https://abcspareparts.eu/marche/weidmuller.html#quote=8714260000) — FBCON SS DP PCG 1WAY
 - [Wenglor 85365019](https://abcspareparts.eu/marche/wenglor.html#quote=85365019) — SENSORE DISTANZA LASER TOF WENGLOR P1PY131
 - [Wilkerson R18-C4-F000B](https://abcspareparts.eu/marche/wilkerson.html#quote=R18-C4-F000B) — Druckregler m. Selbstentlastung1/2"BSP-Gewinde, 0,4 - 8,6 bar
+- [ZETKAMA 630F050G02K001](https://abcspareparts.eu/marche/zetkama.html#quote=630F050G02K001) — ARMAK full-lift safety valve, Fig. 630, version 021, DN 50, PN 100, range 75.0–95.0 bar, GP240GH, Po = 84 bar(g)
 - [Ziegler 12-104491](https://abcspareparts.eu/marche/ziegler.html#quote=12-104491) — Kunststoffzinken PickUp
 - [ZOLLERN 1199181](https://abcspareparts.eu/parts/zollern/1199181.html) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250
 - [ZOLLERN 1199182](https://abcspareparts.eu/parts/zollern/1199182.html) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLB 22-250
@@ -1926,7 +1933,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 142 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 145 high-priority brand URLs
 - [Other unique-content brand pages](https://abcspareparts.eu/sitemap-brands.xml) — curated copy, not the thin 12k template set
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs

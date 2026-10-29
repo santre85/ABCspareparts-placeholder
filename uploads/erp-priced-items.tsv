@@ -211,6 +211,7 @@ item_code	brand	description
 311001700	BIESSE	DICHTRING OR 2068
 311002000	BIESSE	RING
 311003900	BIESSE	O-RING 15.88 x 2.62 - OR 121
+31629869	Totalsource	Valve Pilot
 3175P003	MST	Spring
 3203185	HYDAC	ADAPTER FPU A12-M16x2 MINIMESS (BAUGR)
 326299G06-AVL	Thermo fisher	HPLRF P/S SERVICE KIT, 230V FUSE
@@ -307,6 +308,7 @@ item_code	brand	description
 620.014.9002.02	ABC	nozzle ( 8 holes )
 620.031.1106.04	ABC	Head joint (O-ring)
 620.051.1107.02	ABC	Head joint (O-ring)
+630F050G02K001	ZETKAMA	ARMAK full-lift safety valve, Fig. 630, version 021, DN 50, PN 100, range 75.0–95.0 bar, GP240GH, Po = 84 bar(g)
 635139	HYDAC	Pressure gauge 0-10bar
 635141	HYDAC	Pressure gauge 0-100bar
 635142	HYDAC	Pressure gauge 0-250bar
@@ -367,6 +369,7 @@ A101974	NOVEXX	Label Sensor (with Cable)
 A10VSO28DFR1/31L-PPA12N	Rexroth	Pump
 A110193	MULAG	MULAG 111767 Kugelgelenk
 A18065V2HBT-S	SYM BANG	Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W
+A36LB2126	Parker	Parker A36LB2126valve
 AA34222022T001-C	Omec	OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC150°C / Shaft 24j6 / 165x130j6x200 / Ral 7031 / Fixed with circlip
 AA34222051T001-C	Omec	OMT1-IE3 90L2 2,2kW 400/690V 50Hz B3 Iso F-B / IP55 / PTC150°C / Shaft 24j6 / Ral 7031 / Fixed with circlip
 AAX0052	Ingeteam	RS485 communication board
@@ -449,6 +452,7 @@ NP1X1606-W	Fuji Electric	16-point Digital Input Module
 NVHS3000-N03	SMC	Shut-offValve
 OP-88242	Keyence	Desiccant cartridge for Keyence 3-axis UV laser marker (spare drying agent for MD-U series heads).
 OP-88679	Keyence	M12 connector, A-coded, 12-pin, female connector to open cable ends.
+OPTI-0050L0PB0016-D5S00S0E600IB	Keystone	OptiSeal weichdichtende Absperrklappe
 PA-DPS-88	Sontay	Pressure Transmitter
 PGN-plus 64-2-AS / 371093	Schunk	Universal Gripper
 PKC50	Hi force	Hi-Force Model no.: PKC50, 50 tonne capacity comprehensive hydraulic puller kit comprising 2-jaw, 3-jaw, bearing pullers, bearing cup pullers and cros
@@ -462,6 +466,7 @@ R030567904	BOSCH REXROTH	Electromechanical Cylinder size EMC-063
 R18-C4-F000B	Wilkerson	Druckregler m. Selbstentlastung1/2"BSP-Gewinde, 0,4 - 8,6 bar
 R414005407‑AGZ 5/2‑Weg	BOSCH REXROTH	Magnetspule‑Ventil gross
 R902431327	BOSCH REXROTH	Pump
+R934004367	BOSCH REXROTH	BOSCH REXROTH R934004367
 RAEL-MIA-71A-0.37kW-Ex-B3	Rael	Three-phase asynchronous motor - Exe - RAEL IE2Type MIA 71 A2, Size 710.37 kW, 230/400 V, 50 Hz, Insulated Class F3000 rpm, IP 66, B 3, KK top,Shaft e
 RAEL-MIA-90L4-1.1kW-Ex-B3	Rael	Three-phase asynchronous motor - Exe - RAEL IE3Type MIA 90L 4, size 90L1.10 kW, 230/400 V, 50 Hz, insulated class1500 rpm, IP 66, B 3, KK top,Shaft en
 RI58-O/ 1000AS.41TF-F0	HENGSTLER	Drehgeber Typ RI 58
