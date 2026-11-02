@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-10-29",
+  "imported": "2026-11-02",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -2784,6 +2784,16 @@
         {
           "part_number": "R18-C4-F000B",
           "description": "Druckregler m. Selbstentlastung1/2\"BSP-Gewinde, 0,4 - 8,6 bar"
+        }
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "brand_slug": "woodward",
+      "parts": [
+        {
+          "part_number": "8445-1046 (ex. 5448-902 )",
+          "description": "Esepro Profibus Gateway for Canopen Controllers"
         }
       ]
     },
