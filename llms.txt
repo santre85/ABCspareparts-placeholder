@@ -17,7 +17,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-145 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302151 part references.
+146 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302152 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -161,6 +161,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Weidmüller](https://abcspareparts.eu/marche/weidmuller.html): 8714260000
 - [Wenglor](https://abcspareparts.eu/marche/wenglor.html): 85365019
 - [Wilkerson](https://abcspareparts.eu/marche/wilkerson.html): R18-C4-F000B
+- [Woodward](https://abcspareparts.eu/marche/woodward.html): 8445-1046 (ex. 5448-902 )
 - [ZETKAMA](https://abcspareparts.eu/marche/zetkama.html): 630F050G02K001
 - [Ziegler](https://abcspareparts.eu/marche/ziegler.html): 12-104491
 - [ZOLLERN](https://abcspareparts.eu/marche/zollern.html): 1199181, 1199182
@@ -1909,6 +1910,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Weidmüller 8714260000](https://abcspareparts.eu/marche/weidmuller.html#quote=8714260000) — FBCON SS DP PCG 1WAY
 - [Wenglor 85365019](https://abcspareparts.eu/marche/wenglor.html#quote=85365019) — SENSORE DISTANZA LASER TOF WENGLOR P1PY131
 - [Wilkerson R18-C4-F000B](https://abcspareparts.eu/marche/wilkerson.html#quote=R18-C4-F000B) — Druckregler m. Selbstentlastung1/2"BSP-Gewinde, 0,4 - 8,6 bar
+- [Woodward 8445-1046 (ex. 5448-902 )](https://abcspareparts.eu/marche/woodward.html#quote=8445-1046%20(ex.%205448-902%20)) — Esepro Profibus Gateway for Canopen Controllers
 - [ZETKAMA 630F050G02K001](https://abcspareparts.eu/marche/zetkama.html#quote=630F050G02K001) — ARMAK full-lift safety valve, Fig. 630, version 021, DN 50, PN 100, range 75.0–95.0 bar, GP240GH, Po = 84 bar(g)
 - [Ziegler 12-104491](https://abcspareparts.eu/marche/ziegler.html#quote=12-104491) — Kunststoffzinken PickUp
 - [ZOLLERN 1199181](https://abcspareparts.eu/parts/zollern/1199181.html) — Oil ring complete Z-L 22 spare part for housing slide bearing ZMZLQ 22-250
@@ -1933,7 +1935,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 145 high-priority brand URLs
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 146 high-priority brand URLs
 - [Other unique-content brand pages](https://abcspareparts.eu/sitemap-brands.xml) — curated copy, not the thin 12k template set
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
