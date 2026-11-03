@@ -83,7 +83,8 @@ const BRAND_OVERRIDES = {
   'Mtu': 'MTU',
   // New brand pages approved 2026-10-28 (previously unmatched in PR #103)
   'MEASUREX': 'MEASUREX',
-  'Powasert': 'Powasert'
+  'Powasert': 'Powasert',
+  'Kfm': 'Kfm'
   // ABC - skipped as ambiguous (multiple ABC brands exist)
 };
 
