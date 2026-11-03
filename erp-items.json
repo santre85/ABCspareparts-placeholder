@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-02",
+  "imported": "2026-11-03",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -1024,6 +1024,16 @@
         {
           "part_number": "OPTI-0050L0PB0016-D5S00S0E600IB",
           "description": "OptiSeal weichdichtende Absperrklappe"
+        }
+      ]
+    },
+    {
+      "brand": "Kfm",
+      "brand_slug": "kfm",
+      "parts": [
+        {
+          "part_number": "R20913046",
+          "description": "Ersatz für Fb-Nr R209 13 046 bei gleicher Funktion und Baugröße.4-facher 3-Pkt.-Schrittregler, 96x96mm Eingänge:3xPt100…"
         }
       ]
     },
