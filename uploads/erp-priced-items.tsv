@@ -1,7 +1,10 @@
 item_code	brand	description
 00017135	Kolbus	Linear Bearing
 00017143	Kolbus	Guide
+0002019985	Caterpillar	Caterpillar 0002019985Außenspiegel
 0005357533		Speed Sensor
+0006191646	Caterpillar	Caterpillar 0006191646LED-Nebelschlussleuchte
+0006346470	Caterpillar	Caterpillar 0006346470Abstandshalter
 0014140082	PALAZZANI	AIR FILTER
 0014140085	PALAZZANI	AIR FILTER CARTRIDGE
 002045P	Viqua	UV-Max O-Ringe f. Quarzschutzrohr passend für Typ G bis J+ und PRO
@@ -329,6 +332,7 @@ item_code	brand	description
 6AV3688-3ED13-0AX0 (NEW, ORIGINAL PACKAGE)	Siemens	Pushbutton Panel
 6AV6642-0BA01-1AX0	Siemens	Simatic Panel
 6AV6642-0BA01-1AX1 (NEW)	Siemens	6AV6642-0BA01-1AX1 (NEW)
+6DR5622-0EG00-0AA0	Siemens	SIPART PS2 Smart, electropneumatic positioner, FOUNDATION Fieldbus, Ex/nEx, double-acting, SST enclosure, no window, for pneumatic linear and part-tur
 6ES7318-3EL01-0AB0	Siemens	SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP
 6SL3055-0AA00-5BA1	Siemens	Sensor Module
 6SL3055-0AA00-5BA3 (NEW)	Siemens	6SL3055-0AA00-5BA3 (NEW)
@@ -350,6 +354,7 @@ item_code	brand	description
 80701.000507	ATLAS COPCO SCA	BALL JOINT ASSEMBLY
 8253854	SEW Eurodrive	Raddrizzatore SEW BGE 1.5
 8277311	SEW Eurodrive	INVERTER SEW MOVIDRIVE MDX61B0008-5A3-4-0T 0,75KW 400V
+8440-2088	Woodward	Control - Easygen-3500XT-P2 Genset Controller../1-5A 24VDC
 8445-1046 (ex. 5448-902 )	Woodward	Esepro Profibus Gateway for Canopen Controllers
 85365019	Wenglor	SENSORE DISTANZA LASER TOF WENGLOR P1PY131
 8670455	SEW Eurodrive	BOBINA FRENO SEW BMG2 380V MONOFASE
@@ -371,6 +376,7 @@ A10VSO28DFR1/31L-PPA12N	Rexroth	Pump
 A110193	MULAG	MULAG 111767 Kugelgelenk
 A18065V2HBT-S	SYM BANG	Typ:Kühlung Lüfter2 kabel kühlung lüfter ErsatzLänge: 180Breite: 180höhe: 65spannung 220VNennleistung 43/52W
 A36LB2126	Parker	Parker A36LB2126valve
+A4895	NOVEXX	NOVEXX A4895Ersatzteil Stativ H+V Spindel-,verstellung L = 390/1500 mm
 AA34222022T001-C	Omec	OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC150°C / Shaft 24j6 / 165x130j6x200 / Ral 7031 / Fixed with circlip
 AA34222051T001-C	Omec	OMT1-IE3 90L2 2,2kW 400/690V 50Hz B3 Iso F-B / IP55 / PTC150°C / Shaft 24j6 / Ral 7031 / Fixed with circlip
 AAX0052	Ingeteam	RS485 communication board
@@ -395,6 +401,7 @@ CK 82/098/102/25		PEVOLON Laufrolle mit Kugellager.Technische Eigenschaften Auß
 CS ME-03XU24	Pizzato	Expansion module
 D-M9P	SMC	Solid state auto switch, direct mounting style for pneumatic cylinders, PNP output, 3‑wire type, in‑line cable entry, power supply 5–28 VDC, max. load
 D-UT 4/1P-H	Phoenix  Contact	CONTROL TERMINAL END COVER
+D1050A	Fasco	FASCO D1050A OEM Replacement Motor, 1/8 HP, 1 Phase, 60 Hz,230 V, 1550 rpm, 1 Speed, 42 Frame
 D166- L- G- 43- NNL2000   (Ex. Type D166/L/21)	GHR	DOM Pressure RegulatorMedium: GasTemperature: max. 80°Cp1 Inlet: max. 100 barp2 Outlet: 0.5–100 bar, adjustableSeat: 9 mmMaterial: Brass housingIntern
 D2171B6012W-2 ( EX. D2171B6012)	Ross	G1PL 2/2-WAY VALVE N.G.SOLENOID-OPERATED 24 VDCPart Number: 84812090Country of Origin: US
 DH30	AMPLIDAN - DNH	DNH Horn without driver 345mm for DST100 RAL7035
@@ -422,6 +429,7 @@ ID268508, DKC11.3-040-7-FW R911279433 (Refurbished)	Indramat	Servoregler
 IG0337	IFM	Induktiver Sensor IGA2005-ABOA/SL/LS-100AK/RT
 IRDRV10000	CAREL	IRDRV10000DISCONTINUED BY MANUFACTURERTEMPERATURE CONTROLSINGLE RELAY OUTPUTIR / BUZZPT10024/230 VDIN RAILFACTORY WARRANTY MAY NOT APPLY.
 IRS-U-4A	Matrix Elektronik	Sensore 20/28 VDC, uscita 0/10 VDC, cavo 3 m, distanza 400 mm
+ITV2050-31F2BN3-X88 (EX. ITV2050-31F2BN3-X154 )	SMC	Electro-Pneumatic Regulator
 IV3-G120	Keyence	Vision Sensor IV3 Series – Compact Model Sensor Amplifier
 IV3-G600CA	Keyence	Vision Sensor IV3 Series – Compact Sensor Head, Wide Field of View, Colour AF Type
 IV4-G120	Keyence	compact AI vision sensor amplifier
@@ -436,6 +444,7 @@ LM 100-H175 / 314067	Schunk	Universal Linear Axis
 LM 50-H75 / 314058	Schunk	Universal Linear Axis
 LR-W50	Keyence	self-contained full-spectrum sensor
 LT.0D.11.00	HERBORNER PUMPEN	Impeller LT-HK/50A-1-120, item 230Material: GG-25
+M100063	ASCON TECHNOLOGIC	Steuerungsplatine
 M16x1,5/8,0-5,0	PFLITSCH	Winkelkabelverschraubung M16x1,5/8,0-5,*
 MB082GA310	Speeder Motion Line	SERVODRIVE
 MDK041B-144-GP0-KN	Rexroth	Servoantrieb
@@ -447,10 +456,12 @@ MSOEB-3-24V DC	Festo	Magnetspule
 Maintenance kit for EcoCondens-35	TERMET	1.Ionisation electrode Z1780.04.04.002.Electrode gasket Z1780.04.00.203. Ignition electrode Z1780.04.03.004. Gasket electrode Z1780.04.00.195. Gasket 
 N01R-550-M (C081 R-C-V)	Euchner	Limit switch, 1 plunger
 NAFM3000-N03	SMC	Mist Separator
+NF7-5S1E1A001	Nivus	NIVUS NF7-5S1E1A001NIVUS NivuFlow 750 transmitter
 NHD-0220JZ-FL-GBW	NEWHAVEN	LCD/LED Display
 NJ2-11-SN-G	Pepperl+Fuchs	NJ2-11-SN-G
 NP1X1606-W	Fuji Electric	16-point Digital Input Module
 NVHS3000-N03	SMC	Shut-offValve
+OCF-02W0ACE	Nivus	NIVUS OCF-02W0ACENIVUS OCM F Transmitter – ultrasonic doppler
 OP-88242	Keyence	Desiccant cartridge for Keyence 3-axis UV laser marker (spare drying agent for MD-U series heads).
 OP-88679	Keyence	M12 connector, A-coded, 12-pin, female connector to open cable ends.
 OPTI-0050L0PB0016-D5S00S0E600IB	Keystone	OptiSeal weichdichtende Absperrklappe
@@ -510,3 +521,4 @@ XFP150G CB1.3	Sulzer	Girante / Laufrad
 XLCR 25	FLEXLINK	Gleitschiene HDPE, (schwarz), Länge 25 m
 XPCSG-17BG	ABB	Wellrohr
 ZSM1-121L	SMC	Diaphragm type vacuum switch, ZSM1‑121 series, reed contact type, connection R 1/8, max. operating pressure 0.5 MPa, regulating range −27 to −80 kPa, 
+ZUB0NFW0IP68	Nivus	NIVUS ZUB0NFW0IP68NIVUS protective housing for transmitters, type NFxx
