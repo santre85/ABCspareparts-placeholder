@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-03",
+  "imported": "2026-11-07",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -94,6 +94,16 @@
         {
           "part_number": "104453",
           "description": "Schraubkappe HVT (montiert)"
+        }
+      ]
+    },
+    {
+      "brand": "ASCON TECHNOLOGIC",
+      "brand_slug": "ascon-technologic",
+      "parts": [
+        {
+          "part_number": "M100063",
+          "description": "Steuerungsplatine"
         }
       ]
     },
@@ -348,6 +358,24 @@
       ]
     },
     {
+      "brand": "Caterpillar",
+      "brand_slug": "caterpillar",
+      "parts": [
+        {
+          "part_number": "0002019985",
+          "description": "Caterpillar 0002019985Außenspiegel"
+        },
+        {
+          "part_number": "0006191646",
+          "description": "Caterpillar 0006191646LED-Nebelschlussleuchte"
+        },
+        {
+          "part_number": "0006346470",
+          "description": "Caterpillar 0006346470Abstandshalter"
+        }
+      ]
+    },
+    {
       "brand": "CIEMME",
       "brand_slug": "ciemme",
       "parts": [
@@ -448,6 +476,16 @@
         {
           "part_number": "12049230",
           "description": "Hydraullic damper (Previous part code/s #: P680220000, 12023492, 12017724)"
+        }
+      ]
+    },
+    {
+      "brand": "Fasco",
+      "brand_slug": "fasco",
+      "parts": [
+        {
+          "part_number": "D1050A",
+          "description": "FASCO D1050A OEM Replacement Motor, 1/8 HP, 1 Phase, 60 Hz,230 V, 1550 rpm, 1 Speed, 42 Frame"
         }
       ]
     },
@@ -1540,6 +1578,24 @@
       ]
     },
     {
+      "brand": "NIVUS",
+      "brand_slug": "nivus",
+      "parts": [
+        {
+          "part_number": "NF7-5S1E1A001",
+          "description": "NIVUS NF7-5S1E1A001NIVUS NivuFlow 750 transmitter"
+        },
+        {
+          "part_number": "OCF-02W0ACE",
+          "description": "NIVUS OCF-02W0ACENIVUS OCM F Transmitter – ultrasonic doppler"
+        },
+        {
+          "part_number": "ZUB0NFW0IP68",
+          "description": "NIVUS ZUB0NFW0IP68NIVUS protective housing for transmitters, type NFxx"
+        }
+      ]
+    },
+    {
       "brand": "Norgren",
       "brand_slug": "norgren",
       "parts": [
@@ -1560,6 +1616,10 @@
         {
           "part_number": "A101974",
           "description": "Label Sensor (with Cable)"
+        },
+        {
+          "part_number": "A4895",
+          "description": "NOVEXX A4895Ersatzteil Stativ H+V Spindel-,verstellung L = 390/1500 mm"
         }
       ]
     },
@@ -2392,6 +2452,10 @@
           "description": "6AV6642-0BA01-1AX1 (NEW)"
         },
         {
+          "part_number": "6DR5622-0EG00-0AA0",
+          "description": "SIPART PS2 Smart, electropneumatic positioner, FOUNDATION Fieldbus, Ex/nEx, double-acting, SST enclosure, no window, fo…"
+        },
+        {
           "part_number": "6ES7318-3EL01-0AB0",
           "description": "SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP"
         },
@@ -2478,6 +2542,10 @@
         {
           "part_number": "D-M9P",
           "description": "Solid state auto switch, direct mounting style for pneumatic cylinders, PNP output, 3‑wire type, in‑line cable entry, p…"
+        },
+        {
+          "part_number": "ITV2050-31F2BN3-X88 (EX. ITV2050-31F2BN3-X154 )",
+          "description": "Electro-Pneumatic Regulator"
         },
         {
           "part_number": "NAFM3000-N03",
@@ -2801,6 +2869,10 @@
       "brand": "Woodward",
       "brand_slug": "woodward",
       "parts": [
+        {
+          "part_number": "8440-2088",
+          "description": "Control - Easygen-3500XT-P2 Genset Controller../1-5A 24VDC"
+        },
         {
           "part_number": "8445-1046 (ex. 5448-902 )",
           "description": "Esepro Profibus Gateway for Canopen Controllers"
