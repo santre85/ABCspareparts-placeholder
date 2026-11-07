@@ -1,17 +1,17 @@
 {
   "siemens": {
-    "de": "Siemens versorgt u. a. SPS/IPC (SIMATIC), Antriebe (SINAMICS), Niederspannungsschalttechnik und MRO-Teile für Prozess- und Fertigungsanlagen. Geben Sie MLFB, Typenschild oder Foto sinnvoll dazu, damit wir Ihre Ersatzteil-Referenzen schnell zuordnen.",
-    "en": "Siemens covers PLCs, drives (SINAMICS, SIMOTION), HMI, switchgear, and a wide MRO range for process and plant automation. Include MLFB, rating plate, or a clear part reference to speed up sourcing and alternatives.",
-    "it": "Siemens copre PLC/HMI, azionamenti (SINAMICS), quadri e MRO per automazione di processo. Indichi codice MLFB, dati del tipo o contesto per abbinare rapidamente ricambio o alternativa.",
-    "es": "Siemens abarca PLC, variadores (SINAMICS), cuadros y recambio MRO. Indique MLFB, placa o referencia clara para acotar el repuesto o una alternativa verificada.",
-    "fr": "Siemens couvre API, variateurs (SINAMICS), TGBT et pièces MRO. Indiquez la référence MLFB, la plaque signaletique ou le contexte pour cibler l’offre (origine ou alternative)."
+    "de": "Siemens umfasst u. a. SPS und Dezentrale Peripherie (SIMATIC), Antriebe (SINAMICS) mit Motoren (SIMOTICS), Niederspannungsschalttechnik (SIRIUS, SENTRON) sowie elektropneumatische Stellungsregler SIPART PS2. Geben Sie MLFB, Optionen hinter -Z und Revision bzw. Typenschild an, damit wir die Referenz zuordnen können.",
+    "en": "Siemens covers PLCs and distributed I/O (SIMATIC), drives (SINAMICS) with motors (SIMOTICS), low-voltage controls (SIRIUS, SENTRON) and electropneumatic SIPART PS2 positioners. Include MLFB, options after -Z and revision or the rating plate so we can match the reference.",
+    "it": "Siemens copre PLC e I/O decentrato (SIMATIC), azionamenti (SINAMICS) con motori (SIMOTICS), bassa tensione (SIRIUS, SENTRON) e posizionatori elettropneumatici SIPART PS2. Indichi MLFB, opzioni dopo -Z e revisione o targhetta per abbinare il riferimento.",
+    "es": "Siemens cubre PLC e I/O distribuido (SIMATIC), accionamientos (SINAMICS) con motores (SIMOTICS), baja tensión (SIRIUS, SENTRON) y posicionadores electoneumáticos SIPART PS2. Indique MLFB, opciones tras -Z y revisión o placa para asociar la referencia.",
+    "fr": "Siemens couvre API et E/S déportées (SIMATIC), entraînements (SINAMICS) avec moteurs (SIMOTICS), basse tension (SIRIUS, SENTRON) et positionneurs électropneumatiques SIPART PS2. Indiquez MLFB, options après -Z et révision ou plaque pour associer la référence."
   },
   "smc": {
-    "de": "SMC liefert Pneumatik, Zylinder, Ventile, FRL und Vakuumtechnik. Teilenummer und Anschlussmaße helfen, das passende Ersatzteil (Original oder geprüfte Variante) zu wählen.",
-    "en": "SMC is a key reference in pneumatics: cylinders, valves, FRL, vacuum, and actuators. Part codes and port sizes help us source the right spare or verified cross.",
-    "it": "SMC: pneumatica, cilindri, valvole, FRL, vuoto. Codice articolo e filettature accelerano l’abbinamento a ricambio o alternativa.",
-    "es": "SMC: neumática, cilindros, electroválvulas, FRL, vacío. Código y roscas ayudan a acotar el repuesto o un cruce aprobado.",
-    "fr": "SMC : pneumatique, vérins, vannes, FRL, vide. Les références et filetages permettent de cibler la pièce d’origine ou un croisement fiable."
+    "de": "SMC ist eine zentrale Referenz in der Pneumatik: Zylinder und Magnetschalter, Wegeventile, Luftaufbereitung (Filter, Regler, Öler), Vakuumtechnik sowie elektropneumatische Druckregler der Reihe ITV. Teilenummer, Anschlussgewinde und Optionssuffix vom Typenschild helfen bei der Zuordnung.",
+    "en": "SMC is a key reference in pneumatics: cylinders and auto-switches, directional valves, air treatment (filter, regulator, lubricator), vacuum equipment and ITV electropneumatic pressure regulators. Part number, port thread and option suffix from the nameplate help matching.",
+    "it": "SMC è un riferimento in pneumatica: cilindri e auto-switch, valvole direzionali, trattamento aria (filtro, regolatore, lubrificatore), vuoto e regolatori elettropneumatici ITV. Codice, filettatura e suffisso opzione dalla targhetta aiutano l’abbinamento.",
+    "es": "SMC es una referencia en neumática: cilindros y auto-switches, válvulas direccionales, tratamiento de aire (filtro, regulador, lubricador), vacío y reguladores electoneumáticos ITV. Código, rosca y sufijo de opción de la placa ayudan a identificar.",
+    "fr": "SMC est une référence en pneumatique : vérins et auto-switches, distributeurs, traitement d’air (filtre, régulateur, lubrificateur), vide et régulateurs électropneumatiques ITV. Référence, filetage et suffixe d’option de la plaque aident l’identification."
   },
   "sick": {
     "de": "SICK bietet Sensoren, Sicherheitstechnik, Barcode, Messtechnik und Optoelektronik. Typbezeichnung, Einstell- oder Sicherheitskontext verbessern die Ersatzteilabfrage erheblich.",
