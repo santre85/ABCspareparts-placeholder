@@ -257,9 +257,15 @@ ok(siemensMap['3su1000-0aa10-0aa0'] === '../parts/siemens/3su1000-0aa10-0aa0.htm
 ok(!siemensMap['this-code-is-not-in-catalog-xyz'], 'sidecar does not invent unknown keys');
 ok(existingPartHref('siemens', 'ZZZ-NOT-A-SIEMENS-CODE') === null, 'unmapped Siemens code has no href');
 
+const genSrc = fs.readFileSync(path.join(ROOT, 'generate-brand-pages.js'), 'utf8');
+ok(genSrc.includes('pendingCbs'), 'generator queues listino search callbacks while catalog loads');
+ok(genSrc.includes('flushPending'), 'generator flushes queued listino search after load');
+
 const siemensBrand = fs.readFileSync(path.join(MARCHE, 'siemens.html'), 'utf8');
 ok(siemensBrand.includes('SIMATIC') || siemensBrand.includes('SIPART'), 'Siemens editorial copy survived');
 ok(!/klicken Sie auf einen Code, um das vorausgefüllte Formular/.test(siemensBrand), 'Siemens instruction is not form-only');
+ok(siemensBrand.includes('pendingCbs'), 'Siemens listino search queues callbacks during slow catalog fetch');
+ok(siemensBrand.includes('brand-success-story'), 'Siemens success-story teaser survived');
 
 console.log('\nGenerated NIVUS brand page');
 const nivusBrand = fs.readFileSync(path.join(MARCHE, 'nivus.html'), 'utf8');

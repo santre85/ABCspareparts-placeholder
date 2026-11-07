@@ -1741,8 +1741,16 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
           if (extra[k]) PART_HREFS[k] = extra[k];
         });
       }
+      var pendingCbs = [];
+      function flushPending() {
+        var run = pendingCbs.slice();
+        pendingCbs = [];
+        for (var i = 0; i < run.length; i++) run[i]();
+        if (!run.length && input && (input.value || '').trim().length >= 3) searchNow();
+      }
       function ensureLoaded(cb) {
-        if (codes) { cb(); return; }
+        if (typeof cb === 'function') pendingCbs.push(cb);
+        if (codes) { flushPending(); return; }
         if (loading) return;
         loading = true;
         var listinoP = fetch(src).then(function (r) { return r.json(); });
@@ -1755,7 +1763,7 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
           total = data.count || codes.length;
           mergeHrefs(pair[1]);
           loading = false;
-          cb();
+          flushPending();
         }).catch(function () {
           loading = false;
           if (empty) { empty.hidden = false; empty.textContent = 'Catalog load error'; }
@@ -1767,7 +1775,7 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
           if (q.length < 3) { searchNow(); return; }
           ensureLoaded(searchNow);
         });
-        input.addEventListener('focus', function () { ensureLoaded(function () {}); });
+        input.addEventListener('focus', function () { ensureLoaded(); });
       }
       box.querySelectorAll('[data-listino-example]').forEach(function (chip) {
         chip.addEventListener('click', function () {

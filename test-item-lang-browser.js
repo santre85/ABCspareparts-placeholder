@@ -202,18 +202,29 @@ async function main() {
       await context.close();
     }
     {
-      const { context, page } = await openPage('en-GB', siemensBrand, 'en');
+      const context = await browser.newContext({
+        locale: 'en-GB',
+        extraHTTPHeaders: { 'Accept-Language': 'en-GB' }
+      });
+      context.setDefaultTimeout(PAGE_MS);
+      context.setDefaultNavigationTimeout(PAGE_MS);
+      const page = await context.newPage();
       const errors = [];
       page.on('pageerror', (err) => errors.push(String(err)));
       page.on('console', (msg) => {
         if (msg.type() === 'error') errors.push(msg.text());
       });
+      await page.route('**/listini-data/**', async (route) => {
+        await new Promise((r) => setTimeout(r, 1800));
+        await route.continue();
+      });
+      await page.goto(siemensBrand, { waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => {
+        localStorage.setItem('lang', 'en');
+      });
+      await page.reload({ waitUntil: 'domcontentloaded' });
       await page.waitForSelector('#listinoSearchInput');
-      await Promise.all([
-        page.waitForResponse((r) => r.url().includes('listini-data/siemens.json') && r.ok(), { timeout: 25000 }).catch(() => null),
-        page.focus('#listinoSearchInput')
-      ]);
-      await page.fill('#listinoSearchInput', '');
+      await page.focus('#listinoSearchInput');
       await page.fill('#listinoSearchInput', '3SU1000-0AA10');
       await page.evaluate(() => {
         const el = document.getElementById('listinoSearchInput');
