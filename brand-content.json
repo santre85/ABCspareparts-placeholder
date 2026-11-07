@@ -30571,15 +30571,19 @@
     ],
     "related_slugs": [
       "vaillant",
-      "viessmann",
-      "buderus",
-      "junkers"
+      "baxi",
+      "immergas",
+      "weishaupt",
+      "de-dietrich",
+      "wilo"
     ],
     "related_labels": {
       "vaillant": "Vaillant",
-      "viessmann": "Viessmann",
-      "buderus": "Buderus",
-      "junkers": "Junkers"
+      "baxi": "Baxi",
+      "immergas": "Immergas",
+      "weishaupt": "Weishaupt",
+      "de-dietrich": "De Dietrich",
+      "wilo": "Wilo"
     },
     "faq_after": [
       {

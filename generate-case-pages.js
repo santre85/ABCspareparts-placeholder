@@ -1099,4 +1099,10 @@ function main() {
   console.log('Done —', cases.length, 'case page(s)');
 }
 
-main();
+if (require.main === module) {
+  if (process.argv.includes('--brand-links-only')) {
+    updateBrandCaseLinks(loadCases());
+  } else {
+    main();
+  }
+}

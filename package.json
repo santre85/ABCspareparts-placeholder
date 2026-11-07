@@ -3,6 +3,8 @@
     "build:marche": "node extract-brands.js",
     "build:brand-parts": "node build-brand-parts.js",
     "build:brand-pages": "node generate-brand-pages.js",
+    "build:brand-pages:parts": "node generate-brand-pages.js --parts-only",
+    "build:part-hrefs": "node generate-part-href-indexes.js",
     "build:brand-pages:only": "node generate-brand-pages.js --only",
     "build:brand-parts-pages": "node build-brand-parts.js && node generate-brand-pages.js",
     "import:listino": "node -e \"require('./import-listino').loadListiniParts()\"",
@@ -19,10 +21,12 @@
     "verify:parts": "node verify-parts-mvp.js",
     "verify:siemens-listino": "node verify-siemens-listino.js",
     "verify": "node verify-build.js && node verify-parts-mvp.js && node verify-siemens-listino.js",
+    "test:item-lang": "node test-item-lang-and-brand-links.js",
+    "test:item-lang-browser": "node test-item-lang-browser.js",
     "nightly:parts": "node generate-search-index.js && node generate-search-index-parts.js && node verify-search-index-pages.js && echo '✅ Nightly part pages pipeline complete'"
   },
   "dependencies": {
-    "playwright": "^1.63.0",
+    "playwright": "^1.65.0",
     "xlsx": "^0.18.5"
   }
 }

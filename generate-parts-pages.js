@@ -226,7 +226,7 @@ ${FOOTER_CSS}
   <header class="page-hero">
     <div class="container">
       <nav class="breadcrumb" aria-label="Brotkrumen">
-        <a href="../../">Home</a> · <a href="../../marche.html">Marken</a> · <a href="../../marche/${escapeAttr(part.brand_slug)}.html">${escapeHtml(part.brand)}</a> · ${escapeHtml(part.part_number)}
+        <a href="../../">Home</a> · <a href="../../marche.html" data-i18n="footer_brands">Marken</a> · <a href="../../marche/${escapeAttr(part.brand_slug)}.html">${escapeHtml(part.brand)}</a> · ${escapeHtml(part.part_number)}
       </nav>
       <h1>${escapeHtml(h1)}</h1>
       <p class="lead">Unverbindliche Anfrage für diese Teilenummer. Keine Preise und keine Lagerstände auf der Seite — Konditionen nach Prüfung.</p>

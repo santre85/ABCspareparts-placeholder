@@ -12,7 +12,8 @@
  * - Part metadata block (Hersteller / Teilenummer / Beschreibung)
  * - Neutral description (no claims about "real inquiries" unless verified)
  * - Primary CTA links to home contact with ?code= prefilled (German static
- *   href; part-cta-lang.js rewrites to the visitor language on load)
+ *   href; part-cta-lang.js injects DE/EN/IT/ES/FR selector, applies visitor
+ *   language, and rewrites the CTA with code + manufacturer)
  * - Complete footer with all links
  * 
  * Skips any page that already exists (on disk, in sitemap-parts.xml, or
@@ -363,7 +364,7 @@ ${FOOTER_CSS}
   <header class="page-hero">
     <div class="container">
       <nav class="breadcrumb" aria-label="Brotkrumen">
-        <a href="../../">Home</a> · <a href="../../marche.html">Marken</a> · <a href="../../marche/${escapeAttr(brandSlug)}.html">${escapeHtml(part.b)}</a> · ${escapeHtml(part.c)}
+        <a href="../../">Home</a> · <a href="../../marche.html" data-i18n="footer_brands">Marken</a> · <a href="../../marche/${escapeAttr(brandSlug)}.html">${escapeHtml(part.b)}</a> · ${escapeHtml(part.c)}
       </nav>
       <h1>${escapeHtml(h1)}</h1>
       <p class="lead">Unverbindliche Anfrage für diese Teilenummer. Keine Preise und keine Lagerstände auf der Seite — Konditionen nach Prüfung.</p>

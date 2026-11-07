@@ -13,6 +13,7 @@ const path = require('path');
 const { BASE } = require('./seo-config.js');
 const { writeSitemapIndex } = require('./build-brand-parts.js');
 const { FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
+const { writePartHrefIndex } = require('./part-page-paths.js');
 
 const ROOT = __dirname;
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -459,7 +460,7 @@ ${FOOTER_CSS}
       </dl>
       <p data-i18n-html="body">${bodyDe}</p>
       <div class="cta-row">
-        <a class="cta-primary" href="${quoteUrl}" data-i18n="cta">Angebot anfragen</a>
+        <a class="cta-primary" id="partQuoteCta" data-part-code="${escapeHtml(display)}" data-part-brand="Siemens" href="${quoteUrl}" data-i18n="cta">Angebot anfragen</a>
         <a class="cta-secondary" href="../../marche/siemens.html" data-i18n="brand_cta">Zur Markenseite Siemens</a>
         <a class="cta-secondary" href="${seriesHref}" data-i18n="series_cta">Weitere Codes Serie ${escapeHtml(prefix)}</a>
       </div>
@@ -732,6 +733,7 @@ function main() {
     online_descriptions_store: PART_DESC_BY_NORM ? PART_DESC_BY_NORM.size : 0
   };
   fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+  writePartHrefIndex(path.join(ROOT, 'listini-data/siemens-part-hrefs.json'), 'siemens', codes);
 
   // Patch brand page: ensure catalog + series hub links exist (lightweight inject if missing)
   const brandPath = path.join(ROOT, 'marche/siemens.html');
