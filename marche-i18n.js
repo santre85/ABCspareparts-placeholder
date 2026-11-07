@@ -1,17 +1,45 @@
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
+
+/**
+ * Directory brand count from brand-groups.json (same dataset as A-Z + search).
+ * {n} in the strings below is filled at generate time so titles cannot go stale.
+ */
+function directoryBrandCount() {
+  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-groups.json'), 'utf8'));
+  let n = 0;
+  const groups = data.groups || {};
+  for (const key of data.orderedKeys || Object.keys(groups)) {
+    n += (groups[key] || []).length;
+  }
+  return n;
+}
+
+function marcheI18nFor(lang, n) {
+  const src = MARCHE_I18N[lang];
+  if (!src) throw new Error('unknown marche lang ' + lang);
+  const count = n == null ? directoryBrandCount() : n;
+  const out = {};
+  for (const [k, v] of Object.entries(src)) {
+    out[k] = String(v).replace(/\{n\}/g, String(count));
+  }
+  return out;
+}
+
 const MARCHE_I18N = {
   de: {
-    page_title: "Ersatzteile nach Hersteller – 11959+ Marken | ABC Spare Parts",
-    page_description: "11959+ Hersteller für Industrieersatzteile durchsuchen. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Jetzt Teilenummer anfragen.",
-    og_title: "Ersatzteile nach Hersteller – 11959+ Marken | ABC Spare Parts",
-    og_description: "11959+ Hersteller für Industrieersatzteile durchsuchen. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Jetzt Teilenummer anfragen.",
-    twitter_title: "Ersatzteile nach Hersteller – 11959+ Marken | ABC Spare Parts",
-    twitter_description: "11959+ Hersteller für Industrieersatzteile. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Jetzt anfragen.",
-    jsonld_name: "Ersatzteile nach Hersteller – 11959+ Marken | ABC Spare Parts",
-    jsonld_description: "11959+ Hersteller für Industrieersatzteile durchsuchen. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Anfrage per Formular oder E-Mail.",
+    page_title: "Ersatzteile nach Hersteller – {n}+ Marken | ABC Spare Parts",
+    page_description: "{n}+ Hersteller für Industrieersatzteile durchsuchen. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Jetzt Teilenummer anfragen.",
+    og_title: "Ersatzteile nach Hersteller – {n}+ Marken | ABC Spare Parts",
+    og_description: "{n}+ Hersteller für Industrieersatzteile durchsuchen. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Jetzt Teilenummer anfragen.",
+    twitter_title: "Ersatzteile nach Hersteller – {n}+ Marken | ABC Spare Parts",
+    twitter_description: "{n}+ Hersteller für Industrieersatzteile. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Jetzt anfragen.",
+    jsonld_name: "Ersatzteile nach Hersteller – {n}+ Marken | ABC Spare Parts",
+    jsonld_description: "{n}+ Hersteller für Industrieersatzteile durchsuchen. Originalteile & Alternativen, 24h-Angebot, EU-Versand. Anfrage per Formular oder E-Mail.",
     marche_h1: "Marken und Hersteller",
-    marche_subtitle: "Über 11959 Marken für Industrieersatzteile. <a href=\"/\">Zurück zur Startseite</a>",
+    marche_subtitle: "Über {n} Marken für Industrieersatzteile. <a href=\"/\">Zurück zur Startseite</a>",
     marche_list_title: "Von ABCspareparts vertriebene Markenliste",
     marche_letters_title: "Schnellnavigation A-Z",
     marche_search_label: "Marke oder Artikelnummer suchen",
@@ -21,16 +49,16 @@ const MARCHE_I18N = {
     marche_showing_results: "Zeige {{count}} Marken für"
   },
   en: {
-    page_title: "Spare Parts by Manufacturer – 11959+ Brands | ABC Spare Parts",
-    page_description: "Browse 11959+ manufacturers for industrial spare parts. Original & alternative parts, 24h quotes, EU shipping. Request your part number now.",
-    og_title: "Spare Parts by Manufacturer – 11959+ Brands | ABC Spare Parts",
-    og_description: "Browse 11959+ manufacturers for industrial spare parts. Original & alternative parts, 24h quotes, EU shipping. Request your part number now.",
-    twitter_title: "Spare Parts by Manufacturer – 11959+ Brands | ABC Spare Parts",
-    twitter_description: "Browse 11959+ manufacturers for industrial spare parts. Original & alternatives, 24h quotes, EU shipping. Request now.",
-    jsonld_name: "Spare Parts by Manufacturer – 11959+ Brands | ABC Spare Parts",
-    jsonld_description: "Browse 11959+ manufacturers for industrial spare parts. Original & alternative parts, 24h quotes, EU shipping. Request via form or email.",
+    page_title: "Spare Parts by Manufacturer – {n}+ Brands | ABC Spare Parts",
+    page_description: "Browse {n}+ manufacturers for industrial spare parts. Original & alternative parts, 24h quotes, EU shipping. Request your part number now.",
+    og_title: "Spare Parts by Manufacturer – {n}+ Brands | ABC Spare Parts",
+    og_description: "Browse {n}+ manufacturers for industrial spare parts. Original & alternative parts, 24h quotes, EU shipping. Request your part number now.",
+    twitter_title: "Spare Parts by Manufacturer – {n}+ Brands | ABC Spare Parts",
+    twitter_description: "Browse {n}+ manufacturers for industrial spare parts. Original & alternatives, 24h quotes, EU shipping. Request now.",
+    jsonld_name: "Spare Parts by Manufacturer – {n}+ Brands | ABC Spare Parts",
+    jsonld_description: "Browse {n}+ manufacturers for industrial spare parts. Original & alternative parts, 24h quotes, EU shipping. Request via form or email.",
     marche_h1: "Brands and Manufacturers",
-    marche_subtitle: "Over 11959 brands for industrial spare parts. <a href=\"/en/\">Back to home</a>",
+    marche_subtitle: "Over {n} brands for industrial spare parts. <a href=\"/en/\">Back to home</a>",
     marche_list_title: "Brand list distributed by ABCspareparts",
     marche_letters_title: "Quick navigation A-Z",
     marche_search_label: "Search brand or part number",
@@ -40,16 +68,16 @@ const MARCHE_I18N = {
     marche_showing_results: "Showing {{count}} brands for"
   },
   it: {
-    page_title: "Ricambi per produttore – 11959+ marche | ABC Spare Parts",
-    page_description: "Sfoglia 11959+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiedi codice ora.",
-    og_title: "Ricambi per produttore – 11959+ marche | ABC Spare Parts",
-    og_description: "Sfoglia 11959+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiedi codice ora.",
-    twitter_title: "Ricambi per produttore – 11959+ marche | ABC Spare Parts",
-    twitter_description: "Sfoglia 11959+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiedi ora.",
-    jsonld_name: "Ricambi per produttore – 11959+ marche | ABC Spare Parts",
-    jsonld_description: "Sfoglia 11959+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiesta tramite modulo o email.",
+    page_title: "Ricambi per produttore – {n}+ marche | ABC Spare Parts",
+    page_description: "Sfoglia {n}+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiedi codice ora.",
+    og_title: "Ricambi per produttore – {n}+ marche | ABC Spare Parts",
+    og_description: "Sfoglia {n}+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiedi codice ora.",
+    twitter_title: "Ricambi per produttore – {n}+ marche | ABC Spare Parts",
+    twitter_description: "Sfoglia {n}+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiedi ora.",
+    jsonld_name: "Ricambi per produttore – {n}+ marche | ABC Spare Parts",
+    jsonld_description: "Sfoglia {n}+ produttori per ricambi industriali. Originali & alternativi, preventivi 24h, spedizioni UE. Richiesta tramite modulo o email.",
     marche_h1: "Marche e produttori",
-    marche_subtitle: "Oltre 11959 marchi per ricambi industriali. <a href=\"/it/\">Torna alla home</a>",
+    marche_subtitle: "Oltre {n} marchi per ricambi industriali. <a href=\"/it/\">Torna alla home</a>",
     marche_list_title: "Elenco marchi distribuiti da ABCspareparts",
     marche_letters_title: "Navigazione rapida A-Z",
     marche_search_label: "Cerca marca o codice articolo",
@@ -59,16 +87,16 @@ const MARCHE_I18N = {
     marche_showing_results: "Mostra {{count}} marche per"
   },
   es: {
-    page_title: "Recambios por fabricante – 11959+ marcas | ABC Spare Parts",
-    page_description: "Explore 11959+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicite referencia ahora.",
-    og_title: "Recambios por fabricante – 11959+ marcas | ABC Spare Parts",
-    og_description: "Explore 11959+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicite referencia ahora.",
-    twitter_title: "Recambios por fabricante – 11959+ marcas | ABC Spare Parts",
-    twitter_description: "Explore 11959+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicite ahora.",
-    jsonld_name: "Recambios por fabricante – 11959+ marcas | ABC Spare Parts",
-    jsonld_description: "Explore 11959+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicitud vía formulario o email.",
+    page_title: "Recambios por fabricante – {n}+ marcas | ABC Spare Parts",
+    page_description: "Explore {n}+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicite referencia ahora.",
+    og_title: "Recambios por fabricante – {n}+ marcas | ABC Spare Parts",
+    og_description: "Explore {n}+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicite referencia ahora.",
+    twitter_title: "Recambios por fabricante – {n}+ marcas | ABC Spare Parts",
+    twitter_description: "Explore {n}+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicite ahora.",
+    jsonld_name: "Recambios por fabricante – {n}+ marcas | ABC Spare Parts",
+    jsonld_description: "Explore {n}+ fabricantes de recambios industriales. Originales & alternativas, presupuestos 24h, envíos UE. Solicitud vía formulario o email.",
     marche_h1: "Marcas y fabricantes",
-    marche_subtitle: "Más de 11959 marcas para repuestos industriales. <a href=\"/es/\">Volver al inicio</a>",
+    marche_subtitle: "Más de {n} marcas para repuestos industriales. <a href=\"/es/\">Volver al inicio</a>",
     marche_list_title: "Lista de marcas distribuidas por ABCspareparts",
     marche_letters_title: "Navegación rápida A-Z",
     marche_search_label: "Buscar marca o número de pieza",
@@ -78,16 +106,16 @@ const MARCHE_I18N = {
     marche_showing_results: "Mostrando {{count}} marcas para"
   },
   fr: {
-    page_title: "Pièces par fabricant – 11959+ marques | ABC Spare Parts",
-    page_description: "Parcourez 11959+ fabricants pour pièces détachées industrielles. Origine & alternatives, devis 24h, livraison UE. Demandez référence maintenant.",
-    og_title: "Pièces par fabricant – 11959+ marques | ABC Spare Parts",
-    og_description: "Parcourez 11959+ fabricants pour pièces détachées industrielles. Origine & alternatives, devis 24h, livraison UE. Demandez référence maintenant.",
-    twitter_title: "Pièces par fabricant – 11959+ marques | ABC Spare Parts",
-    twitter_description: "Parcourez 11959+ fabricants pour pièces industrielles. Origine & alternatives, devis 24h, livraison UE. Demandez maintenant.",
-    jsonld_name: "Pièces par fabricant – 11959+ marques | ABC Spare Parts",
-    jsonld_description: "Parcourez 11959+ fabricants pour pièces détachées industrielles. Origine & alternatives, devis 24h, livraison UE. Demande via formulaire ou email.",
+    page_title: "Pièces par fabricant – {n}+ marques | ABC Spare Parts",
+    page_description: "Parcourez {n}+ fabricants pour pièces détachées industrielles. Origine & alternatives, devis 24h, livraison UE. Demandez référence maintenant.",
+    og_title: "Pièces par fabricant – {n}+ marques | ABC Spare Parts",
+    og_description: "Parcourez {n}+ fabricants pour pièces détachées industrielles. Origine & alternatives, devis 24h, livraison UE. Demandez référence maintenant.",
+    twitter_title: "Pièces par fabricant – {n}+ marques | ABC Spare Parts",
+    twitter_description: "Parcourez {n}+ fabricants pour pièces industrielles. Origine & alternatives, devis 24h, livraison UE. Demandez maintenant.",
+    jsonld_name: "Pièces par fabricant – {n}+ marques | ABC Spare Parts",
+    jsonld_description: "Parcourez {n}+ fabricants pour pièces détachées industrielles. Origine & alternatives, devis 24h, livraison UE. Demande via formulaire ou email.",
     marche_h1: "Marques et fabricants",
-    marche_subtitle: "Plus de 11959 marques pour pièces détachées industrielles. <a href=\"/fr/\">Retour à l'accueil</a>",
+    marche_subtitle: "Plus de {n} marques pour pièces détachées industrielles. <a href=\"/fr/\">Retour à l'accueil</a>",
     marche_list_title: "Liste des marques distribuées par ABCspareparts",
     marche_letters_title: "Navigation rapide A-Z",
     marche_search_label: "Rechercher marque ou référence",
@@ -99,5 +127,5 @@ const MARCHE_I18N = {
 };
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { MARCHE_I18N };
+  module.exports = { MARCHE_I18N, directoryBrandCount, marcheI18nFor };
 }

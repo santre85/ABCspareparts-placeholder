@@ -2,13 +2,15 @@
 
 const fs = require('fs');
 const path = require('path');
-const { MARCHE_I18N } = require('./marche-i18n.js');
+const { directoryBrandCount, marcheI18nFor } = require('./marche-i18n.js');
 const { FOOTER_I18N } = require('./site-footer.js');
 
+const brandCount = directoryBrandCount();
+
 function generateMarcheForLang(lang) {
-  console.log(`Generating marche.html for ${lang}...`);
+  console.log(`Generating marche.html for ${lang} (${brandCount} brands)...`);
   const deHtml = fs.readFileSync('marche.html', 'utf8');
-  const t = MARCHE_I18N[lang];
+  const t = marcheI18nFor(lang, brandCount);
   const ft = FOOTER_I18N[lang];
   
   let html = deHtml;
@@ -68,6 +70,9 @@ function generateMarcheForLang(lang) {
   
   // JavaScript URL builder: 'marche/' + slug → '/marche/' + slug
   html = html.replace(/'<li><a href="marche\/'/g, '\'<li><a href="/marche/\'');
+
+  // Search JSON lives at site root; relative fetch 404s under /en|/it|/es|/fr/
+  html = html.replace(/fetch\('\/?brand-groups\.json'\)/g, "fetch('/brand-groups.json')");
   
   // Write file
   const outputPath = path.join(__dirname, lang, 'marche.html');
@@ -80,4 +85,4 @@ generateMarcheForLang('en');
 generateMarcheForLang('it');
 generateMarcheForLang('es');
 generateMarcheForLang('fr');
-console.log('\n✅ Marche pages generated!');
+console.log('\nMarche language pages generated with', brandCount, 'brands.');

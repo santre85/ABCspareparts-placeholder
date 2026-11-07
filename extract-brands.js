@@ -292,7 +292,7 @@ ${FOOTER_CSS.replace(/\n/g, '\n    ')}
       return ['de','en','it','es','fr'].indexOf(lang)!==-1 ? lang : 'de';
     }
     function initGroupsData(done){
-      fetch('brand-groups.json')
+      fetch('/brand-groups.json')
         .then(function(r){ if(!r.ok) throw new Error('brand-groups ' + r.status); return r.json(); })
         .then(function(data){
           ORDERED_KEYS = data.orderedKeys || ORDERED_KEYS_INIT || [];

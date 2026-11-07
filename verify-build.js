@@ -501,8 +501,8 @@ const marcheHubHtml = fs.readFileSync(path.join(__dirname, 'marche.html'), 'utf8
 if (!marcheHubHtml.includes('data-i18n="footer_cases"')) {
   throw new Error('marche.html is missing unified footer');
 }
-if (!marcheHubHtml.includes("fetch('brand-groups.json'")) {
-  throw new Error('marche.html search must load brand-groups.json instead of inlining a second 12k-brand copy');
+if (!marcheHubHtml.includes("fetch('/brand-groups.json'")) {
+  throw new Error('marche.html search must load /brand-groups.json (root-absolute) instead of inlining a second 12k-brand copy');
 }
 if (/var STATIC_BRAND_GROUPS_HTML = "</.test(marcheHubHtml)) {
   throw new Error('marche.html must not duplicate #brandGroups HTML inside JavaScript');
