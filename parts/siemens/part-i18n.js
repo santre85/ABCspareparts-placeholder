@@ -401,9 +401,20 @@ window.ABC_SIEMENS_PART_I18N = {
     try {
       localStorage.setItem('lang', lang);
     } catch (e) {}
+    var bc = document.querySelector('.breadcrumb');
+    if (bc) {
+      bc.setAttribute('aria-label', lang === 'de' ? 'Brotkrumen' : lang === 'en' ? 'Breadcrumb' : lang === 'it' ? 'Percorso' : lang === 'es' ? 'Migas de pan' : 'Fil d’Ariane');
+      bc.querySelectorAll('a').forEach(function (a) {
+        var h = (a.getAttribute('href') || '').split('?')[0];
+        if (/marche\/[^/]+\.html$/i.test(h)) return;
+        if (/marche\.html$/i.test(h)) a.textContent = ui.footer_brands;
+      });
+    }
     var cta = document.querySelector('a.cta-primary');
     if (cta && ctx && ctx.display) {
       var prefix = lang === 'de' ? '../../' : '../../' + lang + '/';
+      cta.setAttribute('data-part-code', ctx.display);
+      cta.setAttribute('data-part-brand', 'Siemens');
       cta.setAttribute('href', prefix + '?code=' + encodeURIComponent(ctx.display) + '&brand=Siemens#contact');
     }
   },
@@ -424,9 +435,23 @@ window.ABC_SIEMENS_PART_I18N = {
     try {
       initial = localStorage.getItem('lang') || '';
     } catch (e) {}
-    if (['de', 'en', 'it', 'es', 'fr'].indexOf(initial) === -1) {
-      var nav = String((navigator.language || navigator.userLanguage || 'de').split('-')[0] || 'de').toLowerCase();
-      initial = ['de', 'en', 'it', 'es', 'fr'].indexOf(nav) !== -1 ? nav : 'de';
+    var allowed = ['de', 'en', 'it', 'es', 'fr'];
+    if (allowed.indexOf(initial) === -1) {
+      var list = [];
+      try {
+        if (navigator.languages && navigator.languages.length) {
+          for (var i = 0; i < navigator.languages.length; i++) list.push(navigator.languages[i]);
+        }
+      } catch (e2) {}
+      if (!list.length) list.push(navigator.language || navigator.userLanguage || 'de');
+      initial = 'de';
+      for (var j = 0; j < list.length; j++) {
+        var nav = String(list[j] || '').split('-')[0].toLowerCase();
+        if (allowed.indexOf(nav) !== -1) {
+          initial = nav;
+          break;
+        }
+      }
     }
     this.apply(initial, ctx);
   }

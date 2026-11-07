@@ -146,6 +146,32 @@ function findExistingPartPage(brandSlug, code) {
   return null;
 }
 
+/** Site-root-relative href to an on-disk item page, or null. Never invents a path. */
+function existingPartHref(brandSlug, code, fromDir) {
+  const file = findExistingPartPage(brandSlug, code);
+  if (!file || !brandSlug) return null;
+  const abs = path.join(PARTS_DIR, brandSlug, file);
+  if (!fs.existsSync(abs)) return null;
+  const prefix = fromDir == null ? '../parts' : fromDir;
+  return `${prefix}/${brandSlug}/${file}`;
+}
+
+function buildPartHrefMap(brandSlug, codes, fromDir) {
+  const map = {};
+  for (const code of codes || []) {
+    if (!code) continue;
+    const href = existingPartHref(brandSlug, code, fromDir);
+    if (href) map[String(code).toLowerCase()] = href;
+  }
+  return map;
+}
+
+function writePartHrefIndex(outPath, brandSlug, codes) {
+  const map = buildPartHrefMap(brandSlug, codes, '../parts');
+  fs.writeFileSync(outPath, JSON.stringify(map));
+  return Object.keys(map).length;
+}
+
 function resolvePartPageFilename(brandSlug, code) {
   return findExistingPartPage(brandSlug, code) || `${slugifyPartCode(code)}.html`;
 }
@@ -205,6 +231,9 @@ module.exports = {
   filenameStem,
   loadCatalog,
   findExistingPartPage,
+  existingPartHref,
+  buildPartHrefMap,
+  writePartHrefIndex,
   resolvePartPageFilename,
   searchIndexPageField,
   resetCatalog,

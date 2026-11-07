@@ -18,6 +18,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const { writePartHrefIndex } = require('./part-page-paths.js');
+
 const ROOT = __dirname;
 const LISTINI_DIR = path.join(ROOT, 'listini');
 const LISTINI_DATA_DIR = path.join(ROOT, 'listini-data');
@@ -330,6 +332,12 @@ function writeListinoDataFile(brandSlug, brandName, parts) {
     codes
   };
   fs.writeFileSync(path.join(ROOT, rel), `${JSON.stringify(payload)}\n`, 'utf8');
+  const hrefRel = rel.replace(/\.json$/i, '-part-hrefs.json');
+  try {
+    writePartHrefIndex(path.join(ROOT, hrefRel), brandSlug, codes);
+  } catch (e) {
+    console.warn('part href index', brandSlug, e.message);
+  }
   return {
     file: rel,
     count: codes.length,
@@ -368,7 +376,7 @@ function loadPublishedListiniData() {
   const bySlug = new Map();
   if (!fs.existsSync(LISTINI_DATA_DIR)) return bySlug;
   for (const file of fs.readdirSync(LISTINI_DATA_DIR)) {
-    if (!file.endsWith('.json')) continue;
+    if (!file.endsWith('.json') || file.endsWith('-part-hrefs.json')) continue;
     const slug = file.replace(/\.json$/i, '').toLowerCase();
     try {
       const data = JSON.parse(fs.readFileSync(path.join(LISTINI_DATA_DIR, file), 'utf8'));
