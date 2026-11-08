@@ -151,18 +151,18 @@ jobs:
             echo ""
             echo "📤 Submitting batch ${batch_num} (${batch_count} URLs)..."
             
-            # Build JSON payload using jq (pipe to avoid argument list length issues)
-            json_payload=$(cat "$batch_file" | jq -R . | jq -s \
+            # Build JSON on disk — curl -d "$json" exceeds ARG_MAX around 10k URLs.
+            cat "$batch_file" | jq -R . | jq -s \
               --arg host "abcspareparts.eu" \
               --arg key "$INDEXNOW_KEY" \
               --arg loc "$KEY_LOCATION" \
-              '{host:$host,key:$key,keyLocation:$loc,urlList:.}')
+              '{host:$host,key:$key,keyLocation:$loc,urlList:.}' \
+              > /tmp/indexnow_payload.json
             
-            # Submit to IndexNow
             http_code=$(curl -s -o /tmp/indexnow_response.txt -w "%{http_code}" \
               -X POST \
               -H "Content-Type: application/json" \
-              -d "$json_payload" \
+              --data-binary @/tmp/indexnow_payload.json \
               "${INDEXNOW_ENDPOINT}")
             
             if [ "$http_code" = "200" ] || [ "$http_code" = "202" ]; then
