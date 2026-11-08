@@ -12,7 +12,7 @@ const fs = require('fs');
 const path = require('path');
 const { BASE } = require('./seo-config.js');
 const { writeSitemapIndex } = require('./build-brand-parts.js');
-const { FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
+const { FOOTER_CSS, buildFooterHtml, FOOTER_TRADEMARK_COPY } = require('./site-footer.js');
 const { writePartHrefIndex } = require('./part-page-paths.js');
 
 const ROOT = __dirname;
@@ -524,6 +524,7 @@ ul{columns:2;gap:1.5rem;padding-left:1.1rem}
 .pager{margin:1rem 0;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
 .intro{background:#f0f6fb;border:1px solid #dce8f4;border-radius:8px;padding:.85rem 1rem;margin:0 0 1rem}
 footer{background:#1e3a5f;color:#fff;padding:1rem;text-align:center}footer a{color:#fff}
+.footer-trademark{font-size:0.75rem;line-height:1.45;opacity:0.85;max-width:42rem;margin:0.75rem auto 0;font-weight:400;}
 </style>
 </head>
 <body>
@@ -541,7 +542,10 @@ ${list}
 ${pageCount > 1 ? `<p class="pager">Seiten: ${pager.join(' · ')}</p>` : ''}
 <p><a href="../katalog.html">Alle Siemens-Serien</a> · <a href="../../../marche/siemens.html">Markenseite Siemens</a></p>
 </div></main>
-<footer><a href="../../../marche/siemens.html">Siemens</a> · © ABCspareparts</footer>
+<footer><a href="../../../marche/siemens.html">Siemens</a> · © ABCspareparts
+<p id="abc-tm-disclaimer" class="footer-trademark" data-abc-tm-disclaimer="1" role="note">${escapeHtml(FOOTER_TRADEMARK_COPY.de)}</p>
+</footer>
+<script src="/footer-disclaimer.js" defer></script>
 </body>
 </html>
 `;
@@ -574,6 +578,7 @@ body{font-family:system-ui,sans-serif;margin:0;color:#333;line-height:1.5}
 main{padding:1.25rem 0 2rem}
 ul{columns:2;gap:1.5rem}@media(max-width:640px){ul{columns:1}}
 footer{background:#1e3a5f;color:#fff;padding:1rem;text-align:center}footer a{color:#fff}
+.footer-trademark{font-size:0.75rem;line-height:1.45;opacity:0.85;max-width:42rem;margin:0.75rem auto 0;font-weight:400;}
 </style>
 </head>
 <body>
@@ -588,7 +593,10 @@ ${rows}
 </ul>
 <p><a href="../../marche/siemens.html">Zur Markenseite Siemens</a></p>
 </div></main>
-<footer><a href="../../marche/siemens.html">Siemens</a> · © ABCspareparts</footer>
+<footer><a href="../../marche/siemens.html">Siemens</a> · © ABCspareparts
+<p id="abc-tm-disclaimer" class="footer-trademark" data-abc-tm-disclaimer="1" role="note">${escapeHtml(FOOTER_TRADEMARK_COPY.de)}</p>
+</footer>
+<script src="/footer-disclaimer.js" defer></script>
 </body>
 </html>
 `;

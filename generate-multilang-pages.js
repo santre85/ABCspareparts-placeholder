@@ -293,7 +293,7 @@ ${hreflang}
       ${sections}
     </div>
   </main>
-  ${buildFooterHtml(navPrefix, { casesHub: 'casi.html' })}
+  ${buildFooterHtml(navPrefix, { casesHub: 'casi.html', lang })}
 </body>
 </html>`;
   
