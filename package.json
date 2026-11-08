@@ -3,6 +3,7 @@
     "build:marche": "node extract-brands.js && node generate-marche-lang.js",
     "build:marche-lang": "node generate-marche-lang.js",
     "test:marche-dir": "node test-marche-directory-search.js",
+    "test:footer-disclaimer": "node test-footer-disclaimer.js",
     "build:brand-parts": "node build-brand-parts.js",
     "build:brand-pages": "node generate-brand-pages.js",
     "build:brand-pages:parts": "node generate-brand-pages.js --parts-only",

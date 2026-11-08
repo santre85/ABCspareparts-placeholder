@@ -401,6 +401,25 @@ window.ABC_SIEMENS_PART_I18N = {
     try {
       localStorage.setItem('lang', lang);
     } catch (e) {}
+    if (window.ABC_FOOTER_DISCLAIMER) {
+      window.ABC_FOOTER_DISCLAIMER.apply(lang);
+    } else {
+      if (!window.__abcTmDisclaimerWaiters) window.__abcTmDisclaimerWaiters = [];
+      window.__abcTmDisclaimerWaiters.push(function () {
+        if (window.ABC_FOOTER_DISCLAIMER) window.ABC_FOOTER_DISCLAIMER.apply(lang);
+      });
+      if (!window.__abcTmDisclaimerScript) {
+        window.__abcTmDisclaimerScript = true;
+        var ds = document.createElement('script');
+        ds.src = '/footer-disclaimer.js';
+        ds.onload = function () {
+          var q = window.__abcTmDisclaimerWaiters || [];
+          window.__abcTmDisclaimerWaiters = [];
+          for (var di = 0; di < q.length; di++) q[di]();
+        };
+        (document.head || document.documentElement).appendChild(ds);
+      }
+    }
     var bc = document.querySelector('.breadcrumb');
     if (bc) {
       bc.setAttribute('aria-label', lang === 'de' ? 'Brotkrumen' : lang === 'en' ? 'Breadcrumb' : lang === 'it' ? 'Percorso' : lang === 'es' ? 'Migas de pan' : 'Fil d’Ariane');

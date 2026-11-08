@@ -1,6 +1,15 @@
 'use strict';
 
 const LINKEDIN_COMPANY_URL = 'https://www.linkedin.com/company/abcspareparts';
+const { COPY: FOOTER_TRADEMARK_COPY, CSS: FOOTER_TRADEMARK_CSS } = require('./footer-disclaimer.js');
+
+function escFooter(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
 
 const FOOTER_CSS = `
     .footer { background: #1e3a5f; color: #fff; padding: 2rem 1.5rem; text-align: center; }
@@ -9,7 +18,8 @@ const FOOTER_CSS = `
     .footer-links a { color: #fff; text-decoration: none; }
     .footer-links a:hover { text-decoration: underline; }
     .separator { margin: 0 0.5rem; opacity: 0.7; }
-    .footer-info { font-size: 0.9rem; opacity: 0.9; }`;
+    .footer-info { font-size: 0.9rem; opacity: 0.9; }
+    ${FOOTER_TRADEMARK_CSS}`;
 
 const FOOTER_I18N = {
   de: {
@@ -22,7 +32,8 @@ const FOOTER_I18N = {
     footer_shipping: 'Versand',
     footer_cookies: 'Cookies',
     footer_linkedin: 'LinkedIn',
-    footer_rights: 'Alle Rechte vorbehalten.'
+    footer_rights: 'Alle Rechte vorbehalten.',
+    footer_trademark: FOOTER_TRADEMARK_COPY.de
   },
   en: {
     footer_brands: 'Brands',
@@ -34,7 +45,8 @@ const FOOTER_I18N = {
     footer_shipping: 'Shipping',
     footer_cookies: 'Cookies',
     footer_linkedin: 'LinkedIn',
-    footer_rights: 'All rights reserved.'
+    footer_rights: 'All rights reserved.',
+    footer_trademark: FOOTER_TRADEMARK_COPY.en
   },
   it: {
     footer_brands: 'Marche',
@@ -46,7 +58,8 @@ const FOOTER_I18N = {
     footer_shipping: 'Spedizione',
     footer_cookies: 'Cookie',
     footer_linkedin: 'LinkedIn',
-    footer_rights: 'Tutti i diritti riservati.'
+    footer_rights: 'Tutti i diritti riservati.',
+    footer_trademark: FOOTER_TRADEMARK_COPY.it
   },
   es: {
     footer_brands: 'Marcas',
@@ -58,7 +71,8 @@ const FOOTER_I18N = {
     footer_shipping: 'Envío',
     footer_cookies: 'Cookies',
     footer_linkedin: 'LinkedIn',
-    footer_rights: 'Todos los derechos reservados.'
+    footer_rights: 'Todos los derechos reservados.',
+    footer_trademark: FOOTER_TRADEMARK_COPY.es
   },
   fr: {
     footer_brands: 'Marques',
@@ -70,7 +84,8 @@ const FOOTER_I18N = {
     footer_shipping: 'Livraison',
     footer_cookies: 'Cookies',
     footer_linkedin: 'LinkedIn',
-    footer_rights: 'Tous droits réservés.'
+    footer_rights: 'Tous droits réservés.',
+    footer_trademark: FOOTER_TRADEMARK_COPY.fr
   }
 };
 
@@ -92,6 +107,8 @@ function buildLinkedInFooterAnchor() {
 function buildFooterHtml(linkPrefix, options) {
   const p = linkPrefix || '';
   const casesHub = (options && options.casesHub) || 'casi.html';
+  const lang = (options && options.lang && FOOTER_TRADEMARK_COPY[options.lang]) ? options.lang : 'de';
+  const tm = escFooter(FOOTER_TRADEMARK_COPY[lang]);
   return `<footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -116,10 +133,12 @@ function buildFooterHtml(linkPrefix, options) {
       </div>
       <div class="footer-info">
         <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+        <p id="abc-tm-disclaimer" class="footer-trademark" data-i18n="footer_trademark" data-abc-tm-disclaimer="1" role="note">${tm}</p>
       </div>
     </div>
   </div>
-</footer>`;
+</footer>
+<script src="/footer-disclaimer.js" defer></script>`;
 }
 
 module.exports = {
@@ -127,6 +146,7 @@ module.exports = {
   FOOTER_CSS,
   FOOTER_I18N,
   FOOTER_LANGS,
+  FOOTER_TRADEMARK_COPY,
   withFooterI18n,
   buildLinkedInFooterAnchor,
   buildFooterHtml

@@ -57,6 +57,10 @@ function generateMarcheForLang(lang) {
   html = html.replace(/<a href="agb\.html"([^>]*)data-i18n="footer_terms">.*?<\/a>/, `<a href="/agb.html"$1data-i18n="footer_terms">${ft.footer_terms}</a>`);
   html = html.replace(/<a href="versand\.html"([^>]*)data-i18n="footer_shipping">.*?<\/a>/, `<a href="/versand.html"$1data-i18n="footer_shipping">${ft.footer_shipping}</a>`);
   html = html.replace(/<a href="cookies\.html"([^>]*)data-i18n="footer_cookies">.*?<\/a>/, `<a href="/cookies.html"$1data-i18n="footer_cookies">${ft.footer_cookies}</a>`);
+  html = html.replace(
+    /<p id="abc-tm-disclaimer"[^>]*>[\s\S]*?<\/p>/,
+    `<p id="abc-tm-disclaimer" class="footer-trademark" data-i18n="footer_trademark" data-abc-tm-disclaimer="1" role="note">${ft.footer_trademark}</p>`
+  );
   
   // Fix the hardcoded language selector value
   html = html.replace(

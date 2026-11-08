@@ -92,6 +92,7 @@
     .footer-links a:hover { text-decoration: underline; }
     .separator { margin: 0 0.5rem; opacity: 0.7; }
     .footer-info { font-size: 0.9rem; opacity: 0.9; }
+    .footer-trademark{font-size:0.75rem;line-height:1.45;opacity:0.85;max-width:42rem;margin:0.75rem auto 0;font-weight:400;}
   </style>
 </head>
 <body>
@@ -199,6 +200,7 @@
       </div>
       <div class="footer-info">
         <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+        <p id="abc-tm-disclaimer" class="footer-trademark" data-i18n="footer_trademark" data-abc-tm-disclaimer="1" role="note">Alle genannten Marken und Logos sind Eigentum ihrer jeweiligen Inhaber und dienen ausschließlich der Produktidentifikation. ABCspareparts ist ein unabhängiger Händler; ihre Verwendung bedeutet keine Verbindung, Autorisierung oder Billigung durch die Markeninhaber.</p>
       </div>
     </div>
   </div>
@@ -332,5 +334,6 @@
     });
   })();
   </script>
+  <script src="/footer-disclaimer.js" defer></script>
 </body>
 </html>

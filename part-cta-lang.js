@@ -176,6 +176,28 @@
     } catch (e) {}
   }
 
+  function runFooterDisclaimer(lang) {
+    function go() {
+      if (window.ABC_FOOTER_DISCLAIMER) window.ABC_FOOTER_DISCLAIMER.apply(lang);
+    }
+    if (window.ABC_FOOTER_DISCLAIMER) {
+      go();
+      return;
+    }
+    if (!window.__abcTmDisclaimerWaiters) window.__abcTmDisclaimerWaiters = [];
+    window.__abcTmDisclaimerWaiters.push(go);
+    if (window.__abcTmDisclaimerScript) return;
+    window.__abcTmDisclaimerScript = true;
+    var s = document.createElement('script');
+    s.src = '/footer-disclaimer.js';
+    s.onload = function () {
+      var q = window.__abcTmDisclaimerWaiters || [];
+      window.__abcTmDisclaimerWaiters = [];
+      for (var i = 0; i < q.length; i++) q[i]();
+    };
+    (document.head || document.documentElement).appendChild(s);
+  }
+
   function applyCta(lang) {
     var prefix = homePrefix(lang);
     var links = document.querySelectorAll('a.cta-primary');
@@ -288,11 +310,13 @@
     persist(lang);
     applyChrome(lang);
     applyCta(lang);
+    runFooterDisclaimer(lang);
   }
 
   function boot() {
     if (window.ABC_SIEMENS_PART_I18N) {
       applyCta(visitorLang());
+      runFooterDisclaimer(visitorLang());
       return;
     }
     injectSelector();
