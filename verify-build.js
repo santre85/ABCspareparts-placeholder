@@ -3,7 +3,14 @@
 const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
-const { collectIndexWorthySlugs } = require('./seo-config.js');
+const {
+  collectIndexableBrandPages,
+  listBrandSitemapFiles,
+  isIndexableBrandHtml,
+  SITEMAP_URL_LIMIT,
+  SITEMAP_BYTE_LIMIT
+} = require('./write-brand-sitemaps.js');
+const { isExcludedBrand } = require('./seo-config.js');
 
 const indexHtml = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
 const match = indexHtml.match(/const brands = (\[[\s\S]*?\];\s*\n)/);
@@ -40,34 +47,52 @@ for (const f of toCheck) {
   }
 }
 
-const sb = fs.readFileSync(path.join(__dirname, 'sitemap-brands.xml'), 'utf8');
-const urlCount = (sb.match(/<loc>/g) || []).length;
+function parseSitemapLocs(xml) {
+  return [...String(xml || '').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+}
+
 const partsDataEarly = JSON.parse(fs.readFileSync(path.join(__dirname, 'brand-order-parts.json'), 'utf8'));
-const topBrandBySlug = JSON.parse(fs.readFileSync(path.join(__dirname, 'top-brands-content.json'), 'utf8'));
 const partsSlugSet = new Set(
   (partsDataEarly.brands || [])
     .filter((b) => b.brand_slug && ((b.parts && b.parts.length) || b.listino?.count))
     .map((b) => b.brand_slug)
 );
-const worthySlugs = collectIndexWorthySlugs(partsSlugSet, topBrandBySlug);
-const expectedBrandsSitemap = [...worthySlugs].filter((slug) => !partsSlugSet.has(slug)).length;
-if (urlCount !== expectedBrandsSitemap) {
-  throw new Error(
-    `sitemap-brands.xml <loc> count ${urlCount} !== index-worthy brands excluding parts-priority ${expectedBrandsSitemap}`
-  );
+const indexableBrandPages = collectIndexableBrandPages();
+const indexableBrandUrls = new Set(indexableBrandPages.map((p) => p.url));
+const brandSitemapFiles = listBrandSitemapFiles();
+if (!brandSitemapFiles.length) {
+  throw new Error('No sitemap-brands.xml (or sitemap-brands-N.xml shards) on disk');
 }
-if (urlCount > 200) {
-  throw new Error(`sitemap-brands.xml is too large (${urlCount}) — do not submit thin template brand pages`);
+
+let brandSitemapUrlCount = 0;
+const brandSitemapLocs = [];
+for (const file of brandSitemapFiles) {
+  const sp = path.join(__dirname, file);
+  const xml = fs.readFileSync(sp, 'utf8');
+  const size = fs.statSync(sp).size;
+  if (!xml.includes('<?xml version="1.0"')) throw new Error(`${file} missing xml header`);
+  if (!xml.includes('</urlset>')) throw new Error(`${file} missing urlset close`);
+  const locs = parseSitemapLocs(xml);
+  if (locs.length > SITEMAP_URL_LIMIT) {
+    throw new Error(`${file} has ${locs.length} URLs (limit ${SITEMAP_URL_LIMIT})`);
+  }
+  if (size > SITEMAP_BYTE_LIMIT) {
+    throw new Error(`${file} is ${size} bytes (limit ${SITEMAP_BYTE_LIMIT})`);
+  }
+  brandSitemapUrlCount += locs.length;
+  brandSitemapLocs.push(...locs);
 }
-if (!sb.includes('<?xml version="1.0"')) throw new Error('sitemap-brands.xml missing xml header');
-if (!sb.includes('</urlset>')) throw new Error('sitemap-brands.xml missing urlset close');
+const urlCount = brandSitemapUrlCount;
 
 const siPath = path.join(__dirname, 'sitemap-index.xml');
 if (!fs.existsSync(siPath)) throw new Error('sitemap-index.xml missing');
 const si = fs.readFileSync(siPath, 'utf8');
 if (!si.includes('<sitemapindex')) throw new Error('sitemap-index.xml missing sitemapindex root');
 if (!si.includes('/sitemap.xml')) throw new Error('sitemap-index.xml missing sitemap.xml reference');
-if (!si.includes('/sitemap-brands.xml')) throw new Error('sitemap-index.xml missing sitemap-brands.xml reference');
+const indexListsBrandSitemap = brandSitemapFiles.some((file) => si.includes(`/${file}`));
+if (!indexListsBrandSitemap) {
+  throw new Error(`sitemap-index.xml missing brand sitemap reference (expected ${brandSitemapFiles.join(', ')})`);
+}
 if (!si.includes('/sitemap-cases.xml')) throw new Error('sitemap-index.xml missing sitemap-cases.xml reference');
 if (!si.includes('/sitemap-brand-parts.xml')) throw new Error('sitemap-index.xml missing sitemap-brand-parts.xml reference');
 // Parameter deep-link sitemaps must NOT be submitted (GSC crawl/index waste).
@@ -119,16 +144,78 @@ if (/\?part=|\?lang=/.test(sbp)) {
   throw new Error('sitemap-brand-parts.xml must not contain ?part= or ?lang= URLs');
 }
 
-const brandSitemapLocs = [...sb.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-const partsSitemapLocs = new Set([...sbp.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
+const partsSitemapLocs = new Set(parseSitemapLocs(sbp));
+const brandSitemapLocSet = new Set(brandSitemapLocs);
 for (const loc of brandSitemapLocs) {
   if (partsSitemapLocs.has(loc)) {
-    throw new Error(`Duplicate sitemap URL ${loc} in both sitemap-brands.xml and sitemap-brand-parts.xml`);
+    throw new Error(`Duplicate sitemap URL ${loc} in both brand sitemaps and sitemap-brand-parts.xml`);
   }
   const slug = (loc.match(/\/marche\/([^/]+)\.html$/) || [])[1];
-  if (!slug || !worthySlugs.has(slug) || partsSlugSet.has(slug)) {
-    throw new Error(`sitemap-brands.xml unexpected URL ${loc}`);
+  if (!slug || partsSlugSet.has(slug) || !indexableBrandUrls.has(loc)) {
+    throw new Error(`sitemap-brands unexpected URL ${loc}`);
   }
+}
+
+const expectedOtherBrandCount = indexableBrandPages.filter((p) => !partsSlugSet.has(p.slug)).length;
+if (brandSitemapUrlCount !== expectedOtherBrandCount) {
+  throw new Error(
+    `brand sitemap <loc> count ${brandSitemapUrlCount} !== indexable brands excluding parts-priority ${expectedOtherBrandCount}`
+  );
+}
+
+const indexChildFiles = parseSitemapLocs(si).map((loc) => loc.replace(/^https:\/\/abcspareparts\.eu\//, ''));
+if (!indexChildFiles.length) {
+  throw new Error('sitemap-index.xml lists no child sitemaps');
+}
+const locToFiles = new Map();
+for (const child of indexChildFiles) {
+  const childPath = path.join(__dirname, child);
+  if (!fs.existsSync(childPath)) {
+    throw new Error(`sitemap-index.xml references missing ${child}`);
+  }
+  const childXml = fs.readFileSync(childPath, 'utf8');
+  const childSize = fs.statSync(childPath).size;
+  const childLocs = parseSitemapLocs(childXml);
+  if (childLocs.length > SITEMAP_URL_LIMIT) {
+    throw new Error(`${child} has ${childLocs.length} URLs (limit ${SITEMAP_URL_LIMIT})`);
+  }
+  if (childSize > SITEMAP_BYTE_LIMIT) {
+    throw new Error(`${child} is ${childSize} bytes (limit ${SITEMAP_BYTE_LIMIT})`);
+  }
+  for (const loc of childLocs) {
+    const prev = locToFiles.get(loc);
+    if (prev) {
+      throw new Error(`Duplicate sitemap URL ${loc} in ${prev} and ${child}`);
+    }
+    locToFiles.set(loc, child);
+  }
+}
+
+const missingBrandUrls = [];
+for (const page of indexableBrandPages) {
+  if (!locToFiles.has(page.url)) missingBrandUrls.push(page.url);
+}
+if (missingBrandUrls.length) {
+  const sample = missingBrandUrls.slice(0, 8).join(', ');
+  throw new Error(
+    `${missingBrandUrls.length} indexable brand page(s) missing from sitemaps listed in sitemap-index.xml (e.g. ${sample})`
+  );
+}
+
+const stubOrExcludedInSitemap = [];
+for (const name of fs.readdirSync(marcheDir).filter((f) => f.endsWith('.html'))) {
+  const slug = name.slice(0, -5);
+  const html = fs.readFileSync(path.join(marcheDir, name), 'utf8');
+  const url = `https://abcspareparts.eu/marche/${slug}.html`;
+  if (isIndexableBrandHtml(html, slug) && !isExcludedBrand(slug, slug)) continue;
+  if (locToFiles.has(url)) stubOrExcludedInSitemap.push(url);
+}
+if (stubOrExcludedInSitemap.length) {
+  throw new Error(`noindex/stub/excluded brand URL in sitemap: ${stubOrExcludedInSitemap.slice(0, 8).join(', ')}`);
+}
+
+if (!locToFiles.has('https://abcspareparts.eu/marche/emhart-teknologies.html')) {
+  throw new Error('emhart-teknologies.html is indexable but missing from sitemaps');
 }
 
 // Legacy parameter sitemaps must be deleted.
@@ -205,19 +292,20 @@ if (fs.existsSync(mvpPath)) {
   }
 }
 
-// Root sitemap.xml must stay fresh whenever the index is maintained (Search Console).
+// lastmod values must be real dates (YYYY-MM-DD), not a forced today stamp on every URL.
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const mainSitemapPath = path.join(__dirname, 'sitemap.xml');
 if (!fs.existsSync(mainSitemapPath)) throw new Error('sitemap.xml missing');
 const mainSitemap = fs.readFileSync(mainSitemapPath, 'utf8');
 const mainLastmods = [...mainSitemap.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
 if (!mainLastmods.length) throw new Error('sitemap.xml has no <lastmod> entries');
-const today = new Date().toISOString().slice(0, 10);
-if (mainLastmods.some((d) => d !== today)) {
-  throw new Error(`sitemap.xml lastmod must be ${today} (got ${[...new Set(mainLastmods)].join(', ')}) — rebuild brand-parts/brand-pages/casi`);
+if (mainLastmods.some((d) => !ISO_DATE.test(d))) {
+  throw new Error(`sitemap.xml has invalid lastmod values: ${[...new Set(mainLastmods.filter((d) => !ISO_DATE.test(d)))].join(', ')}`);
 }
 const indexLastmods = [...si.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
-if (indexLastmods.some((d) => d !== today)) {
-  throw new Error(`sitemap-index.xml lastmod must be ${today} — rebuild brand-parts/brand-pages/casi`);
+if (!indexLastmods.length) throw new Error('sitemap-index.xml has no <lastmod> entries');
+if (indexLastmods.some((d) => !ISO_DATE.test(d))) {
+  throw new Error(`sitemap-index.xml has invalid lastmod values: ${[...new Set(indexLastmods.filter((d) => !ISO_DATE.test(d)))].join(', ')}`);
 }
 
 const casesPath = path.join(__dirname, 'supply-cases.json');
@@ -558,7 +646,13 @@ if (!marcheHubHtml.includes(`Über ${brands.length} Marken`) && !marcheHubHtml.i
 }
 
 // SEO-008/009: sitemap hygiene — no cookies.html; casi.html in exactly one sitemap; no param URLs.
-const sitemapFiles = ['sitemap.xml', 'sitemap-brands.xml', 'sitemap-brand-parts.xml', 'sitemap-cases.xml', 'sitemap-parts.xml'];
+const sitemapFiles = [
+  'sitemap.xml',
+  ...brandSitemapFiles,
+  'sitemap-brand-parts.xml',
+  'sitemap-cases.xml',
+  'sitemap-parts.xml'
+];
 let casiSitemapCount = 0;
 for (const sf of sitemapFiles) {
   const sp = path.join(__dirname, sf);
@@ -709,4 +803,14 @@ for (const row of partsDataEarly.brands || []) {
   }
 }
 
-console.log('verify-build: OK —', brands.length, 'brands,', htmlFiles.length, 'HTML pages,', urlCount, 'index-worthy sitemap-brands URLs + SEO checks');
+console.log(
+  'verify-build: OK —',
+  brands.length,
+  'brands,',
+  htmlFiles.length,
+  'HTML pages,',
+  urlCount,
+  'sitemap-brands URLs +',
+  indexableBrandPages.length,
+  'indexable brand pages in sitemaps + SEO checks'
+);

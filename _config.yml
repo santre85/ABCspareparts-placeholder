@@ -11,7 +11,9 @@ include:
   - listini-data
   - sitemap.xml
   - sitemap-index.xml
+  # BEGIN brand-sitemaps
   - sitemap-brands.xml
+  # END brand-sitemaps
   - sitemap-brand-parts.xml
   - sitemap-cases.xml
   - sitemap-parts.xml
@@ -34,10 +36,12 @@ defaults:
       path: "sitemap-index.xml"
     values:
       layout: none
+  # BEGIN brand-sitemap-defaults
   - scope:
       path: "sitemap-brands.xml"
     values:
       layout: none
+  # END brand-sitemap-defaults
   - scope:
       path: "sitemap-brand-parts.xml"
     values:

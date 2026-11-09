@@ -72,9 +72,9 @@ const ICON_LINKS = [
 ].join('\n  ');
 
 /**
- * Brand slugs worth advertising in XML sitemaps (unique content: listino/RFQ
- * parts and/or curated top-brand copy). Thin template-only brand pages stay
- * index,follow in HTML but are not submitted for crawl.
+ * Related-brand linking (not sitemap membership). All indexable /marche/*.html
+ * pages belong in a sitemap listed by sitemap-index.xml; this set is only the
+ * higher-quality subset used for "similar brands" blocks.
  * @param {Iterable<string>} partSlugs
  * @param {Record<string, unknown>} topBrandBySlug
  */
@@ -89,6 +89,37 @@ function collectIndexWorthySlugs(partSlugs, topBrandBySlug) {
   return set;
 }
 
+/**
+ * Brands permanently excluded from generation and sitemaps.
+ * Match is case-insensitive against brand name and slug after stripping
+ * spaces, hyphens, slashes, and dots. Exact-key match only (no substring),
+ * so plain AXIOMTEK is not treated as AXIOMTEK / MARKEM-IMAJE.
+ */
+const EXCLUDED_BRANDS = [
+  'keysight',
+  'keysight technologies',
+  'keysight-technologies',
+  'markem',
+  'markem imaje',
+  'markem-imaje',
+  'axiomtek / markem-imaje',
+  'axiomtek / markem imaje',
+  'axiomtek-markem-imaje',
+  'axiomtek markem imaje'
+];
+
+function normalizeExcludedKey(str) {
+  return String(str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
+}
+
+function isExcludedBrand(brandName, brandSlug) {
+  const keys = [brandName, brandSlug].filter(Boolean).map(normalizeExcludedKey);
+  return EXCLUDED_BRANDS.some((excluded) => {
+    const ex = normalizeExcludedKey(excluded);
+    return ex && keys.some((k) => k === ex);
+  });
+}
+
 module.exports = {
   BASE,
   PRIMARY_LANG,
@@ -97,5 +128,7 @@ module.exports = {
   hreflangLinksForAlternates,
   canonicalUrl,
   ICON_LINKS,
-  collectIndexWorthySlugs
+  collectIndexWorthySlugs,
+  EXCLUDED_BRANDS,
+  isExcludedBrand
 };

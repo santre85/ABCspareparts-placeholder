@@ -23,31 +23,10 @@ const {
 
 const ROOT = __dirname;
 
-/**
- * Brands permanently excluded from ERP merge.
- * These brands will never be merged, even if they appear in erp-items.json.
- * Match is case-insensitive against brand slug.
- */
-const EXCLUDED_BRANDS = [
-  'keysight',
-  'keysight-technologies',
-  'keysight technologies',
-  'markem',
-  'markem-imaje',
-  'markem imaje',
-  'axiomtek / markem-imaje',
-  'axiomtek / markem imaje',
-  'axiomtek-markem-imaje',
-  'axiomtek markem imaje'
-];
-
-function normalizeExcludedKey(str) {
-  return String(str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
-}
+const { isExcludedBrand: isExcludedBrandSeo } = require('./seo-config.js');
 
 function isExcludedBrand(brandSlug) {
-  const normalized = normalizeExcludedKey(brandSlug);
-  return EXCLUDED_BRANDS.some((ex) => normalizeExcludedKey(ex) === normalized);
+  return isExcludedBrandSeo(brandSlug, brandSlug);
 }
 
 function normalizePart(value) {

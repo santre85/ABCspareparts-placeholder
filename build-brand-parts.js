@@ -14,6 +14,12 @@ const ROOT = __dirname;
 const BASE = 'https://abcspareparts.eu';
 const MAX_DESC_LEN = 120;
 const TODAY = new Date().toISOString().slice(0, 10);
+const {
+  lastmodForRelPath,
+  listBrandSitemapFiles,
+  writeBrandSitemaps,
+  collectIndexableBrandPages
+} = require('./write-brand-sitemaps.js');
 
 /** ERP brand label → canonical brand name in brand-slugs.json */
 const BRAND_ALIASES = {
@@ -357,9 +363,10 @@ function writeSitemapBrandParts(brands) {
     if (!row.brand_slug) continue;
     if (!row.parts?.length && !row.listino?.count) continue;
     const loc = `${BASE}/marche/${row.brand_slug}.html`;
+    const lastmod = lastmodForRelPath(`marche/${row.brand_slug}.html`);
     body += '  <url>\n';
     body += `    <loc>${loc}</loc>\n`;
-    body += `    <lastmod>${TODAY}</lastmod>\n`;
+    body += `    <lastmod>${lastmod}</lastmod>\n`;
     body += '    <changefreq>weekly</changefreq>\n';
     body += '    <priority>0.85</priority>\n';
     body += '  </url>\n';
@@ -372,6 +379,8 @@ layout: none
 ${body}</urlset>
 `;
   fs.writeFileSync(path.join(ROOT, 'sitemap-brand-parts.xml'), xml, 'utf8');
+  // Drop any of these URLs from sitemap-brands* so ERP merges cannot duplicate them.
+  writeBrandSitemaps();
 }
 
 /** Max URLs per sitemap file (Google limit is 50 000). Kept for compatibility. */
@@ -448,9 +457,10 @@ function writeSitemapIndex(options = {}) {
       fs.readFileSync(path.join(ROOT, 'sitemap-index.xml'), 'utf8').includes('/sitemap-parts.xml');
   }
 
+  const brandSitemaps = listBrandSitemapFiles();
   const entries = [
     'sitemap.xml',
-    'sitemap-brands.xml',
+    ...(brandSitemaps.length ? brandSitemaps : ['sitemap-brands.xml']),
     'sitemap-brand-parts.xml',
     'sitemap-cases.xml'
   ];
@@ -472,7 +482,7 @@ function writeSitemapIndex(options = {}) {
     if (file !== 'sitemap.xml' && !fs.existsSync(path.join(ROOT, file))) continue;
     body += '  <sitemap>\n';
     body += `    <loc>${BASE}/${file}</loc>\n`;
-    body += `    <lastmod>${TODAY}</lastmod>\n`;
+    body += `    <lastmod>${lastmodForRelPath(file)}</lastmod>\n`;
     body += '  </sitemap>\n';
   }
   const xml = `---
@@ -483,7 +493,6 @@ layout: none
 ${body}</sitemapindex>
 `;
   fs.writeFileSync(path.join(ROOT, 'sitemap-index.xml'), xml, 'utf8');
-  touchMainSitemap();
   updateJekyllConfig(siemensShards);
 }
 
@@ -515,6 +524,24 @@ function updateJekyllConfig(listinoSitemapFiles) {
     '  # END listino-sitemap-defaults'
   ].join('\n');
 
+  const brandFiles = listBrandSitemapFiles();
+  const brandList = brandFiles.length ? brandFiles : ['sitemap-brands.xml'];
+  const brandIncludeBlock = [
+    '  # BEGIN brand-sitemaps',
+    ...brandList.map((f) => `  - ${f}`),
+    '  # END brand-sitemaps'
+  ].join('\n');
+  const brandDefaultsBlock = [
+    '  # BEGIN brand-sitemap-defaults',
+    ...brandList.map(
+      (f) => `  - scope:
+      path: "${f}"
+    values:
+      layout: none`
+    ),
+    '  # END brand-sitemap-defaults'
+  ].join('\n');
+
   let content = fs.readFileSync(configPath, 'utf8');
   if (!/# BEGIN listino-sitemaps/.test(content) || !/# BEGIN listino-sitemap-defaults/.test(content)) {
     console.warn('_config.yml missing listino sitemap markers — skip auto-update');
@@ -528,6 +555,16 @@ function updateJekyllConfig(listinoSitemapFiles) {
     /  # BEGIN listino-sitemap-defaults[\s\S]*?  # END listino-sitemap-defaults/,
     defaultsBlock
   );
+  if (/# BEGIN brand-sitemaps/.test(content) && /# BEGIN brand-sitemap-defaults/.test(content)) {
+    content = content.replace(
+      /  # BEGIN brand-sitemaps[\s\S]*?  # END brand-sitemaps/,
+      brandIncludeBlock
+    );
+    content = content.replace(
+      /  # BEGIN brand-sitemap-defaults[\s\S]*?  # END brand-sitemap-defaults/,
+      brandDefaultsBlock
+    );
+  }
   fs.writeFileSync(configPath, content.endsWith('\n') ? content : `${content}\n`, 'utf8');
 }
 
@@ -631,7 +668,12 @@ function updateLlmsTxt(brands, listinoSitemapFiles = []) {
   const partsSitemapLine = partsSitemapLive
     ? `- [MVP part pages](${BASE}/sitemap-parts.xml) — dedicated \`/parts/{brand}/{code}\` URLs\n`
     : '';
-  const sitemapSection = `## XML sitemaps (search engines)\n\nIndexable URLs only (no \`?part=\` / \`?lang=\` variants — those are client-side UX):\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n- [Other unique-content brand pages](${BASE}/sitemap-brands.xml) — curated copy, not the thin 12k template set\n- [Success stories](${BASE}/sitemap-cases.xml)\n${partsSitemapLine}- [Core pages](${BASE}/sitemap.xml)\n`;
+  const brandSitemapFiles = listBrandSitemapFiles();
+  const otherBrandCount = Math.max(0, collectIndexableBrandPages().length - brandPartsCount);
+  const brandSitemapLinks = (brandSitemapFiles.length ? brandSitemapFiles : ['sitemap-brands.xml'])
+    .map((file) => `- [Other indexable brand pages](${BASE}/${file}) — ${otherBrandCount} public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)`)
+    .join('\n');
+  const sitemapSection = `## XML sitemaps (search engines)\n\nIndexable URLs only (no \`?part=\` / \`?lang=\` variants — those are client-side UX):\n\n- [Sitemap index](${BASE}/sitemap-index.xml)\n- [Brand pages with parts](${BASE}/sitemap-brand-parts.xml) — ${brandPartsCount} high-priority brand URLs\n${brandSitemapLinks}\n- [Success stories](${BASE}/sitemap-cases.xml)\n${partsSitemapLine}- [Core pages](${BASE}/sitemap.xml)\n`;
 
   if (/## XML sitemaps \(search engines\)/.test(content)) {
     content = content.replace(/## XML sitemaps \(search engines\)[\s\S]*?(?=\n## |$)/, sitemapSection.trimEnd());
