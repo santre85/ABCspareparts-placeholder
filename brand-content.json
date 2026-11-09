@@ -6786,6 +6786,294 @@
       }
     }
   },
+  "agilent": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "shimadzu",
+      "waters",
+      "thermo-fisher",
+      "perkin-elmer",
+      "mettler-toledo",
+      "horiba"
+    ],
+    "related_labels": {
+      "shimadzu": "SHIMADZU",
+      "waters": "WATERS",
+      "thermo-fisher": "Thermo Fisher",
+      "perkin-elmer": "PERKIN ELMER",
+      "mettler-toledo": "Mettler Toledo",
+      "horiba": "HORIBA"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/agilent.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/agilent.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/agilent.html#brand",
+          "name": "AGILENT"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/agilent.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/agilent.html#brand"
+          },
+          "name": "Agilent Technologies, Inc."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/agilent.html#service",
+          "name": "Beschaffung von AGILENT Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/agilent.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "AGILENT Ersatzteile | ABCspareparts",
+        "meta_description": "AGILENT Ersatzteile für GC, LC, MS, Spektroskopie und Vakuumtechnik. Typ vom Typenschild senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "AGILENT – Ersatzteile für Labor- und Analyseninstrumente (GC, LC, MS, Spektroskopie)",
+        "brand_intro": "Agilent Technologies mit Sitz in Santa Clara, Kalifornien, entstand 1999 als Ausgründung aus Hewlett-Packard. Das Unternehmen fertigt Instrumente, Software und Verbrauchsmaterialien für Labore. Zu den Hauptlinien gehören Gas- und Flüssigchromatographie, Massenspektrometrie, Spektroskopie und Vakuumtechnik.",
+        "brand_intro_p2": "Anfragen über ABCspareparts: wettbewerbsfähige Preise, Angebot oft innerhalb von 24 Stunden, Lieferung in Europa – bitte mit Teilenummer.",
+        "bx_about_title": "Über AGILENT",
+        "bx_about_text": "<p>Agilent Technologies mit Sitz in Santa Clara, Kalifornien, fertigt Instrumente, Software und Verbrauchsmaterialien für Labore. Das Unternehmen entstand 1999 als Ausgründung aus Hewlett-Packard. Zum dokumentierten Angebot gehören Gaschromatographie, Flüssigchromatographie, Massenspektrometrie, Spektroskopie und Vakuumtechnik.</p><p>Öffentliche Produktunterlagen nennen Gaschromatographen, HPLC/UHPLC-Systeme, GC/MS- und LC/MS-Systeme sowie atom- und ICP-Spektrometer. Die genaue Ausführung ergibt sich aus der Typbezeichnung auf dem Gerät, nicht aus einer angenommenen Konfiguration.</p>",
+        "bx_products_title": "AGILENT Produktfamilien, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Gaschromatographen (GC) und zugehörige Injektoren, Öfen und Detektoren</li><li>Flüssigchromatographen (HPLC/UHPLC) inklusive Pumpen, Autosampler und Detektoren</li><li>Massenspektrometer für GC/MS und LC/MS (u. a. Single-Quadrupol, Triple-Quadrupol, Q-TOF)</li><li>Spektroskopie: Atomabsorption, ICP-OES und ICP-MS</li><li>Vakuumkomponenten und Laborverbrauchsmaterialien (z. B. GC/LC-Säulen), soweit auf dem Typenschild oder Etikett ausgewiesen</li><li>Weitere AGILENT-Komponenten mit vollständiger Typ- oder Artikelbezeichnung</li>",
+        "bx_tech_title": "Worauf es bei AGILENT-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Typbezeichnung:</strong> vollständige Modell- und Artikelnummer vom Typenschild, nicht nur die Geräteserie.</li><li><strong>Baugruppe:</strong> Pumpe, Lampe, Detektor, Board, Autosampler, Vakuumpumpe oder Säule – so wie gekennzeichnet.</li><li><strong>Gerät:</strong> GC, LC, MS oder Spektrometer; Softwarestand nur falls auf dem Schild angegeben.</li><li><strong>Foto:</strong> Typenschild und das betroffene Teil vermeiden Rückfragen.</li><li>Häufig angefragt werden Pumpenköpfe, Lampen, Detektormodule, Steuerkarten, Dichtungen und Säulen – immer mit Nummer vom Teil.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Pharma und Biopharma (Forschung, QC)</li><li>Lebensmittel- und Umweltanalytik</li><li>Chemische Prozess- und Qualitätskontrolle</li><li>Hochschul- und Behördenlabore</li><li>Forensik und Toxikologie, soweit das Gerät dafür eingesetzt wird</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Typ- oder Artikelbezeichnung vom Typenschild (ein Foto hilft)</li><li>Betroffene Baugruppe und Geräteserie (GC, LC, MS, Spektroskopie)</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich AGILENT-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die vollständige Typbezeichnung vom Typenschild, Menge und den Gerätekontext (GC, LC, MS oder Spektrometer) über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts AGILENT-Komponenten in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom konkreten Typ und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Welche AGILENT-Gerätefamilien sind typisch?",
+        "brand_faq_a3": "Dokumentiert sind Gas- und Flüssigchromatographen, Massenspektrometer (GC/MS, LC/MS) sowie Spektroskopie (Atomabsorption, ICP-OES, ICP-MS) und Vakuumtechnik. Welche Ausführung Sie haben, steht auf dem Typenschild.",
+        "brand_faq_q4": "Welche Teile werden für AGILENT-Geräte häufig angefragt?",
+        "brand_faq_a4": "Pumpen und Pumpenköpfe, Lampen, Detektormodule, Steuerkarten, Dichtungen, Autosampler-Teile, Vakuumkomponenten und Chromatographiesäulen. Nennen Sie die Nummer vom Bauteil, nicht nur die Geräteserie.",
+        "brand_faq_q5": "Wo werden AGILENT-Instrumente typischerweise eingesetzt?",
+        "brand_faq_a5": "In Laboren der Pharma- und Lebensmittelanalytik, der Umwelt- und Chemiekontrolle sowie in Hochschul- und Behördenlabors. Der Einsatz ergibt sich aus dem Gerät.",
+        "brand_faq_q6": "Reicht die Geräteserie ohne Typnummer?",
+        "brand_faq_a6": "In der Regel nicht. Module und Optionen unterscheiden sich. Nennen Sie die volle Typbezeichnung, Revision falls sichtbar, und das betroffene Teil.",
+        "bx_note": "AGILENT ist eine Marke von Agilent Technologies, Inc. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu GC, LC, MS und Spektroskopie basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "AGILENT spare parts | ABCspareparts",
+        "meta_description": "AGILENT spare parts for GC, LC, MS, spectroscopy and vacuum. Send the type from the nameplate – enquiry often within 24 hours.",
+        "brand_h1": "AGILENT – spare parts for laboratory and analytical instruments (GC, LC, MS, spectroscopy)",
+        "brand_intro": "Agilent Technologies, headquartered in Santa Clara, California, was formed in 1999 as a spin-off from Hewlett-Packard. The company makes instruments, software and consumables for laboratories. Main product lines include gas and liquid chromatography, mass spectrometry, spectroscopy and vacuum hardware.",
+        "brand_intro_p2": "Request through ABCspareparts: competitive prices, a quote often within 24 hours, delivery in Europe – please quote the part number.",
+        "bx_about_title": "About AGILENT",
+        "bx_about_text": "<p>Agilent Technologies, headquartered in Santa Clara, California, supplies instruments, software and consumables for laboratories. The company was formed in 1999 as a spin-off from Hewlett-Packard. Documented product areas include gas chromatography, liquid chromatography, mass spectrometry, spectroscopy and vacuum technology.</p><p>Public product information covers gas chromatographs, HPLC/UHPLC systems, GC/MS and LC/MS systems, and atomic and ICP spectrometers. The exact unit is identified by the type marking on the instrument, not by an assumed configuration.</p>",
+        "bx_products_title": "AGILENT product families often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Gas chromatographs (GC) and related injectors, ovens and detectors</li><li>Liquid chromatographs (HPLC/UHPLC) including pumps, autosamplers and detectors</li><li>Mass spectrometers for GC/MS and LC/MS (including single quadrupole, triple quadrupole and Q-TOF)</li><li>Spectroscopy: atomic absorption, ICP-OES and ICP-MS</li><li>Vacuum components and laboratory consumables (e.g. GC/LC columns) when marked on the nameplate or label</li><li>Other AGILENT components with a full type or article designation</li>",
+        "bx_tech_title": "What matters in an AGILENT enquiry",
+        "bx_tech_list": "<li><strong>Type designation:</strong> the full model and article number from the nameplate, not only the series.</li><li><strong>Assembly:</strong> pump, lamp, detector, board, autosampler, vacuum pump or column – as marked.</li><li><strong>Instrument:</strong> GC, LC, MS or spectrometer.</li><li><strong>Photo:</strong> nameplate and the affected part.</li><li>Frequent requests include pump heads, lamps, detector modules, control boards, seals and columns – always with the number from the part.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Pharma and biopharma (R&amp;D, QC)</li><li>Food and environmental analysis</li><li>Chemical process and quality control</li><li>Academic and government laboratories</li><li>Forensic and toxicology labs where the instrument is used for that work</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full type or article designation from the nameplate (a photo helps)</li><li>Affected assembly and instrument class (GC, LC, MS, spectroscopy)</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request AGILENT spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the full type designation from the nameplate, quantity and instrument context (GC, LC, MS or spectrometer) via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship AGILENT components in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the type and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "Which AGILENT instrument families are typical?",
+        "brand_faq_a3": "Documented families include gas and liquid chromatographs, mass spectrometers (GC/MS, LC/MS), spectroscopy (atomic absorption, ICP-OES, ICP-MS) and vacuum hardware. The nameplate shows which execution you have.",
+        "brand_faq_q4": "Which AGILENT parts are often requested?",
+        "brand_faq_a4": "Pumps and pump heads, lamps, detector modules, control boards, seals, autosampler parts, vacuum components and chromatography columns. Give the number from the component, not only the instrument series.",
+        "brand_faq_q5": "Where are AGILENT instruments typically used?",
+        "brand_faq_a5": "In pharmaceutical, food and environmental laboratories, chemical QC, and academic or government labs. Use follows the installed instrument.",
+        "brand_faq_q6": "Is the instrument series enough without a type number?",
+        "brand_faq_a6": "Usually not. Modules and options differ. State the full type, any visible revision, and the affected part.",
+        "bx_note": "AGILENT is a trademark of Agilent Technologies, Inc., mentioned solely to identify products. Information on GC, LC, MS and spectroscopy is based on publicly available manufacturer information. As of November 2026."
+      },
+      "it": {
+        "meta_title": "AGILENT Ricambi | ABCspareparts",
+        "meta_description": "AGILENT ricambi per GC, LC, MS e spettroscopia. Invii il tipo dalla targhetta – richiesta senza impegno, spesso entro 24 ore.",
+        "brand_h1": "AGILENT – ricambi per strumenti di laboratorio e analitici (GC, LC, MS, spettroscopia)",
+        "brand_intro": "Agilent Technologies, con sede a Santa Clara in California, è nata nel 1999 come scorporo da Hewlett-Packard. L’azienda produce strumenti, software e consumabili per laboratori. Le linee principali comprendono gascromatografia, cromatografia liquida, spettrometria di massa, spettroscopia e vuoto.",
+        "brand_intro_p2": "Richieste tramite ABCspareparts: prezzi competitivi, preventivo spesso entro 24 ore, consegna in Europa – indichi il numero di parte.",
+        "bx_about_title": "Chi è AGILENT",
+        "bx_about_text": "<p>Agilent Technologies, con sede a Santa Clara in California, produce strumenti, software e materiali di consumo per laboratori. L’azienda è nata nel 1999 come scorporo da Hewlett-Packard. Le aree di prodotto documentate includono gascromatografia, cromatografia liquida, spettrometria di massa, spettroscopia e tecnica del vuoto.</p><p>Le informazioni pubbliche coprono gascromatografi, sistemi HPLC/UHPLC, GC/MS e LC/MS, spettrometri atomici e ICP. L’esecuzione esatta si identifica con la designazione di tipo sull’apparecchio, non con una configurazione ipotizzata.</p>",
+        "bx_products_title": "Famiglie di prodotti AGILENT richieste di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Gascromatografi (GC) e relativi iniettori, forni e rivelatori</li><li>Cromatografi liquidi (HPLC/UHPLC) con pompe, autosampler e rivelatori</li><li>Spettrometri di massa per GC/MS e LC/MS (quadrupolo singolo, triplo quadrupolo, Q-TOF)</li><li>Spettroscopia: assorbimento atomico, ICP-OES e ICP-MS</li><li>Componenti da vuoto e consumabili di laboratorio (es. colonne GC/LC) se indicati in targhetta</li><li>Altri componenti AGILENT con designazione tipo o articolo completa</li>",
+        "bx_tech_title": "Cosa conta in una richiesta AGILENT",
+        "bx_tech_list": "<li><strong>Designazione tipo:</strong> modello e numero articolo completi dalla targhetta, non solo la serie.</li><li><strong>Gruppo:</strong> pompa, lampada, rivelatore, scheda, autosampler, pompa da vuoto o colonna – come contrassegnato.</li><li><strong>Strumento:</strong> GC, LC, MS o spettrometro.</li><li><strong>Foto:</strong> targhetta e pezzo interessato.</li><li>Si chiedono spesso teste pompa, lampade, moduli rivelatore, schede, tenute e colonne – sempre con il numero del pezzo.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Farmaceutica e biofarmaceutica (R&amp;S, QC)</li><li>Analisi alimentari e ambientali</li><li>Controllo di processo e qualità in chimica</li><li>Laboratori universitari e istituzionali</li><li>Laboratori forensi e tossicologici se lo strumento è usato per quel lavoro</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Designazione tipo o articolo completa dalla targhetta (una foto aiuta)</li><li>Gruppo interessato e classe di strumento (GC, LC, MS, spettroscopia)</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi AGILENT ad ABCspareparts?",
+        "brand_faq_a1": "Invii la designazione tipo completa dalla targhetta, quantità e contesto dello strumento (GC, LC, MS o spettrometro) con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce componenti AGILENT in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal tipo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Quali famiglie di strumenti AGILENT sono tipiche?",
+        "brand_faq_a3": "Sono documentati gascromatografi e cromatografi liquidi, spettrometri di massa (GC/MS, LC/MS), spettroscopia (assorbimento atomico, ICP-OES, ICP-MS) e vuoto. L’esecuzione risulta dalla targhetta.",
+        "brand_faq_q4": "Quali ricambi AGILENT vengono chiesti di frequente?",
+        "brand_faq_a4": "Pompe e teste pompa, lampade, moduli rivelatore, schede di controllo, tenute, parti autosampler, componenti da vuoto e colonne cromatografiche. Indichi il numero del componente, non solo la serie dello strumento.",
+        "brand_faq_q5": "Dove si usano tipicamente gli strumenti AGILENT?",
+        "brand_faq_a5": "In laboratori farmaceutici, alimentari e ambientali, nel QC chimico e in laboratori universitari o istituzionali. L’impiego segue lo strumento installato.",
+        "brand_faq_q6": "Basta la serie dello strumento senza numero di tipo?",
+        "brand_faq_a6": "Di solito no. Moduli e opzioni differiscono. Indichi tipo completo, eventuale revisione e il pezzo.",
+        "bx_note": "AGILENT è un marchio di Agilent Technologies, Inc., citato solo per identificare i prodotti. Informazioni su GC, LC, MS e spettroscopia da fonti pubbliche del costruttore. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "AGILENT Recambios | ABCspareparts",
+        "meta_description": "AGILENT recambios para GC, LC, MS y espectroscopia. Envíe el tipo de la placa – solicitud sin compromiso, a menudo en 24 h.",
+        "brand_h1": "AGILENT – recambios para instrumentos de laboratorio y analíticos (GC, LC, MS, espectroscopia)",
+        "brand_intro": "Agilent Technologies, con sede en Santa Clara (California), se creó en 1999 como escisión de Hewlett-Packard. La empresa fabrica instrumentos, software y consumibles para laboratorios. Las líneas principales incluyen cromatografía de gases y líquida, espectrometría de masas, espectroscopia y vacío.",
+        "brand_intro_p2": "Solicite a través de ABCspareparts: precios competitivos, presupuesto a menudo en 24 horas, entrega en Europa – indique el número de pieza.",
+        "bx_about_title": "Sobre AGILENT",
+        "bx_about_text": "<p>Agilent Technologies, con sede en Santa Clara (California), fabrica instrumentos, software y consumibles para laboratorios. La empresa se constituyó en 1999 como escisión de Hewlett-Packard. Las áreas documentadas incluyen cromatografía de gases, cromatografía líquida, espectrometría de masas, espectroscopia y vacío.</p><p>La información pública cubre cromatógrafos de gases, sistemas HPLC/UHPLC, GC/MS y LC/MS, y espectrómetros atómicos e ICP. La ejecución exacta se identifica por la designación de tipo del aparato, no por una configuración supuesta.</p>",
+        "bx_products_title": "Familias de productos AGILENT solicitadas con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Cromatógrafos de gases (GC) e inyectores, hornos y detectores asociados</li><li>Cromatógrafos líquidos (HPLC/UHPLC) con bombas, autosamplers y detectores</li><li>Espectrómetros de masas para GC/MS y LC/MS (cuadrupolo simple, triple cuadrupolo, Q-TOF)</li><li>Espectroscopia: absorción atómica, ICP-OES e ICP-MS</li><li>Componentes de vacío y consumibles de laboratorio (p. ej. columnas GC/LC) si constan en la placa</li><li>Otros componentes AGILENT con designación de tipo o artículo completa</li>",
+        "bx_tech_title": "Qué importa en una solicitud AGILENT",
+        "bx_tech_list": "<li><strong>Designación de tipo:</strong> modelo y número de artículo completos de la placa, no solo la serie.</li><li><strong>Conjunto:</strong> bomba, lámpara, detector, placa, autosampler, bomba de vacío o columna.</li><li><strong>Instrumento:</strong> GC, LC, MS o espectrómetro.</li><li><strong>Foto:</strong> placa y pieza afectada.</li><li>Se piden a menudo cabezales de bomba, lámparas, módulos detector, tarjetas, juntas y columnas – siempre con el número de la pieza.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Farma y biofarma (I+D, QC)</li><li>Análisis de alimentos y medio ambiente</li><li>Control de proceso y calidad química</li><li>Laboratorios académicos y oficiales</li><li>Laboratorios forenses y de toxicología si el equipo se usa para ese trabajo</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Designación de tipo o artículo completa de la placa (una foto ayuda)</li><li>Conjunto afectado y clase de instrumento (GC, LC, MS, espectroscopia)</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios AGILENT a ABCspareparts?",
+        "brand_faq_a1": "Envíe la designación de tipo completa de la placa, cantidad y contexto del instrumento (GC, LC, MS o espectrómetro) con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía componentes AGILENT en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen del tipo y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué familias de instrumentos AGILENT son típicas?",
+        "brand_faq_a3": "Están documentados cromatógrafos de gases y líquidos, espectrómetros de masas (GC/MS, LC/MS), espectroscopia (absorción atómica, ICP-OES, ICP-MS) y vacío. La ejecución figura en la placa.",
+        "brand_faq_q4": "¿Qué recambios AGILENT se solicitan con frecuencia?",
+        "brand_faq_a4": "Bombas y cabezales, lámparas, módulos detector, tarjetas de control, juntas, piezas de autosampler, componentes de vacío y columnas cromatográficas. Indique el número del componente, no solo la serie del instrumento.",
+        "brand_faq_q5": "¿Dónde se usan típicamente los instrumentos AGILENT?",
+        "brand_faq_a5": "En laboratorios farmacéuticos, alimentarios y ambientales, en QC químico y en laboratorios académicos u oficiales. El uso sigue al instrumento instalado.",
+        "brand_faq_q6": "¿Basta la serie del instrumento sin número de tipo?",
+        "brand_faq_a6": "Suele no bastar. Los módulos y las opciones difieren. Indique tipo completo, revisión si es visible y la pieza.",
+        "bx_note": "AGILENT es una marca de Agilent Technologies, Inc., mencionada solo para identificar los productos. Información sobre GC, LC, MS y espectroscopia basada en información pública del fabricante. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "AGILENT Pièces | ABCspareparts",
+        "meta_description": "AGILENT pièces pour GC, LC, MS et spectroscopie. Envoyez le type de la plaque – demande sans engagement, souvent sous 24 h.",
+        "brand_h1": "AGILENT – pièces pour instruments de laboratoire et d’analyse (GC, LC, MS, spectroscopie)",
+        "brand_intro": "Agilent Technologies, dont le siège est à Santa Clara (Californie), a été créée en 1999 par scission de Hewlett-Packard. L’entreprise fabrique des instruments, des logiciels et des consommables pour laboratoires. Les lignes principales comprennent chromatographie en phase gazeuse et liquide, spectrométrie de masse, spectroscopie et vide.",
+        "brand_intro_p2": "Demandez via ABCspareparts : prix compétitifs, devis souvent sous 24 heures, livraison en Europe – indiquez le numéro de pièce.",
+        "bx_about_title": "À propos de AGILENT",
+        "bx_about_text": "<p>Agilent Technologies, dont le siège est à Santa Clara (Californie), fournit instruments, logiciels et consommables pour laboratoires. L’entreprise a été créée en 1999 par scission de Hewlett-Packard. Les domaines documentés comprennent chromatographie en phase gazeuse, chromatographie liquide, spectrométrie de masse, spectroscopie et technique du vide.</p><p>Les informations publiques couvrent chromatographes en phase gazeuse, systèmes HPLC/UHPLC, GC/MS et LC/MS, spectromètres atomiques et ICP. L’exécution exacte se lit sur la plaque signalétique, pas sur une configuration supposée.</p>",
+        "bx_products_title": "Familles de produits AGILENT souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Chromatographes en phase gazeuse (GC) et injecteurs, fours et détecteurs associés</li><li>Chromatographes liquides (HPLC/UHPLC) avec pompes, passeurs et détecteurs</li><li>Spectromètres de masse pour GC/MS et LC/MS (quadrupôle simple, triple quadrupôle, Q-TOF)</li><li>Spectroscopie : absorption atomique, ICP-OES et ICP-MS</li><li>Composants de vide et consommables de laboratoire (p. ex. colonnes GC/LC) s’ils figurent sur la plaque</li><li>Autres composants AGILENT avec désignation de type ou d’article complète</li>",
+        "bx_tech_title": "Ce qui compte pour une demande AGILENT",
+        "bx_tech_list": "<li><strong>Désignation de type :</strong> modèle et numéro d’article complets de la plaque, pas seulement la série.</li><li><strong>Ensemble :</strong> pompe, lampe, détecteur, carte, passeur, pompe à vide ou colonne.</li><li><strong>Instrument :</strong> GC, LC, MS ou spectromètre.</li><li><strong>Photo :</strong> plaque et pièce concernée.</li><li>On demande souvent têtes de pompe, lampes, modules détecteur, cartes, joints et colonnes – toujours avec le numéro de la pièce.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Pharma et biopharma (R&amp;D, CQ)</li><li>Analyses alimentaires et environnementales</li><li>Contrôle de procédé et qualité en chimie</li><li>Laboratoires universitaires et institutionnels</li><li>Laboratoires forensiques et de toxicologie si l’appareil y est utilisé</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Désignation de type ou d’article complète de la plaque (une photo aide)</li><li>Ensemble concerné et classe d’instrument (GC, LC, MS, spectroscopie)</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces AGILENT à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez la désignation de type complète de la plaque, la quantité et le contexte d’instrument (GC, LC, MS ou spectromètre) via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des composants AGILENT en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent du type et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Quelles familles d’instruments AGILENT sont typiques ?",
+        "brand_faq_a3": "Sont documentés les chromatographes en phase gazeuse et liquide, les spectromètres de masse (GC/MS, LC/MS), la spectroscopie (absorption atomique, ICP-OES, ICP-MS) et le vide. L’exécution figure sur la plaque.",
+        "brand_faq_q4": "Quelles pièces AGILENT sont souvent demandées ?",
+        "brand_faq_a4": "Pompes et têtes de pompe, lampes, modules détecteur, cartes de commande, joints, pièces de passeur, composants de vide et colonnes chromatographiques. Indiquez le numéro du composant, pas seulement la série de l’appareil.",
+        "brand_faq_q5": "Où utilise-t-on typiquement les instruments AGILENT ?",
+        "brand_faq_a5": "Dans les laboratoires pharmaceutiques, alimentaires et environnementaux, en CQ chimique et dans les laboratoires universitaires ou institutionnels. L’usage suit l’appareil installé.",
+        "brand_faq_q6": "La série d’instrument suffit-elle sans numéro de type ?",
+        "brand_faq_a6": "En général non. Modules et options diffèrent. Indiquez le type complet, la révision si visible et la pièce.",
+        "bx_note": "AGILENT est une marque d’Agilent Technologies, Inc., citée uniquement pour identifier les produits. Informations sur GC, LC, MS et spectroscopie issues de sources publiques du fabricant. Mise à jour : novembre 2026."
+      }
+    }
+  },
   "allen-bradley": {
     "intro": "",
     "products": [],
@@ -13711,6 +13999,294 @@
       }
     }
   },
+  "fiessler": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "sick",
+      "leuze",
+      "pilz",
+      "schmersal",
+      "euchner",
+      "steute"
+    ],
+    "related_labels": {
+      "sick": "Sick",
+      "leuze": "Leuze",
+      "pilz": "Pilz",
+      "schmersal": "Schmersal",
+      "euchner": "Euchner",
+      "steute": "Steute"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/fiessler.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/fiessler.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/fiessler.html#brand",
+          "name": "FIESSLER"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/fiessler.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/fiessler.html#brand"
+          },
+          "name": "Fiessler Elektronik GmbH & Co. KG"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/fiessler.html#service",
+          "name": "Beschaffung von FIESSLER Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/fiessler.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "FIESSLER Ersatzteile | ABCspareparts",
+        "meta_description": "FIESSLER Ersatzteile für Lichtvorhänge, AKAS-Abkantpressen und FMSC. Typ vom Typenschild senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "FIESSLER – Ersatzteile für Sicherheitslichtvorhänge, Pressenschutz und Sicherheitssteuerungen",
+        "brand_intro": "Fiessler Elektronik wurde 1956 in Esslingen gegründet und hat heute den Sitz in Aichwald im Raum Esslingen. Das Unternehmen entwickelt optoelektronische Sicherheitstechnik für Maschinen. Zu den Hauptlinien gehören Sicherheitslichtvorhänge (ULVT, BLVT, ULCT, BLCT), das Pressenschutzsystem AKAS und die Sicherheitssteuerung FMSC.",
+        "brand_intro_p2": "Anfragen über ABCspareparts: wettbewerbsfähige Preise, Angebot oft innerhalb von 24 Stunden, Lieferung in Europa – bitte mit Teilenummer.",
+        "bx_about_title": "Über FIESSLER",
+        "bx_about_text": "<p>Fiessler Elektronik ist ein deutscher Hersteller von optoelektronischer Maschinensicherheit. Das Unternehmen wurde 1956 in Esslingen gegründet und hat seinen Sitz in Aichwald (Raum Esslingen). Zum dokumentierten Angebot gehören Sicherheitslichtvorhänge und Lichtgitter, der Abkantpressen-Schutz AKAS sowie die modulare Sicherheitssteuerung FMSC.</p><p>Öffentliche Produktangaben nennen unter anderem die Lichtvorhang-Familien ULVT, BLVT, ULCT und BLCT (u. a. Typ 4 / SIL 3 / PL e), Sicherheitsmatten STM und Sicherheitsfußschalter. Die genaue Ausführung ergibt sich aus dem Typenschild, nicht aus einer angenommenen Maschinenkonfiguration.</p>",
+        "bx_products_title": "FIESSLER Produktfamilien, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Sicherheitslichtvorhänge ULVT und BLVT (robuste Bauform) sowie ULCT und BLCT (Kompaktbauform), auch mit Blanking</li><li>Mehrstrahl-Lichtgitter zur Körper- und Zugangssicherung</li><li>AKAS Laserschutz für Abkantpressen und verwandte Biegeanlagen</li><li>Modulare Sicherheitssteuerung FMSC inklusive Erweiterungsmodulen</li><li>Sicherheitsmatten STM und Sicherheitsfußschalter FE-FS</li><li>Weitere FIESSLER-Komponenten mit vollständiger Typbezeichnung vom Gerät</li>",
+        "bx_tech_title": "Worauf es bei FIESSLER-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Typcode:</strong> vollständige Bezeichnung von Sender, Empfänger oder Steuerung, nicht nur die Serienfamilie.</li><li><strong>Schutzfeld:</strong> Höhe, Auflösung (Finger, Hand, Körper) und Reichweite, soweit am Gerät angegeben.</li><li><strong>Anwendung:</strong> Abkantpresse (AKAS), Lichtvorhang an Presse oder Zugang, FMSC-Achse oder -Eingang.</li><li><strong>Foto:</strong> Typenschild von Sender/Empfänger bzw. FMSC-Modul.</li><li>Häufig angefragt werden Sender- und Empfängereinheiten, AKAS-Module, FMSC-Baugruppen, Kabel und Fußschalter – immer mit Nummer vom Teil.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Abkantpressen und Biegeanlagen (AKAS)</li><li>Pressen und Fertigungszellen mit Finger-/Handschutz</li><li>Zugangssicherung an Maschinen und Logistikbereichen</li><li>Sicherheitssteuerungen in Neu- und Bestandsmaschinen</li><li>Trittmatten und Fußschalter an Gefahrstellen</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Typbezeichnung vom Typenschild (ein Foto hilft)</li><li>Sender, Empfänger, AKAS- oder FMSC-Modul getrennt angeben</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich FIESSLER-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die vollständige Typbezeichnung vom Typenschild, Menge und den Maschinenkontext (Lichtvorhang, AKAS oder FMSC) über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts FIESSLER-Komponenten in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom konkreten Typ und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür stehen ULVT, BLVT, ULCT und BLCT?",
+        "brand_faq_a3": "Es handelt sich um Sicherheitslichtvorhänge von Fiessler Elektronik. ULVT/BLVT sind in robuster 40×60-mm-Bauform dokumentiert, ULCT/BLCT in kompakter 25×35-mm-Bauform; BL-Varianten mit Blanking. Schutzfeldhöhe, Reichweite und Auflösung stehen auf dem Typenschild.",
+        "brand_faq_q4": "Was ist AKAS und welche Teile werden dazu angefragt?",
+        "brand_faq_a4": "AKAS ist das laseroptische Schutzsystem für Abkantpressen (Sender, Empfänger, oft mit FMSC). Angefragt werden Sender-/Empfängereinheiten, Schnittstellen und Steuerungsmodule. Nennen Sie die volle Typbezeichnung; wir ordnen nicht über eine angenommene Pressenkonfiguration zu.",
+        "brand_faq_q5": "Welche Angaben braucht ABCspareparts für eine FMSC-Steuerung?",
+        "brand_faq_a5": "Typ der Master- oder Erweiterungsbaugruppe vom Typenschild, vorhandene Achs- oder E/A-Angabe und die Maschinenfunktion. Optionsfolgen ohne Schild legen wir nicht aus.",
+        "brand_faq_q6": "Reicht die Familienbezeichnung Lichtvorhang ohne Typnummer?",
+        "brand_faq_a6": "In der Regel nicht. Bauform, Blanking, Höhe und Reichweite unterscheiden sich. Nennen Sie die volle Typbezeichnung von Sender und Empfänger.",
+        "bx_note": "FIESSLER ist eine Marke der Fiessler Elektronik GmbH & Co. KG. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Lichtvorhängen, AKAS und FMSC basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "FIESSLER spare parts | ABCspareparts",
+        "meta_description": "FIESSLER spare parts for light curtains, AKAS press brakes and FMSC. Send the type from the nameplate – enquiry often within 24 h.",
+        "brand_h1": "FIESSLER – spare parts for safety light curtains, press-brake guarding and safety controllers",
+        "brand_intro": "Fiessler Elektronik was founded in 1956 in Esslingen and is now based in Aichwald in the Esslingen area. The company develops optoelectronic safety equipment for machinery. Main product lines include safety light curtains (ULVT, BLVT, ULCT, BLCT), the AKAS press-brake guarding system and the FMSC safety controller.",
+        "brand_intro_p2": "Request through ABCspareparts: competitive prices, a quote often within 24 hours, delivery in Europe – please quote the part number.",
+        "bx_about_title": "About FIESSLER",
+        "bx_about_text": "<p>Fiessler Elektronik is a German manufacturer of optoelectronic machine safety. The company was founded in Esslingen in 1956 and is based in Aichwald (Esslingen area). Documented products include safety light curtains and light grids, the AKAS press-brake guarding system and the modular FMSC safety controller.</p><p>Public product data cite the ULVT, BLVT, ULCT and BLCT light-curtain families (including Type 4 / SIL 3 / PL e), STM safety mats and safety foot switches. The exact unit is identified by the nameplate, not by an assumed machine layout.</p>",
+        "bx_products_title": "FIESSLER product families often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Safety light curtains ULVT and BLVT (robust housing) and ULCT and BLCT (compact housing), including blanking versions</li><li>Multi-beam light grids for body and access guarding</li><li>AKAS laser guarding for press brakes and related bending machines</li><li>Modular FMSC safety controller including expansion modules</li><li>STM safety mats and FE-FS safety foot switches</li><li>Other FIESSLER components with the full type designation from the device</li>",
+        "bx_tech_title": "What matters in a FIESSLER enquiry",
+        "bx_tech_list": "<li><strong>Type code:</strong> the full designation of transmitter, receiver or controller, not only the family.</li><li><strong>Protective field:</strong> height, resolution (finger, hand, body) and range if marked.</li><li><strong>Application:</strong> press brake (AKAS), light curtain on a press or access, FMSC axis or input.</li><li><strong>Photo:</strong> nameplate of transmitter/receiver or FMSC module.</li><li>Frequent requests include transmitter and receiver units, AKAS modules, FMSC assemblies, cables and foot switches – always with the number from the part.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Press brakes and bending machines (AKAS)</li><li>Presses and cells with finger/hand protection</li><li>Access guarding on machines and logistics areas</li><li>Safety control on new and existing machines</li><li>Safety mats and foot switches at hazard points</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full type designation from the nameplate (a photo helps)</li><li>State transmitter, receiver, AKAS or FMSC module separately</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request FIESSLER spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the full type designation from the nameplate, quantity and machine context (light curtain, AKAS or FMSC) via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship FIESSLER components in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the type and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What do ULVT, BLVT, ULCT and BLCT mean?",
+        "brand_faq_a3": "They are Fiessler Elektronik safety light curtains. ULVT/BLVT are documented in a robust 40×60 mm housing, ULCT/BLCT in a compact 25×35 mm housing; BL versions include blanking. Protective-field height, range and resolution are on the nameplate.",
+        "brand_faq_q4": "What is AKAS and which parts are requested for it?",
+        "brand_faq_a4": "AKAS is the laser-optical guarding system for press brakes (transmitter, receiver, often with FMSC). Requests cover transmitter/receiver units, interfaces and control modules. Give the full type; we do not match parts from an assumed press layout.",
+        "brand_faq_q5": "Which data does ABCspareparts need for an FMSC controller?",
+        "brand_faq_a5": "The master or expansion module type from the nameplate, any axis or I/O marking, and the machine function. We do not interpret option strings without the nameplate.",
+        "brand_faq_q6": "Is the family name light curtain enough without a type number?",
+        "brand_faq_a6": "Usually not. Housing, blanking, height and range differ. State the full type of transmitter and receiver.",
+        "bx_note": "FIESSLER is a trademark of Fiessler Elektronik GmbH & Co. KG, mentioned solely to identify products. Information on light curtains, AKAS and FMSC is based on publicly available manufacturer information. As of November 2026."
+      },
+      "it": {
+        "meta_title": "FIESSLER Ricambi | ABCspareparts",
+        "meta_description": "FIESSLER ricambi per barriere ottiche, presse AKAS e FMSC. Invii il tipo dalla targhetta – richiesta spesso entro 24 ore.",
+        "brand_h1": "FIESSLER – ricambi per barriere di sicurezza, protezione presse piegatrici e controlli di sicurezza",
+        "brand_intro": "Fiessler Elektronik è stata fondata nel 1956 a Esslingen e ha oggi sede ad Aichwald, nell’area di Esslingen. L’azienda sviluppa tecnica di sicurezza optoelettronica per macchine. Le linee principali comprendono barriere ottiche di sicurezza (ULVT, BLVT, ULCT, BLCT), il sistema di protezione presse AKAS e il controllo di sicurezza FMSC.",
+        "brand_intro_p2": "Richieste tramite ABCspareparts: prezzi competitivi, preventivo spesso entro 24 ore, consegna in Europa – indichi il numero di parte.",
+        "bx_about_title": "Chi è FIESSLER",
+        "bx_about_text": "<p>Fiessler Elektronik è un costruttore tedesco di sicurezza macchine optoelettronica. L’azienda è stata fondata a Esslingen nel 1956 e ha sede ad Aichwald (area di Esslingen). I prodotti documentati includono barriere e griglie ottiche di sicurezza, il sistema AKAS per presse piegatrici e il controllo di sicurezza modulare FMSC.</p><p>I dati pubblici citano le famiglie ULVT, BLVT, ULCT e BLCT (anche Tipo 4 / SIL 3 / PL e), tappeti STM e pedali di sicurezza. L’esecuzione esatta risulta dalla targhetta, non da un layout macchina ipotizzato.</p>",
+        "bx_products_title": "Famiglie di prodotti FIESSLER richieste di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Barriere di sicurezza ULVT e BLVT (alloggiamento robusto) e ULCT e BLCT (compatto), anche con blanking</li><li>Griglie ottiche a più raggi per protezione corpo e accessi</li><li>Protezione laser AKAS per presse piegatrici e macchine di piegatura</li><li>Controllo di sicurezza modulare FMSC con moduli di espansione</li><li>Tappeti di sicurezza STM e pedali FE-FS</li><li>Altri componenti FIESSLER con designazione tipo completa</li>",
+        "bx_tech_title": "Cosa conta in una richiesta FIESSLER",
+        "bx_tech_list": "<li><strong>Codice tipo:</strong> designazione completa di emettitore, ricevitore o controllo.</li><li><strong>Campo di protezione:</strong> altezza, risoluzione e portata se indicate.</li><li><strong>Applicazione:</strong> pressa piegatrice (AKAS), barriera su pressa o accesso, asse o ingresso FMSC.</li><li><strong>Foto:</strong> targhetta di emettitore/ricevitore o modulo FMSC.</li><li>Si chiedono spesso emettitori e ricevitori, moduli AKAS, gruppi FMSC, cavi e pedali – sempre con il numero del pezzo.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Presse piegatrici e impianti di piegatura (AKAS)</li><li>Presse e celle con protezione dita/mani</li><li>Protezione accessi su macchine e aree logistiche</li><li>Controlli di sicurezza su macchine nuove ed esistenti</li><li>Tappeti e pedali in punti di pericolo</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Designazione tipo completa dalla targhetta (una foto aiuta)</li><li>Indicare separatamente emettitore, ricevitore, modulo AKAS o FMSC</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi FIESSLER ad ABCspareparts?",
+        "brand_faq_a1": "Invii la designazione tipo completa dalla targhetta, quantità e contesto macchina (barriera, AKAS o FMSC) con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce componenti FIESSLER in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal tipo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Cosa significano ULVT, BLVT, ULCT e BLCT?",
+        "brand_faq_a3": "Sono barriere di sicurezza Fiessler Elektronik. ULVT/BLVT sono documentate in alloggiamento robusto 40×60 mm, ULCT/BLCT in formato compatto 25×35 mm; le versioni BL hanno blanking. Altezza del campo, portata e risoluzione sono in targhetta.",
+        "brand_faq_q4": "Che cos’è AKAS e quali ricambi si chiedono?",
+        "brand_faq_a4": "AKAS è il sistema di protezione laser per presse piegatrici (emettitore, ricevitore, spesso con FMSC). Si chiedono unità emettitore/ricevitore, interfacce e moduli di controllo. Indichi il tipo completo; non abbinamo i pezzi da un layout pressa ipotizzato.",
+        "brand_faq_q5": "Quali dati servono per un controllo FMSC?",
+        "brand_faq_a5": "Tipo del modulo master o di espansione dalla targhetta, eventuale indicazione assi o I/O e funzione macchina. Non interpretiamo stringhe di opzioni senza targhetta.",
+        "brand_faq_q6": "Basta la famiglia barriera ottica senza numero di tipo?",
+        "brand_faq_a6": "Di solito no. Alloggiamento, blanking, altezza e portata differiscono. Indichi il tipo completo di emettitore e ricevitore.",
+        "bx_note": "FIESSLER è un marchio di Fiessler Elektronik GmbH & Co. KG, citato solo per identificare i prodotti. Informazioni su barriere, AKAS e FMSC da fonti pubbliche del costruttore. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "FIESSLER Recambios | ABCspareparts",
+        "meta_description": "FIESSLER recambios para barreras ópticas, AKAS y FMSC. Envíe el tipo de la placa – solicitud sin compromiso, a menudo en 24 h.",
+        "brand_h1": "FIESSLER – recambios para barreras de seguridad, protección de plegadoras y controles de seguridad",
+        "brand_intro": "Fiessler Elektronik se fundó en 1956 en Esslingen y hoy tiene su sede en Aichwald, en el área de Esslingen. La empresa desarrolla técnica de seguridad optoelectrónica para máquinas. Las líneas principales incluyen barreras ópticas de seguridad (ULVT, BLVT, ULCT, BLCT), el sistema de protección de plegadoras AKAS y el control de seguridad FMSC.",
+        "brand_intro_p2": "Solicite a través de ABCspareparts: precios competitivos, presupuesto a menudo en 24 horas, entrega en Europa – indique el número de pieza.",
+        "bx_about_title": "Sobre FIESSLER",
+        "bx_about_text": "<p>Fiessler Elektronik es un fabricante alemán de seguridad de máquinas optoelectrónica. La empresa se fundó en Esslingen en 1956 y tiene su sede en Aichwald (área de Esslingen). Los productos documentados incluyen barreras y rejillas ópticas de seguridad, el sistema AKAS para plegadoras y el control de seguridad modular FMSC.</p><p>Los datos públicos citan las familias ULVT, BLVT, ULCT y BLCT (también Tipo 4 / SIL 3 / PL e), alfombras STM y pedales de seguridad. La ejecución exacta figura en la placa, no en un esquema de máquina supuesto.</p>",
+        "bx_products_title": "Familias de productos FIESSLER solicitadas con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Barreras de seguridad ULVT y BLVT (carcasa robusta) y ULCT y BLCT (compacta), también con blanking</li><li>Rejillas ópticas de varios haces para protección de cuerpo y accesos</li><li>Protección láser AKAS para plegadoras y máquinas de plegado</li><li>Control de seguridad modular FMSC con módulos de ampliación</li><li>Alfombras de seguridad STM y pedales FE-FS</li><li>Otros componentes FIESSLER con designación de tipo completa</li>",
+        "bx_tech_title": "Qué importa en una solicitud FIESSLER",
+        "bx_tech_list": "<li><strong>Código de tipo:</strong> designación completa de emisor, receptor o control.</li><li><strong>Campo de protección:</strong> altura, resolución y alcance si constan.</li><li><strong>Aplicación:</strong> plegadora (AKAS), barrera en prensa o acceso, eje o entrada FMSC.</li><li><strong>Foto:</strong> placa de emisor/receptor o módulo FMSC.</li><li>Se piden a menudo emisores y receptores, módulos AKAS, conjuntos FMSC, cables y pedales – siempre con el número de la pieza.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Plegadoras e instalaciones de plegado (AKAS)</li><li>Prensas y celdas con protección de dedos/manos</li><li>Protección de accesos en máquinas y logística</li><li>Controles de seguridad en máquinas nuevas y existentes</li><li>Alfombras y pedales en puntos de peligro</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Designación de tipo completa de la placa (una foto ayuda)</li><li>Indique por separado emisor, receptor, módulo AKAS o FMSC</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios FIESSLER a ABCspareparts?",
+        "brand_faq_a1": "Envíe la designación de tipo completa de la placa, cantidad y contexto de máquina (barrera, AKAS o FMSC) con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía componentes FIESSLER en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen del tipo y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué significan ULVT, BLVT, ULCT y BLCT?",
+        "brand_faq_a3": "Son barreras de seguridad de Fiessler Elektronik. ULVT/BLVT están documentadas en carcasa robusta 40×60 mm, ULCT/BLCT en formato compacto 25×35 mm; las versiones BL incluyen blanking. Altura del campo, alcance y resolución figuran en la placa.",
+        "brand_faq_q4": "¿Qué es AKAS y qué recambios se solicitan?",
+        "brand_faq_a4": "AKAS es el sistema de protección láser para plegadoras (emisor, receptor, a menudo con FMSC). Se solicitan unidades emisor/receptor, interfaces y módulos de control. Indique el tipo completo; no emparejamos piezas a partir de un esquema de prensa supuesto.",
+        "brand_faq_q5": "¿Qué datos se necesitan para un control FMSC?",
+        "brand_faq_a5": "Tipo del módulo maestro o de ampliación de la placa, cualquier marca de ejes o E/S y la función de la máquina. No interpretamos cadenas de opciones sin la placa.",
+        "brand_faq_q6": "¿Basta el nombre de familia barrera óptica sin número de tipo?",
+        "brand_faq_a6": "Suele no bastar. Carcasa, blanking, altura y alcance difieren. Indique el tipo completo de emisor y receptor.",
+        "bx_note": "FIESSLER es una marca de Fiessler Elektronik GmbH & Co. KG, mencionada solo para identificar los productos. Información sobre barreras, AKAS y FMSC basada en información pública del fabricante. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "FIESSLER Pièces | ABCspareparts",
+        "meta_description": "FIESSLER pièces pour barrières immatérielles, AKAS et FMSC. Envoyez le type de la plaque – demande souvent sous 24 heures.",
+        "brand_h1": "FIESSLER – pièces pour barrières immatérielles, protection de presses plieuses et automates de sécurité",
+        "brand_intro": "Fiessler Elektronik a été fondée en 1956 à Esslingen et a aujourd’hui son siège à Aichwald, dans la région d’Esslingen. L’entreprise développe des équipements de sécurité optoélectroniques pour machines. Les lignes principales comprennent les barrières immatérielles (ULVT, BLVT, ULCT, BLCT), le système de protection de presse plieuse AKAS et l’automate de sécurité FMSC.",
+        "brand_intro_p2": "Demandez via ABCspareparts : prix compétitifs, devis souvent sous 24 heures, livraison en Europe – indiquez le numéro de pièce.",
+        "bx_about_title": "À propos de FIESSLER",
+        "bx_about_text": "<p>Fiessler Elektronik est un fabricant allemand de sécurité machine optoélectronique. L’entreprise a été fondée à Esslingen en 1956 et a son siège à Aichwald (région d’Esslingen). Les produits documentés comprennent barrières et grilles immatérielles, le système AKAS pour presses plieuses et l’automate de sécurité modulaire FMSC.</p><p>Les données publiques citent les familles ULVT, BLVT, ULCT et BLCT (dont Type 4 / SIL 3 / PL e), tapis STM et pédales de sécurité. L’exécution exacte figure sur la plaque, pas sur un schéma machine supposé.</p>",
+        "bx_products_title": "Familles de produits FIESSLER souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Barrières immatérielles ULVT et BLVT (boîtier robuste) et ULCT et BLCT (compact), y compris versions à blanking</li><li>Grilles à plusieurs faisceaux pour protection corps et accès</li><li>Protection laser AKAS pour presses plieuses et machines de pliage</li><li>Automate de sécurité modulaire FMSC avec modules d’extension</li><li>Tapis de sécurité STM et pédales FE-FS</li><li>Autres composants FIESSLER avec désignation de type complète</li>",
+        "bx_tech_title": "Ce qui compte pour une demande FIESSLER",
+        "bx_tech_list": "<li><strong>Code type :</strong> désignation complète de l’émetteur, du récepteur ou de l’automate.</li><li><strong>Champ de protection :</strong> hauteur, résolution et portée s’ils figurent.</li><li><strong>Application :</strong> presse plieuse (AKAS), barrière sur presse ou accès, axe ou entrée FMSC.</li><li><strong>Photo :</strong> plaque de l’émetteur/récepteur ou du module FMSC.</li><li>On demande souvent émetteurs et récepteurs, modules AKAS, ensembles FMSC, câbles et pédales – toujours avec le numéro de la pièce.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Presses plieuses et installations de pliage (AKAS)</li><li>Presses et cellules avec protection doigts/mains</li><li>Protection d’accès sur machines et zones logistiques</li><li>Automates de sécurité sur machines neuves et existantes</li><li>Tapis et pédales aux points dangereux</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Désignation de type complète de la plaque (une photo aide)</li><li>Indiquer séparément émetteur, récepteur, module AKAS ou FMSC</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces FIESSLER à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez la désignation de type complète de la plaque, la quantité et le contexte machine (barrière, AKAS ou FMSC) via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des composants FIESSLER en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent du type et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que signifient ULVT, BLVT, ULCT et BLCT ?",
+        "brand_faq_a3": "Ce sont des barrières immatérielles Fiessler Elektronik. ULVT/BLVT sont documentées en boîtier robuste 40×60 mm, ULCT/BLCT en format compact 25×35 mm ; les versions BL incluent le blanking. Hauteur de champ, portée et résolution figurent sur la plaque.",
+        "brand_faq_q4": "Qu’est-ce qu’AKAS et quelles pièces sont demandées ?",
+        "brand_faq_a4": "AKAS est le système de protection laser pour presses plieuses (émetteur, récepteur, souvent avec FMSC). On demande unités émetteur/récepteur, interfaces et modules de commande. Indiquez le type complet ; nous n’apparions pas les pièces à partir d’un schéma de presse supposé.",
+        "brand_faq_q5": "Quelles données faut-il pour un automate FMSC ?",
+        "brand_faq_a5": "Type du module maître ou d’extension sur la plaque, toute indication d’axes ou d’E/S et la fonction machine. Nous n’interprétons pas les chaînes d’options sans plaque.",
+        "brand_faq_q6": "Le nom de famille barrière immatérielle suffit-il sans numéro de type ?",
+        "brand_faq_a6": "En général non. Boîtier, blanking, hauteur et portée diffèrent. Indiquez le type complet de l’émetteur et du récepteur.",
+        "bx_note": "FIESSLER est une marque de Fiessler Elektronik GmbH & Co. KG, citée uniquement pour identifier les produits. Informations sur barrières, AKAS et FMSC issues de sources publiques du fabricant. Mise à jour : novembre 2026."
+      }
+    }
+  },
   "foss": {
     "intro": "",
     "products": [],
@@ -18754,6 +19330,292 @@
     "faq_after": [],
     "blocks": []
   },
+  "magirus": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "ziegler",
+      "iveco",
+      "man",
+      "mercedes",
+      "scania"
+    ],
+    "related_labels": {
+      "ziegler": "Ziegler",
+      "iveco": "IVECO",
+      "man": "MAN",
+      "mercedes": "MERCEDES",
+      "scania": "SCANIA"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/magirus.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/magirus.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/magirus.html#brand",
+          "name": "MAGIRUS"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/magirus.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/magirus.html#brand"
+          },
+          "name": "Magirus GmbH"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/magirus.html#service",
+          "name": "Beschaffung von MAGIRUS Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/magirus.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "MAGIRUS Ersatzteile | ABCspareparts",
+        "meta_description": "MAGIRUS Ersatzteile für Feuerwehrfahrzeuge und Drehleitern. Teilenummer vom Typenschild senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "MAGIRUS – Ersatzteile für Feuerwehrfahrzeuge, Drehleitern und Pumpen",
+        "brand_intro": "Magirus GmbH mit Sitz in Ulm wurde 1864 von Conrad Dietrich Magirus gegründet. 1872 entstand dort eine frei stehende Feuerwehrleiter. Zu den Hauptlinien gehören Drehleitern, Lösch- und Hilfeleistungsfahrzeuge sowie Flughafenlöschfahrzeuge der Reihen DRAGON und IMPACT.",
+        "brand_intro_p2": "Anfragen über ABCspareparts: wettbewerbsfähige Preise, Angebot oft innerhalb von 24 Stunden, Lieferung in Europa – bitte mit Teilenummer.",
+        "bx_about_title": "Über MAGIRUS",
+        "bx_about_text": "<p>Magirus GmbH mit Sitz in Ulm fertigt Feuerwehrfahrzeuge und -technik. Das Unternehmen geht auf Conrad Dietrich Magirus (gegründet 1864) zurück; 1872 entstand dort eine frei stehende Feuerwehrleiter. Zum dokumentierten Angebot gehören Drehleitern, Lösch- und Hilfeleistungsfahrzeuge, Flughafenlöschfahrzeuge sowie Pumpen und Werfer.</p><p>Öffentliche Modellübersichten nennen Drehleitern der Reihen M27L bis M68L (u. a. M32L mit Gelenkarm) sowie Flughafenfahrzeuge der Familien DRAGON und IMPACT. Die genaue Ausführung ergibt sich aus Fahrzeugtyp und Teilenummer, nicht aus einer angenommenen Aufbaukonfiguration.</p>",
+        "bx_products_title": "MAGIRUS Produktfamilien, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Drehleitern (u. a. M27L, M32L, M32L-AS, M39L, M42L, M55L, M60L, M68L)</li><li>Lösch- und Hilfeleistungsfahrzeuge (z. B. HLF, TLF, LF, TSF)</li><li>Flughafenlöschfahrzeuge DRAGON und IMPACT</li><li>Pumpen, Werfer und Zumischsysteme</li><li>Rettungs- und Logistikfahrzeuge sowie Sonderaufbauten</li><li>Weitere MAGIRUS-Komponenten mit vollständiger Typ- und Teilenummer vom Fahrzeug</li>",
+        "bx_tech_title": "Worauf es bei MAGIRUS-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Fahrzeugtyp:</strong> Bezeichnung vom Typenschild (Leiter, HLF, DRAGON usw.).</li><li><strong>Teilenummer:</strong> Nummer vom Bauteil, aus der Gerätedokumentation oder vom Etikett.</li><li><strong>Baugruppe:</strong> Pumpe, Hydraulik, Leitersteuerung, Ventil, Beleuchtung oder Werfer.</li><li><strong>Foto:</strong> Typenschild des Fahrzeugs und das betroffene Teil.</li><li>Häufig angefragt werden Pumpen, Hydraulikkomponenten, Steuerungen, Ventile und Leuchten – immer mit Nummer vom Teil.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Kommunale Feuerwehren</li><li>Werks- und Industriefeuerwehren</li><li>Flughafen- und Flugfeldbrandschutz</li><li>Rettung aus Höhen (Drehleitern)</li><li>Katastrophenschutz und Sonderfahrzeuge</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Fahrzeugtyp und Teilenummer vom Typenschild (ein Foto hilft)</li><li>Baugruppe (Pumpe, Leiter, Hydraulik, Steuerung)</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich MAGIRUS-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie Fahrzeugtyp, Teilenummer, Menge und den Baugruppenkontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts MAGIRUS-Komponenten in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom konkreten Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Welche MAGIRUS-Drehleitern sind dokumentiert?",
+        "brand_faq_a3": "Öffentliche Übersichten nennen unter anderem M27L, M32L, M32L-AS (Gelenkarm), M39L, M42L sowie höhere Leitern bis M68L. Welches Modell Sie haben, steht auf dem Typenschild.",
+        "brand_faq_q4": "Welche MAGIRUS-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Pumpen und Zumischer, Hydraulik für Leitern, Steuerungen, Ventile, Werfer und Beleuchtung. Nennen Sie die Nummer vom Bauteil plus den Fahrzeugtyp.",
+        "brand_faq_q5": "Reicht der Fahrzeugtyp ohne Teilenummer?",
+        "brand_faq_a5": "Oft nicht, weil Aufbauten und Optionen (Rettungskorb, Werfer, Pumpe) differieren. Geben Sie Typ und die Nummer vom physischen Teil an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Das Typenschild des Fahrzeugs (Typ und möglichst Fahrgestellnummer) und das Schild am angefragten Teil. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "MAGIRUS ist eine Marke der Magirus GmbH, Ulm. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Feuerwehrfahrzeugen und Drehleitern basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "MAGIRUS spare parts | ABCspareparts",
+        "meta_description": "MAGIRUS spare parts for fire-fighting vehicles and aerial ladders. Send the part number from the nameplate – enquiry often within 24 h.",
+        "brand_h1": "MAGIRUS – spare parts for fire-fighting vehicles, turntable ladders and pumps",
+        "brand_intro": "Magirus GmbH, based in Ulm, was founded in 1864 by Conrad Dietrich Magirus. A free-standing fire-brigade ladder was developed there in 1872. Main product lines include turntable ladders, fire and rescue engines, and airport fire vehicles in the DRAGON and IMPACT ranges.",
+        "brand_intro_p2": "Request through ABCspareparts: competitive prices, a quote often within 24 hours, delivery in Europe – please quote the part number.",
+        "bx_about_title": "About MAGIRUS",
+        "bx_about_text": "<p>Magirus GmbH, based in Ulm, manufactures fire-fighting vehicles and equipment. The company traces back to Conrad Dietrich Magirus (founded 1864); a free-standing fire-brigade ladder was developed there in 1872. Documented products include turntable ladders, fire and rescue engines, airport fire vehicles, pumps and monitors.</p><p>Public model overviews cite turntable ladders from M27L to M68L (including M32L with articulated arm) and airport vehicles in the DRAGON and IMPACT families. The exact unit is identified by vehicle type and part number, not by an assumed body layout.</p>",
+        "bx_products_title": "MAGIRUS product families often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Turntable ladders (including M27L, M32L, M32L-AS, M39L, M42L, M55L, M60L, M68L)</li><li>Fire and rescue engines (e.g. HLF, TLF, LF, TSF classes)</li><li>Airport fire vehicles DRAGON and IMPACT</li><li>Pumps, monitors and foam-proportioning systems</li><li>Rescue and logistics vehicles and special bodies</li><li>Other MAGIRUS components with a full type and part number from the vehicle</li>",
+        "bx_tech_title": "What matters in a MAGIRUS enquiry",
+        "bx_tech_list": "<li><strong>Vehicle type:</strong> designation from the nameplate (ladder, HLF, DRAGON, etc.).</li><li><strong>Part number:</strong> number from the component, documentation or label.</li><li><strong>Assembly:</strong> pump, hydraulics, ladder control, valve, lighting or monitor.</li><li><strong>Photo:</strong> vehicle nameplate and the affected part.</li><li>Frequent requests include pumps, hydraulic components, controls, valves and lamps – always with the number from the part.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Municipal fire brigades</li><li>Works and industrial fire brigades</li><li>Airport and airfield fire protection</li><li>High-rise rescue (turntable ladders)</li><li>Civil protection and special vehicles</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Vehicle type and part number from the nameplate (a photo helps)</li><li>Assembly (pump, ladder, hydraulics, control)</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request MAGIRUS spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send vehicle type, part number, quantity and assembly context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship MAGIRUS components in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "Which MAGIRUS turntable ladders are documented?",
+        "brand_faq_a3": "Public overviews cite M27L, M32L, M32L-AS (articulated arm), M39L, M42L and taller ladders up to M68L. The nameplate shows which model you have.",
+        "brand_faq_q4": "Which MAGIRUS parts are often requested?",
+        "brand_faq_a4": "Pumps and proportioners, ladder hydraulics, controls, valves, monitors and lighting. Give the number from the component plus the vehicle type.",
+        "brand_faq_q5": "Is the vehicle type enough without a part number?",
+        "brand_faq_a5": "Often not, because cage, monitor and pump options differ. State the type and the number from the physical part.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The vehicle nameplate (type and chassis number if present) and the label on the requested part. Blurry photos without numbers help little.",
+        "bx_note": "MAGIRUS is a trademark of Magirus GmbH, Ulm, mentioned solely to identify products. Information on fire-fighting vehicles and turntable ladders is based on publicly available manufacturer information. As of November 2026."
+      },
+      "it": {
+        "meta_title": "MAGIRUS Ricambi | ABCspareparts",
+        "meta_description": "MAGIRUS ricambi per automezzi antincendio e scale aeree. Invii il codice dalla targhetta – richiesta spesso entro 24 ore.",
+        "brand_h1": "MAGIRUS – ricambi per automezzi antincendio, scale aeree e pompe",
+        "brand_intro": "Magirus GmbH, con sede a Ulm, è stata fondata nel 1864 da Conrad Dietrich Magirus. Nel 1872 vi fu sviluppata una scala antincendio autoportante. Le linee principali comprendono scale aeree, automezzi di spegnimento e soccorso e veicoli aeroportuali delle serie DRAGON e IMPACT.",
+        "brand_intro_p2": "Richieste tramite ABCspareparts: prezzi competitivi, preventivo spesso entro 24 ore, consegna in Europa – indichi il numero di parte.",
+        "bx_about_title": "Chi è MAGIRUS",
+        "bx_about_text": "<p>Magirus GmbH, con sede a Ulm, produce veicoli e tecnica antincendio. L’azienda risale a Conrad Dietrich Magirus (fondata nel 1864); nel 1872 vi fu sviluppata una scala antincendio autoportante. I prodotti documentati includono scale aeree, automezzi di spegnimento e soccorso, veicoli aeroportuali, pompe e monitor.</p><p>Le panoramiche pubbliche citano scale dalle serie M27L a M68L (tra cui M32L con braccio articolato) e veicoli aeroportuali DRAGON e IMPACT. L’esecuzione esatta si identifica con tipo veicolo e numero di parte.</p>",
+        "bx_products_title": "Famiglie di prodotti MAGIRUS richieste di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Scale aeree (tra cui M27L, M32L, M32L-AS, M39L, M42L, M55L, M60L, M68L)</li><li>Automezzi di spegnimento e soccorso (es. classi HLF, TLF, LF, TSF)</li><li>Veicoli aeroportuali DRAGON e IMPACT</li><li>Pompe, monitor e sistemi di schiuma</li><li>Veicoli di soccorso e logistica e allestimenti speciali</li><li>Altri componenti MAGIRUS con tipo e numero di parte completi</li>",
+        "bx_tech_title": "Cosa conta in una richiesta MAGIRUS",
+        "bx_tech_list": "<li><strong>Tipo veicolo:</strong> designazione dalla targhetta (scala, HLF, DRAGON, ecc.).</li><li><strong>Numero di parte:</strong> dal componente, dalla documentazione o dall’etichetta.</li><li><strong>Gruppo:</strong> pompa, idraulica, controllo scala, valvola, illuminazione o monitor.</li><li><strong>Foto:</strong> targhetta del veicolo e pezzo.</li><li>Si chiedono spesso pompe, idraulica, controlli, valvole e fari – sempre con il numero del pezzo.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Vigili del fuoco comunali</li><li>Vigili del fuoco aziendali e industriali</li><li>Antincendio aeroportuale</li><li>Socorso in quota (scale aeree)</li><li>Protezione civile e veicoli speciali</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Tipo veicolo e numero di parte dalla targhetta (una foto aiuta)</li><li>Gruppo (pompa, scala, idraulica, controllo)</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi MAGIRUS ad ABCspareparts?",
+        "brand_faq_a1": "Invii tipo veicolo, numero di parte, quantità e contesto del gruppo con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce componenti MAGIRUS in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Quali scale aeree MAGIRUS sono documentate?",
+        "brand_faq_a3": "Le panoramiche pubbliche citano M27L, M32L, M32L-AS (braccio articolato), M39L, M42L e scale più alte fino a M68L. Il modello risulta dalla targhetta.",
+        "brand_faq_q4": "Quali ricambi MAGIRUS vengono chiesti di frequente?",
+        "brand_faq_a4": "Pompe e miscelatori, idraulica delle scale, controlli, valvole, monitor e illuminazione. Indichi il numero del componente più il tipo veicolo.",
+        "brand_faq_q5": "Basta il tipo veicolo senza numero di parte?",
+        "brand_faq_a5": "Spesso no, perché cestello, monitor e pompa differiscono. Indichi tipo e numero del pezzo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "La targhetta del veicolo (tipo e numero telaio se presente) e l’etichetta del pezzo. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "MAGIRUS è un marchio di Magirus GmbH, Ulm, citato solo per identificare i prodotti. Informazioni su automezzi antincendio e scale aeree da fonti pubbliche del costruttore. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "MAGIRUS Recambios | ABCspareparts",
+        "meta_description": "MAGIRUS recambios para vehículos de bomberos y autoescalas. Envíe la referencia de la placa – solicitud a menudo en 24 h.",
+        "brand_h1": "MAGIRUS – recambios para vehículos de bomberos, autoescalas y bombas",
+        "brand_intro": "Magirus GmbH, con sede en Ulm, se fundó en 1864 por Conrad Dietrich Magirus. En 1872 se desarrolló allí una escalera de bomberos autoportante. Las líneas principales incluyen autoescalas, autobombas y de rescate, y vehículos de aeropuerto de las series DRAGON e IMPACT.",
+        "brand_intro_p2": "Solicite a través de ABCspareparts: precios competitivos, presupuesto a menudo en 24 horas, entrega en Europa – indique el número de pieza.",
+        "bx_about_title": "Sobre MAGIRUS",
+        "bx_about_text": "<p>Magirus GmbH, con sede en Ulm, fabrica vehículos y técnica de bomberos. La empresa se remonta a Conrad Dietrich Magirus (fundada en 1864); en 1872 se desarrolló allí una escalera de bomberos autoportante. Los productos documentados incluyen autoescalas, autobombas y de rescate, vehículos de aeropuerto, bombas y monitores.</p><p>Las vistas públicas citan autoescalas de M27L a M68L (incluida M32L con brazo articulado) y vehículos de aeropuerto DRAGON e IMPACT. La ejecución exacta se identifica por tipo de vehículo y número de pieza.</p>",
+        "bx_products_title": "Familias de productos MAGIRUS solicitadas con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Autoescalas (entre ellas M27L, M32L, M32L-AS, M39L, M42L, M55L, M60L, M68L)</li><li>Autobombas y de rescate (p. ej. clases HLF, TLF, LF, TSF)</li><li>Vehículos de aeropuerto DRAGON e IMPACT</li><li>Bombas, monitores y sistemas de espuma</li><li>Vehículos de rescate y logística y carrocerías especiales</li><li>Otros componentes MAGIRUS con tipo y número de pieza completos</li>",
+        "bx_tech_title": "Qué importa en una solicitud MAGIRUS",
+        "bx_tech_list": "<li><strong>Tipo de vehículo:</strong> designación de la placa (escalera, HLF, DRAGON, etc.).</li><li><strong>Número de pieza:</strong> del componente, documentación o etiqueta.</li><li><strong>Conjunto:</strong> bomba, hidráulica, control de escalera, válvula, iluminación o monitor.</li><li><strong>Foto:</strong> placa del vehículo y pieza.</li><li>Se piden a menudo bombas, hidráulica, controles, válvulas y faros – siempre con el número de la pieza.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Bomberos municipales</li><li>Bomberos de empresa e industriales</li><li>Protección de aeropuertos</li><li>Rescate en altura (autoescalas)</li><li>Protección civil y vehículos especiales</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Tipo de vehículo y número de pieza de la placa (una foto ayuda)</li><li>Conjunto (bomba, escalera, hidráulica, control)</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios MAGIRUS a ABCspareparts?",
+        "brand_faq_a1": "Envíe tipo de vehículo, número de pieza, cantidad y contexto del conjunto con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía componentes MAGIRUS en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué autoescalas MAGIRUS están documentadas?",
+        "brand_faq_a3": "Las vistas públicas citan M27L, M32L, M32L-AS (brazo articulado), M39L, M42L y escaleras más altas hasta M68L. El modelo figura en la placa.",
+        "brand_faq_q4": "¿Qué recambios MAGIRUS se solicitan con frecuencia?",
+        "brand_faq_a4": "Bombas y dosificadores, hidráulica de escaleras, controles, válvulas, monitores e iluminación. Indique el número del componente más el tipo de vehículo.",
+        "brand_faq_q5": "¿Basta el tipo de vehículo sin número de pieza?",
+        "brand_faq_a5": "A menudo no, porque cesta, monitor y bomba difieren. Indique tipo y el número de la pieza física.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "La placa del vehículo (tipo y número de chasis si consta) y la etiqueta de la pieza. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "MAGIRUS es una marca de Magirus GmbH, Ulm, mencionada solo para identificar los productos. Información sobre vehículos de bomberos y autoescalas basada en información pública del fabricante. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "MAGIRUS Pièces | ABCspareparts",
+        "meta_description": "MAGIRUS pièces pour véhicules incendie et échelles aériennes. Envoyez la référence de la plaque – demande souvent sous 24 h.",
+        "brand_h1": "MAGIRUS – pièces pour véhicules incendie, échelles pivotantes et pompes",
+        "brand_intro": "Magirus GmbH, dont le siège est à Ulm, a été fondée en 1864 par Conrad Dietrich Magirus. Une échelle de pompiers autoportante y a été développée en 1872. Les lignes principales comprennent échelles pivotantes, fourgons d’incendie et de secours, et véhicules d’aéroport des gammes DRAGON et IMPACT.",
+        "brand_intro_p2": "Demandez via ABCspareparts : prix compétitifs, devis souvent sous 24 heures, livraison en Europe – indiquez le numéro de pièce.",
+        "bx_about_title": "À propos de MAGIRUS",
+        "bx_about_text": "<p>Magirus GmbH, dont le siège est à Ulm, fabrique des véhicules et matériels d’incendie. L’entreprise remonte à Conrad Dietrich Magirus (fondée en 1864) ; une échelle de pompiers autoportante y a été développée en 1872. Les produits documentés comprennent échelles pivotantes, fourgons d’incendie et de secours, véhicules d’aéroport, pompes et lances-moniteurs.</p><p>Les vues publiques citent des échelles de M27L à M68L (dont M32L à bras articulé) et des véhicules d’aéroport DRAGON et IMPACT. L’exécution exacte se lit sur le type de véhicule et le numéro de pièce.</p>",
+        "bx_products_title": "Familles de produits MAGIRUS souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Échelles pivotantes (dont M27L, M32L, M32L-AS, M39L, M42L, M55L, M60L, M68L)</li><li>Fourgons d’incendie et de secours (p. ex. classes HLF, TLF, LF, TSF)</li><li>Véhicules d’aéroport DRAGON et IMPACT</li><li>Pompes, moniteurs et systèmes d’émulseur</li><li>Véhicules de secours et de logistique et carrosseries spéciales</li><li>Autres composants MAGIRUS avec type et numéro de pièce complets</li>",
+        "bx_tech_title": "Ce qui compte pour une demande MAGIRUS",
+        "bx_tech_list": "<li><strong>Type de véhicule :</strong> désignation de la plaque (échelle, HLF, DRAGON, etc.).</li><li><strong>Numéro de pièce :</strong> du composant, de la documentation ou de l’étiquette.</li><li><strong>Ensemble :</strong> pompe, hydraulique, commande d’échelle, vanne, éclairage ou moniteur.</li><li><strong>Photo :</strong> plaque du véhicule et pièce.</li><li>On demande souvent pompes, hydraulique, commandes, vannes et feux – toujours avec le numéro de la pièce.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Services d’incendie municipaux</li><li>Services d’incendie d’entreprise et industriels</li><li>Protection incendie aéroportuaire</li><li>Secours en hauteur (échelles pivotantes)</li><li>Protection civile et véhicules spéciaux</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Type de véhicule et numéro de pièce de la plaque (une photo aide)</li><li>Ensemble (pompe, échelle, hydraulique, commande)</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces MAGIRUS à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez type de véhicule, numéro de pièce, quantité et contexte d’ensemble via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des composants MAGIRUS en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Quelles échelles pivotantes MAGIRUS sont documentées ?",
+        "brand_faq_a3": "Les vues publiques citent M27L, M32L, M32L-AS (bras articulé), M39L, M42L et des échelles plus hautes jusqu’à M68L. Le modèle figure sur la plaque.",
+        "brand_faq_q4": "Quelles pièces MAGIRUS sont souvent demandées ?",
+        "brand_faq_a4": "Pompes et doseurs, hydraulique d’échelles, commandes, vannes, moniteurs et éclairage. Indiquez le numéro du composant plus le type de véhicule.",
+        "brand_faq_q5": "Le type de véhicule suffit-il sans numéro de pièce ?",
+        "brand_faq_a5": "Souvent non, car nacelle, moniteur et pompe diffèrent. Indiquez le type et le numéro de la pièce physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "La plaque du véhicule (type et numéro de châssis s’il figure) et l’étiquette de la pièce. Des photos floues sans numéros aident peu.",
+        "bx_note": "MAGIRUS est une marque de Magirus GmbH, Ulm, citée uniquement pour identifier les produits. Informations sur véhicules incendie et échelles pivotantes issues de sources publiques du fabricant. Mise à jour : novembre 2026."
+      }
+    }
+  },
   "matrix-elektronik": {
     "brand": "Matrix Elektronik",
     "intro": "",
@@ -19671,6 +20533,294 @@
         "brand_faq_q6": "Qui fabrique Micro Detectors ?",
         "brand_faq_a6": "Italienischer Sensorhersteller",
         "bx_note": "Micro Detectors est une marque de Italienischer Sensorhersteller, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : octobre 2026."
+      }
+    }
+  },
+  "misumi": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "igus",
+      "item",
+      "norelem",
+      "thk",
+      "festo",
+      "hiwin"
+    ],
+    "related_labels": {
+      "igus": "Igus",
+      "item": "ITEM",
+      "norelem": "Norelem",
+      "thk": "Thk",
+      "festo": "Festo",
+      "hiwin": "Hiwin"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/misumi.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/misumi.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/misumi.html#brand",
+          "name": "MISUMI"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/misumi.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/misumi.html#brand"
+          },
+          "name": "MISUMI Group Inc."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/misumi.html#service",
+          "name": "Beschaffung von MISUMI Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/misumi.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "MISUMI Ersatzteile | ABCspareparts",
+        "meta_description": "MISUMI Ersatzteile für Automatisierung: Linearwellen, Führungen, Aluprofile. Teilenummer senden – Angebot oft in 24 Stunden.",
+        "brand_h1": "MISUMI – Ersatzteile für konfigurierbare Mechanikkomponenten der Fabrikautomation",
+        "brand_intro": "MISUMI Group Inc. mit Sitz in Tokio wurde 1963 gegründet. Das Unternehmen liefert konfigurierbare Mechanikkomponenten für die Fabrikautomation, den Werkzeugbau und die Instandhaltung. Zu den Hauptlinien gehören Linearwellen, Führungen, Positionierstifte, Aluminiumprofile, Kugelgewindetriebe und Kupplungen.",
+        "brand_intro_p2": "Anfragen über ABCspareparts: wettbewerbsfähige Preise, Angebot oft innerhalb von 24 Stunden, Lieferung in Europa – bitte mit Teilenummer.",
+        "bx_about_title": "Über MISUMI",
+        "bx_about_text": "<p>MISUMI Group Inc. mit Sitz in Tokio (gegründet 1963) liefert konfigurierbare mechanische Komponenten für die Fabrikautomation sowie Teile für Stanz- und Formwerkzeuge. Maße, Werkstoff und Endenbearbeitung werden über die Typbezeichnung festgelegt, statt ausschließlich über Lagermaße.</p><p>Zum dokumentierten Angebot gehören Linearwellen und -führungen, Positionierstifte, Aluminiumprofile, Kugelgewindetriebe und Kupplungen. Die genaue Ausführung ergibt sich aus dem vollständigen Typcode, nicht aus einer angenommenen Konfiguration.</p>",
+        "bx_products_title": "MISUMI Produktfamilien, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Konfigurierbare Linearwellen, Linearführungen und Miniaturführungen</li><li>Positionier- und Spannkomponenten (Positionierstifte, Buchsen)</li><li>Aluminiumprofile, Winkel, Verbinder und Zubehör für Gestelle</li><li>Kugelgewindetriebe, Wellenlagerungen, Wellenhalter und Kupplungen</li><li>Komponenten für Stanz- und Formwerkzeuge</li><li>Weitere MISUMI-Teile mit vollständiger Typbezeichnung aus Katalog oder Kennzeichnung</li>",
+        "bx_tech_title": "Worauf es bei MISUMI-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Typcode:</strong> vollständige MISUMI-Bezeichnung inklusive konfigurierter Maße (Länge, Durchmesser, Werkstoff, Oberfläche).</li><li><strong>Bauteilart:</strong> Welle, Führungswagen, Buchse, Stift, Winkel, Kupplung oder Profilabschnitt – so wie gekennzeichnet.</li><li><strong>Foto:</strong> Kennzeichnung, Etikett oder Katalogauszug.</li><li>Häufig angefragt werden Wellen, Buchsen, Führungsblöcke, Kupplungen, Winkel und Profilzubehör.</li><li>Ein unvollständiger Code ohne Maßangaben reicht oft nicht zur Zuordnung.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Montage- und Handling-Automation</li><li>Vorrichtungs- und Spannbau</li><li>Karosseriebau und Fügevorrichtungen</li><li>Medizin- und Laborautomation</li><li>Formen- und Stanzwerkzeuge</li><li>Allgemeiner Maschinen- und Anlagenbau</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige MISUMI-Typbezeichnung (ein Foto oder Katalogauszug hilft)</li><li>Konfigurierte Maße, falls sichtbar</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich MISUMI-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die vollständige Typbezeichnung (inkl. konfigurierter Maße), Menge und den Einbaukontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts MISUMI-Komponenten in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom konkreten Typcode und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Was bedeutet konfigurierbar bei MISUMI?",
+        "brand_faq_a3": "Länge, Durchmesser, Werkstoff, Oberfläche und Endenbearbeitung werden im Typcode festgehalten. Zwei ähnliche Bezeichnungen sind nicht automatisch dasselbe Teil. Senden Sie den Code unverändert, so wie er auf Kennzeichnung oder in der Stückliste steht.",
+        "brand_faq_q4": "Welche MISUMI-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Linearwellen und Buchsen, Führungswagen, Positionierstifte, Aluminiumprofilabschnitte, Winkel, Kupplungen und Kugelgewindeteile. Nennen Sie den vollen Typcode, nicht nur die Produktgruppe.",
+        "brand_faq_q5": "Wo werden MISUMI-Komponenten typischerweise eingesetzt?",
+        "brand_faq_a5": "In der Fabrikautomation: Montagezellen, Vorrichtungen, Handling, Karosseriebau sowie in Stanz- und Formwerkzeugen. Der Einsatz folgt der Stückliste der Anlage.",
+        "brand_faq_q6": "Reicht die Produktgruppe Welle ohne Typcode?",
+        "brand_faq_a6": "In der Regel nicht. Maße und Endenbearbeitung unterscheiden sich. Nennen Sie den vollständigen Code.",
+        "bx_note": "MISUMI ist eine Marke von MISUMI Group Inc. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu konfigurierbaren Mechanikkomponenten basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "MISUMI spare parts | ABCspareparts",
+        "meta_description": "MISUMI spare parts for automation: linear shafts, guides, aluminium frames. Send the type code – quote often within 24 hours.",
+        "brand_h1": "MISUMI – spare parts for configurable mechanical components in factory automation",
+        "brand_intro": "MISUMI Group Inc., headquartered in Tokyo, was founded in 1963. The company supplies configurable mechanical components for factory automation, die and mould work and maintenance. Main product lines include linear shafts, linear guides, locating pins, aluminium extrusions, ball screws and couplings.",
+        "brand_intro_p2": "Request through ABCspareparts: competitive prices, a quote often within 24 hours, delivery in Europe – please quote the part number.",
+        "bx_about_title": "About MISUMI",
+        "bx_about_text": "<p>MISUMI Group Inc., headquartered in Tokyo (established 1963), supplies configurable mechanical components for factory automation as well as press-die and mould components. Dimensions, material and end machining are set in the type code rather than by stock sizes alone.</p><p>Documented products include linear shafts and guides, locating pins, aluminium extrusions, ball screws and couplings. The exact item is identified by the full type code, not by an assumed configuration.</p>",
+        "bx_products_title": "MISUMI product families often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Configurable linear shafts, linear guides and miniature guides</li><li>Locating and clamping components (locating pins, bushings)</li><li>Aluminium extrusions, brackets, joints and frame accessories</li><li>Ball screws, shaft supports, collars and couplings</li><li>Press-die and mould components</li><li>Other MISUMI parts with a full type designation from the catalogue or marking</li>",
+        "bx_tech_title": "What matters in a MISUMI enquiry",
+        "bx_tech_list": "<li><strong>Type code:</strong> the full MISUMI designation including configured dimensions (length, diameter, material, finish).</li><li><strong>Part kind:</strong> shaft, carriage, bushing, pin, bracket, coupling or extrusion cut – as marked.</li><li><strong>Photo:</strong> marking, label or catalogue extract.</li><li>Frequent requests include shafts, bushings, guide blocks, couplings, brackets and extrusion accessories.</li><li>A partial code without dimensions is often not enough to match the item.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Assembly and handling automation</li><li>Fixture and clamp construction</li><li>Body-in-white and joining fixtures</li><li>Medical and laboratory automation</li><li>Mould and press-die tooling</li><li>General machine and plant construction</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full MISUMI type designation (a photo or catalogue extract helps)</li><li>Configured dimensions if visible</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request MISUMI spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the full type designation (including configured dimensions), quantity and installation context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship MISUMI components in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the type code and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What does configurable mean for MISUMI?",
+        "brand_faq_a3": "Length, diameter, material, finish and end machining are captured in the type code. Two similar designations are not automatically the same part. Send the code unchanged as it appears on the marking or bill of materials.",
+        "brand_faq_q4": "Which MISUMI parts are often requested?",
+        "brand_faq_a4": "Linear shafts and bushings, guide carriages, locating pins, aluminium extrusion cuts, brackets, couplings and ball-screw parts. Give the full type code, not only the product group.",
+        "brand_faq_q5": "Where are MISUMI components typically used?",
+        "brand_faq_a5": "In factory automation: assembly cells, fixtures, handling, body shops, and press-die or mould tooling. Use follows the plant bill of materials.",
+        "brand_faq_q6": "Is the product group shaft enough without a type code?",
+        "brand_faq_a6": "Usually not. Dimensions and end machining differ. State the full code.",
+        "bx_note": "MISUMI is a trademark of MISUMI Group Inc., mentioned solely to identify products. Information on configurable mechanical components is based on publicly available manufacturer information. As of November 2026."
+      },
+      "it": {
+        "meta_title": "MISUMI Ricambi | ABCspareparts",
+        "meta_description": "MISUMI ricambi per automazione: alberi lineari, guide, profilati. Invii il codice tipo – preventivo spesso entro 24 ore.",
+        "brand_h1": "MISUMI – ricambi per componenti meccanici configurabili di automazione",
+        "brand_intro": "MISUMI Group Inc., con sede a Tokyo, è stata fondata nel 1963. L’azienda fornisce componenti meccanici configurabili per l’automazione di fabbrica, stampi e manutenzione. Le linee principali comprendono alberi lineari, guide, perni di posizionamento, profilati di alluminio, viti a ricircolo e giunti.",
+        "brand_intro_p2": "Richieste tramite ABCspareparts: prezzi competitivi, preventivo spesso entro 24 ore, consegna in Europa – indichi il numero di parte.",
+        "bx_about_title": "Chi è MISUMI",
+        "bx_about_text": "<p>MISUMI Group Inc., con sede a Tokyo (fondata nel 1963), fornisce componenti meccanici configurabili per l’automazione di fabbrica e componenti per stampi e matrici. Dimensioni, materiale e lavorazione delle estremità sono fissati nel codice tipo, non solo da misure a magazzino.</p><p>I prodotti documentati includono alberi e guide lineari, perni di posizionamento, profilati di alluminio, viti a ricircolo e giunti. L’articolo esatto si identifica con il codice tipo completo, non con una configurazione ipotizzata.</p>",
+        "bx_products_title": "Famiglie di prodotti MISUMI richieste di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Alberi lineari, guide lineari e guide miniature configurabili</li><li>Componenti di posizionamento e bloccaggio (perni, bussole)</li><li>Profilati di alluminio, squadrette, giunti e accessori per telai</li><li>Viti a ricircolo, supporti albero, collari e giunti</li><li>Componenti per stampi e matrici</li><li>Altri pezzi MISUMI con designazione tipo completa da catalogo o marcatura</li>",
+        "bx_tech_title": "Cosa conta in una richiesta MISUMI",
+        "bx_tech_list": "<li><strong>Codice tipo:</strong> designazione MISUMI completa con misure configurate (lunghezza, diametro, materiale, finitura).</li><li><strong>Tipo di pezzo:</strong> albero, pattino, bussola, perno, squadretta, giunto o spezzone di profilo.</li><li><strong>Foto:</strong> marcatura, etichetta o estratto catalogo.</li><li>Si chiedono spesso alberi, bussole, pattini, giunti, squadrette e accessori per profilati.</li><li>Un codice parziale senza misure spesso non basta.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Automazione di montaggio e handling</li><li>Costruzione di attrezzature e morse</li><li>Carrozzeria e attrezzature di giunzione</li><li>Automazione medicale e di laboratorio</li><li>Stampi e matrici</li><li>Costruzione generale di macchine e impianti</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Designazione tipo MISUMI completa (una foto o un estratto catalogo aiuta)</li><li>Misure configurate se visibili</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi MISUMI ad ABCspareparts?",
+        "brand_faq_a1": "Invii la designazione tipo completa (incluse le misure configurate), quantità e contesto di installazione con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce componenti MISUMI in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal codice tipo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Cosa significa configurabile per MISUMI?",
+        "brand_faq_a3": "Lunghezza, diametro, materiale, finitura e lavorazione delle estremità sono nel codice tipo. Due designazioni simili non sono automaticamente lo stesso pezzo. Invii il codice invariato, come in marcatura o distinta.",
+        "brand_faq_q4": "Quali ricambi MISUMI vengono chiesti di frequente?",
+        "brand_faq_a4": "Alberi lineari e bussole, pattini, perni di posizionamento, spezzoni di profilato, squadrette, giunti e parti di viti a ricircolo. Indichi il codice tipo completo, non solo il gruppo prodotto.",
+        "brand_faq_q5": "Dove si usano tipicamente i componenti MISUMI?",
+        "brand_faq_a5": "Nell’automazione di fabbrica: celle di montaggio, attrezzature, handling, carrozzeria e stampi. L’impiego segue la distinta dell’impianto.",
+        "brand_faq_q6": "Basta il gruppo prodotto albero senza codice tipo?",
+        "brand_faq_a6": "Di solito no. Misure e estremità differiscono. Indichi il codice completo.",
+        "bx_note": "MISUMI è un marchio di MISUMI Group Inc., citato solo per identificare i prodotti. Informazioni sui componenti meccanici configurabili da fonti pubbliche del costruttore. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "MISUMI Recambios | ABCspareparts",
+        "meta_description": "MISUMI recambios para automatización: ejes lineales, guías, perfiles. Envíe el código de tipo – presupuesto a menudo en 24 h.",
+        "brand_h1": "MISUMI – recambios para componentes mecánicos configurables de automatización",
+        "brand_intro": "MISUMI Group Inc., con sede en Tokio, se fundó en 1963. La empresa suministra componentes mecánicos configurables para automatización de fábrica, matrices, moldes y mantenimiento. Las líneas principales incluyen ejes lineales, guías, pasadores de posicionamiento, perfiles de aluminio, husillos a bolas y acoplamientos.",
+        "brand_intro_p2": "Solicite a través de ABCspareparts: precios competitivos, presupuesto a menudo en 24 horas, entrega en Europa – indique el número de pieza.",
+        "bx_about_title": "Sobre MISUMI",
+        "bx_about_text": "<p>MISUMI Group Inc., con sede en Tokio (fundada en 1963), suministra componentes mecánicos configurables para automatización de fábrica y piezas para matrices y moldes. Dimensiones, material y mecanizado de extremos se fijan en el código de tipo, no solo por medidas de almacén.</p><p>Los productos documentados incluyen ejes y guías lineales, pasadores de posicionamiento, perfiles de aluminio, husillos a bolas y acoplamientos. El artículo exacto se identifica por el código de tipo completo, no por una configuración supuesta.</p>",
+        "bx_products_title": "Familias de productos MISUMI solicitadas con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Ejes lineales, guías lineales y guías miniatura configurables</li><li>Componentes de posicionamiento y amarre (pasadores, casquillos)</li><li>Perfiles de aluminio, escuadras, uniones y accesorios de bastidor</li><li>Husillos a bolas, soportes de eje, collarines y acoplamientos</li><li>Componentes para matrices y moldes</li><li>Otras piezas MISUMI con designación de tipo completa de catálogo o marcado</li>",
+        "bx_tech_title": "Qué importa en una solicitud MISUMI",
+        "bx_tech_list": "<li><strong>Código de tipo:</strong> designación MISUMI completa con cotas configuradas (longitud, diámetro, material, acabado).</li><li><strong>Clase de pieza:</strong> eje, carro, casquillo, pasador, escuadra, acoplamiento o tramo de perfil.</li><li><strong>Foto:</strong> marcado, etiqueta o extracto de catálogo.</li><li>Se piden a menudo ejes, casquillos, bloques de guía, acoplamientos, escuadras y accesorios de perfil.</li><li>Un código parcial sin cotas suele no bastar.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Automatización de montaje y handling</li><li>Construcción de utillajes y amarre</li><li>Carrocería y utillajes de unión</li><li>Automatización médica y de laboratorio</li><li>Moldes y matrices</li><li>Construcción general de máquinas e instalaciones</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Designación de tipo MISUMI completa (una foto o un extracto de catálogo ayuda)</li><li>Cotas configuradas si son visibles</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios MISUMI a ABCspareparts?",
+        "brand_faq_a1": "Envíe la designación de tipo completa (incluidas las cotas configuradas), cantidad y contexto de instalación con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía componentes MISUMI en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen del código de tipo y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué significa configurable en MISUMI?",
+        "brand_faq_a3": "Longitud, diámetro, material, acabado y mecanizado de extremos quedan en el código de tipo. Dos designaciones parecidas no son automáticamente la misma pieza. Envíe el código sin cambiarlo, como en el marcado o la lista de materiales.",
+        "brand_faq_q4": "¿Qué recambios MISUMI se solicitan con frecuencia?",
+        "brand_faq_a4": "Ejes lineales y casquillos, carros de guía, pasadores de posicionamiento, tramos de perfil, escuadras, acoplamientos y piezas de husillo a bolas. Indique el código de tipo completo, no solo el grupo de producto.",
+        "brand_faq_q5": "¿Dónde se usan típicamente los componentes MISUMI?",
+        "brand_faq_a5": "En automatización de fábrica: celdas de montaje, utillajes, handling, carrocería y matrices o moldes. El uso sigue la lista de materiales de la planta.",
+        "brand_faq_q6": "¿Basta el grupo de producto eje sin código de tipo?",
+        "brand_faq_a6": "Suele no bastar. Las cotas y los extremos difieren. Indique el código completo.",
+        "bx_note": "MISUMI es una marca de MISUMI Group Inc., mencionada solo para identificar los productos. Información sobre componentes mecánicos configurables basada en información pública del fabricante. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "MISUMI Pièces | ABCspareparts",
+        "meta_description": "MISUMI pièces pour automatisation : arbres linéaires, guides, profilés. Envoyez le code type – devis souvent sous 24 heures.",
+        "brand_h1": "MISUMI – pièces pour composants mécaniques configurables d’automatisation",
+        "brand_intro": "MISUMI Group Inc., dont le siège est à Tokyo, a été fondée en 1963. L’entreprise fournit des composants mécaniques configurables pour l’automatisation d’usine, l’outillage et la maintenance. Les lignes principales comprennent arbres linéaires, guides, pions de positionnement, profilés aluminium, vis à billes et accouplements.",
+        "brand_intro_p2": "Demandez via ABCspareparts : prix compétitifs, devis souvent sous 24 heures, livraison en Europe – indiquez le numéro de pièce.",
+        "bx_about_title": "À propos de MISUMI",
+        "bx_about_text": "<p>MISUMI Group Inc., dont le siège est à Tokyo (fondée en 1963), fournit des composants mécaniques configurables pour l’automatisation d’usine ainsi que des pièces pour matrices et moules. Dimensions, matière et usinage des extrémités sont fixés dans le code type, pas seulement par des cotes de stock.</p><p>Les produits documentés comprennent arbres et guidages linéaires, pions de positionnement, profilés aluminium, vis à billes et accouplements. L’article exact s’identifie par le code type complet, non par une configuration supposée.</p>",
+        "bx_products_title": "Familles de produits MISUMI souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Arbres linéaires, guidages linéaires et guidages miniature configurables</li><li>Composants de positionnement et de bridage (pions, bagues)</li><li>Profilés aluminium, équerres, liaisons et accessoires de châssis</li><li>Vis à billes, supports d’arbre, bagues de serrage et accouplements</li><li>Composants pour matrices et moules</li><li>Autres pièces MISUMI avec désignation de type complète du catalogue ou du marquage</li>",
+        "bx_tech_title": "Ce qui compte pour une demande MISUMI",
+        "bx_tech_list": "<li><strong>Code type :</strong> désignation MISUMI complète avec cotes configurées (longueur, diamètre, matière, finition).</li><li><strong>Nature de pièce :</strong> arbre, patin, bague, pion, équerre, accouplement ou coupe de profilé.</li><li><strong>Photo :</strong> marquage, étiquette ou extrait de catalogue.</li><li>On demande souvent arbres, bagues, patins, accouplements, équerres et accessoires de profilé.</li><li>Un code partiel sans cotes ne suffit souvent pas.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Automatisation d’assemblage et de handling</li><li>Construction de montages et de bridage</li><li>Caisse en blanc et montages d’assemblage</li><li>Automatisation médicale et de laboratoire</li><li>Moules et matrices</li><li>Construction générale de machines et d’installations</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Désignation de type MISUMI complète (une photo ou un extrait de catalogue aide)</li><li>Cotes configurées si visibles</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces MISUMI à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez la désignation de type complète (y compris les cotes configurées), la quantité et le contexte d’installation via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des composants MISUMI en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent du code type et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que signifie configurable chez MISUMI ?",
+        "brand_faq_a3": "Longueur, diamètre, matière, finition et usinage des extrémités sont dans le code type. Deux désignations proches ne sont pas automatiquement la même pièce. Envoyez le code inchangé, tel qu’il figure sur le marquage ou la nomenclature.",
+        "brand_faq_q4": "Quelles pièces MISUMI sont souvent demandées ?",
+        "brand_faq_a4": "Arbres linéaires et bagues, patins, pions de positionnement, coupes de profilé, équerres, accouplements et pièces de vis à billes. Indiquez le code type complet, pas seulement le groupe de produits.",
+        "brand_faq_q5": "Où utilise-t-on typiquement les composants MISUMI ?",
+        "brand_faq_a5": "Dans l’automatisation d’usine : cellules d’assemblage, montages, handling, caisse en blanc et matrices ou moules. L’usage suit la nomenclature de l’installation.",
+        "brand_faq_q6": "Le groupe de produits arbre suffit-il sans code type ?",
+        "brand_faq_a6": "En général non. Cotes et extrémités diffèrent. Indiquez le code complet.",
+        "bx_note": "MISUMI est une marque de MISUMI Group Inc., citée uniquement pour identifier les produits. Informations sur les composants mécaniques configurables issues de sources publiques du fabricant. Mise à jour : novembre 2026."
       }
     }
   },
@@ -23678,6 +24828,294 @@
     "related_labels": {},
     "faq_after": [],
     "blocks": []
+  },
+  "sabroe": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "bitzer",
+      "gea",
+      "carrier",
+      "danfoss",
+      "johnson-controls",
+      "noske-kaeser"
+    ],
+    "related_labels": {
+      "bitzer": "Bitzer",
+      "gea": "Gea",
+      "carrier": "Carrier",
+      "danfoss": "Danfoss",
+      "johnson-controls": "Johnson Controls",
+      "noske-kaeser": "NOSKE-KAESER"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/sabroe.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/sabroe.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/sabroe.html#brand",
+          "name": "SABROE"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/sabroe.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/sabroe.html#brand"
+          },
+          "name": "Johnson Controls"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/sabroe.html#service",
+          "name": "Beschaffung von SABROE Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/sabroe.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "SABROE Ersatzteile | ABCspareparts",
+        "meta_description": "SABROE Ersatzteile für Industrie-Kälte: Kolben- und Schraubenverdichter, UniSAB. Teilenummer senden – Anfrage oft in 24 h.",
+        "brand_h1": "SABROE – Ersatzteile für industrielle Kälteverdichter, Kaltwassersätze und Wärmepumpen",
+        "brand_intro": "Sabroe wurde 1897 in Aarhus von Thomas Ths. Sabroe gegründet. Die Marke gehört seit 2005 zu Johnson Controls und steht für industrielle Kältetechnik. Zu den Hauptlinien gehören Kolben- und Schraubenverdichter, die Steuerung UniSAB sowie Kaltwassersätze und Wärmepumpen.",
+        "brand_intro_p2": "Anfragen über ABCspareparts: wettbewerbsfähige Preise, Angebot oft innerhalb von 24 Stunden, Lieferung in Europa – bitte mit Teilenummer.",
+        "bx_about_title": "Über SABROE",
+        "bx_about_text": "<p>SABROE ist eine Marke für industrielle Kältetechnik. Das Unternehmen wurde 1897 von Thomas Ths. Sabroe in Aarhus gegründet und gehört heute zu Johnson Controls. Fertigung und Prüfung sind in Dänemark dokumentiert (u. a. Holme/Højbjerg bei Aarhus).</p><p>Zum dokumentierten Angebot gehören Kolben- und Schraubenverdichter, Kaltwassersätze, Wärmepumpen und die Anlagensteuerung UniSAB. Öffentliche Unterlagen nennen Anwendungen in Industrie, Schifffahrt, Lebensmittel, Pharma und Kältelogistik. Die genaue Ausführung ergibt sich aus der Typbezeichnung, nicht aus einer angenommenen Anlagenkonfiguration.</p>",
+        "bx_products_title": "SABROE Produktfamilien, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Kolbenverdichter für Kälte, Klimatisierung und Wärmepumpen (ein- und zweistufig)</li><li>Schraubenverdichtersätze der Linie SAB mit UniSAB-Steuerung</li><li>Industrie-Kaltwassersätze und Wärmepumpen</li><li>Steuerungen und Sensorik der Familie UniSAB</li><li>Service- und Verschleißteile für Verdichter, soweit auf dem Typenschild ausgewiesen</li><li>Weitere SABROE-Komponenten mit vollständiger Typ- oder Artikelnummer</li>",
+        "bx_tech_title": "Worauf es bei SABROE-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Typcode:</strong> vollständige Bezeichnung von Verdichter, Satz oder Steuerung (z. B. SAB-Schraubenstufe, UniSAB).</li><li><strong>Baugruppe:</strong> Ventilplatte, Lager, Ölfilter, Dichtung, Kupplung oder Steuerungsmodul – so wie gekennzeichnet.</li><li><strong>Anlage:</strong> Kälte, Marine, Wärmepumpe; Kältemittel nur falls auf dem Schild angegeben.</li><li><strong>Foto:</strong> Typenschild von Verdichter und Steuerung.</li><li>Häufig angefragt werden Verdichterventile, Lager, Ölfilter, UniSAB-Baugruppen und Dichtungen.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Lebensmittel- und Getränkeproduktion, Brauereien</li><li>Kühl- und Tiefkühllager, Distribution</li><li>Pharma und Prozesskälte</li><li>Marine und Offshore</li><li>Wärmepumpen und industrielle Temperierung</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Typ- oder Artikelbezeichnung vom Typenschild (ein Foto hilft)</li><li>Verdichtermodell, UniSAB-Stand und betroffene Baugruppe</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich SABROE-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die vollständige Typbezeichnung vom Typenschild, Menge und den Anlagenkontext (Verdichter, Kaltwassersatz, UniSAB) über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts SABROE-Komponenten in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom konkreten Typ und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Welche SABROE-Verdichter sind dokumentiert?",
+        "brand_faq_a3": "Öffentliche Unterlagen nennen Kolbenverdichter in mehreren Baugrößen sowie Schraubenverdichtersätze der Linie SAB mit UniSAB-Steuerung. Welche Ausführung Sie haben, steht auf dem Typenschild.",
+        "brand_faq_q4": "Welche SABROE-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Ventilplatten und Ventile, Lager, Ölfilter, Dichtungen, Kupplungen und UniSAB-Module. Nennen Sie die Nummer vom Bauteil plus das Verdichter- oder Steuerungsmodell.",
+        "brand_faq_q5": "Wo werden SABROE-Anlagen typischerweise eingesetzt?",
+        "brand_faq_a5": "In der Industriekälte: Lebensmittel, Kältelogistik, Pharma, Marine sowie Wärmepumpen. Der Einsatz folgt der installierten Anlage.",
+        "brand_faq_q6": "Reicht die Bezeichnung SAB-Schraubenverdichter ohne Typnummer?",
+        "brand_faq_a6": "In der Regel nicht. Baugrößen und Optionen (Frequenzumrichter, Ölkühlung, Economiser) unterscheiden sich. Nennen Sie die volle Typbezeichnung.",
+        "bx_note": "SABROE ist eine Marke von Johnson Controls. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Verdichtern, UniSAB und Industriekälte basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "SABROE spare parts | ABCspareparts",
+        "meta_description": "SABROE spare parts for industrial refrigeration: reciprocating and screw compressors, UniSAB. Send the part number – enquiry often within 24 h.",
+        "brand_h1": "SABROE – spare parts for industrial refrigeration compressors, chillers and heat pumps",
+        "brand_intro": "Sabroe was founded in 1897 in Aarhus by Thomas Ths. Sabroe. The brand has been part of Johnson Controls since 2005 and covers industrial refrigeration. Main product lines include reciprocating and screw compressors, the UniSAB controller, chillers and heat pumps.",
+        "brand_intro_p2": "Request through ABCspareparts: competitive prices, a quote often within 24 hours, delivery in Europe – please quote the part number.",
+        "bx_about_title": "About SABROE",
+        "bx_about_text": "<p>SABROE is a brand for industrial refrigeration. The business was founded in 1897 by Thomas Ths. Sabroe in Aarhus and is now part of Johnson Controls. Manufacturing and testing are documented in Denmark (including Holme/Højbjerg near Aarhus).</p><p>Documented products include reciprocating and screw compressors, chillers, heat pumps and the UniSAB plant controller. Public materials cite industrial, marine, food, pharma and cold-chain use. The exact unit is identified by the type designation, not by an assumed plant layout.</p>",
+        "bx_products_title": "SABROE product families often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Reciprocating compressors for refrigeration, air conditioning and heat pumps (single- and two-stage)</li><li>SAB screw compressor packages with UniSAB control</li><li>Industrial chillers and heat pumps</li><li>UniSAB controllers and related sensing</li><li>Service and wear parts for compressors when marked on the nameplate</li><li>Other SABROE components with a full type or article number</li>",
+        "bx_tech_title": "What matters in a SABROE enquiry",
+        "bx_tech_list": "<li><strong>Type code:</strong> full designation of compressor, package or controller (e.g. SAB screw size, UniSAB).</li><li><strong>Assembly:</strong> valve plate, bearing, oil filter, seal, coupling or control module – as marked.</li><li><strong>Plant:</strong> refrigeration, marine, heat pump; refrigerant only if shown on the nameplate.</li><li><strong>Photo:</strong> nameplates of compressor and controller.</li><li>Frequent requests include compressor valves, bearings, oil filters, UniSAB assemblies and seals.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Food and beverage production, breweries</li><li>Cold and frozen storage, distribution</li><li>Pharma and process cooling</li><li>Marine and offshore</li><li>Heat pumps and industrial temperature control</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full type or article designation from the nameplate (a photo helps)</li><li>Compressor model, UniSAB status and affected assembly</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request SABROE spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the full type designation from the nameplate, quantity and plant context (compressor, chiller, UniSAB) via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship SABROE components in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the type and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "Which SABROE compressors are documented?",
+        "brand_faq_a3": "Public materials cite reciprocating compressors in several sizes and SAB screw compressor packages with UniSAB control. The nameplate shows which execution you have.",
+        "brand_faq_q4": "Which SABROE parts are often requested?",
+        "brand_faq_a4": "Valve plates and valves, bearings, oil filters, seals, couplings and UniSAB modules. Give the number from the component plus the compressor or controller model.",
+        "brand_faq_q5": "Where are SABROE plants typically used?",
+        "brand_faq_a5": "In industrial refrigeration: food, cold chain, pharma, marine and heat pumps. Use follows the installed plant.",
+        "brand_faq_q6": "Is the name SAB screw compressor enough without a type number?",
+        "brand_faq_a6": "Usually not. Sizes and options (variable-speed drive, oil cooling, economiser) differ. State the full type.",
+        "bx_note": "SABROE is a trademark of Johnson Controls, mentioned solely to identify products. Information on compressors, UniSAB and industrial refrigeration is based on publicly available manufacturer information. As of November 2026."
+      },
+      "it": {
+        "meta_title": "SABROE Ricambi | ABCspareparts",
+        "meta_description": "SABROE ricambi per refrigerazione industriale: compressori a pistoni e a vite, UniSAB. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "SABROE – ricambi per compressori di refrigerazione industriale, chiller e pompe di calore",
+        "brand_intro": "Sabroe è stata fondata nel 1897 ad Aarhus da Thomas Ths. Sabroe. Il marchio fa parte di Johnson Controls dal 2005 e copre la refrigerazione industriale. Le linee principali comprendono compressori a pistoni e a vite, il controllo UniSAB, chiller e pompe di calore.",
+        "brand_intro_p2": "Richieste tramite ABCspareparts: prezzi competitivi, preventivo spesso entro 24 ore, consegna in Europa – indichi il numero di parte.",
+        "bx_about_title": "Chi è SABROE",
+        "bx_about_text": "<p>SABROE è un marchio di refrigerazione industriale. L’attività fu fondata nel 1897 da Thomas Ths. Sabroe ad Aarhus e oggi fa parte di Johnson Controls. Produzione e collaudo sono documentati in Danimarca (tra cui Holme/Højbjerg presso Aarhus).</p><p>I prodotti documentati includono compressori a pistoni e a vite, chiller, pompe di calore e il controllo impianto UniSAB. Le fonti pubbliche citano impieghi industriali, navali, alimentari, farmaceutici e della catena del freddo. L’esecuzione esatta si identifica con la designazione di tipo.</p>",
+        "bx_products_title": "Famiglie di prodotti SABROE richieste di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Compressori a pistoni per refrigerazione, condizionamento e pompe di calore (mono e bistadio)</li><li>Gruppi a vite SAB con controllo UniSAB</li><li>Chiller e pompe di calore industriali</li><li>Controlli UniSAB e sensoristica associata</li><li>Parti di usura per compressori se indicate in targhetta</li><li>Altri componenti SABROE con numero di tipo o articolo completo</li>",
+        "bx_tech_title": "Cosa conta in una richiesta SABROE",
+        "bx_tech_list": "<li><strong>Codice tipo:</strong> designazione completa di compressore, gruppo o controllo (es. taglia SAB, UniSAB).</li><li><strong>Gruppo:</strong> piastra valvole, cuscinetto, filtro olio, tenuta, giunto o modulo di controllo.</li><li><strong>Impianto:</strong> refrigerazione, nave, pompa di calore; refrigerante solo se in targhetta.</li><li><strong>Foto:</strong> targhette di compressore e controllo.</li><li>Si chiedono spesso valvole, cuscinetti, filtri olio, gruppi UniSAB e tenute.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Produzione alimentare e bevande, birrifici</li><li>Celle frigorifere e distribuzione</li><li>Farmaceutica e freddo di processo</li><li>Navale e offshore</li><li>Pompe di calore e termoregolazione industriale</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Designazione tipo o articolo completa dalla targhetta (una foto aiuta)</li><li>Modello compressore, stato UniSAB e gruppo interessato</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi SABROE ad ABCspareparts?",
+        "brand_faq_a1": "Invii la designazione tipo completa dalla targhetta, quantità e contesto impianto (compressore, chiller, UniSAB) con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce componenti SABROE in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal tipo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Quali compressori SABROE sono documentati?",
+        "brand_faq_a3": "Le fonti pubbliche citano compressori a pistoni in più taglie e gruppi a vite SAB con controllo UniSAB. L’esecuzione risulta dalla targhetta.",
+        "brand_faq_q4": "Quali ricambi SABROE vengono chiesti di frequente?",
+        "brand_faq_a4": "Piastre e valvole, cuscinetti, filtri olio, tenute, giunti e moduli UniSAB. Indichi il numero del componente più il modello di compressore o controllo.",
+        "brand_faq_q5": "Dove si usano tipicamente gli impianti SABROE?",
+        "brand_faq_a5": "Nella refrigerazione industriale: alimentare, catena del freddo, pharma, navale e pompe di calore. L’impiego segue l’impianto installato.",
+        "brand_faq_q6": "Basta la dicitura compressore a vite SAB senza numero di tipo?",
+        "brand_faq_a6": "Di solito no. Taglie e opzioni (inverter, raffreddamento olio, economizzatore) differiscono. Indichi il tipo completo.",
+        "bx_note": "SABROE è un marchio di Johnson Controls, citato solo per identificare i prodotti. Informazioni su compressori, UniSAB e refrigerazione industriale da fonti pubbliche del costruttore. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "SABROE Recambios | ABCspareparts",
+        "meta_description": "SABROE recambios para refrigeración industrial: compresores de pistón y tornillo, UniSAB. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "SABROE – recambios para compresores de refrigeración industrial, enfriadoras y bombas de calor",
+        "brand_intro": "Sabroe se fundó en 1897 en Aarhus por Thomas Ths. Sabroe. La marca forma parte de Johnson Controls desde 2005 y cubre la refrigeración industrial. Las líneas principales incluyen compresores de pistón y de tornillo, el control UniSAB, enfriadoras y bombas de calor.",
+        "brand_intro_p2": "Solicite a través de ABCspareparts: precios competitivos, presupuesto a menudo en 24 horas, entrega en Europa – indique el número de pieza.",
+        "bx_about_title": "Sobre SABROE",
+        "bx_about_text": "<p>SABROE es una marca de refrigeración industrial. El negocio se fundó en 1897 por Thomas Ths. Sabroe en Aarhus y hoy forma parte de Johnson Controls. Fabricación y ensayo están documentados en Dinamarca (incluido Holme/Højbjerg junto a Aarhus).</p><p>Los productos documentados incluyen compresores de pistón y tornillo, enfriadoras, bombas de calor y el control de planta UniSAB. Las fuentes públicas citan usos industriales, marinos, alimentarios, farmacéuticos y de cadena de frío. La ejecución exacta se identifica por la designación de tipo.</p>",
+        "bx_products_title": "Familias de productos SABROE solicitadas con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Compresores de pistón para refrigeración, climatización y bombas de calor (mono y bistage)</li><li>Grupos de tornillo SAB con control UniSAB</li><li>Enfriadoras y bombas de calor industriales</li><li>Controles UniSAB y sensores asociados</li><li>Piezas de desgaste de compresor si constan en la placa</li><li>Otros componentes SABROE con número de tipo o artículo completo</li>",
+        "bx_tech_title": "Qué importa en una solicitud SABROE",
+        "bx_tech_list": "<li><strong>Código de tipo:</strong> designación completa de compresor, grupo o control (p. ej. tamaño SAB, UniSAB).</li><li><strong>Conjunto:</strong> placa de válvulas, rodamiento, filtro de aceite, junta, acoplamiento o módulo de control.</li><li><strong>Planta:</strong> refrigeración, marina, bomba de calor; refrigerante solo si consta en la placa.</li><li><strong>Foto:</strong> placas de compresor y control.</li><li>Se piden a menudo válvulas, rodamientos, filtros de aceite, conjuntos UniSAB y juntas.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Producción de alimentos y bebidas, cervecerías</li><li>Cámaras frigoríficas y distribución</li><li>Farma y frío de proceso</li><li>Marina y offshore</li><li>Bombas de calor y temperado industrial</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Designación de tipo o artículo completa de la placa (una foto ayuda)</li><li>Modelo de compresor, estado UniSAB y conjunto afectado</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios SABROE a ABCspareparts?",
+        "brand_faq_a1": "Envíe la designación de tipo completa de la placa, cantidad y contexto de planta (compresor, enfriadora, UniSAB) con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía componentes SABROE en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen del tipo y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué compresores SABROE están documentados?",
+        "brand_faq_a3": "Las fuentes públicas citan compresores de pistón en varios tamaños y grupos de tornillo SAB con control UniSAB. La ejecución figura en la placa.",
+        "brand_faq_q4": "¿Qué recambios SABROE se solicitan con frecuencia?",
+        "brand_faq_a4": "Placas y válvulas, rodamientos, filtros de aceite, juntas, acoplamientos y módulos UniSAB. Indique el número del componente más el modelo de compresor o control.",
+        "brand_faq_q5": "¿Dónde se usan típicamente las plantas SABROE?",
+        "brand_faq_a5": "En refrigeración industrial: alimentación, cadena de frío, farma, marina y bombas de calor. El uso sigue a la planta instalada, no a una hipótesis de esta página.",
+        "brand_faq_q6": "¿Basta la denominación compresor de tornillo SAB sin número de tipo?",
+        "brand_faq_a6": "Suele no bastar. Tamaños y opciones (variador, refrigeración de aceite, economizador) difieren. Indique el tipo completo.",
+        "bx_note": "SABROE es una marca de Johnson Controls, mencionada solo para identificar los productos. Información sobre compresores, UniSAB y refrigeración industrial basada en información pública del fabricante. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "SABROE Pièces | ABCspareparts",
+        "meta_description": "SABROE pièces pour froid industriel : compresseurs à pistons et à vis, UniSAB. Envoyez la référence – demande souvent sous 24 h.",
+        "brand_h1": "SABROE – pièces pour compresseurs de froid industriel, groupes d’eau glacée et pompes à chaleur",
+        "brand_intro": "Sabroe a été fondée en 1897 à Aarhus par Thomas Ths. Sabroe. La marque fait partie de Johnson Controls depuis 2005 et couvre le froid industriel. Les lignes principales comprennent compresseurs à pistons et à vis, le régulateur UniSAB, groupes froids et pompes à chaleur.",
+        "brand_intro_p2": "Demandez via ABCspareparts : prix compétitifs, devis souvent sous 24 heures, livraison en Europe – indiquez le numéro de pièce.",
+        "bx_about_title": "À propos de SABROE",
+        "bx_about_text": "<p>SABROE est une marque de froid industriel. L’activité a été fondée en 1897 par Thomas Ths. Sabroe à Aarhus et appartient aujourd’hui à Johnson Controls. Fabrication et essais sont documentés au Danemark (dont Holme/Højbjerg près d’Aarhus).</p><p>Les produits documentés comprennent compresseurs à pistons et à vis, groupes d’eau glacée, pompes à chaleur et le contrôle d’installation UniSAB. Les sources publiques citent des usages industriels, marins, alimentaires, pharmaceutiques et de chaîne du froid. L’exécution exacte se lit sur la désignation de type.</p>",
+        "bx_products_title": "Familles de produits SABROE souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Compresseurs à pistons pour froid, climatisation et pompes à chaleur (un et deux étages)</li><li>Groupes à vis SAB avec contrôle UniSAB</li><li>Groupes d’eau glacée et pompes à chaleur industrielles</li><li>Contrôles UniSAB et capteurs associés</li><li>Pièces d’usure de compresseur si elles figurent sur la plaque</li><li>Autres composants SABROE avec numéro de type ou d’article complet</li>",
+        "bx_tech_title": "Ce qui compte pour une demande SABROE",
+        "bx_tech_list": "<li><strong>Code type :</strong> désignation complète du compresseur, du groupe ou du contrôle (p. ex. taille SAB, UniSAB).</li><li><strong>Ensemble :</strong> plaque de soupapes, palier, filtre à huile, joint, accouplement ou module de commande.</li><li><strong>Installation :</strong> froid, marine, pompe à chaleur ; fluide seulement s’il figure sur la plaque.</li><li><strong>Photo :</strong> plaques du compresseur et du contrôle.</li><li>On demande souvent soupapes, paliers, filtres à huile, ensembles UniSAB et joints.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Production alimentaire et boissons, brasseries</li><li>Entrepôts frigorifiques et distribution</li><li>Pharma et froid de procédé</li><li>Marine et offshore</li><li>Pompes à chaleur et régulation de température industrielle</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Désignation de type ou d’article complète de la plaque (une photo aide)</li><li>Modèle de compresseur, état UniSAB et ensemble concerné</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces SABROE à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez la désignation de type complète de la plaque, la quantité et le contexte d’installation (compresseur, groupe, UniSAB) via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des composants SABROE en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent du type et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Quels compresseurs SABROE sont documentés ?",
+        "brand_faq_a3": "Les sources publiques citent des compresseurs à pistons de plusieurs tailles et des groupes à vis SAB avec contrôle UniSAB. L’exécution figure sur la plaque.",
+        "brand_faq_q4": "Quelles pièces SABROE sont souvent demandées ?",
+        "brand_faq_a4": "Plaques et soupapes, paliers, filtres à huile, joints, accouplements et modules UniSAB. Indiquez le numéro du composant plus le modèle de compresseur ou de contrôle.",
+        "brand_faq_q5": "Où utilise-t-on typiquement les installations SABROE ?",
+        "brand_faq_a5": "Dans le froid industriel : alimentaire, chaîne du froid, pharma, marine et pompes à chaleur. L’usage suit l’installation en place.",
+        "brand_faq_q6": "La dénomination compresseur à vis SAB suffit-elle sans numéro de type ?",
+        "brand_faq_a6": "En général non. Tailles et options (variateur, refroidissement d’huile, économiseur) diffèrent. Indiquez le type complet.",
+        "bx_note": "SABROE est une marque de Johnson Controls, citée uniquement pour identifier les produits. Informations sur compresseurs, UniSAB et froid industriel issues de sources publiques du fabricant. Mise à jour : novembre 2026."
+      }
+    }
   },
   "saer": {
     "blocks": [
@@ -29667,6 +31105,294 @@
         "brand_faq_q6": "Le nom de famille easYgen suffit-il sans numéro de catalogue ?",
         "brand_faq_a6": "En général non. Les packs et les E/S diffèrent. Indiquez le numéro de catalogue, la révision et la présence d’un afficheur. Les codes de cette page sont des références de demande, pas des options décodées.",
         "bx_note": "Woodward est une marque de Woodward, Inc., citée uniquement pour identifier les produits. Informations sur easYgen, couplage et passerelles issues de sources publiques du fabricant. Mise à jour : novembre 2026."
+      }
+    }
+  },
+  "xerox": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "canon",
+      "ricoh",
+      "konica-minolta",
+      "kyocera",
+      "brother",
+      "epson"
+    ],
+    "related_labels": {
+      "canon": "CANON",
+      "ricoh": "RICOH",
+      "konica-minolta": "KONICA MINOLTA",
+      "kyocera": "KYOCERA",
+      "brother": "Brother",
+      "epson": "EPSON"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/xerox.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/xerox.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/xerox.html#brand",
+          "name": "XEROX"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/xerox.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/xerox.html#brand"
+          },
+          "name": "Xerox Corporation"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/xerox.html#service",
+          "name": "Beschaffung von XEROX Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/xerox.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "XEROX Ersatzteile | ABCspareparts",
+        "meta_description": "XEROX Ersatzteile für Bürodrucker und Produktionsdruck: VersaLink, AltaLink, Versant. Teilenummer senden – Anfrage oft in 24 h.",
+        "brand_h1": "XEROX – Ersatzteile für Bürodrucker, Multifunktionssysteme und Produktionsdruck",
+        "brand_intro": "Xerox Corporation mit Sitz in Norwalk, Connecticut, wurde 1906 gegründet. Das Unternehmen fertigt Drucker, Multifunktionssysteme und Technik für den Produktionsdruck. Zu den Hauptlinien gehören die Bürosysteme VersaLink und AltaLink sowie die Produktionslinien PrimeLink, Versant und Iridesse.",
+        "brand_intro_p2": "Anfragen über ABCspareparts: wettbewerbsfähige Preise, Angebot oft innerhalb von 24 Stunden, Lieferung in Europa – bitte mit Teilenummer.",
+        "bx_about_title": "Über XEROX",
+        "bx_about_text": "<p>Xerox Corporation mit Sitz in Norwalk, Connecticut, fertigt Drucker und Multifunktionssysteme für Büro und Produktion. Das Unternehmen besteht seit 1906. Zum dokumentierten Angebot gehören Einsteiger- und Arbeitsgruppen-MFP sowie Digitalpressen für den Produktionsdruck.</p><p>Öffentliche Produktunterlagen nennen Bürolinien wie VersaLink und AltaLink (ConnectKey) sowie Produktionslinien wie PrimeLink, Versant und Iridesse. Die genaue Ausführung ergibt sich aus Modell und Teilenummer auf dem Gerät, nicht aus einer angenommenen Konfiguration.</p>",
+        "bx_products_title": "XEROX Produktfamilien, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Büro-Multifunktionssysteme VersaLink und AltaLink mit ConnectKey-Funktionen</li><li>Produktionsnahe MFP der Linie PrimeLink</li><li>Digitalpressen Versant und Iridesse für den Produktionsdruck</li><li>Zufuhr-, Finishing- und Server-Optionen, soweit am Gerät ausgewiesen</li><li>Weitere XEROX-Komponenten mit vollständiger Modell- und Teilenummer</li>",
+        "bx_tech_title": "Worauf es bei XEROX-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Modell:</strong> Typbezeichnung vom Typenschild (z. B. VersaLink, AltaLink, PrimeLink, Versant, Iridesse).</li><li><strong>Teilenummer:</strong> Nummer vom Bauteil, Etikett oder aus der Gerätedokumentation.</li><li><strong>Baugruppe:</strong> Fixiereinheit, Trommel, Transferband, Einzugsrollen, Steuerkarte oder Finisher-Modul.</li><li><strong>Foto:</strong> Typenschild und das betroffene Teil.</li><li>Häufig angefragt werden Fixierer, Trommeln, Rollen, Boards und Finishing-Teile – immer mit Nummer vom Teil.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Büro- und Arbeitsgruppen-Druck</li><li>Zentraler Druckraum und Inhouse-Druckerei</li><li>Kommerzieller Produktionsdruck</li><li>Behörden und Bildungseinrichtungen</li><li>Instandhaltung von Druckerparks</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Modell und Teilenummer vom Typenschild oder Etikett (ein Foto hilft)</li><li>Betroffene Baugruppe (Fixierer, Trommel, Board, Finisher)</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich XEROX-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie Modell, Teilenummer, Menge und den Gerätekontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts XEROX-Komponenten in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom konkreten Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Welche XEROX-Linien sind typisch für Büro und Produktion?",
+        "brand_faq_a3": "Für das Büro sind VersaLink- und AltaLink-MFP dokumentiert. Für den Produktionsdruck nennen öffentliche Unterlagen PrimeLink, Versant und Iridesse. Das Modell steht auf dem Typenschild.",
+        "brand_faq_q4": "Welche XEROX-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Fixiereinheiten, Trommeln, Transferbänder, Einzugs- und Transportrollen, Steuerkarten und Finisher-Module. Nennen Sie die Nummer vom Bauteil plus das Gerätemodell.",
+        "brand_faq_q5": "Reicht das Gerätemodell ohne Teilenummer?",
+        "brand_faq_a5": "Oft nicht, weil Module und Optionen (Zufuhr, Finisher, Server) differieren. Geben Sie Modell und die Nummer vom physischen Teil an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Das Typenschild des Druckers oder der Presse (Modell) und das Schild oder die Gravur am angefragten Teil. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "XEROX ist eine Marke von Xerox Corporation. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Bürodruckern und Produktionspressen basieren auf öffentlich zugänglichen Herstellerinformationen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "XEROX spare parts | ABCspareparts",
+        "meta_description": "XEROX spare parts for office printers and production print: VersaLink, AltaLink, Versant. Send the part number – enquiry often within 24 h.",
+        "brand_h1": "XEROX – spare parts for office printers, multifunction systems and production printing",
+        "brand_intro": "Xerox Corporation, headquartered in Norwalk, Connecticut, was founded in 1906. The company makes printers, multifunction systems and production-print equipment. Main product lines include the VersaLink and AltaLink office systems and the PrimeLink, Versant and Iridesse production lines.",
+        "brand_intro_p2": "Request through ABCspareparts: competitive prices, a quote often within 24 hours, delivery in Europe – please quote the part number.",
+        "bx_about_title": "About XEROX",
+        "bx_about_text": "<p>Xerox Corporation, headquartered in Norwalk, Connecticut, manufactures printers and multifunction systems for office and production use. The company dates from 1906. Documented products include entry and workgroup MFPs as well as digital presses for production print.</p><p>Public product information cites office lines such as VersaLink and AltaLink (ConnectKey) and production lines such as PrimeLink, Versant and Iridesse. The exact unit is identified by model and part number on the device, not by an assumed configuration.</p>",
+        "bx_products_title": "XEROX product families often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Office multifunction systems VersaLink and AltaLink with ConnectKey functions</li><li>Production-capable MFPs in the PrimeLink line</li><li>Digital presses Versant and Iridesse for production printing</li><li>Feeding, finishing and server options when marked on the device</li><li>Other XEROX components with a full model and part number</li>",
+        "bx_tech_title": "What matters in a XEROX enquiry",
+        "bx_tech_list": "<li><strong>Model:</strong> type from the nameplate (e.g. VersaLink, AltaLink, PrimeLink, Versant, Iridesse).</li><li><strong>Part number:</strong> number from the component, label or equipment documentation.</li><li><strong>Assembly:</strong> fuser, drum, transfer belt, feed rollers, control board or finisher module.</li><li><strong>Photo:</strong> nameplate and the affected part.</li><li>Frequent requests include fusers, drums, rollers, boards and finishing parts – always with the number from the part.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Office and workgroup printing</li><li>Central print room and in-plant print</li><li>Commercial production printing</li><li>Public-sector and education fleets</li><li>Printer fleet maintenance</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Model and part number from the nameplate or label (a photo helps)</li><li>Affected assembly (fuser, drum, board, finisher)</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request XEROX spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send model, part number, quantity and device context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship XEROX components in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "Which XEROX lines are typical for office and production?",
+        "brand_faq_a3": "Office use is documented for VersaLink and AltaLink MFPs. For production print, public materials cite PrimeLink, Versant and Iridesse. The model is on the nameplate.",
+        "brand_faq_q4": "Which XEROX parts are often requested?",
+        "brand_faq_a4": "Fusers, drums, transfer belts, feed and transport rollers, control boards and finisher modules. Give the number from the component plus the device model.",
+        "brand_faq_q5": "Is the device model enough without a part number?",
+        "brand_faq_a5": "Often not, because feed, finisher and server options differ. State the model and the number from the physical part.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The printer or press nameplate (model) and the label or stamping on the requested part. Blurry photos without numbers help little.",
+        "bx_note": "XEROX is a trademark of Xerox Corporation, mentioned solely to identify products. Information on office printers and production presses is based on publicly available manufacturer information. As of November 2026."
+      },
+      "it": {
+        "meta_title": "XEROX Ricambi | ABCspareparts",
+        "meta_description": "XEROX ricambi per stampanti ufficio e produzione: VersaLink, AltaLink, Versant. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "XEROX – ricambi per stampanti da ufficio, sistemi multifunzione e stampa di produzione",
+        "brand_intro": "Xerox Corporation, con sede a Norwalk in Connecticut, è stata fondata nel 1906. L’azienda produce stampanti, sistemi multifunzione e attrezzature per la stampa di produzione. Le linee principali comprendono i sistemi da ufficio VersaLink e AltaLink e le linee di produzione PrimeLink, Versant e Iridesse.",
+        "brand_intro_p2": "Richieste tramite ABCspareparts: prezzi competitivi, preventivo spesso entro 24 ore, consegna in Europa – indichi il numero di parte.",
+        "bx_about_title": "Chi è XEROX",
+        "bx_about_text": "<p>Xerox Corporation, con sede a Norwalk in Connecticut, produce stampanti e sistemi multifunzione per ufficio e produzione. L’azienda esiste dal 1906. I prodotti documentati includono MFP per gruppi di lavoro e presse digitali per la stampa di produzione.</p><p>Le informazioni pubbliche citano le linee ufficio VersaLink e AltaLink (ConnectKey) e le linee di produzione PrimeLink, Versant e Iridesse. L’esecuzione esatta si identifica con modello e numero di parte sull’apparecchio.</p>",
+        "bx_products_title": "Famiglie di prodotti XEROX richieste di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Sistemi multifunzione da ufficio VersaLink e AltaLink con funzioni ConnectKey</li><li>MFP di taglio produttivo della linea PrimeLink</li><li>Presse digitali Versant e Iridesse per la stampa di produzione</li><li>Opzioni di alimentazione, finitura e server se indicate sull’apparecchio</li><li>Altri componenti XEROX con modello e numero di parte completi</li>",
+        "bx_tech_title": "Cosa conta in una richiesta XEROX",
+        "bx_tech_list": "<li><strong>Modello:</strong> tipo dalla targhetta (es. VersaLink, AltaLink, PrimeLink, Versant, Iridesse).</li><li><strong>Numero di parte:</strong> dal componente, dall’etichetta o dalla documentazione.</li><li><strong>Gruppo:</strong> fusore, tamburo, nastro di trasferimento, rulli, scheda o modulo finisher.</li><li><strong>Foto:</strong> targhetta e pezzo.</li><li>Si chiedono spesso fusori, tamburi, rulli, schede e parti di finitura – sempre con il numero del pezzo.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Stampa da ufficio e di gruppo</li><li>Centro stampa interno</li><li>Stampa commerciale di produzione</li><li>Parchi macchine di enti e scuole</li><li>Manutenzione di flotte di stampanti</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Modello e numero di parte dalla targhetta o etichetta (una foto aiuta)</li><li>Gruppo interessato (fusore, tamburo, scheda, finisher)</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi XEROX ad ABCspareparts?",
+        "brand_faq_a1": "Invii modello, numero di parte, quantità e contesto dell’apparecchio con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce componenti XEROX in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Quali linee XEROX sono tipiche per ufficio e produzione?",
+        "brand_faq_a3": "Per l’ufficio sono documentati gli MFP VersaLink e AltaLink. Per la produzione le fonti pubbliche citano PrimeLink, Versant e Iridesse. Il modello è in targhetta.",
+        "brand_faq_q4": "Quali ricambi XEROX vengono chiesti di frequente?",
+        "brand_faq_a4": "Fusori, tamburi, nastri di trasferimento, rulli di alimentazione e trasporto, schede di controllo e moduli finisher. Indichi il numero del componente più il modello.",
+        "brand_faq_q5": "Basta il modello senza numero di parte?",
+        "brand_faq_a5": "Spesso no, perché alimentazione, finisher e server differiscono. Indichi modello e numero del pezzo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "La targhetta della stampante o della pressa (modello) e l’etichetta o la marcatura sul pezzo. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "XEROX è un marchio di Xerox Corporation, citato solo per identificare i prodotti. Informazioni su stampanti da ufficio e presse di produzione da fonti pubbliche del costruttore. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "XEROX Recambios | ABCspareparts",
+        "meta_description": "XEROX recambios para impresoras de oficina y producción: VersaLink, AltaLink, Versant. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "XEROX – recambios para impresoras de oficina, sistemas multifunción e impresión de producción",
+        "brand_intro": "Xerox Corporation, con sede en Norwalk (Connecticut), se fundó en 1906. La empresa fabrica impresoras, sistemas multifunción y equipos de impresión de producción. Las líneas principales incluyen los sistemas de oficina VersaLink y AltaLink y las líneas de producción PrimeLink, Versant e Iridesse.",
+        "brand_intro_p2": "Solicite a través de ABCspareparts: precios competitivos, presupuesto a menudo en 24 horas, entrega en Europa – indique el número de pieza.",
+        "bx_about_title": "Sobre XEROX",
+        "bx_about_text": "<p>Xerox Corporation, con sede en Norwalk (Connecticut), fabrica impresoras y sistemas multifunción para oficina y producción. La empresa data de 1906. Los productos documentados incluyen MFP de grupo de trabajo y prensas digitales de producción.</p><p>La información pública cita las líneas de oficina VersaLink y AltaLink (ConnectKey) y las de producción PrimeLink, Versant e Iridesse. La ejecución exacta se identifica por modelo y número de pieza del aparato.</p>",
+        "bx_products_title": "Familias de productos XEROX solicitadas con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Sistemas multifunción de oficina VersaLink y AltaLink con funciones ConnectKey</li><li>MFP de corte productivo de la línea PrimeLink</li><li>Prensas digitales Versant e Iridesse para impresión de producción</li><li>Opciones de alimentación, acabado y servidor si constan en el aparato</li><li>Otros componentes XEROX con modelo y número de pieza completos</li>",
+        "bx_tech_title": "Qué importa en una solicitud XEROX",
+        "bx_tech_list": "<li><strong>Modelo:</strong> tipo de la placa (p. ej. VersaLink, AltaLink, PrimeLink, Versant, Iridesse).</li><li><strong>Número de pieza:</strong> del componente, etiqueta o documentación.</li><li><strong>Conjunto:</strong> fusor, tambor, correa de transferencia, rodillos, tarjeta o módulo finisher.</li><li><strong>Foto:</strong> placa y pieza.</li><li>Se piden a menudo fusores, tambores, rodillos, tarjetas y piezas de acabado – siempre con el número de la pieza.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Impresión de oficina y de grupo</li><li>Centro de impresión interno</li><li>Impresión comercial de producción</li><li>Parques de administraciones y educación</li><li>Mantenimiento de flotas de impresoras</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Modelo y número de pieza de la placa o etiqueta (una foto ayuda)</li><li>Conjunto afectado (fusor, tambor, tarjeta, finisher)</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios XEROX a ABCspareparts?",
+        "brand_faq_a1": "Envíe modelo, número de pieza, cantidad y contexto del equipo con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía componentes XEROX en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué líneas XEROX son típicas para oficina y producción?",
+        "brand_faq_a3": "Para oficina están documentados los MFP VersaLink y AltaLink. Para producción, las fuentes públicas citan PrimeLink, Versant e Iridesse. El modelo figura en la placa.",
+        "brand_faq_q4": "¿Qué recambios XEROX se solicitan con frecuencia?",
+        "brand_faq_a4": "Fusores, tambores, correas de transferencia, rodillos de alimentación y transporte, tarjetas de control y módulos finisher. Indique el número del componente más el modelo.",
+        "brand_faq_q5": "¿Basta el modelo sin número de pieza?",
+        "brand_faq_a5": "A menudo no, porque alimentación, finisher y servidor difieren. Indique modelo y el número de la pieza física.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "La placa de la impresora o prensa (modelo) y la etiqueta o grabado de la pieza. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "XEROX es una marca de Xerox Corporation, mencionada solo para identificar los productos. Información sobre impresoras de oficina y prensas de producción basada en información pública del fabricante. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "XEROX Pièces | ABCspareparts",
+        "meta_description": "XEROX pièces pour imprimantes de bureau et production : VersaLink, AltaLink, Versant. Envoyez la référence – demande souvent sous 24 h.",
+        "brand_h1": "XEROX – pièces pour imprimantes de bureau, systèmes multifonctions et impression de production",
+        "brand_intro": "Xerox Corporation, dont le siège est à Norwalk (Connecticut), a été fondée en 1906. L’entreprise fabrique des imprimantes, des systèmes multifonction et des équipements d’impression de production. Les lignes principales comprennent les systèmes de bureau VersaLink et AltaLink et les lignes de production PrimeLink, Versant et Iridesse.",
+        "brand_intro_p2": "Demandez via ABCspareparts : prix compétitifs, devis souvent sous 24 heures, livraison en Europe – indiquez le numéro de pièce.",
+        "bx_about_title": "À propos de XEROX",
+        "bx_about_text": "<p>Xerox Corporation, dont le siège est à Norwalk (Connecticut), fabrique imprimantes et systèmes multifonctions pour le bureau et la production. L’entreprise existe depuis 1906. Les produits documentés comprennent des MFP de groupe de travail et des presses numériques de production.</p><p>Les informations publiques citent les gammes de bureau VersaLink et AltaLink (ConnectKey) et les gammes de production PrimeLink, Versant et Iridesse. L’exécution exacte se lit sur le modèle et le numéro de pièce de l’appareil.</p>",
+        "bx_products_title": "Familles de produits XEROX souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Systèmes multifonctions de bureau VersaLink et AltaLink avec fonctions ConnectKey</li><li>MFP de niveau production de la ligne PrimeLink</li><li>Presses numériques Versant et Iridesse pour l’impression de production</li><li>Options d’alimentation, de finition et de serveur si elles figurent sur l’appareil</li><li>Autres composants XEROX avec modèle et numéro de pièce complets</li>",
+        "bx_tech_title": "Ce qui compte pour une demande XEROX",
+        "bx_tech_list": "<li><strong>Modèle :</strong> type de la plaque (p. ex. VersaLink, AltaLink, PrimeLink, Versant, Iridesse).</li><li><strong>Numéro de pièce :</strong> du composant, de l’étiquette ou de la documentation.</li><li><strong>Ensemble :</strong> four, tambour, courroie de transfert, rouleaux, carte ou module finisher.</li><li><strong>Photo :</strong> plaque et pièce.</li><li>On demande souvent fours, tambours, rouleaux, cartes et pièces de finition – toujours avec le numéro de la pièce.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Impression de bureau et de groupe</li><li>Atelier d’impression interne</li><li>Impression commerciale de production</li><li>Parcs d’administrations et d’établissements</li><li>Maintenance de flottes d’imprimantes</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Modèle et numéro de pièce de la plaque ou de l’étiquette (une photo aide)</li><li>Ensemble concerné (four, tambour, carte, finisher)</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces XEROX à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez modèle, numéro de pièce, quantité et contexte d’appareil via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des composants XEROX en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Quelles gammes XEROX sont typiques pour bureau et production ?",
+        "brand_faq_a3": "Pour le bureau, les MFP VersaLink et AltaLink sont documentés. Pour la production, les sources publiques citent PrimeLink, Versant et Iridesse. Le modèle figure sur la plaque.",
+        "brand_faq_q4": "Quelles pièces XEROX sont souvent demandées ?",
+        "brand_faq_a4": "Fours, tambours, courroies de transfert, rouleaux d’alimentation et de transport, cartes de commande et modules finisher. Indiquez le numéro du composant plus le modèle.",
+        "brand_faq_q5": "Le modèle suffit-il sans numéro de pièce ?",
+        "brand_faq_a5": "Souvent non, car alimentation, finisher et serveur diffèrent. Indiquez le modèle et le numéro de la pièce physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "La plaque de l’imprimante ou de la presse (modèle) et l’étiquette ou le marquage de la pièce. Des photos floues sans numéros aident peu.",
+        "bx_note": "XEROX est une marque de Xerox Corporation, citée uniquement pour identifier les produits. Informations sur imprimantes de bureau et presses de production issues de sources publiques du fabricant. Mise à jour : novembre 2026."
       }
     }
   },
