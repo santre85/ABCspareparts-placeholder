@@ -101,8 +101,12 @@ if (emhartLastmod === new Date().toISOString().slice(0, 10) && expectedLastmod !
 
 const lastmods = [...emhartXml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
 const uniqueLastmods = new Set(lastmods);
-if (lastmods.length > 100 && uniqueLastmods.size === 1 && lastmods[0] === new Date().toISOString().slice(0, 10)) {
-  fail('brand sitemap lastmod values are all today — expected git/file dates');
+const today = new Date().toISOString().slice(0, 10);
+if (lastmods.length > 100 && uniqueLastmods.size === 1 && lastmods[0] === today) {
+  const unchanged = indexable.filter((p) => lastmodForRelPath(p.relPath) !== today);
+  if (unchanged.length) {
+    fail(`brand sitemap lastmod values are all today, but ${unchanged.length} pages were not updated (e.g. ${unchanged[0].relPath})`);
+  }
 }
 
 console.log(

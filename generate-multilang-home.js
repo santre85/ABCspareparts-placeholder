@@ -2,17 +2,21 @@
 
 const fs = require('fs');
 const path = require('path');
-const { HOME_I18N } = require('./home-i18n.js');
+const { homeI18nFor } = require('./home-i18n.js');
 const { FOOTER_I18N } = require('./site-footer.js');
 const { buildHreflangLinks } = require('./generate-multilang-pages.js');
+const { directoryBrandCount } = require('./marche-i18n.js');
+const { decodedTitleLength, TITLE_MAX } = require('./seo-config.js');
 
 const BASE_URL = 'https://abcspareparts.eu';
 const LANGUAGES = ['en', 'it', 'es', 'fr'];
+const BRAND_COUNT = directoryBrandCount();
+const HOME_I18N_FILLED = homeI18nFor(BRAND_COUNT);
 
 // Merge footer translations into home translations
 const FULL_I18N = {};
 for (const lang of ['de', ...LANGUAGES]) {
-  FULL_I18N[lang] = { ...HOME_I18N[lang], ...FOOTER_I18N[lang] };
+  FULL_I18N[lang] = { ...HOME_I18N_FILLED[lang], ...FOOTER_I18N[lang] };
 }
 
 function generateHomePageForLang(lang) {
@@ -74,6 +78,11 @@ function generateHomePageForLang(lang) {
   html = html.replace(
     /<meta property="og:title" id="ogTitle" content="[^"]*">/,
     `<meta property="og:title" id="ogTitle" content="${t.seo_title}">`
+  );
+
+  html = html.replace(
+    /<meta name="twitter:title" id="twitterTitle" content="[^"]*">/,
+    `<meta name="twitter:title" id="twitterTitle" content="${t.seo_title}">`
   );
   
   // Update og:description
@@ -238,9 +247,41 @@ function generateHomePageForLang(lang) {
   return true;
 }
 
+function patchGermanHome(brandCount) {
+  const indexPath = path.join(__dirname, 'index.html');
+  let html = fs.readFileSync(indexPath, 'utf8');
+  const t = FULL_I18N.de;
+  const filled = HOME_I18N_FILLED;
+  if (decodedTitleLength(t.seo_title) > TITLE_MAX) {
+    throw new Error(`DE home seo_title is ${decodedTitleLength(t.seo_title)} chars: ${t.seo_title}`);
+  }
+  html = html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, `<title id="pageTitle">${t.seo_title}</title>`);
+  html = html.replace(
+    /<meta property="og:title" id="ogTitle" content="[^"]*">/,
+    `<meta property="og:title" id="ogTitle" content="${t.seo_title}">`
+  );
+  html = html.replace(
+    /<meta name="twitter:title" id="twitterTitle" content="[^"]*">/,
+    `<meta name="twitter:title" id="twitterTitle" content="${t.seo_title}">`
+  );
+  html = html.replace(/11959/g, String(brandCount));
+  const langs = ['de', 'en', 'it', 'es', 'fr'];
+  let i = 0;
+  html = html.replace(/seo_title:\s*"[^"]*"/g, () => {
+    const lang = langs[Math.min(i, langs.length - 1)];
+    i += 1;
+    return `seo_title: ${JSON.stringify(filled[lang].seo_title)}`;
+  });
+  fs.writeFileSync(indexPath, html, 'utf8');
+  console.log('✓ Patched index.html home titles and brand count', brandCount);
+}
+
 function main() {
   console.log('🏠 Generating multi-language homepage versions...\n');
-  
+  console.log('Brand count', BRAND_COUNT);
+
+  patchGermanHome(BRAND_COUNT);
+
   // Ensure language directories exist
   for (const lang of LANGUAGES) {
     const dir = path.join(__dirname, lang);

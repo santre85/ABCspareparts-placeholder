@@ -2,6 +2,7 @@
 'use strict';
 
 const fs = require('fs');
+const { brandPageTitle } = require('./seo-config.js');
 
 // Template for brand content following abel pattern WITHOUT external links
 function createBrandContent(slug, config) {
@@ -23,7 +24,7 @@ function createBrandContent(slug, config) {
   
   // Build German content
   const de = {
-    meta_title: `${display} ${getMetaTitleSuffix(focus, 'de')} – Ersatzteile | ABCspareparts`,
+    meta_title: brandPageTitle(display, 'de'),
     meta_description: `${display} ${desc}. ${priceCompetitive ? 'Attraktive Konditionen. ' : ''}Typ und Menge senden – Angebot oft in 24 h.`,
     brand_h1: `${display} – ${getBrandH1(focus, 'de')}`,
     brand_intro: `ABCspareparts beschafft ${display} ${getBrandIntro(focus, 'de')} für Industrie und Instandhaltung in ganz Europa.${priceCompetitive ? ' Für viele ' + display + ' Ersatzteile können wir attraktive Konditionen anbieten.' : ''} Senden Sie uns Typ, Artikelnummer und Menge – wir antworten in der Regel innerhalb von 24 Stunden.`,
@@ -58,7 +59,7 @@ function createBrandContent(slug, config) {
 
   // English
   const en = {
-    meta_title: `${display} ${getMetaTitleSuffix(focus, 'en')} – Spare Parts | ABCspareparts`,
+    meta_title: brandPageTitle(display, 'en'),
     meta_description: `${display} ${desc}. ${priceCompetitive ? 'Competitive prices. ' : ''}Send type and quantity – quote often in 24 h.`,
     brand_h1: `${display} – ${getBrandH1(focus, 'en')}`,
     brand_intro: `ABCspareparts sources ${display} ${getBrandIntro(focus, 'en')} for industry and maintenance across Europe.${priceCompetitive ? ' We can offer competitive pricing on many ' + display + ' spare parts.' : ''} Send us the type, part number and quantity – we usually reply within 24 hours.`,
@@ -247,7 +248,7 @@ function translateApplication(a, lang) {
 
 function translateToItalian(de, display, company) {
   return {
-    meta_title: de.meta_title.replace('Ersatzteile', 'Ricambi'),
+    meta_title: brandPageTitle(display, 'it'),
     meta_description: de.meta_description.replace('Angebot oft in 24 h', 'preventivo spesso entro 24 h'),
     brand_h1: `${display} – ricambi e componenti`,
     brand_intro: `ABCspareparts fornisce ricambi ${display} per industria e manutenzione in tutta Europa. Ci invii tipo, codice e quantità – di solito rispondiamo entro 24 ore.`,
@@ -275,7 +276,7 @@ function translateToItalian(de, display, company) {
 
 function translateToSpanish(de, display, company) {
   return {
-    meta_title: de.meta_title.replace('Ersatzteile', 'Repuestos'),
+    meta_title: brandPageTitle(display, 'es'),
     meta_description: de.meta_description.replace('Angebot oft in 24 h', 'oferta a menudo en 24 h'),
     brand_h1: `${display} – repuestos y componentes`,
     brand_intro: `ABCspareparts suministra repuestos ${display} para industria y mantenimiento en toda Europa. Envíenos el tipo, código y cantidad – normalmente respondemos en 24 horas.`,
@@ -303,7 +304,7 @@ function translateToSpanish(de, display, company) {
 
 function translateToFrench(de, display, company) {
   return {
-    meta_title: de.meta_title.replace('Ersatzteile', 'Pièces'),
+    meta_title: brandPageTitle(display, 'fr'),
     meta_description: de.meta_description.replace('Angebot oft in 24 h', 'devis souvent sous 24 h'),
     brand_h1: `${display} – pièces et composants`,
     brand_intro: `ABCspareparts fournit pièces ${display} pour industrie et maintenance dans toute l'Europe. Envoyez-nous le type, la référence et la quantité – nous répondons généralement sous 24 heures.`,

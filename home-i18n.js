@@ -4,14 +4,14 @@
 const HOME_I18N = {
   de: {
     tagline: "Your Trusted Partner for High-Quality Industrial Spares",
-    seo_title: "ABCspareparts – Industrieersatzteile & MRO | 11959+ Marken, Angebot in 24h",
+    seo_title: "ABCspareparts – Industrieersatzteile | {n}+ Marken",
     seo_description: "Originalteile und geprüfte Alternativen für Automatisierung und MRO. Siemens, Festo, ABB, Schneider u. v. m. Jetzt Anfrage stellen – Rückmeldung meist innerhalb von 24 Stunden, Lieferung europaweit.",
     og_locale: "de_DE",
     description: "Mit langjähriger Branchenerfahrung spezialisieren wir uns auf die Verteilung von Komponenten für industrielle Automation, Sensoren, Aktoren und Steuergeräte führender Hersteller.",
     cta_button: "Jetzt anfragen",
     priority_brands_heading: "Ersatzteile nach Hersteller",
     benefits_title: "Warum ABCspareparts?",
-    benefit1_title: "11959+ Hersteller",
+    benefit1_title: "{n}+ Hersteller",
     benefit1_desc: "Breites MRO-Markennetzwerk in Europa.",
     benefit2_title: "Schnelle Lieferung",
     benefit2_desc: "Schnelle Angebote, Expressversand möglich.",
@@ -36,7 +36,7 @@ const HOME_I18N = {
     load_form_heading: "Anfrageformular laden",
     load_form_description: "Klicken Sie hier, um das Kontaktformular zu laden. Das Formular ist auf einem externen Server gehostet und setzt Session-Cookies.",
     load_form_button: "Formular laden",
-    view_all_brands: "Vollständige Liste der 11959+ Marken anzeigen",
+    view_all_brands: "Vollständige Liste der {n}+ Marken anzeigen",
     brand_search_heading: "Marke oder Artikelnummer suchen",
     brand_search_label: "Marke oder Artikelnummer suchen",
     brand_search_placeholder: "z. B. Siemens oder 1SDA038324R0001 …",
@@ -63,14 +63,14 @@ const HOME_I18N = {
   },
   en: {
     tagline: "Your Trusted Partner for High-Quality Industrial Spares",
-    seo_title: "ABCspareparts – Industrial spare parts & MRO | 11959+ brands, quote in 24h",
+    seo_title: "ABCspareparts – Industrial spare parts | {n}+ brands",
     seo_description: "Original and verified alternative parts for automation and MRO. Siemens, Festo, ABB, Schneider and more. Request a quote – we usually reply within 24 hours, Europe-wide delivery.",
     og_locale: "en_GB",
     description: "With years of industry experience, we specialize in the distribution of components for industrial automation, sensors, actuators and control devices from leading manufacturers.",
     cta_button: "Request quote",
     priority_brands_heading: "Spare parts by manufacturer",
     benefits_title: "Why ABCspareparts?",
-    benefit1_title: "11959+ Manufacturers",
+    benefit1_title: "{n}+ Manufacturers",
     benefit1_desc: "Europe-wide MRO brand network.",
     benefit2_title: "Fast Delivery",
     benefit2_desc: "Fast quotes, express shipping.",
@@ -95,7 +95,7 @@ const HOME_I18N = {
     load_form_heading: "Load request form",
     load_form_description: "Click here to load the contact form. The form is hosted on an external server and sets session cookies.",
     load_form_button: "Load form",
-    view_all_brands: "View full list of 11959+ brands",
+    view_all_brands: "View full list of {n}+ brands",
     brand_search_heading: "Search brand or part number",
     brand_search_label: "Search brand or part number",
     brand_search_placeholder: "e.g. Siemens or 1SDA038324R0001 …",
@@ -122,14 +122,14 @@ const HOME_I18N = {
   },
   it: {
     tagline: "Il tuo Partner di fiducia per Ricambi Industriali di Alta Qualità",
-    seo_title: "ABCspareparts – Ricambi industriali e MRO | Oltre 11959 marche, preventivo in 24h",
+    seo_title: "ABCspareparts – Ricambi industriali | {n}+ marche",
     seo_description: "Ricambi originali e alternative verificate per automazione e MRO. Siemens, Festo, ABB, Schneider e altre. Richiedi ora un preventivo – risposta di solito entro 24 ore, consegna in Europa.",
     og_locale: "it_IT",
     description: "Con anni di esperienza nel settore, ci specializziamo nella distribuzione di componenti per automazione industriale, sensori, attuatori e dispositivi di controllo dei principali produttori.",
     cta_button: "Richiedi preventivo",
     priority_brands_heading: "Ricambi per produttore",
     benefits_title: "Perché ABCspareparts?",
-    benefit1_title: "11959+ Produttori",
+    benefit1_title: "{n}+ Produttori",
     benefit1_desc: "Ampia rete marchi MRO in Europa.",
     benefit2_title: "Consegna veloce",
     benefit2_desc: "Preventivi rapidi, spedizione express disponibile.",
@@ -154,7 +154,7 @@ const HOME_I18N = {
     load_form_heading: "Carica modulo richiesta",
     load_form_description: "Clicca qui per caricare il modulo di contatto. Il modulo è ospitato su un server esterno e imposta cookie di sessione.",
     load_form_button: "Carica modulo",
-    view_all_brands: "Visualizza l'elenco completo di oltre 11959 marche",
+    view_all_brands: "Visualizza l'elenco completo di oltre {n} marche",
     brand_search_heading: "Cerca marca o codice articolo",
     brand_search_label: "Cerca marca o codice articolo",
     brand_search_placeholder: "ad es. Siemens o 1SDA038324R0001 …",
@@ -181,14 +181,14 @@ const HOME_I18N = {
   },
   es: {
     tagline: "Tu Socio de Confianza para Repuestos Industriales de Alta Calidad",
-    seo_title: "ABCspareparts – Repuestos industriales y MRO | Más de 11959 marcas, presupuesto en 24h",
+    seo_title: "ABCspareparts – Recambios industriales | {n}+ marcas",
     seo_description: "Piezas originales y alternativas verificadas para automatización y MRO. Siemens, Festo, ABB, Schneider y más. Solicita un presupuesto – respondemos normalmente en 24 horas, entrega en Europa.",
     og_locale: "es_ES",
     description: "Con años de experiencia en el sector, nos especializamos en la distribución de componentes para automatización industrial, sensores, actuadores y dispositivos de control de los principales fabricantes.",
     cta_button: "Solicitar presupuesto",
     priority_brands_heading: "Repuestos por fabricante",
     benefits_title: "¿Por qué ABCspareparts?",
-    benefit1_title: "11959+ Fabricantes",
+    benefit1_title: "{n}+ Fabricantes",
     benefit1_desc: "Amplia red de marcas MRO en Europa.",
     benefit2_title: "Entrega rápida",
     benefit2_desc: "Presupuestos rápidos, envío express disponible.",
@@ -213,7 +213,7 @@ const HOME_I18N = {
     load_form_heading: "Cargar formulario de solicitud",
     load_form_description: "Haz clic aquí para cargar el formulario de contacto. El formulario está alojado en un servidor externo y establece cookies de sesión.",
     load_form_button: "Cargar formulario",
-    view_all_brands: "Ver lista completa de más de 11959 marcas",
+    view_all_brands: "Ver lista completa de más de {n} marcas",
     brand_search_heading: "Buscar marca o número de pieza",
     brand_search_label: "Buscar marca o número de pieza",
     brand_search_placeholder: "p. ej. Siemens o 1SDA038324R0001 …",
@@ -240,14 +240,14 @@ const HOME_I18N = {
   },
   fr: {
     tagline: "Votre Partenaire de Confiance pour des Pièces Industrielles de Haute Qualité",
-    seo_title: "ABCspareparts – Pièces détachées industrielles et MRO | Plus de 11959 marques, devis en 24h",
+    seo_title: "ABCspareparts – Pièces industrielles | {n}+ marques",
     seo_description: "Pièces d'origine et alternatives vérifiées pour l'automatisation et la MRO. Siemens, Festo, ABB, Schneider et plus. Demandez un devis – nous répondons généralement en 24 heures, livraison en Europe.",
     og_locale: "fr_FR",
     description: "Avec des années d'expérience dans l'industrie, nous sommes spécialisés dans la distribution de composants pour l'automatisation industrielle, capteurs, actionneurs et dispositifs de contrôle des principaux fabricants.",
     cta_button: "Demander un devis",
     priority_brands_heading: "Pièces détachées par fabricant",
     benefits_title: "Pourquoi ABCspareparts?",
-    benefit1_title: "11959+ Fabricants",
+    benefit1_title: "{n}+ Fabricants",
     benefit1_desc: "Large réseau de marques MRO en Europe.",
     benefit2_title: "Livraison rapide",
     benefit2_desc: "Devis rapides, expédition express disponible.",
@@ -272,7 +272,7 @@ const HOME_I18N = {
     load_form_heading: "Charger le formulaire de demande",
     load_form_description: "Cliquez ici pour charger le formulaire de contact. Le formulaire est hébergé sur un serveur externe et établit des cookies de session.",
     load_form_button: "Charger le formulaire",
-    view_all_brands: "Voir la liste complète de plus de 11959 marques",
+    view_all_brands: "Voir la liste complète de plus de {n} marques",
     brand_search_heading: "Rechercher une marque ou référence",
     brand_search_label: "Rechercher une marque ou référence",
     brand_search_placeholder: "par ex. Siemens ou 1SDA038324R0001 …",
@@ -299,4 +299,16 @@ const HOME_I18N = {
   }
 };
 
-module.exports = { HOME_I18N };
+function homeI18nFor(n) {
+  const count = String(n);
+  const out = {};
+  for (const lang of Object.keys(HOME_I18N)) {
+    out[lang] = {};
+    for (const [key, value] of Object.entries(HOME_I18N[lang])) {
+      out[lang][key] = String(value).replace(/\{n\}/g, count);
+    }
+  }
+  return out;
+}
+
+module.exports = { HOME_I18N, homeI18nFor };
