@@ -10,7 +10,7 @@ const LEGACY_HUB_FILE = 'casi-di-successo.html';
 const LEGACY_CASES_SUBDIR = 'casi-di-successo';
 const CASI_DIR = path.join(ROOT, CASES_SUBDIR);
 const BASE = 'https://abcspareparts.eu';
-const { ICON_LINKS } = require('./seo-config.js');
+const { ICON_LINKS, clipToTitleMax } = require('./seo-config.js');
 const LANGS = ['de', 'en', 'it', 'es', 'fr'];
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -283,6 +283,7 @@ function buildHubJsonLd(cases, hubI18n) {
 function buildCasePage(caseRow) {
   const slug = caseRow.slug;
   const de = pickLang(caseRow, 'de');
+  de.meta_title = clipToTitleMax(de.meta_title);
   const canonical = `${BASE}/${CASES_SUBDIR}/${slug}.html`;
   const quotableParts = getQuotableParts(caseRow);
   const quotablePartsHtml = buildQuotablePartsHtml(quotableParts);
@@ -295,6 +296,7 @@ function buildCasePage(caseRow) {
   const translationsPayload = {};
   for (const L of LANGS) {
     const t = pickLang(caseRow, L);
+    t.meta_title = clipToTitleMax(t.meta_title);
     translationsPayload[L] = t;
   }
 
@@ -665,6 +667,9 @@ function buildHubPage(cases) {
       hub_read_more: 'Lire la suite'
     }
   };
+  for (const L of LANGS) {
+    hubPageI18n[L].meta_title = clipToTitleMax(hubPageI18n[L].meta_title);
+  }
   const hubI18n = withFooterI18n(hubPageI18n);
 
   const hubJsonLd = buildHubJsonLd(cases, hubI18n);

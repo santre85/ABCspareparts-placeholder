@@ -803,6 +803,9 @@ for (const row of partsDataEarly.brands || []) {
   }
 }
 
+const { checkTitleLength } = require('./test-title-length.js');
+const titleStats = checkTitleLength();
+
 console.log(
   'verify-build: OK —',
   brands.length,
@@ -812,5 +815,6 @@ console.log(
   urlCount,
   'sitemap-brands URLs +',
   indexableBrandPages.length,
-  'indexable brand pages in sitemaps + SEO checks'
+  'indexable brand pages in sitemaps + SEO checks + titles≤70',
+  `(parts over 70 reported: ${titleStats.partsOver})`
 );

@@ -120,6 +120,90 @@ function isExcludedBrand(brandName, brandSlug) {
   });
 }
 
+/** Bing / SERP title limit (decoded character count). */
+const TITLE_MAX = 70;
+
+const TITLE_KEYWORD = {
+  de: 'Ersatzteile',
+  en: 'spare parts',
+  it: 'Ricambi',
+  es: 'Recambios',
+  fr: 'Pièces'
+};
+
+const TITLE_BANNED = /\bOriginal(?:teile)?\b|\bauthorized\b/i;
+
+function decodeTitleEntities(s) {
+  return String(s || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCharCode(parseInt(n, 16)));
+}
+
+function decodedTitleLength(s) {
+  return [...decodeTitleEntities(s)].length;
+}
+
+function titleKeyword(lang) {
+  return TITLE_KEYWORD[lang] || TITLE_KEYWORD.de;
+}
+
+/**
+ * Brand + localized "Ersatzteile" first; keep ABCspareparts when it fits.
+ * Never uses Original / Originalteile / authorized.
+ */
+function brandPageTitle(brand, lang) {
+  const name = String(brand || '').trim();
+  const kw = titleKeyword(lang);
+  const site = 'ABCspareparts';
+  const candidates = [`${name} ${kw} | ${site}`, `${name} ${kw}`];
+  for (const c of candidates) {
+    if (decodedTitleLength(c) <= TITLE_MAX) return c;
+  }
+  const suffix = ` ${kw}`;
+  const budget = TITLE_MAX - suffix.length;
+  const clipped = `${[...name].slice(0, Math.max(1, budget - 1)).join('')}…`;
+  return `${clipped}${suffix}`;
+}
+
+function titleStartsWithBrand(title, brand) {
+  const t = decodeTitleEntities(title).trim().toLowerCase();
+  const b = String(brand || '').trim().toLowerCase();
+  return b && t.startsWith(b);
+}
+
+function fitBrandTitle(title, brand, lang) {
+  const t = String(title || '').trim();
+  const kw = titleKeyword(lang);
+  const decoded = decodeTitleEntities(t);
+  const hasKw = decoded.toLowerCase().includes(kw.toLowerCase());
+  if (
+    t
+    && decodedTitleLength(t) <= TITLE_MAX
+    && !TITLE_BANNED.test(decoded)
+    && titleStartsWithBrand(t, brand)
+    && hasKw
+  ) {
+    return t;
+  }
+  return brandPageTitle(brand, lang);
+}
+
+/** Clip any title to TITLE_MAX decoded characters. */
+function clipToTitleMax(title) {
+  const t = String(title || '').trim();
+  if (decodedTitleLength(t) <= TITLE_MAX) return t;
+  const withoutSite = t.replace(/\s*\|\s*ABCspareparts\s*$/i, '').trim();
+  if (withoutSite && decodedTitleLength(withoutSite) <= TITLE_MAX) return withoutSite;
+  const chars = [...decodeTitleEntities(withoutSite || t)];
+  return `${chars.slice(0, Math.max(1, TITLE_MAX - 1)).join('')}…`;
+}
+
 module.exports = {
   BASE,
   PRIMARY_LANG,
@@ -130,5 +214,14 @@ module.exports = {
   ICON_LINKS,
   collectIndexWorthySlugs,
   EXCLUDED_BRANDS,
-  isExcludedBrand
+  isExcludedBrand,
+  TITLE_MAX,
+  TITLE_KEYWORD,
+  TITLE_BANNED,
+  decodeTitleEntities,
+  decodedTitleLength,
+  titleKeyword,
+  brandPageTitle,
+  fitBrandTitle,
+  clipToTitleMax
 };

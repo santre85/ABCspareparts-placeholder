@@ -2,6 +2,7 @@ const fs = require('fs');
 const { assignUniqueSlugs } = require('./brand-slug.js');
 const { FOOTER_CSS, FOOTER_I18N, buildFooterHtml } = require('./site-footer.js');
 const { ICON_LINKS } = require('./seo-config.js');
+const { marcheI18nFor } = require('./marche-i18n.js');
 
 function footerI18nLiteral(lang) {
   return Object.entries(FOOTER_I18N[lang])
@@ -118,11 +119,12 @@ const itemListSample = (partsDataForLd.brands || [])
     url: `${base}/marche/${row.brand_slug}.html`,
     name: row.brand
   }));
+const marcheDe = marcheI18nFor('de', b.length);
 const itemListLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Hersteller und Marken für Industrieersatzteile | ABCspareparts',
-  description: `Über ${b.length} Hersteller für MRO und Industrieersatzteile. Marke suchen, Anfrage per Formular oder E-Mail – Antwort meist innerhalb von 24 Stunden.`,
+  name: marcheDe.jsonld_name,
+  description: marcheDe.jsonld_description,
   numberOfItems: b.length,
   url: `${base}/marche.html`,
   itemListElement: itemListSample
@@ -132,7 +134,7 @@ const marcheHtml = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile unverbindlich anfragen</title>
+  <title>${escHtml(marcheDe.page_title)}</title>
   <meta name="description" content="Marke suchen, Liste filtern: ${b.length}+ Hersteller für Industrieersatzteile und MRO. Originalteile &amp; Alternativen. Jetzt Teilenummer einreichen – Antwort meist innerhalb von 24 Stunden. Formular oder E-Mail.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${base}/marche.html">
@@ -143,11 +145,11 @@ const marcheHtml = `<!DOCTYPE html>
   <meta property="og:type" content="website">
   <meta property="og:url" content="${base}/marche.html">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile anfragen">
+  <meta property="og:title" content="${escHtml(marcheDe.og_title)}">
   <meta property="og:description" content="Marke suchen &amp; filtern: ${b.length}+ Hersteller für MRO und Industrieersatzteile. Unverbindlich anfragen – Antwort meist in 24h. Siemens, Festo, ABB u. v. m.">
   <meta property="og:image" content="${base}/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Über ${b.length} Hersteller durchsuchen | ABCspareparts – Ersatzteile anfragen">
+  <meta name="twitter:title" content="${escHtml(marcheDe.twitter_title)}">
   <meta name="twitter:description" content="${b.length}+ Hersteller für MRO und Industrieersatzteile. Marke suchen, unverbindlich anfragen – Antwort meist in 24h.">
   <script type="application/ld+json">
   ${JSON.stringify(itemListLd)}

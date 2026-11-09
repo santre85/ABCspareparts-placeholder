@@ -6,6 +6,7 @@ const path = require('path');
 const { HOME_I18N } = require('./home-i18n.js');
 const { FOOTER_I18N, FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
 const { LEGAL_PAGES, LEGAL_COMMON } = require('./legal-i18n.js');
+const { clipToTitleMax } = require('./seo-config.js');
 
 const BASE_URL = 'https://abcspareparts.eu';
 const LANGUAGES = ['en', 'it', 'es', 'fr'];  // de is default at root
@@ -225,7 +226,7 @@ function generateLegalPage(pageName, lang, outputPath) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${t.h1} – ABCspareparts</title>
+  <title>${clipToTitleMax(`${t.h1} – ABCspareparts`)}</title>
   <meta name="description" content="${(t.subtitle || t.h1).replace(/<[^>]+>/g, '')}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${canonicalUrl}">
@@ -234,7 +235,7 @@ function generateLegalPage(pageName, lang, outputPath) {
 ${hreflang}
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:title" content="${t.h1} – ABCspareparts">
+  <meta property="og:title" content="${clipToTitleMax(`${t.h1} – ABCspareparts`)}">
   <meta property="og:image" content="${BASE_URL}/logo.png">
   <style>
     ${FOOTER_CSS}
