@@ -59,12 +59,9 @@ function buildJsonLd(lang, t, canonical, home) {
         logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` },
         description: 'MRO industrial spare parts distributor. 11975+ brands. 24h quotes, Europe-wide delivery.',
         email: 'info@abcspareparts.eu',
-        telephone: '+49-152-22466077',
         sameAs: ['https://www.linkedin.com/company/abcspareparts'],
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Äussere Uferstrasse 16',
-          postalCode: '86154',
           addressLocality: 'Augsburg',
           addressCountry: 'DE'
         }
@@ -150,12 +147,13 @@ function buildPage(lang) {
     contactHref: contactPath(lang)
   });
   const faqHtml = [1, 2, 3, 4, 5, 6, 7, 8]
-    .map(
-      (n) => `        <div class="faq-item">
+    .map((n) => {
+      const answer = n === 8 && t.faq_a8_html ? t.faq_a8_html : esc(t[`faq_a${n}`]);
+      return `        <div class="faq-item">
           <h3>${esc(t[`faq_q${n}`])}</h3>
-          <p>${esc(t[`faq_a${n}`])}</p>
-        </div>`
-    )
+          <p>${answer}</p>
+        </div>`;
+    })
     .join('\n');
   const stepsHtml = [1, 2, 3, 4]
     .map(

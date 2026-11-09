@@ -20,7 +20,7 @@ const HOW_IT_WORKS_I18N = {
     steps_title: 'Ablauf: Anfrage, Angebot, Bestellung, Lieferung',
     step1_name: 'Anfrage senden',
     step1_text:
-      'Senden Sie die Teilenummer und den Hersteller — plus die Menge — über das Anfrageformular auf der Startseite, per E-Mail an info@abcspareparts.eu oder telefonisch / per WhatsApp. Die Anfrage ist unverbindlich. Preise stehen nicht auf der Website.',
+      'Senden Sie die Teilenummer und den Hersteller — plus die Menge — über das Anfrageformular auf der Startseite oder per E-Mail an info@abcspareparts.eu. Die Anfrage ist unverbindlich. Preise stehen nicht auf der Website.',
     step2_name: 'Angebot erhalten',
     step2_text:
       'ABCspareparts prüft Verfügbarkeit und Konditionen und bemüht sich, innerhalb von 24 Stunden ein Angebot zu unterbreiten. Standardlieferzeiten werden bei der Angebotserstellung mitgeteilt.',
@@ -52,7 +52,7 @@ const HOW_IT_WORKS_I18N = {
     faq_title: 'Häufige Fragen',
     faq_q1: 'Wie frage ich Ersatzteile bei ABCspareparts an?',
     faq_a1:
-      'Senden Sie Teilenummer, Hersteller und Menge über das Anfrageformular auf der Startseite, an info@abcspareparts.eu oder per Telefon/WhatsApp (+49 152 22466077). Die Anfrage ist unverbindlich.',
+      'Senden Sie Teilenummer, Hersteller und Menge über das Anfrageformular auf der Startseite oder an info@abcspareparts.eu. Die Anfrage ist unverbindlich.',
     faq_q2: 'Wie schnell kommt ein Angebot?',
     faq_a2:
       'ABCspareparts bemüht sich, innerhalb von 24 Stunden ein Angebot zu unterbreiten. Die Rückmeldung erfolgt in der Regel in diesem Zeitraum; genaue Lieferzeiten stehen im Angebot.',
@@ -73,7 +73,9 @@ const HOW_IT_WORKS_I18N = {
       'Nach Annahme des Angebots kommt der Vertrag zustande. Bei Vorkasse beginnt die Lieferzeit nach Zahlungseingang; bei anderen Zahlungsarten nach Vertragsschluss. Express-Versand ist auf Anfrage verfügbar.',
     faq_q8: 'Wo sitzt ABCspareparts und wie erreiche ich Sie?',
     faq_a8:
-      'Serena Sarlo, Äussere Uferstrasse 16, 86154 Augsburg, Deutschland. Telefon und WhatsApp: +49 152 22466077, E-Mail: info@abcspareparts.eu. Vollständige Angaben stehen im Impressum.',
+      'ABCspareparts hat seinen Sitz in Augsburg, Deutschland. Kontakt über das Anfrageformular auf der Startseite oder per E-Mail an info@abcspareparts.eu. Vollständige Angaben zum Unternehmen stehen im Impressum.',
+    faq_a8_html:
+      'ABCspareparts hat seinen Sitz in Augsburg, Deutschland. Kontakt über das Anfrageformular auf der Startseite oder per E-Mail an info@abcspareparts.eu. Vollständige Angaben zum Unternehmen stehen im <a href="/impressum.html">Impressum</a>.',
     cta_title: 'Unverbindlich anfragen',
     cta_text:
       'Nutzen Sie das Anfrageformular auf der Startseite — ohne Preise auf der Website, Rückmeldung oft innerhalb von 24 Stunden.',
@@ -95,7 +97,7 @@ const HOW_IT_WORKS_I18N = {
     steps_title: 'Steps: enquiry, quote, order, delivery',
     step1_name: 'Send an enquiry',
     step1_text:
-      'Send the part number and manufacturer — plus the quantity — via the enquiry form on the home page, by email to info@abcspareparts.eu, or by phone / WhatsApp. Enquiries are non-binding. Prices are not published on the website.',
+      'Send the part number and manufacturer — plus the quantity — via the enquiry form on the home page or by email to info@abcspareparts.eu. Enquiries are non-binding. Prices are not published on the website.',
     step2_name: 'Receive a quote',
     step2_text:
       'ABCspareparts checks availability and terms and aims to send a quote within 24 hours. Standard lead times are given when the quote is prepared.',
@@ -127,7 +129,7 @@ const HOW_IT_WORKS_I18N = {
     faq_title: 'Frequently asked questions',
     faq_q1: 'How do I request spare parts from ABCspareparts?',
     faq_a1:
-      'Send the part number, manufacturer and quantity via the enquiry form on the home page, to info@abcspareparts.eu, or by phone/WhatsApp (+49 152 22466077). Enquiries are non-binding.',
+      'Send the part number, manufacturer and quantity via the enquiry form on the home page or to info@abcspareparts.eu. Enquiries are non-binding.',
     faq_q2: 'How quickly do you send a quote?',
     faq_a2:
       'ABCspareparts aims to send a quote within 24 hours. A reply usually follows in that window; exact lead times are given in the quote.',
@@ -148,7 +150,9 @@ const HOW_IT_WORKS_I18N = {
       'The contract is formed when you accept the quote. For prepayment, the lead time starts after payment is received; for other payment methods, after the contract is concluded. Express shipping is available on request.',
     faq_q8: 'Where is ABCspareparts based and how can I get in touch?',
     faq_a8:
-      'Serena Sarlo, Äussere Uferstrasse 16, 86154 Augsburg, Germany. Phone and WhatsApp: +49 152 22466077, email: info@abcspareparts.eu. Full legal details are in the imprint.',
+      'ABCspareparts is based in Augsburg, Germany. Contact us via the enquiry form on the home page or by email at info@abcspareparts.eu. Full company details are in the imprint.',
+    faq_a8_html:
+      'ABCspareparts is based in Augsburg, Germany. Contact us via the enquiry form on the home page or by email at info@abcspareparts.eu. Full company details are in the <a href="/en/impressum.html">imprint</a>.',
     cta_title: 'Send a non-binding enquiry',
     cta_text:
       'Use the enquiry form on the home page — no prices on the website, a reply often within 24 hours.',
@@ -166,11 +170,11 @@ const HOW_IT_WORKS_I18N = {
     h1: 'Come funziona ABCspareparts',
     breadcrumb: '<a href="/it/">Home</a> · Come funziona',
     direct_answer:
-      'ABCspareparts è un rivenditore indipendente di ricambi industriali e MRO in Europa (sede ad Augusta). Inviate codice articolo, produttore e quantità con il modulo di richiesta in home page; il preventivo arriva spesso entro 24 ore. Dopo l’ordine la consegna è nei Paesi europei — tempi e costi di spedizione sono indicati nel preventivo.',
+      'ABCspareparts è un rivenditore indipendente di ricambi industriali e MRO in Europa (sede a Augsburg). Inviate codice articolo, produttore e quantità con il modulo di richiesta in home page; il preventivo arriva spesso entro 24 ore. Dopo l’ordine la consegna è nei Paesi europei — tempi e costi di spedizione sono indicati nel preventivo.',
     steps_title: 'Passi: richiesta, preventivo, ordine, consegna',
     step1_name: 'Inviare la richiesta',
     step1_text:
-      'Inviate il codice articolo e il produttore — più la quantità — con il modulo in home page, via e-mail a info@abcspareparts.eu o per telefono / WhatsApp. La richiesta è senza impegno. I prezzi non sono pubblicati sul sito.',
+      'Inviate il codice articolo e il produttore — più la quantità — con il modulo in home page o via e-mail a info@abcspareparts.eu. La richiesta è senza impegno. I prezzi non sono pubblicati sul sito.',
     step2_name: 'Ricevere il preventivo',
     step2_text:
       'ABCspareparts verifica disponibilità e condizioni e si impegna a inviare un preventivo entro 24 ore. I tempi di consegna standard sono comunicati in fase di offerta.',
@@ -196,13 +200,13 @@ const HOW_IT_WORKS_I18N = {
     brands_link: 'Apri l’elenco marche A–Z',
     time_title: 'Tempi di risposta',
     time_p1:
-      'Il preventivo arriva spesso entro 24 ore. Disponibilità: lunedì–venerdì 09:00–18:00, sabato 10:00–14:00, domenica chiuso (Augusta, Germania).',
+      'Il preventivo arriva spesso entro 24 ore. Disponibilità: lunedì–venerdì 09:00–18:00, sabato 10:00–14:00, domenica chiuso (Augsburg, Germania).',
     time_p2:
       'I tempi di consegna dipendono dalla disponibilità e dal tipo di spedizione. Vengono comunicati prima della conclusione del contratto. Questa pagina non promette giorni di consegna fissi né pubblica giacenze.',
     faq_title: 'Domande frequenti',
     faq_q1: 'Come richiedo ricambi ad ABCspareparts?',
     faq_a1:
-      'Inviate codice articolo, produttore e quantità con il modulo in home page, a info@abcspareparts.eu o per telefono/WhatsApp (+49 152 22466077). La richiesta è senza impegno.',
+      'Inviate codice articolo, produttore e quantità con il modulo in home page o a info@abcspareparts.eu. La richiesta è senza impegno.',
     faq_q2: 'Quanto tempo serve per un preventivo?',
     faq_a2:
       'ABCspareparts si impegna a inviare un preventivo entro 24 ore. Di solito la risposta arriva in questo lasso; i tempi di consegna precisi sono nel preventivo.',
@@ -223,7 +227,9 @@ const HOW_IT_WORKS_I18N = {
       'Il contratto si perfeziona con l’accettazione del preventivo. In caso di pagamento anticipato i tempi partono dal ricevimento del pagamento; per altre modalità, dalla conclusione del contratto. La spedizione express è disponibile su richiesta.',
     faq_q8: 'Dove ha sede ABCspareparts e come vi contatto?',
     faq_a8:
-      'Serena Sarlo, Äussere Uferstrasse 16, 86154 Augsburg, Germania. Telefono e WhatsApp: +49 152 22466077, e-mail: info@abcspareparts.eu. Dati completi nell’Impressum.',
+      'ABCspareparts ha sede a Augsburg, Germania. Contatto tramite il modulo in home page o e-mail a info@abcspareparts.eu. Dati completi sull’azienda nell’Impressum.',
+    faq_a8_html:
+      'ABCspareparts ha sede a Augsburg, Germania. Contatto tramite il modulo in home page o e-mail a info@abcspareparts.eu. Dati completi sull’azienda nell’<a href="/it/impressum.html">Impressum</a>.',
     cta_title: 'Richiesta senza impegno',
     cta_text:
       'Usate il modulo in home page — nessun prezzo sul sito, risposta spesso entro 24 ore.',
@@ -241,11 +247,11 @@ const HOW_IT_WORKS_I18N = {
     h1: 'Cómo funciona ABCspareparts',
     breadcrumb: '<a href="/es/">Home</a> · Cómo funciona',
     direct_answer:
-      'ABCspareparts es un distribuidor independiente de repuestos industriales y MRO en Europa (sede en Augsburgo). Envíe número de pieza, fabricante y cantidad con el formulario de la página de inicio; el presupuesto suele llegar en 24 horas. Tras el pedido, la entrega es a países europeos — plazo y gastos de envío figuran en el presupuesto.',
+      'ABCspareparts es un distribuidor independiente de repuestos industriales y MRO en Europa (sede en Augsburg). Envíe número de pieza, fabricante y cantidad con el formulario de la página de inicio; el presupuesto suele llegar en 24 horas. Tras el pedido, la entrega es a países europeos — plazo y gastos de envío figuran en el presupuesto.',
     steps_title: 'Pasos: consulta, presupuesto, pedido, entrega',
     step1_name: 'Enviar la consulta',
     step1_text:
-      'Envíe el número de pieza y el fabricante — más la cantidad — con el formulario de inicio, por correo a info@abcspareparts.eu o por teléfono / WhatsApp. La consulta no es vinculante. No hay precios en el sitio.',
+      'Envíe el número de pieza y el fabricante — más la cantidad — con el formulario de inicio o por correo a info@abcspareparts.eu. La consulta no es vinculante. No hay precios en el sitio.',
     step2_name: 'Recibir el presupuesto',
     step2_text:
       'ABCspareparts comprueba disponibilidad y condiciones y procura enviar un presupuesto en 24 horas. Los plazos estándar se comunican al elaborar la oferta.',
@@ -271,13 +277,13 @@ const HOW_IT_WORKS_I18N = {
     brands_link: 'Abrir la lista A–Z de marcas',
     time_title: 'Tiempos de respuesta',
     time_p1:
-      'El presupuesto suele llegar en 24 horas. Horario: lunes–viernes 09:00–18:00, sábado 10:00–14:00, domingo cerrado (Augsburgo, Alemania).',
+      'El presupuesto suele llegar en 24 horas. Horario: lunes–viernes 09:00–18:00, sábado 10:00–14:00, domingo cerrado (Augsburg, Alemania).',
     time_p2:
       'El plazo de entrega depende de la disponibilidad y del tipo de envío. Se comunica antes de concluir el contrato. Esta página no promete días fijos de entrega ni publica existencias.',
     faq_title: 'Preguntas frecuentes',
     faq_q1: '¿Cómo solicito repuestos a ABCspareparts?',
     faq_a1:
-      'Envíe número de pieza, fabricante y cantidad con el formulario de inicio, a info@abcspareparts.eu o por teléfono/WhatsApp (+49 152 22466077). La consulta no es vinculante.',
+      'Envíe número de pieza, fabricante y cantidad con el formulario de inicio o a info@abcspareparts.eu. La consulta no es vinculante.',
     faq_q2: '¿En cuánto tiempo llega el presupuesto?',
     faq_a2:
       'ABCspareparts procura enviar un presupuesto en 24 horas. La respuesta suele llegar en ese plazo; los tiempos de entrega exactos figuran en la oferta.',
@@ -298,7 +304,9 @@ const HOW_IT_WORKS_I18N = {
       'El contrato se formaliza al aceptar el presupuesto. Con prepago, el plazo empieza al recibir el pago; con otros métodos, al concluirse el contrato. El envío urgente está disponible bajo petición.',
     faq_q8: '¿Dónde está ABCspareparts y cómo contacto?',
     faq_a8:
-      'Serena Sarlo, Äussere Uferstrasse 16, 86154 Augsburg, Alemania. Teléfono y WhatsApp: +49 152 22466077, correo: info@abcspareparts.eu. Datos completos en el aviso legal.',
+      'ABCspareparts tiene su sede en Augsburg, Alemania. Contacto a través del formulario de inicio o por correo a info@abcspareparts.eu. Datos completos de la empresa en el aviso legal.',
+    faq_a8_html:
+      'ABCspareparts tiene su sede en Augsburg, Alemania. Contacto a través del formulario de inicio o por correo a info@abcspareparts.eu. Datos completos de la empresa en el <a href="/es/impressum.html">aviso legal</a>.',
     cta_title: 'Consulta sin compromiso',
     cta_text:
       'Use el formulario de la página de inicio — sin precios en el sitio, respuesta a menudo en 24 horas.',
@@ -316,11 +324,11 @@ const HOW_IT_WORKS_I18N = {
     h1: 'Comment fonctionne ABCspareparts',
     breadcrumb: '<a href="/fr/">Accueil</a> · Comment ça marche',
     direct_answer:
-      'ABCspareparts est un revendeur indépendant de pièces industrielles et MRO en Europe (siège à Augsbourg). Envoyez la référence, le fabricant et la quantité via le formulaire de la page d’accueil ; un devis suit souvent sous 24 heures. Après commande, la livraison se fait vers des pays européens — délai et frais de port figurent sur le devis.',
+      'ABCspareparts est un revendeur indépendant de pièces industrielles et MRO en Europe (siège à Augsburg). Envoyez la référence, le fabricant et la quantité via le formulaire de la page d’accueil ; un devis suit souvent sous 24 heures. Après commande, la livraison se fait vers des pays européens — délai et frais de port figurent sur le devis.',
     steps_title: 'Étapes : demande, devis, commande, livraison',
     step1_name: 'Envoyer la demande',
     step1_text:
-      'Envoyez la référence et le fabricant — plus la quantité — via le formulaire d’accueil, par e-mail à info@abcspareparts.eu ou par téléphone / WhatsApp. La demande est sans engagement. Aucun prix n’est publié sur le site.',
+      'Envoyez la référence et le fabricant — plus la quantité — via le formulaire d’accueil ou par e-mail à info@abcspareparts.eu. La demande est sans engagement. Aucun prix n’est publié sur le site.',
     step2_name: 'Recevoir le devis',
     step2_text:
       'ABCspareparts vérifie disponibilité et conditions et s’efforce d’envoyer un devis sous 24 heures. Les délais standard sont communiqués lors de l’établissement de l’offre.',
@@ -346,13 +354,13 @@ const HOW_IT_WORKS_I18N = {
     brands_link: 'Ouvrir la liste A–Z des marques',
     time_title: 'Délais de réponse',
     time_p1:
-      'Un devis suit souvent sous 24 heures. Disponibilité : lundi–vendredi 09:00–18:00, samedi 10:00–14:00, dimanche fermé (Augsbourg, Allemagne).',
+      'Un devis suit souvent sous 24 heures. Disponibilité : lundi–vendredi 09:00–18:00, samedi 10:00–14:00, dimanche fermé (Augsburg, Allemagne).',
     time_p2:
       'Le délai de livraison dépend de la disponibilité et du mode d’expédition. Il est communiqué avant la conclusion du contrat. Cette page ne promet pas de jours de livraison fixes et ne publie pas de stocks.',
     faq_title: 'Questions fréquentes',
     faq_q1: 'Comment demander des pièces à ABCspareparts ?',
     faq_a1:
-      'Envoyez référence, fabricant et quantité via le formulaire d’accueil, à info@abcspareparts.eu ou par téléphone/WhatsApp (+49 152 22466077). La demande est sans engagement.',
+      'Envoyez référence, fabricant et quantité via le formulaire d’accueil ou à info@abcspareparts.eu. La demande est sans engagement.',
     faq_q2: 'En combien de temps arrive le devis ?',
     faq_a2:
       'ABCspareparts s’efforce d’envoyer un devis sous 24 heures. La réponse arrive en général dans ce délai ; les délais de livraison exacts figurent sur le devis.',
@@ -373,7 +381,9 @@ const HOW_IT_WORKS_I18N = {
       'Le contrat est formé à l’acceptation du devis. En cas de paiement d’avance, le délai commence à réception du paiement ; pour les autres modes, à la conclusion du contrat. L’expédition express est disponible sur demande.',
     faq_q8: 'Où est basé ABCspareparts et comment vous joindre ?',
     faq_a8:
-      'Serena Sarlo, Äussere Uferstrasse 16, 86154 Augsburg, Allemagne. Téléphone et WhatsApp : +49 152 22466077, e-mail : info@abcspareparts.eu. Mentions complètes dans les mentions légales.',
+      'ABCspareparts est basé à Augsburg, Allemagne. Contact via le formulaire d’accueil ou par e-mail à info@abcspareparts.eu. Mentions complètes sur l’entreprise dans les mentions légales.',
+    faq_a8_html:
+      'ABCspareparts est basé à Augsburg, Allemagne. Contact via le formulaire d’accueil ou par e-mail à info@abcspareparts.eu. Mentions complètes sur l’entreprise dans les <a href="/fr/impressum.html">mentions légales</a>.',
     cta_title: 'Demande sans engagement',
     cta_text:
       'Utilisez le formulaire de la page d’accueil — aucun prix sur le site, réponse souvent sous 24 heures.',
