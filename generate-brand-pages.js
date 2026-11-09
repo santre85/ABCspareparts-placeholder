@@ -4,38 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
 const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
-const { ICON_LINKS, collectIndexWorthySlugs } = require('./seo-config.js');
+const { ICON_LINKS, collectIndexWorthySlugs, isExcludedBrand } = require('./seo-config.js');
 const { findExistingPartPage, existingPartHref, writePartHrefIndex } = require('./part-page-paths.js');
-
-/**
- * Brands permanently excluded from generation.
- * These brands will never be regenerated, even if they appear in source data.
- * Match is case-insensitive against brand name and slug.
- */
-const EXCLUDED_BRANDS = [
-  'keysight',
-  'keysight technologies',
-  'keysight-technologies',
-  'markem',
-  'markem imaje',
-  'markem-imaje',
-  'axiomtek / markem-imaje',
-  'axiomtek / markem imaje',
-  'axiomtek-markem-imaje',
-  'axiomtek markem imaje'
-];
-
-function normalizeExcludedKey(str) {
-  return String(str || '').toLowerCase().replace(/[\s\-\/\.]/g, '');
-}
-
-function isExcludedBrand(brandName, brandSlug) {
-  const keys = [brandName, brandSlug].filter(Boolean).map(normalizeExcludedKey);
-  return EXCLUDED_BRANDS.some((excluded) => {
-    const ex = normalizeExcludedKey(excluded);
-    return ex && keys.some((k) => k === ex);
-  });
-}
+const { writeBrandSitemaps } = require('./write-brand-sitemaps.js');
 
 const NAV_I18N = {
   de: {
@@ -1852,35 +1823,10 @@ ${hasSuppliedParts ? `      initPartQuoteButtons();
 `;
 }
 
-function writeSitemapBrands(rows, partsBySlug) {
-  const outPath = path.join(ROOT, 'sitemap-brands.xml');
-  const worthy = collectIndexWorthySlugs(
-    partsBySlug ? [...partsBySlug.keys()] : [],
-    TOP_BRAND_BY_SLUG
-  );
-  const partsPriority = new Set(partsBySlug ? [...partsBySlug.keys()] : []);
-  let body = '';
-  let n = 0;
-  for (const { slug } of rows) {
-    if (!worthy.has(slug) || partsPriority.has(slug)) continue;
-    const loc = `${BASE}/marche/${slug}.html`;
-    body += '  <url>\n';
-    body += `    <loc>${loc}</loc>\n`;
-    body += `    <lastmod>${TODAY}</lastmod>\n`;
-    body += '    <changefreq>monthly</changefreq>\n';
-    body += '    <priority>0.7</priority>\n';
-    body += '  </url>\n';
-    n++;
-  }
-  const xml = `---
-layout: none
----
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${body}</urlset>
-`;
-  fs.writeFileSync(outPath, xml, 'utf8');
-  console.log('sitemap-brands.xml: index-worthy brands excluding parts-priority', n);
+function writeSitemapBrands(_rows, partsBySlug) {
+  // Always scan on-disk marche/*.html so a full or partial rebuild cannot
+  // shrink the public brand sitemap back to a "index-worthy" subset.
+  return writeBrandSitemaps({ partsBySlug });
 }
 
 function writeSitemapIndex() {
@@ -1983,9 +1929,11 @@ function main() {
     if (n % 500 === 0) console.log('Written', n, '/', targetRows.length);
   }
 
+  // Refresh brand sitemaps from on-disk pages even on --only / --parts-only
+  // so nightly ERP syncs cannot drop indexable URLs from the sitemap.
+  writeSitemapBrands(filteredRows, partsBySlug);
+  writeSitemapIndex();
   if (!partial) {
-    writeSitemapBrands(filteredRows, partsBySlug);
-    writeSitemapIndex();
     fs.writeFileSync(
       path.join(ROOT, 'brand-slugs.json'),
       JSON.stringify(filteredRows.reduce((acc, { brand, slug }) => {
@@ -1996,7 +1944,7 @@ function main() {
     );
     console.log('sitemap-brands.xml, sitemap-index.xml and brand-slugs.json updated.');
   } else {
-    console.log('Partial rebuild: skipped sitemap-brands / sitemap-index / brand-slugs rewrite.');
+    console.log('Partial rebuild: refreshed sitemap-brands / sitemap-index from on-disk brand pages.');
   }
 
   console.log('Brand pages:', n, onlySlugs.length ? `(only: ${onlySlugs.join(',')})` : partsOnly ? '(parts-only)' : '', 'in', path.relative(ROOT, MARCHE_DIR));
