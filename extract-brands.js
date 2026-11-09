@@ -135,7 +135,7 @@ const marcheHtml = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escHtml(marcheDe.page_title)}</title>
-  <meta name="description" content="Marke suchen, Liste filtern: ${b.length}+ Hersteller für Industrieersatzteile und MRO. Originalteile &amp; Alternativen. Jetzt Teilenummer einreichen – Antwort meist innerhalb von 24 Stunden. Formular oder E-Mail.">
+  <meta name="description" content="${escHtml(marcheDe.page_description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${base}/marche.html">
   ${ICON_LINKS}
@@ -146,11 +146,11 @@ const marcheHtml = `<!DOCTYPE html>
   <meta property="og:url" content="${base}/marche.html">
   <meta property="og:locale" content="de_DE">
   <meta property="og:title" content="${escHtml(marcheDe.og_title)}">
-  <meta property="og:description" content="Marke suchen &amp; filtern: ${b.length}+ Hersteller für MRO und Industrieersatzteile. Unverbindlich anfragen – Antwort meist in 24h. Siemens, Festo, ABB u. v. m.">
+  <meta property="og:description" content="${escHtml(marcheDe.og_description)}">
   <meta property="og:image" content="${base}/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escHtml(marcheDe.twitter_title)}">
-  <meta name="twitter:description" content="${b.length}+ Hersteller für MRO und Industrieersatzteile. Marke suchen, unverbindlich anfragen – Antwort meist in 24h.">
+  <meta name="twitter:description" content="${escHtml(marcheDe.twitter_description)}">
   <script type="application/ld+json">
   ${JSON.stringify(itemListLd)}
   </script>

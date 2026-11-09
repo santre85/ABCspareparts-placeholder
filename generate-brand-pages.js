@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { assignUniqueSlugs } = require('./brand-slug.js');
 const { FOOTER_CSS, withFooterI18n, buildFooterHtml } = require('./site-footer.js');
-const { ICON_LINKS, collectIndexWorthySlugs, isExcludedBrand, brandPageTitle, fitBrandTitle } = require('./seo-config.js');
+const { ICON_LINKS, collectIndexWorthySlugs, isExcludedBrand, brandPageTitle, fitBrandTitle, brandPageDescription, fitBrandDescription, META_MAX, clipDecoded } = require('./seo-config.js');
 const { findExistingPartPage, existingPartHref, writePartHrefIndex } = require('./part-page-paths.js');
 const { writeBrandSitemaps } = require('./write-brand-sitemaps.js');
 
@@ -63,7 +63,7 @@ const ROOT = __dirname;
 const MARCHE_DIR = path.join(ROOT, 'marche');
 const BASE = 'https://abcspareparts.eu';
 const TODAY = new Date().toISOString().slice(0, 10);
-const MAX_META_LEN = 160;
+const MAX_META_LEN = META_MAX;
 
 function loadTopBrandBySlug() {
   try {
@@ -278,9 +278,7 @@ function buildTranslations(brand) {
   return withFooterI18n(withNavI18n({
     de: {
       meta_title: brandPageTitle(brand, 'de'),
-      meta_description: highlightPricing
-        ? `${H} Ersatzteile zu fairen Preisen: Originalteile und geprüfte Alternativen. Teilenummer senden – Angebot oft in 24h.`
-        : `${H} Originalteile und geprüfte Alternativen für MRO. Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden.`,
+      meta_description: brandPageDescription(brand, 'de'),
       brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Marken</a> · ${H}`,
       brand_h1: `${H} – Industrieersatzteile & MRO`,
       brand_intro: `ABCspareparts beschafft Originalteile und geprüfte Alternativen für ${H} (Industrieersatzteile, Automatisierung, MRO). Nutzen Sie das Formular für Teilenummern und Mengen – wir melden uns in der Regel innerhalb von 24 Stunden.`,
@@ -341,9 +339,7 @@ function buildTranslations(brand) {
     },
     en: {
       meta_title: brandPageTitle(brand, 'en'),
-      meta_description: highlightPricing
-        ? `Competitive ${H} spare-part pricing: originals and vetted alternatives. Send part numbers for a no-obligation quote, often within 24h.`
-        : `Original ${H} parts and vetted alternatives for MRO. Send part numbers – no-obligation quote, we usually reply within 24 hours.`,
+      meta_description: brandPageDescription(brand, 'en'),
       brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Brands</a> · ${H}`,
       brand_h1: `${H} – industrial spare parts & MRO`,
       brand_intro: `ABCspareparts supplies original ${H} parts and verified alternatives for industrial automation and MRO. Send part numbers and quantities via the form – we usually respond within 24 hours.`,
@@ -404,9 +400,7 @@ function buildTranslations(brand) {
     },
     it: {
       meta_title: brandPageTitle(brand, 'it'),
-      meta_description: highlightPricing
-        ? `Prezzi competitivi su ricambi ${H}: originali e alternative verificate. Invia i codici per un preventivo senza impegno, spesso in 24h.`
-        : `Ricambi originali ${H} e alternative verificate per MRO. Invii i codici – preventivo senza impegno, di solito risposta entro 24 ore.`,
+      meta_description: brandPageDescription(brand, 'it'),
       brand_breadcrumb: `<a href="../">Home</a> · <a href="../marche.html">Marche</a> · ${H}`,
       brand_h1: `${H} – ricambi industriali e MRO`,
       brand_intro: `ABCspareparts fornisce ricambi ${H} originali e alternative verificate per automazione e MRO. Indichi codici articolo e quantità nel modulo – di solito rispondiamo entro 24 ore.`,
@@ -467,9 +461,7 @@ function buildTranslations(brand) {
     },
     es: {
       meta_title: brandPageTitle(brand, 'es'),
-      meta_description: highlightPricing
-        ? `Precios competitivos en recambios ${H}: originales y alternativas. Envíe referencias para un presupuesto sin compromiso, a menudo en 24h.`
-        : `Recambios originales ${H} y alternativas para MRO. Envíe referencias – presupuesto sin compromiso, respuesta habitual en 24 horas.`,
+      meta_description: brandPageDescription(brand, 'es'),
       brand_breadcrumb: `<a href="../">Inicio</a> · <a href="../marche.html">Marcas</a> · ${H}`,
       brand_h1: `${H} – recambios industriales y MRO`,
       brand_intro: `ABCspareparts suministra piezas ${H} originales y alternativas verificadas para automatización y MRO. Envíe referencias y cantidades en el formulario – solemos responder en 24 horas.`,
@@ -530,9 +522,7 @@ function buildTranslations(brand) {
     },
     fr: {
       meta_title: brandPageTitle(brand, 'fr'),
-      meta_description: highlightPricing
-        ? `Prix compétitifs sur les pièces ${H} : origine et alternatives. Envoyez les références pour un devis sans engagement, souvent sous 24h.`
-        : `Pièces d’origine ${H} et alternatives pour le MRO. Indiquez les références – devis sans engagement, réponse en général sous 24 h.`,
+      meta_description: brandPageDescription(brand, 'fr'),
       brand_breadcrumb: `<a href="../">Accueil</a> · <a href="../marche.html">Marques</a> · ${H}`,
       brand_h1: `${H} – pièces industrielles et MRO`,
       brand_intro: `ABCspareparts fournit des pièces ${H} d’origine et des alternatives vérifiées pour l’automatisation et le MRO. Indiquez références et quantités dans le formulaire – réponse en général sous 24 h.`,
@@ -611,11 +601,7 @@ const PARTS_META_MORE = {
 };
 
 function clipMeta(text, max = MAX_META_LEN) {
-  const s = String(text || '').replace(/\s+/g, ' ').trim();
-  if (s.length <= max) return s;
-  const cut = s.slice(0, max);
-  const lastSpace = cut.lastIndexOf(' ');
-  return (lastSpace > 90 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:–-]+$/, '').trim();
+  return clipDecoded(text, max);
 }
 
 function enrichMetaWithParts(translations, parts) {
@@ -653,14 +639,14 @@ function applyListinoMeta(translations, brand, listino) {
   const count = listino.count;
   const sampleBit = sample ? { de: ` (z. B. ${sample})`, en: ` (e.g. ${sample})`, it: ` (es. ${sample})`, es: ` (p. ej. ${sample})`, fr: ` (ex. ${sample})` } : { de: '', en: '', it: '', es: '', fr: '' };
   const notes = {
-    de: `${brand} Ersatzteile, Original und Alternativen. ${count}+ Codes suchbar${sampleBit.de}. Anfrage ohne Preise, oft in 24h.`,
-    en: `${brand} spare parts, originals and alternatives. ${count}+ codes searchable${sampleBit.en}. Quote, no prices, often within 24h.`,
-    it: `Ricambi ${brand}, originali e alternative. ${count}+ codici cercabili${sampleBit.it}. Preventivo senza prezzi, spesso in 24h.`,
-    es: `Recambios ${brand}, originales y alternativas. ${count}+ códigos${sampleBit.es}. Solicitud sin precios, a menudo en 24h.`,
-    fr: `Pièces ${brand}, origine et alternatives. ${count}+ références${sampleBit.fr}. Devis sans prix, souvent sous 24h.`
+    de: `${brand} Ersatzteile für Industrie und MRO. ${count}+ Codes suchbar${sampleBit.de}. Teilenummer senden – Angebot oft in 24 Stunden.`,
+    en: `${brand} spare parts for industry and MRO. ${count}+ codes searchable${sampleBit.en}. Send a part number – quote often within 24 hours.`,
+    it: `Ricambi ${brand} per industria e MRO. ${count}+ codici cercabili${sampleBit.it}. Invii il codice – preventivo spesso entro 24 ore.`,
+    es: `Recambios ${brand} para industria y MRO. ${count}+ códigos${sampleBit.es}. Envíe la referencia – presupuesto a menudo en 24 horas.`,
+    fr: `Pièces ${brand} pour industrie et MRO. ${count}+ références${sampleBit.fr}. Indiquez la référence – devis souvent sous 24 h.`
   };
   for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
-    translations[lang].meta_description = clipMeta(notes[lang]);
+    translations[lang].meta_description = fitBrandDescription(notes[lang], brand, lang, translations[lang]);
   }
 }
 
@@ -1767,6 +1753,10 @@ ${hasSuppliedParts ? `    var quoteModal = document.getElementById('quoteModal')
       if (t.meta_title && ogTitle) ogTitle.setAttribute('content', t.meta_title);
       var twTitle = document.querySelector('meta[name="twitter:title"]');
       if (t.meta_title && twTitle) twTitle.setAttribute('content', t.meta_title);
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (t.meta_description && ogDesc) ogDesc.setAttribute('content', t.meta_description);
+      var twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (t.meta_description && twDesc) twDesc.setAttribute('content', t.meta_description);
       document.querySelectorAll('[data-i18n]').forEach(function (el) {
         var k = el.getAttribute('data-i18n');
         if (t[k]) el.innerHTML = t[k];
@@ -1906,6 +1896,12 @@ function main() {
     mergeBrandContentI18n(translations, slug);
     for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
       translations[lang].meta_title = fitBrandTitle(translations[lang].meta_title, brand, lang);
+      translations[lang].meta_description = fitBrandDescription(
+        translations[lang].meta_description,
+        brand,
+        lang,
+        translations[lang]
+      );
     }
     if (brandParts?.listino?.file) {
       const listinoPath = path.join(ROOT, brandParts.listino.file);

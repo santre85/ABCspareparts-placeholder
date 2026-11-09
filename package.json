@@ -26,7 +26,8 @@
     "build:brand-sitemaps": "node write-brand-sitemaps.js",
     "test:brand-sitemaps": "node test-brand-sitemaps.js",
     "test:title-length": "node test-title-length.js",
-    "verify": "node verify-build.js && node verify-parts-mvp.js && node verify-siemens-listino.js && node test-brand-sitemaps.js && node test-title-length.js",
+    "test:meta-description": "node test-meta-description.js",
+    "verify": "node verify-build.js && node verify-parts-mvp.js && node verify-siemens-listino.js && node test-brand-sitemaps.js && node test-title-length.js && node test-meta-description.js",
     "test:item-lang": "node test-item-lang-and-brand-links.js",
     "test:item-lang-browser": "node test-item-lang-browser.js",
     "nightly:parts": "node generate-search-index.js && node generate-search-index-parts.js && node verify-search-index-pages.js && echo '✅ Nightly part pages pipeline complete'"
