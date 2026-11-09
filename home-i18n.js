@@ -5,7 +5,7 @@ const HOME_I18N = {
   de: {
     tagline: "Your Trusted Partner for High-Quality Industrial Spares",
     seo_title: "ABCspareparts – Industrieersatzteile | {n}+ Marken",
-    seo_description: "Originalteile und geprüfte Alternativen für Automatisierung und MRO. Siemens, Festo, ABB, Schneider u. v. m. Jetzt Anfrage stellen – Rückmeldung meist innerhalb von 24 Stunden, Lieferung europaweit.",
+    seo_description: "Industrieersatzteile und MRO: Siemens, Festo, ABB, Schneider und {n}+ Marken. Anfrage oft in 24 Stunden, Lieferung in Europa.",
     og_locale: "de_DE",
     description: "Mit langjähriger Branchenerfahrung spezialisieren wir uns auf die Verteilung von Komponenten für industrielle Automation, Sensoren, Aktoren und Steuergeräte führender Hersteller.",
     cta_button: "Jetzt anfragen",
@@ -64,7 +64,7 @@ const HOME_I18N = {
   en: {
     tagline: "Your Trusted Partner for High-Quality Industrial Spares",
     seo_title: "ABCspareparts – Industrial spare parts | {n}+ brands",
-    seo_description: "Original and verified alternative parts for automation and MRO. Siemens, Festo, ABB, Schneider and more. Request a quote – we usually reply within 24 hours, Europe-wide delivery.",
+    seo_description: "Industrial spare parts and MRO: Siemens, Festo, ABB, Schneider and {n}+ brands. Request a quote, often within 24 hours, delivery in Europe.",
     og_locale: "en_GB",
     description: "With years of industry experience, we specialize in the distribution of components for industrial automation, sensors, actuators and control devices from leading manufacturers.",
     cta_button: "Request quote",
@@ -123,7 +123,7 @@ const HOME_I18N = {
   it: {
     tagline: "Il tuo Partner di fiducia per Ricambi Industriali di Alta Qualità",
     seo_title: "ABCspareparts – Ricambi industriali | {n}+ marche",
-    seo_description: "Ricambi originali e alternative verificate per automazione e MRO. Siemens, Festo, ABB, Schneider e altre. Richiedi ora un preventivo – risposta di solito entro 24 ore, consegna in Europa.",
+    seo_description: "Ricambi industriali e MRO: Siemens, Festo, ABB, Schneider e {n}+ marche. Richiedi preventivo, spesso entro 24 ore, consegna in Europa.",
     og_locale: "it_IT",
     description: "Con anni di esperienza nel settore, ci specializziamo nella distribuzione di componenti per automazione industriale, sensori, attuatori e dispositivi di controllo dei principali produttori.",
     cta_button: "Richiedi preventivo",
@@ -182,7 +182,7 @@ const HOME_I18N = {
   es: {
     tagline: "Tu Socio de Confianza para Repuestos Industriales de Alta Calidad",
     seo_title: "ABCspareparts – Recambios industriales | {n}+ marcas",
-    seo_description: "Piezas originales y alternativas verificadas para automatización y MRO. Siemens, Festo, ABB, Schneider y más. Solicita un presupuesto – respondemos normalmente en 24 horas, entrega en Europa.",
+    seo_description: "Recambios industriales y MRO: Siemens, Festo, ABB, Schneider y {n}+ marcas. Solicite presupuesto, a menudo en 24 horas, entrega en Europa.",
     og_locale: "es_ES",
     description: "Con años de experiencia en el sector, nos especializamos en la distribución de componentes para automatización industrial, sensores, actuadores y dispositivos de control de los principales fabricantes.",
     cta_button: "Solicitar presupuesto",
@@ -241,7 +241,7 @@ const HOME_I18N = {
   fr: {
     tagline: "Votre Partenaire de Confiance pour des Pièces Industrielles de Haute Qualité",
     seo_title: "ABCspareparts – Pièces industrielles | {n}+ marques",
-    seo_description: "Pièces d'origine et alternatives vérifiées pour l'automatisation et la MRO. Siemens, Festo, ABB, Schneider et plus. Demandez un devis – nous répondons généralement en 24 heures, livraison en Europe.",
+    seo_description: "Pièces industrielles et MRO: Siemens, Festo, ABB, Schneider et {n}+ marques. Demandez un devis, souvent sous 24 h, livraison en Europe.",
     og_locale: "fr_FR",
     description: "Avec des années d'expérience dans l'industrie, nous sommes spécialisés dans la distribution de composants pour l'automatisation industrielle, capteurs, actionneurs et dispositifs de contrôle des principaux fabricants.",
     cta_button: "Demander un devis",

@@ -204,6 +204,163 @@ function clipToTitleMax(title) {
   return `${chars.slice(0, Math.max(1, TITLE_MAX - 1)).join('')}…`;
 }
 
+/** Bing / SERP meta description range (decoded character count). */
+const META_MIN = 120;
+const META_MAX = 160;
+const META_BANNED = /\bOriginal(?:teile|s)?\b|\bauthorized\b|\boriginali\b|\boriginales\b|\bd['']origine\b/i;
+const PRICE_META = /\b(?:Preis(?:e|en)?|prices?|prezzi|precios|Konditionen|competitiv[eo]s?)\b/i;
+
+const META_TAIL = {
+  de: 'Teilenummer senden – unverbindliches Angebot, oft in 24 Stunden, Lieferung in Europa.',
+  en: 'Send a part number – no-obligation quote, often within 24 hours, delivery in Europe.',
+  it: 'Invii il codice – preventivo senza impegno, spesso entro 24 ore, consegna in Europa.',
+  es: 'Envíe la referencia – presupuesto sin compromiso, a menudo en 24 horas, entrega en Europa.',
+  fr: 'Indiquez la référence – devis sans engagement, souvent sous 24 h, livraison en Europe.'
+};
+
+const META_MID = {
+  de: 'Ersatzteile für Industrie und MRO.',
+  en: 'spare parts for industry and MRO.',
+  it: 'ricambi per industria e MRO.',
+  es: 'recambios para industria y MRO.',
+  fr: 'pièces pour industrie et MRO.'
+};
+
+function stripHtmlText(s) {
+  return String(s || '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function clipDecoded(text, max) {
+  const decoded = decodeTitleEntities(String(text || '').replace(/\s+/g, ' ').trim());
+  if ([...decoded].length <= max) return decoded;
+  const cut = [...decoded].slice(0, max).join('');
+  const lastPeriod = cut.lastIndexOf('.');
+  if (lastPeriod >= META_MIN - 1) return cut.slice(0, lastPeriod + 1).trim();
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > Math.min(90, max - 30) ? cut.slice(0, lastSpace) : cut).replace(/[.,;:–-]+$/g, '').trim();
+}
+
+function sanitizeMeta(text) {
+  let t = stripHtmlText(text);
+  t = t
+    .replace(/\bOriginalteile\b/gi, 'Ersatzteile')
+    .replace(/\bpièces d['']origine\b/gi, 'pièces')
+    .replace(/\boriginals?\b/gi, '')
+    .replace(/\boriginali\b/gi, '')
+    .replace(/\boriginales\b/gi, '')
+    .replace(/\bauthorized\b/gi, '')
+    .replace(/\s*(?:zu )?(?:fairen |Top-)?(?:Preisen|Konditionen)\.?\s*/gi, ' ')
+    .replace(/\s*competitive prices\.?\s*/gi, ' ')
+    .replace(/\s*attraktive(?: Konditionen)?\.?\s*/gi, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\s+([.,;:])/g, '$1')
+    .replace(/^[.,;:\s]+/, '')
+    .trim();
+  return t;
+}
+
+function productFactFromBag(bag) {
+  if (!bag || typeof bag !== 'object') return '';
+  const listKey = Object.keys(bag).find((k) => /products_list$|bx_products_list/.test(k) && bag[k]);
+  if (!listKey) return '';
+  const items = [...String(bag[listKey]).matchAll(/<li>([\s\S]*?)<\/li>/gi)]
+    .map((m) => stripHtmlText(m[1]).replace(/\s*\(.*$/, '').trim())
+    .filter((s) => s && s.length > 2 && !META_BANNED.test(s) && !PRICE_META.test(s));
+  if (!items.length) return '';
+  return items.slice(0, 3).join(', ');
+}
+
+function brandPageDescription(brand, lang, fact) {
+  const name = String(brand || '').trim() || 'ABCspareparts';
+  const mid = META_MID[lang] || META_MID.de;
+  const tail = META_TAIL[lang] || META_TAIL.de;
+  const factBit = fact ? ` ${clipDecoded(fact, 48)}.` : '';
+  const candidates = [
+    `${name} ${mid}${factBit} ${tail}`,
+    `${name} ${mid} ${tail}`,
+    `${name} ${titleKeyword(lang)}. ${tail}`
+  ];
+  for (const c of candidates) {
+    const cleaned = c.replace(/\s{2,}/g, ' ').replace(/\s+\./g, '.').trim();
+    const n = decodedTitleLength(cleaned);
+    if (n >= META_MIN && n <= META_MAX && !META_BANNED.test(cleaned) && !PRICE_META.test(cleaned)) {
+      return cleaned;
+    }
+  }
+  const fallback = `${name} ${mid} ${tail}`.replace(/\s{2,}/g, ' ').trim();
+  if (decodedTitleLength(fallback) < META_MIN) {
+    return clipDecoded(`${fallback} ${tail}`, META_MAX);
+  }
+  return clipDecoded(fallback, META_MAX);
+}
+
+function fitBrandDescription(text, brand, lang, bag) {
+  const sanitized = sanitizeMeta(text);
+  const fact = productFactFromBag(bag);
+  if (
+    sanitized
+    && decodedTitleLength(sanitized) >= META_MIN
+    && decodedTitleLength(sanitized) <= META_MAX
+    && /[.!?]$/.test(sanitized)
+    && !META_BANNED.test(sanitized)
+    && !PRICE_META.test(sanitized)
+    && titleStartsWithBrand(sanitized, brand)
+  ) {
+    return sanitized;
+  }
+  if (sanitized && decodedTitleLength(sanitized) < META_MIN && !META_BANNED.test(sanitized) && !PRICE_META.test(sanitized)) {
+    const tail = META_TAIL[lang] || META_TAIL.de;
+    let padded = sanitized;
+    if (brand && !titleStartsWithBrand(padded, brand)) {
+      padded = `${String(brand).trim()} ${padded}`;
+    }
+    if (!padded.toLowerCase().includes(tail.slice(0, 18).toLowerCase())) {
+      padded = `${padded.replace(/[.]+$/, '')}. ${tail}`;
+    }
+    const mid = META_MID[lang] || META_MID.de;
+    if (decodedTitleLength(padded) < META_MIN && !padded.toLowerCase().includes('mro')) {
+      padded = `${padded.replace(/[.]+$/, '')}. ${mid}`;
+    }
+    padded = padded.replace(/\s{2,}/g, ' ').trim();
+    if (decodedTitleLength(padded) >= META_MIN && decodedTitleLength(padded) <= META_MAX && !META_BANNED.test(padded)) {
+      return padded;
+    }
+    if (decodedTitleLength(padded) > META_MAX) {
+      const clipped = clipDecoded(padded, META_MAX);
+      if (decodedTitleLength(clipped) >= META_MIN) return clipped;
+    }
+  }
+  return brandPageDescription(brand, lang, fact);
+}
+
+function fitMetaRange(text, lang) {
+  const sanitized = sanitizeMeta(text);
+  if (
+    decodedTitleLength(sanitized) >= META_MIN
+    && decodedTitleLength(sanitized) <= META_MAX
+    && !META_BANNED.test(sanitized)
+    && !PRICE_META.test(sanitized)
+  ) {
+    return sanitized;
+  }
+  const tail = META_TAIL[lang] || META_TAIL.de;
+  let padded = sanitized || tail;
+  if (decodedTitleLength(padded) < META_MIN) {
+    padded = `${padded.replace(/[.]+$/, '')}. ${tail}`;
+  }
+  padded = padded.replace(/\s{2,}/g, ' ').trim();
+  if (decodedTitleLength(padded) < META_MIN) {
+    padded = `${padded} ${(META_MID[lang] || META_MID.de)}`;
+  }
+  if (decodedTitleLength(padded) > META_MAX) return clipDecoded(padded, META_MAX);
+  return padded.replace(/\s{2,}/g, ' ').trim();
+}
+
 module.exports = {
   BASE,
   PRIMARY_LANG,
@@ -223,5 +380,14 @@ module.exports = {
   titleKeyword,
   brandPageTitle,
   fitBrandTitle,
-  clipToTitleMax
+  clipToTitleMax,
+  META_MIN,
+  META_MAX,
+  META_BANNED,
+  PRICE_META,
+  brandPageDescription,
+  fitBrandDescription,
+  fitMetaRange,
+  clipDecoded,
+  sanitizeMeta
 };

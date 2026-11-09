@@ -6,7 +6,7 @@ const { homeI18nFor } = require('./home-i18n.js');
 const { FOOTER_I18N } = require('./site-footer.js');
 const { buildHreflangLinks } = require('./generate-multilang-pages.js');
 const { directoryBrandCount } = require('./marche-i18n.js');
-const { decodedTitleLength, TITLE_MAX } = require('./seo-config.js');
+const { decodedTitleLength, TITLE_MAX, META_MIN, META_MAX } = require('./seo-config.js');
 
 const BASE_URL = 'https://abcspareparts.eu';
 const LANGUAGES = ['en', 'it', 'es', 'fr'];
@@ -90,6 +90,11 @@ function generateHomePageForLang(lang) {
     /<meta property="og:description" id="ogDescription" content="[^"]*">/,
     `<meta property="og:description" id="ogDescription" content="${t.seo_description}">`
   );
+  html = html.replace(
+    /<meta name="twitter:description" id="twitterDescription" content="[^"]*">/,
+    `<meta name="twitter:description" id="twitterDescription" content="${t.seo_description}">`
+  );
+  html = html.replace(/<noscript>\s*<meta http-equiv="refresh"[^>]*>\s*<\/noscript>\s*/i, '');
   
   // Replace the priority brands heading (which doesn't have data-i18n attribute yet)
   html = html.replace(
@@ -255,7 +260,15 @@ function patchGermanHome(brandCount) {
   if (decodedTitleLength(t.seo_title) > TITLE_MAX) {
     throw new Error(`DE home seo_title is ${decodedTitleLength(t.seo_title)} chars: ${t.seo_title}`);
   }
+  const descLen = decodedTitleLength(t.seo_description);
+  if (descLen < META_MIN || descLen > META_MAX) {
+    throw new Error(`DE home seo_description is ${descLen} chars: ${t.seo_description}`);
+  }
   html = html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, `<title id="pageTitle">${t.seo_title}</title>`);
+  html = html.replace(
+    /<meta id="pageDescription" name="description" content="[^"]*">/i,
+    `<meta id="pageDescription" name="description" content="${t.seo_description}">`
+  );
   html = html.replace(
     /<meta property="og:title" id="ogTitle" content="[^"]*">/,
     `<meta property="og:title" id="ogTitle" content="${t.seo_title}">`
@@ -264,6 +277,15 @@ function patchGermanHome(brandCount) {
     /<meta name="twitter:title" id="twitterTitle" content="[^"]*">/,
     `<meta name="twitter:title" id="twitterTitle" content="${t.seo_title}">`
   );
+  html = html.replace(
+    /<meta property="og:description" id="ogDescription" content="[^"]*">/,
+    `<meta property="og:description" id="ogDescription" content="${t.seo_description}">`
+  );
+  html = html.replace(
+    /<meta name="twitter:description" id="twitterDescription" content="[^"]*">/,
+    `<meta name="twitter:description" id="twitterDescription" content="${t.seo_description}">`
+  );
+  html = html.replace(/<noscript>\s*<meta http-equiv="refresh"[^>]*>\s*<\/noscript>\s*/i, '');
   html = html.replace(/11959/g, String(brandCount));
   const langs = ['de', 'en', 'it', 'es', 'fr'];
   let i = 0;
@@ -271,6 +293,12 @@ function patchGermanHome(brandCount) {
     const lang = langs[Math.min(i, langs.length - 1)];
     i += 1;
     return `seo_title: ${JSON.stringify(filled[lang].seo_title)}`;
+  });
+  i = 0;
+  html = html.replace(/seo_description:\s*"[^"]*"/g, () => {
+    const lang = langs[Math.min(i, langs.length - 1)];
+    i += 1;
+    return `seo_description: ${JSON.stringify(filled[lang].seo_description)}`;
   });
   fs.writeFileSync(indexPath, html, 'utf8');
   console.log('✓ Patched index.html home titles and brand count', brandCount);

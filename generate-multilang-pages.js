@@ -6,7 +6,20 @@ const path = require('path');
 const { HOME_I18N } = require('./home-i18n.js');
 const { FOOTER_I18N, FOOTER_CSS, buildFooterHtml } = require('./site-footer.js');
 const { LEGAL_PAGES, LEGAL_COMMON } = require('./legal-i18n.js');
-const { clipToTitleMax } = require('./seo-config.js');
+const { clipToTitleMax, clipDecoded, decodedTitleLength, META_MAX, META_MIN, sanitizeMeta } = require('./seo-config.js');
+
+function legalMetaDescription(t) {
+  const bits = [
+    t.h1, t.subtitle, t.s1_content, t.s2b_content, t.s3a_content, t.s3_content,
+    t.s4_content, t.s1_intro, t.s5_content, t.s2a_intro, t.s1_list
+  ]
+    .filter(Boolean)
+    .map((x) => sanitizeMeta(String(x)));
+  let s = bits.join('. ');
+  if (decodedTitleLength(s) < META_MIN) s = `${s}. ABCspareparts, Augsburg.`;
+  if (decodedTitleLength(s) < META_MIN) s = `${s} Kontakt: info@abcspareparts.eu.`;
+  return clipDecoded(s, META_MAX);
+}
 
 const BASE_URL = 'https://abcspareparts.eu';
 const LANGUAGES = ['en', 'it', 'es', 'fr'];  // de is default at root
@@ -227,7 +240,7 @@ function generateLegalPage(pageName, lang, outputPath) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${clipToTitleMax(`${t.h1} – ABCspareparts`)}</title>
-  <meta name="description" content="${(t.subtitle || t.h1).replace(/<[^>]+>/g, '')}">
+  <meta name="description" content="${legalMetaDescription(t)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="icon" type="image/svg+xml" href="${BASE_URL}/ABC_logo4.svg">
@@ -236,6 +249,7 @@ ${hreflang}
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:title" content="${clipToTitleMax(`${t.h1} – ABCspareparts`)}">
+  <meta property="og:description" content="${legalMetaDescription(t)}">
   <meta property="og:image" content="${BASE_URL}/logo.png">
   <style>
     ${FOOTER_CSS}
@@ -340,5 +354,6 @@ if (require.main === module) {
 
 module.exports = {
   buildHreflangLinks,
-  generateLegalPage
+  generateLegalPage,
+  legalMetaDescription
 };

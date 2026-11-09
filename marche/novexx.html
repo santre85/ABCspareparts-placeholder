@@ -757,6 +757,10 @@
       if (t.meta_title && ogTitle) ogTitle.setAttribute('content', t.meta_title);
       var twTitle = document.querySelector('meta[name="twitter:title"]');
       if (t.meta_title && twTitle) twTitle.setAttribute('content', t.meta_title);
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (t.meta_description && ogDesc) ogDesc.setAttribute('content', t.meta_description);
+      var twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (t.meta_description && twDesc) twDesc.setAttribute('content', t.meta_description);
       document.querySelectorAll('[data-i18n]').forEach(function (el) {
         var k = el.getAttribute('data-i18n');
         if (t[k]) el.innerHTML = t[k];
