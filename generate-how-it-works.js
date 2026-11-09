@@ -144,7 +144,11 @@ function buildPage(lang) {
     es: `${BASE}${pagePath('es')}`,
     fr: `${BASE}${pagePath('fr')}`
   });
-  const footer = buildFooterHtml(lang === 'de' ? '' : '/', { lang, casesHub: 'casi.html' });
+  const footer = buildFooterHtml(lang === 'de' ? '' : '/', {
+    lang,
+    casesHub: 'casi.html',
+    contactHref: contactPath(lang)
+  });
   const faqHtml = [1, 2, 3, 4, 5, 6, 7, 8]
     .map(
       (n) => `        <div class="faq-item">

@@ -119,35 +119,36 @@ function buildFooterHtml(linkPrefix, options) {
   const p = linkPrefix || '';
   const casesHub = (options && options.casesHub) || 'casi.html';
   const lang = (options && options.lang && FOOTER_TRADEMARK_COPY[options.lang]) ? options.lang : 'de';
-  const tm = escFooter(FOOTER_TRADEMARK_COPY[lang]);
+  const labels = FOOTER_I18N[lang];
+  const tm = escFooter(labels.footer_trademark);
   const howHref = howItWorksHref(lang);
-  const howLabel = escFooter(FOOTER_I18N[lang].footer_how);
+  const contactHref = (options && options.contactHref) || '/#contact';
   return `<footer class="footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-links">
-        <a href="${p}marche.html" data-i18n="footer_brands">Marche</a>
+        <a href="${p}marche.html" data-i18n="footer_brands">${escFooter(labels.footer_brands)}</a>
         <span class="separator">|</span>
-        <a href="${howHref}" data-i18n="footer_how">${howLabel}</a>
+        <a href="${howHref}" data-i18n="footer_how">${escFooter(labels.footer_how)}</a>
         <span class="separator">|</span>
-        <a href="${p}${casesHub}" data-i18n="footer_cases">Erfolgsgeschichten</a>
+        <a href="${p}${casesHub}" data-i18n="footer_cases">${escFooter(labels.footer_cases)}</a>
         <span class="separator">|</span>
-        <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
+        <a href="${contactHref}" data-i18n="footer_contact">${escFooter(labels.footer_contact)}</a>
         <span class="separator">|</span>
-        <a href="${p}impressum.html" target="_blank" rel="noopener" data-i18n="footer_imprint">Impressum</a>
+        <a href="${p}impressum.html" target="_blank" rel="noopener" data-i18n="footer_imprint">${escFooter(labels.footer_imprint)}</a>
         <span class="separator">|</span>
-        <a href="${p}datenschutz.html" target="_blank" rel="noopener" data-i18n="footer_privacy">Datenschutz</a>
+        <a href="${p}datenschutz.html" target="_blank" rel="noopener" data-i18n="footer_privacy">${escFooter(labels.footer_privacy)}</a>
         <span class="separator">|</span>
-        <a href="${p}agb.html" target="_blank" rel="noopener" data-i18n="footer_terms">AGB</a>
+        <a href="${p}agb.html" target="_blank" rel="noopener" data-i18n="footer_terms">${escFooter(labels.footer_terms)}</a>
         <span class="separator">|</span>
-        <a href="${p}versand.html" target="_blank" rel="noopener" data-i18n="footer_shipping">Versand</a>
+        <a href="${p}versand.html" target="_blank" rel="noopener" data-i18n="footer_shipping">${escFooter(labels.footer_shipping)}</a>
         <span class="separator">|</span>
-        <a href="${p}cookies.html" target="_blank" rel="noopener" data-i18n="footer_cookies">Cookies</a>
+        <a href="${p}cookies.html" target="_blank" rel="noopener" data-i18n="footer_cookies">${escFooter(labels.footer_cookies)}</a>
         <span class="separator">|</span>
         ${buildLinkedInFooterAnchor()}
       </div>
       <div class="footer-info">
-        <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+        <p>&copy; 2026 ABCspareparts. <span data-i18n="footer_rights">${escFooter(labels.footer_rights)}</span></p>
         <p id="abc-tm-disclaimer" class="footer-trademark" data-i18n="footer_trademark" data-abc-tm-disclaimer="1" role="note">${tm}</p>
       </div>
     </div>
