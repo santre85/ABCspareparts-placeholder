@@ -84,6 +84,67 @@ function updateMainSitemap() {
     <xhtml:link rel="alternate" hreflang="it" href="${BASE_URL}/it/marche.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/marche.html"/>
   </url>
+  <!-- How it works - German (default) -->
+  <url>
+    <loc>${BASE_URL}/so-funktioniert-es.html</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="${BASE_URL}/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="${BASE_URL}/it/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}/fr/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/so-funktioniert-es.html"/>
+  </url>
+  <url>
+    <loc>${BASE_URL}/en/so-funktioniert-es.html</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="${BASE_URL}/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="${BASE_URL}/it/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}/fr/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/so-funktioniert-es.html"/>
+  </url>
+  <url>
+    <loc>${BASE_URL}/it/so-funktioniert-es.html</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="${BASE_URL}/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="${BASE_URL}/it/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}/fr/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/so-funktioniert-es.html"/>
+  </url>
+  <url>
+    <loc>${BASE_URL}/es/so-funktioniert-es.html</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="${BASE_URL}/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="${BASE_URL}/it/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}/fr/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/so-funktioniert-es.html"/>
+  </url>
+  <url>
+    <loc>${BASE_URL}/fr/so-funktioniert-es.html</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="${BASE_URL}/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="${BASE_URL}/it/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${BASE_URL}/es/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}/fr/so-funktioniert-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/so-funktioniert-es.html"/>
+  </url>
 </urlset>`;
   
   fs.writeFileSync('sitemap.xml', sitemap, 'utf8');

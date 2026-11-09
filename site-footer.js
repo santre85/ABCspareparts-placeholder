@@ -24,6 +24,7 @@ const FOOTER_CSS = `
 const FOOTER_I18N = {
   de: {
     footer_brands: 'Marken',
+    footer_how: 'So funktioniert es',
     footer_cases: 'Erfolgsgeschichten',
     footer_contact: 'Kontakt',
     footer_imprint: 'Impressum',
@@ -37,6 +38,7 @@ const FOOTER_I18N = {
   },
   en: {
     footer_brands: 'Brands',
+    footer_how: 'How it works',
     footer_cases: 'Success stories',
     footer_contact: 'Contact',
     footer_imprint: 'Imprint',
@@ -50,6 +52,7 @@ const FOOTER_I18N = {
   },
   it: {
     footer_brands: 'Marche',
+    footer_how: 'Come funziona',
     footer_cases: 'Casi di successo',
     footer_contact: 'Contatti',
     footer_imprint: 'Impressum',
@@ -63,6 +66,7 @@ const FOOTER_I18N = {
   },
   es: {
     footer_brands: 'Marcas',
+    footer_how: 'Cómo funciona',
     footer_cases: 'Casos de éxito',
     footer_contact: 'Contacto',
     footer_imprint: 'Aviso legal',
@@ -76,6 +80,7 @@ const FOOTER_I18N = {
   },
   fr: {
     footer_brands: 'Marques',
+    footer_how: 'Comment ça marche',
     footer_cases: 'Histoires de réussite',
     footer_contact: 'Contact',
     footer_imprint: 'Mentions légales',
@@ -104,16 +109,26 @@ function buildLinkedInFooterAnchor() {
   return `<a href="${LINKEDIN_COMPANY_URL}" target="_blank" rel="noopener noreferrer" aria-label="Segui ABCspareparts su LinkedIn" data-i18n="footer_linkedin">LinkedIn</a>`;
 }
 
+function howItWorksHref(lang) {
+  const file = 'so-funktioniert-es.html';
+  if (!lang || lang === 'de') return `/${file}`;
+  return `/${lang}/${file}`;
+}
+
 function buildFooterHtml(linkPrefix, options) {
   const p = linkPrefix || '';
   const casesHub = (options && options.casesHub) || 'casi.html';
   const lang = (options && options.lang && FOOTER_TRADEMARK_COPY[options.lang]) ? options.lang : 'de';
   const tm = escFooter(FOOTER_TRADEMARK_COPY[lang]);
+  const howHref = howItWorksHref(lang);
+  const howLabel = escFooter(FOOTER_I18N[lang].footer_how);
   return `<footer class="footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-links">
         <a href="${p}marche.html" data-i18n="footer_brands">Marche</a>
+        <span class="separator">|</span>
+        <a href="${howHref}" data-i18n="footer_how">${howLabel}</a>
         <span class="separator">|</span>
         <a href="${p}${casesHub}" data-i18n="footer_cases">Erfolgsgeschichten</a>
         <span class="separator">|</span>
@@ -149,5 +164,6 @@ module.exports = {
   FOOTER_TRADEMARK_COPY,
   withFooterI18n,
   buildLinkedInFooterAnchor,
+  howItWorksHref,
   buildFooterHtml
 };

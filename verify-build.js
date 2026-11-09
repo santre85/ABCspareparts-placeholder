@@ -385,9 +385,32 @@ for (const c of publishedCases) {
   }
 }
 
+const howItWorksFile = 'so-funktioniert-es.html';
+for (const lang of ['de', 'en', 'it', 'es', 'fr']) {
+  const howPath = lang === 'de' ? path.join(__dirname, howItWorksFile) : path.join(__dirname, lang, howItWorksFile);
+  if (!fs.existsSync(howPath)) {
+    throw new Error(`Missing how-it-works page ${lang === 'de' ? howItWorksFile : `${lang}/${howItWorksFile}`}`);
+  }
+  const howHtml = fs.readFileSync(howPath, 'utf8');
+  const howTitle = (howHtml.match(/<title>([^<]*)<\/title>/i) || [])[1] || '';
+  const howDesc = (howHtml.match(/name="description" content="([^"]*)"/i) || [])[1] || '';
+  if (howTitle.length > 70) {
+    throw new Error(`${howItWorksFile} (${lang}) title length ${howTitle.length} > 70`);
+  }
+  if (howDesc.length < 120 || howDesc.length > 160) {
+    throw new Error(`${howItWorksFile} (${lang}) meta description length ${howDesc.length} not in 120-160`);
+  }
+  if (!howHtml.includes('id="abc-tm-disclaimer"')) {
+    throw new Error(`${howItWorksFile} (${lang}) missing trademark disclaimer`);
+  }
+}
+
 const llmsTxt = fs.readFileSync(path.join(__dirname, 'llms.txt'), 'utf8');
 if (!llmsTxt.includes('casi.html')) {
   throw new Error('llms.txt does not mention casi.html');
+}
+if (!llmsTxt.includes('so-funktioniert-es.html')) {
+  throw new Error('llms.txt does not mention so-funktioniert-es.html');
 }
 if (!llmsTxt.includes('## Success story pages')) {
   throw new Error('llms.txt is missing Success story pages section');
@@ -405,6 +428,9 @@ if (/\(https:\/\/abcspareparts\.eu\/[^)]*\?part=/.test(llmsTxt)) {
 }
 if (/\?lang=/.test(mainSitemap) || /\?part=/.test(mainSitemap)) {
   throw new Error('sitemap.xml must not contain ?lang= or ?part= URLs');
+}
+if (!mainSitemap.includes('/so-funktioniert-es.html')) {
+  throw new Error('sitemap.xml must include how-it-works pages');
 }
 if (indexHtml.includes('?lang=de') || indexHtml.includes("'?lang=' + lang") || indexHtml.includes('"?lang=" + lang')) {
   throw new Error('index.html must not publish ?lang= hreflang or rewrite links with ?lang=');
