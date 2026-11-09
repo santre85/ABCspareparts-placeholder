@@ -293,6 +293,7 @@ ${hreflang}
       <nav class="nav-links">
         <a href="${homeLink}" data-i18n="nav_home">${common.nav_home}</a>
         <a href="${navPrefix}marche.html" data-i18n="footer_brands">${common.footer_brands}</a>
+        <a href="${lang === 'de' ? '/so-funktioniert-es.html' : `/${lang}/so-funktioniert-es.html`}" data-i18n="footer_how">${FOOTER_I18N[lang].footer_how}</a>
         <a href="${navPrefix}impressum.html" data-i18n="nav_impressum">${common.nav_impressum}</a>
         <a href="${navPrefix}datenschutz.html" data-i18n="nav_datenschutz">${common.nav_datenschutz}</a>
         <a href="${navPrefix}agb.html" data-i18n="nav_agb">${common.nav_agb}</a>

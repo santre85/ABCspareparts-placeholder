@@ -384,6 +384,7 @@ ${FOOTER_CSS}
       <nav class="legal-nav">
         <a href="/" data-i18n="nav_home">Home</a>
         <a href="../marche.html" data-i18n="footer_brands">Marken</a>
+        <a href="/so-funktioniert-es.html" data-i18n="footer_how">So funktioniert es</a>
         <a href="../casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
         <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
       </nav>
@@ -734,6 +735,7 @@ ${FOOTER_CSS}
       <nav class="legal-nav">
         <a href="/" data-i18n="nav_home">Home</a>
         <a href="marche.html" data-i18n="footer_brands">Marken</a>
+        <a href="/so-funktioniert-es.html" data-i18n="footer_how">So funktioniert es</a>
         <a href="casi.html" data-i18n="footer_cases">Erfolgsgeschichten</a>
         <a href="/#contact" data-i18n="footer_contact">Kontakt</a>
       </nav>

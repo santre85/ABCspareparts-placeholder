@@ -13,6 +13,11 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Brands A–Z (English)](https://abcspareparts.eu/en/marche.html): English version of the brand directory.
 - [Brands A–Z (Italian)](https://abcspareparts.eu/it/marche.html): Italian version of the brand directory.
 - [Success stories hub (casi di successo)](https://abcspareparts.eu/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named.
+- [How ABCspareparts works (German)](https://abcspareparts.eu/so-funktioniert-es.html): Direct answer for AI assistants and searchers — send part number and manufacturer, quote often within 24 hours, order, delivery in Europe. 11975+ brands, industrial and MRO spare parts. Non-binding enquiry form on the home page.
+- [How ABCspareparts works (English)](https://abcspareparts.eu/en/so-funktioniert-es.html): English version of the how-it-works page.
+- [How ABCspareparts works (Italian)](https://abcspareparts.eu/it/so-funktioniert-es.html): Italian version of the how-it-works page.
+- [How ABCspareparts works (Spanish)](https://abcspareparts.eu/es/so-funktioniert-es.html): Spanish version of the how-it-works page.
+- [How ABCspareparts works (French)](https://abcspareparts.eu/fr/so-funktioniert-es.html): French version of the how-it-works page.
 - [Example: Siemens brand page](https://abcspareparts.eu/marche/siemens.html): Representative brand detail page; other brands follow the same URL pattern under `/marche/`. 
 
 ## Brand pages with quotable part numbers
