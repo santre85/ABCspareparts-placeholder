@@ -640,6 +640,12 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://abcspareparts.eu/marche/rickmeier.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://abcspareparts.eu/marche/rittal.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
