@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-07",
+  "imported": "2026-11-10",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -938,6 +938,10 @@
         {
           "part_number": "SPC/171502",
           "description": "Zylinder SPC/171502"
+        },
+        {
+          "part_number": "VP2310BD461MB200",
+          "description": "Proportional pressure control valve"
         }
       ]
     },
@@ -1620,6 +1624,10 @@
         {
           "part_number": "A4895",
           "description": "NOVEXX A4895Ersatzteil Stativ H+V Spindel-,verstellung L = 390/1500 mm"
+        },
+        {
+          "part_number": "A9029",
+          "description": "Andruckrollen-Kit 2 Fuer L-Spe ndek.100mm"
         }
       ]
     },
@@ -2058,6 +2066,20 @@
         {
           "part_number": "MDK041B-144-GP0-KN",
           "description": "Servoantrieb"
+        }
+      ]
+    },
+    {
+      "brand": "RICKMEIER",
+      "brand_slug": "rickmeier",
+      "parts": [
+        {
+          "part_number": "466155",
+          "description": "Spare set R65/400...630 FL-Z-FKM-P10Net weight: 0,60 kg / pc.customs tariff code: 84139100"
+        },
+        {
+          "part_number": "466255",
+          "description": "Set of gearshafts R65/500 ZNet weight: 13,10 kg / pc.customs tariff code: 84139100"
         }
       ]
     },

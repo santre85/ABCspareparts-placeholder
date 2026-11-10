@@ -22,7 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-151 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302165 part references.
+152 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302169 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -74,7 +74,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [HUMPHREY](https://abcspareparts.eu/marche/humphrey.html): 41024VDC
 - [Hydac](https://abcspareparts.eu/marche/hydac.html): 2103421, 2108819, 2110629, 2114310 (+26 more)
 - [IFM](https://abcspareparts.eu/marche/ifm.html): EVC001, EVC100, EVC200, EVC500 (+14787 listino codes, search on page)
-- [IMI NORGREN](https://abcspareparts.eu/marche/imi-norgren.html): QM/1525/75/27, QM/1525/75/29, SPC/141548, SPC/171502
+- [IMI NORGREN](https://abcspareparts.eu/marche/imi-norgren.html): QM/1525/75/27, QM/1525/75/29, SPC/141548, SPC/171502 (+1 more)
 - [Impa](https://abcspareparts.eu/marche/impa.html): 732658, 750551
 - [Indramat](https://abcspareparts.eu/marche/indramat.html): ID268508, DKC11.3-040-7-FW R911279433 (Refurbished)
 - [INGETEAM](https://abcspareparts.eu/marche/ingeteam.html): AAX0052
@@ -112,7 +112,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [NINGBO HONGBO WEITE MOTOR CO.,LTD](https://abcspareparts.eu/marche/ningbo-hongbo-weite-motor-co-ltd.html): HB18065HA2B
 - [NIVUS](https://abcspareparts.eu/marche/nivus.html): NF7-5S1E1A001, OCF-02W0ACE, ZUB0NFW0IP68
 - [Norgren](https://abcspareparts.eu/marche/norgren.html): 8020865
-- [NOVEXX](https://abcspareparts.eu/marche/novexx.html): A101972, A101974, A4895
+- [NOVEXX](https://abcspareparts.eu/marche/novexx.html): A101972, A101974, A4895, A9029
 - [Omec](https://abcspareparts.eu/marche/omec.html): AA34222022T001-C, AA34222051T001-C
 - [PALAZZANI](https://abcspareparts.eu/marche/palazzani.html): 0014140082, 0014140085, 0050120247, 0053070049 (+1 more)
 - [Parker](https://abcspareparts.eu/marche/parker.html): A36LB2126
@@ -130,6 +130,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Rafi](https://abcspareparts.eu/marche/rafi.html): 1.69507.105/1502
 - [Renishaw](https://abcspareparts.eu/marche/renishaw.html): A-5191-0049
 - [Rexroth](https://abcspareparts.eu/marche/rexroth.html): 1PV2V5‑22/08REC‑1MC70A1, A10VSO28DFR1/31L-PPA12N, MDK041B-144-GP0-KN
+- [RICKMEIER](https://abcspareparts.eu/marche/rickmeier.html): 466155, 466255
 - [Rittal](https://abcspareparts.eu/marche/rittal.html): SK 3305500
 - [Rockwell](https://abcspareparts.eu/marche/rockwell.html): 1734-AENT, 1734-EP24DC, 1734-IB4, 1734-OB4E (+25 more)
 - [Roemheld](https://abcspareparts.eu/marche/roemheld.html): HBZ 500160/100/100
@@ -1506,6 +1507,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [IMI NORGREN QM/1525/75/29](https://abcspareparts.eu/marche/imi-norgren.html#quote=QM%2F1525%2F75%2F29) — CYLINDER ACCESSORY/REPLACEMENT PART
 - [IMI NORGREN SPC/141548](https://abcspareparts.eu/marche/imi-norgren.html#quote=SPC%2F141548) — Entkuppelzylinder 50/Hub=80mm EW P-Zyli*
 - [IMI NORGREN SPC/171502](https://abcspareparts.eu/marche/imi-norgren.html#quote=SPC%2F171502) — Zylinder SPC/171502
+- [IMI NORGREN VP2310BD461MB200](https://abcspareparts.eu/marche/imi-norgren.html#quote=VP2310BD461MB200) — Proportional pressure control valve
 - [Impa 732658](https://abcspareparts.eu/marche/impa.html#quote=732658) — STAINLESS STEEL THREATED REDUCING NIPPLES / SIZE: 3/4X1/2
 - [Impa 750551](https://abcspareparts.eu/marche/impa.html#quote=750551) — MARINE BRONZE 20 KGF/CM2 GLOBE VALVE F-7388 / SIZE: M20X1.5
 - [Indramat ID268508, DKC11.3-040-7-FW R911279433 (Refurbished)](https://abcspareparts.eu/marche/indramat.html#quote=ID268508%2C%20DKC11.3-040-7-FW%20R911279433%20(Refurbished)) — Servoregler
@@ -1623,6 +1625,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [NOVEXX A101972](https://abcspareparts.eu/marche/novexx.html#quote=A101972) — Label Sensor without Cable
 - [NOVEXX A101974](https://abcspareparts.eu/marche/novexx.html#quote=A101974) — Label Sensor (with Cable)
 - [NOVEXX A4895](https://abcspareparts.eu/marche/novexx.html#quote=A4895) — NOVEXX A4895Ersatzteil Stativ H+V Spindel-,verstellung L = 390/1500 mm
+- [NOVEXX A9029](https://abcspareparts.eu/marche/novexx.html#quote=A9029) — Andruckrollen-Kit 2 Fuer L-Spe ndek.100mm
 - [Omec AA34222022T001-C](https://abcspareparts.eu/marche/omec.html#quote=AA34222022T001-C) — OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC150°C / Shaft 24j6 / 165x130j6x200 / Ral 7031 / Fixed with circ…
 - [Omec AA34222051T001-C](https://abcspareparts.eu/marche/omec.html#quote=AA34222051T001-C) — OMT1-IE3 90L2 2,2kW 400/690V 50Hz B3 Iso F-B / IP55 / PTC150°C / Shaft 24j6 / Ral 7031 / Fixed with circlip
 - [PALAZZANI 0014140082](https://abcspareparts.eu/marche/palazzani.html#quote=0014140082) — AIR FILTER
@@ -1708,6 +1711,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Rexroth 1PV2V5‑22/08REC‑1MC70A1](https://abcspareparts.eu/marche/rexroth.html#quote=1PV2V5%E2%80%9122%2F08REC%E2%80%911MC70A1) — Pump
 - [Rexroth A10VSO28DFR1/31L-PPA12N](https://abcspareparts.eu/parts/rexroth/a10vso28dfr1-31l-ppa12n.html)
 - [Rexroth MDK041B-144-GP0-KN](https://abcspareparts.eu/marche/rexroth.html#quote=MDK041B-144-GP0-KN) — Servoantrieb
+- [RICKMEIER 466155](https://abcspareparts.eu/marche/rickmeier.html#quote=466155) — Spare set R65/400...630 FL-Z-FKM-P10Net weight: 0,60 kg / pc.customs tariff code: 84139100
+- [RICKMEIER 466255](https://abcspareparts.eu/marche/rickmeier.html#quote=466255) — Set of gearshafts R65/500 ZNet weight: 13,10 kg / pc.customs tariff code: 84139100
 - [Rittal SK 3305500](https://abcspareparts.eu/marche/rittal.html#quote=SK%203305500) — TopTherm wall-mounted cooling unit Blue e 0.3 - 4 kW
 - [Rockwell 1734-AENT](https://abcspareparts.eu/marche/rockwell.html#quote=1734-AENT) — Ethernet Adapter
 - [Rockwell 1734-EP24DC](https://abcspareparts.eu/marche/rockwell.html#quote=1734-EP24DC) — EXTENDED POWER MODULE
@@ -1985,8 +1990,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 151 high-priority brand URLs
-- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11824 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 152 high-priority brand URLs
+- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11823 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)

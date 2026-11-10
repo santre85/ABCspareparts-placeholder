@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact) + erp-items.json (viqua) + erp-items.json (pitco) + erp-items.json (m-and-s-armaturen) + erp-items.json (measurex) + erp-items.json (powasert) + erp-items.json (zetkama) + erp-items.json (parker) + erp-items.json (keystone) + erp-items.json (bosch-rexroth) + erp-items.json (woodward) + erp-items.json (kfm) + erp-items.json (caterpillar) + erp-items.json (nivus) + erp-items.json (siemens) + erp-items.json (woodward) + erp-items.json (novexx) + erp-items.json (fasco) + erp-items.json (smc) + erp-items.json (ascon-technologic)",
-  "generated": "2026-11-07",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact) + erp-items.json (viqua) + erp-items.json (pitco) + erp-items.json (m-and-s-armaturen) + erp-items.json (measurex) + erp-items.json (powasert) + erp-items.json (zetkama) + erp-items.json (parker) + erp-items.json (keystone) + erp-items.json (bosch-rexroth) + erp-items.json (woodward) + erp-items.json (kfm) + erp-items.json (caterpillar) + erp-items.json (nivus) + erp-items.json (siemens) + erp-items.json (woodward) + erp-items.json (novexx) + erp-items.json (fasco) + erp-items.json (smc) + erp-items.json (ascon-technologic) + erp-items.json (rickmeier) + erp-items.json (novexx) + erp-items.json (imi-norgren)",
+  "generated": "2026-11-10",
   "listini_files": 301648,
   "brands": [
     {
@@ -1019,6 +1019,10 @@
         {
           "part_number": "SPC/171502",
           "description": "Zylinder SPC/171502"
+        },
+        {
+          "part_number": "VP2310BD461MB200",
+          "description": "Proportional pressure control valve"
         }
       ]
     },
@@ -1718,6 +1722,10 @@
         {
           "part_number": "A4895",
           "description": "NOVEXX A4895Ersatzteil Stativ H+V Spindel-,verstellung L = 390/1500 mm"
+        },
+        {
+          "part_number": "A9029",
+          "description": "Andruckrollen-Kit 2 Fuer L-Spe ndek.100mm"
         }
       ]
     },
@@ -2162,6 +2170,20 @@
         {
           "part_number": "MDK041B-144-GP0-KN",
           "description": "Servoantrieb"
+        }
+      ]
+    },
+    {
+      "brand": "RICKMEIER",
+      "brand_slug": "rickmeier",
+      "parts": [
+        {
+          "part_number": "466155",
+          "description": "Spare set R65/400...630 FL-Z-FKM-P10Net weight: 0,60 kg / pc.customs tariff code: 84139100"
+        },
+        {
+          "part_number": "466255",
+          "description": "Set of gearshafts R65/500 ZNet weight: 13,10 kg / pc.customs tariff code: 84139100"
         }
       ]
     },
