@@ -1,4 +1,7 @@
 item_code	brand	description
+#VO202600725100010	BIESSE	KUPPLUNG FNAS350033
+.	Powasert	Rotor-Gehäuse gebraucht Sonderpreis Gewicht pro Stück: 0,000 kg
+00.002.618	Meteor	MOTO RID. Ø6 24 VDC 151 RPM (RAP 33) DC30 METEOR MOTO RID. Ø6 230 VAC 30 RPM UL
 00017135	Kolbus	Linear Bearing
 00017143	Kolbus	Guide
 0002019985	Caterpillar	Caterpillar 0002019985Außenspiegel
@@ -24,6 +27,8 @@ item_code	brand	description
 0306.1115.4	Müller Martini	AnschlagUrsprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,302 KG
 0306.1116.4	Müller Martini	AnschlagUrsprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,292 KG
 0634713	HENGSTLER	HENGSTLER IMP.ZAE 24DC 7ST RO
+0801A0214	BIESSE	FLANSCH
+0806C0048	BIESSE	Distanzring
 0881.0006.4	Müller Martini	Hebel FL40/11,9Ursprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,116 KG
 0881.0125.3	Müller Martini	Umbiegeflügel FL15/1,9X13,64Ursprungsland: CH Zolltarifnummer: 73269000 Gewicht: 0,008 KG
 0881.4015.3	Müller Martini	Pliers with a CLAMP HEAD
@@ -65,6 +70,7 @@ item_code	brand	description
 1211500 / 18481699	Sick	DETEC4 CORE C4C-EA10530A10000Barriera SICK ricevitore mm 1050 ,Portata 0–10 m
 1214948		TLD 1214948
 123	IFM	ifm electronic O6G500/OG5PGFAKG/US Lichtschranke/Distanzsensor
+1234-abcsp	Sulzer	10 Meter cable
 127-0354	Kepco	Circuit Breaker
 13144.04	Baldwin	RUECKSCHLAGVENTIL I.RV 0015.RGG 1/4",0.2 BAR
 13144.05	Baldwin	RUECKSCHLAGVENTIL IRV 0013G 1/4",0,2 BAR
@@ -116,6 +122,8 @@ item_code	brand	description
 1SDA074166R1	ABB	EKIP COM ACTUATOR
 20093082	BÜRKERT	BÜRKERT 20093082Ventilmembran DN25
 2027180	Sick	FRONTALINO RICAMBIO RADAR SICK 3000
+20880002	Kockum Sonics	Crankshaft Bearing84821090 - IT
+20880003	Kockum Sonics	Crankshaft Bearing84821090 - IT
 2094-BC04-M03-S	Rockwell	SERVO DRIVE
 2094-BC07-M05-S	Rockwell	Servo Drive
 2094-BM02-S	Rockwell	SERVO DRIVE
@@ -131,6 +139,7 @@ item_code	brand	description
 2128849	HYDAC	ADAPTER FPU A10-7/8-14-UNF HYDAC (BAUGR)
 2146305	HAUSER	EX19 Collet Set for 45 S Grinding Motor, suitable for speeds from 9,000 to 45,000 rpm; collet diameters: 3, 4, 5, 6, 8 and 10 mm
 215009	HERRMANN	HSG V2 ultrasonic hand-held welding machine with plastic housing
+21768049	Kockum Sonics	Packing 170/72 X 385319000 - PH
 220390	PRONOMIC	Charger LiftDrive
 2295554	Phoenix contact	PLC-V8/FLK14/OUT
 2296058	Phoenix contact	PLC-V8/D15S/OUT
@@ -149,6 +158,7 @@ item_code	brand	description
 2320186	Phoenix contact	QUINT-PS/24DC/24DC/20/CO
 236376	HYDAC	UEBERG-ST FPU G2-G5/8-ISO228 (BAUGR)
 236515	HYDAC	charging hose F W24,32x1/14 (4,0m)
+24530268	Kockum Sonics	Motor Gear Wheel for 60HZ MTX150/13084839089 - SE
 24530291	Kockum Sonics	Piston Rod Complete MT150 /MTX150 (21768054)
 24800287	Kockum Sonics	Electrotyfon MTX 150/130 + TK80 440V 60HzPiston Rod Complete MT150/MTX150 (21768054) is included
 24800703	Kockum Sonics	Motor set MTX 440V
@@ -178,6 +188,7 @@ item_code	brand	description
 2903156	Phoenix  Contact	TRIO-PS-2G/3AC/24DC/40
 2903158	Phoenix contact	Phoenix Contact 2903158TRIO-PC-2G/1AC/12DC/10 (2903158)PHOENIX CONTACT · POWER SUPPLY,PHOENIX,2903158,10A,120W · TRIO-PC-2G/1AC/12DC/10 (2903158)
 2903670	Phoenix contact	REL-IR/LDP- 24DC/4X21AU
+2903A0041	BIESSE	Kugellager 15-35-11
 2904598	Phoenix contact	Phoenix Contact 2904598QUINT4-PS/1AC/24DC/2.5/SC (2904598)PHOENIX CONTACT · POWER SUPPLY,PHOENIX,2904598,2.5A,24VDC · QUINT4-PS/1AC/24DC/2.5/SC (29045
 2904601	Phoenix contact	QUINT-PS/24DC/24DC/20/CO
 2904602	Phoenix contact	QUINT4-PS/1AC/24DC/20
@@ -189,6 +200,7 @@ item_code	brand	description
 291533	HYDAC	ADAPTER FPU A3-7/8-14UNF HYDAC
 291536	HYDAC	ADAPTER FPU A4-7/8-14UNF OLAER (BAUGR)
 292101300	BIESSE	Kugel D. 13 MM IN NYLON
+292876-1	Ebro	Hauptbremszylinder
 2938581	Phoenix contact	Phoenix Contact 2938581QUINT-PS-100-240AC/24DC/5 (2938581)PHOENIX CONTACT · POWER SUPPLY UNIT,PHOE-CON,2938581,24VDC · QUINT-PS-100-240AC/24DC/5 (2938
 2938879	Phoenix contact	Phoenix Contact 2938879QUINT-PS-100-240AC/24DC/40 (2938879)PHOENIX CONTACT · POWER SUPPLY,PHOE-CON,QUINTPS100240AC24+ · QUINT-PS-100-240AC/24DC/40 (29
 2961105	Phoenix contact	REL-MR- 24DC/21
@@ -208,6 +220,7 @@ item_code	brand	description
 2A.0B.A2.6B	HERBORNER PUMPEN	Mechanical seal elastomer bellow D24mmItem 433
 2DEPFE000216	ALWITCO	216 PFD - FILTERNDE ELEMENT
 3 520 068	HENGSTLER	BALGKUPPLUNG 6 - 6
+3017A0041	BIESSE	NUTMUTTER [M15X1]
 3018210	HYDAC	ADAPTER FPU A11-M16x2 Hydac (BAUGR)
 3019418	HYDAC	charging hose FM M30x1,5 (4,0m)
 3019420	HYDAC	charging hose FW W30x2 (4,0m)
@@ -215,6 +228,7 @@ item_code	brand	description
 311001700	BIESSE	DICHTRING OR 2068
 311002000	BIESSE	RING
 311003900	BIESSE	O-RING 15.88 x 2.62 - OR 121
+3121A0013	BIESSE	DICHTUNG
 31629869	Totalsource	Valve Pilot
 3175P003	MST	Spring
 3203185	HYDAC	ADAPTER FPU A12-M16x2 MINIMESS (BAUGR)
@@ -385,6 +399,10 @@ AA34222022T001-C	Omec	OMT1-IE3 90L2 2,2kW 230/400V 50Hz V1Iso F-B / IP55 / PTC15
 AA34222051T001-C	Omec	OMT1-IE3 90L2 2,2kW 400/690V 50Hz B3 Iso F-B / IP55 / PTC150°C / Shaft 24j6 / Ral 7031 / Fixed with circlip
 AAX0052	Ingeteam	RS485 communication board
 ABC04016	CISCO	Cornetta per Cisco SPA504G (Serie SPA 500)
+AC0502-0108	Powasert	KugellagerZolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,011 kg
+AC0502-0155	Powasert	KugellagerZolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,004 kg
+AC4110-0621-90	Powasert	Lamellen ( Satz, 5 Stk ) Zolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,005 kg
+AC4430-0503	Powasert	SpannmutterZolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,064 kg
 AD1015	SEPATRON	ADAMAS C18 CLASSIC 1.8µm - 100mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959758-902
 AD1035	SEPATRON	ADAMAS C18 CLASSIC 1.8µm - 150mm x 2.1mm ID -UHPLC COLUMN equiv. Agilent 959759-902
 ADS-2290RDKPL	Powasert	Motor
@@ -395,6 +413,7 @@ ASF3-25RD-200240L	Steimel	Pump unit
 ATS-U M	Phoenix  Contact	SEPARATOR PLATE
 AX09 165/10	ALFAMATIC	PNEUMO-HYDRAULIC CYLINDER
 AZPF-11-008RCB20MB	BOSCH REXROTH	PumpRefurbished12 months warranty
+Arbeitszeit		Arbeitszeit
 B-SC9291	MADATEC	RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5190-7021
 BA7-040	SMC	Auto‑switch mounting bracket, tie‑rod mounting, for CA2‑Z / MB‑Z cylinders, suitable for D‑A9 and D‑M9 auto switches, size 40 mm
 BG 75x50	DUNKERMOTOREN	DC-Motor 40V 3500rpm 12A
@@ -403,6 +422,8 @@ Best.-Nr. D-VENTIL	Baelz	Ventil, komplett montiert ohne Druckluft Weg A-AB gesch
 C7-20/174642	MULAG	MULAG C7-20/174642
 CK 82/098/102/25		PEVOLON Laufrolle mit Kugellager.Technische Eigenschaften Außen-Ø : 82,0 mm Breite : 98,0 mm Nabenlänge : 98,0 mmEinspannlänge : 102,0 mmLagerart : Ri
 CS ME-03XU24	Pizzato	Expansion module
+CSV4780060	BIESSE	Gewindestange
+CTM039M8	Sauro	terminal block
 D-M9P	SMC	Solid state auto switch, direct mounting style for pneumatic cylinders, PNP output, 3‑wire type, in‑line cable entry, power supply 5–28 VDC, max. load
 D-UT 4/1P-H	Phoenix  Contact	CONTROL TERMINAL END COVER
 D1050A	Fasco	FASCO D1050A OEM Replacement Motor, 1/8 HP, 1 Phase, 60 Hz,230 V, 1550 rpm, 1 Speed, 42 Frame
@@ -415,10 +436,13 @@ DST100	AMPLIDAN - DNH	DNH Driver unit ALU 100W 100V IP67 RAL7035
 DataMan 300 – 10.3mm Liquid Lens Kit	Cognex	Liquid lens kit
 ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)	Rotork	Endlagenrückmeldung wie folgt: / Limit switch box as follows: SK = Gehäuse aus Aluminiumdruckguss / Die-cast aluminium enclosure 70 = Induktiver NAMUR
 EM1-1-1	Leg	Effektivwertmesser mit Grenzwertschalter 1w,Versorgung 24VDCEingang: 0...10VACAusgang: 0...10VDCStat. commodity no.: 85389091Origin: Germany, Weight: 
+EMBSTS7041	ICE	Base for STS 7041
 EN580C.ML-BN12.HH2PB.21160.H	Baumer	Absoluter Drehgeber
 EN580C.ML-BN12.HH2PB.21160.H-11262807	Baumer	Absoluter Drehgeber EN580C
 EN580C.ML-SC10.HH2C1.21160.H-11267453	Baumer	Absoluter Drehgeber EN580C (successor of GXMMW.0205P32)
+ES26A	Zanardo	H300 x L400 x D120 Stainless Steel 304 Derivation Box with Screw-on Blind Cover, cULus Certified Type 1, 3R, 4, 4X, 12
 F4BC-20M-CPSS-DFH-ECB-504	SKF	Kugellager
+FNX2500094	BIESSE	BALGEN
 FRACHTKOSTEN		Delivery & Packaging
 G121SN01 V.4	AUO	LCD MATRIX
 GL-676-050-V	M&S Armaturen	SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)
@@ -500,6 +524,7 @@ SOFT PART SET	Gorter	For REGULATING VALVE ASSY: MODEL: R100S SIZE: 8" / 600#S/No
 SPC/141548	IMI NORGREN	Entkuppelzylinder 50/Hub=80mm EW P-Zyli*
 SPC/171502	IMI NORGREN	Zylinder SPC/171502
 SR-X100	Keyence	AI-Powered 1D/2D Code Reader – Standard Model (1.4 MP)
+STS7041	ICE	Check Synchronising Protective Relay Référence n° : LDR STS7041 Indice : D
 SZ-VH1X	Keyence	TESTA SCANNER KEYENCE SZ-VH1X PER MODELLI CON TELECAMERA
 Sechskantmutter MM-SW19/M16x1,5 2,8 Ms *	PMA	Size/dimension: SW19/M16X1,5 2,8 Werkstoff: Ms GalNi
 T.115.SR.7.R.L.17.501.A.16.116	MOTOR POWER COMPANY	Servomotor

@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-10",
+  "imported": "2026-11-15",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -216,6 +216,18 @@
       "brand_slug": "biesse",
       "parts": [
         {
+          "part_number": "#VO202600725100010",
+          "description": "KUPPLUNG FNAS350033"
+        },
+        {
+          "part_number": "0801A0214",
+          "description": "FLANSCH"
+        },
+        {
+          "part_number": "0806C0048",
+          "description": "Distanzring"
+        },
+        {
           "part_number": "091604600",
           "description": "Zylinder für Saugerkugel"
         },
@@ -236,8 +248,16 @@
           "description": "DRUCKFEDER FÜR VAKUUMTELLER"
         },
         {
+          "part_number": "2903A0041",
+          "description": "Kugellager 15-35-11"
+        },
+        {
           "part_number": "292101300",
           "description": "Kugel D. 13 MM IN NYLON"
+        },
+        {
+          "part_number": "3017A0041",
+          "description": "NUTMUTTER [M15X1]"
         },
         {
           "part_number": "311001700",
@@ -252,8 +272,20 @@
           "description": "O-RING 15.88 x 2.62 - OR 121"
         },
         {
+          "part_number": "3121A0013",
+          "description": "DICHTUNG"
+        },
+        {
           "part_number": "6420A0119",
           "description": "Wartungseinheit"
+        },
+        {
+          "part_number": "CSV4780060",
+          "description": "Gewindestange"
+        },
+        {
+          "part_number": "FNX2500094",
+          "description": "BALGEN"
         }
       ]
     },
@@ -440,6 +472,16 @@
         {
           "part_number": "BG 75x50",
           "description": "DC-Motor 40V 3500rpm 12A"
+        }
+      ]
+    },
+    {
+      "brand": "Ebro",
+      "brand_slug": "ebro",
+      "parts": [
+        {
+          "part_number": "292876-1",
+          "description": "Hauptbremszylinder"
         }
       ]
     },
@@ -906,6 +948,20 @@
       ]
     },
     {
+      "brand": "ICE",
+      "brand_slug": "ice",
+      "parts": [
+        {
+          "part_number": "EMBSTS7041",
+          "description": "Base for STS 7041"
+        },
+        {
+          "part_number": "STS7041",
+          "description": "Check Synchronising Protective Relay Référence n° : LDR STS7041 Indice : D"
+        }
+      ]
+    },
+    {
       "brand": "IFM",
       "brand_slug": "ifm",
       "parts": [
@@ -1097,6 +1153,22 @@
       "brand": "Kockum Sonics",
       "brand_slug": "kockum-sonics",
       "parts": [
+        {
+          "part_number": "20880002",
+          "description": "Crankshaft Bearing84821090 - IT"
+        },
+        {
+          "part_number": "20880003",
+          "description": "Crankshaft Bearing84821090 - IT"
+        },
+        {
+          "part_number": "21768049",
+          "description": "Packing 170/72 X 385319000 - PH"
+        },
+        {
+          "part_number": "24530268",
+          "description": "Motor Gear Wheel for 60HZ MTX150/13084839089 - SE"
+        },
         {
           "part_number": "24530291",
           "description": "Piston Rod Complete MT150 /MTX150 (21768054)"
@@ -1350,6 +1422,16 @@
         {
           "part_number": "MREL119040212213",
           "description": "BRUSHLESS,DC MOTOR,24VDC,2346RPMP/N: DCB2106"
+        }
+      ]
+    },
+    {
+      "brand": "METEOR",
+      "brand_slug": "meteor",
+      "parts": [
+        {
+          "part_number": "00.002.618",
+          "description": "MOTO RID. Ø6 24 VDC 151 RPM (RAP 33) DC30 METEOR MOTO RID. Ø6 230 VAC 30 RPM UL"
         }
       ]
     },
@@ -1974,6 +2056,26 @@
       "brand_slug": "powasert",
       "parts": [
         {
+          "part_number": ".",
+          "description": "Rotor-Gehäuse gebraucht Sonderpreis Gewicht pro Stück: 0,000 kg"
+        },
+        {
+          "part_number": "AC0502-0108",
+          "description": "KugellagerZolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,011 kg"
+        },
+        {
+          "part_number": "AC0502-0155",
+          "description": "KugellagerZolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,004 kg"
+        },
+        {
+          "part_number": "AC4110-0621-90",
+          "description": "Lamellen ( Satz, 5 Stk ) Zolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,005 kg"
+        },
+        {
+          "part_number": "AC4430-0503",
+          "description": "SpannmutterZolltarifnummer: 847990 Ursprungsland -NU Gewicht pro Stück: 0,064 kg"
+        },
+        {
           "part_number": "ADS-2290RDKPL",
           "description": "Motor"
         }
@@ -2242,6 +2344,16 @@
         {
           "part_number": "ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)",
           "description": "Endlagenrückmeldung wie folgt: / Limit switch box as follows: SK = Gehäuse aus Aluminiumdruckguss / Die-cast aluminium…"
+        }
+      ]
+    },
+    {
+      "brand": "Sauro",
+      "brand_slug": "sauro",
+      "parts": [
+        {
+          "part_number": "CTM039M8",
+          "description": "terminal block"
         }
       ]
     },
@@ -2638,6 +2750,10 @@
       "brand_slug": "sulzer",
       "parts": [
         {
+          "part_number": "1234-abcsp",
+          "description": "10 Meter cable"
+        },
+        {
           "part_number": "XFP150G CB1.3",
           "description": "Girante / Laufrad"
         }
@@ -2898,6 +3014,16 @@
         {
           "part_number": "8445-1046 (ex. 5448-902 )",
           "description": "Esepro Profibus Gateway for Canopen Controllers"
+        }
+      ]
+    },
+    {
+      "brand": "ZANARDO",
+      "brand_slug": "zanardo",
+      "parts": [
+        {
+          "part_number": "ES26A",
+          "description": "H300 x L400 x D120 Stainless Steel 304 Derivation Box with Screw-on Blind Cover, cULus Certified Type 1, 3R, 4, 4X, 12"
         }
       ]
     },

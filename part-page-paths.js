@@ -29,6 +29,10 @@ function sanitizePartCode(code) {
 function isSearchablePartCode(code) {
   const s = sanitizePartCode(code);
   if (!s || s.length > 80) return false;
+  // "." and similar punctuation-only ERP placeholders cannot form a /parts/ filename
+  // (slugify yields empty → hidden ".html", which Jekyll/GitHub Pages will not publish).
+  if (!/[A-Za-z0-9]/.test(s)) return false;
+  if (!slugifyPartCode(s)) return false;
   const alphaWords = s
     .split(/[\s\u2013\u2014/,]+/)
     .map((w) => w.replace(/[.:]+$/g, ''))
