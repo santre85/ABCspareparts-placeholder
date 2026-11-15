@@ -160,6 +160,12 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://abcspareparts.eu/marche/ebro.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://abcspareparts.eu/marche/euchner.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -298,6 +304,12 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://abcspareparts.eu/marche/ice.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://abcspareparts.eu/marche/ifm.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -305,7 +317,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/imi-norgren.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -466,6 +478,12 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://abcspareparts.eu/marche/meteor.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://abcspareparts.eu/marche/mettler-toledo.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -533,7 +551,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/novexx.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -641,7 +659,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/rickmeier.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -671,6 +689,12 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/rotork.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abcspareparts.eu/marche/sauro.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -893,6 +917,12 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/woodward.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abcspareparts.eu/marche/zanardo.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
