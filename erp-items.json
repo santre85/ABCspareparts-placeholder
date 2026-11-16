@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-15",
+  "imported": "2026-11-16",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -802,16 +802,6 @@
       ]
     },
     {
-      "brand": "Hübner Elektromaschinen AG",
-      "brand_slug": "hubner-elektromaschinen-ag",
-      "parts": [
-        {
-          "part_number": "GT9.06L/420k",
-          "description": "Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…"
-        }
-      ]
-    },
-    {
       "brand": "HUMPHREY",
       "brand_slug": "humphrey",
       "parts": [
@@ -944,6 +934,16 @@
         {
           "part_number": "635143",
           "description": "Pressure gauge 0-400bar"
+        }
+      ]
+    },
+    {
+      "brand": "Hübner Elektromaschinen AG",
+      "brand_slug": "hubner-elektromaschinen-ag",
+      "parts": [
+        {
+          "part_number": "GT9.06L/420k",
+          "description": "Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…"
         }
       ]
     },
@@ -1252,20 +1252,6 @@
       ]
     },
     {
-      "brand": "Kübler",
-      "brand_slug": "kubler",
-      "parts": [
-        {
-          "part_number": "279383",
-          "description": "1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…"
-        },
-        {
-          "part_number": "8.F5863.1234.G221",
-          "description": "1 =Klemmflansch, ø 58 mm, IP65 2 =ø10mmx20mm 3 =SSI, BiSS + 2048 ppr SinCos / 5 V DC 4 =M23-Stecker radial, 12-polig G=…"
-        }
-      ]
-    },
-    {
       "brand": "Kuhnke",
       "brand_slug": "kuhnke",
       "parts": [
@@ -1286,6 +1272,20 @@
         {
           "part_number": "KP22580HA2BL-C",
           "description": "Hochleistungs-Axiallüfter für industrielle Anwendungen.Technische Daten:Spannung: 220V AC (50/60Hz)Leistung: 42W / 52WN…"
+        }
+      ]
+    },
+    {
+      "brand": "Kübler",
+      "brand_slug": "kubler",
+      "parts": [
+        {
+          "part_number": "279383",
+          "description": "1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…"
+        },
+        {
+          "part_number": "8.F5863.1234.G221",
+          "description": "1 =Klemmflansch, ø 58 mm, IP65 2 =ø10mmx20mm 3 =SSI, BiSS + 2048 ppr SinCos / 5 V DC 4 =M23-Stecker radial, 12-polig G=…"
         }
       ]
     },
@@ -1392,6 +1392,16 @@
         {
           "part_number": "V947",
           "description": "1.5ML AMBER 9MM SCREW VIAL W/WRITE- ON SPOT,11.6*32MM, 7.0 TYPE GLASS ( 100 PCS PACK) -EQUIV.AGILENT 5182-0516"
+        }
+      ]
+    },
+    {
+      "brand": "MANITOU",
+      "brand_slug": "manitou",
+      "parts": [
+        {
+          "part_number": "677394",
+          "description": "Electronic Card"
         }
       ]
     },
@@ -2318,16 +2328,6 @@
       ]
     },
     {
-      "brand": "Römheld",
-      "brand_slug": "romheld",
-      "parts": [
-        {
-          "part_number": "HBZ 500160/100/100",
-          "description": "Zylinder"
-        }
-      ]
-    },
-    {
       "brand": "ROSS",
       "brand_slug": "ross",
       "parts": [
@@ -2344,6 +2344,16 @@
         {
           "part_number": "ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)",
           "description": "Endlagenrückmeldung wie folgt: / Limit switch box as follows: SK = Gehäuse aus Aluminiumdruckguss / Die-cast aluminium…"
+        }
+      ]
+    },
+    {
+      "brand": "Römheld",
+      "brand_slug": "romheld",
+      "parts": [
+        {
+          "part_number": "HBZ 500160/100/100",
+          "description": "Zylinder"
         }
       ]
     },
@@ -2550,6 +2560,10 @@
           "description": "Circuit breaker"
         },
         {
+          "part_number": "6AG4141-5BC07-0DA0",
+          "description": "SIMATIC IPC427E (Microbox PC)"
+        },
+        {
           "part_number": "6AU1435­0AA0­0AA1",
           "description": "Simotion D435"
         },
@@ -2592,6 +2606,14 @@
         {
           "part_number": "6ES7318-3EL01-0AB0",
           "description": "SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP"
+        },
+        {
+          "part_number": "6ES7730-1AC24-0BA0",
+          "description": "SIMATIC IPC MD-57A"
+        },
+        {
+          "part_number": "6ES7822-1AE24-0YA5",
+          "description": "SIMATIC STEP 7 Prof. V20, Floating License"
         },
         {
           "part_number": "6SL3055-0AA00-5BA1",
