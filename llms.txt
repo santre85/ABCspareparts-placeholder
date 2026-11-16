@@ -22,7 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-157 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302193 part references.
+158 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302197 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -100,6 +100,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [M&S Armaturen](https://abcspareparts.eu/marche/m-and-s-armaturen.html): 03052-2001010, 03052-2002010, 03052-2003010, 56040-0250700 (+9 more)
 - [M+S Hydraulic](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html): MMS50C
 - [MADATEC](https://abcspareparts.eu/marche/madatec.html): B-SC9291, V947
+- [MANITOU](https://abcspareparts.eu/marche/manitou.html): 677394
 - [Matrix Elektronik](https://abcspareparts.eu/marche/matrix-elektronik.html): IRS-U-4A
 - [MEASUREX](https://abcspareparts.eu/marche/measurex.html): 365-8050-0097-RP
 - [Mellor Electric](https://abcspareparts.eu/marche/mellor-electric.html): MREL119040212213
@@ -1589,6 +1590,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [M+S Hydraulic MMS50C](https://abcspareparts.eu/parts/m-plus-s-hydraulic/mms50c.html) — Hydraulic Motor
 - [MADATEC B-SC9291](https://abcspareparts.eu/marche/madatec.html#quote=B-SC9291) — RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5…
 - [MADATEC V947](https://abcspareparts.eu/marche/madatec.html#quote=V947) — 1.5ML AMBER 9MM SCREW VIAL W/WRITE- ON SPOT,11.6*32MM, 7.0 TYPE GLASS ( 100 PCS PACK) -EQUIV.AGILENT 5182-0516
+- [MANITOU 677394](https://abcspareparts.eu/marche/manitou.html#quote=677394) — Electronic Card
 - [Matrix Elektronik IRS-U-4A](https://abcspareparts.eu/marche/matrix-elektronik.html#quote=IRS-U-4A) — Sensore 20/28 VDC, uscita 0/10 VDC, cavo 3 m, distanza 400 mm
 - [MEASUREX 365-8050-0097-RP](https://abcspareparts.eu/marche/measurex.html#quote=365-8050-0097-RP) — PCBA Frame Controller IV(Refurb)
 - [Mellor Electric MREL119040212213](https://abcspareparts.eu/marche/mellor-electric.html#quote=MREL119040212213) — BRUSHLESS,DC MOTOR,24VDC,2346RPMP/N: DCB2106
@@ -1886,6 +1888,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Siemens 3SU1550-0AA10-0AA0](https://abcspareparts.eu/parts/siemens/3su1550-0aa10-0aa0.html) — Siemens 3SU1550-0AA10-0AA0
 - [Siemens 3WA1232-3AB03-2BL0](https://abcspareparts.eu/marche/siemens.html#quote=3WA1232-3AB03-2BL0) — Circuit breaker
 - [Siemens 3WL1232-2CB64-6AJ2](https://abcspareparts.eu/marche/siemens.html#quote=3WL1232-2CB64-6AJ2) — Circuit breaker
+- [Siemens 6AG4141-5BC07-0DA0](https://abcspareparts.eu/marche/siemens.html#quote=6AG4141-5BC07-0DA0) — SIMATIC IPC427E (Microbox PC)
 - [Siemens 6AU1435­0AA0­0AA1](https://abcspareparts.eu/parts/siemens/6au14350aa00aa1.html) — Simotion D435
 - [Siemens 6AV2 124-0MC01-0AX0](https://abcspareparts.eu/parts/siemens/6av2-124-0mc01-0ax0.html) — SIMATIC HMI TP1200 Comfort Panel
 - [Siemens 6AV2124-0MC010-AX0](https://abcspareparts.eu/parts/siemens/6av2124-0mc010-ax0.html) — SIMATIC HMI TP1200 COMFORT
@@ -1897,6 +1900,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Siemens 6AV6642-0BA01-1AX1 (NEW)](https://abcspareparts.eu/parts/siemens/6av6642-0ba01-1ax1-new.html)
 - [Siemens 6DR5622-0EG00-0AA0](https://abcspareparts.eu/marche/siemens.html#quote=6DR5622-0EG00-0AA0) — SIPART PS2 Smart, electropneumatic positioner, FOUNDATION Fieldbus, Ex/nEx, double-acting, SST enclosure, no window, fo…
 - [Siemens 6ES7318-3EL01-0AB0](https://abcspareparts.eu/parts/siemens/6es7318-3el01-0ab0.html) — SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP
+- [Siemens 6ES7730-1AC24-0BA0](https://abcspareparts.eu/marche/siemens.html#quote=6ES7730-1AC24-0BA0) — SIMATIC IPC MD-57A
+- [Siemens 6ES7822-1AE24-0YA5](https://abcspareparts.eu/marche/siemens.html#quote=6ES7822-1AE24-0YA5) — SIMATIC STEP 7 Prof. V20, Floating License
 - [Siemens 6SL3055-0AA00-5BA1](https://abcspareparts.eu/parts/siemens/6sl3055-0aa00-5ba1.html) — Sensor Module
 - [Siemens 6SL3055-0AA00-5BA3 (NEW)](https://abcspareparts.eu/parts/siemens/6sl3055-0aa00-5ba3-new.html)
 - [Siemens 6SL3055-0AA00-5CA1](https://abcspareparts.eu/parts/siemens/6sl3055-0aa00-5ca1.html) — Sensor Module
@@ -2019,8 +2024,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 157 high-priority brand URLs
-- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11818 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 158 high-priority brand URLs
+- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11817 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)
