@@ -84,7 +84,13 @@ const BRAND_OVERRIDES = {
   // New brand pages approved 2026-10-28 (previously unmatched in PR #103)
   'MEASUREX': 'MEASUREX',
   'Powasert': 'Powasert',
-  'Kfm': 'Kfm'
+  'Kfm': 'Kfm',
+  // Packaging machinery (Benz & Hilgers GmbH / Benhil)
+  'Benz & Hilgers GmbH': 'Benz & Hilgers GmbH',
+  'Benz & Hilgers': 'Benz & Hilgers GmbH',
+  'BENZ & HILGERS GMBH': 'Benz & Hilgers GmbH',
+  'Benhil': 'Benz & Hilgers GmbH',
+  'BENHIL': 'Benz & Hilgers GmbH'
   // ABC - skipped as ambiguous (multiple ABC brands exist)
 };
 

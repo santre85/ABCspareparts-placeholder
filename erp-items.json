@@ -212,6 +212,16 @@
       ]
     },
     {
+      "brand": "Benz & Hilgers GmbH",
+      "brand_slug": "benz-hilgers",
+      "parts": [
+        {
+          "part_number": "300-475-0010",
+          "description": "Knife"
+        }
+      ]
+    },
+    {
       "brand": "Biesse",
       "brand_slug": "biesse",
       "parts": [

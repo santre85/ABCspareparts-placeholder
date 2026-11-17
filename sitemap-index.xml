@@ -5,7 +5,7 @@ layout: none
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap.xml</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-17</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-brands.xml</loc>
@@ -13,7 +13,7 @@ layout: none
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-brand-parts.xml</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://abcspareparts.eu/sitemap-cases.xml</loc>

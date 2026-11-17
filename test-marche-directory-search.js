@@ -100,7 +100,7 @@ async function main() {
   let browser;
   const started = Date.now();
   try {
-    ok(EXPECTED === 11975, `source-of-truth directoryBrandCount=${EXPECTED}`);
+    ok(EXPECTED === 11976, `source-of-truth directoryBrandCount=${EXPECTED}`);
     ok(!fs.existsSync(path.join(ROOT, 'marche/keysight.html')), 'Keysight still excluded');
     ok(!fs.existsSync(path.join(ROOT, 'marche/markem.html')), 'Markem still excluded');
 

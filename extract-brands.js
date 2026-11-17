@@ -35,12 +35,12 @@ function buildStaticBrandGroupsHtml(orderedKeys, groupsPayload) {
 
 function patchIndexHtml(brandCount, slugByBrand) {
   let idx = fs.readFileSync('index.html', 'utf8');
-  idx = idx.replace(/11960\+/g, `${brandCount}+`);
-  idx = idx.replace(/11960(?= marche)/g, String(brandCount));
-  idx = idx.replace(/Oltre 11960/g, `Oltre ${brandCount}`);
-  idx = idx.replace(/Más de 11960/g, `Más de ${brandCount}`);
-  idx = idx.replace(/Plus de 11960/g, `Plus de ${brandCount}`);
-  idx = idx.replace(/11960 brands/g, `${brandCount} brands`);
+  idx = idx.replace(/11976\+/g, `${brandCount}+`);
+  idx = idx.replace(/11976(?= marche)/g, String(brandCount));
+  idx = idx.replace(/Oltre 11976/g, `Oltre ${brandCount}`);
+  idx = idx.replace(/Más de 11976/g, `Más de ${brandCount}`);
+  idx = idx.replace(/Plus de 11976/g, `Plus de ${brandCount}`);
+  idx = idx.replace(/11976 brands/g, `${brandCount} brands`);
 
   const partsData = JSON.parse(fs.readFileSync('brand-order-parts.json', 'utf8'));
   const priorityLinks = (partsData.brands || [])

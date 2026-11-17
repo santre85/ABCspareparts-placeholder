@@ -27,7 +27,12 @@ const BRAND_ALIASES = {
   'HERBORNER PUMPEN': 'HERBORNER',
   'Hi force': 'Hi-Force Hydraulics',
   'Hübner': 'Hübner Elektromaschinen AG',
-  'Hubner': 'Hübner Elektromaschinen AG'
+  'Hubner': 'Hübner Elektromaschinen AG',
+  'Benz & Hilgers GmbH': 'Benz & Hilgers GmbH',
+  'Benz & Hilgers': 'Benz & Hilgers GmbH',
+  'BENZ & HILGERS GMBH': 'Benz & Hilgers GmbH',
+  'Benhil': 'Benz & Hilgers GmbH',
+  'BENHIL': 'Benz & Hilgers GmbH'
 };
 
 /** Ordini without brand → site brand */

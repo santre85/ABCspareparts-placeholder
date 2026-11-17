@@ -13,7 +13,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Brands A–Z (English)](https://abcspareparts.eu/en/marche.html): English version of the brand directory.
 - [Brands A–Z (Italian)](https://abcspareparts.eu/it/marche.html): Italian version of the brand directory.
 - [Success stories hub (casi di successo)](https://abcspareparts.eu/casi.html): Index of real spare-part supply success stories — brand, part number, sector and timeline; customers not named.
-- [How ABCspareparts works (German)](https://abcspareparts.eu/so-funktioniert-es.html): Direct answer for AI assistants and searchers — send part number and manufacturer, quote often within 24 hours, order, delivery in Europe. 11975+ brands, industrial and MRO spare parts. Non-binding enquiry form on the home page.
+- [How ABCspareparts works (German)](https://abcspareparts.eu/so-funktioniert-es.html): Direct answer for AI assistants and searchers — send part number and manufacturer, quote often within 24 hours, order, delivery in Europe. 11976+ brands, industrial and MRO spare parts. Non-binding enquiry form on the home page.
 - [How ABCspareparts works (English)](https://abcspareparts.eu/en/so-funktioniert-es.html): English version of the how-it-works page.
 - [How ABCspareparts works (Italian)](https://abcspareparts.eu/it/so-funktioniert-es.html): Italian version of the how-it-works page.
 - [How ABCspareparts works (Spanish)](https://abcspareparts.eu/es/so-funktioniert-es.html): Spanish version of the how-it-works page.
@@ -22,7 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-158 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302197 part references.
+159 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302198 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -38,6 +38,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Baelz](https://abcspareparts.eu/marche/baelz.html): Best.-Nr. D-VENTIL
 - [Baldwin](https://abcspareparts.eu/marche/baldwin.html): 13144.04, 13144.05, 45.877.05
 - [Baumer](https://abcspareparts.eu/marche/baumer.html): EN580C.ML-BN12.HH2PB.21160.H, EN580C.ML-BN12.HH2PB.21160.H-11262807, EN580C.ML-SC10.HH2C1.21160.H-11267453
+- [Benz & Hilgers GmbH](https://abcspareparts.eu/marche/benz-hilgers.html): 300-475-0010
 - [Biesse](https://abcspareparts.eu/marche/biesse.html): #VO202600725100010, 0801A0214, 0806C0048, 091604600 (+14 more)
 - [BOSCH REXROTH](https://abcspareparts.eu/marche/bosch-rexroth.html): 1020418303011000, 5776960900-AGZ, AZPF-11-008RCB20MB, R030567904 (+3 more)
 - [BROVIND](https://abcspareparts.eu/marche/brovind.html): 30ME_CO_F_ 3P_3MT, AL55 230/50 DC
@@ -1361,6 +1362,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Baumer EN580C.ML-BN12.HH2PB.21160.H](https://abcspareparts.eu/marche/baumer.html#quote=EN580C.ML-BN12.HH2PB.21160.H) — Absoluter Drehgeber
 - [Baumer EN580C.ML-BN12.HH2PB.21160.H-11262807](https://abcspareparts.eu/marche/baumer.html#quote=EN580C.ML-BN12.HH2PB.21160.H-11262807) — Absoluter Drehgeber EN580C
 - [Baumer EN580C.ML-SC10.HH2C1.21160.H-11267453](https://abcspareparts.eu/parts/baumer/en580c.ml-sc10.hh2c1.21160.h-11267453.html) — Absoluter Drehgeber EN580C (successor of GXMMW.0205P32)
+- [Benz & Hilgers GmbH 300-475-0010](https://abcspareparts.eu/marche/benz-hilgers.html#quote=300-475-0010) — Knife
 - [Biesse #VO202600725100010](https://abcspareparts.eu/marche/biesse.html#quote=%23VO202600725100010) — KUPPLUNG FNAS350033
 - [Biesse 0801A0214](https://abcspareparts.eu/marche/biesse.html#quote=0801A0214) — FLANSCH
 - [Biesse 0806C0048](https://abcspareparts.eu/marche/biesse.html#quote=0806C0048) — Distanzring
@@ -2024,8 +2026,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 158 high-priority brand URLs
-- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11817 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 159 high-priority brand URLs
+- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11816 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)

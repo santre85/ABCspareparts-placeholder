@@ -12,7 +12,7 @@ const HOW_IT_WORKS_I18N = {
   de: {
     meta_title: 'So funktioniert ABCspareparts – Anfrage und Angebot in 24h',
     meta_description:
-      'Industrie- und MRO-Ersatzteile: Teilenummer und Hersteller senden. Angebot oft in 24 Stunden, Lieferung in Europa. 11975+ Marken.',
+      'Industrie- und MRO-Ersatzteile: Teilenummer und Hersteller senden. Angebot oft in 24 Stunden, Lieferung in Europa. 11976+ Marken.',
     h1: 'So funktioniert ABCspareparts',
     breadcrumb: '<a href="/">Home</a> · So funktioniert es',
     direct_answer:
@@ -40,7 +40,7 @@ const HOW_IT_WORKS_I18N = {
       'Sie können auch über die Markenliste oder eine Markenseite anfragen. Für Verfügbarkeit und Preise nutzen Sie das Formular auf der Startseite — nicht die Markenliste allein.',
     brands_title: 'Welche Marken und Teile',
     brands_p1:
-      'ABCspareparts führt 11975+ Hersteller für Industrieersatzteile und MRO. Das Netzwerk umfasst Komponenten für industrielle Automation, Sensoren, Aktoren und Steuergeräte — sowie Mechanik, Elektrotechnik/Elektronik, Pneumatik und Hydraulik. Wo sinnvoll, sind geprüfte Alternativen möglich, auch für obsolete Teile.',
+      'ABCspareparts führt 11976+ Hersteller für Industrieersatzteile und MRO. Das Netzwerk umfasst Komponenten für industrielle Automation, Sensoren, Aktoren und Steuergeräte — sowie Mechanik, Elektrotechnik/Elektronik, Pneumatik und Hydraulik. Wo sinnvoll, sind geprüfte Alternativen möglich, auch für obsolete Teile.',
     brands_p2:
       'Die durchsuchbare A–Z-Liste steht unter Marken. Beispiele aus dem Sortiment sind unter anderem Siemens, Festo, ABB und Schneider. ABCspareparts ist ein unabhängiger Händler; die genannten Marken dienen der Produktidentifikation.',
     brands_link: 'Zur Markenliste A–Z',
@@ -61,7 +61,7 @@ const HOW_IT_WORKS_I18N = {
       'Mindestens Hersteller, Teilenummer und Menge. Optional helfen Maschine oder Anwendung. Vollständige Teilenummern vom Typenschild beschleunigen die Prüfung.',
     faq_q4: 'Welche Marken und Teile werden abgedeckt?',
     faq_a4:
-      '11975+ Hersteller für Industrie- und MRO-Ersatzteile, darunter Automation, Sensoren, Aktoren, Steuergeräte sowie Mechanik, Elektrotechnik/Elektronik, Pneumatik und Hydraulik. Die A–Z-Liste finden Sie unter Marken.',
+      '11976+ Hersteller für Industrie- und MRO-Ersatzteile, darunter Automation, Sensoren, Aktoren, Steuergeräte sowie Mechanik, Elektrotechnik/Elektronik, Pneumatik und Hydraulik. Die A–Z-Liste finden Sie unter Marken.',
     faq_q5: 'Liefert ABCspareparts in ganz Europa?',
     faq_a5:
       'Ja. Geliefert wird nach Deutschland, Italien, Frankreich, Spanien und in weitere europäische Länder. Lieferweg, Frist und Versandkosten hängen vom Artikel, der Verfügbarkeit und dem Zielort ab und stehen im Angebot.',
@@ -89,7 +89,7 @@ const HOW_IT_WORKS_I18N = {
   en: {
     meta_title: 'How ABCspareparts works – quote usually within 24h',
     meta_description:
-      'Industrial and MRO spare parts: send part number and manufacturer. Quote often within 24 hours, delivery in Europe. 11975+ brands.',
+      'Industrial and MRO spare parts: send part number and manufacturer. Quote often within 24 hours, delivery in Europe. 11976+ brands.',
     h1: 'How ABCspareparts works',
     breadcrumb: '<a href="/en/">Home</a> · How it works',
     direct_answer:
@@ -117,7 +117,7 @@ const HOW_IT_WORKS_I18N = {
       'You can also enquire from the brand directory or a brand page. For availability and prices, use the home-page form — not the brand index alone.',
     brands_title: 'Which brands and parts',
     brands_p1:
-      'ABCspareparts covers 11975+ manufacturers for industrial spare parts and MRO. The network includes components for industrial automation, sensors, actuators and control devices — as well as mechanical, electrical/electronic, pneumatic and hydraulic parts. Where useful, verified alternatives are possible, including for obsolete parts.',
+      'ABCspareparts covers 11976+ manufacturers for industrial spare parts and MRO. The network includes components for industrial automation, sensors, actuators and control devices — as well as mechanical, electrical/electronic, pneumatic and hydraulic parts. Where useful, verified alternatives are possible, including for obsolete parts.',
     brands_p2:
       'The searchable A–Z list is on Brands. Examples in the range include Siemens, Festo, ABB and Schneider. ABCspareparts is an independent reseller; brand names identify products only.',
     brands_link: 'Open the A–Z brand list',
@@ -138,7 +138,7 @@ const HOW_IT_WORKS_I18N = {
       'At least manufacturer, part number and quantity. Machine or application details help. Complete part numbers from the nameplate speed up the review.',
     faq_q4: 'Which brands and parts do you cover?',
     faq_a4:
-      '11975+ manufacturers for industrial and MRO spare parts, including automation, sensors, actuators, control devices, and mechanical, electrical/electronic, pneumatic and hydraulic components. See the A–Z list under Brands.',
+      '11976+ manufacturers for industrial and MRO spare parts, including automation, sensors, actuators, control devices, and mechanical, electrical/electronic, pneumatic and hydraulic components. See the A–Z list under Brands.',
     faq_q5: 'Do you deliver across Europe?',
     faq_a5:
       'Yes. Delivery is to Germany, Italy, France, Spain and other European countries. Route, timing and shipping costs depend on the item, availability and destination, and are stated in the quote.',
@@ -166,7 +166,7 @@ const HOW_IT_WORKS_I18N = {
   it: {
     meta_title: 'Come funziona ABCspareparts – preventivo spesso in 24h',
     meta_description:
-      'Ricambi industriali e MRO: invia codice e produttore. Preventivo spesso entro 24 ore, consegna in Europa. Oltre 11975 marche.',
+      'Ricambi industriali e MRO: invia codice e produttore. Preventivo spesso entro 24 ore, consegna in Europa. Oltre 11976 marche.',
     h1: 'Come funziona ABCspareparts',
     breadcrumb: '<a href="/it/">Home</a> · Come funziona',
     direct_answer:
@@ -194,7 +194,7 @@ const HOW_IT_WORKS_I18N = {
       'Potete richiedere anche dall’elenco marche o da una pagina marca. Per disponibilità e prezzi usate il modulo in home page — non solo l’indice marche.',
     brands_title: 'Quali marche e parti',
     brands_p1:
-      'ABCspareparts copre 11975+ produttori di ricambi industriali e MRO. La rete comprende componenti per automazione industriale, sensori, attuatori e dispositivi di controllo — oltre a meccanica, elettrotecnica/elettronica, pneumatica e idraulica. Dove utile, sono possibili alternative verificate, anche per parti obsolete.',
+      'ABCspareparts copre 11976+ produttori di ricambi industriali e MRO. La rete comprende componenti per automazione industriale, sensori, attuatori e dispositivi di controllo — oltre a meccanica, elettrotecnica/elettronica, pneumatica e idraulica. Dove utile, sono possibili alternative verificate, anche per parti obsolete.',
     brands_p2:
       'L’elenco A–Z ricercabile è in Marche. Esempi nell’assortimento: Siemens, Festo, ABB e Schneider. ABCspareparts è un rivenditore indipendente; i marchi servono solo a identificare i prodotti.',
     brands_link: 'Apri l’elenco marche A–Z',
@@ -215,7 +215,7 @@ const HOW_IT_WORKS_I18N = {
       'Almeno produttore, codice articolo e quantità. Macchina o applicazione aiutano. Codici completi dalla targa accelerano la verifica.',
     faq_q4: 'Quali marche e parti coprite?',
     faq_a4:
-      '11975+ produttori di ricambi industriali e MRO, tra cui automazione, sensori, attuatori, dispositivi di controllo e componenti meccanici, elettrici/elettronici, pneumatici e idraulici. Elenco A–Z sotto Marche.',
+      '11976+ produttori di ricambi industriali e MRO, tra cui automazione, sensori, attuatori, dispositivi di controllo e componenti meccanici, elettrici/elettronici, pneumatici e idraulici. Elenco A–Z sotto Marche.',
     faq_q5: 'Consegnate in tutta Europa?',
     faq_a5:
       'Sì. La consegna è in Germania, Italia, Francia, Spagna e altri Paesi europei. Percorso, tempi e costi dipendono dall’articolo, dalla disponibilità e dalla destinazione e sono indicati nel preventivo.',
@@ -243,7 +243,7 @@ const HOW_IT_WORKS_I18N = {
   es: {
     meta_title: 'Cómo funciona ABCspareparts – presupuesto a menudo en 24h',
     meta_description:
-      'Repuestos industriales y MRO: envíe referencia y fabricante. Presupuesto a menudo en 24 horas, entrega en Europa. Más de 11975 marcas.',
+      'Repuestos industriales y MRO: envíe referencia y fabricante. Presupuesto a menudo en 24 horas, entrega en Europa. Más de 11976 marcas.',
     h1: 'Cómo funciona ABCspareparts',
     breadcrumb: '<a href="/es/">Home</a> · Cómo funciona',
     direct_answer:
@@ -271,7 +271,7 @@ const HOW_IT_WORKS_I18N = {
       'También puede consultar desde el directorio de marcas o una ficha de marca. Para disponibilidad y precios use el formulario de inicio — no solo el índice de marcas.',
     brands_title: 'Qué marcas y piezas',
     brands_p1:
-      'ABCspareparts cubre 11975+ fabricantes de repuestos industriales y MRO. La red incluye componentes de automatización industrial, sensores, actuadores y dispositivos de control — además de mecánica, electricidad/electrónica, neumática e hidráulica. Cuando resulta útil, hay alternativas verificadas, también para piezas obsoletas.',
+      'ABCspareparts cubre 11976+ fabricantes de repuestos industriales y MRO. La red incluye componentes de automatización industrial, sensores, actuadores y dispositivos de control — además de mecánica, electricidad/electrónica, neumática e hidráulica. Cuando resulta útil, hay alternativas verificadas, también para piezas obsoletas.',
     brands_p2:
       'La lista A–Z con búsqueda está en Marcas. Ejemplos del surtido: Siemens, Festo, ABB y Schneider. ABCspareparts es un distribuidor independiente; las marcas sirven solo para identificar productos.',
     brands_link: 'Abrir la lista A–Z de marcas',
@@ -292,7 +292,7 @@ const HOW_IT_WORKS_I18N = {
       'Como mínimo fabricante, número de pieza y cantidad. Máquina o aplicación ayudan. Los códigos completos de la placa aceleran la revisión.',
     faq_q4: '¿Qué marcas y piezas cubren?',
     faq_a4:
-      '11975+ fabricantes de repuestos industriales y MRO, incluidos automatización, sensores, actuadores, dispositivos de control y componentes mecánicos, eléctricos/electrónicos, neumáticos e hidráulicos. Lista A–Z en Marcas.',
+      '11976+ fabricantes de repuestos industriales y MRO, incluidos automatización, sensores, actuadores, dispositivos de control y componentes mecánicos, eléctricos/electrónicos, neumáticos e hidráulicos. Lista A–Z en Marcas.',
     faq_q5: '¿Entregan en toda Europa?',
     faq_a5:
       'Sí. La entrega es a Alemania, Italia, Francia, España y otros países europeos. Ruta, plazo y gastos dependen del artículo, la disponibilidad y el destino, y figuran en el presupuesto.',
@@ -320,7 +320,7 @@ const HOW_IT_WORKS_I18N = {
   fr: {
     meta_title: 'Comment fonctionne ABCspareparts – devis souvent en 24h',
     meta_description:
-      'Pièces industrielles et MRO : envoyez référence et fabricant. Devis souvent sous 24 heures, livraison en Europe. Plus de 11975 marques.',
+      'Pièces industrielles et MRO : envoyez référence et fabricant. Devis souvent sous 24 heures, livraison en Europe. Plus de 11976 marques.',
     h1: 'Comment fonctionne ABCspareparts',
     breadcrumb: '<a href="/fr/">Accueil</a> · Comment ça marche',
     direct_answer:
@@ -348,7 +348,7 @@ const HOW_IT_WORKS_I18N = {
       'Vous pouvez aussi demander depuis l’annuaire des marques ou une fiche marque. Pour disponibilité et prix, utilisez le formulaire d’accueil — pas l’index des marques seul.',
     brands_title: 'Quelles marques et pièces',
     brands_p1:
-      'ABCspareparts couvre 11975+ fabricants de pièces industrielles et MRO. Le réseau comprend des composants d’automatisation industrielle, capteurs, actionneurs et dispositifs de commande — ainsi que mécanique, électricité/électronique, pneumatique et hydraulique. Lorsque c’est utile, des alternatives vérifiées sont possibles, y compris pour des pièces obsolètes.',
+      'ABCspareparts couvre 11976+ fabricants de pièces industrielles et MRO. Le réseau comprend des composants d’automatisation industrielle, capteurs, actionneurs et dispositifs de commande — ainsi que mécanique, électricité/électronique, pneumatique et hydraulique. Lorsque c’est utile, des alternatives vérifiées sont possibles, y compris pour des pièces obsolètes.',
     brands_p2:
       'La liste A–Z avec recherche est sous Marques. Exemples dans l’assortiment : Siemens, Festo, ABB et Schneider. ABCspareparts est un revendeur indépendant ; les marques servent uniquement à identifier les produits.',
     brands_link: 'Ouvrir la liste A–Z des marques',
@@ -369,7 +369,7 @@ const HOW_IT_WORKS_I18N = {
       'Au minimum fabricant, référence et quantité. Machine ou application aident. Les références complètes de la plaque accélèrent l’examen.',
     faq_q4: 'Quelles marques et pièces couvrez-vous ?',
     faq_a4:
-      '11975+ fabricants de pièces industrielles et MRO, dont automatisation, capteurs, actionneurs, dispositifs de commande et composants mécaniques, électriques/électroniques, pneumatiques et hydrauliques. Liste A–Z sous Marques.',
+      '11976+ fabricants de pièces industrielles et MRO, dont automatisation, capteurs, actionneurs, dispositifs de commande et composants mécaniques, électriques/électroniques, pneumatiques et hydrauliques. Liste A–Z sous Marques.',
     faq_q5: 'Livrez-vous dans toute l’Europe ?',
     faq_a5:
       'Oui. Livraison en Allemagne, Italie, France, Espagne et d’autres pays européens. Itinéraire, délai et frais dépendent de l’article, de la disponibilité et de la destination, et figurent sur le devis.',
