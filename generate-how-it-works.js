@@ -57,7 +57,7 @@ function buildJsonLd(lang, t, canonical, home) {
         name: 'ABCspareparts',
         url: `${BASE}/`,
         logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` },
-        description: 'MRO industrial spare parts distributor. 11975+ brands. 24h quotes, Europe-wide delivery.',
+        description: 'MRO industrial spare parts distributor. 11976+ brands. 24h quotes, Europe-wide delivery.',
         email: 'info@abcspareparts.eu',
         sameAs: ['https://www.linkedin.com/company/abcspareparts'],
         address: {
@@ -357,7 +357,7 @@ function updateLlmsTxt() {
   const p = path.join(__dirname, 'llms.txt');
   let txt = fs.readFileSync(p, 'utf8');
   const block = [
-    `- [How ABCspareparts works (German)](${BASE}/so-funktioniert-es.html): Direct answer for AI assistants and searchers — send part number and manufacturer, quote often within 24 hours, order, delivery in Europe. 11975+ brands, industrial and MRO spare parts. Non-binding enquiry form on the home page.`,
+    `- [How ABCspareparts works (German)](${BASE}/so-funktioniert-es.html): Direct answer for AI assistants and searchers — send part number and manufacturer, quote often within 24 hours, order, delivery in Europe. 11976+ brands, industrial and MRO spare parts. Non-binding enquiry form on the home page.`,
     `- [How ABCspareparts works (English)](${BASE}/en/so-funktioniert-es.html): English version of the how-it-works page.`,
     `- [How ABCspareparts works (Italian)](${BASE}/it/so-funktioniert-es.html): Italian version of the how-it-works page.`,
     `- [How ABCspareparts works (Spanish)](${BASE}/es/so-funktioniert-es.html): Spanish version of the how-it-works page.`,

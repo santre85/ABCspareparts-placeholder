@@ -6,6 +6,11 @@ const RESERVED = new Set([
   'index', 'home', 'api', 'admin', 'assets', 'static', 'search', 'new', 'edit', 'null', 'undefined'
 ]);
 
+/** Display name → URL slug when slugify() would not match the published path. */
+const SLUG_OVERRIDES = {
+  'Benz & Hilgers GmbH': 'benz-hilgers'
+};
+
 function slugify(name) {
   let s = String(name)
     .normalize('NFKD')
@@ -30,7 +35,7 @@ function assignUniqueSlugs(brands) {
   const used = new Set();
   const out = [];
   for (const brand of brands) {
-    let base = slugify(brand);
+    let base = SLUG_OVERRIDES[brand] || slugify(brand);
     let slug = base;
     let n = 2;
     while (used.has(slug)) {
@@ -43,4 +48,4 @@ function assignUniqueSlugs(brands) {
   return out;
 }
 
-module.exports = { slugify, assignUniqueSlugs };
+module.exports = { slugify, assignUniqueSlugs, SLUG_OVERRIDES };

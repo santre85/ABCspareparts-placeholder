@@ -88,6 +88,12 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://abcspareparts.eu/marche/benz-hilgers.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://abcspareparts.eu/marche/biesse.html</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -461,7 +467,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/manitou.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -755,7 +761,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/siemens.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>

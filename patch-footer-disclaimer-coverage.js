@@ -175,7 +175,7 @@ function main() {
     console.error(stats.mismatches.slice(0, 20).join('\n'));
     process.exit(1);
   }
-  if (stats.brandPatched + stats.brandAlready !== 11975) {
+  if (stats.brandPatched + stats.brandAlready !== 11976) {
     console.error('Unexpected brand coverage', stats);
     process.exit(1);
   }

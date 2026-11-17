@@ -286,7 +286,7 @@ function patchGermanHome(brandCount) {
     `<meta name="twitter:description" id="twitterDescription" content="${t.seo_description}">`
   );
   html = html.replace(/<noscript>\s*<meta http-equiv="refresh"[^>]*>\s*<\/noscript>\s*/i, '');
-  html = html.replace(/11959/g, String(brandCount));
+  html = html.replace(/11976/g, String(brandCount));
   const langs = ['de', 'en', 'it', 'es', 'fr'];
   let i = 0;
   html = html.replace(/seo_title:\s*"[^"]*"/g, () => {

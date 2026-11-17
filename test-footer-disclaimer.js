@@ -128,7 +128,7 @@ async function main() {
     });
     const stubs = ['marche/miele.html', 'marche/valmet.html', 'marche/rommelsbacher.html'];
     ok(stubs.every((f) => fs.readFileSync(path.join(ROOT, f), 'utf8').includes('brand-redirect-stub')), '3 noindex brand stubs unchanged');
-    ok(brandWithHook === 11975, `brand pages with footer hook: ${brandWithHook}`);
+    ok(brandWithHook === 11976, `brand pages with footer hook: ${brandWithHook}`);
     ok(serieHook === 1122, `Siemens serie hubs with footer hook: ${serieHook}`);
     const kat = fs.readFileSync(path.join(ROOT, 'parts/siemens/katalog.html'), 'utf8');
     ok(kat.includes('abc-tm-disclaimer') && kat.includes('/footer-disclaimer.js'), 'Siemens katalog has footer hook');
