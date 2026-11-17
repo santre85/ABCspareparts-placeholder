@@ -11896,12 +11896,6 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/marche/elumatec.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://abcspareparts.eu/marche/elv.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -31175,12 +31169,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/mac-valves.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/marche/mac.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -64859,12 +64847,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/versa.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/marche/versalift.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
