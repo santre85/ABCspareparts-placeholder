@@ -22,7 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-159 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302198 part references.
+162 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302210 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -52,6 +52,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [DNH](https://abcspareparts.eu/marche/dnh.html): DH30, DST100
 - [DUNKERMOTOREN](https://abcspareparts.eu/marche/dunkermotoren.html): BG 75x50
 - [Ebro](https://abcspareparts.eu/marche/ebro.html): 292876-1
+- [ELUMATEC](https://abcspareparts.eu/marche/elumatec.html): GXM7W.Z15
 - [Euchner](https://abcspareparts.eu/marche/euchner.html): N01R-550-M (C081 R-C-V), SN02R08-552-M (C082R-C-V)
 - [Fagor](https://abcspareparts.eu/marche/fagor.html): 12023211, 12024980, 12025076, 12049230
 - [Fasco](https://abcspareparts.eu/marche/fasco.html): D1050A
@@ -98,8 +99,9 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Kunpeng](https://abcspareparts.eu/marche/kunpeng.html): KP22580HA2BL-C
 - [LEG](https://abcspareparts.eu/marche/leg.html): EM1-1-1
 - [Leuze](https://abcspareparts.eu/marche/leuze.html): 53800105, 53800117, RSL410-M
-- [M&S Armaturen](https://abcspareparts.eu/marche/m-and-s-armaturen.html): 03052-2001010, 03052-2002010, 03052-2003010, 56040-0250700 (+9 more)
+- [M&S Armaturen](https://abcspareparts.eu/marche/m-and-s-armaturen.html): 03052-2001010, 03052-2002010, 03052-2003010, 56040-0250700 (+14 more)
 - [M+S Hydraulic](https://abcspareparts.eu/marche/m-plus-s-hydraulic.html): MMS50C
+- [MAC](https://abcspareparts.eu/marche/mac.html): 26A-11-G01-BD-BKR0-1PN Mod. 8484
 - [MADATEC](https://abcspareparts.eu/marche/madatec.html): B-SC9291, V947
 - [MANITOU](https://abcspareparts.eu/marche/manitou.html): 677394
 - [Matrix Elektronik](https://abcspareparts.eu/marche/matrix-elektronik.html): IRS-U-4A
@@ -172,6 +174,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [TRELLEBORG](https://abcspareparts.eu/marche/trelleborg.html): 3DIC08172 (Turcon-Variseal PVC100197-Z80S)
 - [Turck](https://abcspareparts.eu/marche/turck.html): WKB 3T-*/S90
 - [TWK](https://abcspareparts.eu/marche/twk.html): IW120/24-0,5-KF-S-KH-A17
+- [VERSALIFT](https://abcspareparts.eu/marche/versalift.html): 54022-8, 54143-1, 54153-1 RH S-STK, 58021-110 (+1 more)
 - [Viqua](https://abcspareparts.eu/marche/viqua.html): 002045P, 602665, 602733, 602806
 - [Walterscheid](https://abcspareparts.eu/marche/walterscheid.html): KU25-3DP
 - [Wayne](https://abcspareparts.eu/marche/wayne.html): WM008766
@@ -1412,6 +1415,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [DNH DST100](https://abcspareparts.eu/marche/dnh.html#quote=DST100) — DNH Driver unit ALU 100W 100V IP67 RAL7035
 - [DUNKERMOTOREN BG 75x50](https://abcspareparts.eu/marche/dunkermotoren.html#quote=BG%2075x50) — DC-Motor 40V 3500rpm 12A
 - [Ebro 292876-1](https://abcspareparts.eu/marche/ebro.html#quote=292876-1) — Hauptbremszylinder
+- [ELUMATEC GXM7W.Z15](https://abcspareparts.eu/marche/elumatec.html#quote=GXM7W.Z15) — Encoder Abs. EMAX 8192x1024GXM7W.Z15
 - [Euchner N01R-550-M (C081 R-C-V)](https://abcspareparts.eu/marche/euchner.html#quote=N01R-550-M%20(C081%20R-C-V)) — Limit switch, 1 plunger
 - [Euchner SN02R08-552-M (C082R-C-V)](https://abcspareparts.eu/marche/euchner.html#quote=SN02R08-552-M%20(C082R-C-V)) — Limit switch, 2 plungers, 8 mm spacing
 - [Fagor 12023211](https://abcspareparts.eu/parts/fagor/12023211.html) — Door electromagnet (Previous part code/s #: P613002000, SAV W08 0024)
@@ -1588,8 +1592,14 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [M&S Armaturen 57680-1000300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=57680-1000300) — M&S Armaturen 57680-1000300
 - [M&S Armaturen 576800500300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=576800500300) — Dichtung Nr. 676 Efür ScheibenventilDN 50
 - [M&S Armaturen 578-104011000](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=578-104011000) — Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1"-4" Nr. GL678TBJ1 Zolltarif-Nr. 84123100
+- [M&S Armaturen 650000153300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=650000153300) — Tellerrückschlagventil G-Sähnl. Nr. 770, blank, EPDM
+- [M&S Armaturen 651000400300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=651000400300) — Dichtungssatz TRV ZFfür TellerrückschlagventilZwischenflanschausführung
+- [M&S Armaturen 651000401300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=651000401300) — Tellerrückschlagventil Nr. 772ZwischenflanschausführungDichtung: EPDM, blank
+- [M&S Armaturen 651001000300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=651001000300) — Dichtungssatz TRV ZFfür TellerrückschlagventilZwischenflanschausführung
+- [M&S Armaturen 651001001300](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=651001001300) — Tellerrückschlagventil Nr. 772ZwischenflanschausführungDichtung: EPDM, blank
 - [M&S Armaturen GL-676-050-V](https://abcspareparts.eu/marche/m-and-s-armaturen.html#quote=GL-676-050-V) — SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)
 - [M+S Hydraulic MMS50C](https://abcspareparts.eu/parts/m-plus-s-hydraulic/mms50c.html) — Hydraulic Motor
+- [MAC 26A-11-G01-BD-BKR0-1PN Mod. 8484](https://abcspareparts.eu/marche/mac.html#quote=26A-11-G01-BD-BKR0-1PN%20Mod.%208484) — Valve
 - [MADATEC B-SC9291](https://abcspareparts.eu/marche/madatec.html#quote=B-SC9291) — RED PTFE/WHITE SILICONE SEPTA, 9*1MM, 9MM BLUESHORT SCREW PP CAP, BONDED 6MM CENTRE HOLE(100PCS/PACK) - EQUIV.AGILENT 5…
 - [MADATEC V947](https://abcspareparts.eu/marche/madatec.html#quote=V947) — 1.5ML AMBER 9MM SCREW VIAL W/WRITE- ON SPOT,11.6*32MM, 7.0 TYPE GLASS ( 100 PCS PACK) -EQUIV.AGILENT 5182-0516
 - [MANITOU 677394](https://abcspareparts.eu/marche/manitou.html#quote=677394) — Electronic Card
@@ -1990,6 +2000,11 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [TRELLEBORG 3DIC08172 (Turcon-Variseal PVC100197-Z80S)](https://abcspareparts.eu/marche/trelleborg.html#quote=3DIC08172%20(Turcon-Variseal%20PVC100197-Z80S)) — Turcon Variseal spring-energized seal
 - [Turck WKB 3T-*/S90](https://abcspareparts.eu/marche/turck.html#quote=WKB%203T-*%2FS90) — Steckverbinder 1/2" 5,3MM 2000MM PUR Ar*
 - [TWK IW120/24-0,5-KF-S-KH-A17](https://abcspareparts.eu/marche/twk.html#quote=IW120%2F24-0%2C5-KF-S-KH-A17) — Inductive linear transducer
+- [VERSALIFT 54022-8](https://abcspareparts.eu/marche/versalift.html#quote=54022-8) — Valve open center
+- [VERSALIFT 54143-1](https://abcspareparts.eu/marche/versalift.html#quote=54143-1) — Single Stick Control Valve
+- [VERSALIFT 54153-1 RH S-STK](https://abcspareparts.eu/marche/versalift.html#quote=54153-1%20RH%20S-STK) — Upper Valve Open Ctr
+- [VERSALIFT 58021-110](https://abcspareparts.eu/marche/versalift.html#quote=58021-110) — O-ring
+- [VERSALIFT X527-458](https://abcspareparts.eu/marche/versalift.html#quote=X527-458) — Seal kit
 - [Viqua 002045P](https://abcspareparts.eu/marche/viqua.html#quote=002045P) — UV-Max O-Ringe f. Quarzschutzrohr passend für Typ G bis J+ und PRO
 - [Viqua 602665](https://abcspareparts.eu/marche/viqua.html#quote=602665) — SLEEVE BOLT FOR A, B/B4/B4-V C/C4/C4-V D/D4/D4-V/PLUS, E/E4/E4-V/PLUS
 - [Viqua 602733](https://abcspareparts.eu/marche/viqua.html#quote=602733) — VIQUA UV Max Quarzschutzrohr Typ E4/E4+
@@ -2026,8 +2041,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 159 high-priority brand URLs
-- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11816 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 162 high-priority brand URLs
+- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11814 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)

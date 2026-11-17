@@ -164,6 +164,7 @@ item_code	brand	description
 24800703	Kockum Sonics	Motor set MTX 440V
 2485C041	MST	TERMOSTAT
 25B-D4P0N104	Allen Bradley	Allen Bradley 25B-D4P0N104Allen Bradley · Drive Frequency 1.5KW Powerflex 525 · 25B-D4P0N104
+26A-11-G01-BD-BKR0-1PN Mod. 8484	MAC	Valve
 2700356	Phoenix contact	PCR-PS20-1NO-1NC-24DC-SC
 2708274	Phoenix contact	Phoenix Contact 2708274PSI-MOS-PROFIB/FO 850 E (2708274)PHOENIX CONTACT · CONVERTER,PSIMOSPROFIBFO850E,PHOE-CON · PSI-MOS-PROFIB/FO 850 E (2708274)
 2711P-T12C4D1	Rockwell	HMI, PANEL VIEW PLUS
@@ -220,6 +221,7 @@ item_code	brand	description
 2A.0B.A2.6B	HERBORNER PUMPEN	Mechanical seal elastomer bellow D24mmItem 433
 2DEPFE000216	ALWITCO	216 PFD - FILTERNDE ELEMENT
 3 520 068	HENGSTLER	BALGKUPPLUNG 6 - 6
+300-475-0010	Benz & Hilgers GmbH	Knife
 3017A0041	BIESSE	NUTMUTTER [M15X1]
 3018210	HYDAC	ADAPTER FPU A11-M16x2 Hydac (BAUGR)
 3019418	HYDAC	charging hose FM M30x1,5 (4,0m)
@@ -282,6 +284,9 @@ item_code	brand	description
 5400051-021	TLD	TLD 5400051-021
 5400051-023	TLD	TLD 5400051-023
 5400051-034	TLD	TLD 5400051-034
+54022-8	VERSALIFT	Valve open center
+54143-1	VERSALIFT	Single Stick Control Valve
+54153-1 RH S-STK	VERSALIFT	Upper Valve Open Ctr
 54204201	MST	NUT
 54204202	MST	TOOTH, PLAIN
 5421114	MST	SIDECUTTER
@@ -306,6 +311,7 @@ item_code	brand	description
 5776960900-AGZ	BOSCH REXROTH	5/2-Wegemagnetventil 148x55x30 577 696
 578-104011000	M&S Armaturen	Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1"-4" Nr. GL678TBJ1 Zolltarif-Nr. 84123100
 5800346	TLD	TLD 5800346
+58021-110	VERSALIFT	O-ring
 592386140	Fisher	22A8897X012; DICHTRING
 592386200	Fisher	16A5512X012; KEIL, KONISCH
 592392500	Fisher	1V710106242; SCHEIBE
@@ -334,12 +340,19 @@ item_code	brand	description
 635142	HYDAC	Pressure gauge 0-250bar
 635143	HYDAC	Pressure gauge 0-400bar
 6420A0119	BIESSE	Wartungseinheit
+650000153300	M&S Armaturen	Tellerrückschlagventil G-Sähnl. Nr. 770, blank, EPDM
+651000400300	M&S Armaturen	Dichtungssatz TRV ZFfür TellerrückschlagventilZwischenflanschausführung
+651000401300	M&S Armaturen	Tellerrückschlagventil Nr. 772ZwischenflanschausführungDichtung: EPDM, blank
+651001000300	M&S Armaturen	Dichtungssatz TRV ZFfür TellerrückschlagventilZwischenflanschausführung
+651001001300	M&S Armaturen	Tellerrückschlagventil Nr. 772ZwischenflanschausführungDichtung: EPDM, blank
+677394	Manitou	Electronic Card
 688424	BÜRKERT	BÜRKERT 688424Ventilmembran DN25
 693163	BÜRKERT	BÜRKERT 693163Ventilmembran DN15
 693176	BÜRKERT	BÜRKERT 693176Ventilmembran DN15
 693178	BÜRKERT	BÜRKERT 693178Ventilmembran DN25
 693180	BÜRKERT	BÜRKERT 693180Ventilmembran DN40
 693181	BÜRKERT	BÜRKERT 693181Ventilmembran DN50
+6AG4141-5BC07-0DA0	Siemens	SIMATIC IPC427E (Microbox PC)
 6AU1435­0AA0­0AA1	Siemens	Simotion D435
 6AV2 124-0MC01-0AX0	Siemens	SIMATIC HMI TP1200 Comfort Panel
 6AV2124-0MC010-AX0	Siemens	SIMATIC HMI TP1200 COMFORT
@@ -351,6 +364,8 @@ item_code	brand	description
 6AV6642-0BA01-1AX1 (NEW)	Siemens	6AV6642-0BA01-1AX1 (NEW)
 6DR5622-0EG00-0AA0	Siemens	SIPART PS2 Smart, electropneumatic positioner, FOUNDATION Fieldbus, Ex/nEx, double-acting, SST enclosure, no window, for pneumatic linear and part-tur
 6ES7318-3EL01-0AB0	Siemens	SCHEDA CPU SIEMENS 6ES7318-3EL01-0AB0 SIMATIC S7-300 CPU319 3PN/DP
+6ES7730-1AC24-0BA0	Siemens	SIMATIC IPC MD-57A
+6ES7822-1AE24-0YA5	Siemens	SIMATIC STEP 7 Prof. V20, Floating License
 6SL3055-0AA00-5BA1	Siemens	Sensor Module
 6SL3055-0AA00-5BA3 (NEW)	Siemens	6SL3055-0AA00-5BA3 (NEW)
 6SL3055-0AA00-5CA1	Siemens	Sensor Module
@@ -448,6 +463,7 @@ G121SN01 V.4	AUO	LCD MATRIX
 GL-676-050-V	M&S Armaturen	SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)
 GL-R80H	Keyence	Safety Light Curtain (Set: transmitter and receiver)
 GT9.06L/420k	Hübner Elektromaschinen AG	Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/minmax. Drehzahl: 9000 1/minPassen
+GXM7W.Z15	Elumatec	Encoder Abs. EMAX 8192x1024GXM7W.Z15
 Guarnizione coperchio 550 e11	Harmsco	Guarnizione EPDM/HIF7/24-HUR-BB-HP rif. HARMSCO 550-E
 HBZ 500160/100/100	Römheld	Zylinder
 HMC3 250M-2 B3 55kW IE3@50 400/690@50 RAL9005	Hoyer Motors	Motor
@@ -547,13 +563,9 @@ WKB 3T-*/S90	Turck	Steckverbinder 1/2" 5,3MM 2000MM PUR Ar*
 WM008766	Wayne	IGEM ISFS LON Board
 Wellrohr XPCSG-NW17-21,2/15,2 PA XPCSG-*	PMA	Size/dimension: NW17-21,2/15,2 Werkstoff: PA
 X52404500059	Mtu	Spark plug
+X527-458	VERSALIFT	Seal kit
 XFP150G CB1.3	Sulzer	Girante / Laufrad
 XLCR 25	FLEXLINK	Gleitschiene HDPE, (schwarz), Länge 25 m
 XPCSG-17BG	ABB	Wellrohr
 ZSM1-121L	SMC	Diaphragm type vacuum switch, ZSM1‑121 series, reed contact type, connection R 1/8, max. operating pressure 0.5 MPa, regulating range −27 to −80 kPa, 
 ZUB0NFW0IP68	Nivus	NIVUS ZUB0NFW0IP68NIVUS protective housing for transmitters, type NFxx
-300-475-0010	Benz & Hilgers GmbH	Knife
-677394	Manitou	Electronic Card
-6AG4141-5BC07-0DA0	Siemens	SIMATIC IPC427E (Microbox PC)
-6ES7730-1AC24-0BA0	Siemens	SIMATIC IPC MD-57A
-6ES7822-1AE24-0YA5	Siemens	SIMATIC STEP 7 Prof. V20, Floating License

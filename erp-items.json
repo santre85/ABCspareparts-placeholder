@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-16",
+  "imported": "2026-11-17",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -496,6 +496,16 @@
       ]
     },
     {
+      "brand": "ELUMATEC",
+      "brand_slug": "elumatec",
+      "parts": [
+        {
+          "part_number": "GXM7W.Z15",
+          "description": "Encoder Abs. EMAX 8192x1024GXM7W.Z15"
+        }
+      ]
+    },
+    {
       "brand": "Euchner",
       "brand_slug": "euchner",
       "parts": [
@@ -812,6 +822,16 @@
       ]
     },
     {
+      "brand": "Hübner Elektromaschinen AG",
+      "brand_slug": "hubner-elektromaschinen-ag",
+      "parts": [
+        {
+          "part_number": "GT9.06L/420k",
+          "description": "Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…"
+        }
+      ]
+    },
+    {
       "brand": "HUMPHREY",
       "brand_slug": "humphrey",
       "parts": [
@@ -944,16 +964,6 @@
         {
           "part_number": "635143",
           "description": "Pressure gauge 0-400bar"
-        }
-      ]
-    },
-    {
-      "brand": "Hübner Elektromaschinen AG",
-      "brand_slug": "hubner-elektromaschinen-ag",
-      "parts": [
-        {
-          "part_number": "GT9.06L/420k",
-          "description": "Hübner Tachogenerator GT9.06L/420kHübner GT 9.06 L / 420K Analog-Tacho / Longlife - DC - Tachogenerator20V bei 1000/min…"
         }
       ]
     },
@@ -1262,6 +1272,20 @@
       ]
     },
     {
+      "brand": "Kübler",
+      "brand_slug": "kubler",
+      "parts": [
+        {
+          "part_number": "279383",
+          "description": "1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…"
+        },
+        {
+          "part_number": "8.F5863.1234.G221",
+          "description": "1 =Klemmflansch, ø 58 mm, IP65 2 =ø10mmx20mm 3 =SSI, BiSS + 2048 ppr SinCos / 5 V DC 4 =M23-Stecker radial, 12-polig G=…"
+        }
+      ]
+    },
+    {
       "brand": "Kuhnke",
       "brand_slug": "kuhnke",
       "parts": [
@@ -1282,20 +1306,6 @@
         {
           "part_number": "KP22580HA2BL-C",
           "description": "Hochleistungs-Axiallüfter für industrielle Anwendungen.Technische Daten:Spannung: 220V AC (50/60Hz)Leistung: 42W / 52WN…"
-        }
-      ]
-    },
-    {
-      "brand": "Kübler",
-      "brand_slug": "kubler",
-      "parts": [
-        {
-          "part_number": "279383",
-          "description": "1.667.200.009.2911.667.200.009.291 | K67.20.4.291/HT5VDC/0 | Impulszähler | 5 VDC/10 Hz |mit Flachstecker 0,8x2,8 mm |-…"
-        },
-        {
-          "part_number": "8.F5863.1234.G221",
-          "description": "1 =Klemmflansch, ø 58 mm, IP65 2 =ø10mmx20mm 3 =SSI, BiSS + 2048 ppr SinCos / 5 V DC 4 =M23-Stecker radial, 12-polig G=…"
         }
       ]
     },
@@ -1376,6 +1386,26 @@
           "description": "Pneum. Antrieb L/F PAMS1 mit Steuerkopf TOP 2NI 1MV DN 15-100/ 1\"-4\" Nr. GL678TBJ1 Zolltarif-Nr. 84123100"
         },
         {
+          "part_number": "650000153300",
+          "description": "Tellerrückschlagventil G-Sähnl. Nr. 770, blank, EPDM"
+        },
+        {
+          "part_number": "651000400300",
+          "description": "Dichtungssatz TRV ZFfür TellerrückschlagventilZwischenflanschausführung"
+        },
+        {
+          "part_number": "651000401300",
+          "description": "Tellerrückschlagventil Nr. 772ZwischenflanschausführungDichtung: EPDM, blank"
+        },
+        {
+          "part_number": "651001000300",
+          "description": "Dichtungssatz TRV ZFfür TellerrückschlagventilZwischenflanschausführung"
+        },
+        {
+          "part_number": "651001001300",
+          "description": "Tellerrückschlagventil Nr. 772ZwischenflanschausführungDichtung: EPDM, blank"
+        },
+        {
           "part_number": "GL-676-050-V",
           "description": "SV-DICHTUNG SV04/TYP98 WERKSTOFF: FKM (VITON)DN 50 (576800500400)"
         }
@@ -1388,6 +1418,16 @@
         {
           "part_number": "MMS50C",
           "description": "Hydraulic Motor"
+        }
+      ]
+    },
+    {
+      "brand": "MAC",
+      "brand_slug": "mac",
+      "parts": [
+        {
+          "part_number": "26A-11-G01-BD-BKR0-1PN Mod. 8484",
+          "description": "Valve"
         }
       ]
     },
@@ -2338,6 +2378,16 @@
       ]
     },
     {
+      "brand": "Römheld",
+      "brand_slug": "romheld",
+      "parts": [
+        {
+          "part_number": "HBZ 500160/100/100",
+          "description": "Zylinder"
+        }
+      ]
+    },
+    {
       "brand": "ROSS",
       "brand_slug": "ross",
       "parts": [
@@ -2354,16 +2404,6 @@
         {
           "part_number": "ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)",
           "description": "Endlagenrückmeldung wie folgt: / Limit switch box as follows: SK = Gehäuse aus Aluminiumdruckguss / Die-cast aluminium…"
-        }
-      ]
-    },
-    {
-      "brand": "Römheld",
-      "brand_slug": "romheld",
-      "parts": [
-        {
-          "part_number": "HBZ 500160/100/100",
-          "description": "Zylinder"
         }
       ]
     },
@@ -2960,6 +3000,32 @@
         {
           "part_number": "IW120/24-0,5-KF-S-KH-A17",
           "description": "Inductive linear transducer"
+        }
+      ]
+    },
+    {
+      "brand": "VERSALIFT",
+      "brand_slug": "versalift",
+      "parts": [
+        {
+          "part_number": "54022-8",
+          "description": "Valve open center"
+        },
+        {
+          "part_number": "54143-1",
+          "description": "Single Stick Control Valve"
+        },
+        {
+          "part_number": "54153-1 RH S-STK",
+          "description": "Upper Valve Open Ctr"
+        },
+        {
+          "part_number": "58021-110",
+          "description": "O-ring"
+        },
+        {
+          "part_number": "X527-458",
+          "description": "Seal kit"
         }
       ]
     },
