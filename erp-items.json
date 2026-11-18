@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-17",
+  "imported": "2026-11-18",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -999,6 +999,10 @@
       "brand": "IMI NORGREN",
       "brand_slug": "imi-norgren",
       "parts": [
+        {
+          "part_number": "M/146140/600",
+          "description": "Lintra plus rodless cylinder"
+        },
         {
           "part_number": "QM/1525/75/27",
           "description": "Rückkopplung"
