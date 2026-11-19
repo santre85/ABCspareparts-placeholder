@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-18",
+  "imported": "2026-11-19",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -1010,6 +1010,14 @@
         {
           "part_number": "QM/1525/75/29",
           "description": "CYLINDER ACCESSORY/REPLACEMENT PART"
+        },
+        {
+          "part_number": "QM/8050/32",
+          "description": "Gelenkkopf-Befestigung Durchmesser 50mm/63mm"
+        },
+        {
+          "part_number": "RM/55451/M/125",
+          "description": "Norgren Rundzylinder, doppeltwirkend Durchmesser 50 mm, Hub 125 mm"
         },
         {
           "part_number": "SPC/141548",
@@ -2250,6 +2258,36 @@
       ]
     },
     {
+      "brand": "RINALDI",
+      "brand_slug": "rinaldi",
+      "parts": [
+        {
+          "part_number": "031.033",
+          "description": "031.033"
+        },
+        {
+          "part_number": "18.00.00.072",
+          "description": "18.00.00.072"
+        },
+        {
+          "part_number": "18.01.01.030",
+          "description": "18.01.01.030"
+        },
+        {
+          "part_number": "60.00.06205",
+          "description": "60.00.06205"
+        },
+        {
+          "part_number": "60.00.06207",
+          "description": "60.00.06207"
+        },
+        {
+          "part_number": "70.1.405810",
+          "description": "70.1.405810"
+        }
+      ]
+    },
+    {
       "brand": "Rittal",
       "brand_slug": "rittal",
       "parts": [
@@ -2688,6 +2726,10 @@
         {
           "part_number": "6SL3210-1PE34-8AL0",
           "description": "SINAMICS G120/S120 POWER MODULE PM240-2 FSG C2 WITH BUILT IN BRAKING CHOPPER 3AC380-480V+10/-10% 47-63Hz OUTPUT HIGH OV…"
+        },
+        {
+          "part_number": "6SL51201UE230SC1",
+          "description": "SINAMICS S220 Motor Module"
         }
       ]
     },

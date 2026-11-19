@@ -26,6 +26,7 @@ item_code	brand	description
 03052-2003010	M&S Armaturen	M&S Armaturen 03052-2003010
 0306.1115.4	Müller Martini	AnschlagUrsprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,302 KG
 0306.1116.4	Müller Martini	AnschlagUrsprungsland: CH Zolltarifnummer: 84409000 Gewicht: 0,292 KG
+031.033	R2 Rinaldi	031.033
 0634713	HENGSTLER	HENGSTLER IMP.ZAE 24DC 7ST RO
 0801A0214	BIESSE	FLANSCH
 0806C0048	BIESSE	Distanzring
@@ -112,6 +113,8 @@ item_code	brand	description
 1756-PA72	Rockwell	POWER MODULE
 1784-CF64	Rockwell	MEMORY CARD
 1794-IB16	Allen Bradley	Allen Bradley 1794-IB16Allen Bradley · Flex 16 Point Digital Input Module · 1794-IB16
+18.00.00.072	R2 Rinaldi	18.00.00.072
+18.01.01.030	R2 Rinaldi	18.01.01.030
 1FT7105-5AF71-1NL2	Siemens	Motor
 1LE1523-1CB29-0KB4-Z	Siemens	Motor{M1Y:380VD_50HZ_10HP} {M1Y:440VD_60HZ_10HP}-1:1 replacement for UD1808/2056935-001-002
 1LE1523-1CB29-0KB4-Z  F50+F70+H20+M11+M1Y+Q02+R12+R50+Y99	Siemens	1LE1523-1CB29-0KB4-ZF50+F70+H20+M11+M1Y+Q02+R12+R50+Y99Y99:spezielles MotordesignM1Y: 50Hz 380VD S3/50% 7.5kW, 60Hz 440VDS3/50% 7.5kWxxx:Bremse KFB10 
@@ -316,6 +319,8 @@ item_code	brand	description
 592386200	Fisher	16A5512X012; KEIL, KONISCH
 592392500	Fisher	1V710106242; SCHEIBE
 5933216-081	TLD	TLD 5933216-081
+60.00.06205	R2 Rinaldi	60.00.06205
+60.00.06207	R2 Rinaldi	60.00.06207
 60112067	Scheuerle	HIGH PRESSURE HOSE
 60112071	Scheuerle	HIGH PRESSURE HOSE
 60112075	Scheuerle	HIGH PRESSURE HOSE
@@ -371,6 +376,8 @@ item_code	brand	description
 6SL3055-0AA00-5CA1	Siemens	Sensor Module
 6SL3055-0AA00-5CA2 (NEW)	Siemens	Sensor Module
 6SL3210-1PE34-8AL0	Siemens	SINAMICS G120/S120 POWER MODULE PM240-2 FSG C2 WITH BUILT IN BRAKING CHOPPER 3AC380-480V+10/-10% 47-63Hz OUTPUT HIGH OVERLOAD: 200kW FOR 200% 3S,150% 
+6SL51201UE230SC1	Siemens	SINAMICS S220 Motor Module
+70.1.405810	R2 Rinaldi	70.1.405810
 700009B	HARTMANN	Bandmesser (18 St.) 176''/4470,4 x 12 x 0,45 mm, Welle 12 mm
 700429037000	Mtu	O-Ring for various MTU engines
 700429044001	Mtu	O-Ring for various MTU engines
@@ -519,6 +526,7 @@ Presskopf PP520	Intercable tools	Presskopf PP520
 Prog. 1211 Controller – Typ 20001A-70E R	PRONOMIC	Controller
 QM/1525/75/27	IMI NORGREN	Rückkopplung
 QM/1525/75/29	IMI NORGREN	CYLINDER ACCESSORY/REPLACEMENT PART
+QM/8050/32	IMI NORGREN	Gelenkkopf-Befestigung Durchmesser 50mm/63mm
 R030567904	BOSCH REXROTH	Electromechanical Cylinder size EMC-063
 R18-C4-F000B	Wilkerson	Druckregler m. Selbstentlastung1/2"BSP-Gewinde, 0,4 - 8,6 bar
 R20913046	Kfm	Ersatz für Fb-Nr R209 13 046 bei gleicher Funktion und Baugröße.4-facher 3-Pkt.-Schrittregler, 96x96mm Eingänge:3xPt100 0..100/-30..+70,1xEinh. Ausgän
@@ -531,6 +539,7 @@ RI58-O/ 1000AS.41TF-F0	HENGSTLER	Drehgeber Typ RI 58
 RIBSTAR BELT 15PK2008	Mori Seiki	Mori Seiki RIBSTAR BELT 15PK2008
 RM 200-W90-1 / 313007	Schunk	Universal Swivel Unit
 RM.03.2D.00	HERBORNER PUMPEN	Impeller nut H50/131S-GD-M12Item 922
+RM/55451/M/125	IMI NORGREN	RM/55451/M/125 Norgren Rundzylinder, doppeltwirkend Durchmesser 50 mm, Hub 125 mm
 Repair kit for DOM pressure regulator Type:  D166- L- G- 43- NNL2000	GHR	Repair kit for DOM pressure regulator Type: D166- L- G- 43- NNL2000 (new version)
 Repair kit for DOM pressure regulator Type:  D166/L/21	GHR	Repair kit for DOM pressure regulatorType: D166/L/21 (old version)
 SEV.65.65.40.2.51D	Grundfos	GRUNDFOS AbwasserpumpeFreistromlaufradSEV.65.65.40.2.51D 10m KabelNachfolgemodell zu 96047733Typ: SEV.65.65.40.2.51DTechnische Daten:Laufradtyp: SUPER
