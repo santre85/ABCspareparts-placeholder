@@ -90,7 +90,11 @@ const BRAND_OVERRIDES = {
   'Benz & Hilgers': 'Benz & Hilgers GmbH',
   'BENZ & HILGERS GMBH': 'Benz & Hilgers GmbH',
   'Benhil': 'Benz & Hilgers GmbH',
-  'BENHIL': 'Benz & Hilgers GmbH'
+  'BENHIL': 'Benz & Hilgers GmbH',
+  // R2 Rinaldi → existing RINALDI brand page (no r2-rinaldi page)
+  'R2 Rinaldi': 'RINALDI',
+  'R2 RINALDI': 'RINALDI',
+  'R2Rinaldi': 'RINALDI'
   // ABC - skipped as ambiguous (multiple ABC brands exist)
 };
 
