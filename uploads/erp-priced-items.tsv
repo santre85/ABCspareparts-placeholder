@@ -42,6 +42,7 @@ item_code	brand	description
 1-000-000-87061		ACON PWM Modul, 6Kan,50mA/24VDC,m0,LP-AuZolltarifnummer: 8537 10 10Ursprungsland: AT
 1.69507.105/1502	Rafi	INDICATOR, BRAND RAFI, 24V, GREEN
 100.030.139.400	ABC	O-Ring
+1017380	Sick	ISD260-1112
 1020418303011000	BOSCH REXROTH	Ventilblock
 102735	MULAG	MULAG 102735 Kugelgelenk
 102736	MULAG	MULAG 102736 Kugelgelenk
@@ -52,6 +53,7 @@ item_code	brand	description
 1085256	Phoenix  Contact	FL SWITCH 1000
 1093813	TLD	TLD 1093813
 1104562		TLD 1104562
+11079112	Baumer	FS_A-Kabel sw10 K21BG8/C 50-SL NIo-00200
 1108388		TLD 1108388
 1128899	TLD	TLD 1128899
 1137870		TLD 1137870
@@ -75,6 +77,7 @@ item_code	brand	description
 127-0354	Kepco	Circuit Breaker
 13144.04	Baldwin	RUECKSCHLAGVENTIL I.RV 0015.RGG 1/4",0.2 BAR
 13144.05	Baldwin	RUECKSCHLAGVENTIL IRV 0013G 1/4",0,2 BAR
+13194	Deutz	TWIN NIPPLE
 132206	Klaschka	Induktive SensorenBuntmetall Näherungsschalter IBD-40fv114b20-12S1B Ursprungsland: Germany Zolltarifnummer: 85480090 Gewicht KG/ 1St.: 0.24
 135859	MST	O-RING
 139719-020 , Type: JSM1 2V4gyy/LN 4x0,25u5,0 OG 2m	Klaschka	M12 Winkelsteckdose
@@ -85,11 +88,14 @@ item_code	brand	description
 14523254	SIGLOCH	Laufrolle
 14523293	SIGLOCH	Umlenkrolle
 14615210	SIGLOCH	Laufrolle
+14772	Deutz	O-SEAL
 149826	MST	BRAKE REPAIR KIT
 150-F43NBD	Allen Bradley	Allen Bradley 150-F43NBDAllen Bradley · Drive SMC Flex Alen Bradley 150-F43NBD B · 150-F43NBD
 1522.3212.4	Müller Martini	Solenoid Valve
+15269	Deutz	SLOTTED PLUG
 1614A0037	BIESSE	Saugerplatte 160x80x24mm
 1614A0039	BIESSE	Saugerplatte 160x152x24mm
+16501	Deutz	O-SEAL (1164515)
 1734-AENT	Rockwell	Ethernet Adapter
 1734-EP24DC	Rockwell	EXTENDED POWER MODULE
 1734-IB4	Rockwell	Input Module
@@ -101,6 +107,7 @@ item_code	brand	description
 174126	MULAG	MULAG 174126
 1747-L552	Rockwell	Processor
 1747-L552 (NEW)	Rockwell	Processor
+17473	Atlas Filtri	ATLAS Filtergehäuse 10" mit 1/2" Anschluss "DP 10 Mono 1/2 OT TS"
 175-EN2T	Rockwell	Interface
 1756-DNB	Rockwell	Device-net
 1756-EN2T	Allen Bradley	Allen Bradley 1756-EN2TAllen Bradley · Module Bridge Ethernet I/PAB 1756-EN2T/C · 1756-EN2T
@@ -142,6 +149,7 @@ item_code	brand	description
 2128849	HYDAC	ADAPTER FPU A10-7/8-14-UNF HYDAC (BAUGR)
 2146305	HAUSER	EX19 Collet Set for 45 S Grinding Motor, suitable for speeds from 9,000 to 45,000 rpm; collet diameters: 3, 4, 5, 6, 8 and 10 mm
 215009	HERRMANN	HSG V2 ultrasonic hand-held welding machine with plastic housing
+21504	Deutz	TOOTHED GEAR
 21768049	Kockum Sonics	Packing 170/72 X 385319000 - PH
 220390	PRONOMIC	Charger LiftDrive
 2295554	Phoenix contact	PLC-V8/FLK14/OUT
@@ -239,7 +247,11 @@ item_code	brand	description
 3203185	HYDAC	ADAPTER FPU A12-M16x2 MINIMESS (BAUGR)
 326299G06-AVL	Thermo fisher	HPLRF P/S SERVICE KIT, 230V FUSE
 326301H01-AVL	Thermo fisher	PCB, DISPLAY, REFRIG
+32653	Deutz	WAISTED STUD
 3269153	HYDAC	Seal kit for FPU adapter
+32751	Deutz	LUB OIL LINE
+32752	Deutz	LUBRICAT. OIL LINE
+32753	Deutz	LUBRICAT. OIL LINE
 361605	HYDAC	ADAPTER FPU A2-5/8-18UNF OLAER (BAUGR)
 361619	HYDAC	ADAPTER FPU A1-M16x1,5 MINIMESS (BAUGR)
 365-8050-0097-RP	MEASUREX	PCBA Frame Controller IV(Refurb)
@@ -263,6 +275,7 @@ item_code	brand	description
 46221	MST	SPIDER
 466155	Rickmeier	Spare set R65/400...630 FL-Z-FKM-P10Net weight: 0,60 kg / pc.customs tariff code: 84139100
 466255	Rickmeier	Set of gearshafts R65/500 ZNet weight: 13,10 kg / pc.customs tariff code: 84139100
+47423	Deutz	COOLING WATER LINE
 49944	MST	SEAL KIT
 5056817	FLEXLINK	Ersatzteil-Kit für Rutschkupplung
 5111584	FLEXLINK	Ersatzteil-Kit Einlaufgleitstück XL
@@ -406,6 +419,7 @@ item_code	brand	description
 97.10.08.00	HERBORNER PUMPEN	Shaft with rotor WR07-VFor motor VEM 100L2Item 819
 97.18.03.00	HERBORNER PUMPEN	Shaft seal ring B30x55x7-FK, item 423(labyrinth disc)
 974400110000	CIEMME	Deckeldichtung für K10 - EPDM- Durchmesser - 200 mmZolltarifnummer : 40169300
+976554	Atlas Filtri	FA 10 BX - Sediment Wickelfilter 100mcr * Sonderbestellung, keine Rückgabe möglich *
 97851334	Grundfos	POMPA GRUNDFOS TP 40-120/2AFABQQE-DX1 0,37KW Q=11,4m³/h H=7,4m
 98122409	Grundfos	POMPA GRUNDFOS TP 40-60/2AFABQQE-CX1 0,25KW Q=10,4m³/h H=4,6m
 A-5191-0049	Renishaw	OMI-2 - optical machine interface
@@ -577,5 +591,6 @@ X527-458	VERSALIFT	Seal kit
 XFP150G CB1.3	Sulzer	Girante / Laufrad
 XLCR 25	FLEXLINK	Gleitschiene HDPE, (schwarz), Länge 25 m
 XPCSG-17BG	ABB	Wellrohr
+XY2CE1A250	Telemecanique	XY2CE1A250
 ZSM1-121L	SMC	Diaphragm type vacuum switch, ZSM1‑121 series, reed contact type, connection R 1/8, max. operating pressure 0.5 MPa, regulating range −27 to −80 kPa, 
 ZUB0NFW0IP68	Nivus	NIVUS ZUB0NFW0IP68NIVUS protective housing for transmitters, type NFxx
