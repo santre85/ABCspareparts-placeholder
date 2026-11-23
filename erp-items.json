@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-19",
+  "imported": "2026-11-23",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -122,6 +122,20 @@
       ]
     },
     {
+      "brand": "Atlas Filtri",
+      "brand_slug": "atlas-filtri",
+      "parts": [
+        {
+          "part_number": "17473",
+          "description": "ATLAS Filtergehäuse 10\" mit 1/2\" Anschluss \"DP 10 Mono 1/2 OT TS\""
+        },
+        {
+          "part_number": "976554",
+          "description": "FA 10 BX - Sediment Wickelfilter 100mcr * Sonderbestellung, keine Rückgabe möglich *"
+        }
+      ]
+    },
+    {
       "brand": "ATR",
       "brand_slug": "atr",
       "parts": [
@@ -197,6 +211,10 @@
       "brand": "Baumer",
       "brand_slug": "baumer",
       "parts": [
+        {
+          "part_number": "11079112",
+          "description": "FS_A-Kabel sw10 K21BG8/C 50-SL NIo-00200"
+        },
         {
           "part_number": "EN580C.ML-BN12.HH2PB.21160.H",
           "description": "Absoluter Drehgeber"
@@ -458,6 +476,52 @@
         {
           "part_number": "6155680335",
           "description": "torque sensor"
+        }
+      ]
+    },
+    {
+      "brand": "Deutz",
+      "brand_slug": "deutz",
+      "parts": [
+        {
+          "part_number": "13194",
+          "description": "TWIN NIPPLE"
+        },
+        {
+          "part_number": "14772",
+          "description": "O-SEAL"
+        },
+        {
+          "part_number": "15269",
+          "description": "SLOTTED PLUG"
+        },
+        {
+          "part_number": "16501",
+          "description": "O-SEAL (1164515)"
+        },
+        {
+          "part_number": "21504",
+          "description": "TOOTHED GEAR"
+        },
+        {
+          "part_number": "32653",
+          "description": "WAISTED STUD"
+        },
+        {
+          "part_number": "32751",
+          "description": "LUB OIL LINE"
+        },
+        {
+          "part_number": "32752",
+          "description": "LUBRICAT. OIL LINE"
+        },
+        {
+          "part_number": "32753",
+          "description": "LUBRICAT. OIL LINE"
+        },
+        {
+          "part_number": "47423",
+          "description": "COOLING WATER LINE"
         }
       ]
     },
@@ -2560,6 +2624,10 @@
       "brand_slug": "sick",
       "parts": [
         {
+          "part_number": "1017380",
+          "description": "ISD260-1112"
+        },
+        {
           "part_number": "1050920",
           "description": "SENSORE POSIZIONAMENTO SICK MPS-096TSNUO"
         },
@@ -2894,6 +2962,16 @@
         {
           "part_number": "TS5013N61",
           "description": "68-2048C/T-L3-12V - NEWIncremental optical shaft encoder OIS 68 series . Outside diameter 68 mm Shaft diameter 10 mm Re…"
+        }
+      ]
+    },
+    {
+      "brand": "Telemecanique",
+      "brand_slug": "telemecanique",
+      "parts": [
+        {
+          "part_number": "XY2CE1A250",
+          "description": "XY2CE1A250"
         }
       ]
     },

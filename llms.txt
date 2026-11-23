@@ -22,7 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-163 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302220 part references.
+165 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302235 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -31,13 +31,14 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Anton Paar](https://abcspareparts.eu/marche/anton-paar.html): 104453
 - [ASCON TECHNOLOGIC](https://abcspareparts.eu/marche/ascon-technologic.html): M100063
 - [ATLAS COPCO](https://abcspareparts.eu/marche/atlas-copco.html): 2906 0565 00, 80701.000507
+- [Atlas Filtri](https://abcspareparts.eu/marche/atlas-filtri.html): 17473, 976554
 - [ATR](https://abcspareparts.eu/marche/atr.html): VM321-10 (EX. VM221-10 )
 - [AUO](https://abcspareparts.eu/marche/auo.html): G121SN01 V.4
 - [Autronica](https://abcspareparts.eu/marche/autronica.html): V-430/BH200, V-530/BH500
 - [Aventics](https://abcspareparts.eu/marche/aventics.html): V581-5/2AR-I2-2CNA-AA-A-C
 - [Baelz](https://abcspareparts.eu/marche/baelz.html): Best.-Nr. D-VENTIL
 - [Baldwin](https://abcspareparts.eu/marche/baldwin.html): 13144.04, 13144.05, 45.877.05
-- [Baumer](https://abcspareparts.eu/marche/baumer.html): EN580C.ML-BN12.HH2PB.21160.H, EN580C.ML-BN12.HH2PB.21160.H-11262807, EN580C.ML-SC10.HH2C1.21160.H-11267453
+- [Baumer](https://abcspareparts.eu/marche/baumer.html): 11079112, EN580C.ML-BN12.HH2PB.21160.H, EN580C.ML-BN12.HH2PB.21160.H-11262807, EN580C.ML-SC10.HH2C1.21160.H-11267453
 - [Benz & Hilgers GmbH](https://abcspareparts.eu/marche/benz-hilgers.html): 300-475-0010
 - [Biesse](https://abcspareparts.eu/marche/biesse.html): #VO202600725100010, 0801A0214, 0806C0048, 091604600 (+14 more)
 - [BOSCH REXROTH](https://abcspareparts.eu/marche/bosch-rexroth.html): 1020418303011000, 5776960900-AGZ, AZPF-11-008RCB20MB, R030567904 (+3 more)
@@ -49,6 +50,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [CISCO](https://abcspareparts.eu/marche/cisco.html): ABC04016
 - [Cognex](https://abcspareparts.eu/marche/cognex.html): DataMan 300 – 10.3mm Liquid Lens Kit, DMR-363X-1000
 - [DESOUTTER](https://abcspareparts.eu/marche/desoutter.html): 6155680335
+- [Deutz](https://abcspareparts.eu/marche/deutz.html): 13194, 14772, 15269, 16501 (+6 more)
 - [DNH](https://abcspareparts.eu/marche/dnh.html): DH30, DST100
 - [DUNKERMOTOREN](https://abcspareparts.eu/marche/dunkermotoren.html): BG 75x50
 - [Ebro](https://abcspareparts.eu/marche/ebro.html): 292876-1
@@ -151,7 +153,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Schunk](https://abcspareparts.eu/marche/schunk.html): LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058, PGN-plus 64-2-AS / 371093 (+1 more)
 - [SEPATRON](https://abcspareparts.eu/marche/sepatron.html): AD1015, AD1035
 - [SEW Eurodrive](https://abcspareparts.eu/marche/sew-eurodrive.html): 28229150, 8253854, 8277311, 8670455 (+1 more)
-- [Sick](https://abcspareparts.eu/marche/sick.html): 1050920, 1211479, 1211499 / 18483347, 1211500 / 18481699 (+1 more)
+- [Sick](https://abcspareparts.eu/marche/sick.html): 1017380, 1050920, 1211479, 1211499 / 18483347 (+2 more)
 - [SIDEL](https://abcspareparts.eu/marche/sidel.html): 01123995101, 01123995301, 01124344702, 29A5048437 (+1 more)
 - [Siemens](https://abcspareparts.eu/marche/siemens.html): 3SU1000-0AA10-0AA0, 1FK7032-2AF21-1BA0, 3RT2015-1AB01, 6ES7131-4BD01-0AA0 (+91293 listino codes, search on page)
 - [SIGLOCH](https://abcspareparts.eu/marche/sigloch.html): 14523168, 14523240, 14523254, 14523293 (+1 more)
@@ -1354,6 +1356,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [ASCON TECHNOLOGIC M100063](https://abcspareparts.eu/marche/ascon-technologic.html#quote=M100063) — Steuerungsplatine
 - [ATLAS COPCO 2906 0565 00](https://abcspareparts.eu/marche/atlas-copco.html#quote=2906%200565%2000) — Elemento separatore per compressore Atlas Copco GA 132W
 - [ATLAS COPCO 80701.000507](https://abcspareparts.eu/parts/atlas-copco/80701.000507.html) — BALL JOINT ASSEMBLY
+- [Atlas Filtri 17473](https://abcspareparts.eu/marche/atlas-filtri.html#quote=17473) — ATLAS Filtergehäuse 10" mit 1/2" Anschluss "DP 10 Mono 1/2 OT TS"
+- [Atlas Filtri 976554](https://abcspareparts.eu/marche/atlas-filtri.html#quote=976554) — FA 10 BX - Sediment Wickelfilter 100mcr * Sonderbestellung, keine Rückgabe möglich *
 - [ATR VM321-10 (EX. VM221-10 )](https://abcspareparts.eu/marche/atr.html#quote=VM321-10%20(EX.%20VM221-10%20)) — Effektivwert-Messverstärker (rms/DC-Wandler)
 - [AUO G121SN01 V.4](https://abcspareparts.eu/marche/auo.html#quote=G121SN01%20V.4) — LCD MATRIX
 - [Autronica V-430/BH200](https://abcspareparts.eu/parts/autronica/v-430-bh200.html) — Smoke Detector** Replacement for 116-BHH-200** Please check that the socket installed on board have been produced after…
@@ -1363,6 +1367,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Baldwin 13144.04](https://abcspareparts.eu/parts/baldwin/13144.04.html) — RUECKSCHLAGVENTIL I.RV 0015.RGG 1/4",0.2 BAR
 - [Baldwin 13144.05](https://abcspareparts.eu/parts/baldwin/13144.05.html) — RUECKSCHLAGVENTIL IRV 0013G 1/4",0,2 BAR
 - [Baldwin 45.877.05](https://abcspareparts.eu/parts/baldwin/45.877.05.html) — Flow meter
+- [Baumer 11079112](https://abcspareparts.eu/marche/baumer.html#quote=11079112) — FS_A-Kabel sw10 K21BG8/C 50-SL NIo-00200
 - [Baumer EN580C.ML-BN12.HH2PB.21160.H](https://abcspareparts.eu/marche/baumer.html#quote=EN580C.ML-BN12.HH2PB.21160.H) — Absoluter Drehgeber
 - [Baumer EN580C.ML-BN12.HH2PB.21160.H-11262807](https://abcspareparts.eu/marche/baumer.html#quote=EN580C.ML-BN12.HH2PB.21160.H-11262807) — Absoluter Drehgeber EN580C
 - [Baumer EN580C.ML-SC10.HH2C1.21160.H-11267453](https://abcspareparts.eu/parts/baumer/en580c.ml-sc10.hh2c1.21160.h-11267453.html) — Absoluter Drehgeber EN580C (successor of GXMMW.0205P32)
@@ -1412,6 +1417,16 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Cognex DataMan 300 – 10.3mm Liquid Lens Kit](https://abcspareparts.eu/marche/cognex.html#quote=DataMan%20300%20%E2%80%93%2010.3mm%20Liquid%20Lens%20Kit) — Liquid lens kit
 - [Cognex DMR-363X-1000](https://abcspareparts.eu/marche/cognex.html#quote=DMR-363X-1000) — DataMatrix reader, fixed mount with PowerGrid
 - [DESOUTTER 6155680335](https://abcspareparts.eu/marche/desoutter.html#quote=6155680335) — torque sensor
+- [Deutz 13194](https://abcspareparts.eu/marche/deutz.html#quote=13194) — TWIN NIPPLE
+- [Deutz 14772](https://abcspareparts.eu/marche/deutz.html#quote=14772) — O-SEAL
+- [Deutz 15269](https://abcspareparts.eu/marche/deutz.html#quote=15269) — SLOTTED PLUG
+- [Deutz 16501](https://abcspareparts.eu/marche/deutz.html#quote=16501) — O-SEAL (1164515)
+- [Deutz 21504](https://abcspareparts.eu/marche/deutz.html#quote=21504) — TOOTHED GEAR
+- [Deutz 32653](https://abcspareparts.eu/marche/deutz.html#quote=32653) — WAISTED STUD
+- [Deutz 32751](https://abcspareparts.eu/marche/deutz.html#quote=32751) — LUB OIL LINE
+- [Deutz 32752](https://abcspareparts.eu/marche/deutz.html#quote=32752) — LUBRICAT. OIL LINE
+- [Deutz 32753](https://abcspareparts.eu/marche/deutz.html#quote=32753) — LUBRICAT. OIL LINE
+- [Deutz 47423](https://abcspareparts.eu/marche/deutz.html#quote=47423) — COOLING WATER LINE
 - [DNH DH30](https://abcspareparts.eu/marche/dnh.html#quote=DH30) — DNH Horn without driver 345mm for DST100 RAL7035
 - [DNH DST100](https://abcspareparts.eu/marche/dnh.html#quote=DST100) — DNH Driver unit ALU 100W 100V IP67 RAL7035
 - [DUNKERMOTOREN BG 75x50](https://abcspareparts.eu/marche/dunkermotoren.html#quote=BG%2075x50) — DC-Motor 40V 3500rpm 12A
@@ -1865,6 +1880,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [SEW Eurodrive 8277311](https://abcspareparts.eu/marche/sew-eurodrive.html#quote=8277311) — INVERTER SEW MOVIDRIVE MDX61B0008-5A3-4-0T 0,75KW 400V
 - [SEW Eurodrive 8670455](https://abcspareparts.eu/marche/sew-eurodrive.html#quote=8670455) — BOBINA FRENO SEW BMG2 380V MONOFASE
 - [SEW Eurodrive 8752370](https://abcspareparts.eu/marche/sew-eurodrive.html#quote=8752370) — Bobina freno SEW BMG8 380V monofase
+- [Sick 1017380](https://abcspareparts.eu/marche/sick.html#quote=1017380) — ISD260-1112
 - [Sick 1050920](https://abcspareparts.eu/marche/sick.html#quote=1050920) — SENSORE POSIZIONAMENTO SICK MPS-096TSNUO
 - [Sick 1211479](https://abcspareparts.eu/marche/sick.html#quote=1211479) — DETEC4 CORE C4C-EA12010A10000Barriera SICK ricevitore mm 1200
 - [Sick 1211499 / 18483347](https://abcspareparts.eu/marche/sick.html#quote=1211499%20%2F%2018483347) — DETEC4 CORE C4C-SA10530A10000Barriera SICK emettitore mm 1050, Portata 0–10 m
@@ -1979,6 +1995,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Telemecanique XCMD1656049](https://abcspareparts.eu/marche/telemecanique.html#quote=XCMD1656049) — sample code from manufacturer list (request quote, no price shown)
 - [Telemecanique ZC2JC13](https://abcspareparts.eu/marche/telemecanique.html#quote=ZC2JC13) — sample code from manufacturer list (request quote, no price shown)
 - [Telemecanique ZCKJ0121](https://abcspareparts.eu/marche/telemecanique.html#quote=ZCKJ0121) — sample code from manufacturer list (request quote, no price shown)
+- [Telemecanique XY2CE1A250](https://abcspareparts.eu/marche/telemecanique.html#quote=XY2CE1A250)
 - [TERMET Maintenance kit for EcoCondens-35](https://abcspareparts.eu/marche/termet.html#quote=Maintenance%20kit%20for%20EcoCondens-35) — 1.Ionisation electrode Z1780.04.04.002.Electrode gasket Z1780.04.00.203. Ignition electrode Z1780.04.03.004. Gasket ele…
 - [TERMET Z0720.04.00.10](https://abcspareparts.eu/marche/termet.html#quote=Z0720.04.00.10) — Dichtung Frontklappe
 - [TERMET Z1780.04.00.19](https://abcspareparts.eu/marche/termet.html#quote=Z1780.04.00.19) — Elektrodendichtung
@@ -2052,8 +2069,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 163 high-priority brand URLs
-- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11813 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 165 high-priority brand URLs
+- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11811 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)

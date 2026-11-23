@@ -2128,12 +2128,6 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/marche/atlas-filtri.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://abcspareparts.eu/marche/atlas-metal.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -9179,12 +9173,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/deutschmann.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/marche/deutz.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -1,6 +1,6 @@
 {
-  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact) + erp-items.json (viqua) + erp-items.json (pitco) + erp-items.json (m-and-s-armaturen) + erp-items.json (measurex) + erp-items.json (powasert) + erp-items.json (zetkama) + erp-items.json (parker) + erp-items.json (keystone) + erp-items.json (bosch-rexroth) + erp-items.json (woodward) + erp-items.json (kfm) + erp-items.json (caterpillar) + erp-items.json (nivus) + erp-items.json (siemens) + erp-items.json (woodward) + erp-items.json (novexx) + erp-items.json (fasco) + erp-items.json (smc) + erp-items.json (ascon-technologic) + erp-items.json (rickmeier) + erp-items.json (novexx) + erp-items.json (imi-norgren) + erp-items.json (biesse) + erp-items.json (powasert) + erp-items.json (meteor) + erp-items.json (sulzer) + erp-items.json (kockum-sonics) + erp-items.json (ebro) + erp-items.json (sauro) + erp-items.json (ice) + erp-items.json (zanardo) + erp-items.json (manitou) + erp-items.json (siemens) + erp-items.json (benz-hilgers) + erp-items.json (mac) + erp-items.json (versalift) + erp-items.json (m-and-s-armaturen) + erp-items.json (elumatec) + erp-items.json (imi-norgren) + erp-items.json (rinaldi) + erp-items.json (imi-norgren) + erp-items.json (siemens)",
-  "generated": "2026-11-19",
+  "source": "ORDINI_ARTICOLI_MARCHE.txt + OFFERTE_ARTICOLI_MARCHE.txt + listini/ + erp-items.json (hydac) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (all matched brands) + erp-items.json (hydac) + erp-items.json (mtu) + erp-items.json (siemens) + erp-items.json (radio-energie) + erp-items.json (kolbus) + erp-items.json (mulag) + erp-items.json (tld) + erp-items.json (sigloch) + erp-items.json (mst) + erp-items.json (fisher) + erp-items.json (phoenix-contact) + erp-items.json (siemens) + erp-items.json (tld) + erp-items.json (mulag) + erp-items.json (omec) + erp-items.json (siemens) + erp-items.json (phoenix-contact) + erp-items.json (viqua) + erp-items.json (pitco) + erp-items.json (m-and-s-armaturen) + erp-items.json (measurex) + erp-items.json (powasert) + erp-items.json (zetkama) + erp-items.json (parker) + erp-items.json (keystone) + erp-items.json (bosch-rexroth) + erp-items.json (woodward) + erp-items.json (kfm) + erp-items.json (caterpillar) + erp-items.json (nivus) + erp-items.json (siemens) + erp-items.json (woodward) + erp-items.json (novexx) + erp-items.json (fasco) + erp-items.json (smc) + erp-items.json (ascon-technologic) + erp-items.json (rickmeier) + erp-items.json (novexx) + erp-items.json (imi-norgren) + erp-items.json (biesse) + erp-items.json (powasert) + erp-items.json (meteor) + erp-items.json (sulzer) + erp-items.json (kockum-sonics) + erp-items.json (ebro) + erp-items.json (sauro) + erp-items.json (ice) + erp-items.json (zanardo) + erp-items.json (manitou) + erp-items.json (siemens) + erp-items.json (benz-hilgers) + erp-items.json (mac) + erp-items.json (versalift) + erp-items.json (m-and-s-armaturen) + erp-items.json (elumatec) + erp-items.json (imi-norgren) + erp-items.json (rinaldi) + erp-items.json (imi-norgren) + erp-items.json (siemens) + erp-items.json (deutz) + erp-items.json (atlas-filtri) + erp-items.json (sick) + erp-items.json (baumer) + erp-items.json (telemecanique)",
+  "generated": "2026-11-23",
   "listini_files": 301648,
   "brands": [
     {
@@ -160,6 +160,20 @@
       ]
     },
     {
+      "brand": "Atlas Filtri",
+      "brand_slug": "atlas-filtri",
+      "parts": [
+        {
+          "part_number": "17473",
+          "description": "ATLAS Filtergehäuse 10\" mit 1/2\" Anschluss \"DP 10 Mono 1/2 OT TS\""
+        },
+        {
+          "part_number": "976554",
+          "description": "FA 10 BX - Sediment Wickelfilter 100mcr * Sonderbestellung, keine Rückgabe möglich *"
+        }
+      ]
+    },
+    {
       "brand": "ATR",
       "brand_slug": "atr",
       "parts": [
@@ -238,6 +252,10 @@
       "brand": "Baumer",
       "brand_slug": "baumer",
       "parts": [
+        {
+          "part_number": "11079112",
+          "description": "FS_A-Kabel sw10 K21BG8/C 50-SL NIo-00200"
+        },
         {
           "part_number": "EN580C.ML-BN12.HH2PB.21160.H",
           "description": "Absoluter Drehgeber"
@@ -499,6 +517,52 @@
         {
           "part_number": "6155680335",
           "description": "torque sensor"
+        }
+      ]
+    },
+    {
+      "brand": "Deutz",
+      "brand_slug": "deutz",
+      "parts": [
+        {
+          "part_number": "13194",
+          "description": "TWIN NIPPLE"
+        },
+        {
+          "part_number": "14772",
+          "description": "O-SEAL"
+        },
+        {
+          "part_number": "15269",
+          "description": "SLOTTED PLUG"
+        },
+        {
+          "part_number": "16501",
+          "description": "O-SEAL (1164515)"
+        },
+        {
+          "part_number": "21504",
+          "description": "TOOTHED GEAR"
+        },
+        {
+          "part_number": "32653",
+          "description": "WAISTED STUD"
+        },
+        {
+          "part_number": "32751",
+          "description": "LUB OIL LINE"
+        },
+        {
+          "part_number": "32752",
+          "description": "LUBRICAT. OIL LINE"
+        },
+        {
+          "part_number": "32753",
+          "description": "LUBRICAT. OIL LINE"
+        },
+        {
+          "part_number": "47423",
+          "description": "COOLING WATER LINE"
         }
       ]
     },
@@ -2751,6 +2815,10 @@
       "brand_slug": "sick",
       "parts": [
         {
+          "part_number": "1017380",
+          "description": "ISD260-1112"
+        },
+        {
           "part_number": "1050920",
           "description": "SENSORE POSIZIONAMENTO SICK MPS-096TSNUO"
         },
@@ -3135,7 +3203,12 @@
     {
       "brand": "Telemecanique",
       "brand_slug": "telemecanique",
-      "parts": [],
+      "parts": [
+        {
+          "part_number": "XY2CE1A250",
+          "description": "XY2CE1A250"
+        }
+      ],
       "listino": {
         "file": "listini-data/telemecanique.json",
         "count": 6301,
