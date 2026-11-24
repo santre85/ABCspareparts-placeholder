@@ -18550,12 +18550,6 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/marche/handtmann.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://abcspareparts.eu/marche/hanel.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -51011,12 +51005,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/schmalz.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/marche/schmersal.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

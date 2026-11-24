@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-23",
+  "imported": "2026-11-24",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -752,6 +752,16 @@
         {
           "part_number": "SEV.65.65.40.2.51D",
           "description": "GRUNDFOS AbwasserpumpeFreistromlaufradSEV.65.65.40.2.51D 10m KabelNachfolgemodell zu 96047733Typ: SEV.65.65.40.2.51DTec…"
+        }
+      ]
+    },
+    {
+      "brand": "HANDTMANN",
+      "brand_slug": "handtmann",
+      "parts": [
+        {
+          "part_number": "9003727",
+          "description": "SERVICE-KIT 2000h, VF620-634, WITH 40m³/WITHOUT GD93-3"
         }
       ]
     },
@@ -2550,6 +2560,20 @@
         {
           "part_number": "60112084",
           "description": "HIGH PRESSURE HOSE"
+        }
+      ]
+    },
+    {
+      "brand": "Schmersal",
+      "brand_slug": "schmersal",
+      "parts": [
+        {
+          "part_number": "101208523",
+          "description": "A-K4P-M12-S-G-5M-BK-1-X-A-1 Steckverbinder (ersetzt Teile-Nr. 1148412 ) Zolltarif-Nr. / Ursprungsland: 85444290 / Deuts…"
+        },
+        {
+          "part_number": "103006652",
+          "description": "PS116-T11-ST-S200 Positionsschalter"
         }
       ]
     },
