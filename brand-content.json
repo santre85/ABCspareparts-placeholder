@@ -37155,5 +37155,860 @@
         "bx_note": "VERSALIFT est un nom de nacelles élévatrices montées sur véhicule, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
       }
     }
+  },
+  "deutz": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "mtu",
+      "perkins",
+      "caterpillar",
+      "woodward"
+    ],
+    "related_labels": {
+      "mtu": "MTU",
+      "perkins": "Perkins",
+      "caterpillar": "Caterpillar",
+      "woodward": "Woodward"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/deutz.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/deutz.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/deutz.html#brand",
+          "name": "Deutz"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/deutz.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/deutz.html#brand"
+          },
+          "name": "Deutz"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/deutz.html#service",
+          "name": "Beschaffung von Deutz Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/deutz.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "Deutz Ersatzteile | ABCspareparts",
+        "meta_description": "Deutz Ersatzteile für Dieselmotoren in Bau, Landwirtschaft und Industrie, u. a. 13194, 32751. Teilenummer senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "Deutz – Ersatzteile für Dieselmotoren in Bau, Landwirtschaft und Industrie",
+        "brand_intro": "Deutz ist ein deutscher Hersteller von Dieselmotoren. Öffentliche Angaben nennen Motoren für Baumaschinen, Landtechnik und Industrieanlagen. Typische Ersatzteile, die wir beschaffen, sind Verbindungsteile, Dichtungen sowie Öl- und Kühlwasserleitungen (z. B. 13194, 14772, 32751, 47423).",
+        "brand_intro_p2": "Motorteile über ABCspareparts anfragen: Nummer vom Schild angeben, Angebot oft in 24 Stunden, Lieferung in Europa.",
+        "bx_about_title": "Über Deutz",
+        "bx_about_text": "<p>Deutz ist ein deutscher Motorenhersteller. Öffentliche Quellen nennen Dieselmotoren für Bau, Landwirtschaft und industrielle Anwendungen. Die genaue Ersatzteilausführung ergibt sich aus der Teilenummer, nicht aus einer angenommenen Motorkonfiguration.</p><p>Gelistete Anfragen betreffen unter anderem Doppelnippel (13194), O-SEAL-Dichtungen (14772, 16501), Schlitzstopfen (15269), Zahnräder (21504), Taillenbolzen (32653), Schmierölleitungen (32751, 32752, 32753) und Kühlwasserleitungen (47423). Senden Sie die Nummer vom Teil oder aus der Stückliste.</p>",
+        "bx_products_title": "Deutz-Teile, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Verbindungsteile und Nippel (z. B. 13194 TWIN NIPPLE)</li><li>Dichtungen (z. B. 14772 und 16501 O-SEAL)</li><li>Schmierölleitungen (z. B. 32751, 32752, 32753)</li><li>Kühlwasserleitungen (z. B. 47423)</li><li>Zahnräder, Bolzen und Stopfen (z. B. 21504, 32653, 15269)</li><li>Weitere Deutz-Motorteile mit vollständiger Nummer aus der Dokumentation</li>",
+        "bx_tech_title": "Worauf es bei Deutz-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Teilenummer:</strong> vollständige Nummer vom Bauteil oder aus der Stückliste (z. B. 13194, 32751).</li><li><strong>Motor oder Maschine:</strong> Typ, soweit bekannt.</li><li><strong>Baugruppe:</strong> Schmierung, Kühlung, Dichtung, Antrieb – so wie gekennzeichnet.</li><li><strong>Foto:</strong> Schild am Teil und, falls vorhanden, am Motor.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Baumaschinen</li><li>Landwirtschaftliche Maschinen</li><li>Industrieanlagen und Stationärmotoren</li><li>Instandhaltung von Dieselmotoren</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Teilenummer (ein Foto hilft)</li><li>Motortyp, falls bekannt</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich Deutz-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die Teilenummer, Menge und den Motorkontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts Deutz-Teile in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür steht die Deutz-Nummer 32751?",
+        "brand_faq_a3": "In den gelisteten Anfragen ist 32751 als LUB OIL LINE (Schmierölleitung) geführt. 32752 und 32753 sind ebenfalls als Schmierölleitungen gelistet. Die genaue Ausführung folgt der Nummer, nicht einer angenommenen Leitung.",
+        "brand_faq_q4": "Welche Deutz-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Dichtungen, Öl- und Kühlwasserleitungen, Nippel, Stopfen, Zahnräder und Bolzen. Nennen Sie die volle Nummer, nicht nur „Dichtung“ oder „Leitung“.",
+        "brand_faq_q5": "Reicht der Motortyp ohne Teilenummer?",
+        "brand_faq_a5": "Meist nicht, weil Leitungen, Dichtungen und Anbauteile je nach Motorvariante differieren. Geben Sie die Nummer vom physischen Teil an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Die Nummer am Teil und, wenn vorhanden, das Motorschild. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "Deutz ist eine Marke für Dieselmotoren. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Quellen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "Deutz spare parts | ABCspareparts",
+        "meta_description": "Deutz spare parts for diesel engines in construction, agriculture and industry, including 13194, 32751. Send the part number – enquiry often within 24 hours.",
+        "brand_h1": "Deutz – spare parts for diesel engines in construction, agriculture and industry",
+        "brand_intro": "Deutz is a German manufacturer of diesel engines. Public sources cite engines for construction machinery, agricultural equipment and industrial plant. Typical spare parts we source include fittings, seals, and oil and cooling-water lines (e.g. 13194, 14772, 32751, 47423).",
+        "brand_intro_p2": "Request engine parts through ABCspareparts: quote the number from the marking, a quote often within 24 hours, delivery in Europe.",
+        "bx_about_title": "About Deutz",
+        "bx_about_text": "<p>Deutz is a German engine manufacturer. Public sources cite diesel engines for construction, agriculture and industrial use. The exact spare part is identified by its part number, not by an assumed engine layout.</p><p>Listed enquiries include twin nipples (13194), O-SEAL seals (14772, 16501), slotted plugs (15269), toothed gears (21504), waisted studs (32653), lubricating-oil lines (32751, 32752, 32753) and cooling-water lines (47423). Send the number from the part or the bill of materials.</p>",
+        "bx_products_title": "Deutz parts often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Fittings and nipples (e.g. 13194 TWIN NIPPLE)</li><li>Seals (e.g. 14772 and 16501 O-SEAL)</li><li>Lubricating-oil lines (e.g. 32751, 32752, 32753)</li><li>Cooling-water lines (e.g. 47423)</li><li>Gears, studs and plugs (e.g. 21504, 32653, 15269)</li><li>Other Deutz engine parts with a full number from the documentation</li>",
+        "bx_tech_title": "What matters in a Deutz enquiry",
+        "bx_tech_list": "<li><strong>Part number:</strong> full number from the component or bill of materials (e.g. 13194, 32751).</li><li><strong>Engine or machine:</strong> type if known.</li><li><strong>Assembly:</strong> lubrication, cooling, sealing, drive – as marked.</li><li><strong>Photo:</strong> marking on the part and, if present, on the engine.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Construction machinery</li><li>Agricultural machines</li><li>Industrial plant and stationary engines</li><li>Diesel-engine maintenance</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full part number (a photo helps)</li><li>Engine type if known</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request Deutz spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the part number, quantity and engine context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship Deutz parts in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What is Deutz part 32751?",
+        "brand_faq_a3": "Listed enquiries record 32751 as LUB OIL LINE (lubricating-oil line). 32752 and 32753 are also listed as lubricating-oil lines. The exact design follows the number, not an assumed hose or pipe.",
+        "brand_faq_q4": "Which Deutz parts are often requested?",
+        "brand_faq_a4": "Seals, oil and cooling-water lines, nipples, plugs, gears and studs. Give the full number, not only “seal” or “line”.",
+        "brand_faq_q5": "Is the engine type enough without a part number?",
+        "brand_faq_a5": "Usually not, because lines, seals and fittings differ by engine variant. State the number from the physical part.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The number on the part and, if present, the engine nameplate. Blurry photos without numbers help little.",
+        "bx_note": "Deutz is a name for diesel engines, mentioned solely to identify products. Information is based on publicly available sources. As of November 2026."
+      },
+      "it": {
+        "meta_title": "Deutz Ricambi | ABCspareparts",
+        "meta_description": "Deutz ricambi per motori diesel in edilizia, agricoltura e industria, tra cui 13194, 32751. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "Deutz – ricambi per motori diesel in edilizia, agricoltura e industria",
+        "brand_intro": "Deutz è un produttore tedesco di motori diesel. Le fonti pubbliche citano motori per macchine da cantiere, attrezzature agricole e impianti industriali. I ricambi tipici che riforniamo comprendono raccordi, tenute e tubazioni olio e acqua di raffreddamento (es. 13194, 14772, 32751, 47423).",
+        "brand_intro_p2": "Richieda i pezzi motore tramite ABCspareparts: indichi il numero dalla marcatura, preventivo spesso entro 24 ore, consegna in Europa.",
+        "bx_about_title": "Chi è Deutz",
+        "bx_about_text": "<p>Deutz è un produttore tedesco di motori. Le fonti pubbliche citano motori diesel per edilizia, agricoltura e usi industriali. Il ricambio esatto si identifica con il numero di parte, non con una configurazione motore ipotizzata.</p><p>Le richieste elencate riguardano nipple doppi (13194), tenute O-SEAL (14772, 16501), tappi asolati (15269), ingranaggi (21504), prigionieri a vita (32653), tubazioni olio lubrificante (32751, 32752, 32753) e tubazioni acqua di raffreddamento (47423). Invii il numero dal pezzo o dalla distinta.</p>",
+        "bx_products_title": "Ricambi Deutz richiesti di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Raccordi e nipple (es. 13194 TWIN NIPPLE)</li><li>Tenute (es. 14772 e 16501 O-SEAL)</li><li>Tubazioni olio lubrificante (es. 32751, 32752, 32753)</li><li>Tubazioni acqua di raffreddamento (es. 47423)</li><li>Ingranaggi, prigionieri e tappi (es. 21504, 32653, 15269)</li><li>Altri pezzi motore Deutz con numero completo dalla documentazione</li>",
+        "bx_tech_title": "Cosa conta in una richiesta Deutz",
+        "bx_tech_list": "<li><strong>Numero di parte:</strong> numero completo dal componente o dalla distinta (es. 13194, 32751).</li><li><strong>Motore o macchina:</strong> tipo se noto.</li><li><strong>Gruppo:</strong> lubrificazione, raffreddamento, tenuta, trasmissione.</li><li><strong>Foto:</strong> marcatura del pezzo e, se presente, targhetta motore.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Macchine da cantiere</li><li>Macchine agricole</li><li>Impianti industriali e motori stazionari</li><li>Manutenzione di motori diesel</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Numero di parte completo (una foto aiuta)</li><li>Tipo di motore se noto</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi Deutz ad ABCspareparts?",
+        "brand_faq_a1": "Invii numero di parte, quantità e contesto motore con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce pezzi Deutz in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Che cos’è il codice Deutz 32751?",
+        "brand_faq_a3": "Nelle richieste elencate 32751 figura come LUB OIL LINE (tubazione olio lubrificante). 32752 e 32753 sono elencati allo stesso modo. L’esecuzione esatta segue il numero, non un tubo ipotizzato.",
+        "brand_faq_q4": "Quali ricambi Deutz vengono chiesti di frequente?",
+        "brand_faq_a4": "Tenute, tubazioni olio e acqua di raffreddamento, nipple, tappi, ingranaggi e prigionieri. Indichi il numero completo, non solo «tenuta» o «tubo».",
+        "brand_faq_q5": "Basta il tipo di motore senza numero di parte?",
+        "brand_faq_a5": "Di solito no, perché tubazioni, tenute e raccordi differiscono per variante. Indichi il numero del pezzo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "Il numero sul pezzo e, se presente, la targhetta del motore. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "Deutz è un nome di motori diesel, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "Deutz Recambios | ABCspareparts",
+        "meta_description": "Deutz recambios para motores diésel en construcción, agricultura e industria, p. ej. 13194, 32751. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "Deutz – recambios para motores diésel en construcción, agricultura e industria",
+        "brand_intro": "Deutz es un fabricante alemán de motores diésel. Las fuentes públicas citan motores para maquinaria de construcción, equipos agrícolas e instalaciones industriales. Los recambios típicos que suministramos incluyen racores, juntas y tuberías de aceite y de agua de refrigeración (p. ej. 13194, 14772, 32751, 47423).",
+        "brand_intro_p2": "Solicite piezas de motor a ABCspareparts: indique el número del marcado, presupuesto a menudo en 24 horas, entrega en Europa.",
+        "bx_about_title": "Sobre Deutz",
+        "bx_about_text": "<p>Deutz es un fabricante alemán de motores. Las fuentes públicas citan motores diésel para construcción, agricultura y uso industrial. El recambio exacto se identifica por el número de pieza, no por una configuración de motor supuesta.</p><p>Las solicitudes listadas cubren niples dobles (13194), juntas O-SEAL (14772, 16501), tapones ranurados (15269), engranajes (21504), espárragos entallados (32653), tuberías de aceite de lubricación (32751, 32752, 32753) y tuberías de agua de refrigeración (47423). Envíe el número de la pieza o de la lista de materiales.</p>",
+        "bx_products_title": "Recambios Deutz solicitados con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Racores y niples (p. ej. 13194 TWIN NIPPLE)</li><li>Juntas (p. ej. 14772 y 16501 O-SEAL)</li><li>Tuberías de aceite de lubricación (p. ej. 32751, 32752, 32753)</li><li>Tuberías de agua de refrigeración (p. ej. 47423)</li><li>Engranajes, espárragos y tapones (p. ej. 21504, 32653, 15269)</li><li>Otras piezas de motor Deutz con número completo de la documentación</li>",
+        "bx_tech_title": "Qué importa en una solicitud Deutz",
+        "bx_tech_list": "<li><strong>Número de pieza:</strong> número completo del componente o de la lista (p. ej. 13194, 32751).</li><li><strong>Motor o máquina:</strong> tipo si se conoce.</li><li><strong>Conjunto:</strong> lubricación, refrigeración, estanqueidad, accionamiento.</li><li><strong>Foto:</strong> marcado de la pieza y, si existe, placa del motor.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Maquinaria de construcción</li><li>Máquinas agrícolas</li><li>Instalaciones industriales y motores estacionarios</li><li>Mantenimiento de motores diésel</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Número de pieza completo (una foto ayuda)</li><li>Tipo de motor si se conoce</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios Deutz a ABCspareparts?",
+        "brand_faq_a1": "Envíe número de pieza, cantidad y contexto de motor con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía piezas Deutz en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué es el código Deutz 32751?",
+        "brand_faq_a3": "En las solicitudes listadas, 32751 figura como LUB OIL LINE (tubería de aceite de lubricación). 32752 y 32753 constan igual. El diseño exacto sigue el número, no un conducto supuesto.",
+        "brand_faq_q4": "¿Qué recambios Deutz se solicitan con frecuencia?",
+        "brand_faq_a4": "Juntas, tuberías de aceite y de agua de refrigeración, niples, tapones, engranajes y espárragos. Indique el número completo, no solo «junta» o «tubería».",
+        "brand_faq_q5": "¿Basta el tipo de motor sin número de pieza?",
+        "brand_faq_a5": "Suele no, porque tuberías, juntas y racores varían según la variante. Indique el número de la pieza física.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "El número en la pieza y, si existe, la placa del motor. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "Deutz es un nombre de motores diésel, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Deutz Pièces | ABCspareparts",
+        "meta_description": "Deutz pièces pour moteurs diesel en BTP, agriculture et industrie, dont 13194, 32751. Indiquez la référence – demande souvent sous 24 h.",
+        "brand_h1": "Deutz – pièces pour moteurs diesel en BTP, agriculture et industrie",
+        "brand_intro": "Deutz est un fabricant allemand de moteurs diesel. Les sources publiques citent des moteurs pour engins de chantier, matériels agricoles et installations industrielles. Les pièces que nous recherchons comprennent raccords, joints et conduites d’huile et d’eau de refroidissement (p. ex. 13194, 14772, 32751, 47423).",
+        "brand_intro_p2": "Demandez les pièces moteur via ABCspareparts : indiquez le numéro du marquage, devis souvent sous 24 heures, livraison en Europe.",
+        "bx_about_title": "À propos de Deutz",
+        "bx_about_text": "<p>Deutz est un fabricant allemand de moteurs. Les sources publiques citent des moteurs diesel pour le BTP, l’agriculture et l’industrie. La pièce exacte s’identifie par son numéro, non par une configuration moteur supposée.</p><p>Les demandes listées concernent des nipples doubles (13194), des joints O-SEAL (14772, 16501), des bouchons fendus (15269), des engrenages (21504), des goujons à taille (32653), des conduites d’huile de lubrification (32751, 32752, 32753) et des conduites d’eau de refroidissement (47423). Envoyez le numéro de la pièce ou de la nomenclature.</p>",
+        "bx_products_title": "Pièces Deutz souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Raccords et nipples (p. ex. 13194 TWIN NIPPLE)</li><li>Joints (p. ex. 14772 et 16501 O-SEAL)</li><li>Conduites d’huile de lubrification (p. ex. 32751, 32752, 32753)</li><li>Conduites d’eau de refroidissement (p. ex. 47423)</li><li>Engrenages, goujons et bouchons (p. ex. 21504, 32653, 15269)</li><li>Autres pièces moteur Deutz avec numéro complet de la documentation</li>",
+        "bx_tech_title": "Ce qui compte dans une demande Deutz",
+        "bx_tech_list": "<li><strong>Numéro de pièce :</strong> numéro complet du composant ou de la nomenclature (p. ex. 13194, 32751).</li><li><strong>Moteur ou machine :</strong> type si connu.</li><li><strong>Ensemble :</strong> lubrification, refroidissement, étanchéité, entraînement.</li><li><strong>Photo :</strong> marquage de la pièce et, s’il existe, plaque moteur.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Engins de chantier</li><li>Machines agricoles</li><li>Installations industrielles et moteurs stationnaires</li><li>Maintenance des moteurs diesel</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Numéro de pièce complet (une photo aide)</li><li>Type de moteur si connu</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces Deutz à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez numéro de pièce, quantité et contexte moteur via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des pièces Deutz en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que désigne la référence Deutz 32751 ?",
+        "brand_faq_a3": "Dans les demandes listées, 32751 figure comme LUB OIL LINE (conduite d’huile de lubrification). 32752 et 32753 sont listés de la même façon. La conception exacte suit le numéro, non un tuyau supposé.",
+        "brand_faq_q4": "Quelles pièces Deutz sont souvent demandées ?",
+        "brand_faq_a4": "Joints, conduites d’huile et d’eau de refroidissement, nipples, bouchons, engrenages et goujons. Indiquez le numéro complet, pas seulement « joint » ou « conduite ».",
+        "brand_faq_q5": "Le type de moteur suffit-il sans numéro de pièce ?",
+        "brand_faq_a5": "Le plus souvent non, car conduites, joints et raccords diffèrent selon la variante. Indiquez le numéro de la pièce physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "Le numéro sur la pièce et, s’il existe, la plaque du moteur. Des photos floues sans numéros aident peu.",
+        "bx_note": "Deutz est un nom de moteurs diesel, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
+      }
+    }
+  },
+  "atlas-filtri": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "mp-filtri",
+      "hydac",
+      "pentair",
+      "pall"
+    ],
+    "related_labels": {
+      "mp-filtri": "MP Filtri",
+      "hydac": "HYDAC",
+      "pentair": "Pentair",
+      "pall": "Pall"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/atlas-filtri.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/atlas-filtri.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/atlas-filtri.html#brand",
+          "name": "Atlas Filtri"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/atlas-filtri.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/atlas-filtri.html#brand"
+          },
+          "name": "Atlas Filtri"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/atlas-filtri.html#service",
+          "name": "Beschaffung von Atlas Filtri Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/atlas-filtri.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "Atlas Filtri Ersatzteile | ABCspareparts",
+        "meta_description": "Atlas Filtri Ersatzteile für Wasserfiltration: Gehäuse 17473 und Wickelfilter 976554. Teilenummer senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "Atlas Filtri – Ersatzteile für Wasserfiltration, Filtergehäuse und Filterkerzen",
+        "brand_intro": "Atlas Filtri ist ein italienischer Hersteller von Wasserfiltration. Die auf dieser Seite gelisteten Teile sind Filtergehäuse und Filterkerzen: 17473 (10-Zoll-Gehäuse, 1/2-Zoll-Anschluss, DP 10 Mono 1/2 OT TS) und 976554 (FA 10 BX Sediment-Wickelfilter, 100 µm).",
+        "brand_intro_p2": "Filterteile über ABCspareparts anfragen: Nummer vom Schild angeben, Angebot oft in 24 Stunden, Lieferung in Europa.",
+        "bx_about_title": "Über Atlas Filtri",
+        "bx_about_text": "<p>Atlas Filtri ist ein italienischer Hersteller von Wasserfiltration. Die gelisteten Artikelnummern auf dieser Seite beschreiben Filtergehäuse und austauschbare Filterkerzen, nicht eine angenommene Anlagenlinie. Die genaue Ausführung ergibt sich aus der Teilenummer.</p><p>Gelistete Anfragen betreffen das Filtergehäuse 17473 (10&quot; mit 1/2&quot;-Anschluss, als DP 10 Mono 1/2 OT TS geführt) und den Sediment-Wickelfilter 976554 (FA 10 BX, 100 µm). Senden Sie die Nummer vom Teil oder aus der Dokumentation.</p>",
+        "bx_products_title": "Atlas-Filtri-Teile, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Filtergehäuse 10&quot; (z. B. 17473, DP 10 Mono 1/2 OT TS, 1/2&quot;-Anschluss)</li><li>Sediment-Wickelfilter / Filterkerzen (z. B. 976554 FA 10 BX, 100 µm)</li><li>Weitere Atlas-Filtri-Filterteile mit vollständiger Nummer aus der Dokumentation</li>",
+        "bx_tech_title": "Worauf es bei Atlas-Filtri-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Teilenummer:</strong> vollständige Nummer vom Gehäuse oder von der Kerze (z. B. 17473, 976554).</li><li><strong>Format:</strong> Gehäuselänge (z. B. 10&quot;) und Anschlussgewinde, soweit gekennzeichnet.</li><li><strong>Filterfeinheit:</strong> µm-Angabe der Kerze, soweit vorhanden (z. B. 100 µm bei 976554).</li><li><strong>Foto:</strong> Schild am Teil und, falls vorhanden, am Gehäuse.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Wasserfiltration in Gebäuden und Anlagen</li><li>Sedimentfiltration mit Wickelkerzen</li><li>Industrie- und Betriebswasser</li><li>Instandhaltung von Filtergehäusen und Kerzen</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Teilenummer (ein Foto hilft)</li><li>Gehäusegröße und Anschluss, falls bekannt</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich Atlas-Filtri-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die Teilenummer, Menge und den Einsatzkontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts Atlas-Filtri-Teile in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür stehen die Nummern 17473 und 976554?",
+        "brand_faq_a3": "17473 ist als 10-Zoll-Filtergehäuse mit 1/2-Zoll-Anschluss geführt (DP 10 Mono 1/2 OT TS). 976554 ist als FA 10 BX Sediment-Wickelfilter 100 µm geführt. Die genaue Ausführung folgt der Nummer.",
+        "brand_faq_q4": "Welche Atlas-Filtri-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Filtergehäuse und Wickelfilterkerzen, wie auf dieser Seite gelistet. Nennen Sie die volle Nummer, nicht nur „Gehäuse 10 Zoll“ oder „Kerze“.",
+        "brand_faq_q5": "Reicht die Gehäusegröße ohne Teilenummer?",
+        "brand_faq_a5": "Meist nicht, weil Anschlüsse, Werkstoffe und Kerzenformate differieren. Geben Sie die Nummer vom physischen Teil an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Die Nummer am Gehäuse oder an der Kerzenverpackung. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "Atlas Filtri ist eine Marke für Wasserfiltration. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Quellen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "Atlas Filtri spare parts | ABCspareparts",
+        "meta_description": "Atlas Filtri spare parts for water filtration: housing 17473 and wound cartridge 976554. Send the part number – enquiry often within 24 hours.",
+        "brand_h1": "Atlas Filtri – spare parts for water filtration, filter housings and cartridges",
+        "brand_intro": "Atlas Filtri is an Italian manufacturer of water filtration. The parts listed on this page are filter housings and cartridges: 17473 (10-inch housing, 1/2-inch connection, DP 10 Mono 1/2 OT TS) and 976554 (FA 10 BX sediment wound filter, 100 µm).",
+        "brand_intro_p2": "Request filter parts through ABCspareparts: quote the number from the marking, a quote often within 24 hours, delivery in Europe.",
+        "bx_about_title": "About Atlas Filtri",
+        "bx_about_text": "<p>Atlas Filtri is an Italian manufacturer of water filtration. The part numbers listed on this page describe filter housings and replaceable cartridges, not an assumed plant layout. The exact item is identified by its part number.</p><p>Listed enquiries include housing 17473 (10&quot; with 1/2&quot; connection, recorded as DP 10 Mono 1/2 OT TS) and sediment wound filter 976554 (FA 10 BX, 100 µm). Send the number from the part or the documentation.</p>",
+        "bx_products_title": "Atlas Filtri parts often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>10&quot; filter housings (e.g. 17473, DP 10 Mono 1/2 OT TS, 1/2&quot; connection)</li><li>Sediment wound filter cartridges (e.g. 976554 FA 10 BX, 100 µm)</li><li>Other Atlas Filtri filter parts with a full number from the documentation</li>",
+        "bx_tech_title": "What matters in an Atlas Filtri enquiry",
+        "bx_tech_list": "<li><strong>Part number:</strong> full number from the housing or cartridge (e.g. 17473, 976554).</li><li><strong>Format:</strong> housing length (e.g. 10&quot;) and connection thread if marked.</li><li><strong>Rating:</strong> cartridge micron rating if present (e.g. 100 µm on 976554).</li><li><strong>Photo:</strong> marking on the part and, if present, on the housing.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Water filtration in buildings and plant</li><li>Sediment filtration with wound cartridges</li><li>Industrial and process water</li><li>Maintenance of filter housings and cartridges</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full part number (a photo helps)</li><li>Housing size and connection if known</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request Atlas Filtri spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the part number, quantity and application context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship Atlas Filtri parts in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What are Atlas Filtri parts 17473 and 976554?",
+        "brand_faq_a3": "17473 is listed as a 10-inch filter housing with 1/2-inch connection (DP 10 Mono 1/2 OT TS). 976554 is listed as FA 10 BX sediment wound filter 100 µm. The exact design follows the number.",
+        "brand_faq_q4": "Which Atlas Filtri parts are often requested?",
+        "brand_faq_a4": "Filter housings and wound cartridges, as listed on this page. Give the full number, not only “10-inch housing” or “cartridge”.",
+        "brand_faq_q5": "Is the housing size enough without a part number?",
+        "brand_faq_a5": "Usually not, because connections, materials and cartridge formats differ. State the number from the physical part.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The number on the housing or cartridge pack. Blurry photos without numbers help little.",
+        "bx_note": "Atlas Filtri is a name for water filtration, mentioned solely to identify products. Information is based on publicly available sources. As of November 2026."
+      },
+      "it": {
+        "meta_title": "Atlas Filtri Ricambi | ABCspareparts",
+        "meta_description": "Atlas Filtri ricambi per filtrazione acqua: contenitore 17473 e cartuccia avvolta 976554. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "Atlas Filtri – ricambi per filtrazione acqua, contenitori e cartucce",
+        "brand_intro": "Atlas Filtri è un produttore italiano di filtrazione acqua. I pezzi elencati in questa pagina sono contenitori filtro e cartucce: 17473 (contenitore 10 pollici, attacco 1/2 pollice, DP 10 Mono 1/2 OT TS) e 976554 (FA 10 BX filtro avvolto per sedimenti, 100 µm).",
+        "brand_intro_p2": "Richieda i pezzi filtro tramite ABCspareparts: indichi il numero dalla marcatura, preventivo spesso entro 24 ore, consegna in Europa.",
+        "bx_about_title": "Chi è Atlas Filtri",
+        "bx_about_text": "<p>Atlas Filtri è un produttore italiano di filtrazione acqua. I codici elencati in questa pagina descrivono contenitori filtro e cartucce sostituibili, non una linea impianto ipotizzata. Il ricambio esatto si identifica con il numero di parte.</p><p>Le richieste elencate riguardano il contenitore 17473 (10&quot; con attacco 1/2&quot;, indicato come DP 10 Mono 1/2 OT TS) e il filtro avvolto per sedimenti 976554 (FA 10 BX, 100 µm). Invii il numero dal pezzo o dalla documentazione.</p>",
+        "bx_products_title": "Ricambi Atlas Filtri richiesti di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Contenitori filtro 10&quot; (es. 17473, DP 10 Mono 1/2 OT TS, attacco 1/2&quot;)</li><li>Cartucce avvolte per sedimenti (es. 976554 FA 10 BX, 100 µm)</li><li>Altri pezzi filtro Atlas Filtri con numero completo dalla documentazione</li>",
+        "bx_tech_title": "Cosa conta in una richiesta Atlas Filtri",
+        "bx_tech_list": "<li><strong>Numero di parte:</strong> numero completo dal contenitore o dalla cartuccia (es. 17473, 976554).</li><li><strong>Formato:</strong> lunghezza contenitore (es. 10&quot;) e filettatura se indicata.</li><li><strong>Grado di filtrazione:</strong> valore in µm della cartuccia se presente (es. 100 µm su 976554).</li><li><strong>Foto:</strong> marcatura del pezzo e, se presente, del contenitore.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Filtrazione acqua in edifici e impianti</li><li>Filtrazione sedimenti con cartucce avvolte</li><li>Acqua industriale e di processo</li><li>Manutenzione di contenitori e cartucce</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Numero di parte completo (una foto aiuta)</li><li>Misura contenitore e attacco se noti</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi Atlas Filtri ad ABCspareparts?",
+        "brand_faq_a1": "Invii numero di parte, quantità e contesto d’impiego con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce pezzi Atlas Filtri in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Che cosa sono i codici 17473 e 976554?",
+        "brand_faq_a3": "17473 figura come contenitore filtro da 10 pollici con attacco 1/2 pollice (DP 10 Mono 1/2 OT TS). 976554 figura come FA 10 BX filtro avvolto per sedimenti 100 µm. L’esecuzione esatta segue il numero.",
+        "brand_faq_q4": "Quali ricambi Atlas Filtri vengono chiesti di frequente?",
+        "brand_faq_a4": "Contenitori filtro e cartucce avvolte, come elencati in questa pagina. Indichi il numero completo, non solo «contenitore 10 pollici» o «cartuccia».",
+        "brand_faq_q5": "Basta la misura del contenitore senza numero di parte?",
+        "brand_faq_a5": "Di solito no, perché attacchi, materiali e formati cartuccia differiscono. Indichi il numero del pezzo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "Il numero sul contenitore o sulla confezione della cartuccia. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "Atlas Filtri è un nome di filtrazione acqua, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "Atlas Filtri Recambios | ABCspareparts",
+        "meta_description": "Atlas Filtri recambios de filtración de agua: carcasa 17473 y cartucho bobinado 976554. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "Atlas Filtri – recambios para filtración de agua, carcasas y cartuchos",
+        "brand_intro": "Atlas Filtri es un fabricante italiano de filtración de agua. Las piezas listadas en esta página son carcasas y cartuchos: 17473 (carcasa de 10 pulgadas, conexión 1/2 pulgada, DP 10 Mono 1/2 OT TS) y 976554 (FA 10 BX filtro bobinado de sedimentos, 100 µm).",
+        "brand_intro_p2": "Solicite piezas de filtro a ABCspareparts: indique el número del marcado, presupuesto a menudo en 24 horas, entrega en Europa.",
+        "bx_about_title": "Sobre Atlas Filtri",
+        "bx_about_text": "<p>Atlas Filtri es un fabricante italiano de filtración de agua. Los códigos listados en esta página describen carcasas y cartuchos reemplazables, no una línea de planta supuesta. El recambio exacto se identifica por el número de pieza.</p><p>Las solicitudes listadas cubren la carcasa 17473 (10&quot; con conexión 1/2&quot;, registrada como DP 10 Mono 1/2 OT TS) y el filtro bobinado de sedimentos 976554 (FA 10 BX, 100 µm). Envíe el número de la pieza o de la documentación.</p>",
+        "bx_products_title": "Recambios Atlas Filtri solicitados con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Carcasas de filtro 10&quot; (p. ej. 17473, DP 10 Mono 1/2 OT TS, conexión 1/2&quot;)</li><li>Cartuchos bobinados de sedimentos (p. ej. 976554 FA 10 BX, 100 µm)</li><li>Otras piezas Atlas Filtri con número completo de la documentación</li>",
+        "bx_tech_title": "Qué importa en una solicitud Atlas Filtri",
+        "bx_tech_list": "<li><strong>Número de pieza:</strong> número completo de la carcasa o del cartucho (p. ej. 17473, 976554).</li><li><strong>Formato:</strong> longitud de carcasa (p. ej. 10&quot;) y rosca si está marcada.</li><li><strong>Grado:</strong> micraje del cartucho si consta (p. ej. 100 µm en 976554).</li><li><strong>Foto:</strong> marcado de la pieza y, si existe, de la carcasa.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Filtración de agua en edificios e instalaciones</li><li>Filtración de sedimentos con cartuchos bobinados</li><li>Agua industrial y de proceso</li><li>Mantenimiento de carcasas y cartuchos</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Número de pieza completo (una foto ayuda)</li><li>Tamaño de carcasa y conexión si se conocen</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios Atlas Filtri a ABCspareparts?",
+        "brand_faq_a1": "Envíe número de pieza, cantidad y contexto de uso con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía piezas Atlas Filtri en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué son los códigos 17473 y 976554?",
+        "brand_faq_a3": "17473 figura como carcasa de filtro de 10 pulgadas con conexión 1/2 pulgada (DP 10 Mono 1/2 OT TS). 976554 figura como FA 10 BX filtro bobinado de sedimentos 100 µm. El diseño exacto sigue el número.",
+        "brand_faq_q4": "¿Qué recambios Atlas Filtri se solicitan con frecuencia?",
+        "brand_faq_a4": "Carcasas y cartuchos bobinados, como los listados en esta página. Indique el número completo, no solo «carcasa 10 pulgadas» o «cartucho».",
+        "brand_faq_q5": "¿Basta el tamaño de carcasa sin número de pieza?",
+        "brand_faq_a5": "Suele no, porque conexiones, materiales y formatos de cartucho difieren. Indique el número de la pieza física.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "El número en la carcasa o en el envase del cartucho. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "Atlas Filtri es un nombre de filtración de agua, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Atlas Filtri Pièces | ABCspareparts",
+        "meta_description": "Atlas Filtri pièces de filtration d’eau : corps 17473 et cartouche bobinée 976554. Indiquez la référence – demande souvent sous 24 h.",
+        "brand_h1": "Atlas Filtri – pièces pour filtration d’eau, corps de filtre et cartouches",
+        "brand_intro": "Atlas Filtri est un fabricant italien de filtration d’eau. Les pièces listées sur cette page sont des corps de filtre et des cartouches : 17473 (corps 10 pouces, raccord 1/2 pouce, DP 10 Mono 1/2 OT TS) et 976554 (FA 10 BX filtre bobiné à sédiments, 100 µm).",
+        "brand_intro_p2": "Demandez les pièces filtre via ABCspareparts : indiquez le numéro du marquage, devis souvent sous 24 heures, livraison en Europe.",
+        "bx_about_title": "À propos d’Atlas Filtri",
+        "bx_about_text": "<p>Atlas Filtri est un fabricant italien de filtration d’eau. Les références listées sur cette page décrivent des corps de filtre et des cartouches remplaçables, non une ligne d’installation supposée. La pièce exacte s’identifie par son numéro.</p><p>Les demandes listées concernent le corps 17473 (10&quot; avec raccord 1/2&quot;, indiqué DP 10 Mono 1/2 OT TS) et le filtre bobiné à sédiments 976554 (FA 10 BX, 100 µm). Envoyez le numéro de la pièce ou de la documentation.</p>",
+        "bx_products_title": "Pièces Atlas Filtri souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Corps de filtre 10&quot; (p. ex. 17473, DP 10 Mono 1/2 OT TS, raccord 1/2&quot;)</li><li>Cartouches bobinées à sédiments (p. ex. 976554 FA 10 BX, 100 µm)</li><li>Autres pièces filtre Atlas Filtri avec numéro complet de la documentation</li>",
+        "bx_tech_title": "Ce qui compte dans une demande Atlas Filtri",
+        "bx_tech_list": "<li><strong>Numéro de pièce :</strong> numéro complet du corps ou de la cartouche (p. ex. 17473, 976554).</li><li><strong>Format :</strong> longueur du corps (p. ex. 10&quot;) et filetage s’il est marqué.</li><li><strong>Seuil :</strong> micronage de la cartouche s’il figure (p. ex. 100 µm sur 976554).</li><li><strong>Photo :</strong> marquage de la pièce et, s’il existe, du corps.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Filtration d’eau dans les bâtiments et installations</li><li>Filtration des sédiments par cartouches bobinées</li><li>Eau industrielle et de process</li><li>Maintenance des corps de filtre et cartouches</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Numéro de pièce complet (une photo aide)</li><li>Taille du corps et raccord si connus</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces Atlas Filtri à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez numéro de pièce, quantité et contexte d’emploi via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des pièces Atlas Filtri en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que désignent les références 17473 et 976554 ?",
+        "brand_faq_a3": "17473 figure comme corps de filtre 10 pouces avec raccord 1/2 pouce (DP 10 Mono 1/2 OT TS). 976554 figure comme FA 10 BX filtre bobiné à sédiments 100 µm. La conception exacte suit le numéro.",
+        "brand_faq_q4": "Quelles pièces Atlas Filtri sont souvent demandées ?",
+        "brand_faq_a4": "Corps de filtre et cartouches bobinées, comme listés sur cette page. Indiquez le numéro complet, pas seulement « corps 10 pouces » ou « cartouche ».",
+        "brand_faq_q5": "La taille du corps suffit-elle sans numéro de pièce ?",
+        "brand_faq_a5": "Le plus souvent non, car raccords, matériaux et formats de cartouche diffèrent. Indiquez le numéro de la pièce physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "Le numéro sur le corps ou sur l’emballage de la cartouche. Des photos floues sans numéros aident peu.",
+        "bx_note": "Atlas Filtri est un nom de filtration d’eau, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
+      }
+    }
+  },
+  "telemecanique": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "schneider-electric",
+      "omron",
+      "sick",
+      "schmersal"
+    ],
+    "related_labels": {
+      "schneider-electric": "Schneider Electric",
+      "omron": "Omron",
+      "sick": "Sick",
+      "schmersal": "Schmersal"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/telemecanique.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/telemecanique.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/telemecanique.html#brand",
+          "name": "Telemecanique",
+          "alternateName": [
+            "Telemecanique Sensors"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/telemecanique.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/telemecanique.html#brand"
+          },
+          "name": "Telemecanique"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/telemecanique.html#service",
+          "name": "Beschaffung von Telemecanique Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/telemecanique.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "Telemecanique Ersatzteile | ABCspareparts",
+        "meta_description": "Telemecanique Ersatzteile für Steuerung und Sensorik, u. a. Seilzugschalter XY2CE1A250. Teilenummer senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "Telemecanique – Ersatzteile für industrielle Steuerung, Sensoren und Endschalter",
+        "brand_intro": "Telemecanique ist eine ursprünglich französische Marke für industrielle Steuerung und Sensorik. Öffentliche Angaben ordnen Telemecanique Sensors der YAGEO-Gruppe zu. Typische Teile, die wir beschaffen, sind Endschalter, Sensoren und Seilzug-Notschalter (z. B. XY2CE1A250).",
+        "brand_intro_p2": "Steuerungs- und Sensorteile über ABCspareparts anfragen: Nummer vom Typenschild angeben, Angebot oft in 24 Stunden, Lieferung in Europa.",
+        "bx_about_title": "Über Telemecanique",
+        "bx_about_text": "<p>Telemecanique ist eine Marke für industrielle Steuerung und Sensorik, entstanden in Frankreich. Öffentliche Quellen ordnen Telemecanique Sensors der YAGEO-Gruppe zu. Die genaue Ausführung ergibt sich aus der Typnummer, nicht aus einer angenommenen Anlagenkonfiguration.</p><p>Gelistete Anfragen betreffen unter anderem den Seilzug-Notschalter XY2CE1A250. Auf der Seite ist zudem ein umfangreicher Katalog durchsuchbar. Senden Sie die vollständige Typnummer vom Schild.</p>",
+        "bx_products_title": "Telemecanique-Teile, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Seilzug-Notschalter (z. B. XY2CE1A250)</li><li>Endschalter</li><li>Sensoren</li><li>Weitere Steuerungs- und Sicherheitsteile mit vollständiger Typnummer vom Typenschild</li>",
+        "bx_tech_title": "Worauf es bei Telemecanique-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Typnummer:</strong> vollständige Nummer vom Typenschild (z. B. XY2CE1A250).</li><li><strong>Funktion:</strong> Endschalter, Sensor, Seilzug-Notschalter – so wie gekennzeichnet.</li><li><strong>Anschluss:</strong> Spannung oder Stecker, soweit auf dem Schild angegeben.</li><li><strong>Foto:</strong> Typenschild am Gerät.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Industrieautomation</li><li>Maschinensicherheit</li><li>Fördern, Handhaben und Verpacken</li><li>Instandhaltung von Steuerung und Sensorik</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Typnummer (ein Foto hilft)</li><li>Funktion des Geräts, falls bekannt</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich Telemecanique-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die Typnummer, Menge und den Anlagenkontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts Telemecanique-Teile in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür steht XY2CE1A250?",
+        "brand_faq_a3": "XY2CE1A250 ist als Seilzug-Notschalter (cable-pull rope switch) geführt. Die genaue Ausführung und Seillänge folgen der Typnummer und dem Typenschild, nicht einer angenommenen Variante.",
+        "brand_faq_q4": "Welche Telemecanique-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Endschalter, Sensoren und Seilzug-Notschalter. Nennen Sie die volle Typnummer, nicht nur „Endschalter“ oder „Sensor“.",
+        "brand_faq_q5": "Reicht die Gerätefunktion ohne Typnummer?",
+        "brand_faq_a5": "Meist nicht, weil Gehäuse, Kontakte und Anschlüsse differieren. Geben Sie die Nummer vom physischen Gerät an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Das Typenschild mit der vollen Nummer. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "Telemecanique ist eine Marke für industrielle Steuerung und Sensorik. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Quellen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "Telemecanique spare parts | ABCspareparts",
+        "meta_description": "Telemecanique spare parts for industrial control and sensors, including rope switch XY2CE1A250. Send the part number – enquiry often within 24 hours.",
+        "brand_h1": "Telemecanique – spare parts for industrial control, sensors and limit switches",
+        "brand_intro": "Telemecanique is an originally French brand for industrial control and sensing. Public sources place Telemecanique Sensors in the YAGEO group. Typical parts we source include limit switches, sensors and cable-pull emergency switches (e.g. XY2CE1A250).",
+        "brand_intro_p2": "Request control and sensor parts through ABCspareparts: quote the number from the nameplate, a quote often within 24 hours, delivery in Europe.",
+        "bx_about_title": "About Telemecanique",
+        "bx_about_text": "<p>Telemecanique is a brand for industrial control and sensing, with origins in France. Public sources place Telemecanique Sensors in the YAGEO group. The exact item is identified by its type number, not by an assumed plant layout.</p><p>Listed enquiries include the cable-pull emergency switch XY2CE1A250. The page also offers a searchable catalogue. Send the full type number from the nameplate.</p>",
+        "bx_products_title": "Telemecanique parts often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Cable-pull emergency switches (e.g. XY2CE1A250)</li><li>Limit switches</li><li>Sensors</li><li>Other control and safety parts with a full type number from the nameplate</li>",
+        "bx_tech_title": "What matters in a Telemecanique enquiry",
+        "bx_tech_list": "<li><strong>Type number:</strong> full number from the nameplate (e.g. XY2CE1A250).</li><li><strong>Function:</strong> limit switch, sensor, cable-pull emergency switch – as marked.</li><li><strong>Connection:</strong> voltage or connector if stated on the plate.</li><li><strong>Photo:</strong> nameplate on the device.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Industrial automation</li><li>Machine safety</li><li>Conveying, handling and packaging</li><li>Maintenance of control and sensing</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full type number (a photo helps)</li><li>Device function if known</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request Telemecanique spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the type number, quantity and plant context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship Telemecanique parts in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What is XY2CE1A250?",
+        "brand_faq_a3": "XY2CE1A250 is listed as a cable-pull rope switch (emergency stop by pull-wire). The exact design and rope length follow the type number and nameplate, not an assumed variant.",
+        "brand_faq_q4": "Which Telemecanique parts are often requested?",
+        "brand_faq_a4": "Limit switches, sensors and cable-pull emergency switches. Give the full type number, not only “limit switch” or “sensor”.",
+        "brand_faq_q5": "Is the device function enough without a type number?",
+        "brand_faq_a5": "Usually not, because housings, contacts and connections differ. State the number from the physical device.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The nameplate with the full number. Blurry photos without numbers help little.",
+        "bx_note": "Telemecanique is a name for industrial control and sensing, mentioned solely to identify products. Information is based on publicly available sources. As of November 2026."
+      },
+      "it": {
+        "meta_title": "Telemecanique Ricambi | ABCspareparts",
+        "meta_description": "Telemecanique ricambi per comando e sensoristica, tra cui interruttore a fune XY2CE1A250. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "Telemecanique – ricambi per comando industriale, sensori e finecorsa",
+        "brand_intro": "Telemecanique è una marca nata in Francia per comando industriale e sensoristica. Le fonti pubbliche attribuiscono Telemecanique Sensors al gruppo YAGEO. I ricambi tipici che riforniamo comprendono finecorsa, sensori e interruttori di emergenza a fune (es. XY2CE1A250).",
+        "brand_intro_p2": "Richieda i pezzi di comando e i sensori tramite ABCspareparts: indichi il numero dalla targhetta, preventivo spesso entro 24 ore, consegna in Europa.",
+        "bx_about_title": "Chi è Telemecanique",
+        "bx_about_text": "<p>Telemecanique è una marca di comando industriale e sensoristica, nata in Francia. Le fonti pubbliche attribuiscono Telemecanique Sensors al gruppo YAGEO. Il ricambio esatto si identifica con il numero di tipo, non con una configurazione impianto ipotizzata.</p><p>Le richieste elencate riguardano l’interruttore di emergenza a fune XY2CE1A250. In pagina è inoltre disponibile un catalogo ricercabile. Invii il numero di tipo completo dalla targhetta.</p>",
+        "bx_products_title": "Ricambi Telemecanique richiesti di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Interruttori di emergenza a fune (es. XY2CE1A250)</li><li>Finecorsa</li><li>Sensori</li><li>Altri pezzi di comando e sicurezza con numero di tipo completo dalla targhetta</li>",
+        "bx_tech_title": "Cosa conta in una richiesta Telemecanique",
+        "bx_tech_list": "<li><strong>Numero di tipo:</strong> numero completo dalla targhetta (es. XY2CE1A250).</li><li><strong>Funzione:</strong> finecorsa, sensore, interruttore a fune – come indicato.</li><li><strong>Collegamento:</strong> tensione o connettore se indicati sulla targhetta.</li><li><strong>Foto:</strong> targhetta del dispositivo.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Automazione industriale</li><li>Sicurezza macchine</li><li>Convogliamento, movimentazione e confezionamento</li><li>Manutenzione di comando e sensoristica</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Numero di tipo completo (una foto aiuta)</li><li>Funzione del dispositivo se nota</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi Telemecanique ad ABCspareparts?",
+        "brand_faq_a1": "Invii numero di tipo, quantità e contesto impianto con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce pezzi Telemecanique in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Che cos’è XY2CE1A250?",
+        "brand_faq_a3": "XY2CE1A250 figura come interruttore di emergenza a fune (cable-pull rope switch). L’esecuzione esatta e la lunghezza fune seguono il numero di tipo e la targhetta, non una variante ipotizzata.",
+        "brand_faq_q4": "Quali ricambi Telemecanique vengono chiesti di frequente?",
+        "brand_faq_a4": "Finecorsa, sensori e interruttori di emergenza a fune. Indichi il numero di tipo completo, non solo «finecorsa» o «sensore».",
+        "brand_faq_q5": "Basta la funzione del dispositivo senza numero di tipo?",
+        "brand_faq_a5": "Di solito no, perché involucri, contatti e collegamenti differiscono. Indichi il numero del dispositivo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "La targhetta con il numero completo. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "Telemecanique è un nome di comando industriale e sensoristica, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "Telemecanique Recambios | ABCspareparts",
+        "meta_description": "Telemecanique recambios de mando y sensores, p. ej. interruptor de cable XY2CE1A250. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "Telemecanique – recambios para mando industrial, sensores e interruptores de posición",
+        "brand_intro": "Telemecanique es una marca de origen francés para mando industrial y detección. Las fuentes públicas sitúan Telemecanique Sensors en el grupo YAGEO. Los recambios típicos que suministramos incluyen finales de carrera, sensores e interruptores de emergencia de cable (p. ej. XY2CE1A250).",
+        "brand_intro_p2": "Solicite piezas de mando y sensores a ABCspareparts: indique el número de la placa, presupuesto a menudo en 24 horas, entrega en Europa.",
+        "bx_about_title": "Sobre Telemecanique",
+        "bx_about_text": "<p>Telemecanique es una marca de mando industrial y detección, surgida en Francia. Las fuentes públicas sitúan Telemecanique Sensors en el grupo YAGEO. El recambio exacto se identifica por el número de tipo, no por una configuración de planta supuesta.</p><p>Las solicitudes listadas cubren el interruptor de emergencia de cable XY2CE1A250. La página incluye además un catálogo buscable. Envíe el número de tipo completo de la placa.</p>",
+        "bx_products_title": "Recambios Telemecanique solicitados con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Interruptores de emergencia de cable (p. ej. XY2CE1A250)</li><li>Finales de carrera</li><li>Sensores</li><li>Otras piezas de mando y seguridad con número de tipo completo de la placa</li>",
+        "bx_tech_title": "Qué importa en una solicitud Telemecanique",
+        "bx_tech_list": "<li><strong>Número de tipo:</strong> número completo de la placa (p. ej. XY2CE1A250).</li><li><strong>Función:</strong> final de carrera, sensor, interruptor de cable – según el marcado.</li><li><strong>Conexión:</strong> tensión o conector si constan en la placa.</li><li><strong>Foto:</strong> placa del aparato.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Automatización industrial</li><li>Seguridad de máquinas</li><li>Transporte, manipulación y envasado</li><li>Mantenimiento de mando y detección</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Número de tipo completo (una foto ayuda)</li><li>Función del aparato si se conoce</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios Telemecanique a ABCspareparts?",
+        "brand_faq_a1": "Envíe número de tipo, cantidad y contexto de planta con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía piezas Telemecanique en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué es XY2CE1A250?",
+        "brand_faq_a3": "XY2CE1A250 figura como interruptor de emergencia de cable (cable-pull rope switch). El diseño exacto y la longitud de cable siguen el número de tipo y la placa, no una variante supuesta.",
+        "brand_faq_q4": "¿Qué recambios Telemecanique se solicitan con frecuencia?",
+        "brand_faq_a4": "Finales de carrera, sensores e interruptores de emergencia de cable. Indique el número de tipo completo, no solo «final de carrera» o «sensor».",
+        "brand_faq_q5": "¿Basta la función del aparato sin número de tipo?",
+        "brand_faq_a5": "Suele no, porque envolventes, contactos y conexiones difieren. Indique el número del aparato físico.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "La placa con el número completo. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "Telemecanique es un nombre de mando industrial y detección, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Telemecanique Pièces | ABCspareparts",
+        "meta_description": "Telemecanique pièces de commande et capteurs, dont l’arrêt d’urgence à câble XY2CE1A250. Indiquez la référence – demande souvent sous 24 h.",
+        "brand_h1": "Telemecanique – pièces pour commande industrielle, capteurs et fins de course",
+        "brand_intro": "Telemecanique est une marque née en France pour la commande industrielle et la détection. Les sources publiques rattachent Telemecanique Sensors au groupe YAGEO. Les pièces que nous recherchons comprennent fins de course, capteurs et arrêts d’urgence à câble (p. ex. XY2CE1A250).",
+        "brand_intro_p2": "Demandez les pièces de commande et capteurs via ABCspareparts : indiquez le numéro de la plaque, devis souvent sous 24 heures, livraison en Europe.",
+        "bx_about_title": "À propos de Telemecanique",
+        "bx_about_text": "<p>Telemecanique est une marque de commande industrielle et de détection, née en France. Les sources publiques rattachent Telemecanique Sensors au groupe YAGEO. La pièce exacte s’identifie par son numéro de type, non par une configuration d’installation supposée.</p><p>Les demandes listées concernent l’arrêt d’urgence à câble XY2CE1A250. La page propose aussi un catalogue consultable. Envoyez le numéro de type complet de la plaque.</p>",
+        "bx_products_title": "Pièces Telemecanique souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Arrêts d’urgence à câble (p. ex. XY2CE1A250)</li><li>Fins de course</li><li>Capteurs</li><li>Autres pièces de commande et de sécurité avec numéro de type complet de la plaque</li>",
+        "bx_tech_title": "Ce qui compte dans une demande Telemecanique",
+        "bx_tech_list": "<li><strong>Numéro de type :</strong> numéro complet de la plaque (p. ex. XY2CE1A250).</li><li><strong>Fonction :</strong> fin de course, capteur, arrêt d’urgence à câble – selon le marquage.</li><li><strong>Raccordement :</strong> tension ou connecteur s’ils figurent sur la plaque.</li><li><strong>Photo :</strong> plaque de l’appareil.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Automatisation industrielle</li><li>Sécurité machine</li><li>Convoyage, manutention et conditionnement</li><li>Maintenance de la commande et de la détection</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Numéro de type complet (une photo aide)</li><li>Fonction de l’appareil si connue</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces Telemecanique à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez numéro de type, quantité et contexte d’installation via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des pièces Telemecanique en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que désigne XY2CE1A250 ?",
+        "brand_faq_a3": "XY2CE1A250 figure comme arrêt d’urgence à câble (cable-pull rope switch). La conception exacte et la longueur de câble suivent le numéro de type et la plaque, non une variante supposée.",
+        "brand_faq_q4": "Quelles pièces Telemecanique sont souvent demandées ?",
+        "brand_faq_a4": "Fins de course, capteurs et arrêts d’urgence à câble. Indiquez le numéro de type complet, pas seulement « fin de course » ou « capteur ».",
+        "brand_faq_q5": "La fonction de l’appareil suffit-elle sans numéro de type ?",
+        "brand_faq_a5": "Le plus souvent non, car boîtiers, contacts et raccordements diffèrent. Indiquez le numéro de l’appareil physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "La plaque avec le numéro complet. Des photos floues sans numéros aident peu.",
+        "bx_note": "Telemecanique est un nom de commande industrielle et de détection, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
+      }
+    }
   }
 }
