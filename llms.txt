@@ -22,7 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-165 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302235 part references.
+167 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302238 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -66,6 +66,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [GHR](https://abcspareparts.eu/marche/ghr.html): D166- L- G- 43- NNL2000   (Ex. Type D166/L/21), Repair kit for DOM pressure regulator Type:  D166- L- G- 43- NNL2000, Repair kit for DOM pressure regulator Type:  D166/L/21
 - [Gorter](https://abcspareparts.eu/marche/gorter.html): 939401S115080, SOFT PART SET
 - [Grundfos](https://abcspareparts.eu/marche/grundfos.html): 97851334, 98122409, SEV.65.65.40.2.51D
+- [HANDTMANN](https://abcspareparts.eu/marche/handtmann.html): 9003727
 - [Harmsco](https://abcspareparts.eu/marche/harmsco.html): Guarnizione coperchio 550 e11
 - [Harting](https://abcspareparts.eu/marche/harting.html): 09 14 006 0371, 09 33 000 6XXX
 - [Hartmann](https://abcspareparts.eu/marche/hartmann.html): 700009B
@@ -148,6 +149,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Rotork](https://abcspareparts.eu/marche/rotork.html): ELR.SO.SK70200-20X23E3 (ex: SK70220-20X21A3)
 - [Sauro](https://abcspareparts.eu/marche/sauro.html): CTM039M8
 - [Scheuerle](https://abcspareparts.eu/marche/scheuerle.html): 60112067, 60112071, 60112075, 60112076 (+2 more)
+- [Schmersal](https://abcspareparts.eu/marche/schmersal.html): 101208523, 103006652
 - [SCHNEIDER](https://abcspareparts.eu/marche/schneider.html): 9001A9, 9007AA1, 9422A1, 9070FB2B (+737 listino codes, search on page)
 - [Schneider Electric](https://abcspareparts.eu/marche/schneider-electric.html): LC1D066M7, NSYS04, LVS01005, LV841940 (+60738 listino codes, search on page)
 - [Schunk](https://abcspareparts.eu/marche/schunk.html): LM 100-H125 / 314065, LM 100-H175 / 314067, LM 50-H75 / 314058, PGN-plus 64-2-AS / 371093 (+1 more)
@@ -1462,6 +1464,7 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Grundfos 97851334](https://abcspareparts.eu/marche/grundfos.html#quote=97851334) — POMPA GRUNDFOS TP 40-120/2AFABQQE-DX1 0,37KW Q=11,4m³/h H=7,4m
 - [Grundfos 98122409](https://abcspareparts.eu/marche/grundfos.html#quote=98122409) — POMPA GRUNDFOS TP 40-60/2AFABQQE-CX1 0,25KW Q=10,4m³/h H=4,6m
 - [Grundfos SEV.65.65.40.2.51D](https://abcspareparts.eu/marche/grundfos.html#quote=SEV.65.65.40.2.51D) — GRUNDFOS AbwasserpumpeFreistromlaufradSEV.65.65.40.2.51D 10m KabelNachfolgemodell zu 96047733Typ: SEV.65.65.40.2.51DTec…
+- [HANDTMANN 9003727](https://abcspareparts.eu/marche/handtmann.html#quote=9003727) — SERVICE-KIT 2000h, VF620-634, WITH 40m³/WITHOUT GD93-3
 - [Harmsco Guarnizione coperchio 550 e11](https://abcspareparts.eu/parts/harmsco/guarnizione-coperchio-550-e11.html) — Guarnizione EPDM/HIF7/24-HUR-BB-HP rif. HARMSCO 550-E
 - [Harting 09 14 006 0371](https://abcspareparts.eu/marche/harting.html#quote=09%2014%20006%200371) — Gelenkrahmen Han 6B; 2 Module 09 14 006* Size/dimension: 51,2X34,4X36,3
 - [Harting 09 33 000 6XXX](https://abcspareparts.eu/marche/harting.html#quote=09%2033%20000%206XXX) — Kontaktstift 4,5x25 Kupfer 09 33 000 61* Size/dimension: 4,5X25 Werkstoff: PA
@@ -1818,6 +1821,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Scheuerle 60112076](https://abcspareparts.eu/marche/scheuerle.html#quote=60112076) — HIGH PRESSURE HOSE
 - [Scheuerle 60112081](https://abcspareparts.eu/marche/scheuerle.html#quote=60112081) — HIGH PRESSURE HOSE
 - [Scheuerle 60112084](https://abcspareparts.eu/marche/scheuerle.html#quote=60112084) — HIGH PRESSURE HOSE
+- [Schmersal 101208523](https://abcspareparts.eu/marche/schmersal.html#quote=101208523) — A-K4P-M12-S-G-5M-BK-1-X-A-1 Steckverbinder (ersetzt Teile-Nr. 1148412 ) Zolltarif-Nr. / Ursprungsland: 85444290 / Deuts…
+- [Schmersal 103006652](https://abcspareparts.eu/marche/schmersal.html#quote=103006652) — PS116-T11-ST-S200 Positionsschalter
 - [SCHNEIDER listino](https://abcspareparts.eu/marche/schneider.html) — 737 codes searchable on page (no prices); try searching prefixes like 9001, 9007, 9422, 9070, 9080, 9012
 - [SCHNEIDER 9001A9](https://abcspareparts.eu/marche/schneider.html#quote=9001A9) — sample code from manufacturer list (request quote, no price shown)
 - [SCHNEIDER 9007AA1](https://abcspareparts.eu/marche/schneider.html#quote=9007AA1) — sample code from manufacturer list (request quote, no price shown)
@@ -2069,8 +2074,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 Indexable URLs only (no `?part=` / `?lang=` variants — those are client-side UX):
 
 - [Sitemap index](https://abcspareparts.eu/sitemap-index.xml)
-- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 165 high-priority brand URLs
-- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11811 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
+- [Brand pages with parts](https://abcspareparts.eu/sitemap-brand-parts.xml) — 167 high-priority brand URLs
+- [Other indexable brand pages](https://abcspareparts.eu/sitemap-brands.xml) — 11809 public /marche/ URLs (not duplicated in sitemap-brand-parts.xml)
 - [Success stories](https://abcspareparts.eu/sitemap-cases.xml)
 - [MVP part pages](https://abcspareparts.eu/sitemap-parts.xml) — dedicated `/parts/{brand}/{code}` URLs
 - [Core pages](https://abcspareparts.eu/sitemap.xml)

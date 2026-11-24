@@ -47,7 +47,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/atlas-filtri.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -89,7 +89,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/baumer.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -161,7 +161,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/deutz.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -251,6 +251,12 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/grundfos.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abcspareparts.eu/marche/handtmann.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -748,6 +754,12 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://abcspareparts.eu/marche/schmersal.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://abcspareparts.eu/marche/schneider.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -779,7 +791,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/sick.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -869,7 +881,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/telemecanique.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
