@@ -256,8 +256,14 @@ layout: none
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/marche/handtmann.html</loc>
+    <loc>https://abcspareparts.eu/marche/haberle.html</loc>
     <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abcspareparts.eu/marche/handtmann.html</loc>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -755,7 +761,7 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/schmersal.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -965,6 +971,12 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/wenglor.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abcspareparts.eu/marche/westlock.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
