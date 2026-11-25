@@ -18316,12 +18316,6 @@ layout: none
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://abcspareparts.eu/marche/haberle.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://abcspareparts.eu/marche/habermann.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -67745,12 +67739,6 @@ layout: none
   </url>
   <url>
     <loc>https://abcspareparts.eu/marche/westland.html</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://abcspareparts.eu/marche/westlock.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -1,6 +1,6 @@
 {
   "source": "erp-priced-items.tsv",
-  "imported": "2026-11-24",
+  "imported": "2026-11-25",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -756,6 +756,16 @@
       ]
     },
     {
+      "brand": "HABERLE",
+      "brand_slug": "haberle",
+      "parts": [
+        {
+          "part_number": "077048752",
+          "description": "Schneckenrad ET H300-325-350 T6,05"
+        }
+      ]
+    },
+    {
       "brand": "HANDTMANN",
       "brand_slug": "handtmann",
       "parts": [
@@ -1076,6 +1086,10 @@
         {
           "part_number": "M/146140/600",
           "description": "Lintra plus rodless cylinder"
+        },
+        {
+          "part_number": "M/P43314/11",
+          "description": "Valve Connector"
         },
         {
           "part_number": "QM/1525/75/27",
@@ -1722,8 +1736,24 @@
           "description": "O-Ring for various MTU engines"
         },
         {
+          "part_number": "8591840006",
+          "description": "Lube Oil Filter Element"
+        },
+        {
           "part_number": "X52404500059",
           "description": "Spark plug"
+        },
+        {
+          "part_number": "X59436400023",
+          "description": "Fuel Filter"
+        },
+        {
+          "part_number": "XP56918300002",
+          "description": "O-Ring Bottom – Oil Filter Seal"
+        },
+        {
+          "part_number": "XP56918300003",
+          "description": "O-Ring Top – Oil Filter Seal"
         }
       ]
     },
@@ -3240,6 +3270,16 @@
       ]
     },
     {
+      "brand": "Westlock",
+      "brand_slug": "westlock",
+      "parts": [
+        {
+          "part_number": "SW10108-LN5/LN8/L05",
+          "description": "XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT"
+        }
+      ]
+    },
+    {
       "brand": "Wilkerson",
       "brand_slug": "wilkerson",
       "parts": [
@@ -3255,6 +3295,10 @@
       "parts": [
         {
           "part_number": "8440-2088",
+          "description": "Control - Easygen-3500XT-P2 Genset Controller../1-5A 24VDC"
+        },
+        {
+          "part_number": "8440-2088 (EX. 8440-1407 )",
           "description": "Control - Easygen-3500XT-P2 Genset Controller../1-5A 24VDC"
         },
         {
