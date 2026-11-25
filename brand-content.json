@@ -38010,5 +38010,291 @@
         "bx_note": "Telemecanique est un nom de commande industrielle et de détection, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
       }
     }
+  },
+  "handtmann": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "vemag",
+      "frey",
+      "risco",
+      "karl-schnell",
+      "rex-technologie"
+    ],
+    "related_labels": {
+      "vemag": "VEMAG",
+      "frey": "FREY",
+      "risco": "RISCO",
+      "karl-schnell": "KARL-SCHNELL",
+      "rex-technologie": "REX-TECHNOLOGIE"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/handtmann.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/handtmann.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/handtmann.html#brand",
+          "name": "Handtmann"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/handtmann.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/handtmann.html#brand"
+          },
+          "name": "Handtmann"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/handtmann.html#service",
+          "name": "Beschaffung von Handtmann Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/handtmann.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "Handtmann Ersatzteile | ABCspareparts",
+        "meta_description": "Handtmann Ersatzteile für Vakuumfüller VF620–634, u. a. Service-Kit 9003727. Teilenummer senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "Handtmann – Ersatzteile für Vakuumfüller und Portionierer in der Lebensmittelverarbeitung",
+        "brand_intro": "Handtmann ist eine deutsche Unternehmensgruppe. Öffentliche Angaben nennen Maschinen zum Füllen und Portionieren in der Lebensmittelverarbeitung. Die gelisteten Teile gehören zu Vakuumfüllern VF620–634, darunter das Service-Kit 9003727.",
+        "brand_intro_p2": "Füllerteile über ABCspareparts anfragen: Nummer vom Schild angeben, Angebot oft in 24 Stunden, Lieferung in Europa.",
+        "bx_about_title": "Über Handtmann",
+        "bx_about_text": "<p>Handtmann ist eine deutsche Unternehmensgruppe. Öffentliche Quellen nennen unter anderem Maschinen zum Füllen und Portionieren in der Lebensmittelverarbeitung. Die auf dieser Seite gelisteten Anfragen betreffen Vakuumfüller VF620–634, nicht andere Tätigkeitsfelder der Gruppe. Die genaue Ersatzteilausführung ergibt sich aus der Teilenummer, nicht aus einer angenommenen Maschinenkonfiguration.</p><p>Gelistete Anfragen betreffen das Service-Kit 2000h 9003727 für VF620–634, in der Ausführung WITH 40m³ / WITHOUT GD93-3. Senden Sie die Nummer vom Teil oder aus der Stückliste.</p>",
+        "bx_products_title": "Handtmann-Teile, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Service-Kits für Vakuumfüller VF620–634 (z. B. 9003727 SERVICE-KIT 2000h, WITH 40m³/WITHOUT GD93-3)</li><li>Weitere Handtmann-Teile für Füller und Portionierer mit vollständiger Nummer aus der Dokumentation</li>",
+        "bx_tech_title": "Worauf es bei Handtmann-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Teilenummer:</strong> vollständige Nummer vom Bauteil oder aus der Stückliste (z. B. 9003727).</li><li><strong>Maschine:</strong> Typ soweit bekannt (VF620, VF630, VF634).</li><li><strong>Ausführung:</strong> Optionen so wie gekennzeichnet (z. B. 40m³, GD93-3).</li><li><strong>Foto:</strong> Schild am Teil und, falls vorhanden, an der Maschine.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Lebensmittelverarbeitung</li><li>Füllen und Portionieren pastöser Produkte</li><li>Wurst- und Fleischproduktion</li><li>Instandhaltung von Vakuumfüllern</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Teilenummer (ein Foto hilft)</li><li>Maschinentyp, falls bekannt</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich Handtmann-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die Teilenummer, Menge und den Maschinenkontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts Handtmann-Teile in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür steht die Handtmann-Nummer 9003727?",
+        "brand_faq_a3": "In den gelisteten Anfragen ist 9003727 als SERVICE-KIT 2000h für VF620–634 geführt, Ausführung WITH 40m³ / WITHOUT GD93-3. Die genaue Kit-Zusammensetzung folgt der Nummer, nicht einer angenommenen Maschinenausstattung.",
+        "brand_faq_q4": "Welche Handtmann-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Service-Kits und weitere Teile für Vakuumfüller VF620–634. Nennen Sie die volle Nummer, nicht nur „Service-Kit“ oder „Dichtung“.",
+        "brand_faq_q5": "Reicht der Maschinentyp ohne Teilenummer?",
+        "brand_faq_a5": "Meist nicht, weil Kits und Verschleißteile je nach Füller und Optionen (z. B. 40m³, GD93-3) differieren. Geben Sie die Nummer vom physischen Teil an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Die Nummer am Teil und, wenn vorhanden, das Maschinenschild. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "Handtmann ist eine Marke für Lebensmittelverarbeitungsmaschinen. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Quellen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "Handtmann spare parts | ABCspareparts",
+        "meta_description": "Handtmann spare parts for vacuum fillers VF620–634, including service kit 9003727. Send the part number – enquiry often within 24 hours.",
+        "brand_h1": "Handtmann – spare parts for vacuum fillers and portioning systems in food processing",
+        "brand_intro": "Handtmann is a German company group. Public sources cite machines for filling and portioning in food processing. The listed parts belong to vacuum fillers VF620–634, including service kit 9003727.",
+        "brand_intro_p2": "Request filler parts through ABCspareparts: quote the number from the marking, a quote often within 24 hours, delivery in Europe.",
+        "bx_about_title": "About Handtmann",
+        "bx_about_text": "<p>Handtmann is a German company group. Public sources cite, among other activities, machines for filling and portioning in food processing. Enquiries listed on this page concern vacuum fillers VF620–634, not other group activities. The exact spare part is identified by its part number, not by an assumed machine layout.</p><p>Listed enquiries include the 2000-hour service kit 9003727 for VF620–634, in the variant WITH 40m³ / WITHOUT GD93-3. Send the number from the part or the bill of materials.</p>",
+        "bx_products_title": "Handtmann parts often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Service kits for vacuum fillers VF620–634 (e.g. 9003727 SERVICE-KIT 2000h, WITH 40m³/WITHOUT GD93-3)</li><li>Other Handtmann filler and portioning parts with a full number from the documentation</li>",
+        "bx_tech_title": "What matters in a Handtmann enquiry",
+        "bx_tech_list": "<li><strong>Part number:</strong> full number from the component or bill of materials (e.g. 9003727).</li><li><strong>Machine:</strong> type if known (VF620, VF630, VF634).</li><li><strong>Variant:</strong> options as marked (e.g. 40m³, GD93-3).</li><li><strong>Photo:</strong> marking on the part and, if present, on the machine.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Food processing</li><li>Filling and portioning of pasty products</li><li>Sausage and meat production</li><li>Vacuum-filler maintenance</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full part number (a photo helps)</li><li>Machine type if known</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request Handtmann spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the part number, quantity and machine context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship Handtmann parts in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What is Handtmann part 9003727?",
+        "brand_faq_a3": "Listed enquiries record 9003727 as SERVICE-KIT 2000h for VF620–634, variant WITH 40m³ / WITHOUT GD93-3. The exact kit contents follow the number, not an assumed machine option set.",
+        "brand_faq_q4": "Which Handtmann parts are often requested?",
+        "brand_faq_a4": "Service kits and other parts for vacuum fillers VF620–634. Give the full number, not only “service kit” or “seal”.",
+        "brand_faq_q5": "Is the machine type enough without a part number?",
+        "brand_faq_a5": "Usually not, because kits and wear parts differ by filler and options (e.g. 40m³, GD93-3). State the number from the physical part.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The number on the part and, if present, the machine nameplate. Blurry photos without numbers help little.",
+        "bx_note": "Handtmann is a name for food-processing machines, mentioned solely to identify products. Information is based on publicly available sources. As of November 2026."
+      },
+      "it": {
+        "meta_title": "Handtmann Ricambi | ABCspareparts",
+        "meta_description": "Handtmann ricambi per riempitrici sottovuoto VF620–634, tra cui kit 9003727. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "Handtmann – ricambi per riempitrici sottovuoto e porzionatrici nell’industria alimentare",
+        "brand_intro": "Handtmann è un gruppo aziendale tedesco. Le fonti pubbliche citano macchine per il riempimento e il porzionamento nell’industria alimentare. I ricambi elencati appartengono alle riempitrici sottovuoto VF620–634, tra cui il kit 9003727.",
+        "brand_intro_p2": "Richieda i pezzi per riempitrici tramite ABCspareparts: indichi il numero dalla marcatura, preventivo spesso entro 24 ore, consegna in Europa.",
+        "bx_about_title": "Chi è Handtmann",
+        "bx_about_text": "<p>Handtmann è un gruppo aziendale tedesco. Le fonti pubbliche citano, tra le altre attività, macchine per il riempimento e il porzionamento nell’industria alimentare. Le richieste elencate in questa pagina riguardano le riempitrici sottovuoto VF620–634, non altri ambiti del gruppo. Il ricambio esatto si identifica con il numero di parte, non con una configurazione macchina ipotizzata.</p><p>Le richieste elencate riguardano il kit di servizio 2000h 9003727 per VF620–634, nella versione WITH 40m³ / WITHOUT GD93-3. Invii il numero dal pezzo o dalla distinta.</p>",
+        "bx_products_title": "Ricambi Handtmann richiesti di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Kit di servizio per riempitrici sottovuoto VF620–634 (es. 9003727 SERVICE-KIT 2000h, WITH 40m³/WITHOUT GD93-3)</li><li>Altri pezzi Handtmann per riempitrici e porzionatrici con numero completo dalla documentazione</li>",
+        "bx_tech_title": "Cosa conta in una richiesta Handtmann",
+        "bx_tech_list": "<li><strong>Numero di parte:</strong> numero completo dal componente o dalla distinta (es. 9003727).</li><li><strong>Macchina:</strong> tipo se noto (VF620, VF630, VF634).</li><li><strong>Esecuzione:</strong> opzioni come indicate (es. 40m³, GD93-3).</li><li><strong>Foto:</strong> marcatura del pezzo e, se presente, targhetta macchina.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Trasformazione alimentare</li><li>Riempimento e porzionamento di prodotti pastosi</li><li>Produzione di insaccati e carni</li><li>Manutenzione di riempitrici sottovuoto</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Numero di parte completo (una foto aiuta)</li><li>Tipo di macchina se noto</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi Handtmann ad ABCspareparts?",
+        "brand_faq_a1": "Invii numero di parte, quantità e contesto macchina con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce pezzi Handtmann in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Che cos’è il codice Handtmann 9003727?",
+        "brand_faq_a3": "Nelle richieste elencate 9003727 figura come SERVICE-KIT 2000h per VF620–634, versione WITH 40m³ / WITHOUT GD93-3. Il contenuto esatto del kit segue il numero, non un allestimento macchina ipotizzato.",
+        "brand_faq_q4": "Quali ricambi Handtmann vengono chiesti di frequente?",
+        "brand_faq_a4": "Kit di servizio e altri pezzi per riempitrici sottovuoto VF620–634. Indichi il numero completo, non solo «kit di servizio» o «guarnizione».",
+        "brand_faq_q5": "Basta il tipo di macchina senza numero di parte?",
+        "brand_faq_a5": "Di solito no, perché kit e parti di usura differiscono per riempitrice e opzioni (es. 40m³, GD93-3). Indichi il numero del pezzo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "Il numero sul pezzo e, se presente, la targhetta della macchina. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "Handtmann è un nome di macchine per l’industria alimentare, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "Handtmann Recambios | ABCspareparts",
+        "meta_description": "Handtmann recambios para llenadoras de vacío VF620–634, p. ej. kit 9003727. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "Handtmann – recambios para llenadoras de vacío y porcionadoras en la industria alimentaria",
+        "brand_intro": "Handtmann es un grupo empresarial alemán. Las fuentes públicas citan máquinas de llenado y porcionado en la industria alimentaria. Los recambios listados pertenecen a las llenadoras de vacío VF620–634, entre ellos el kit 9003727.",
+        "brand_intro_p2": "Solicite piezas de llenadora a ABCspareparts: indique el número del marcado, presupuesto a menudo en 24 horas, entrega en Europa.",
+        "bx_about_title": "Sobre Handtmann",
+        "bx_about_text": "<p>Handtmann es un grupo empresarial alemán. Las fuentes públicas citan, entre otras actividades, máquinas de llenado y porcionado en la industria alimentaria. Las solicitudes listadas en esta página conciernen a las llenadoras de vacío VF620–634, no a otros ámbitos del grupo. El recambio exacto se identifica por el número de pieza, no por una configuración de máquina supuesta.</p><p>Las solicitudes listadas cubren el kit de servicio 2000h 9003727 para VF620–634, en la variante WITH 40m³ / WITHOUT GD93-3. Envíe el número de la pieza o de la lista de materiales.</p>",
+        "bx_products_title": "Recambios Handtmann solicitados con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Kits de servicio para llenadoras de vacío VF620–634 (p. ej. 9003727 SERVICE-KIT 2000h, WITH 40m³/WITHOUT GD93-3)</li><li>Otras piezas Handtmann para llenadoras y porcionadoras con número completo de la documentación</li>",
+        "bx_tech_title": "Qué importa en una solicitud Handtmann",
+        "bx_tech_list": "<li><strong>Número de pieza:</strong> número completo del componente o de la lista (p. ej. 9003727).</li><li><strong>Máquina:</strong> tipo si se conoce (VF620, VF630, VF634).</li><li><strong>Ejecución:</strong> opciones según el marcado (p. ej. 40m³, GD93-3).</li><li><strong>Foto:</strong> marcado de la pieza y, si existe, placa de la máquina.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Procesado de alimentos</li><li>Llenado y porcionado de productos pastosos</li><li>Producción de embutidos y carne</li><li>Mantenimiento de llenadoras de vacío</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Número de pieza completo (una foto ayuda)</li><li>Tipo de máquina si se conoce</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios Handtmann a ABCspareparts?",
+        "brand_faq_a1": "Envíe número de pieza, cantidad y contexto de máquina con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía piezas Handtmann en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué es el código Handtmann 9003727?",
+        "brand_faq_a3": "En las solicitudes listadas, 9003727 figura como SERVICE-KIT 2000h para VF620–634, variante WITH 40m³ / WITHOUT GD93-3. El contenido exacto del kit sigue el número, no un equipamiento de máquina supuesto.",
+        "brand_faq_q4": "¿Qué recambios Handtmann se solicitan con frecuencia?",
+        "brand_faq_a4": "Kits de servicio y otras piezas para llenadoras de vacío VF620–634. Indique el número completo, no solo «kit de servicio» o «junta».",
+        "brand_faq_q5": "¿Basta el tipo de máquina sin número de pieza?",
+        "brand_faq_a5": "Suele no, porque kits y piezas de desgaste varían según la llenadora y las opciones (p. ej. 40m³, GD93-3). Indique el número de la pieza física.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "El número en la pieza y, si existe, la placa de la máquina. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "Handtmann es un nombre de máquinas de procesado de alimentos, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Handtmann Pièces | ABCspareparts",
+        "meta_description": "Handtmann pièces pour poussoirs sous vide VF620–634, dont kit 9003727. Indiquez la référence – demande souvent sous 24 h.",
+        "brand_h1": "Handtmann – pièces pour poussoirs sous vide et portionnement en agroalimentaire",
+        "brand_intro": "Handtmann est un groupe d’entreprises allemand. Les sources publiques citent des machines de remplissage et de portionnement en agroalimentaire. Les pièces listées concernent les poussoirs sous vide VF620–634, dont le kit 9003727.",
+        "brand_intro_p2": "Demandez les pièces de poussoir via ABCspareparts : indiquez le numéro du marquage, devis souvent sous 24 heures, livraison en Europe.",
+        "bx_about_title": "À propos de Handtmann",
+        "bx_about_text": "<p>Handtmann est un groupe d’entreprises allemand. Les sources publiques citent, parmi d’autres activités, des machines de remplissage et de portionnement en agroalimentaire. Les demandes listées sur cette page concernent les poussoirs sous vide VF620–634, non d’autres activités du groupe. La pièce exacte s’identifie par son numéro, non par une configuration machine supposée.</p><p>Les demandes listées concernent le kit d’entretien 2000h 9003727 pour VF620–634, en variante WITH 40m³ / WITHOUT GD93-3. Envoyez le numéro de la pièce ou de la nomenclature.</p>",
+        "bx_products_title": "Pièces Handtmann souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Kits d’entretien pour poussoirs sous vide VF620–634 (p. ex. 9003727 SERVICE-KIT 2000h, WITH 40m³/WITHOUT GD93-3)</li><li>Autres pièces Handtmann pour poussoirs et portionnement avec numéro complet de la documentation</li>",
+        "bx_tech_title": "Ce qui compte dans une demande Handtmann",
+        "bx_tech_list": "<li><strong>Numéro de pièce :</strong> numéro complet du composant ou de la nomenclature (p. ex. 9003727).</li><li><strong>Machine :</strong> type si connu (VF620, VF630, VF634).</li><li><strong>Exécution :</strong> options telles que marquées (p. ex. 40m³, GD93-3).</li><li><strong>Photo :</strong> marquage de la pièce et, s’il existe, plaque machine.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Transformation alimentaire</li><li>Remplissage et portionnement de produits pâteux</li><li>Production de saucisses et de viandes</li><li>Maintenance des poussoirs sous vide</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Numéro de pièce complet (une photo aide)</li><li>Type de machine si connu</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces Handtmann à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez numéro de pièce, quantité et contexte machine via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des pièces Handtmann en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que désigne la référence Handtmann 9003727 ?",
+        "brand_faq_a3": "Dans les demandes listées, 9003727 figure comme SERVICE-KIT 2000h pour VF620–634, variante WITH 40m³ / WITHOUT GD93-3. Le contenu exact du kit suit le numéro, non un équipement machine supposé.",
+        "brand_faq_q4": "Quelles pièces Handtmann sont souvent demandées ?",
+        "brand_faq_a4": "Kits d’entretien et autres pièces pour poussoirs sous vide VF620–634. Indiquez le numéro complet, pas seulement « kit d’entretien » ou « joint ».",
+        "brand_faq_q5": "Le type de machine suffit-il sans numéro de pièce ?",
+        "brand_faq_a5": "Le plus souvent non, car kits et pièces d’usure diffèrent selon le poussoir et les options (p. ex. 40m³, GD93-3). Indiquez le numéro de la pièce physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "Le numéro sur la pièce et, s’il existe, la plaque de la machine. Des photos floues sans numéros aident peu.",
+        "bx_note": "Handtmann est un nom de machines agroalimentaires, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
+      }
+    }
   }
 }
