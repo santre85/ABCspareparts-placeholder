@@ -21596,53 +21596,15 @@
     "products": [],
     "applications": [],
     "faq": [],
-    "blocks": [
-      {
-        "type": "info",
-        "id": "mtu-about",
-        "className": "brand-info",
-        "titleKey": "mtu_about_title",
-        "bodyKey": "mtu_about_text"
-      },
-      {
-        "type": "grid",
-        "className": "brand-info-grid",
-        "items": [
-          {
-            "type": "info",
-            "id": "mtu-products",
-            "className": "brand-info",
-            "titleKey": "mtu_products_title",
-            "listKey": "mtu_products_list",
-            "listClass": "brand-list"
-          },
-          {
-            "type": "info",
-            "id": "mtu-apps",
-            "className": "brand-info",
-            "titleKey": "mtu_apps_title",
-            "listKey": "mtu_apps_list",
-            "listClass": "brand-list brand-list-compact"
-          }
-        ]
-      },
-      {
-        "type": "info",
-        "id": "mtu-parts-id",
-        "className": "brand-info brand-info-accent",
-        "titleKey": "mtu_parts_id_title",
-        "introKey": "mtu_parts_id_intro",
-        "listKey": "mtu_parts_id_list",
-        "listClass": "brand-list brand-list-check"
-      }
-    ],
     "related_slugs": [
+      "deutz",
       "caterpillar",
       "cummins",
       "man",
       "volvo-penta"
     ],
     "related_labels": {
+      "deutz": "Deutz",
       "caterpillar": "Caterpillar",
       "cummins": "Cummins",
       "man": "MAN",
@@ -21662,140 +21624,256 @@
         "a": "brand_faq_a6"
       }
     ],
-    "faq_note_key": "mtu_note",
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
     "schema": {
       "name_from": "meta_title",
       "date_modified": true,
       "about": {
-        "@type": "Brand",
-        "name": "MTU"
+        "@id": "https://abcspareparts.eu/marche/mtu.html#brand"
       },
-      "mentions": [
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/mtu.html#manufacturer"
+      },
+      "extra": [
         {
-          "name": "MTU Dieselmotor",
-          "category": "Hochleistungsmotor"
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/mtu.html#brand",
+          "name": "MTU"
         },
         {
-          "name": "MTU Stromaggregat",
-          "category": "Notstromanlage"
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/mtu.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/mtu.html#brand"
+          },
+          "name": "MTU"
         },
         {
-          "name": "MTU Marine-Antrieb",
-          "category": "Schiffsmotor"
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/mtu.html#service",
+          "name": "Beschaffung von MTU Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/mtu.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
         }
-      ],
-      "extra": []
+      ]
     },
     "i18n": {
       "de": {
         "meta_title": "MTU Ersatzteile | ABCspareparts",
-        "meta_description": "MTU Ersatzteile für Hochleistungs-Dieselmotoren und Antriebssysteme: Komponenten und Verschleißteile. Teilenummer senden – Angebot oft in 24 h.",
-        "brand_h1": "MTU – Ersatzteile für Hochleistungs-Dieselmotoren und Antriebssysteme",
-        "brand_intro": "ABCspareparts beschafft MTU Ersatzteile – Komponenten, Verschleißteile, Anbaugeräte. Senden Sie die Teilenummer – wir melden uns in der Regel innerhalb von 24 Stunden.",
-        "mtu_about_title": "Über MTU",
-        "mtu_about_text": "<p>MTU ist spezialisiert auf Hochleistungs-Dieselmotoren und -Antriebssysteme für Marine, Energieerzeugung, Schienen- und Verteidigungsanwendungen. Die Produktpalette umfasst Motoren, Aggregate, Komponenten und Serviceleistungen.</p>",
-        "mtu_products_title": "Typische MTU Produktfamilien",
-        "mtu_products_list": "<li>Hochleistungs-Dieselmotoren (Serie 2000, 4000, 8000)</li><li>Marine-Antriebssysteme (Schiffe, Yachten, Marine)</li><li>Stromaggregate und Netzersatzanlagen (50 Hz / 60 Hz)</li><li>Bahnmotoren und Lokomotivantriebe</li><li>Turbolader und Aufladeaggregate</li><li>Steuerungssysteme und Motorelektronik</li><li>Ersatzteile und Überholungskits</li>",
-        "mtu_apps_title": "Typische Einsatzbereiche",
-        "mtu_apps_list": "<li>Schifffahrt (Fracht, Passagier, Offshore)</li><li>Yachten und Freizeitboote</li><li>Marine und Verteidigung</li><li>Notstromversorgung (Rechenzentren, Krankenhäuser, Industrie)</li><li>Stromaggregate und Kraftwerke</li><li>Bahnlokomotiven und Triebwagen</li>",
-        "mtu_parts_id_title": "So identifizieren Sie die richtige Teilenummer",
-        "mtu_parts_id_intro": "Für ein schnelles Angebot senden Sie uns:",
-        "mtu_parts_id_list": "<li>Teilenummer vom Motor-Typenschild oder aus dem Ersatzteillager</li><li>Foto des Typenschilds (Motorserie, Seriennummer)</li><li>Foto des defekten Teils (z. B. Einspritzdüse, Turbolader, Zylinderkopf)</li><li>Motortyp und Serie (z. B. MTU 16V 4000)</li><li>Kurzbeschreibung: Was ist defekt?</li><li>Gewünschte Lieferfrist</li>",
-        "brand_faq_q4": "Wie identifiziere ich die richtige Teilenummer für mein MTU-Gerät?",
-        "brand_faq_a4": "Die Teilenummer steht meist auf einem Etikett am Bauteil oder auf dem Typenschild der Maschine bzw. in der technischen Dokumentation. Ein Foto des Typenschilds und der Komponente hilft uns, die Nummer zu identifizieren und die Verfügbarkeit zu prüfen.",
-        "brand_faq_q5": "Beschafft ABCspareparts auch Ersatzteile für ältere oder abgekündigte MTU-Anlagen?",
-        "brand_faq_a5": "Ja. Wir suchen europaweit bei Distributoren und auf dem Broker-Markt nach Restbeständen. Ist das Originalteil nicht mehr verfügbar, schlagen wir nach Rücksprache kompatible Alternativen vor.",
-        "brand_faq_q6": "MTU Ersatzteile nach Teilenummer?",
-        "brand_faq_a6": "Ja. Senden Sie uns die Teilenummer über das Anfrageformular oder per E-Mail. Wir prüfen Verfügbarkeit, Lieferzeit und Preis für das Originalteil oder – wenn gewünscht – kompatible Alternativen.",
-        "mtu_note": "MTU ist eine Marke. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben zu Produktfamilien und Einsatzbereichen basieren auf öffentlich zugänglichen Informationen. Stand: Oktober 2026."
+        "meta_description": "MTU Ersatzteile für große Diesel- und Gasmotoren, u. a. 8591840006, X59436400023. Teilenummer senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "MTU – Ersatzteile für große Diesel- und Gasmotoren sowie Antriebssysteme",
+        "brand_intro": "MTU ist ein deutscher Hersteller großer Diesel- und Gasmotoren sowie Antriebssysteme und gehört zu Rolls-Royce Power Systems. Die Marke ist nicht identisch mit MTU Aero Engines (Flugtriebwerke). Typische Ersatzteile, die wir beschaffen, sind Filter, Dichtungen und Zündkerzen (z. B. 8591840006, X59436400023, XP56918300002, XP56918300003).",
+        "brand_intro_p2": "Motorteile über ABCspareparts anfragen: Nummer vom Schild angeben, Angebot oft in 24 Stunden, Lieferung in Europa.",
+        "bx_about_title": "Über MTU",
+        "bx_about_text": "<p>MTU ist ein deutscher Motorenhersteller. Öffentliche Quellen nennen große Diesel- und Gasmotoren sowie Antriebssysteme; das Geschäft gehört zu Rolls-Royce Power Systems. Diese Seite betrifft nicht MTU Aero Engines. Die genaue Ersatzteilausführung ergibt sich aus der Teilenummer, nicht aus einer angenommenen Motorkonfiguration.</p><p>Gelistete Anfragen betreffen unter anderem Schmierölfilter 8591840006, Kraftstofffilter X59436400023, O-Ringe oben/unten für Ölfilter XP56918300002 und XP56918300003, weitere O-Ringe (700429037000, 700429044001), Ventildeckeldichtung 5240160321 und Zündkerze X52404500059. Senden Sie die Nummer vom Teil oder aus der Stückliste.</p>",
+        "bx_products_title": "MTU-Teile, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Schmierölfilter (z. B. 8591840006 Lube Oil Filter Element)</li><li>Kraftstofffilter (z. B. X59436400023 Fuel Filter)</li><li>O-Ringe für Ölfilter, oben und unten (z. B. XP56918300002, XP56918300003)</li><li>Weitere O-Ringe, Ventildeckeldichtungen und Zündkerzen (z. B. 700429037000, 700429044001, 5240160321, X52404500059)</li><li>Weitere MTU-Motorteile mit vollständiger Nummer aus der Dokumentation</li>",
+        "bx_tech_title": "Worauf es bei MTU-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Teilenummer:</strong> vollständige Nummer vom Bauteil oder aus der Stückliste (z. B. 8591840006, XP56918300002).</li><li><strong>Motor:</strong> Typ soweit bekannt; Diesel- und Gasmotoren unterscheiden sich (Zündkerze vs. andere Zündung).</li><li><strong>Baugruppe:</strong> Schmierung, Kraftstoff, Dichtung – so wie gekennzeichnet.</li><li><strong>Foto:</strong> Schild am Teil und, falls vorhanden, am Motor.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Schiffsantrieb</li><li>Energieerzeugung</li><li>Industrie- und Stationärmotoren</li><li>Instandhaltung großer Diesel- und Gasmotoren</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Teilenummer (ein Foto hilft)</li><li>Motortyp, falls bekannt</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich MTU-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die Teilenummer, Menge und den Motorkontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts MTU-Teile in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür steht die MTU-Nummer 8591840006?",
+        "brand_faq_a3": "In den gelisteten Anfragen ist 8591840006 als Lube Oil Filter Element (Schmierölfilter) geführt. X59436400023 ist als Kraftstofffilter gelistet; XP56918300002 und XP56918300003 sind O-Ringe unten bzw. oben für den Ölfilter. Die genaue Ausführung folgt der Nummer.",
+        "brand_faq_q4": "Welche MTU-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Filter, O-Ringe, Ventildeckeldichtungen und Zündkerzen. Nennen Sie die volle Nummer, nicht nur „Filter“ oder „Dichtung“.",
+        "brand_faq_q5": "Reicht der Motortyp ohne Teilenummer?",
+        "brand_faq_a5": "Meist nicht, weil Filter und Dichtungen je nach Motorvariante differieren. Geben Sie die Nummer vom physischen Teil an. Diese Seite betrifft nicht Flugtriebwerke von MTU Aero Engines.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Die Nummer am Teil und, wenn vorhanden, das Motorschild. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "MTU ist eine Marke für große Diesel- und Gasmotoren sowie Antriebssysteme (Rolls-Royce Power Systems), nicht für Flugtriebwerke. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Quellen. Stand: November 2026."
       },
       "en": {
-        "meta_title": "MTU spare parts by part number – quote within 24h | ABCspareparts",
-        "meta_description": "MTU spare parts for Hochleistungs-Dieselmotoren und Antriebssysteme: components and wear parts. Send part number – quote often within 24 h.",
-        "brand_h1": "MTU – spare parts for Hochleistungs-Dieselmotoren und Antriebssysteme",
-        "brand_intro": "ABCspareparts sources MTU spare parts – components, wear parts, attachments. Send the part number – we usually reply within 24 hours.",
-        "mtu_about_title": "About MTU",
-        "mtu_about_text": "<p>MTU specializes in high-performance diesel engines and drive systems for marine, power generation, rail and defense applications. The product range includes engines, gensets, components and services.</p>",
-        "mtu_products_title": "Typical MTU product families",
-        "mtu_products_list": "<li>High-performance diesel engines (Series 2000, 4000, 8000)</li><li>Marine propulsion systems (ships, yachts, navy)</li><li>Gensets and emergency power systems (50 Hz / 60 Hz)</li><li>Rail engines and locomotive drives</li><li>Turbochargers and superchargers</li><li>Control systems and engine electronics</li><li>Spare parts and overhaul kits</li>",
-        "mtu_apps_title": "Typical applications",
-        "mtu_apps_list": "<li>Shipping (cargo, passenger, offshore)</li><li>Yachts and leisure boats</li><li>Navy and defense</li><li>Emergency power supply (data centers, hospitals, industry)</li><li>Gensets and power plants</li><li>Rail locomotives and railcars</li>",
-        "mtu_parts_id_title": "How to identify the correct part number",
-        "mtu_parts_id_intro": "For a fast quote, send us:",
-        "mtu_parts_id_list": "<li>Part number from engine nameplate or spare parts catalog</li><li>Photo of nameplate (engine series, serial number)</li><li>Photo of defective part (e.g. injector, turbocharger, cylinder head)</li><li>Engine type and series (e.g. MTU 16V 4000)</li><li>Brief description: what is defective?</li><li>Required delivery time</li>",
-        "brand_faq_q4": "How do I identify the correct part number for my MTU equipment?",
-        "brand_faq_a4": "The part number is usually on a label on the component or on the machine nameplate, or in the technical documentation. A photo of the nameplate and component helps us identify the number and check availability.",
-        "brand_faq_q5": "Does ABCspareparts also source spare parts for older or discontinued MTU systems?",
-        "brand_faq_a5": "Yes. We search distributors and the broker market across Europe for remaining stock. If the original part is no longer available, we propose – after consultation – compatible alternatives.",
-        "brand_faq_q6": "MTU spare parts by part number?",
-        "brand_faq_a6": "Yes. Send us the part number via the request form or by email. We check availability, lead time and price for the original part or – if desired – compatible alternatives.",
-        "mtu_note": "MTU is a trademark. Mentioned solely to identify the products. Product family and application information is based on publicly available sources. As of October 2026."
+        "meta_title": "MTU spare parts | ABCspareparts",
+        "meta_description": "MTU spare parts for large diesel and gas engines, including 8591840006, X59436400023. Send the part number – enquiry often within 24 hours.",
+        "brand_h1": "MTU – spare parts for large diesel and gas engines and propulsion systems",
+        "brand_intro": "MTU is a German manufacturer of large diesel and gas engines and propulsion systems and belongs to Rolls-Royce Power Systems. The brand is not the same as MTU Aero Engines (aircraft engines). Typical spare parts we source include filters, seals and spark plugs (e.g. 8591840006, X59436400023, XP56918300002, XP56918300003).",
+        "brand_intro_p2": "Request engine parts through ABCspareparts: quote the number from the marking, a quote often within 24 hours, delivery in Europe.",
+        "bx_about_title": "About MTU",
+        "bx_about_text": "<p>MTU is a German engine manufacturer. Public sources cite large diesel and gas engines and propulsion systems; the business belongs to Rolls-Royce Power Systems. This page does not cover MTU Aero Engines. The exact spare part is identified by its part number, not by an assumed engine layout.</p><p>Listed enquiries include lube-oil filter 8591840006, fuel filter X59436400023, bottom/top oil-filter O-rings XP56918300002 and XP56918300003, further O-rings (700429037000, 700429044001), valve-cover gasket 5240160321 and spark plug X52404500059. Send the number from the part or the bill of materials.</p>",
+        "bx_products_title": "MTU parts often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Lube-oil filters (e.g. 8591840006 Lube Oil Filter Element)</li><li>Fuel filters (e.g. X59436400023 Fuel Filter)</li><li>Oil-filter O-rings, bottom and top (e.g. XP56918300002, XP56918300003)</li><li>Other O-rings, valve-cover gaskets and spark plugs (e.g. 700429037000, 700429044001, 5240160321, X52404500059)</li><li>Other MTU engine parts with a full number from the documentation</li>",
+        "bx_tech_title": "What matters in an MTU enquiry",
+        "bx_tech_list": "<li><strong>Part number:</strong> full number from the component or bill of materials (e.g. 8591840006, XP56918300002).</li><li><strong>Engine:</strong> type if known; diesel and gas engines differ (spark plug vs other ignition).</li><li><strong>Assembly:</strong> lubrication, fuel, sealing – as marked.</li><li><strong>Photo:</strong> marking on the part and, if present, on the engine.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Marine propulsion</li><li>Power generation</li><li>Industrial and stationary engines</li><li>Maintenance of large diesel and gas engines</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full part number (a photo helps)</li><li>Engine type if known</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request MTU spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the part number, quantity and engine context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship MTU parts in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What is MTU part 8591840006?",
+        "brand_faq_a3": "Listed enquiries record 8591840006 as Lube Oil Filter Element. X59436400023 is listed as a fuel filter; XP56918300002 and XP56918300003 are bottom and top oil-filter O-rings. The exact design follows the number.",
+        "brand_faq_q4": "Which MTU parts are often requested?",
+        "brand_faq_a4": "Filters, O-rings, valve-cover gaskets and spark plugs. Give the full number, not only “filter” or “seal”.",
+        "brand_faq_q5": "Is the engine type enough without a part number?",
+        "brand_faq_a5": "Usually not, because filters and seals differ by engine variant. State the number from the physical part. This page does not cover aircraft engines from MTU Aero Engines.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The number on the part and, if present, the engine nameplate. Blurry photos without numbers help little.",
+        "bx_note": "MTU is a name for large diesel and gas engines and propulsion systems (Rolls-Royce Power Systems), not for aircraft engines. Mentioned solely to identify products. Information is based on publicly available sources. As of November 2026."
       },
       "it": {
         "meta_title": "MTU Ricambi | ABCspareparts",
-        "meta_description": "MTU ricambi per industria e MRO. Invii il codice – preventivo senza impegno, spesso entro 24 ore, consegna in Europa. Invii il codice – preventivo senza",
-        "brand_h1": "MTU – ricambi per Hochleistungs-Dieselmotoren und Antriebssysteme",
-        "brand_intro": "ABCspareparts fornisce ricambi MTU – componenti, parti di usura, accessori. Invii il numero di parte – di solito rispondiamo entro 24 ore.",
-        "mtu_about_title": "Su MTU",
-        "mtu_about_text": "<p>MTU è specializzata in motori diesel ad alte prestazioni e sistemi di propulsione per applicazioni marine, generazione di energia, ferroviarie e di difesa. La gamma di prodotti comprende motori, gruppi elettrogeni, componenti e servizi.</p>",
-        "mtu_products_title": "Famiglie di prodotti MTU tipici",
-        "mtu_products_list": "<li>Motori diesel ad alte prestazioni (Serie 2000, 4000, 8000)</li><li>Sistemi di propulsione marina (navi, yacht, marina)</li><li>Gruppi elettrogeni e sistemi di alimentazione di emergenza (50 Hz / 60 Hz)</li><li>Motori ferroviari e propulsione per locomotive</li><li>Turbocompressori e sovralimentatori</li><li>Sistemi di controllo ed elettronica motore</li><li>Ricambi e kit di revisione</li>",
-        "mtu_apps_title": "Applicazioni tipiche",
-        "mtu_apps_list": "<li>Trasporto marittimo (merci, passeggeri, offshore)</li><li>Yacht e imbarcazioni da diporto</li><li>Marina e difesa</li><li>Alimentazione di emergenza (data center, ospedali, industria)</li><li>Gruppi elettrogeni e centrali elettriche</li><li>Locomotive ferroviarie e automotrici</li>",
-        "mtu_parts_id_title": "Come identificare il numero di parte corretto",
-        "mtu_parts_id_intro": "Per un preventivo rapido, ci invii:",
-        "mtu_parts_id_list": "<li>Numero di parte dalla targhetta motore o dal catalogo ricambi</li><li>Foto della targhetta (serie motore, numero di serie)</li><li>Foto del componente difettoso (es. iniettore, turbocompressore, testata)</li><li>Tipo e serie motore (es. MTU 16V 4000)</li><li>Breve descrizione: cosa è difettoso?</li><li>Tempo di consegna richiesto</li>",
-        "brand_faq_q4": "Come identifico il numero di parte corretto per la mia apparecchiatura MTU?",
-        "brand_faq_a4": "Il numero di parte si trova solitamente su un'etichetta sul componente o sulla targhetta della macchina, o nella documentazione tecnica. Una foto della targhetta e del componente ci aiuta a identificare il numero e verificare la disponibilità.",
-        "brand_faq_q5": "ABCspareparts fornisce anche ricambi per sistemi MTU più vecchi o fuori produzione?",
-        "brand_faq_a5": "Sì. Cerchiamo presso distributori e broker in tutta Europa per scorte residue. Se il ricambio originale non è più disponibile, proponiamo – dopo consultazione – alternative compatibili.",
-        "brand_faq_q6": "Ricambi MTU per numero di parte?",
-        "brand_faq_a6": "Sì. Ci invii il numero di parte tramite il modulo di richiesta o per email. Verifichiamo disponibilità, tempo di consegna e prezzo per il ricambio originale o – se desiderato – alternative compatibili.",
-        "mtu_note": "MTU è un marchio. Citato esclusivamente per identificare i prodotti. Informazioni su famiglie di prodotti e applicazioni basate su fonti pubbliche. Aggiornamento: ottobre 2026."
+        "meta_description": "MTU ricambi per grandi motori diesel e a gas, tra cui 8591840006, X59436400023. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "MTU – ricambi per grandi motori diesel e a gas e sistemi di propulsione",
+        "brand_intro": "MTU è un produttore tedesco di grandi motori diesel e a gas e di sistemi di propulsione e appartiene a Rolls-Royce Power Systems. Il marchio non coincide con MTU Aero Engines (propulsori aeronautici). I ricambi tipici che riforniamo comprendono filtri, tenute e candele (es. 8591840006, X59436400023, XP56918300002, XP56918300003).",
+        "brand_intro_p2": "Richieda i pezzi motore tramite ABCspareparts: indichi il numero dalla marcatura, preventivo spesso entro 24 ore, consegna in Europa.",
+        "bx_about_title": "Chi è MTU",
+        "bx_about_text": "<p>MTU è un produttore tedesco di motori. Le fonti pubbliche citano grandi motori diesel e a gas e sistemi di propulsione; l’attività appartiene a Rolls-Royce Power Systems. Questa pagina non riguarda MTU Aero Engines. Il ricambio esatto si identifica con il numero di parte, non con una configurazione motore ipotizzata.</p><p>Le richieste elencate riguardano tra l’altro il filtro olio 8591840006, il filtro carburante X59436400023, gli O-ring inferiore/superiore per filtro olio XP56918300002 e XP56918300003, altri O-ring (700429037000, 700429044001), la guarnizione coperchio valvole 5240160321 e la candela X52404500059. Invii il numero dal pezzo o dalla distinta.</p>",
+        "bx_products_title": "Ricambi MTU richiesti di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Filtri olio lubrificante (es. 8591840006 Lube Oil Filter Element)</li><li>Filtri carburante (es. X59436400023 Fuel Filter)</li><li>O-ring per filtro olio, inferiore e superiore (es. XP56918300002, XP56918300003)</li><li>Altri O-ring, guarnizioni coperchio valvole e candele (es. 700429037000, 700429044001, 5240160321, X52404500059)</li><li>Altri pezzi motore MTU con numero completo dalla documentazione</li>",
+        "bx_tech_title": "Cosa conta in una richiesta MTU",
+        "bx_tech_list": "<li><strong>Numero di parte:</strong> numero completo dal componente o dalla distinta (es. 8591840006, XP56918300002).</li><li><strong>Motore:</strong> tipo se noto; diesel e gas differiscono (candela vs altra accensione).</li><li><strong>Gruppo:</strong> lubrificazione, carburante, tenuta – come indicato.</li><li><strong>Foto:</strong> marcatura del pezzo e, se presente, targhetta motore.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Propulsione navale</li><li>Generazione di energia</li><li>Motori industriali e stazionari</li><li>Manutenzione di grandi motori diesel e a gas</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Numero di parte completo (una foto aiuta)</li><li>Tipo di motore se noto</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi MTU ad ABCspareparts?",
+        "brand_faq_a1": "Invii numero di parte, quantità e contesto motore con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce pezzi MTU in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Che cos’è il codice MTU 8591840006?",
+        "brand_faq_a3": "Nelle richieste elencate 8591840006 figura come Lube Oil Filter Element (filtro olio). X59436400023 è elencato come filtro carburante; XP56918300002 e XP56918300003 sono O-ring inferiore e superiore per il filtro olio. L’esecuzione esatta segue il numero.",
+        "brand_faq_q4": "Quali ricambi MTU vengono chiesti di frequente?",
+        "brand_faq_a4": "Filtri, O-ring, guarnizioni coperchio valvole e candele. Indichi il numero completo, non solo «filtro» o «guarnizione».",
+        "brand_faq_q5": "Basta il tipo di motore senza numero di parte?",
+        "brand_faq_a5": "Di solito no, perché filtri e tenute differiscono per variante motore. Indichi il numero del pezzo fisico. Questa pagina non riguarda i propulsori aeronautici di MTU Aero Engines.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "Il numero sul pezzo e, se presente, la targhetta del motore. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "MTU è un nome di grandi motori diesel e a gas e sistemi di propulsione (Rolls-Royce Power Systems), non di propulsori aeronautici. Citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: novembre 2026."
       },
       "es": {
         "meta_title": "MTU Recambios | ABCspareparts",
-        "meta_description": "MTU recambios para industria y MRO. Envíe la referencia – presupuesto sin compromiso, a menudo en 24 horas, entrega en Europa.",
-        "brand_h1": "MTU – recambios para Hochleistungs-Dieselmotoren und Antriebssysteme",
-        "brand_intro": "ABCspareparts suministra recambios MTU – componentes, piezas de desgaste, accesorios. Envíe el número de pieza – solemos responder en 24 horas.",
-        "mtu_about_title": "Sobre MTU",
-        "mtu_about_text": "<p>MTU se especializa en motores diesel de alto rendimiento y sistemas de propulsión para aplicaciones marinas, generación de energía, ferroviarias y de defensa. La gama de productos incluye motores, generadores, componentes y servicios.</p>",
-        "mtu_products_title": "Familias de productos MTU típicos",
-        "mtu_products_list": "<li>Motores diesel de alto rendimiento (Series 2000, 4000, 8000)</li><li>Sistemas de propulsión marina (barcos, yates, marina)</li><li>Generadores y sistemas de energía de emergencia (50 Hz / 60 Hz)</li><li>Motores ferroviarios y propulsión de locomotoras</li><li>Turbocompresores y sobrealimentadores</li><li>Sistemas de control y electrónica del motor</li><li>Repuestos y kits de revisión</li>",
-        "mtu_apps_title": "Aplicaciones típicas",
-        "mtu_apps_list": "<li>Transporte marítimo (carga, pasajeros, offshore)</li><li>Yates y embarcaciones de recreo</li><li>Marina y defensa</li><li>Suministro de energía de emergencia (centros de datos, hospitales, industria)</li><li>Generadores y plantas de energía</li><li>Locomotoras ferroviarias y automotores</li>",
-        "mtu_parts_id_title": "Cómo identificar el número de pieza correcto",
-        "mtu_parts_id_intro": "Para un presupuesto rápido, envíenos:",
-        "mtu_parts_id_list": "<li>Número de pieza de la placa del motor o catálogo de repuestos</li><li>Foto de la placa (serie del motor, número de serie)</li><li>Foto de la pieza defectuosa (p. ej. inyector, turbocompresor, culata)</li><li>Tipo y serie del motor (p. ej. MTU 16V 4000)</li><li>Breve descripción: ¿qué está defectuoso?</li><li>Plazo de entrega requerido</li>",
-        "brand_faq_q4": "¿Cómo identifico el número de pieza correcto para mi equipo MTU?",
-        "brand_faq_a4": "El número de pieza suele estar en una etiqueta en el componente o en la placa de la máquina, o en la documentación técnica. Una foto de la placa y del componente nos ayuda a identificar el número y verificar la disponibilidad.",
-        "brand_faq_q5": "¿ABCspareparts también suministra recambios para sistemas MTU antiguos o descontinuados?",
-        "brand_faq_a5": "Sí. Buscamos en distribuidores y el mercado de intermediarios en toda Europa para existencias restantes. Si la pieza original ya no está disponible, proponemos – tras consulta – alternativas compatibles.",
-        "brand_faq_q6": "¿Recambios MTU por número de pieza?",
-        "brand_faq_a6": "Sí. Envíenos el número de pieza a través del formulario de solicitud o por correo electrónico. Verificamos disponibilidad, tiempo de entrega y precio para la pieza original o – si se desea – alternativas compatibles.",
-        "mtu_note": "MTU es una marca. Mencionada únicamente para identificar los productos. Información sobre familias de productos y aplicaciones basada en fuentes públicas. Actualización: octubre de 2026."
+        "meta_description": "MTU recambios para grandes motores diésel y de gas, p. ej. 8591840006, X59436400023. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "MTU – recambios para grandes motores diésel y de gas y sistemas de propulsión",
+        "brand_intro": "MTU es un fabricante alemán de grandes motores diésel y de gas y de sistemas de propulsión y pertenece a Rolls-Royce Power Systems. La marca no es la misma que MTU Aero Engines (motores de aviación). Los recambios típicos que suministramos incluyen filtros, juntas y bujías (p. ej. 8591840006, X59436400023, XP56918300002, XP56918300003).",
+        "brand_intro_p2": "Solicite piezas de motor a ABCspareparts: indique el número del marcado, presupuesto a menudo en 24 horas, entrega en Europa.",
+        "bx_about_title": "Sobre MTU",
+        "bx_about_text": "<p>MTU es un fabricante alemán de motores. Las fuentes públicas citan grandes motores diésel y de gas y sistemas de propulsión; el negocio pertenece a Rolls-Royce Power Systems. Esta página no cubre MTU Aero Engines. El recambio exacto se identifica por el número de pieza, no por una configuración de motor supuesta.</p><p>Las solicitudes listadas cubren, entre otros, el filtro de aceite 8591840006, el filtro de combustible X59436400023, las juntas tóricas inferior/superior de filtro de aceite XP56918300002 y XP56918300003, otras juntas tóricas (700429037000, 700429044001), la junta de tapa de válvulas 5240160321 y la bujía X52404500059. Envíe el número de la pieza o de la lista de materiales.</p>",
+        "bx_products_title": "Recambios MTU solicitados con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Filtros de aceite de lubricación (p. ej. 8591840006 Lube Oil Filter Element)</li><li>Filtros de combustible (p. ej. X59436400023 Fuel Filter)</li><li>Juntas tóricas de filtro de aceite, inferior y superior (p. ej. XP56918300002, XP56918300003)</li><li>Otras juntas tóricas, juntas de tapa de válvulas y bujías (p. ej. 700429037000, 700429044001, 5240160321, X52404500059)</li><li>Otras piezas de motor MTU con número completo de la documentación</li>",
+        "bx_tech_title": "Qué importa en una solicitud MTU",
+        "bx_tech_list": "<li><strong>Número de pieza:</strong> número completo del componente o de la lista (p. ej. 8591840006, XP56918300002).</li><li><strong>Motor:</strong> tipo si se conoce; diésel y gas difieren (bujía frente a otra ignición).</li><li><strong>Conjunto:</strong> lubricación, combustible, estanqueidad – según el marcado.</li><li><strong>Foto:</strong> marcado de la pieza y, si existe, placa del motor.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Propulsión marina</li><li>Generación de energía</li><li>Motores industriales y estacionarios</li><li>Mantenimiento de grandes motores diésel y de gas</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Número de pieza completo (una foto ayuda)</li><li>Tipo de motor si se conoce</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios MTU a ABCspareparts?",
+        "brand_faq_a1": "Envíe número de pieza, cantidad y contexto de motor con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía piezas MTU en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué es el código MTU 8591840006?",
+        "brand_faq_a3": "En las solicitudes listadas, 8591840006 figura como Lube Oil Filter Element (filtro de aceite). X59436400023 está listado como filtro de combustible; XP56918300002 y XP56918300003 son juntas tóricas inferior y superior del filtro de aceite. El diseño exacto sigue el número.",
+        "brand_faq_q4": "¿Qué recambios MTU se solicitan con frecuencia?",
+        "brand_faq_a4": "Filtros, juntas tóricas, juntas de tapa de válvulas y bujías. Indique el número completo, no solo «filtro» o «junta».",
+        "brand_faq_q5": "¿Basta el tipo de motor sin número de pieza?",
+        "brand_faq_a5": "Suele no, porque filtros y juntas varían según la variante del motor. Indique el número de la pieza física. Esta página no cubre motores de aviación de MTU Aero Engines.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "El número en la pieza y, si existe, la placa del motor. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "MTU es un nombre de grandes motores diésel y de gas y sistemas de propulsión (Rolls-Royce Power Systems), no de motores de aviación. Mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: noviembre de 2026."
       },
       "fr": {
         "meta_title": "MTU Pièces | ABCspareparts",
-        "meta_description": "MTU pièces pour industrie et MRO. Indiquez la référence – devis sans engagement, souvent sous 24 h, livraison en Europe.",
-        "brand_h1": "MTU – pièces pour Hochleistungs-Dieselmotoren und Antriebssysteme",
-        "brand_intro": "ABCspareparts fournit des pièces MTU – composants, pièces d'usure, accessoires. Envoyez le numéro de pièce – réponse en général sous 24 h.",
-        "mtu_about_title": "À propos de MTU",
-        "mtu_about_text": "<p>MTU est spécialisé dans les moteurs diesel haute performance et les systèmes de propulsion pour les applications marines, la production d'énergie, le ferroviaire et la défense. La gamme de produits comprend des moteurs, des groupes électrogènes, des composants et des services.</p>",
-        "mtu_products_title": "Familles de produits MTU typiques",
-        "mtu_products_list": "<li>Moteurs diesel haute performance (Séries 2000, 4000, 8000)</li><li>Systèmes de propulsion marine (navires, yachts, marine)</li><li>Groupes électrogènes et systèmes d'alimentation de secours (50 Hz / 60 Hz)</li><li>Moteurs ferroviaires et propulsion de locomotives</li><li>Turbocompresseurs et surcompresseurs</li><li>Systèmes de commande et électronique moteur</li><li>Pièces de rechange et kits de révision</li>",
-        "mtu_apps_title": "Applications typiques",
-        "mtu_apps_list": "<li>Transport maritime (fret, passagers, offshore)</li><li>Yachts et bateaux de plaisance</li><li>Marine et défense</li><li>Alimentation électrique de secours (data centers, hôpitaux, industrie)</li><li>Groupes électrogènes et centrales électriques</li><li>Locomotives ferroviaires et automotrices</li>",
-        "mtu_parts_id_title": "Comment identifier le bon numéro de pièce",
-        "mtu_parts_id_intro": "Pour un devis rapide, envoyez-nous :",
-        "mtu_parts_id_list": "<li>Numéro de pièce de la plaque signalétique du moteur ou du catalogue de pièces de rechange</li><li>Photo de la plaque signalétique (série du moteur, numéro de série)</li><li>Photo de la pièce défectueuse (p. ex. injecteur, turbocompresseur, culasse)</li><li>Type et série du moteur (p. ex. MTU 16V 4000)</li><li>Brève description : qu'est-ce qui est défectueux ?</li><li>Délai de livraison souhaité</li>",
-        "brand_faq_q4": "Comment identifier le bon numéro de pièce pour mon équipement MTU ?",
-        "brand_faq_a4": "Le numéro de pièce se trouve généralement sur une étiquette sur le composant ou sur la plaque signalétique de la machine, ou dans la documentation technique. Une photo de la plaque et du composant nous aide à identifier le numéro et vérifier la disponibilité.",
-        "brand_faq_q5": "ABCspareparts fournit-il également des pièces pour les systèmes MTU anciens ou abandonnés ?",
-        "brand_faq_a5": "Oui. Nous recherchons chez les distributeurs et sur le marché des courtiers dans toute l'Europe pour les stocks restants. Si la pièce d'origine n'est plus disponible, nous proposons – après consultation – des alternatives compatibles.",
-        "brand_faq_q6": "Pièces MTU par numéro de pièce ?",
-        "brand_faq_a6": "Oui. Envoyez-nous le numéro de pièce via le formulaire de demande ou par e-mail. Nous vérifions la disponibilité, le délai de livraison et le prix pour la pièce d'origine ou – si souhaité – des alternatives compatibles.",
-        "mtu_note": "MTU est une marque. Citée uniquement pour identifier les produits. Informations sur les familles de produits et applications basées sur sources publiques. Mise à jour : octobre 2026."
+        "meta_description": "MTU pièces pour grands moteurs diesel et gaz, dont 8591840006, X59436400023. Indiquez la référence – demande souvent sous 24 h.",
+        "brand_h1": "MTU – pièces pour grands moteurs diesel et gaz et systèmes de propulsion",
+        "brand_intro": "MTU est un fabricant allemand de grands moteurs diesel et gaz et de systèmes de propulsion et appartient à Rolls-Royce Power Systems. La marque n’est pas la même que MTU Aero Engines (turbines aéronautiques). Les pièces typiques que nous fournissons comprennent filtres, joints et bougies (p. ex. 8591840006, X59436400023, XP56918300002, XP56918300003).",
+        "brand_intro_p2": "Demandez les pièces moteur via ABCspareparts : indiquez le numéro du marquage, devis souvent sous 24 heures, livraison en Europe.",
+        "bx_about_title": "À propos de MTU",
+        "bx_about_text": "<p>MTU est un fabricant allemand de moteurs. Les sources publiques citent de grands moteurs diesel et gaz ainsi que des systèmes de propulsion ; l’activité appartient à Rolls-Royce Power Systems. Cette page ne concerne pas MTU Aero Engines. La pièce exacte s’identifie par son numéro, non par une configuration moteur supposée.</p><p>Les demandes listées concernent notamment le filtre à huile 8591840006, le filtre à carburant X59436400023, les joints toriques bas/haut de filtre à huile XP56918300002 et XP56918300003, d’autres joints toriques (700429037000, 700429044001), le joint de cache-culbuteurs 5240160321 et la bougie X52404500059. Envoyez le numéro de la pièce ou de la nomenclature.</p>",
+        "bx_products_title": "Pièces MTU souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Filtres à huile de lubrification (p. ex. 8591840006 Lube Oil Filter Element)</li><li>Filtres à carburant (p. ex. X59436400023 Fuel Filter)</li><li>Joints toriques de filtre à huile, bas et haut (p. ex. XP56918300002, XP56918300003)</li><li>Autres joints toriques, joints de cache-culbuteurs et bougies (p. ex. 700429037000, 700429044001, 5240160321, X52404500059)</li><li>Autres pièces moteur MTU avec numéro complet de la documentation</li>",
+        "bx_tech_title": "Ce qui compte dans une demande MTU",
+        "bx_tech_list": "<li><strong>Numéro de pièce :</strong> numéro complet du composant ou de la nomenclature (p. ex. 8591840006, XP56918300002).</li><li><strong>Moteur :</strong> type si connu ; diesel et gaz diffèrent (bougie vs autre allumage).</li><li><strong>Ensemble :</strong> lubrification, carburant, étanchéité – tel que marqué.</li><li><strong>Photo :</strong> marquage de la pièce et, s’il existe, plaque moteur.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Propulsion marine</li><li>Production d’énergie</li><li>Moteurs industriels et stationnaires</li><li>Maintenance des grands moteurs diesel et gaz</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Numéro de pièce complet (une photo aide)</li><li>Type de moteur si connu</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces MTU à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez numéro de pièce, quantité et contexte moteur via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des pièces MTU en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que désigne la référence MTU 8591840006 ?",
+        "brand_faq_a3": "Dans les demandes listées, 8591840006 figure comme Lube Oil Filter Element (filtre à huile). X59436400023 est listé comme filtre à carburant ; XP56918300002 et XP56918300003 sont les joints toriques bas et haut du filtre à huile. La conception exacte suit le numéro.",
+        "brand_faq_q4": "Quelles pièces MTU sont souvent demandées ?",
+        "brand_faq_a4": "Filtres, joints toriques, joints de cache-culbuteurs et bougies. Indiquez le numéro complet, pas seulement « filtre » ou « joint ».",
+        "brand_faq_q5": "Le type de moteur suffit-il sans numéro de pièce ?",
+        "brand_faq_a5": "Le plus souvent non, car filtres et joints diffèrent selon la variante moteur. Indiquez le numéro de la pièce physique. Cette page ne concerne pas les turbines aéronautiques de MTU Aero Engines.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "Le numéro sur la pièce et, s’il existe, la plaque du moteur. Des photos floues sans numéros aident peu.",
+        "bx_note": "MTU est un nom de grands moteurs diesel et gaz et de systèmes de propulsion (Rolls-Royce Power Systems), non de turbines aéronautiques. Cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
       }
     }
   },
@@ -38294,6 +38372,570 @@
         "brand_faq_q6": "Que doivent montrer les photos ?",
         "brand_faq_a6": "Le numéro sur la pièce et, s’il existe, la plaque de la machine. Des photos floues sans numéros aident peu.",
         "bx_note": "Handtmann est un nom de machines agroalimentaires, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
+      }
+    }
+  },
+  "haberle": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "kasto",
+      "elumatec"
+    ],
+    "related_labels": {
+      "kasto": "KASTO",
+      "elumatec": "ELUMATEC"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/haberle.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/haberle.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/haberle.html#brand",
+          "name": "Häberle"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/haberle.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/haberle.html#brand"
+          },
+          "name": "Häberle"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/haberle.html#service",
+          "name": "Beschaffung von Häberle Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/haberle.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "HABERLE Ersatzteile | ABCspareparts",
+        "meta_description": "HABERLE Ersatzteile für Metallkreissägen H300–H350, u. a. Schneckenrad 077048752. Teilenummer senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "Häberle – Ersatzteile für Metallkreissägen und Trennmaschinen",
+        "brand_intro": "Häberle ist ein deutscher Hersteller von Kreissägen und Trennmaschinen. Öffentliche Angaben nennen Metallkreissägen, unter anderem der Baureihen H 300 und H 350. Das gelistete Teil 077048752 ist ein Schneckenrad für H300-325-350, Modul T6,05.",
+        "brand_intro_p2": "Sägeteile über ABCspareparts anfragen: Nummer vom Schild angeben, Angebot oft in 24 Stunden, Lieferung in Europa.",
+        "bx_about_title": "Über Häberle",
+        "bx_about_text": "<p>Häberle ist ein deutscher Hersteller von Kreissägen und Trennmaschinen. Öffentliche Quellen nennen Metallkreissägen für Rohre, Profile und Vollmaterial aus Stahl, Edelstahl und Nichteisenmetallen, darunter die Baureihen H 300 und H 350. Die genaue Ersatzteilausführung ergibt sich aus der Teilenummer, nicht aus einer angenommenen Maschinenkonfiguration.</p><p>Gelistete Anfragen betreffen das Schneckenrad 077048752 (Schneckenrad ET H300-325-350 T6,05). Senden Sie die Nummer vom Teil oder aus der Stückliste.</p>",
+        "bx_products_title": "Häberle-Teile, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Schneckenräder für Kreissägen H300-325-350 (z. B. 077048752 Schneckenrad ET, T6,05)</li><li>Weitere Getriebe- und Sägeteile mit vollständiger Nummer aus der Dokumentation</li>",
+        "bx_tech_title": "Worauf es bei Häberle-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Teilenummer:</strong> vollständige Nummer vom Bauteil oder aus der Stückliste (z. B. 077048752).</li><li><strong>Maschine:</strong> Typ soweit bekannt (H300, H325, H350).</li><li><strong>Baugruppe:</strong> Getriebe, Sägeblattantrieb – so wie gekennzeichnet.</li><li><strong>Foto:</strong> Schild am Teil und, falls vorhanden, an der Maschine.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Metallbearbeitung</li><li>Stahl- und Metallbau</li><li>Zuschnitt von Rohren, Profilen und Vollmaterial</li><li>Instandhaltung von Metallkreissägen</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Teilenummer (ein Foto hilft)</li><li>Maschinentyp, falls bekannt</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich Häberle-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die Teilenummer, Menge und den Maschinenkontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts Häberle-Teile in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür steht die Häberle-Nummer 077048752?",
+        "brand_faq_a3": "In den gelisteten Anfragen ist 077048752 als Schneckenrad ET H300-325-350 T6,05 geführt. Die genaue Getriebeausführung folgt der Nummer, nicht einer angenommenen Sägenkonfiguration.",
+        "brand_faq_q4": "Welche Häberle-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Schneckenräder und weitere Getriebe- oder Sägeteile für H300-325-350. Nennen Sie die volle Nummer, nicht nur „Schneckenrad“.",
+        "brand_faq_q5": "Reicht der Maschinentyp ohne Teilenummer?",
+        "brand_faq_a5": "Meist nicht, weil Getriebeteile je nach Säge (H300, H325, H350) und Modul (z. B. T6,05) differieren. Geben Sie die Nummer vom physischen Teil an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Die Nummer am Teil und, wenn vorhanden, das Maschinenschild. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "Häberle ist eine Marke für Kreissägen und Trennmaschinen. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Quellen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "HABERLE spare parts | ABCspareparts",
+        "meta_description": "HABERLE spare parts for metal circular saws H300–H350, including worm wheel 077048752. Send the part number – enquiry often within 24 hours.",
+        "brand_h1": "Häberle – spare parts for metal circular saws and cutting machines",
+        "brand_intro": "Häberle is a German manufacturer of circular saws and cutting machines. Public sources cite metal circular saws, including the H 300 and H 350 ranges. Listed part 077048752 is a worm wheel for H300-325-350, module T6,05.",
+        "brand_intro_p2": "Request saw parts through ABCspareparts: quote the number from the marking, a quote often within 24 hours, delivery in Europe.",
+        "bx_about_title": "About Häberle",
+        "bx_about_text": "<p>Häberle is a German manufacturer of circular saws and cutting machines. Public sources cite metal circular saws for tubes, profiles and solid bar in steel, stainless steel and non-ferrous metals, including the H 300 and H 350 ranges. The exact spare part is identified by its part number, not by an assumed machine layout.</p><p>Listed enquiries include worm wheel 077048752 (Schneckenrad ET H300-325-350 T6,05). Send the number from the part or the bill of materials.</p>",
+        "bx_products_title": "Häberle parts often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Worm wheels for circular saws H300-325-350 (e.g. 077048752 Schneckenrad ET, T6,05)</li><li>Other gearbox and saw parts with a full number from the documentation</li>",
+        "bx_tech_title": "What matters in a Häberle enquiry",
+        "bx_tech_list": "<li><strong>Part number:</strong> full number from the component or bill of materials (e.g. 077048752).</li><li><strong>Machine:</strong> type if known (H300, H325, H350).</li><li><strong>Assembly:</strong> gearbox, blade drive – as marked.</li><li><strong>Photo:</strong> marking on the part and, if present, on the machine.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Metalworking</li><li>Steel and metal fabrication</li><li>Cutting of tubes, profiles and solid bar</li><li>Metal circular-saw maintenance</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full part number (a photo helps)</li><li>Machine type if known</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request Häberle spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the part number, quantity and machine context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship Häberle parts in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What is Häberle part 077048752?",
+        "brand_faq_a3": "Listed enquiries record 077048752 as Schneckenrad ET H300-325-350 T6,05 (worm wheel). The exact gearbox design follows the number, not an assumed saw layout.",
+        "brand_faq_q4": "Which Häberle parts are often requested?",
+        "brand_faq_a4": "Worm wheels and other gearbox or saw parts for H300-325-350. Give the full number, not only “worm wheel”.",
+        "brand_faq_q5": "Is the machine type enough without a part number?",
+        "brand_faq_a5": "Usually not, because gearbox parts differ by saw (H300, H325, H350) and module (e.g. T6,05). State the number from the physical part.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The number on the part and, if present, the machine nameplate. Blurry photos without numbers help little.",
+        "bx_note": "Häberle is a name for circular saws and cutting machines, mentioned solely to identify products. Information is based on publicly available sources. As of November 2026."
+      },
+      "it": {
+        "meta_title": "HABERLE Ricambi | ABCspareparts",
+        "meta_description": "HABERLE ricambi per seghe circolari per metallo H300–H350, tra cui corona 077048752. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "Häberle – ricambi per seghe circolari per metallo e macchine da taglio",
+        "brand_intro": "Häberle è un produttore tedesco di seghe circolari e macchine da taglio. Le fonti pubbliche citano seghe circolari per metallo, tra cui le serie H 300 e H 350. Il ricambio elencato 077048752 è una corona elicoidale per H300-325-350, modulo T6,05.",
+        "brand_intro_p2": "Richieda i pezzi sega tramite ABCspareparts: indichi il numero dalla marcatura, preventivo spesso entro 24 ore, consegna in Europa.",
+        "bx_about_title": "Chi è Häberle",
+        "bx_about_text": "<p>Häberle è un produttore tedesco di seghe circolari e macchine da taglio. Le fonti pubbliche citano seghe circolari per tubi, profili e pieno in acciaio, acciaio inox e metalli non ferrosi, tra cui le serie H 300 e H 350. Il ricambio esatto si identifica con il numero di parte, non con una configurazione macchina ipotizzata.</p><p>Le richieste elencate riguardano la corona elicoidale 077048752 (Schneckenrad ET H300-325-350 T6,05). Invii il numero dal pezzo o dalla distinta.</p>",
+        "bx_products_title": "Ricambi Häberle richiesti di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Corone elicoidali per seghe circolari H300-325-350 (es. 077048752 Schneckenrad ET, T6,05)</li><li>Altri pezzi di riduttore e sega con numero completo dalla documentazione</li>",
+        "bx_tech_title": "Cosa conta in una richiesta Häberle",
+        "bx_tech_list": "<li><strong>Numero di parte:</strong> numero completo dal componente o dalla distinta (es. 077048752).</li><li><strong>Macchina:</strong> tipo se noto (H300, H325, H350).</li><li><strong>Gruppo:</strong> riduttore, azionamento lama – come indicato.</li><li><strong>Foto:</strong> marcatura del pezzo e, se presente, targhetta macchina.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Lavorazione dei metalli</li><li>Carpenteria metallica</li><li>Taglio di tubi, profili e pieno</li><li>Manutenzione di seghe circolari per metallo</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Numero di parte completo (una foto aiuta)</li><li>Tipo di macchina se noto</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi Häberle ad ABCspareparts?",
+        "brand_faq_a1": "Invii numero di parte, quantità e contesto macchina con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce pezzi Häberle in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Che cos’è il codice Häberle 077048752?",
+        "brand_faq_a3": "Nelle richieste elencate 077048752 figura come Schneckenrad ET H300-325-350 T6,05 (corona elicoidale). L’esecuzione esatta del riduttore segue il numero, non una configurazione sega ipotizzata.",
+        "brand_faq_q4": "Quali ricambi Häberle vengono chiesti di frequente?",
+        "brand_faq_a4": "Corone elicoidali e altri pezzi di riduttore o sega per H300-325-350. Indichi il numero completo, non solo «corona».",
+        "brand_faq_q5": "Basta il tipo di macchina senza numero di parte?",
+        "brand_faq_a5": "Di solito no, perché i pezzi del riduttore differiscono per sega (H300, H325, H350) e modulo (es. T6,05). Indichi il numero del pezzo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "Il numero sul pezzo e, se presente, la targhetta della macchina. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "Häberle è un nome di seghe circolari e macchine da taglio, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "HABERLE Recambios | ABCspareparts",
+        "meta_description": "HABERLE recambios para sierras circulares de metal H300–H350, p. ej. corona 077048752. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "Häberle – recambios para sierras circulares de metal y máquinas de corte",
+        "brand_intro": "Häberle es un fabricante alemán de sierras circulares y máquinas de corte. Las fuentes públicas citan sierras circulares para metal, entre ellas las gamas H 300 y H 350. El recambio listado 077048752 es una rueda helicoidal para H300-325-350, módulo T6,05.",
+        "brand_intro_p2": "Solicite piezas de sierra a ABCspareparts: indique el número del marcado, presupuesto a menudo en 24 horas, entrega en Europa.",
+        "bx_about_title": "Sobre Häberle",
+        "bx_about_text": "<p>Häberle es un fabricante alemán de sierras circulares y máquinas de corte. Las fuentes públicas citan sierras circulares para tubos, perfiles y macizo de acero, acero inoxidable y metales no férreos, incluidas las gamas H 300 y H 350. El recambio exacto se identifica por el número de pieza, no por una configuración de máquina supuesta.</p><p>Las solicitudes listadas cubren la rueda helicoidal 077048752 (Schneckenrad ET H300-325-350 T6,05). Envíe el número de la pieza o de la lista de materiales.</p>",
+        "bx_products_title": "Recambios Häberle solicitados con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Ruedas helicoidales para sierras circulares H300-325-350 (p. ej. 077048752 Schneckenrad ET, T6,05)</li><li>Otras piezas de reductor y sierra con número completo de la documentación</li>",
+        "bx_tech_title": "Qué importa en una solicitud Häberle",
+        "bx_tech_list": "<li><strong>Número de pieza:</strong> número completo del componente o de la lista (p. ej. 077048752).</li><li><strong>Máquina:</strong> tipo si se conoce (H300, H325, H350).</li><li><strong>Conjunto:</strong> reductor, accionamiento de hoja – según el marcado.</li><li><strong>Foto:</strong> marcado de la pieza y, si existe, placa de la máquina.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Mecanizado de metales</li><li>Construcción metálica</li><li>Corte de tubos, perfiles y macizo</li><li>Mantenimiento de sierras circulares para metal</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Número de pieza completo (una foto ayuda)</li><li>Tipo de máquina si se conoce</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios Häberle a ABCspareparts?",
+        "brand_faq_a1": "Envíe número de pieza, cantidad y contexto de máquina con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía piezas Häberle en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué es el código Häberle 077048752?",
+        "brand_faq_a3": "En las solicitudes listadas, 077048752 figura como Schneckenrad ET H300-325-350 T6,05 (rueda helicoidal). El diseño exacto del reductor sigue el número, no una configuración de sierra supuesta.",
+        "brand_faq_q4": "¿Qué recambios Häberle se solicitan con frecuencia?",
+        "brand_faq_a4": "Ruedas helicoidales y otras piezas de reductor o sierra para H300-325-350. Indique el número completo, no solo «rueda helicoidal».",
+        "brand_faq_q5": "¿Basta el tipo de máquina sin número de pieza?",
+        "brand_faq_a5": "Suele no, porque las piezas del reductor varían según la sierra (H300, H325, H350) y el módulo (p. ej. T6,05). Indique el número de la pieza física.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "El número en la pieza y, si existe, la placa de la máquina. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "Häberle es un nombre de sierras circulares y máquinas de corte, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "HABERLE Pièces | ABCspareparts",
+        "meta_description": "HABERLE pièces pour scies circulaires à métaux H300–H350, dont roue 077048752. Indiquez la référence – demande souvent sous 24 h.",
+        "brand_h1": "Häberle – pièces pour scies circulaires à métaux et machines de coupe",
+        "brand_intro": "Häberle est un fabricant allemand de scies circulaires et de machines de coupe. Les sources publiques citent des scies circulaires à métaux, notamment les gammes H 300 et H 350. La pièce listée 077048752 est une roue à vis sans fin pour H300-325-350, module T6,05.",
+        "brand_intro_p2": "Demandez les pièces de scie via ABCspareparts : indiquez le numéro du marquage, devis souvent sous 24 heures, livraison en Europe.",
+        "bx_about_title": "À propos de Häberle",
+        "bx_about_text": "<p>Häberle est un fabricant allemand de scies circulaires et de machines de coupe. Les sources publiques citent des scies circulaires pour tubes, profilés et plein en acier, acier inoxydable et métaux non ferreux, dont les gammes H 300 et H 350. La pièce exacte s’identifie par son numéro, non par une configuration machine supposée.</p><p>Les demandes listées concernent la roue à vis sans fin 077048752 (Schneckenrad ET H300-325-350 T6,05). Envoyez le numéro de la pièce ou de la nomenclature.</p>",
+        "bx_products_title": "Pièces Häberle souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Roues à vis sans fin pour scies circulaires H300-325-350 (p. ex. 077048752 Schneckenrad ET, T6,05)</li><li>Autres pièces de réducteur et de scie avec numéro complet de la documentation</li>",
+        "bx_tech_title": "Ce qui compte dans une demande Häberle",
+        "bx_tech_list": "<li><strong>Numéro de pièce :</strong> numéro complet du composant ou de la nomenclature (p. ex. 077048752).</li><li><strong>Machine :</strong> type si connu (H300, H325, H350).</li><li><strong>Ensemble :</strong> réducteur, entraînement de lame – tel que marqué.</li><li><strong>Photo :</strong> marquage de la pièce et, s’il existe, plaque machine.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Travail des métaux</li><li>Construction métallique</li><li>Coupe de tubes, profilés et plein</li><li>Maintenance des scies circulaires à métaux</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Numéro de pièce complet (une photo aide)</li><li>Type de machine si connu</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces Häberle à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez numéro de pièce, quantité et contexte machine via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des pièces Häberle en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que désigne la référence Häberle 077048752 ?",
+        "brand_faq_a3": "Dans les demandes listées, 077048752 figure comme Schneckenrad ET H300-325-350 T6,05 (roue à vis sans fin). La conception exacte du réducteur suit le numéro, non une configuration de scie supposée.",
+        "brand_faq_q4": "Quelles pièces Häberle sont souvent demandées ?",
+        "brand_faq_a4": "Roues à vis sans fin et autres pièces de réducteur ou de scie pour H300-325-350. Indiquez le numéro complet, pas seulement « roue à vis ».",
+        "brand_faq_q5": "Le type de machine suffit-il sans numéro de pièce ?",
+        "brand_faq_a5": "Le plus souvent non, car les pièces de réducteur diffèrent selon la scie (H300, H325, H350) et le module (p. ex. T6,05). Indiquez le numéro de la pièce physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "Le numéro sur la pièce et, s’il existe, la plaque de la machine. Des photos floues sans numéros aident peu.",
+        "bx_note": "Häberle est un nom de scies circulaires et de machines de coupe, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
+      }
+    }
+  },
+  "westlock": {
+    "intro": "",
+    "products": [],
+    "applications": [],
+    "faq": [],
+    "related_slugs": [
+      "keystone",
+      "rotork",
+      "auma",
+      "fisher"
+    ],
+    "related_labels": {
+      "keystone": "Keystone",
+      "rotork": "Rotork",
+      "auma": "AUMA",
+      "fisher": "Fisher"
+    },
+    "faq_after": [
+      {
+        "q": "brand_faq_q4",
+        "a": "brand_faq_a4"
+      },
+      {
+        "q": "brand_faq_q5",
+        "a": "brand_faq_a5"
+      },
+      {
+        "q": "brand_faq_q6",
+        "a": "brand_faq_a6"
+      }
+    ],
+    "faq_note_key": "bx_note",
+    "blocks": [
+      {
+        "type": "info",
+        "id": "ueber-marke",
+        "headingId": "ueber-marke-h",
+        "className": "brand-info",
+        "titleKey": "bx_about_title",
+        "bodyKey": "bx_about_text"
+      },
+      {
+        "type": "info",
+        "id": "produkte",
+        "headingId": "produkte-h",
+        "className": "brand-info",
+        "titleKey": "bx_products_title",
+        "introKey": "bx_products_intro",
+        "listKey": "bx_products_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "info",
+        "id": "technik",
+        "headingId": "technik-h",
+        "className": "brand-info",
+        "titleKey": "bx_tech_title",
+        "listKey": "bx_tech_list",
+        "listClass": "brand-list"
+      },
+      {
+        "type": "grid",
+        "className": "brand-info-grid",
+        "items": [
+          {
+            "type": "info",
+            "id": "anwendungen",
+            "headingId": "anwendungen-h",
+            "className": "brand-info",
+            "titleKey": "bx_apps_title",
+            "listKey": "bx_apps_list",
+            "listClass": "brand-list brand-list-compact"
+          },
+          {
+            "type": "info",
+            "id": "anfrage",
+            "headingId": "anfrage-h",
+            "className": "brand-info brand-info-accent",
+            "titleKey": "bx_request_title",
+            "listKey": "bx_request_list",
+            "listClass": "brand-list brand-list-check"
+          }
+        ]
+      }
+    ],
+    "schema": {
+      "name_from": "meta_title",
+      "date_modified": true,
+      "about": {
+        "@id": "https://abcspareparts.eu/marche/westlock.html#brand"
+      },
+      "mentions": {
+        "@id": "https://abcspareparts.eu/marche/westlock.html#manufacturer"
+      },
+      "extra": [
+        {
+          "@type": "Brand",
+          "@id": "https://abcspareparts.eu/marche/westlock.html#brand",
+          "name": "Westlock"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://abcspareparts.eu/marche/westlock.html#manufacturer",
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/westlock.html#brand"
+          },
+          "name": "Westlock"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://abcspareparts.eu/marche/westlock.html#service",
+          "name": "Beschaffung von Westlock Ersatzteilen",
+          "serviceType": "MRO-Ersatzteilbeschaffung",
+          "provider": {
+            "@id": "https://abcspareparts.eu/#organization"
+          },
+          "brand": {
+            "@id": "https://abcspareparts.eu/marche/westlock.html#brand"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Europa"
+          }
+        }
+      ]
+    },
+    "i18n": {
+      "de": {
+        "meta_title": "Westlock Ersatzteile | ABCspareparts",
+        "meta_description": "Westlock Ersatzteile für Ventilstellungsüberwachung, u. a. Magnum-Schalter SW10108-LN5/LN8/L05. Teilenummer senden – Anfrage oft in 24 Stunden.",
+        "brand_h1": "Westlock – Ersatzteile für Ventilstellungsüberwachung und Grenzwertschalterboxen",
+        "brand_intro": "Westlock ist ein US-amerikanischer Hersteller von Stellungsrückmeldern und Grenzwertschalterboxen für die Ventilautomation und gehört zu Crane. Das gelistete Teil SW10108-LN5/LN8/L05 ist ein hermetisch gekapselter Magnum-Schalter XT-90 mit Rhodiumkontakten, SPDT.",
+        "brand_intro_p2": "Schalter und Stellungsrückmelder über ABCspareparts anfragen: Nummer vom Schild angeben, Angebot oft in 24 Stunden, Lieferung in Europa.",
+        "bx_about_title": "Über Westlock",
+        "bx_about_text": "<p>Westlock stellt Stellungsrückmelder und Grenzwertschalterboxen für manuelle und automatisierte Drehventile her und gehört zu Crane. Öffentliche Angaben nennen hermetisch gekapselte Magnum-Schalter XT-90 mit Rhodiumkontakten in der Ausführung SPDT. Die genaue Ersatzteilausführung ergibt sich aus der Teilenummer, nicht aus einer angenommenen Monitor-Konfiguration.</p><p>Gelistete Anfragen betreffen SW10108-LN5/LN8/L05 (XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT). Senden Sie die Nummer vom Teil oder aus der Stückliste.</p>",
+        "bx_products_title": "Westlock-Teile, nach denen häufig gefragt wird",
+        "bx_products_intro": "Typische Anfragen betreffen:",
+        "bx_products_list": "<li>Magnum-Schalter XT-90, hermetisch gekapselt, SPDT, Rhodiumkontakte (z. B. SW10108-LN5/LN8/L05)</li><li>Weitere Teile für Stellungsrückmelder und Grenzwertschalterboxen mit vollständiger Nummer aus der Dokumentation</li>",
+        "bx_tech_title": "Worauf es bei Westlock-Anfragen ankommt",
+        "bx_tech_list": "<li><strong>Teilenummer:</strong> vollständige Nummer vom Bauteil oder aus der Stückliste (z. B. SW10108-LN5/LN8/L05).</li><li><strong>Gerät:</strong> Stellungsrückmelder oder Schalterbox, soweit bekannt.</li><li><strong>Ausführung:</strong> Kontakte und Schaltart so wie gekennzeichnet (XT-90, SPDT, Rhodium).</li><li><strong>Foto:</strong> Schild am Teil und, falls vorhanden, am Gehäuse.</li>",
+        "bx_apps_title": "Typische Einsatzbereiche",
+        "bx_apps_list": "<li>Ventilautomation</li><li>Stellungsüberwachung an Drehventilen</li><li>Grenzwertschalter an Antrieben</li><li>Instandhaltung von Prozessarmaturen</li>",
+        "bx_request_title": "Diese Angaben beschleunigen Ihre Anfrage",
+        "bx_request_list": "<li>Vollständige Teilenummer (ein Foto hilft)</li><li>Gerätetyp, falls bekannt</li><li>Menge und gewünschter Liefertermin</li><li>Anfrage ausschließlich über ABCspareparts</li>",
+        "brand_faq_q1": "Wie frage ich Westlock-Ersatzteile bei ABCspareparts an?",
+        "brand_faq_a1": "Senden Sie die Teilenummer, Menge und den Gerätekontext über das Formular. Wir prüfen die Anfrage unverbindlich.",
+        "brand_faq_q2": "Liefert ABCspareparts Westlock-Teile in Europa?",
+        "brand_faq_a2": "Ja. Lieferweg und Frist hängen vom Teil und vom Zielort ab. Details klären wir nach Ihrer Anfrage.",
+        "brand_faq_q3": "Wofür steht die Westlock-Nummer SW10108-LN5/LN8/L05?",
+        "brand_faq_a3": "In den gelisteten Anfragen ist SW10108-LN5/LN8/L05 als XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT geführt. Die genaue Schalterausführung folgt der Nummer, nicht einer angenommenen Monitor-Variante.",
+        "brand_faq_q4": "Welche Westlock-Teile werden häufig angefragt?",
+        "brand_faq_a4": "Magnum-Schalter XT-90 und weitere Teile für Stellungsrückmelder. Nennen Sie die volle Nummer, nicht nur „Schalter“ oder „XT-90“.",
+        "brand_faq_q5": "Reicht der Gerätetyp ohne Teilenummer?",
+        "brand_faq_a5": "Meist nicht, weil Schalter je nach Kontaktwerkstoff, Kapselung und Schaltart (z. B. SPDT, Rhodium) differieren. Geben Sie die Nummer vom physischen Teil an.",
+        "brand_faq_q6": "Was soll auf Fotos zu sehen sein?",
+        "brand_faq_a6": "Die Nummer am Teil und, wenn vorhanden, das Gehäuseschild. Unscharfe Fotos ohne Nummern helfen wenig.",
+        "bx_note": "Westlock ist eine Marke für Ventilstellungsüberwachung. Die Nennung dient ausschließlich der Identifikation der Produkte. Angaben basieren auf öffentlich zugänglichen Quellen. Stand: November 2026."
+      },
+      "en": {
+        "meta_title": "Westlock spare parts | ABCspareparts",
+        "meta_description": "Westlock spare parts for valve position monitoring, including Magnum switch SW10108-LN5/LN8/L05. Send the part number – enquiry often within 24 hours.",
+        "brand_h1": "Westlock – spare parts for valve position monitors and limit switch boxes",
+        "brand_intro": "Westlock is a US manufacturer of valve position monitors and limit switch boxes for valve automation and is part of Crane. Listed part SW10108-LN5/LN8/L05 is a hermetically sealed Magnum XT-90 switch with rhodium contacts, SPDT.",
+        "brand_intro_p2": "Request switches and position monitors through ABCspareparts: quote the number from the marking, a quote often within 24 hours, delivery in Europe.",
+        "bx_about_title": "About Westlock",
+        "bx_about_text": "<p>Westlock makes position monitors and limit switch boxes for manual and automated rotary valves and is part of Crane. Public sources cite hermetically sealed Magnum XT-90 switches with rhodium contacts in SPDT form. The exact spare part is identified by its part number, not by an assumed monitor layout.</p><p>Listed enquiries include SW10108-LN5/LN8/L05 (XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT). Send the number from the part or the bill of materials.</p>",
+        "bx_products_title": "Westlock parts often requested",
+        "bx_products_intro": "Typical requests cover:",
+        "bx_products_list": "<li>Magnum XT-90 switches, hermetically sealed, SPDT, rhodium contacts (e.g. SW10108-LN5/LN8/L05)</li><li>Other position-monitor and switch-box parts with a full number from the documentation</li>",
+        "bx_tech_title": "What matters in a Westlock enquiry",
+        "bx_tech_list": "<li><strong>Part number:</strong> full number from the component or bill of materials (e.g. SW10108-LN5/LN8/L05).</li><li><strong>Device:</strong> position monitor or switch box if known.</li><li><strong>Variant:</strong> contacts and switching as marked (XT-90, SPDT, rhodium).</li><li><strong>Photo:</strong> marking on the part and, if present, on the housing.</li>",
+        "bx_apps_title": "Typical applications",
+        "bx_apps_list": "<li>Valve automation</li><li>Position monitoring on rotary valves</li><li>Limit switching on actuators</li><li>Process-valve maintenance</li>",
+        "bx_request_title": "This information speeds up your enquiry",
+        "bx_request_list": "<li>Full part number (a photo helps)</li><li>Device type if known</li><li>Quantity and required delivery date</li><li>Send the request only via ABCspareparts</li>",
+        "brand_faq_q1": "How do I request Westlock spare parts from ABCspareparts?",
+        "brand_faq_a1": "Send the part number, quantity and device context via the form. We review the request with no obligation.",
+        "brand_faq_q2": "Does ABCspareparts ship Westlock parts in Europe?",
+        "brand_faq_a2": "Yes. Route and lead time depend on the item and destination. We confirm details after your enquiry.",
+        "brand_faq_q3": "What is Westlock part SW10108-LN5/LN8/L05?",
+        "brand_faq_a3": "Listed enquiries record SW10108-LN5/LN8/L05 as XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT. The exact switch design follows the number, not an assumed monitor variant.",
+        "brand_faq_q4": "Which Westlock parts are often requested?",
+        "brand_faq_a4": "Magnum XT-90 switches and other position-monitor parts. Give the full number, not only “switch” or “XT-90”.",
+        "brand_faq_q5": "Is the device type enough without a part number?",
+        "brand_faq_a5": "Usually not, because switches differ by contact material, sealing and switching form (e.g. SPDT, rhodium). State the number from the physical part.",
+        "brand_faq_q6": "What should photos show?",
+        "brand_faq_a6": "The number on the part and, if present, the housing nameplate. Blurry photos without numbers help little.",
+        "bx_note": "Westlock is a name for valve position monitoring, mentioned solely to identify products. Information is based on publicly available sources. As of November 2026."
+      },
+      "it": {
+        "meta_title": "Westlock Ricambi | ABCspareparts",
+        "meta_description": "Westlock ricambi per monitoraggio posizione valvole, tra cui interruttore SW10108-LN5/LN8/L05. Invii il codice – richiesta spesso entro 24 ore.",
+        "brand_h1": "Westlock – ricambi per monitor di posizione valvole e box di finecorsa",
+        "brand_intro": "Westlock è un produttore statunitense di monitor di posizione e box di finecorsa per l’automazione delle valvole e fa parte di Crane. Il ricambio elencato SW10108-LN5/LN8/L05 è un interruttore Magnum XT-90 ermeticamente sigillato con contatti in rodio, SPDT.",
+        "brand_intro_p2": "Richieda interruttori e monitor di posizione tramite ABCspareparts: indichi il numero dalla marcatura, preventivo spesso entro 24 ore, consegna in Europa.",
+        "bx_about_title": "Chi è Westlock",
+        "bx_about_text": "<p>Westlock produce monitor di posizione e box di finecorsa per valvole rotative manuali e automatizzate e fa parte di Crane. Le fonti pubbliche citano interruttori Magnum XT-90 ermeticamente sigillati con contatti in rodio in esecuzione SPDT. Il ricambio esatto si identifica con il numero di parte, non con una configurazione monitor ipotizzata.</p><p>Le richieste elencate riguardano SW10108-LN5/LN8/L05 (XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT). Invii il numero dal pezzo o dalla distinta.</p>",
+        "bx_products_title": "Ricambi Westlock richiesti di frequente",
+        "bx_products_intro": "Le richieste tipiche riguardano:",
+        "bx_products_list": "<li>Interruttori Magnum XT-90, ermeticamente sigillati, SPDT, contatti in rodio (es. SW10108-LN5/LN8/L05)</li><li>Altri pezzi per monitor di posizione e box di finecorsa con numero completo dalla documentazione</li>",
+        "bx_tech_title": "Cosa conta in una richiesta Westlock",
+        "bx_tech_list": "<li><strong>Numero di parte:</strong> numero completo dal componente o dalla distinta (es. SW10108-LN5/LN8/L05).</li><li><strong>Apparecchio:</strong> monitor di posizione o box, se noto.</li><li><strong>Esecuzione:</strong> contatti e tipo di commutazione come indicati (XT-90, SPDT, rodio).</li><li><strong>Foto:</strong> marcatura del pezzo e, se presente, targhetta del contenitore.</li>",
+        "bx_apps_title": "Applicazioni tipiche",
+        "bx_apps_list": "<li>Automazione delle valvole</li><li>Monitoraggio di posizione su valvole rotative</li><li>Finecorsa su attuatori</li><li>Manutenzione di valvole di processo</li>",
+        "bx_request_title": "Questi dati accelerano la richiesta",
+        "bx_request_list": "<li>Numero di parte completo (una foto aiuta)</li><li>Tipo di apparecchio se noto</li><li>Quantità e data di consegna</li><li>Richiesta solo tramite ABCspareparts</li>",
+        "brand_faq_q1": "Come richiedo ricambi Westlock ad ABCspareparts?",
+        "brand_faq_a1": "Invii numero di parte, quantità e contesto apparecchio con il modulo. Esaminiamo la richiesta senza impegno.",
+        "brand_faq_q2": "ABCspareparts spedisce pezzi Westlock in Europa?",
+        "brand_faq_a2": "Sì. Percorso e tempi dipendono dal pezzo e dalla destinazione. I dettagli si definiscono dopo la richiesta.",
+        "brand_faq_q3": "Che cos’è il codice Westlock SW10108-LN5/LN8/L05?",
+        "brand_faq_a3": "Nelle richieste elencate SW10108-LN5/LN8/L05 figura come XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT. L’esecuzione esatta dell’interruttore segue il numero, non una variante monitor ipotizzata.",
+        "brand_faq_q4": "Quali ricambi Westlock vengono chiesti di frequente?",
+        "brand_faq_a4": "Interruttori Magnum XT-90 e altri pezzi per monitor di posizione. Indichi il numero completo, non solo «interruttore» o «XT-90».",
+        "brand_faq_q5": "Basta il tipo di apparecchio senza numero di parte?",
+        "brand_faq_a5": "Di solito no, perché gli interruttori differiscono per materiale dei contatti, tenuta e tipo di commutazione (es. SPDT, rodio). Indichi il numero del pezzo fisico.",
+        "brand_faq_q6": "Cosa deve vedere la foto?",
+        "brand_faq_a6": "Il numero sul pezzo e, se presente, la targhetta del contenitore. Foto sfocate senza numeri aiutano poco.",
+        "bx_note": "Westlock è un nome di monitoraggio posizione valvole, citato solo per identificare i prodotti. Informazioni da fonti pubbliche. Aggiornato: novembre 2026."
+      },
+      "es": {
+        "meta_title": "Westlock Recambios | ABCspareparts",
+        "meta_description": "Westlock recambios para supervisión de posición de válvulas, p. ej. SW10108-LN5/LN8/L05. Envíe la referencia – solicitud a menudo en 24 h.",
+        "brand_h1": "Westlock – recambios para monitores de posición de válvulas y cajas de finales de carrera",
+        "brand_intro": "Westlock es un fabricante estadounidense de monitores de posición y cajas de finales de carrera para automatización de válvulas y forma parte de Crane. El recambio listado SW10108-LN5/LN8/L05 es un interruptor Magnum XT-90 herméticamente sellado con contactos de rodio, SPDT.",
+        "brand_intro_p2": "Solicite interruptores y monitores de posición a ABCspareparts: indique el número del marcado, presupuesto a menudo en 24 horas, entrega en Europa.",
+        "bx_about_title": "Sobre Westlock",
+        "bx_about_text": "<p>Westlock fabrica monitores de posición y cajas de finales de carrera para válvulas rotativas manuales y automatizadas y forma parte de Crane. Las fuentes públicas citan interruptores Magnum XT-90 herméticamente sellados con contactos de rodio en ejecución SPDT. El recambio exacto se identifica por el número de pieza, no por una configuración de monitor supuesta.</p><p>Las solicitudes listadas cubren SW10108-LN5/LN8/L05 (XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT). Envíe el número de la pieza o de la lista de materiales.</p>",
+        "bx_products_title": "Recambios Westlock solicitados con frecuencia",
+        "bx_products_intro": "Las solicitudes habituales abarcan:",
+        "bx_products_list": "<li>Interruptores Magnum XT-90, herméticamente sellados, SPDT, contactos de rodio (p. ej. SW10108-LN5/LN8/L05)</li><li>Otras piezas para monitores de posición y cajas de finales de carrera con número completo de la documentación</li>",
+        "bx_tech_title": "Qué importa en una solicitud Westlock",
+        "bx_tech_list": "<li><strong>Número de pieza:</strong> número completo del componente o de la lista (p. ej. SW10108-LN5/LN8/L05).</li><li><strong>Equipo:</strong> monitor de posición o caja, si se conoce.</li><li><strong>Ejecución:</strong> contactos y conmutación según el marcado (XT-90, SPDT, rodio).</li><li><strong>Foto:</strong> marcado de la pieza y, si existe, placa de la carcasa.</li>",
+        "bx_apps_title": "Aplicaciones típicas",
+        "bx_apps_list": "<li>Automatización de válvulas</li><li>Supervisión de posición en válvulas rotativas</li><li>Finales de carrera en actuadores</li><li>Mantenimiento de válvulas de proceso</li>",
+        "bx_request_title": "Estos datos aceleran su solicitud",
+        "bx_request_list": "<li>Número de pieza completo (una foto ayuda)</li><li>Tipo de equipo si se conoce</li><li>Cantidad y fecha de entrega</li><li>Solicitud solo a través de ABCspareparts</li>",
+        "brand_faq_q1": "¿Cómo solicito recambios Westlock a ABCspareparts?",
+        "brand_faq_a1": "Envíe número de pieza, cantidad y contexto de equipo con el formulario. Revisamos la solicitud sin compromiso.",
+        "brand_faq_q2": "¿ABCspareparts envía piezas Westlock en Europa?",
+        "brand_faq_a2": "Sí. Ruta y plazo dependen de la pieza y del destino. Los detalles se confirman tras su solicitud.",
+        "brand_faq_q3": "¿Qué es el código Westlock SW10108-LN5/LN8/L05?",
+        "brand_faq_a3": "En las solicitudes listadas, SW10108-LN5/LN8/L05 figura como XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT. El diseño exacto del interruptor sigue el número, no una variante de monitor supuesta.",
+        "brand_faq_q4": "¿Qué recambios Westlock se solicitan con frecuencia?",
+        "brand_faq_a4": "Interruptores Magnum XT-90 y otras piezas para monitores de posición. Indique el número completo, no solo «interruptor» o «XT-90».",
+        "brand_faq_q5": "¿Basta el tipo de equipo sin número de pieza?",
+        "brand_faq_a5": "Suele no, porque los interruptores varían según el material de contacto, el sellado y la forma de conmutación (p. ej. SPDT, rodio). Indique el número de la pieza física.",
+        "brand_faq_q6": "¿Qué debe verse en las fotos?",
+        "brand_faq_a6": "El número en la pieza y, si existe, la placa de la carcasa. Fotos borrosas sin números ayudan poco.",
+        "bx_note": "Westlock es un nombre de supervisión de posición de válvulas, mencionado solo para identificar los productos. Información de fuentes públicas. Actualizado: noviembre de 2026."
+      },
+      "fr": {
+        "meta_title": "Westlock Pièces | ABCspareparts",
+        "meta_description": "Westlock pièces pour surveillance de position de vannes, dont interrupteur SW10108-LN5/LN8/L05. Indiquez la référence – demande souvent sous 24 h.",
+        "brand_h1": "Westlock – pièces pour moniteurs de position de vannes et boîtiers de fin de course",
+        "brand_intro": "Westlock est un fabricant américain de moniteurs de position et de boîtiers de fin de course pour l’automatisation des vannes et fait partie de Crane. La pièce listée SW10108-LN5/LN8/L05 est un interrupteur Magnum XT-90 hermétiquement étanche à contacts rhodium, SPDT.",
+        "brand_intro_p2": "Demandez interrupteurs et moniteurs de position via ABCspareparts : indiquez le numéro du marquage, devis souvent sous 24 heures, livraison en Europe.",
+        "bx_about_title": "À propos de Westlock",
+        "bx_about_text": "<p>Westlock fabrique des moniteurs de position et des boîtiers de fin de course pour vannes rotatives manuelles et automatisées et fait partie de Crane. Les sources publiques citent des interrupteurs Magnum XT-90 hermétiquement étanches à contacts rhodium en version SPDT. La pièce exacte s’identifie par son numéro, non par une configuration de moniteur supposée.</p><p>Les demandes listées concernent SW10108-LN5/LN8/L05 (XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT). Envoyez le numéro de la pièce ou de la nomenclature.</p>",
+        "bx_products_title": "Pièces Westlock souvent demandées",
+        "bx_products_intro": "Les demandes typiques concernent :",
+        "bx_products_list": "<li>Interrupteurs Magnum XT-90, hermétiquement étanches, SPDT, contacts rhodium (p. ex. SW10108-LN5/LN8/L05)</li><li>Autres pièces pour moniteurs de position et boîtiers de fin de course avec numéro complet de la documentation</li>",
+        "bx_tech_title": "Ce qui compte dans une demande Westlock",
+        "bx_tech_list": "<li><strong>Numéro de pièce :</strong> numéro complet du composant ou de la nomenclature (p. ex. SW10108-LN5/LN8/L05).</li><li><strong>Appareil :</strong> moniteur de position ou boîtier, si connu.</li><li><strong>Exécution :</strong> contacts et commutation tels que marqués (XT-90, SPDT, rhodium).</li><li><strong>Photo :</strong> marquage de la pièce et, s’il existe, plaque du boîtier.</li>",
+        "bx_apps_title": "Applications typiques",
+        "bx_apps_list": "<li>Automatisation des vannes</li><li>Surveillance de position sur vannes rotatives</li><li>Fins de course sur actionneurs</li><li>Maintenance des vannes de process</li>",
+        "bx_request_title": "Ces informations accélèrent votre demande",
+        "bx_request_list": "<li>Numéro de pièce complet (une photo aide)</li><li>Type d’appareil si connu</li><li>Quantité et date de livraison</li><li>Demande uniquement via ABCspareparts</li>",
+        "brand_faq_q1": "Comment demander des pièces Westlock à ABCspareparts ?",
+        "brand_faq_a1": "Envoyez numéro de pièce, quantité et contexte appareil via le formulaire. Nous étudions la demande sans engagement.",
+        "brand_faq_q2": "ABCspareparts livre-t-il des pièces Westlock en Europe ?",
+        "brand_faq_a2": "Oui. Itinéraire et délai dépendent de la pièce et de la destination. Les détails se précisent après votre demande.",
+        "brand_faq_q3": "Que désigne la référence Westlock SW10108-LN5/LN8/L05 ?",
+        "brand_faq_a3": "Dans les demandes listées, SW10108-LN5/LN8/L05 figure comme XT-90 Rhodium Magnum Switch Hermetically Sealed SPDT. La conception exacte de l’interrupteur suit le numéro, non une variante de moniteur supposée.",
+        "brand_faq_q4": "Quelles pièces Westlock sont souvent demandées ?",
+        "brand_faq_a4": "Interrupteurs Magnum XT-90 et autres pièces pour moniteurs de position. Indiquez le numéro complet, pas seulement « interrupteur » ou « XT-90 ».",
+        "brand_faq_q5": "Le type d’appareil suffit-il sans numéro de pièce ?",
+        "brand_faq_a5": "Le plus souvent non, car les interrupteurs diffèrent selon le matériau des contacts, l’étanchéité et la forme de commutation (p. ex. SPDT, rhodium). Indiquez le numéro de la pièce physique.",
+        "brand_faq_q6": "Que doivent montrer les photos ?",
+        "brand_faq_a6": "Le numéro sur la pièce et, s’il existe, la plaque du boîtier. Des photos floues sans numéros aident peu.",
+        "bx_note": "Westlock est un nom de surveillance de position de vannes, cité uniquement pour identifier les produits. Informations de sources publiques. Mise à jour : novembre 2026."
       }
     }
   }
