@@ -22,7 +22,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 
 ## Brand pages with quotable part numbers
 
-169 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302246 part references.
+169 manufacturer pages list specific part numbers from quotations, orders, or price lists — each code is clickable for a no-obligation enquiry (UI languages DE/EN/IT/ES/FR via the on-page selector). No list prices are published. Total: 302265 part references.
 
 - [ABB](https://abcspareparts.eu/marche/abb.html): 1SDA013676R1, 7TCA017200R0001, 2CPX010000R9999, 1STQ000012W0000 (+127792 listino codes, search on page)
 - [Alfamatic](https://abcspareparts.eu/marche/alfamatic.html): AX09 165/10
@@ -116,7 +116,7 @@ ABCspareparts supplies original parts and vetted alternatives for automation, ma
 - [Mori Seiki](https://abcspareparts.eu/marche/mori-seiki.html): RIBSTAR BELT 15PK2008
 - [MOTOR POWER COMPANY](https://abcspareparts.eu/marche/motor-power-company.html): T.115.SR.7.R.L.17.501.A.16.116
 - [MST](https://abcspareparts.eu/marche/mst.html): 028603, 135859, 149826, 2485C041 (+15 more)
-- [MTU](https://abcspareparts.eu/marche/mtu.html): 5240160321, 700429037000, 700429044001, 8591840006 (+4 more)
+- [MTU](https://abcspareparts.eu/marche/mtu.html): 000 N 13 235 E1, 002 997 0348, 007 603 010110, 009 997 2445 (+21 more)
 - [MULAG](https://abcspareparts.eu/marche/mulag.html): 102735, 102736, 174126, A110193 (+1 more)
 - [Müller Martini](https://abcspareparts.eu/marche/muller-martini.html): 0031.5754, 0040.0598, 0306.1115.4, 0306.1116.4 (+6 more)
 - [NEWHAVEN DISPLAY](https://abcspareparts.eu/marche/newhaven-display.html): NHD-0220JZ-FL-GBW
@@ -1658,7 +1658,24 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [MST 5421899](https://abcspareparts.eu/parts/mst/5421899.html) — BEARING STRAP
 - [MST 5423412](https://abcspareparts.eu/marche/mst.html#quote=5423412) — Expansion Tank
 - [MST 5423413](https://abcspareparts.eu/marche/mst.html#quote=5423413) — Cap, Tank
+- [MTU 000 N 13 235 E1](https://abcspareparts.eu/marche/mtu.html#quote=000%20N%2013%20235%20E1) — SEALING RING
+- [MTU 002 997 0348](https://abcspareparts.eu/marche/mtu.html#quote=002%20997%200348) — O-RING 90 X 7
+- [MTU 007 603 010110](https://abcspareparts.eu/marche/mtu.html#quote=007%20603%20010110) — SEALING RING 10 X 13,5
+- [MTU 009 997 2445](https://abcspareparts.eu/marche/mtu.html#quote=009%20997%202445) — O-RING 6 X 2,5
+- [MTU 009 997 8845](https://abcspareparts.eu/marche/mtu.html#quote=009%20997%208845) — O-RING 200 X 4
+- [MTU 0501 303 905](https://abcspareparts.eu/marche/mtu.html#quote=0501%20303%20905) — Gasket
 - [MTU 5240160321](https://abcspareparts.eu/marche/mtu.html#quote=5240160321) — Valve cover gasket
+- [MTU 537 220 0078](https://abcspareparts.eu/marche/mtu.html#quote=537%20220%200078) — STOPER
+- [MTU 537 223 0812](https://abcspareparts.eu/marche/mtu.html#quote=537%20223%200812) — ELASTIC MOUNTING
+- [MTU 550 017 0260](https://abcspareparts.eu/marche/mtu.html#quote=550%20017%200260) — SEALING RING
+- [MTU 550 203 0580](https://abcspareparts.eu/marche/mtu.html#quote=550%20203%200580) — Gasket
+- [MTU 550 204 0080](https://abcspareparts.eu/marche/mtu.html#quote=550%20204%200080) — Gasket
+- [MTU 550 204 0380](https://abcspareparts.eu/marche/mtu.html#quote=550%20204%200380) — Gasket
+- [MTU 550 204 0780](https://abcspareparts.eu/marche/mtu.html#quote=550%20204%200780) — Gasket
+- [MTU 553 203 0480](https://abcspareparts.eu/marche/mtu.html#quote=553%20203%200480) — Gasket
+- [MTU 700 429 033000](https://abcspareparts.eu/marche/mtu.html#quote=700%20429%20033000) — O-RING 33 X 3,5
+- [MTU 700 429 126 000](https://abcspareparts.eu/marche/mtu.html#quote=700%20429%20126%20000) — O-RING 126 X 5
+- [MTU 700 429 178 000](https://abcspareparts.eu/marche/mtu.html#quote=700%20429%20178%20000) — O-RING 178 X 6,5
 - [MTU 700429037000](https://abcspareparts.eu/marche/mtu.html#quote=700429037000) — O-Ring for various MTU engines
 - [MTU 700429044001](https://abcspareparts.eu/marche/mtu.html#quote=700429044001) — O-Ring for various MTU engines
 - [MTU 8591840006](https://abcspareparts.eu/marche/mtu.html#quote=8591840006) — Lube Oil Filter Element
@@ -1959,6 +1976,8 @@ Quotable part references. Large manufacturer listini publish a crawlable sample 
 - [Siemens 6SL3055-0AA00-5CA2 (NEW)](https://abcspareparts.eu/parts/siemens/6sl3055-0aa00-5ca2-new.html) — Sensor Module
 - [Siemens 6SL3210-1PE34-8AL0](https://abcspareparts.eu/parts/siemens/6sl3210-1pe34-8al0.html) — SINAMICS G120/S120 POWER MODULE PM240-2 FSG C2 WITH BUILT IN BRAKING CHOPPER 3AC380-480V+10/-10% 47-63Hz OUTPUT HIGH OV…
 - [Siemens 6SL51201UE230SC1](https://abcspareparts.eu/marche/siemens.html#quote=6SL51201UE230SC1) — SINAMICS S220 Motor Module
+- [Siemens 7MH7114 - 1BA10](https://abcspareparts.eu/marche/siemens.html#quote=7MH7114%20-%201BA10) — Sensing Plate
+- [Siemens 7MH7114-1AA10](https://abcspareparts.eu/marche/siemens.html#quote=7MH7114-1AA10) — Sensing Plate
 - [SIGLOCH 14523168](https://abcspareparts.eu/marche/sigloch.html#quote=14523168) — Umlenkrolle
 - [SIGLOCH 14523240](https://abcspareparts.eu/marche/sigloch.html#quote=14523240) — Umlenkrolle
 - [SIGLOCH 14523254](https://abcspareparts.eu/marche/sigloch.html#quote=14523254) — Laufrolle

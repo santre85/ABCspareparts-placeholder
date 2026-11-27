@@ -1,6 +1,6 @@
 {
-  "source": "erp-priced-items.tsv",
-  "imported": "2026-11-25",
+  "source": "erp-priced-items_c9a6.tsv",
+  "imported": "2026-11-27",
   "note": "ERPNext items with supplier pricing (prices NOT included here, never published)",
   "brands": [
     {
@@ -1724,8 +1724,76 @@
       "brand_slug": "mtu",
       "parts": [
         {
+          "part_number": "000 N 13 235 E1",
+          "description": "SEALING RING"
+        },
+        {
+          "part_number": "002 997 0348",
+          "description": "O-RING 90 X 7"
+        },
+        {
+          "part_number": "007 603 010110",
+          "description": "SEALING RING 10 X 13,5"
+        },
+        {
+          "part_number": "009 997 2445",
+          "description": "O-RING 6 X 2,5"
+        },
+        {
+          "part_number": "009 997 8845",
+          "description": "O-RING 200 X 4"
+        },
+        {
+          "part_number": "0501 303 905",
+          "description": "Gasket"
+        },
+        {
           "part_number": "5240160321",
           "description": "Valve cover gasket"
+        },
+        {
+          "part_number": "537 220 0078",
+          "description": "STOPER"
+        },
+        {
+          "part_number": "537 223 0812",
+          "description": "ELASTIC MOUNTING"
+        },
+        {
+          "part_number": "550 017 0260",
+          "description": "SEALING RING"
+        },
+        {
+          "part_number": "550 203 0580",
+          "description": "Gasket"
+        },
+        {
+          "part_number": "550 204 0080",
+          "description": "Gasket"
+        },
+        {
+          "part_number": "550 204 0380",
+          "description": "Gasket"
+        },
+        {
+          "part_number": "550 204 0780",
+          "description": "Gasket"
+        },
+        {
+          "part_number": "553 203 0480",
+          "description": "Gasket"
+        },
+        {
+          "part_number": "700 429 033000",
+          "description": "O-RING 33 X 3,5"
+        },
+        {
+          "part_number": "700 429 126 000",
+          "description": "O-RING 126 X 5"
+        },
+        {
+          "part_number": "700 429 178 000",
+          "description": "O-RING 178 X 6,5"
         },
         {
           "part_number": "700429037000",
@@ -2852,6 +2920,14 @@
         {
           "part_number": "6SL51201UE230SC1",
           "description": "SINAMICS S220 Motor Module"
+        },
+        {
+          "part_number": "7MH7114 - 1BA10",
+          "description": "Sensing Plate"
+        },
+        {
+          "part_number": "7MH7114-1AA10",
+          "description": "Sensing Plate"
         }
       ]
     },
